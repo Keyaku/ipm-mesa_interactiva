@@ -1,18 +1,12 @@
 body {
-	background-image: url("images/homeBackgroundSquare.svg") repeat;
-	background-size: 100%;
+	background-image: url("../images/homeBackgroundSquare.svg");
+	background-repeat: repeat;
+	background-size: 8pt;
 	height: 100%;
 	margin:0;
 }
 
-.container-fluid{
-	padding:10%;
-}
-
-ol {
-	position: relative;
-	top: 20%;
-	left: 20%;
+.homeButtons.container-fluid{
 }
 
 .numberCustomers{
