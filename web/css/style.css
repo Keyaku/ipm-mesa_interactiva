@@ -1,0 +1,19 @@
+.background{
+	background-image: url("../images/crossings.jpg");
+	background-size: 100vh 100vh;
+	height: 100vh;
+}
+
+.container{
+	text-align: center;
+	height: ;
+}
+
+
+.homeButton{
+	border: 2px solid yellow;
+	height: 150px;
+	margin: 0 auto 0 auto;
+	width: 150px;
+}
+.homeButtontext{}
