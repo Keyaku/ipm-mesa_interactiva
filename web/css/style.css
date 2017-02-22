@@ -1,33 +1,39 @@
-.background{
+body {
 	background-image: url("images/homeBackgroundSquare.svg") repeat;
-	background-size: 100vh 100vh;
-	height: 100vh;
-}
-
-.container{ padding: 10% 0; }
-.row{
-	height: 200px;
-	margin: 0 0 25px 0;
-}
-
-.homeButton{
-	border: 1px solid black;
+	background-size: 100%;
 	height: 100%;
-	text-align: center;
+	margin:0;
 }
-.homeButtonImg{
-	width: 106px;
+
+.container-fluid{
+	padding:10%;
 }
-.homeButtontext{
+
+ol {
+	position: relative;
+	top: 20%;
+	left: 20%;
+}
+
+.numberCustomers{
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 150pt;
 	color: black;
-	font-family: ; 
 	font-size: 20px;
-	margin: 0 90%;
+	text-align: right;
 	text-decoration: none;
-	width: 20px;
 }
 
-#one{
-
-	color: black;
+li.numberCustomers {
+	display:inline-block;
+	border: 1px solid black;
+	margin: 0 0 15pt 15pt;
+	width: 200pt;
+	height: 200pt;
 }
+
+#oneCustomers   { background-image: url("../images/button-1.svg"); }
+#twoCustomers   { background-image: url("../images/button-2.svg"); }
+#threeCustomers { background-image: url("../images/button-3.svg"); }
+#fourCustomers  { background-image: url("../images/button-4.svg"); }
