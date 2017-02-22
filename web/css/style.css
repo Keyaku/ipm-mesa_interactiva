@@ -1,19 +1,34 @@
 .background{
-	background-image: url("../images/crossings.jpg");
+	background-color: white;
 	background-size: 100vh 100vh;
 	height: 100vh;
 }
 
-.container{
-	text-align: center;
-	height: ;
+.container{ padding: 10% 0; }
+.row{
+	height: 200px;
+	margin: 0 0 25px 0;
 }
 
 
 .homeButton{
-	border: 2px solid yellow;
-	height: 150px;
-	margin: 0 auto 0 auto;
-	width: 150px;
+	border: 1px solid black;
+	height: 100%;
+	text-align: center;
 }
-.homeButtontext{}
+.homeButtonImg{
+	width: 106px;
+}
+.homeButtontext{
+	color: black;
+	font-family: ; 
+	font-size: 20px;
+	margin: 0 90%;
+	text-decoration: none;
+	width: 20px;
+}
+
+#one{
+
+	color: black;
+}
