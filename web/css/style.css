@@ -9,22 +9,27 @@ body {
 .homeButtons.container-fluid{
 }
 
+li a {
+	display: block;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+}
+
 .numberCustomers{
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 150pt;
-	color: black;
-	font-size: 20px;
-	text-align: right;
-	text-decoration: none;
-}
-
-li.numberCustomers {
-	display:inline-block;
 	border: 1px solid black;
 	margin: 0 0 15pt 15pt;
 	width: 200pt;
 	height: 200pt;
+}
+
+li.numberCustomers {
+	color: black;
+	text-align: right;
+	list-style-position: inside;
 }
 
 #oneCustomers   { background-image: url("../images/button-1.svg"); }
