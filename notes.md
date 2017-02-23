@@ -10,7 +10,7 @@
 * [ ] aparece uma mensagem a dizer: "Em preparação"
 * [ ] quando o cozinheiro começa a preparação o texto do botão é substituído por um timer
 
-* [ ] a pizza CHEGA
+* [] a pizza CHEGA
 * [ ] quando a pizza está a ser comida a mafs pergunta se quer mais
 
 * [ ] EM ESPERA
@@ -34,4 +34,3 @@
 * [ ] pede-se nome, idade, nif, morada, telemovel
 * [ ] registo de impressão digital (com botão para outros métodos de registo: pin)
 * [ ] para as notícias: interesses (com checbox)
-
