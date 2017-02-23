@@ -1,13 +1,11 @@
-body {
+.homepage{
 	background-image: url("../images/homeBackgroundSquare.svg");
-	background-repeat: repeat;
-	background-size: 8pt;
+	background-size: 16px 16px;
 	height: 100%;
 	margin:0;
 }
 
-.homeButtons.container-fluid{
-}
+.homeButtons.container-fluid{  }
 
 li a {
 	display: block;
@@ -26,13 +24,13 @@ li a {
 	height: 200pt;
 }
 
-li.numberCustomers {
+li.numberCustomers{
 	color: black;
 	text-align: right;
 	list-style-position: inside;
 }
 
-#oneCustomers   { background-image: url("../images/button-1.svg"); }
-#twoCustomers   { background-image: url("../images/button-2.svg"); }
-#threeCustomers { background-image: url("../images/button-3.svg"); }
-#fourCustomers  { background-image: url("../images/button-4.svg"); }
+#oneCustomers{ background-image: url("../images/button-1.svg"); }
+#twoCustomers{ background-image: url("../images/button-2.svg"); }
+#threeCustomers{ background-image: url("../images/button-3.svg"); }
+#fourCustomers{ background-image: url("../images/button-4.svg"); }
