@@ -17,8 +17,15 @@
 - nav bar para cada cliente
 - opções:
 	- notícias
-	- jogos
-	- musica e video
-
+	- jogos:
+		- air hockey
+		- pong
+		- tic tac toe
+	- musica e video:
+		- link ao spotify
+		- link ao youtube
+	- fotografia:
+		- link para o instagram
+		- imediatamente ligar e postar a foto da pizza
 
 - quando se dá um murro na mesa - a UI treme
