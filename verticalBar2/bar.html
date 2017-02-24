@@ -1,0 +1,70 @@
+<!DOCTYPE>
+<html>
+
+<head>
+	<title>PÁGINA DE ENTRETENIMENTO</title>
+	<meta charset="utf-8" />
+	<!--Links the boostrap library-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--Links the font for the social media buttons-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--Links the font for the text-->
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<!--Links the css file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+</head>
+
+<body class="entertainmentPage">
+	<div class="verticalBar">
+		<a href="#">
+			<div class="verticalBarButton">
+				<p class="text menuTitle">Order</p>
+				<img class="menuIcon" id="orderIcon">
+			</div>
+		</a>
+		<a href="#">
+			<div class="verticalBarButton">
+				<p class="text menuTitle">Social Networks</p>
+				<img class="menuIcon" id="socialIcon">
+			</div>
+		</a>
+		<a href="#">
+			<div class="verticalBarButton">
+				<p class="text menuTitle">Music and Videos</p>
+				<img class="menuIcon" id="musicvideoIcon">
+			</div>
+		</a>
+		<a href="#">
+			<div class="verticalBarButton">
+				<p class="text menuTitle">Games</p>
+				<img class="menuIcon" id="gamesIcon">
+			</div>
+		</a>
+		<div class="permaTimer">
+			<p class="text permaTimerText">Aqui estará um timer permanente</p>
+		</div>
+	</div>
+
+	<div class="overlay" id="overlaySocialMedia">
+		<a href="#" onclick="openBrowser()" class="fa fa-facebook"></a>
+		<a href="#" onclick="openBrowser()" class="fa fa-twitter"></a>
+		<a href="#" onclick="openBrowser()" class="fa fa-instagram"></a>
+		<iframe class="iframe" id="iframeSocialMedia" src="https://www.w3schools.com"></iframe>
+	</div>
+</body>
+
+<script>
+	function openBrowser() {
+		var mediaB = document.getElementsByClassName("fa");
+		for (var i = 0; i < mediaB.length; i++) mediaButtonClicked(mediaB[i]);
+		var browser = document.getElementById("iframeSocialMedia");
+		browser.style.display = "block";
+	}
+	function mediaButtonClicked(button) {
+		button.style.height = "150px";
+		button.style.padding = "50px 40px 0 40px";
+	}
+</script>
+
+</html>
