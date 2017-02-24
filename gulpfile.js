@@ -39,7 +39,7 @@ gulp.task('compress', function() {
 	            min:'.min.js'
 	        },
 	        exclude: [],
-	        ignoreFiles: ['-min.js']
+	        ignoreFiles: ['.min.js']
 	    }))
 	    .pipe(gulp.dest(DIR_SCRIPTS))
 });
