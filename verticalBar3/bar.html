@@ -1,0 +1,109 @@
+<!DOCTYPE>
+<html>
+
+<head>
+	<title>PÁGINA DE ENTRETENIMENTO</title>
+	<meta charset="utf-8" />
+	<!--Links the boostrap library-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--Links the font for the social media buttons-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--Links the font for the text-->
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<!--Links the css file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body class="entertainmentPage">
+	<div class="verticalBar" id="mainMenu001">
+		<a href="#">
+			<div class="verticalBarButton" onclick="showSubMenu('overlayOrder')">
+				<p class="text menuTitle">Order</p>
+				<img class="menuIcon" id="orderIcon">
+			</div>
+		</a>
+		<a href="#">
+			<div class="verticalBarButton" onclick="showSubMenu('overlaySocialMedia')">
+				<p class="text menuTitle">Social Networks</p>
+				<img class="menuIcon" id="socialIcon">
+			</div>
+		</a>
+		<a href="#">
+			<div class="verticalBarButton" onclick="showSubMenu('overlayMusicVideos')">
+				<p class="text menuTitle">Music and Videos</p>
+				<img class="menuIcon" id="musicvideoIcon">
+			</div>
+		</a>
+		<a href="#">
+			<div class="verticalBarButton" onclick="showSubMenu('overlayGames')">
+				<p class="text menuTitle">Games</p>
+				<img class="menuIcon" id="gamesIcon">
+			</div>
+		</a>
+		<div class="permaTimer">
+			<p class="text permaTimerText">Aqui estará um timer permanente</p>
+		</div>
+	</div>
+	<div class="arrow">
+		<img src="icons/arrowLeftWhite.svg" id="arrowIcon" onclick="toggleMainMenu()">
+	</div>
+
+	<div class="overlay" id="overlayOrder"> </div>
+
+	<div class="overlay" id="overlaySocialMedia">
+		<a onclick="openBrowser('')" class="fa fa-facebook"></a>
+		<a onclick="openBrowser('')" class="fa fa-twitter"></a>
+		<a onclick="openBrowser('https://www.instagram.com/pizza/?hl=en')" class="fa fa-instagram"></a>
+		<iframe src="https://www.w3schools.com" class="iframe" id="browSM"></iframe>
+	</div>
+	
+	<div class="overlay" id="overlayMusicVideos">
+		<a onclick="openBrowser('')" class="fa fa-spotify"></a>
+		<a onclick="openBrowser('')" class="fa fa-youtube"></a>
+	</div>
+	<div class="overlay" id="overlayGames"> </div>
+</body>
+
+<script>
+	var currentSubMenu = document.getElementById("overlaySocialMedia");
+	currentSubMenu.style.display = "block";
+
+	var showMainMenu = true;
+
+	function toggleMainMenu() {
+		console.log("arrow");
+		var mm = document.getElementById("mainMenu001");
+		var arrow = document.getElementById("arrowIcon");
+		if (showMainMenu) {
+			mm.style.display = "none";
+			arrow.src = "icons/arrowRightWhite.svg";
+		}
+		else {
+			mm.style.display = "block";
+			arrow.src = "icons/arrowLeftWhite.svg";
+		}
+		showMainMenu = !showMainMenu;
+	}
+
+	function showSubMenu(id) {
+		currentSubMenu.style.display = "none";
+		currentSubMenu = document.getElementById(id);
+		currentSubMenu.style.display = "block";
+	}
+
+	function openBrowser(link) {
+		/*makes all the social media buttons shrink*/
+		var mediaB = document.getElementsByClassName("fa");
+		for (var i = 0; i < mediaB.length; i++) mediaButtonClicked(mediaB[i]);
+		/*makes the browser visible*/
+		var b = document.getElementById("browSM");
+		b.style.display = "block";
+		/*opens the correct page*/
+		b.src = link;
+	}
+	function mediaButtonClicked(button) {
+		button.style.height = "150px";
+		button.style.padding = "50px 40px 0 40px";
+	}
+</script>
+</html>
