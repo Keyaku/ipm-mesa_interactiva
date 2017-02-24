@@ -35,10 +35,10 @@ a:hover{ text-decoration: none; }
 	margin: 0;
 	width: 48px;
 }
-#orderIcon{ content: url("../icons/pizzaWhite.svg"); }
-#socialIcon{ content: url("../icons/shareWhite.svg"); }
-#musicvideoIcon{ content: url("../icons/musicWhite.svg"); }
-#gamesIcon{ content: url("../icons/gamesWhite.svg"); }
+#orderIcon{ content: url("../images/icons/pizzaWhite.svg"); }
+#socialIcon{ content: url("../images/icons/shareWhite.svg"); }
+#musicvideoIcon{ content: url("../images/icons/musicWhite.svg"); }
+#gamesIcon{ content: url("../images/icons/gamesWhite.svg"); }
 
 .permaTimerText{
 	color: white;
