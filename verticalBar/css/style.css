@@ -1,0 +1,45 @@
+.entertainmentPage{
+	background-color: #333;
+}
+.text{
+	color: black;
+	font-family: raleway, sans-serif;
+	font-size: 20px;
+	margin: 0;
+}
+a:hover{ text-decoration: none; }
+
+.verticalBar{
+	background-color: black;
+	float: left;
+	height: 100%;
+	text-align: center;
+	width: 300px;
+}
+.verticalBarButton{
+	background-color: lightgrey;
+	border: 1px solid black;
+	height: 150px;
+	width: 100%;
+}
+.verticalBarButton:hover{
+	background-color: darkorange;
+}
+.verticalBarButton:hover > p{ color: white; }
+.menuTitle{
+	font-size: 30px;
+	padding: 30px 0 0 0;
+}
+.menuIcon{
+	height: 48px;
+	margin: 0;
+	width: 48px;
+}
+#orderIcon{ content: url("../icons/pizzaWhite.svg"); }
+#socialIcon{ content: url("../icons/shareWhite.svg"); }
+#musicvideoIcon{ content: url("../icons/musicWhite.svg"); }
+#gamesIcon{ content: url("../icons/gamesWhite.svg"); }
+
+.permaTimerText{
+	color: white;
+}
