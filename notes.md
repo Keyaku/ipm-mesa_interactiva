@@ -25,7 +25,7 @@
 		* [ ] link ao spotify
 		* [ ] link ao youtube
 	* [ ] redes sociais:
-		# [ ] link para facebook e twitter
+		* [ ] link para facebook e twitter
 		* [ ] link para o instagram
 		* [ ] imediatamente ligar e postar a foto da pizza
 
