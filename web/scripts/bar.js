@@ -1,3 +1,28 @@
+/***** Function declarations *****/
+function toggleMainMenu() {
+	var mainMenu = $("#mainMenu");
+	var arrow = $("#arrowIcon");
+
+	if (mainMenu.is(":visible")) {
+		mainMenu.hide()
+		arrow.css("content", "url(../images/icons/arrowRightWhite.svg)");
+	} else {
+		mainMenu.show()
+		arrow.css("content", "url(../images/icons/arrowLeftWhite.svg)");
+	}
+}
+
+function openBrowser(link) {
+	// makes all the social media buttons shrink
+	$(".fa").css("height", "150px");
+	$(".fa").css("padding", "50px 40px 0 40px");
+	// makes the browser visible
+	$("#browSM").show();
+	// opens the correct page
+	$("#browSM").attr("src", link);
+}
+
+/***** Timer-related code *****/
 $("#countdown").countdown360({
 	// Pie configuration
     radius      : 60.5,                  // radius of arc
@@ -19,3 +44,7 @@ $("#countdown").countdown360({
     startOverAfterAdding: true,          // Start the timer over after time is added with addSeconds
     onComplete  : function() {}
 }).start()
+
+
+/****** Code execution *******/
+$("#overlaySocialMedia").show();

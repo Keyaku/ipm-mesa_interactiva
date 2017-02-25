@@ -1,45 +1,89 @@
-.entertainmentPage{
+iframe {
+	display: none;
+	width: 1600px;
+	height: 650px;
+}
+
+.entertainmentPage {
 	background-color: #333;
 }
-.text{
+.text {
 	color: black;
 	font-family: raleway, sans-serif;
 	font-size: 20px;
 	margin: 0;
 }
-a:hover{ text-decoration: none; }
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:focus:hover {text-decoration: none;}
 
-.verticalBar{
+.verticalBar {
 	background-color: black;
 	float: left;
 	height: 100%;
 	text-align: center;
 	width: 300px;
 }
-.verticalBarButton{
+.verticalBarButton {
 	background-color: lightgrey;
 	border: 1px solid black;
 	height: 150px;
 	width: 100%;
 }
-.verticalBarButton:hover{
+.verticalBarButton:hover {
 	background-color: darkorange;
 }
-.verticalBarButton:hover > p{ color: white; }
-.menuTitle{
+.verticalBarButton:hover > p { color: white; }
+.menuTitle {
 	font-size: 30px;
 	padding: 30px 0 0 0;
 }
-.menuIcon{
+.menuIcon {
 	height: 48px;
 	margin: 0;
 	width: 48px;
 }
-#orderIcon{ content: url("../images/icons/pizzaWhite.svg"); }
-#socialIcon{ content: url("../images/icons/shareWhite.svg"); }
-#musicvideoIcon{ content: url("../images/icons/musicWhite.svg"); }
-#gamesIcon{ content: url("../images/icons/gamesWhite.svg"); }
 
-.permaTimerText{
-	color: white;
+#orderIcon { content: url("../images/icons/pizzaWhite.svg"); }
+#socialIcon { content: url("../images/icons/shareWhite.svg"); }
+#musicvideoIcon { content: url("../images/icons/musicWhite.svg"); }
+#gamesIcon { content: url("../images/icons/gamesWhite.svg"); }
+
+/*arrow to toggle the visibility of the main menu vertical bar*/
+.arrow {
+	background: black;
+	float: left;
+	width: 50px;
+	height: 100%;
 }
+#arrowIcon {
+	content: url("../images/icons/arrowLeftWhite.svg");
+	bottom: 0;
+	position: absolute;
+}
+
+/*social media overlay*/
+.overlay { display: none; }
+.fa {
+	color: white;
+	font-size: 60px;
+	padding: 120px 40px 120px 40px;
+	text-align: center;
+	text-decoration: none;
+	width: 200px;
+	height: 300px;
+	transition: 0.5s linear;
+}
+.fa:hover { color: #333; }
+.fa:focus {
+	color: white;
+	text-decoration: none;
+}
+.fa:focus:hover {color: #333;}
+
+.fa-facebook { background: #3B5998; }
+.fa-twitter { background: #55ACEE; }
+.fa-instagram { background: #125688; }
+
+.fa-spotify { background: #68CE02; }
+.fa-youtube { background: #e52d27; }

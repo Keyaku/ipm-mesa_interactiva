@@ -6,45 +6,68 @@
 	<meta charset="utf-8" />
 	<!--Links the boostrap library-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--Links the font for the social media buttons-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--Links the font for the text-->
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<!--Links the css file-->
 	<link rel="stylesheet" type="text/css" href="../css/bar.css">
-
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
 
 <body class="entertainmentPage">
-	<div class="verticalBar">
+	<div class="verticalBar" id="mainMenu">
 		<a href="#">
-			<div class="verticalBarButton">
+			<div class="verticalBarButton" onclick="showSubMenu('overlayOrder')">
 				<p class="text menuTitle">Order</p>
 				<img class="menuIcon" id="orderIcon">
 			</div>
 		</a>
 		<a href="#">
-			<div class="verticalBarButton">
+			<div class="verticalBarButton" onclick="showSubMenu('overlaySocialMedia')">
 				<p class="text menuTitle">Social Networks</p>
 				<img class="menuIcon" id="socialIcon">
 			</div>
 		</a>
 		<a href="#">
-			<div class="verticalBarButton">
+			<div class="verticalBarButton" onclick="showSubMenu('overlayMusicVideos')">
 				<p class="text menuTitle">Music and Videos</p>
 				<img class="menuIcon" id="musicvideoIcon">
 			</div>
 		</a>
 		<a href="#">
-			<div class="verticalBarButton">
+			<div class="verticalBarButton" onclick="showSubMenu('overlayGames')">
 				<p class="text menuTitle">Games</p>
 				<img class="menuIcon" id="gamesIcon">
 			</div>
 		</a>
-		<!-- Timer -->
 		<div id="countdown"></div>
 	</div>
+	<div class="arrow">
+		<img id="arrowIcon" onclick="toggleMainMenu()">
+	</div>
 
-	<!-- SCRIPTS GO UNDER HERE -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-	<script src="../scripts/jquery.countdown360.js"></script>
-	<script src="../scripts/bar.js"></script>
+	<div class="overlay" id="overlayOrder"> </div>
+
+	<div class="overlay" id="overlaySocialMedia">
+		<a onclick="openBrowser('https://facebook.com/')" class="fa fa-facebook"></a>
+		<a onclick="openBrowser('https://twitter.com/')" class="fa fa-twitter"></a>
+		<a onclick="openBrowser('https://www.instagram.com/pizza/?hl=en')" class="fa fa-instagram"></a>
+		<iframe src="https://www.w3schools.com" id="browSM"></iframe>
+	</div>
+
+	<div class="overlay" id="overlayMusicVideos">
+		<a onclick="openBrowser('')" class="fa fa-spotify"></a>
+		<a onclick="openBrowser('')" class="fa fa-youtube"></a>
+	</div>
+	<div class="overlay" id="overlayGames"> </div>
+
+</div>
+
+<!-- SCRIPTS GO UNDER HERE -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="../scripts/jquery.countdown360.js"></script>
+<script src="../scripts/bar.js"></script>
+
 </body>
+
 </html>
