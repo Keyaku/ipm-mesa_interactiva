@@ -31,8 +31,7 @@ $("#countdown").countdown360({
 
 	// Timer configuration
     autostart   : true,                  // start the countdown automatically
-    seconds     : 70,                    // the number of seconds to count down
-    label       : ["second", "seconds"], // the label to use or false if none, first is singular form, second is plural
+    seconds     : 120,                    // the number of seconds to count down
     startOverAfterAdding: true,          // Start the timer over after time is added with addSeconds
     onComplete  : function() {}
 }).start()
