@@ -72,6 +72,12 @@
 				<td class="orderName">Coffee</td>
 				<td class="orderIncrement">+</td>
 			</tr>
+			
+			<tr id="orderElementsListBanner">
+				<td></td>
+				<td class="orderName">Ordered one more</td>
+				<td></td>
+			</tr>
 		</table>
 	</div>
 
@@ -88,12 +94,34 @@
 	</div>
 	<div class="overlay" id="overlayGames"> </div>
 
-
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="../scripts/jquery.countdown360.js"></script>
 <script src="../scripts/bar.js"></script>
 
-</body>
+<script>
+	var timer;
 
+	function showBanner(text) {
+		clearTimeout(timer);
+		var banner = document.getElementById("orderElementsListBanner");
+		banner.childNodes[3].innerText = text;
+		banner.style.visibility = "visible";
+		animateColorBanner(banner);
+		closeBanner(banner);
+	}
+
+	function animateColorBanner(banner) {
+		banner.style.background = 'rgba(' + 255 + ',' + 140 + ',' + 0 + ',' + 1 + ')';
+	}
+
+	function closeBanner(banner) {
+		timer = setTimeout(
+			function() {
+				banner.style.background = 'rgba(' + 0 + ',' + 0 + ',' + 0 + ',' + 0 + ')';
+				banner.style.visibility = "hidden";
+			}, 3000);
+	}
+</script>
+</body>
 </html>

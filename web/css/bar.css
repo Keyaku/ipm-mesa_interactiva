@@ -101,6 +101,25 @@ p {
 	color: black;
 }
 
+#orderElementsListBanner {
+	background-color: rgba(0,0,0,0);
+	height: 70px;
+	text-align: center;
+	transition: all 0.5s linear;
+	visibility: hidden;
+}
+#orderElementsListBanner > td {
+	color: white;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+
+
+
+
+
+
 /*social media overlay*/
 .overlay { display: none; }
 .fa {
