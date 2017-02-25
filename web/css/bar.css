@@ -8,6 +8,13 @@ iframe {
 	height: 650px;
 }
 
+p {
+	color: black;
+	font-family: raleway, sans-serif;
+	font-size: 20px;
+	margin: 0;
+}
+
 .entertainmentPage {
 	background-color: #333;
 	margin: 0;
@@ -17,13 +24,6 @@ iframe {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-}
-
-.text {
-	color: black;
-	font-family: raleway, sans-serif;
-	font-size: 20px;
-	margin: 0;
 }
 
 .verticalBar {
