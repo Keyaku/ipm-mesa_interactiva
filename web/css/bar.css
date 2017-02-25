@@ -51,15 +51,17 @@ p {
 }
 
 .menuIcon {
+	background-position: center;
+	background-repeat: no-repeat;
 	margin: 0;
-	width: 48px;
+	width: auto;
 	height: 48px;
 }
 
-#orderIcon { content: url("../images/icons/pizzaWhite.svg"); }
-#socialIcon { content: url("../images/icons/shareWhite.svg"); }
-#musicvideoIcon { content: url("../images/icons/musicWhite.svg"); }
-#gamesIcon { content: url("../images/icons/gamesWhite.svg"); }
+#orderIcon { background-image: url("../images/icons/pizzaWhite.svg"); }
+#socialIcon { background-image: url("../images/icons/shareWhite.svg"); }
+#musicvideoIcon { background-image: url("../images/icons/musicWhite.svg"); }
+#gamesIcon { background-image: url("../images/icons/gamesWhite.svg"); }
 
 /* arrow that toggles the visibility of the vertical bar */
 #arrowIcon {
