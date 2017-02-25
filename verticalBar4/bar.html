@@ -16,7 +16,7 @@
 </head>
 
 <body class="entertainmentPage">
-	<div class="verticalBar" id="mainMenu001">
+	<div class="verticalBar" id="mainMenu">
 		<a href="#">
 			<div class="verticalBarButton" onclick="showSubMenu('overlayOrder')">
 				<p class="text menuTitle">Order</p>
@@ -41,9 +41,7 @@
 				<img class="menuIcon" id="gamesIcon">
 			</div>
 		</a>
-		<div class="permaTimer">
-			<p class="text permaTimerText">Aqui estará um timer permanente</p>
-		</div>
+		<div id="countdown"></div>
 	</div>
 	<div class="arrow">
 		<img src="icons/arrowLeftWhite.svg" id="arrowIcon" onclick="toggleMainMenu()">
@@ -85,64 +83,19 @@
 		<a onclick="openBrowser('https://www.instagram.com/pizza/?hl=en')" class="fa fa-instagram"></a>
 		<iframe src="https://www.w3schools.com" class="iframe" id="browSM"></iframe>
 	</div>
-	
+
 	<div class="overlay" id="overlayMusicVideos">
 		<a onclick="openBrowser('')" class="fa fa-spotify"></a>
 		<a onclick="openBrowser('')" class="fa fa-youtube"></a>
 	</div>
 	<div class="overlay" id="overlayGames"> </div>
+
+
+<!-- SCRIPTS GO UNDER HERE -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="../scripts/jquery.countdown360.js"></script>
+<script src="../scripts/bar.js"></script>
+
 </body>
 
-<script>
-	var currentSubMenu = document.getElementById("overlayOrder");
-	currentSubMenu.style.display = "block";
-
-	var showMainMenu = true;
-
-	var pluss = document.getElementsByClassName("orderPlus");
-	for (var i = 0; i < pluss.length; i++)
-		pluss[i].onclick = function() { orderIncrease(this) };
-
-	function toggleMainMenu() {
-		console.log("arrow");
-		var mm = document.getElementById("mainMenu001");
-		var arrow = document.getElementById("arrowIcon");
-		if (showMainMenu) {
-			mm.style.display = "none";
-			arrow.src = "icons/arrowRightWhite.svg";
-		}
-		else {
-			mm.style.display = "block";
-			arrow.src = "icons/arrowLeftWhite.svg";
-		}
-		showMainMenu = !showMainMenu;
-	}
-
-	function showSubMenu(id) {
-		currentSubMenu.style.display = "none";
-		currentSubMenu = document.getElementById(id);
-		currentSubMenu.style.display = "block";
-	}
-
-	function openBrowser(link) {
-		/*makes all the social media buttons shrink*/
-		var mediaB = document.getElementsByClassName("fa");
-		for (var i = 0; i < mediaB.length; i++) mediaButtonClicked(mediaB[i]);
-		/*makes the browser visible*/
-		var b = document.getElementById("browSM");
-		b.style.display = "block";
-		/*opens the correct page*/
-		b.src = link;
-	}
-	function mediaButtonClicked(button) {
-		button.style.height = "150px";
-		button.style.padding = "50px 40px 0 40px";
-	}
-
-	function orderIncrease(a) {
-		var children = a.parentElement.childNodes;
-		children[1].innerText = parseInt((children[1].innerText)[0]) + 1 + "x";
-	}
-
-</script>
 </html>

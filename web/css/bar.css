@@ -1,11 +1,23 @@
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:focus:hover {text-decoration: none;}
+
+
 iframe {
 	display: none;
-	width: 1600px;
+	width: 1500px;
 	height: 650px;
 }
 
 .entertainmentPage {
 	background-color: #333;
+	margin: 0;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 .text {
 	color: black;
@@ -13,9 +25,6 @@ iframe {
 	font-size: 20px;
 	margin: 0;
 }
-a:hover { text-decoration: none; }
-a:focus { text-decoration: none; }
-a:focus:hover {text-decoration: none;}
 
 .verticalBar {
 	background-color: black;
@@ -51,15 +60,38 @@ a:focus:hover {text-decoration: none;}
 
 /*arrow to toggle the visibility of the main menu vertical bar*/
 .arrow {
-	background: black;
+	background: none;
 	float: left;
-	width: 50px;
+	width: 48px;
 	height: 100%;
 }
 #arrowIcon {
 	content: url("../images/icons/arrowLeftWhite.svg");
 	bottom: 0;
 	position: absolute;
+}
+
+/*order overlay*/
+.orderElementsList {
+	color: white;
+	cursor: context-menu;
+	font-family: raleway, sans-serif;
+	font-size: 20px;
+}
+.orderElementsRow > td {
+	border-bottom: 1px dashed white;
+	padding: 0 20px 0 20px;
+}
+.orderNumber {  }
+.orderName {  }
+.orderPlus {
+	color: darkorange;
+	cursor: pointer;
+	font-family: bangers, cursive;
+	font-size: 70px;
+}
+.orderPlus:active {
+	color: black;
 }
 
 /*social media overlay*/

@@ -47,4 +47,10 @@ $("#countdown").countdown360({
 
 
 /****** Code execution *******/
-$("#overlaySocialMedia").show();
+$("#overlayOrder").show();
+$(".orderPlus").attr("onclick", "orderIncrease")
+
+function orderIncrease(a) {
+	var children = a.parentElement.childNodes;
+	children[1].innerText = parseInt((children[1].innerText)[0]) + 1 + "x";
+}
