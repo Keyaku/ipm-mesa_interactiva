@@ -84,13 +84,13 @@ iframe {
 }
 .orderNumber {  }
 .orderName {  }
-.orderPlus {
+.orderIncrement {
 	color: darkorange;
 	cursor: pointer;
 	font-family: bangers, cursive;
 	font-size: 70px;
 }
-.orderPlus:active {
+.orderIncrement:active {
 	color: black;
 }
 

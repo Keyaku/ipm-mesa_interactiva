@@ -22,6 +22,11 @@ function openBrowser(link) {
 	$("#browSM").attr("src", link);
 }
 
+function showSubMenu(menu) {
+	$(".overlay").hide()
+	$("#" + menu).show()
+}
+
 /***** Timer-related code *****/
 $("#countdown").countdown360({
 	// Pie configuration
@@ -47,10 +52,14 @@ $("#countdown").countdown360({
 
 
 /****** Code execution *******/
-$("#overlayOrder").show();
-$(".orderPlus").attr("onclick", "orderIncrease")
+$(document).ready(function(){
+	// Showing main overlay
+	$("#overlayOrder").show();
 
-function orderIncrease(a) {
-	var children = a.parentElement.childNodes;
-	children[1].innerText = parseInt((children[1].innerText)[0]) + 1 + "x";
-}
+	// Activating order triggers
+	$('.orderIncrement').click(function() {
+		var counter = $(this).siblings('.orderNumber');
+		var i = $(this).parent().index();
+    	counter.text(parseInt(counter.text()) + 1 + "x");
+	});
+});
