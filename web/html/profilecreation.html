@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title> registration sheet </title>	
+		<link rel="stylesheet" type="text/css" href="../css/profilecreation.css">
+		<link href="https://fonts.googleapis.com/css?family=Abel|Baloo|Cinzel|Raleway" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<div id="profileCreationDiv">
+			<h1>Profile creation</h1>
+		</div>
+
+		<div id="regContainer">
+			<form id="userForm">
+
+				<div id=personWrapper>
+					<h4>1. Personal Information</h4>
+				</div>
+				
+				<div class="fields">
+					<p><input type="text" name="fullname" id="fullname" placeholder="Full Name"></p>
+					<p><input type="text" name="fiscalID" id="fiscalID" placeholder="Tax Identification Number"></p>
+				</div>
+
+				<p class="birthdate">
+					<input type="date" name="birthdate" id="bday">
+					<label for="bday">Date of Birth</label>
+				</p> 
+				<p class="gender">
+					<input type="radio" name="gender" id="" value="Male">Male
+					<input type="radio" name="gender" id="" value="Female">Female
+				</p>
+
+				<div class="cpi_Wrapper">
+					<h4>2. Contacts, Address &#38 Account Details</h4>
+				</div>
+
+				<div class="fields">
+					<p><input type="text" name="email" id="email" placeholder="E-mail"></p>
+					<p><input type="text" name="phone" id="phone" placeholder="Phone Number"></p>
+					<p><input type="text" name="address" id="address" placeholder="Address"></p>
+					<p><input type="text" name="zip_code" id="zip_code" placeholder="Zip code"></p>
+					<p><input type="text" name="city" id="city" placeholder="City"></p>
+					<p><input type="password" name="password" id="password" placeholder="Password with at least six characters and/or numbers"></p>
+					<p><input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password"></p>					
+				</div>
+
+				<div class="cpi_Wrapper">
+					<h4>3. Default payment method</h4>
+				</div>
+
+				<select name="paymentMethod" id="paymentMethod">
+					<option value="debitCard">Debit Card</option>
+					<option value="paypal">PayPal</option>
+					<option value="cash">Cash</option>
+				</select>
+
+				<div class="fields">
+					<p><input type="text" name="paymentCard" id="paymentCard" placeholder=Card Number"></p>
+					<p><input type="text" name="cvv" id="cvv" placeholder="CVV"></p>
+				</div>
+				<div class="cpi_Wrapper">
+					<h4>4. Interests &#38 Subscriptions </h4>
+				</div>
+
+				<div class="interestsAndSubs">
+					<div id="column1">
+						<p><input type="checkbox" name="arts" value="arts"> Arts</p>
+						<p><input type="checkbox" name="economy" value="economy"> Economy</p>
+						<p><input type="checkbox" name="entertainment" value="entertainment"> Entertainment<br></p>
+						<p><input type="checkbox" name="food" value="food"> Food</p>
+					</div>
+					<div id="column2">
+						<p><input type="checkbox" name="gaming" value="gaming"> Gaming</p>
+						<p><input type="checkbox" name="health" value="health"> Health<br></p>
+						<p><input type="checkbox" name="politics" value="politics"> Politics</p>
+						<p><input type="checkbox" name="science" value="science"> Science</p>
+					</div>
+					<div id="column3">
+						<p><input type="checkbox" name="sports" value="sports"> Sports<br></p>
+						<p><input type="checkbox" name="technology" value="technology"> Technology</p>
+						<p><input type="checkbox" name="trips" value="trips"> Trips</p>
+					</div>
+				</div>
+
+				<div class="cpi_Wrapper">
+					<h4>5. Last steps</h4>
+				</div>
+
+				<div class="interestsAndSubs">
+					<p><input type="checkbox" name="newsletter" value="newsletter">I would like recieve news and promotions from Paradizia by E-mail</p>
+					<p><input type="checkbox" name="acceptConditions" value="acceptConditions"><a href="">Accept terms &#38 conditions</a></p>
+				</div>
+
+				<button type="submit" form="nameform" value="Submit" id="createProfile">Submit</button>
+			</form>
+		</div>
+	</body>
+</html>
