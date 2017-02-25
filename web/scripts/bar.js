@@ -1,17 +1,4 @@
 /***** Function declarations *****/
-function toggleMainMenu() {
-	var mainMenu = $("#mainMenu");
-	var arrow = $("#arrowIcon");
-
-	if (mainMenu.is(":visible")) {
-		mainMenu.hide()
-		arrow.css("content", "url(../images/icons/arrowRightWhite.svg)");
-	} else {
-		mainMenu.show()
-		arrow.css("content", "url(../images/icons/arrowLeftWhite.svg)");
-	}
-}
-
 function openBrowser(link) {
 	// makes all the social media buttons shrink
 	$(".fa").css("height", "150px");
@@ -23,8 +10,8 @@ function openBrowser(link) {
 }
 
 function showSubMenu(menu) {
-	$(".overlay").hide()
-	$("#" + menu).show()
+	$(".overlay").hide() // Hide ALL submenus, just in case
+	$("#" + menu).show() // Show the appropriate submenu
 }
 
 /***** Timer-related code *****/
@@ -50,11 +37,17 @@ $("#countdown").countdown360({
     onComplete  : function() {}
 }).start()
 
-
 /****** Code execution *******/
 $(document).ready(function(){
-	// Showing main overlay
+	// Showing default overlay
 	$("#overlayOrder").show();
+
+	// Activating arrow toggle
+	$("#arrowIcon").click(function() {
+		var menu = $('#mainMenu');
+		menu.toggle(!menu.is(':visible')); // Switches between hidden and shown
+		$(this).toggleClass("open");       // Enables rotation/flipping
+	});
 
 	// Activating order triggers
 	$('.orderIncrement').click(function() {
