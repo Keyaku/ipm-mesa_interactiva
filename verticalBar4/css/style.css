@@ -1,0 +1,128 @@
+.entertainmentPage {
+	background-color: #333;
+	margin: 0;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.text {
+	color: black;
+	font-family: raleway, sans-serif;
+	font-size: 20px;
+	margin: 0;
+}
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:focus:hover {text-decoration: none;}
+
+.verticalBar {
+	background-color: black;
+	float: left;
+	height: 100%;
+	text-align: center;
+	width: 300px;
+}
+.verticalBarButton {
+	background-color: lightgrey;
+	border: 1px solid black;
+	height: 150px;
+	width: 100%;
+}
+.verticalBarButton:hover {
+	background-color: darkorange;
+}
+.verticalBarButton:hover > p { color: white; }
+.menuTitle {
+	font-size: 30px;
+	padding: 30px 0 0 0;
+}
+.menuIcon {
+	height: 48px;
+	margin: 0;
+	width: 48px;
+}
+#orderIcon { content: url("../icons/pizzaWhite.svg"); }
+#socialIcon { content: url("../icons/shareWhite.svg"); }
+#musicvideoIcon { content: url("../icons/musicWhite.svg"); }
+#gamesIcon { content: url("../icons/gamesWhite.svg"); }
+
+/*timer for the order to arrive*/
+.permaTimer {
+	border: 1px solid white;
+	height: 373px;
+	width: 100%;
+}
+.permaTimerText {
+	color: white;
+	padding: 150px 0 0 0;
+}
+
+/*arrow to toggle the visibility of the main menu vertical bar*/
+.arrow {
+	background: none;
+	float: left;
+	width: 48px;
+	height: 100%;
+}
+#arrowIcon {
+	bottom: 0;
+	position: absolute;
+}
+
+/*order overlay*/
+.orderElementsList {
+	color: white;
+	cursor: context-menu;
+	font-family: raleway, sans-serif;
+	font-size: 20px;
+}
+.orderElementsRow > td {
+	border-bottom: 1px dashed white;
+	padding: 0 20px 0 20px;
+}
+.orderNumber {  }
+.orderName {  }
+.orderPlus {
+	color: darkorange;
+	cursor: pointer;
+	font-family: bangers, cursive;
+	font-size: 70px;
+}
+.orderPlus:active {
+	color: black;
+}
+
+/*social media overlay*/
+.overlay { display: none; }
+.fa {
+	color: white;
+	font-size: 60px;
+	padding: 120px 40px 120px 40px;
+	text-align: center;
+	text-decoration: none;
+	width: 200px;
+	height: 300px;
+	transition: 0.5s linear;
+}
+.fa:hover { color: #333; }
+.fa:focus { 
+	color: white;
+	text-decoration: none;
+}
+.fa:focus:hover {color: #333;}
+
+.fa-facebook { background: #3B5998; }
+.fa-twitter { background: #55ACEE; }
+.fa-instagram { background: #125688; }
+
+.fa-spotify { background: #68CE02; }
+.fa-youtube { background: #e52d27; }
+
+.iframe {
+	display: none;
+	width: 1500px;
+	height: 650px;
+}
