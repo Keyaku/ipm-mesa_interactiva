@@ -80,6 +80,11 @@ input[type="date"]     { width: 30%; }
 input[type="checkbox"] { margin: 5pt; }
 input[type="radio"]    { margin: 5pt; }
 
-label {
-	color: #333333;
+/* ID styling */
+#payment input {
+	width: 50%;
+}
+
+#paymentMethod {
+	display: block;
 }
