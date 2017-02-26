@@ -1,0 +1,6 @@
+/* Helper classes */
+.wrapper {
+	max-width: 960px;
+	margin: 3%;
+	padding: 0 10px;
+}
