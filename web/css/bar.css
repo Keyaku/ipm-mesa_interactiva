@@ -139,11 +139,12 @@ p {
 
 /*information overlay*/
 #mapGoogle {
-	background-color: yellow;
+	background-color: white;
+	border: 20px solid lightgrey;
+	box-shadow: 0 5px 20px 0 rgba(0,0,0,1);
 	color: white;
 	display: inline-block;;
-
-	width: 1500px;
-	height: 800px;
+	width: 1550px;
+	height: 900px;
 
 }

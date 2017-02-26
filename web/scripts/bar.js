@@ -14,7 +14,7 @@ function openBrowser(link) {
 
 function showSubMenu(menu) {
 	$(".overlay").hide() // Hide ALL submenus, just in case
-	$("#" + menu).show() // Show the appropriate submenu
+	$("#" + menu).css("display", "inline-block") // Show the appropriate submenu
 }
 
 /***** Timer-related code *****/
