@@ -10,7 +10,7 @@
 * [ ] aparece uma mensagem a dizer: "Em preparação"
 * [ ] quando a order é realizada o texto do botão é substituído por um timer
 
-* [] a pizza CHEGA
+* [ ] a pizza CHEGA
 * [ ] quando a pizza está a ser comida a mafs pergunta se quer mais
 
 * [ ] EM ESPERA
