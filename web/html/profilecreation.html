@@ -10,50 +10,51 @@
 <body>
 	<h1>Profile creation</h1>
 
-	<form class="container">
+	<form>
 		<h4>1. Personal Information</h4>
 
 		<div class="fields">
-			<p><input type="text" name="fullname" id="fullname" placeholder="Full Name"></p>
-			<p><input type="text" name="fiscalID" id="fiscalID" placeholder="Tax Identification Number"></p>
+			<input id="fullname" type="text" name="fullname" placeholder="Full Name">
+			<input id="fiscalID" type="text" name="fiscalID" placeholder="Tax Identification Number">
 		</div>
 
-		<p class="birthdate">
-			<input type="date" name="birthdate" id="bday">
+		<div class="birthdate">
+			<input id="bday" type="date" name="birthdate">
 			<label for="bday">Date of Birth</label>
-		</p>
-		<p class="gender">
-			<input type="radio" name="gender" id="" value="Male">Male
-			<input type="radio" name="gender" id="" value="Female">Female
-		</p>
+		</div>
+		<div class="gender">
+			<input id="male" type="radio" name="gender" value="Male">
+			<label for="male">Male</label>
+			<input id="female" type="radio" name="gender" value="Female">
+			<label for="female">Female</label>
+		</div>
 
 		<h4>2. Contacts, Address &#38 Account Details</h4>
 
 		<div class="fields">
-			<p><input type="text" name="email" id="email" placeholder="E-mail"></p>
-			<p><input type="text" name="phone" id="phone" placeholder="Phone Number"></p>
-			<p><input type="text" name="address" id="address" placeholder="Address"></p>
-			<p><input type="text" name="zip_code" id="zip_code" placeholder="Zip code"></p>
-			<p><input type="text" name="city" id="city" placeholder="City"></p>
-			<p><input type="password" name="password" id="password" placeholder="Password with at least six characters and/or numbers"></p>
-			<p><input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password"></p>
+			<input id="email" type="text" name="email" placeholder="E-mail">
+			<input id="phone" type="text" name="phone" placeholder="Phone Number">
+			<input id="address" type="text" name="address" placeholder="Address">
+			<input id="zip_code" type="text" name="zip_code" placeholder="Zip code">
+			<input id="city" type="text" name="city" placeholder="City">
+			<input id="password" type="password" name="password" placeholder="Password with at least six characters and/or numbers">
+			<input id="confirm_password" type="password" name="confirm_password" placeholder="Confirm password">
 		</div>
 
 		<h4>3. Default payment method</h4>
 
-		<select name="paymentMethod" id="paymentMethod">
+		<select id="paymentMethod" name="paymentMethod">
 			<option value="debitCard">Debit Card</option>
 			<option value="paypal">PayPal</option>
 			<option value="cash">Cash</option>
 		</select>
 
 		<div class="fields">
-			<p><input type="text" name="paymentCard" id="paymentCard" placeholder="Card Number"></p>
-			<p><input type="text" name="cvv" id="cvv" placeholder="CVV"></p>
+			<input id="paymentCard" type="text" name="paymentCard" placeholder="Card Number">
+			<input id="cvv" type="text" name="cvv" placeholder="CVV">
 		</div>
-		<div class="cpi_Wrapper">
-			<h4>4. Interests &#38 Subscriptions </h4>
-		</div>
+
+		<h4>4. Interests &#38 Subscriptions </h4>
 
 		<div class="interests">
 			<div id="column1">
@@ -81,7 +82,7 @@
 
 		<div class="subscriptions">
 			<p><input type="checkbox" name="newsletter" value="newsletter">I would like recieve news and promotions from Paradizia by E-mail</p>
-			<p><input type="checkbox" name="acceptConditions" value="acceptConditions"><a href="">Accept terms &#38 conditions</a></p>
+			<p><input type="checkbox" name="acceptConditions" value="acceptConditions"><a href="#">Accept terms &#38 conditions</a></p>
 		</div>
 
 		<button type="submit" form="nameform" value="Submit" id="createProfile">Submit</button>
