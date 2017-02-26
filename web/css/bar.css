@@ -33,7 +33,6 @@ p {
 	width: 300px;
 	height: 100%;
 }
-
 .verticalBarButton {
 	background-color: lightgrey;
 	border: 1px solid black;
@@ -43,13 +42,12 @@ p {
 .verticalBarButton:hover {
 	background-color: darkorange;
 }
+.verticalBarButton:hover > div.menuIcon { filter: invert(100%); }
 .verticalBarButton:hover > p { color: white; }
-
 .menuTitle {
 	font-size: 30px;
 	padding: 30px 0 0 0;
 }
-
 .menuIcon {
 	background-position: center;
 	background-repeat: no-repeat;
@@ -60,9 +58,12 @@ p {
 
 #orderIcon { background-image: url("../images/icons/pizzaWhite.svg"); }
 #socialIcon { background-image: url("../images/icons/shareWhite.svg"); }
-#musicvideoIcon { background-image: url("../images/icons/musicWhite.svg"); }
-#gamesIcon { background-image: url("../images/icons/gamesWhite.svg"); }
-#informationIcon { background-image: url("../images/icons/worldWhite.svg"); }
+#entertainmentIcon1 { background-image: url("../images/icons/musicWhite.svg"); display: inline-block; height: 48px; width: 48px;}
+#entertainmentIcon2 { background-image: url("../images/icons/gamesWhite.svg"); display: inline-block; height: 48px; width: 48px;}
+#newsIcon { background-image: url("../images/icons/worldWhite.svg"); }
+#informationIcon { background-image: url("../images/icons/navigationWhite.svg"); }
+
+#countdown { margin: 50px 0 0 0; }
 
 /* arrow that toggles the visibility of the vertical bar */
 #arrowIcon {
