@@ -1,9 +1,10 @@
-/* font-family: 'Raleway', sans-serif; */
-/* Pallete: black, #333333, darkorange, lightgrey & white */
+/* Palette: black, #333333, darkorange, lightgrey & white */
 
 body {
 	background-color: #333333;
+	font: initial;
 	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
 }
 
 h1 {
@@ -11,8 +12,8 @@ h1 {
 	border: 2px solid black;
 	border-radius: 10px;
 	color: #333;
-	font-family: 'Raleway', sans-serif;
-	margin: auto;
+	font-size: 24pt;
+	margin: 5pt;
 	padding: 0.9em;
 	text-align: center;
 }
@@ -20,13 +21,40 @@ h1 {
 h4 {
 	background-color: darkgrey;
 	color: #333333;
-	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 	padding: 4pt 0;
 	text-align: center;
 }
 h4:first-child {
 	border-radius: 5px 5px 0 0;
+	margin-top: 0;
+}
+
+span {
+	display:block;
+	width: 100%;
+}
+
+a {
+	color: #333333;
+}
+a:hover {
+	color: darkorange;
+	text-decoration: none;
+}
+
+button#createProfile {
+	width: 125px;
+	margin: auto;
+	display: block;
+	font-size: 16px;
+	padding: 1.5% 0;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+button#createProfile:hover {
+	background-color: darkorange;
+	color: white;
 }
 
 form {
@@ -34,72 +62,24 @@ form {
 	border-radius: 5px;
 	color: #333333;
 	display: block;
-	font-size: 14px;
-	margin: auto;
+	margin: 10pt auto;
+}
+form.container {
+	padding: 0;
 	padding-bottom: 1%;
 	width: 666px;
 }
 
 input {
-	margin: 1em auto;
-	margin-left: 4.1%;
+	margin: 0.5em 0;
 	padding: 0.6%;
 }
+input[type="text"]     { width: 100%; }
+input[type="password"] { width: 50%; }
+input[type="date"]     { width: 30%; }
+input[type="checkbox"] { margin: 5pt; }
 
 label {
-	font-size: 12px;
 	color: #333333;
 	padding-left: 1%;
-}
-
-#paymentMethod {
-	padding-top: 0.6%;
-	padding-bottom: 0.6%;
-	margin-left: 4.1%;
-}
-
-#createProfile {
-	width: 125px;
-	margin: auto;
-	display: block;
-	font-family: 'Raleway', sans-serif;
-	font-size: 16px;
-	padding-top: 1.5%;
-	padding-bottom: 1.5%;
-	border: 1px solid black;
-	border-radius: 5px;
-}
-#createProfile:hover {
-	background-color: darkorange;
-	color: white;
-}
-
-.interests {
-	margin-left: 4.1%;
-}
-
-#column1, #column2, #column3 {
-	width: 150px;
-	display: inline-block;
-}
-
-.fields input {
-	display: block;
-	width: 90%;
-}
-
-.gender label {
-	font-size: 14px;
-}
-
-.subscriptions {
-	display: block;
-	margin-left: 4.1%;
-}
-.subscriptions a {
-	color: #333333;
-	text-decoration: none;
-}
-.subscriptions a:hover {
-	color: darkorange;
 }
