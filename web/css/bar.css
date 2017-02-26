@@ -2,16 +2,9 @@ a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
 a:focus:hover { text-decoration: none; }
 
-iframe {
-	display: none;
-	width: 1500px;
-	height: 650px;
-}
-
 p {
 	color: black;
 	font-family: raleway, sans-serif;
-	font-size: 20px;
 	margin: 0;
 }
 
@@ -34,8 +27,8 @@ p {
 	height: 100%;
 }
 .verticalBarButton {
-	background-color: lightgrey;
-	border: 1px solid black;
+	background-color: grey;
+	border: 1px solid white;
 	width: 100%;
 	height: 150px;
 }
@@ -46,20 +39,17 @@ p {
 .verticalBarButton:hover > p { color: white; }
 .menuTitle {
 	font-size: 30px;
-	padding: 30px 0 0 0;
+	padding: 20px 0 10px 0;
 }
 .menuIcon {
 	background-position: center;
 	background-repeat: no-repeat;
-	margin: 0;
-	width: auto;
 	height: 48px;
 }
-
 #orderIcon { background-image: url("../images/icons/pizzaWhite.svg"); }
 #socialIcon { background-image: url("../images/icons/shareWhite.svg"); }
-#entertainmentIcon1 { background-image: url("../images/icons/musicWhite.svg"); display: inline-block; height: 48px; width: 48px;}
-#entertainmentIcon2 { background-image: url("../images/icons/gamesWhite.svg"); display: inline-block; height: 48px; width: 48px;}
+#entertainmentIcon1 { background-image: url("../images/icons/musicWhite.svg"); display: inline-block; width: 48px;}
+#entertainmentIcon2 { background-image: url("../images/icons/gamesWhite.svg"); display: inline-block; width: 48px;}
 #newsIcon { background-image: url("../images/icons/worldWhite.svg"); }
 #informationIcon { background-image: url("../images/icons/navigationWhite.svg"); }
 
@@ -140,12 +130,28 @@ p {
 
 /*information overlay*/
 #mapGoogle {
-	background-color: white;
-	border: 20px solid lightgrey;
 	box-shadow: 0 5px 20px 0 rgba(0,0,0,1);
 	color: white;
-	display: inline-block;;
 	width: 1550px;
 	height: 900px;
-
 }
+.informationButton {
+	background-color: grey;
+	display: inline-block;;
+	text-align: center;
+	text-overflow: clip;
+	min-width: 250px;
+	height: 300px;
+}
+.subMenuTitle {
+	color: white;
+	font-family: raleway, sans-serif;
+	font-size: 30px;
+	padding: 20px 0 10px 0;
+}
+#taxiIcon { background-image: url("../images/icons/taxiWhite.svg"); }
+#UberIcon { background-image: url("../images/icons/taxiWhite.svg"); }
+#publicTransportIcon { background-image: url("../images/icons/publictransportWhite.svg"); }
+#barIcon { background-image: url("../images/icons/barWhite.svg"); }
+#mallIcon { background-image: url("../images/icons/mallWhite.svg"); }
+#movietheaterIcon { background-image: url("../images/icons/movietheaterWhite.svg"); }
