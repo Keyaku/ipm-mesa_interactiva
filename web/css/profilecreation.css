@@ -78,8 +78,8 @@ input[type="text"]     { width: 100%; }
 input[type="password"] { width: 50%; }
 input[type="date"]     { width: 30%; }
 input[type="checkbox"] { margin: 5pt; }
+input[type="radio"]    { margin: 5pt; }
 
 label {
 	color: #333333;
-	padding-left: 1%;
 }
