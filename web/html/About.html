@@ -1,39 +1,121 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>About us</title>
-<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
-</head>
+	<head>
+		<title>About us</title>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+		<style type="text/css">
+			body {
+				background-color: #333333;
+			}
+
+			#links {
+				background-color: lightgrey;
+				border: 1px solid black;
+				border-radius: 5px;
+				box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.35);
+			}
+
+			#links a {
+				margin-left: 2.5%;
+				text-decoration: none;
+			}
+
+			#links a:hover {
+				color: darkorange;
+			}
+
+			.studentInfo {
+				margin: 0 auto;
+				padding: 0 10px 0 10px;
+				font-size: 18px;
+				color: white;
+
+			}
+			.student {
+				margin: 0 auto;
+				padding: 0 10px 0 10px;
+				background-color: lightgrey;
+				border: 2px solid black;
+				border-radius: 5px;
+				box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.35);
+			}
+		</style>
+	</head>
 
 
-<body style="font-family:calibri; text-align: center;" >
+	<body style="font-family:calibri; text-align: center;" >
 
-<h1 style="color: green">Meet The Team</h1>
-<h2>IPM17111326L07 - 25T</h2>
+		<h1 style="color: darkorange"> Meet The Team </h1>
+		<h2 style="color: white"> IPM17111326L07 - 25T </h2>
 
+		<table align=center>
+			<tr>
+				<td class="studentInfo" width="33%">Ant&oacute;nio Sarmento</td>
+				<td class="studentInfo" width="33%">Francisco Barros</td>
+				<td class="studentInfo" width="33%">Rafael Ribeiro</td>
 
-<table align=center>
-	<tr>
-		<td width="33%">Francisco Barros</td>
-		<td width="33%">Rafael Ribeiro</td>
-		<td width="33%">Ant&oacute;nio Sarmento</td>
-	</tr>
-	<tr>
-		<td>84758</td>
-		<td>85069</td>
-		<td>77906</td>
-	</tr>
-	<tr>
-	<td><img src="../images/about/student1.png" width="100"></td>
-	<td><img src="../images/about/student2.png" width="100"></td>
-	<td><img src="../images/about/student3.png" width="100"></td>
-	</tr>
-</table>
+			</tr>
+			<tr>
+				<td class="studentInfo">77906</td>
+				<td class="studentInfo">85069</td>
+				<td class="studentInfo">84758</td>
+			</tr>
+			<tr>
+				<td><img class="student" src="../images/about/student3.png" width="100"></td>
+				<td><img class="student" src="../images/about/student2.png" width="100"></td>
+				<td><img class="student" src="../images/about/student1.png" width="100"></td>
+			</tr>
+		</table>
 
-<div id="links" style="text-align: left; padding-left: 100px;">
-	<p>Nothing for now.</p>
+		<div id="links" style="text-align: left; padding-left: 100px;">
+			<p>
+				<div id="at" class="section">
+					<h2 class="section">Análise de Tarefas</h2>
+					<div id="at_inner" class="inner_section">
+						<a href="questionario1.html">Question&aacute;rio para an&aacute;lise de tarefas</a> <br />
+						<a href="questionario2.html">Question&aacute;rio para an&aacute;lise de tarefas (melhorado)</a> <br />
+						<a href="at1.html">An&aacute;lise de tarefas + Funcionalidades</a> <br />
+						<a href="at2.html">An&aacute;lise de tarefas + Funcionalidades (melhorados)</a> <br />
+					</div>
+				</div>
 
-</div>
+				<div id="mc" class="section">
+					<h2 class="section">Modelo Conceptual</h2>
+					<div id="mc_inner" class="inner_section">
+						<a href="mod-conceptual1.html">Modelo Conceptual</a> <br />
+						<a href="mod-conceptual2.html">Modelo Conceptual (melhorado)</a> <br />
+					</div>
+				</div>
 
-</body>
+				<div id="proto" class="section">
+					<h2 class="section">Protótipos</h2>
+					<div id="proto_inner" class="inner_section">
+						<a href="pbf1.html">PBF</a> <br />
+						<a href="pbf2.html">PBF (melhorado)</a> <br />
+						<a href="protFuncional1-beta.html">Primeiro prot&oacute;tipo funcional</a> <br />
+						<a href="protFuncional1-completo.html">Primeiro prot&oacute;tipo funcional completo</a> <br />
+						<a href="protFuncional2-beta.html">Segundo prot&oacute;tipo funcional</a> <br />
+						<a href="protFuncional2-completo.html">Segundo prot&oacute;tipo funcional completo</a><br />
+						<a href="protFinal-beta.html">Prot&oacute;tipo Final</a> <br />
+						<a href="protFinal-completo.html">Prot&oacute;tipo Final completo</a><br />
+					</div>
+				</div>
+
+				<div id="au" class="section">
+					<h2 class="section">Avaliação com Utilizadores</h2>
+					<div id="au_inner" class="inner_section">
+						<a href="tarefas-criterios1.html">Tarefas e Crit&eacute;rios de usabilidade</a> <br />
+						<a href="tarefas-criterios2.html">Tarefas e Crit&eacute;rios de usabilidade (melhorado)</a> <br />
+						<a href="relatorioTestes1.html">Relat&oacute;rio da avalia&ccedil;&atilde;o com utilizadores</a> <br />
+						<a href="relatorioTestes2.html">Relat&oacute;rio da avalia&ccedil;&atilde;o com utilizadores (melhorado)</a> <br />
+						<a href="manual.html">Manual do Utilizador</a> <br />
+					</div>
+				</div>
+			</p>
+		</div>
+
+		<script>
+			<!--No scripts yet-->
+		</script>
+	</body>
 </html>
