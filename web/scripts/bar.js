@@ -1,3 +1,6 @@
+/***** Variables *****/
+var timer;
+
 /***** Function declarations *****/
 function openBrowser(link) {
 	// makes all the social media buttons shrink
@@ -35,6 +38,13 @@ $("#countdown").countdown360({
     startOverAfterAdding: true,          // Start the timer over after time is added with addSeconds
     onComplete  : function() {}
 }).start()
+
+/***** Ordered elements list -related code *****/
+function showBanner(text) {
+	clearTimeout(timer);
+	$("#orderElementsListBanner").css("background","rgba(255,140,0,1)").css("visibility","visible").children(".orderName").text(text);
+	timer = setTimeout(function() { $("#orderElementsListBanner").css("background","rgba(0,0,0,0)").css("visibility","hidden") }, 3000);
+}
 
 /****** Code execution *******/
 $(document).ready(function(){

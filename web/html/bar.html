@@ -41,6 +41,12 @@
 				<div class="menuIcon" id="gamesIcon"></div>
 			</div>
 		</a>
+		<a href="#">
+			<div class="verticalBarButton" onclick="showSubMenu('overlayInformation')">
+				<p class="menuTitle">Information</p>
+				<div class="menuIcon" id="informationIcon"></div>
+			</div>
+		</a>
 		<div id="countdown"></div>
 	</div>
 	<div id="arrowIcon"></div>
@@ -85,43 +91,299 @@
 		<a onclick="openBrowser('')" class="fa fa-facebook"></a>
 		<a onclick="openBrowser('')" class="fa fa-twitter"></a>
 		<a onclick="openBrowser('https://www.instagram.com/pizza/?hl=en')" class="fa fa-instagram"></a>
-		<!-- <iframe src="https://www.w3schools.com" id="browSM"></iframe> -->
 	</div>
 
 	<div class="overlay" id="overlayMusicVideos">
 		<a onclick="openBrowser('')" class="fa fa-spotify"></a>
 		<a onclick="openBrowser('')" class="fa fa-youtube"></a>
 	</div>
-	<div class="overlay" id="overlayGames"> </div>
+	<div class="overlay" id="overlayGames"></div>
+
+	<div class="overlay" id="overlayInformation">
+		<div id="mapGoogle"></div>
+	</div>
 
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="../scripts/jquery.countdown360.js"></script>
 <script src="../scripts/bar.js"></script>
 
+
 <script>
-	var timer;
-
-	function showBanner(text) {
-		clearTimeout(timer);
-		var banner = document.getElementById("orderElementsListBanner");
-		banner.childNodes[3].innerText = text;
-		banner.style.visibility = "visible";
-		animateColorBanner(banner);
-		closeBanner(banner);
-	}
-
-	function animateColorBanner(banner) {
-		banner.style.background = 'rgba(' + 255 + ',' + 140 + ',' + 0 + ',' + 1 + ')';
-	}
-
-	function closeBanner(banner) {
-		timer = setTimeout(
-			function() {
-				banner.style.background = 'rgba(' + 0 + ',' + 0 + ',' + 0 + ',' + 0 + ')';
-				banner.style.visibility = "hidden";
-			}, 3000);
+	function myMap() {
+		var location = {lat:38.73727772078954,lng:-9.303122609853745};
+		var mapCanvas = document.getElementById("mapGoogle");
+		var mapOptions = { center: location, zoom: 13,
+		styles:[
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#212121"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#212121"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.country",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#bdbdbd"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.attraction",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#d56a00"
+      },
+      {
+        "visibility": "on"
+      },
+      {
+        "weight": 8
+      }
+    ]
+  },
+  {
+    "featureType": "poi.medical",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#880000"
+      },
+      {
+        "visibility": "on"
+      },
+      {
+        "weight": 8
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#008000"
+      },
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1b1b1b"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.place_of_worship",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#2c2c2c"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#8a8a8a"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#373737"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#3c3c3c"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway.controlled_access",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#4e4e4e"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#b05800"
+      },
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station.bus",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#ff8040"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station.rail",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#006fa4"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#3d3d3d"
+      }
+    ]
+  }
+]};
+		var map = new google.maps.Map(mapCanvas, mapOptions);
+		var marker = new google.maps.Marker({position:location,map:map});
 	}
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&callback=myMap"></script>
 </body>
 </html>

@@ -35,6 +35,3 @@
 * [ ] pede-se nome, idade, nif, morada, telemovel
 * [ ] registo de impressão digital (com botão para outros métodos de registo: pin)
 * [ ] para as notícias: interesses (com checbox)
-
-
-TESTING BRANCHES
