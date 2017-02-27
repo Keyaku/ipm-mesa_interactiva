@@ -131,26 +131,12 @@ div {
 	font-size: 30px;
 	padding: 20px 0 10px 0;
 }
-#taxiIcon { background-image: url("../images/icons/taxiWhite.svg"); }
-#UberIcon { background-image: url("../images/icons/uberWhite.svg"); }
-#publicTransportIcon { background-image: url("../images/icons/publictransportWhite.svg"); }
 #barIcon { background-image: url("../images/icons/barWhite.svg"); }
 #mallIcon { background-image: url("../images/icons/mallWhite.svg"); }
 #movietheaterIcon { background-image: url("../images/icons/movietheaterWhite.svg"); }
-
-.publictransportSubButton {
-	background-color: #333;
-	border: 1px solid white;
-	display: none;
-	text-align: center;
-	width: 150px;
-	height: 150px;
-}
-.publictransportSubButton:hover { background-color: darkorange; }
-#subwayIcon { background-image: url("../images/icons/subwayWhite.svg"); }
-#busIcon { background-image: url("../images/icons/busWhite.svg"); }
-#trainIcon { background-image: url("../images/icons/trainWhite.svg"); }
-
+#taxiIcon { background-image: url("../images/icons/taxiWhite.svg"); }
+#UberIcon { background-image: url("../images/icons/uberWhite.svg"); }
+#publicTransportIcon { background-image: url("../images/icons/publictransportWhite.svg"); }
 
 .informationSubMenu {
 	display: inline-block;
@@ -161,7 +147,7 @@ div {
 	color: white;
 	display: block;
 }
-#mapsDestinationInput{
+#mapsDestinationInput {
 	font-size: 20px;
 	color: black;
 	margin: 5px 0 5px 0;

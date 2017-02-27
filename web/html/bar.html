@@ -121,11 +121,11 @@
 
 		<div class="informationSubMenu">
 			<label class="informationSubMenuTitle">Call a ride</label>
-			<div class="informationButton">
+			<div class="informationButton" id="taxiButton">
 				<label class="subMenuTitle">Taxi</label>
 				<div class="submenuIcon" id="taxiIcon"></div>
 			</div>
-			<div class="informationButton">
+			<div class="informationButton" id="uberButton">
 				<label class="subMenuTitle">Uber</label>
 				<div class="submenuIcon" id="uberIcon"></div>
 			</div>
@@ -137,30 +137,14 @@
 				<label class="subMenuTitle">Public Transport</label>
 				<div class="submenuIcon" id="publictransportIcon"></div>
 			</div>
+			<div class="informationButton" id="carButton">
+				<label class="subMenuTitle">Car</label>
+				<div class="submenuIcon" id="uberIcon"></div>
+			</div>
 		</div>
 
-
-
-<!--
-		<div class="publictransportSubButton" id="subwayButton">
-			<label class="subMenuTitle">Subway</label>
-			<div class="submenuIcon" id="subwayIcon"></div>
-		</div>
-		<div class="publictransportSubButton" id="busButton">
-			<label class="subMenuTitle">Bus</label>
-			<div class="submenuIcon" id="busIcon"></div>
-		</div>
-		<div class="publictransportSubButton" id="trainButton">
-			<label class="subMenuTitle">Train</label>
-			<div class="submenuIcon" id="trainIcon"></div>
-		</div>
--->
 		<form><input id="mapsDestinationInput" type="text" name="destination"></form>
-
-		<iframe id="iframeMap"
-			src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&q=taguspark"
-			allowfullscreen>
-		</iframe>
+		<iframe id="iframeMap"src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&q=taguspark"></iframe>
 
 	</div>
 

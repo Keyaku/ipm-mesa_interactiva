@@ -1,13 +1,9 @@
 /***** Variables *****/
 var timer;
-var directionsService;
-var directionsDisplay;
-var map;
 
-var loc = {lat:38.73727772078954,lng:-9.303122609853745};
-
+var googleMapsKey = "?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo";
 var googleMapsOrigin = "&origin=taguspark";
-var googleMapsMode = "transit";
+var googleMapsMode = "driving";
 var googleMapsUnits = "&units=metric";
 
 /****** Code execution *******/
@@ -33,7 +29,9 @@ $(document).ready(function(){
 	//Google Maps search
 	$("#barButton").click(function() { searchMap("bar+taguspark"); });
 	$("#mallButton").click(function() { searchMap("centro+comercial+oeiras"); });
-	$("#mallButton").click(function() { searchMap("centro+comercial+oeiras"); });
+	$("#movietheaterButton").click(function() { searchMap("cinema+oeiras"); });
+	$("#carButton").click(function() { directionsMap($("#mapsDestinationInput").val(), "driving"); });
+	$("#publicTransportButton").click(function() { directionsMap($("#mapsDestinationInput").val(), "transit"); });
 
 });
 
@@ -81,6 +79,10 @@ function openBrowser(link) {
 
 /****** Google Maps code *******/
 function searchMap(keyWords) {
-	var url = "https://www.google.com/maps/embed/v1/search?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&q="+keyWords;
+	var url = "https://www.google.com/maps/embed/v1/search"+googleMapsKey+"&q="+keyWords;
+	$("#iframeMap").attr("src", url);
+}
+function directionsMap(destination, travelMode) {
+	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
 	$("#iframeMap").attr("src", url);
 }
