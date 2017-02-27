@@ -18,9 +18,9 @@ Quem vai utilizar o sistema?
 Que tarefas executam atualmente?
 	Tarefas atuais
 
-Que tarefas são desejávei?
+Que tarefas são desejáveis?
 	Novas tarefas
-	Funcionaliades desejadas no sistema que utilizam atualmente
+	Funcionalidades desejadas no sistema que utilizam atualmente
 
 Como se aprendem as tarefas?
 	Necessidade de ler instruções
