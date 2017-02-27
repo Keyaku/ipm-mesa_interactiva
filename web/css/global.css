@@ -1,6 +1,11 @@
-/* Palette: black, #333333, darkorange, lightgrey & white */
+/* Palette: black, #333, darkorange, lightgrey & white */
 
 /* Main types */
+body {
+	background-color: #333;
+	font-family: 'Raleway', sans-serif;
+}
+
 label {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
