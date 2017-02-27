@@ -14,6 +14,7 @@
 	<!--Links the css file-->
 	<link rel="stylesheet" type="text/css" href="../css/global.css">
 	<link rel="stylesheet" type="text/css" href="../css/bar.css">
+	<link rel="stylesheet" type="text/css" href="../css/global.css">
 </head>
 
 <body class="entertainmentPage">
@@ -31,15 +32,22 @@
 			</div>
 		</a>
 		<a href="#">
-			<div class="verticalBarButton" onclick="showSubMenu('overlayMusicVideos')">
-				<p class="menuTitle">Music and Videos</p>
-				<div class="menuIcon" id="musicvideoIcon"></div>
+			<div class="verticalBarButton" onclick="showSubMenu('overlayEntertainment')">
+				<p class="menuTitle">Entertainment</p>
+				<div class="menuIcon" id="entertainmentIcon1"></div>
+				<div class="menuIcon" id="entertainmentIcon2"></div>
 			</div>
 		</a>
 		<a href="#">
-			<div class="verticalBarButton" onclick="showSubMenu('overlayGames')">
-				<p class="menuTitle">Games</p>
-				<div class="menuIcon" id="gamesIcon"></div>
+			<div class="verticalBarButton" onclick="showSubMenu('overlayNews')">
+				<p class="menuTitle">News</p>
+				<div class="menuIcon" id="newsIcon"></div>
+			</div>
+		</a>
+		<a href="#">
+			<div class="verticalBarButton" onclick="showSubMenu('overlayInformation')">
+				<p class="menuTitle">Information</p>
+				<div class="menuIcon" id="informationIcon"></div>
 			</div>
 		</a>
 		<div id="countdown"></div>
@@ -86,43 +94,64 @@
 		<a onclick="openBrowser('')" class="fa fa-facebook"></a>
 		<a onclick="openBrowser('')" class="fa fa-twitter"></a>
 		<a onclick="openBrowser('https://www.instagram.com/pizza/?hl=en')" class="fa fa-instagram"></a>
-		<!-- <iframe src="https://www.w3schools.com" id="browSM"></iframe> -->
 	</div>
 
-	<div class="overlay" id="overlayMusicVideos">
+	<div class="overlay" id="overlayEntertainment">
 		<a onclick="openBrowser('')" class="fa fa-spotify"></a>
 		<a onclick="openBrowser('')" class="fa fa-youtube"></a>
 	</div>
-	<div class="overlay" id="overlayGames"> </div>
+	<div class="overlay" id="overlayNews"></div>
+
+	<div class="overlay" id="overlayInformation">
+
+		<div class="informationSubMenu">
+			<label class="informationSubMenuTitle">Search nearby</label>
+			<div class="informationButton" id="barButton">
+				<label class="subMenuTitle">Bar/Cafe</label>
+				<div class="submenuIcon" id="barIcon"></div>
+			</div>
+			<div class="informationButton" id="mallButton">
+				<label class="subMenuTitle">Mall</label>
+				<div class="submenuIcon" id="mallIcon"></div>
+			</div>
+			<div class="informationButton" id="movietheaterButton">
+				<label class="subMenuTitle">Movie Theater</label>
+				<div class="submenuIcon" id="movietheaterIcon"></div>
+			</div>
+		</div>
+
+		<div class="informationSubMenu">
+			<label class="informationSubMenuTitle">Call a ride</label>
+			<div class="informationButton" id="taxiButton">
+				<label class="subMenuTitle">Taxi</label>
+				<div class="submenuIcon" id="taxiIcon"></div>
+			</div>
+			<div class="informationButton" id="uberButton">
+				<label class="subMenuTitle">Uber</label>
+				<div class="submenuIcon" id="uberIcon"></div>
+			</div>
+		</div>
+
+		<div class="informationSubMenu">
+			<label class="informationSubMenuTitle">Get directions</label>
+			<div class="informationButton" id="publicTransportButton">
+				<label class="subMenuTitle">Public Transport</label>
+				<div class="submenuIcon" id="publictransportIcon"></div>
+			</div>
+			<div class="informationButton" id="carButton">
+				<label class="subMenuTitle">Car</label>
+				<div class="submenuIcon" id="uberIcon"></div>
+			</div>
+		</div>
+
+		<form><input id="mapsDestinationInput" type="text" name="destination"></form>
+		<iframe id="iframeMap"src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&q=taguspark"></iframe>
+
+	</div>
 
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="../scripts/jquery.countdown360.js"></script>
 <script src="../scripts/bar.js"></script>
-
-<script>
-	var timer;
-
-	function showBanner(text) {
-		clearTimeout(timer);
-		var banner = document.getElementById("orderElementsListBanner");
-		banner.childNodes[3].innerText = text;
-		banner.style.visibility = "visible";
-		animateColorBanner(banner);
-		closeBanner(banner);
-	}
-
-	function animateColorBanner(banner) {
-		banner.style.background = 'rgba(' + 255 + ',' + 140 + ',' + 0 + ',' + 1 + ')';
-	}
-
-	function closeBanner(banner) {
-		timer = setTimeout(
-			function() {
-				banner.style.background = 'rgba(' + 0 + ',' + 0 + ',' + 0 + ',' + 0 + ')';
-				banner.style.visibility = "hidden";
-			}, 3000);
-	}
-</script>
 </body>
 </html>

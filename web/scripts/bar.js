@@ -1,18 +1,39 @@
-/***** Function declarations *****/
-function openBrowser(link) {
-	// makes all the social media buttons shrink
-	$(".fa").css("height", "150px");
-	$(".fa").css("padding", "50px 40px 0 40px");
-	// makes the browser visible
-	$("#browSM").show();
-	// opens the correct page
-	$("#browSM").attr("src", link);
-}
+/***** Variables *****/
+var timer;
 
-function showSubMenu(menu) {
-	$(".overlay").hide() // Hide ALL submenus, just in case
-	$("#" + menu).show() // Show the appropriate submenu
-}
+var googleMapsKey = "?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo";
+var googleMapsOrigin = "&origin=taguspark";
+var googleMapsMode = "driving";
+var googleMapsUnits = "&units=metric";
+
+/****** Code execution *******/
+$(document).ready(function(){
+	// Showing default overlay
+	$("#overlayOrder").show();
+
+	// Activating arrow toggle
+	$("#arrowIcon").click(function() {
+		var menu = $('#mainMenu');
+		menu.toggle(!menu.is(':visible')); // Switches between hidden and shown
+		$(this).toggleClass("open");       // Enables rotation/flipping
+	});
+
+	// Activating order triggers
+	$('.orderIncrement').click(function() {
+		var counter = $(this).siblings('.orderNumber');
+    	counter.text(parseInt(counter.text()) + 1 + "x");
+    	var bannerText = $(this).siblings('.orderName').text();
+    	showBanner(bannerText);
+	});
+
+	//Google Maps search
+	$("#barButton").click(function() { searchMap("bar+taguspark"); });
+	$("#mallButton").click(function() { searchMap("centro+comercial+oeiras"); });
+	$("#movietheaterButton").click(function() { searchMap("cinema+oeiras"); });
+	$("#carButton").click(function() { directionsMap($("#mapsDestinationInput").val(), "driving"); });
+	$("#publicTransportButton").click(function() { directionsMap($("#mapsDestinationInput").val(), "transit"); });
+
+});
 
 /***** Timer-related code *****/
 $("#countdown").countdown360({
@@ -36,23 +57,32 @@ $("#countdown").countdown360({
     onComplete  : function() {}
 }).start()
 
-/****** Code execution *******/
-$(document).ready(function(){
-	// Showing default overlay
-	$("#overlayOrder").show();
+/***** Overlays code *****/
+function showSubMenu(menu) {
+	$(".overlay").hide() // Hide ALL submenus, just in case
+	$("#" + menu).css("display", "inline-block") // Show the appropriate submenu
+}
 
-	// Activating arrow toggle
-	$("#arrowIcon").click(function() {
-		var menu = $('#mainMenu');
-		menu.toggle(!menu.is(':visible')); // Switches between hidden and shown
-		$(this).toggleClass("open");       // Enables rotation/flipping
-	});
+/***** Ordered elements list -related code *****/
+function showBanner(text) {
+	clearTimeout(timer);
+	$("#orderElementsListBanner").css("background","rgba(255,140,0,1)").css("color","rgba(255,255,255,1)").children(".orderName").text(text);
+	timer = setTimeout(function() { $("#orderElementsListBanner").css("background","rgba(255,140,0,0)").css("color","rgba(255,255,255,0)") }, 3000);
+}
 
-	// Activating order triggers
-	$('.orderIncrement').click(function() {
-		var counter = $(this).siblings('.orderNumber');
-    	counter.text(parseInt(counter.text()) + 1 + "x");
-    	var bannerText = $(this).siblings('.orderName').text();
-    	showBanner(bannerText);
-	});
-});
+/***** Social Networks code *****/
+function openBrowser(link) {
+	// makes all the social media buttons shrink
+	$(".fa").css("height", "150px");
+	$(".fa").css("padding", "50px 40px 0 40px");
+}
+
+/****** Google Maps code *******/
+function searchMap(keyWords) {
+	var url = "https://www.google.com/maps/embed/v1/search"+googleMapsKey+"&q="+keyWords;
+	$("#iframeMap").attr("src", url);
+}
+function directionsMap(destination, travelMode) {
+	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
+	$("#iframeMap").attr("src", url);
+}
