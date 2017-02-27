@@ -110,7 +110,7 @@
 			<label class="subMenuTitle">Uber</label>
 			<div class="submenuIcon" id="uberIcon"></div>
 		</div>
-		<div class="informationButton" id="metroButton">
+		<div class="informationButton" id="publicTransportButton">
 			<label class="subMenuTitle">Public Transport</label>
 			<div class="submenuIcon" id="publictransportIcon"></div>
 		</div>
@@ -122,10 +122,30 @@
 			<label class="subMenuTitle">Mall</label>
 			<div class="submenuIcon" id="mallIcon"></div>
 		</div>
-		<div class="informationButton">
+		<div class="informationButton" id="movietheaterButton">
 			<label class="subMenuTitle">Movie Theater</label>
 			<div class="submenuIcon" id="movietheaterIcon"></div>
 		</div>
+
+
+<!-------------------------------------------------------->
+		<div style="display:block"></div>
+<!-------------------------------------------------------->
+
+
+		<div class="publictransportSubButton" id="subwayButton">
+			<label class="subMenuTitle">Subway</label>
+			<div class="submenuIcon" id="subwayIcon"></div>
+		</div>
+		<div class="publictransportSubButton" id="busButton">
+			<label class="subMenuTitle">Bus</label>
+			<div class="submenuIcon" id="busIcon"></div>
+		</div>
+		<div class="publictransportSubButton" id="trainButton">
+			<label class="subMenuTitle">Train</label>
+			<div class="submenuIcon" id="trainIcon"></div>
+		</div>
+
 		<div id="mapGoogle"></div>
 	</div>
 
@@ -133,39 +153,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="../scripts/jquery.countdown360.js"></script>
 <script src="../scripts/bar.js"></script>
+<script	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&callback=initMap&libraries=places"></script>
 
-
-<script>
-	var directionsService;
-	var directionsDisplay;
-	var loc;
-
-	$("#metroButton").click( function() { travel("amadora este estação de metro"); } );
-	$("#barButton").click( function() { travel("bar"); } );
-
-	function travel(dest) { calculateAndDisplayRoute(dest); }
-
-
-	function initMap() {
-		directionsService = new google.maps.DirectionsService;
-		directionsDisplay = new google.maps.DirectionsRenderer;
-		loc = {lat:38.73727772078954,lng:-9.303122609853745};
-		var map = new google.maps.Map(document.getElementById("mapGoogle"), { center: loc, zoom: 13, disableDefaultUI: true});
-		directionsDisplay.setMap(map);
-	}
-
-	function calculateAndDisplayRoute(dest) {
-		directionsService.route({
-			origin: loc,
-			destination: dest,
-			travelMode: 'WALKING'
-		}, function(response, status) {
-			if (status === 'OK') directionsDisplay.setDirections(response);
-			else window.alert('Directions request failed due to ' + status);
-		});
-	}
-</script>
-<script	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&callback=initMap"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&libraries=places">
 </body>
 </html>

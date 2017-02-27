@@ -143,3 +143,16 @@ div {
 #barIcon { background-image: url("../images/icons/barWhite.svg"); }
 #mallIcon { background-image: url("../images/icons/mallWhite.svg"); }
 #movietheaterIcon { background-image: url("../images/icons/movietheaterWhite.svg"); }
+
+.publictransportSubButton {
+	background-color: #333;
+	border: 1px solid white;
+	display: none;
+	text-align: center;
+	width: 150px;
+	height: 150px;
+}
+.publictransportSubButton:hover { background-color: darkorange; }
+#subwayIcon { background-image: url("../images/icons/subwayWhite.svg"); }
+#busIcon { background-image: url("../images/icons/busWhite.svg"); }
+#trainIcon { background-image: url("../images/icons/trainWhite.svg"); }
