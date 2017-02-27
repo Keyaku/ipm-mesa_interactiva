@@ -1,13 +1,3 @@
-a:hover { text-decoration: none; }
-a:focus { text-decoration: none; }
-a:focus:hover { text-decoration: none; }
-
-p {
-	color: black;
-	font-family: raleway, sans-serif;
-	margin: 0;
-}
-
 .entertainmentPage {
 	background-color: #333;
 	margin: 0;
@@ -17,6 +7,21 @@ p {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:focus:hover { text-decoration: none; }
+p {
+	color: black;
+	font-family: raleway, sans-serif;
+	margin: 0;
+}
+
+.menuIcon, .subMenuIcon {
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 48px;
 }
 
 .verticalBar {
@@ -32,19 +37,12 @@ p {
 	width: 100%;
 	height: 150px;
 }
-.verticalBarButton:hover {
-	background-color: darkorange;
-}
+.verticalBarButton:hover { background-color: darkorange; }
 .verticalBarButton:hover > div.menuIcon { filter: invert(100%); }
 .verticalBarButton:hover > p { color: white; }
 .menuTitle {
 	font-size: 30px;
 	padding: 20px 0 10px 0;
-}
-.menuIcon {
-	background-position: center;
-	background-repeat: no-repeat;
-	height: 48px;
 }
 #orderIcon { background-image: url("../images/icons/pizzaWhite.svg"); }
 #socialIcon { background-image: url("../images/icons/shareWhite.svg"); }
@@ -70,7 +68,10 @@ p {
 	transform: scaleX(-1);
 }
 
-.overlay { display: none; }
+.overlay {
+	display: none;
+	width: 1550px;
+}
 
 /*order overlay*/
 .orderElementsList {
@@ -132,25 +133,27 @@ p {
 #mapGoogle {
 	box-shadow: 0 5px 20px 0 rgba(0,0,0,1);
 	color: white;
+	margin: 30px 0 0 0;
 	width: 1550px;
 	height: 900px;
 }
 .informationButton {
 	background-color: grey;
-	display: inline-block;;
+	display: inline-block;
+	margin: 0 1px 1px 0;
 	text-align: center;
-	text-overflow: clip;
-	min-width: 250px;
-	height: 300px;
+	width: 240px;
+	height: 150px;
 }
+.informationButton:hover { background-color: darkorange; }
+.informationButton:hover > div.subMenuIcon { filter: invert(100%); }
 .subMenuTitle {
 	color: white;
-	font-family: raleway, sans-serif;
 	font-size: 30px;
 	padding: 20px 0 10px 0;
 }
 #taxiIcon { background-image: url("../images/icons/taxiWhite.svg"); }
-#UberIcon { background-image: url("../images/icons/taxiWhite.svg"); }
+#UberIcon { background-image: url("../images/icons/uberWhite.svg"); }
 #publicTransportIcon { background-image: url("../images/icons/publictransportWhite.svg"); }
 #barIcon { background-image: url("../images/icons/barWhite.svg"); }
 #mallIcon { background-image: url("../images/icons/mallWhite.svg"); }
