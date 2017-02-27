@@ -114,12 +114,6 @@ div {
 .fa-spotify { background: #68CE02; }
 .fa-youtube { background: #e52d27; }
 
-/*information overlay*/ #mapGoogle {
-	box-shadow: 0 5px 20px 0 rgba(0,0,0,1);
-	margin: 30px 0 0 0;
-	width: 1550px;
-	height: 750px;
-}
 .informationButton {
 	background-color: grey;
 	border: 1px solid white;
@@ -156,3 +150,26 @@ div {
 #subwayIcon { background-image: url("../images/icons/subwayWhite.svg"); }
 #busIcon { background-image: url("../images/icons/busWhite.svg"); }
 #trainIcon { background-image: url("../images/icons/trainWhite.svg"); }
+
+
+.informationSubMenu {
+	display: inline-block;
+	margin: 0 10px 0 0;
+	text-align: center;
+}
+.informationSubMenuTitle {
+	color: white;
+	display: block;
+}
+#mapsDestinationInput{
+	font-size: 20px;
+	color: black;
+	margin: 5px 0 5px 0;
+	width: 300px;
+}
+#iframeMap {
+	border: 0;
+	box-shadow: 0 10px 10px 0 black;
+	width: 1550px;
+	height: 650px;
+}

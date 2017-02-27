@@ -3,8 +3,12 @@ var timer;
 var directionsService;
 var directionsDisplay;
 var map;
-var service;
+
 var loc = {lat:38.73727772078954,lng:-9.303122609853745};
+
+var googleMapsOrigin = "&origin=taguspark";
+var googleMapsMode = "transit";
+var googleMapsUnits = "&units=metric";
 
 /***** Function declarations *****/
 function openBrowser(link) {
@@ -75,63 +79,14 @@ $(document).ready(function(){
 	$("#publicTransportButton").click(function() {
 		$(".publictransportSubButton").toggle(".visible").css("display", "inline-block");
 	});
-
-
-
 	//Activates the Google Maps searches for the Public Transport submenu
 	$("#subwayButton").click(function() {
-		//travel("amadora este estação de metro", 'WALKING');
-		console.log("SUBWAY");
-
-		var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
-		var request = { location: pyrmont, radius: '500', query: 'restaurant' };
-		service = new google.maps.places.PlacesService(map);
-		service.textSearch(request, callback);
-
-
+		var destination = $("#mapsDestinationInput").val();
+		if (destination != "") {
+			var url = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo"+googleMapsOrigin+"&destination="+destination+"&mode=transit"+googleMapsUnits;
+			$("#iframeMap").attr("src", url);
+		}
 	});
-	$("#busButton").click(function() {
-		travel("amadora este estação de metro", 'WALKING');
-		console.log("BUS");
-	});
-	$("#trainButton").click(function() {
-		console.log($(this).children(".subMenuTitle").text());
-	});
+	$("#busButton").click(function() {  });
+	$("#trainButton").click(function() {  });
 });
-
-
-var service;
-
-
-/****** Google Maps API interface *******/
-function initMap() {
-	directionsService = new google.maps.DirectionsService;
-	directionsDisplay = new google.maps.DirectionsRenderer;
-	var map = new google.maps.Map(document.getElementById("mapGoogle"), { center: loc, zoom: 13, disableDefaultUI: true});
-	directionsDisplay.setMap(map);
-}
-
-function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      var place = results[i];
-	  console.log(place);
-	  createMarker(results[i]);
-    }
-  }
-}
-
-function calculateAndDisplayRoute(dest, tMode) {
-	directionsService.route({
-		origin: loc,
-		destination: dest,
-		travelMode: tMode
-	}, function(response, status) {
-		if (status === 'OK') directionsDisplay.setDirections(response);
-		else window.alert('Directions request failed due to ' + status);
-	});
-}
-
-function travel(dest, travelMode) { calculateAndDisplayRoute(dest, 'WALKING'); }
-function nearby() { }
-function nearbySearch(keyWords) { }

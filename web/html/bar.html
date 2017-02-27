@@ -102,37 +102,46 @@
 	<div class="overlay" id="overlayNews"></div>
 
 	<div class="overlay" id="overlayInformation">
-		<div class="informationButton">
-			<label class="subMenuTitle">Taxi</label>
-			<div class="submenuIcon" id="taxiIcon"></div>
+
+		<div class="informationSubMenu">
+			<label class="informationSubMenuTitle">Search nearby</label>
+			<div class="informationButton" id="barButton">
+				<label class="subMenuTitle">Bar/Cafe</label>
+				<div class="submenuIcon" id="barIcon"></div>
+			</div>
+			<div class="informationButton" id="mallButton">
+				<label class="subMenuTitle">Mall</label>
+				<div class="submenuIcon" id="mallIcon"></div>
+			</div>
+			<div class="informationButton" id="movietheaterButton">
+				<label class="subMenuTitle">Movie Theater</label>
+				<div class="submenuIcon" id="movietheaterIcon"></div>
+			</div>
 		</div>
-		<div class="informationButton">
-			<label class="subMenuTitle">Uber</label>
-			<div class="submenuIcon" id="uberIcon"></div>
+
+		<div class="informationSubMenu">
+			<label class="informationSubMenuTitle">Call a ride</label>
+			<div class="informationButton">
+				<label class="subMenuTitle">Taxi</label>
+				<div class="submenuIcon" id="taxiIcon"></div>
+			</div>
+			<div class="informationButton">
+				<label class="subMenuTitle">Uber</label>
+				<div class="submenuIcon" id="uberIcon"></div>
+			</div>
 		</div>
-		<div class="informationButton" id="publicTransportButton">
-			<label class="subMenuTitle">Public Transport</label>
-			<div class="submenuIcon" id="publictransportIcon"></div>
-		</div>
-		<div class="informationButton" id="barButton">
-			<label class="subMenuTitle">Bar/Cafe</label>
-			<div class="submenuIcon" id="barIcon"></div>
-		</div>
-		<div class="informationButton" id="mallButton">
-			<label class="subMenuTitle">Mall</label>
-			<div class="submenuIcon" id="mallIcon"></div>
-		</div>
-		<div class="informationButton" id="movietheaterButton">
-			<label class="subMenuTitle">Movie Theater</label>
-			<div class="submenuIcon" id="movietheaterIcon"></div>
+
+		<div class="informationSubMenu">
+			<label class="informationSubMenuTitle">Get directions</label>
+			<div class="informationButton" id="publicTransportButton">
+				<label class="subMenuTitle">Public Transport</label>
+				<div class="submenuIcon" id="publictransportIcon"></div>
+			</div>
 		</div>
 
 
-<!-------------------------------------------------------->
-		<div style="display:block"></div>
-<!-------------------------------------------------------->
 
-
+<!--
 		<div class="publictransportSubButton" id="subwayButton">
 			<label class="subMenuTitle">Subway</label>
 			<div class="submenuIcon" id="subwayIcon"></div>
@@ -145,15 +154,19 @@
 			<label class="subMenuTitle">Train</label>
 			<div class="submenuIcon" id="trainIcon"></div>
 		</div>
+-->
+		<form><input id="mapsDestinationInput" type="text" name="destination"></form>
 
-		<div id="mapGoogle"></div>
+		<iframe id="iframeMap"
+			src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&q=taguspark"
+			allowfullscreen>
+		</iframe>
+
 	</div>
 
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="../scripts/jquery.countdown360.js"></script>
 <script src="../scripts/bar.js"></script>
-<script	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&callback=initMap&libraries=places"></script>
-
 </body>
 </html>
