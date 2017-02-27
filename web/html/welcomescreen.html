@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome Screen</title>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <style type="text/css">
+            
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background-color: black;
+            }
+
+            .welcomeList {
+                list-style: none;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+				transform: translate(-50%, -50%);
+            }
+
+            .welcomeList li {
+                display: inline-block;
+                margin-right: 50px;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 300;
+                font-size: 40px;
+                color: rgba(255, 255, 255, 1);
+                transition: all 3s ease;
+            }
+
+            .welcomeList.hidden li {
+                opacity: 0;
+            }
+            .welcomeList.hidden li:nth-child(1) {
+            	transform: translate(-200px, -100px)
+            }
+            .welcomeList.hidden li:nth-child(2) {
+            	transform: translate(20px, 90px)
+            }
+            .welcomeList.hidden li:nth-child(3) {
+            	transform: translate(-150px, -80px)
+            }    
+            .welcomeList.hidden li:nth-child(4) {
+            	transform: translate(10px, -200px)
+            }
+            .welcomeList.hidden li:nth-child(5) {
+            	transform: translate(-300px, 200px)
+            } 
+            .welcomeList.hidden li:nth-child(6) {
+            	transform: translate(20px, -20px)
+            }
+            .welcomeList.hidden li:nth-child(7) {
+            	transform: translate(30px, 300px)
+            }
+
+            .paradizia {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);           	
+            }
+                    
+        </style>
+
+    </head>
+
+    <body>
+
+		<img class="paradizia" src="../images/paradiziaLogo.png" width="250" height="250" /> 
+		   	
+        <ul class="welcomeList hidden">
+            <li>W</li>
+            <li>E</li>
+            <li>L</li>
+            <li>C</li>
+            <li>O</li>
+            <li>M</li>
+            <li>E</li>
+        </ul>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            
+            $('.paradizia').fadeOut(2500);     
+
+            setTimeout(function() {
+                $('.welcomeList').removeClass('hidden').fadeOut(5200);
+            }, 2700);
+            
+            setTimeout(function() {
+            	window.location.replace("bar.html");
+            }, 5300);
+
+        </script>
+    </body>
+</html>
