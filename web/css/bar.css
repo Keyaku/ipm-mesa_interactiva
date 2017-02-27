@@ -17,6 +17,12 @@ p {
 	font-family: raleway, sans-serif;
 	margin: 0;
 }
+label {
+	color: black;
+	font-family: raleway, sans-serif;
+	font-weight: normal;
+	margin: 0;
+}
 
 .menuIcon, .subMenuIcon {
 	background-position: center;
@@ -70,6 +76,7 @@ p {
 
 .overlay {
 	display: none;
+	font-size: 0px;
 	width: 1550px;
 }
 
@@ -139,6 +146,7 @@ p {
 }
 .informationButton {
 	background-color: grey;
+	border: 1px solid white;
 	display: inline-block;
 	text-align: center;
 	width: 240px;

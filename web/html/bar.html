@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -13,6 +13,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 	<!--Links the css file-->
 	<link rel="stylesheet" type="text/css" href="../css/bar.css">
+	<link rel="stylesheet" type="text/css" href="../css/global.css">
 </head>
 
 <body class="entertainmentPage">
@@ -102,27 +103,27 @@
 
 	<div class="overlay" id="overlayInformation">
 		<div class="informationButton">
-			<p class="subMenuTitle">Taxi</p>
+			<label class="subMenuTitle">Taxi</label>
 			<div class="submenuIcon" id="taxiIcon"></div>
 		</div>
 		<div class="informationButton">
-			<p class="subMenuTitle">Uber</p>
+			<label class="subMenuTitle">Uber</label>
 			<div class="submenuIcon" id="uberIcon"></div>
 		</div>
 		<div class="informationButton">
-			<p class="subMenuTitle">Public Transport</p>
+			<label class="subMenuTitle">Public Transport</label>
 			<div class="submenuIcon" id="publictransportIcon"></div>
 		</div>
 		<div class="informationButton">
-			<p class="subMenuTitle">Find Bar/Cafe</p>
+			<label class="subMenuTitle">Find Bar/Cafe</label>
 			<div class="submenuIcon" id="barIcon"></div>
 		</div>
-		<div class="informationButton">
-			<p class="subMenuTitle">Mall</p>
+		<div class="informationButton" onclick="calculateAndDisplayRoute()">
+			<label class="subMenuTitle">Mall</label>
 			<div class="submenuIcon" id="mallIcon"></div>
 		</div>
 		<div class="informationButton">
-			<p class="subMenuTitle">Movie Theater</p>
+			<label class="subMenuTitle">Movie Theater</label>
 			<div class="submenuIcon" id="movietheaterIcon"></div>
 		</div>
 		<div id="mapGoogle"></div>
@@ -135,14 +136,39 @@
 
 
 <script>
-	function myMap() {
-		var location = {lat:38.73727772078954,lng:-9.303122609853745};
-		var mapCanvas = document.getElementById("mapGoogle");
-		var mapOptions = { center: location, zoom: 13, disableDefaultUI: true};
-		var map = new google.maps.Map(mapCanvas, mapOptions);
-		var marker = new google.maps.Marker({position:location,map:map});
+	var directionsService;
+	var directionsDisplay;
+	var location;
+
+	function initMap() {
+		directionsService = new google.maps.DirectionsService;
+		directionsDisplay = new google.maps.DirectionsRenderer;
+		location = {lat:38.73727772078954,lng:-9.303122609853745};
+		var map = new google.maps.Map(document.getElementById("mapGoogle"), { center: location, zoom: 13, disableDefaultUI: true});
+		directionsDisplay.setMap(map);
+	}
+
+	function calculateAndDisplayRoute() {
+		directionsService.route({
+			origin: location,
+			destination: "st louis, mo",
+			travelMode: 'DRiVING'
+		}, function(response, status) {
+			if (status === 'OK') {
+				directionsDisplay.setDirections(response);
+			} else {
+				window.alert('Directions request failed due to ' + status);
+			}
+		});
+	}
+
+
+
+
+	function displayRoute() {
+		calculateAndDisplayRoute();
 	}
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&callback=initMap"></script>
 </body>
 </html>
