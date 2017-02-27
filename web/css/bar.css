@@ -58,14 +58,14 @@ p {
 	height: 48px;
 }
 
-#orderIcon { background-image: url("../images/icons/pizzaWhite.svg"); }
-#socialIcon { background-image: url("../images/icons/shareWhite.svg"); }
-#musicvideoIcon { background-image: url("../images/icons/musicWhite.svg"); }
-#gamesIcon { background-image: url("../images/icons/gamesWhite.svg"); }
+#orderIcon { background-image: url("../img/icons/pizzaWhite.svg"); }
+#socialIcon { background-image: url("../img/icons/shareWhite.svg"); }
+#musicvideoIcon { background-image: url("../img/icons/musicWhite.svg"); }
+#gamesIcon { background-image: url("../img/icons/gamesWhite.svg"); }
 
 /* arrow that toggles the visibility of the vertical bar */
 #arrowIcon {
-	background-image: url("../images/icons/arrowLeftWhite.svg");
+	background-image: url("../img/icons/arrowLeftWhite.svg");
 	background-position: center;
 	background-repeat: no-repeat;
 	float: left;
