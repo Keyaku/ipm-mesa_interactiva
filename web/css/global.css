@@ -1,4 +1,11 @@
+/* Palette: black, #333, darkorange, lightgrey & white */
+
 /* Main types */
+body {
+	background-color: #333;
+	font-family: 'Raleway', sans-serif;
+}
+
 label {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -10,7 +17,9 @@ label {
 
 /* Helper classes */
 .wrapper {
+	align-items: center;
+	justify-content: center;
 	max-width: 960px;
-	margin: 3%;
+	margin: 0 auto;
 	padding: 0 10px;
 }

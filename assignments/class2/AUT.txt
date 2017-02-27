@@ -1,0 +1,60 @@
+/*INFORMAÇÃO DEMOGRÁFICA*/
+Sexo (macho ou fêmea)
+Idade (intervalos de valor)
+Posse de smartphone, tablet ou PC
+Frequência de uma refeição fora de casa (intervalos de valor por mês)
+
+/*QUESTÕES GENÉRICAS*/
+
+/*QUESTÕES SOBRE AS FUNCIONALIDADES (tanto planeadas como hipotéticas)*/
+
+
+/*AS 11 PERGUNTAS - depois vê-se onde são colocadas*/
+Quem vai utilizar o sistema?
+	Faixa etária  - obtida anteriormente
+	Hábitos de utilização e preferências
+	Capacidades
+
+Que tarefas executam atualmente?
+	Tarefas atuais
+
+Que tarefas são desejáveis?
+	Novas tarefas
+	Funcionalidades desejadas no sistema que utilizam atualmente
+
+Como se aprendem as tarefas?
+	Necessidade de ler instruções
+	Necessidade de perguntar a outra pessoa
+	Necessidade de experimentar
+	Necessidade de treino
+	É necessário saber ler?
+
+Onde são desempenhadas as tarefas?
+	Ambiente físico
+	Condições desses ambientes
+
+Qual a relação entre o utilizador e a informação?
+	Necessário acesso a dados
+	Necessário armazentamento de dados
+	Dados comuns (recomendações de outros utilizadores)
+	Tipo de acesso (remoto, local, restrito)
+
+Que outros instrumentos tem o utilizador?
+	Aplicações / instrumentos auxiliares
+
+Como comunicam os utilizadores entre si?
+	Existe a necessidade de comunicar com outros utilizadores
+	Existe hierarquia na comunicação
+	Mecanismos de comunição
+	Funcionalidades para facilitar a comunicação
+
+Qual a frequência de desempenho das tarefas?
+	Frequência do desempenho das tarefas - obtida anteriormente
+
+Quais as restrições de tempo impostas?
+	Duração aceitável das tarefas
+	Facilidade de cometer errors
+
+Que acontece se algo correr mal?
+	Reação a erros
+	Estratégias de continguência

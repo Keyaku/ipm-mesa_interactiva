@@ -1,9 +1,4 @@
-/* Palette: black, #333333, darkorange, lightgrey & white */
-
 body {
-	background-color: #333333;
-	font: initial;
-	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
 }
 
@@ -20,7 +15,7 @@ h1 {
 
 h4 {
 	background-color: darkgrey;
-	color: #333333;
+	color: #333;
 	font-size: 16px;
 	padding: 4pt 0;
 	text-align: center;
@@ -36,7 +31,7 @@ span {
 }
 
 a {
-	color: #333333;
+	color: #333;
 }
 a:hover {
 	color: darkorange;
@@ -78,8 +73,18 @@ input[type="text"]     { width: 100%; }
 input[type="password"] { width: 50%; }
 input[type="date"]     { width: 30%; }
 input[type="checkbox"] { margin: 5pt; }
+input[type="radio"]    { margin: 5pt; }
 
-label {
-	color: #333333;
-	padding-left: 1%;
+/* ID styling */
+#payment input {
+	width: 50%;
+}
+
+#paymentMethod {
+	display: block;
+}
+
+/* Class styling */
+.wrapper {
+	margin: 3%;
 }
