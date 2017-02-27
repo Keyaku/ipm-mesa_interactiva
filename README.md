@@ -1,3 +1,3 @@
-# IPM 2016/2017 - Grupo XX
+# IPM 2017 - Grupo 25T
 
 Testing our design skills.
