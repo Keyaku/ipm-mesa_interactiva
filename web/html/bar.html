@@ -110,15 +110,15 @@
 			<label class="subMenuTitle">Uber</label>
 			<div class="submenuIcon" id="uberIcon"></div>
 		</div>
-		<div class="informationButton">
+		<div class="informationButton" id="metroButton">
 			<label class="subMenuTitle">Public Transport</label>
 			<div class="submenuIcon" id="publictransportIcon"></div>
 		</div>
-		<div class="informationButton">
+		<div class="informationButton" id="barButton">
 			<label class="subMenuTitle">Find Bar/Cafe</label>
 			<div class="submenuIcon" id="barIcon"></div>
 		</div>
-		<div class="informationButton" onclick="calculateAndDisplayRoute()">
+		<div class="informationButton" id="mallButton">
 			<label class="subMenuTitle">Mall</label>
 			<div class="submenuIcon" id="mallIcon"></div>
 		</div>
@@ -140,6 +140,13 @@
 	var directionsDisplay;
 	var loc;
 
+	$("#metroButton").click( function() { travel("amadora este estação de metro"); } );
+	$("#barButton").click( function() { travel("bar"); } );
+
+
+	function travel(dest) { calculateAndDisplayRoute(dest); }
+
+
 	function initMap() {
 		directionsService = new google.maps.DirectionsService;
 		directionsDisplay = new google.maps.DirectionsRenderer;
@@ -148,24 +155,18 @@
 		directionsDisplay.setMap(map);
 	}
 
-	function calculateAndDisplayRoute() {
+	function calculateAndDisplayRoute(dest) {
 		directionsService.route({
 			origin: loc,
-			destination: "campo grande",
-			travelMode: 'DRIVING'
+			destination: dest,
+			travelMode: 'WALKING'
 		}, function(response, status) {
-			if (status === 'OK') {
-				directionsDisplay.setDirections(response);
-			} else {
-				window.alert('Directions request failed due to ' + status);
-			}
+			if (status === 'OK') directionsDisplay.setDirections(response);
+			else window.alert('Directions request failed due to ' + status);
 		});
-	}
-
-	function displayRoute() {
-		calculateAndDisplayRoute();
 	}
 </script>
 <script	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&libraries=places">
 </body>
 </html>
