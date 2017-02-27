@@ -136,23 +136,23 @@
 
 
 <script>
-/*	var directionsService;
+	var directionsService;
 	var directionsDisplay;
-	var location;
+	var loc;
 
 	function initMap() {
 		directionsService = new google.maps.DirectionsService;
 		directionsDisplay = new google.maps.DirectionsRenderer;
-		location = {lat:38.73727772078954,lng:-9.303122609853745};
-		var map = new google.maps.Map(document.getElementById("mapGoogle"), { center: location, zoom: 13, disableDefaultUI: true});
+		loc = {lat:38.73727772078954,lng:-9.303122609853745};
+		var map = new google.maps.Map(document.getElementById("mapGoogle"), { center: loc, zoom: 13, disableDefaultUI: true});
 		directionsDisplay.setMap(map);
 	}
 
 	function calculateAndDisplayRoute() {
 		directionsService.route({
-			origin: location,
-			destination: "st louis, mo",
-			travelMode: 'DRiVING'
+			origin: loc,
+			destination: "campo grande",
+			travelMode: 'DRIVING'
 		}, function(response, status) {
 			if (status === 'OK') {
 				directionsDisplay.setDirections(response);
@@ -162,16 +162,10 @@
 		});
 	}
 
-
-
-
 	function displayRoute() {
 		calculateAndDisplayRoute();
 	}
-
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&callback=initMap"
-*/
 </script>
-
+<script	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&callback=initMap"></script>
 </body>
 </html>
