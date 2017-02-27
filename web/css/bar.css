@@ -12,29 +12,26 @@
 a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
 a:focus:hover { text-decoration: none; }
-p {
-	color: black;
-	font-family: raleway, sans-serif;
-	margin: 0;
-}
-label {
+p, label {
 	color: black;
 	font-family: raleway, sans-serif;
 	font-weight: normal;
+	font-size: 30px;
 	margin: 0;
 }
 
-.menuIcon, .subMenuIcon {
+div {
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 48px;
 }
+
+.menuIcon, .subMenuIcon { height: 48px; }
 
 .verticalBar {
 	background-color: black;
 	float: left;
 	text-align: center;
-	width: 300px;
+	width: 250px;
 	height: 100%;
 }
 .verticalBarButton {
@@ -44,12 +41,9 @@ label {
 	height: 150px;
 }
 .verticalBarButton:hover { background-color: darkorange; }
-.verticalBarButton:hover > div.menuIcon { filter: invert(100%); }
 .verticalBarButton:hover > p { color: white; }
-.menuTitle {
-	font-size: 30px;
-	padding: 20px 0 10px 0;
-}
+.verticalBarButton:hover > div.menuIcon { filter: invert(100%); }
+.menuTitle { padding: 20px 0 10px 0; }
 #orderIcon { background-image: url("../images/icons/pizzaWhite.svg"); }
 #socialIcon { background-image: url("../images/icons/shareWhite.svg"); }
 #entertainmentIcon1 { background-image: url("../images/icons/musicWhite.svg"); display: inline-block; width: 48px;}
@@ -57,24 +51,18 @@ label {
 #newsIcon { background-image: url("../images/icons/worldWhite.svg"); }
 #informationIcon { background-image: url("../images/icons/navigationWhite.svg"); }
 
-#countdown { margin: 50px 0 0 0; }
+/*countdown for the order ETA*/ #countdown { margin: 50px 0 0 0; }
 
 /* arrow that toggles the visibility of the vertical bar */
 #arrowIcon {
 	background-image: url("../images/icons/arrowLeftWhite.svg");
-	background-position: center;
-	background-repeat: no-repeat;
 	float: left;
 	width: 48px;
 	height: 100%;
 }
-#arrowIcon.open {
-	-ms-transform: scaleX(-1);
-	-webkit-transform: scaleX(-1);
-	transform: scaleX(-1);
-}
+#arrowIcon.open { transform: scaleX(-1); }
 
-.overlay {
+/*overlay css*/ .overlay {
 	display: none;
 	font-size: 0px;
 	width: 1550px;
@@ -100,15 +88,10 @@ label {
 .orderIncrement:active { color: black; }
 #orderElementsListBanner {
 	background-color: rgba(0,0,0,0);
+	color: rgba(255,255,225,0);
 	height: 70px;
 	text-align: center;
-	visibility: hidden;
 	transition: all 300ms linear;
-}
-#orderElementsListBanner > td {
-	color: white;
-	font-size: 20px;
-	font-weight: bolder;
 }
 
 /*social media overlay*/
@@ -117,29 +100,22 @@ label {
 	font-size: 60px;
 	padding: 120px 40px 120px 40px;
 	text-align: center;
-	text-decoration: none;
+	transition: 0.3s linear;
 	width: 200px;
 	height: 300px;
-	transition: 0.5s linear;
 }
 .fa:hover { color: #333; }
-.fa:focus {
-	color: white;
-	text-decoration: none;
-}
-.fa:focus:hover {color: #333;}
 
 .fa-facebook { background: #3B5998; }
 .fa-twitter { background: #55ACEE; }
 .fa-instagram { background: #125688; }
 
+/*entertainment overlay*/
 .fa-spotify { background: #68CE02; }
 .fa-youtube { background: #e52d27; }
 
-/*information overlay*/
-#mapGoogle {
+/*information overlay*/ #mapGoogle {
 	box-shadow: 0 5px 20px 0 rgba(0,0,0,1);
-	color: white;
 	margin: 30px 0 0 0;
 	width: 1550px;
 	height: 750px;
@@ -148,9 +124,11 @@ label {
 	background-color: grey;
 	border: 1px solid white;
 	display: inline-block;
-	text-align: center;
-	width: 240px;
 	height: 150px;
+	min-width: 150px;
+	max-width: 250px;
+	padding: 0 10px 0 10px;
+	text-align: center;
 }
 .informationButton:hover { background-color: darkorange; }
 .informationButton:hover > div.subMenuIcon { filter: invert(100%); }
