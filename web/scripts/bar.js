@@ -10,21 +10,32 @@ var googleMapsOrigin = "&origin=taguspark";
 var googleMapsMode = "transit";
 var googleMapsUnits = "&units=metric";
 
-/***** Function declarations *****/
-function openBrowser(link) {
-	// makes all the social media buttons shrink
-	$(".fa").css("height", "150px");
-	$(".fa").css("padding", "50px 40px 0 40px");
-	// makes the browser visible
-	$("#browSM").show();
-	// opens the correct page
-	$("#browSM").attr("src", link);
-}
+/****** Code execution *******/
+$(document).ready(function(){
+	// Showing default overlay
+	$("#overlayOrder").show();
 
-function showSubMenu(menu) {
-	$(".overlay").hide() // Hide ALL submenus, just in case
-	$("#" + menu).css("display", "inline-block") // Show the appropriate submenu
-}
+	// Activating arrow toggle
+	$("#arrowIcon").click(function() {
+		var menu = $('#mainMenu');
+		menu.toggle(!menu.is(':visible')); // Switches between hidden and shown
+		$(this).toggleClass("open");       // Enables rotation/flipping
+	});
+
+	// Activating order triggers
+	$('.orderIncrement').click(function() {
+		var counter = $(this).siblings('.orderNumber');
+    	counter.text(parseInt(counter.text()) + 1 + "x");
+    	var bannerText = $(this).siblings('.orderName').text();
+    	showBanner(bannerText);
+	});
+
+	//Google Maps search
+	$("#barButton").click(function() { searchMap("bar+taguspark"); });
+	$("#mallButton").click(function() { searchMap("centro+comercial+oeiras"); });
+	$("#mallButton").click(function() { searchMap("centro+comercial+oeiras"); });
+
+});
 
 /***** Timer-related code *****/
 $("#countdown").countdown360({
@@ -48,6 +59,12 @@ $("#countdown").countdown360({
     onComplete  : function() {}
 }).start()
 
+/***** Overlays code *****/
+function showSubMenu(menu) {
+	$(".overlay").hide() // Hide ALL submenus, just in case
+	$("#" + menu).css("display", "inline-block") // Show the appropriate submenu
+}
+
 /***** Ordered elements list -related code *****/
 function showBanner(text) {
 	clearTimeout(timer);
@@ -55,38 +72,15 @@ function showBanner(text) {
 	timer = setTimeout(function() { $("#orderElementsListBanner").css("background","rgba(255,140,0,0)").css("color","rgba(255,255,255,0)") }, 3000);
 }
 
-/****** Code execution *******/
-$(document).ready(function(){
-	// Showing default overlay
-	$("#overlayOrder").show();
+/***** Social Networks code *****/
+function openBrowser(link) {
+	// makes all the social media buttons shrink
+	$(".fa").css("height", "150px");
+	$(".fa").css("padding", "50px 40px 0 40px");
+}
 
-	// Activating arrow toggle
-	$("#arrowIcon").click(function() {
-		var menu = $('#mainMenu');
-		menu.toggle(!menu.is(':visible')); // Switches between hidden and shown
-		$(this).toggleClass("open");       // Enables rotation/flipping
-	});
-
-	// Activating order triggers
-	$('.orderIncrement').click(function() {
-		var counter = $(this).siblings('.orderNumber');
-    	counter.text(parseInt(counter.text()) + 1 + "x");
-    	var bannerText = $(this).siblings('.orderName').text();
-    	showBanner(bannerText);
-	});
-
-	//Activating public transport submenu in "information" overlay
-	$("#publicTransportButton").click(function() {
-		$(".publictransportSubButton").toggle(".visible").css("display", "inline-block");
-	});
-	//Activates the Google Maps searches for the Public Transport submenu
-	$("#subwayButton").click(function() {
-		var destination = $("#mapsDestinationInput").val();
-		if (destination != "") {
-			var url = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo"+googleMapsOrigin+"&destination="+destination+"&mode=transit"+googleMapsUnits;
-			$("#iframeMap").attr("src", url);
-		}
-	});
-	$("#busButton").click(function() {  });
-	$("#trainButton").click(function() {  });
-});
+/****** Google Maps code *******/
+function searchMap(keyWords) {
+	var url = "https://www.google.com/maps/embed/v1/search?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&q="+keyWords;
+	$("#iframeMap").attr("src", url);
+}
