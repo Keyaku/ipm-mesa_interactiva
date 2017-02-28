@@ -26,6 +26,11 @@ main {
 	text-align: center;
 }
 
+section {
+	margin-top: 15pt;
+	margin-bottom: 15pt;
+}
+
 #logoIST {
 	background-image: url("../img/about/logoIST.svg");
 	background-repeat: no-repeat;
@@ -98,9 +103,15 @@ main {
 	font-size: 26pt;
 }
 .links a {
-	margin-left: 2.5%;
+	padding: 1pt 5pt;
 	text-decoration: none;
 }
 .links a:hover {
 	color: darkorange;
+}
+.links a:not(.hidden) { /* Looks for any hyperlink under .links that's not hidden */
+	border-left: 1px solid white;
+}
+.links a:first-of-type { /* Considers the first hyperlink under .links */
+	border-left: none;
 }
