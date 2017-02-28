@@ -25,43 +25,36 @@ main {
 	justify-content: center;
 	text-align: center;
 }
-main h1 {
-	color: orange;
-	font-size: 32pt;
-	margin: 20pt auto;
+
+#logoIST {
+	background-image: url("../img/about/logoIST.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin:10pt;
+
+	position: fixed;
+	top:0;
+	left:0;
+	width:148.28pt;
+	height:57.42pt;
 }
+
 
 .titleSubtitle {
 	user-select: none;
 	cursor: default;
 
-	color: darkorange;
+	color: lightgrey;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
 }
 .titleSubtitle h1 {
-	font-size: 50pt;
+	font-size: 75pt;
 }
 .titleSubtitle p {
 	font-size: 14pt;
-}
-
-.links {
-	color: white;
-	margin: 50pt;
-}
-.links h2 {
-	color: orange;
-	font-size: 26pt;
-}
-.links a {
-	margin-left: 2.5%;
-	text-decoration: none;
-}
-.links a:hover {
-	color: darkorange;
 }
 
 .studentName {
@@ -84,19 +77,6 @@ main h1 {
 	zoom: 120%;
 }
 
-#logoIST {
-	background-image: url("../img/about/logoIST.svg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin:10pt;
-
-	position: fixed;
-	top:0;
-	left:0;
-	width:148.28pt;
-	height:57.42pt;
-}
-
 .team {
 	color: white;
 	margin-top:10pt;
@@ -107,4 +87,20 @@ main h1 {
 }
 .team td {
 	text-align: center;
+}
+
+.links {
+	color: white;
+	margin: 50pt;
+}
+.links h2 {
+	color: darkorange;
+	font-size: 26pt;
+}
+.links a {
+	margin-left: 2.5%;
+	text-decoration: none;
+}
+.links a:hover {
+	color: darkorange;
 }

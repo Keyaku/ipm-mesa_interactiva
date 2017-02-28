@@ -1,0 +1,1 @@
+$('#logoIST').followTo("header");
