@@ -1,5 +1,5 @@
-// Sliding logo along the header
-$('#logoIST').followAlong("header");
+// Sliding logo along its parent's height
+$('#logoIST').followAlong();
 
 // Arranging subsections, considering what's hidden
 $("section").each(

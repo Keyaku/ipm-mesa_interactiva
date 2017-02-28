@@ -1,8 +1,8 @@
-$.fn.followAlong = function(limitDiv) {
+$.fn.followAlong = function() {
 	var $window = $(window)
     var container = $(this);
-    var minTop = $(limitDiv).top;
-    var maxTop = $(limitDiv).height() - container.outerHeight(true);
+    var minTop = container.parent().top;
+    var maxTop = container.parent().height() - container.outerHeight(true);
 
     $(document).scroll(function() {
         if ($window.scrollTop() > maxTop) {
