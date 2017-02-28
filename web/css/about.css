@@ -24,15 +24,6 @@ main h1 {
 	margin: 20pt auto;
 }
 
-tr {
-	line-height: 22pt;
-}
-td {
-	margin: 0 auto;
-	padding: 0 10px;
-	text-align: center;
-}
-
 .titleSubtitle {
 	user-select: none;
 	cursor: default;
@@ -66,18 +57,18 @@ td {
 	color: darkorange;
 }
 
-.studentInfo {
-	color: white;
-	font-size: 18px;
-	width: 33%;
-
+.studentName {
+	font-size: 16pt;
+}
+.studentId {
+	font-size: 18pt;
 }
 .studentPic {
 	background-color: lightgrey;
 	border: 1px hidden;
 	border-radius: 30px;
 	box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.35);
-	width: 100pt;
+	width: 120pt;
 	transition: 0.1s linear;
 	zoom: normal;
 }
@@ -99,7 +90,14 @@ td {
 	height:57.42pt;
 }
 
-#team {
+.team {
+	color: white;
 	margin-top:10pt;
 	margin-bottom:10pt;
+}
+.team tr {
+	line-height: 22pt;
+}
+.team td {
+	text-align: center;
 }
