@@ -1,19 +1,21 @@
-console.log($("window"));
+$.fn.followTo = function(limitDiv) {
+	var $window = $(window)
+    var container = $(this);
+    var minTop = $(limitDiv).top;
+    var maxTop = $(limitDiv).height() - container.outerHeight(true);
+	console.log(maxTop);
 
-$.fn.followTo = function(pos) {
-    var $window = $(window);
-
-    $window.scroll(function(e) {
-        if ($window.scrollTop() > pos) {
-            $(this).css({
+    $(document).scroll(function() {
+        if ($window.scrollTop() > maxTop) {
+			container.css({
                 position: 'absolute',
-                top: pos
+                top: maxTop
             });
         } else {
-            $(this).css({
+			container.css({
                 position: 'fixed',
                 top: 0
             });
-        }
+		}
     });
 };

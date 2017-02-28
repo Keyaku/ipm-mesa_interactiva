@@ -1,20 +1,50 @@
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
 body {
-	background-color: #333333;
+	font: initial;
 }
 
-#links {
+header {
+	background-color: black;
+	text-align: center;
+    height: 100%;
+}
+
+main {
+	display: block;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height:1000px; /* FIXME: Temporary value. Remove this after layout is done */
+}
+
+.titleSubtitle {
+	color: darkorange;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+.titleSubtitle h1 {
+	font-size: 50pt;
+}
+.titleSubtitle p {
+	font-size: 14pt;
+}
+
+.links {
 	background-color: lightgrey;
 	border: 1px solid black;
 	border-radius: 5px;
 	box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.35);
 }
-
-#links a {
+.links a {
 	margin-left: 2.5%;
 	text-decoration: none;
 }
-
-#links a:hover {
+.links a:hover {
 	color: darkorange;
 }
 
@@ -33,4 +63,18 @@ body {
 	box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.35);
 	margin: 0 auto;
 	padding: 0 10px 0 10px;
+	width: 100pt;
+}
+
+#logoIST {
+	background-image: url("../img/about/logoIST.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin:10pt;
+
+	position: fixed;
+	top:0;
+	left:0;
+	width:148.28pt;
+	height:57.42pt;
 }
