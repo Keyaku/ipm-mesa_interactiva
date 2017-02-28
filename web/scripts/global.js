@@ -3,7 +3,6 @@ $.fn.followTo = function(limitDiv) {
     var container = $(this);
     var minTop = $(limitDiv).top;
     var maxTop = $(limitDiv).height() - container.outerHeight(true);
-	console.log(maxTop);
 
     $(document).scroll(function() {
         if ($window.scrollTop() > maxTop) {

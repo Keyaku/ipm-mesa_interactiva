@@ -17,10 +17,26 @@ main {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	height:1000px; /* FIXME: Temporary value. Remove this after layout is done */
+}
+main h1 {
+	color: orange;
+	font-size: 32pt;
+	margin: 20pt auto;
+}
+
+tr {
+	line-height: 22pt;
+}
+td {
+	margin: 0 auto;
+	padding: 0 10px;
+	text-align: center;
 }
 
 .titleSubtitle {
+	user-select: none;
+	cursor: default;
+
 	color: darkorange;
 	position: absolute;
 	top: 50%;
@@ -35,10 +51,12 @@ main {
 }
 
 .links {
-	background-color: lightgrey;
-	border: 1px solid black;
-	border-radius: 5px;
-	box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.35);
+	color: white;
+	margin: 50pt;
+}
+.links h2 {
+	color: orange;
+	font-size: 26pt;
 }
 .links a {
 	margin-left: 2.5%;
@@ -51,19 +69,21 @@ main {
 .studentInfo {
 	color: white;
 	font-size: 18px;
-	margin: 0 auto;
-	padding: 0 10px 0 10px;
 	width: 33%;
 
 }
 .studentPic {
 	background-color: lightgrey;
-	border: 2px solid black;
-	border-radius: 5px;
+	border: 1px hidden;
+	border-radius: 30px;
 	box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.35);
-	margin: 0 auto;
-	padding: 0 10px 0 10px;
 	width: 100pt;
+	transition: 0.1s linear;
+	zoom: normal;
+}
+.studentPic:hover {
+	transition: 0.1s linear;
+	zoom: 120%;
 }
 
 #logoIST {
@@ -77,4 +97,9 @@ main {
 	left:0;
 	width:148.28pt;
 	height:57.42pt;
+}
+
+#team {
+	margin-top:10pt;
+	margin-bottom:10pt;
 }
