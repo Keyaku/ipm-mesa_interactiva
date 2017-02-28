@@ -102,16 +102,15 @@ section {
 	color: darkorange;
 	font-size: 26pt;
 }
+.links h3 {
+	margin-top: 10pt;
+	margin-bottom: 10pt;
+}
 .links a {
-	padding: 1pt 5pt;
+	display: inline-block;
+	margin: 5pt;
 	text-decoration: none;
 }
 .links a:hover {
 	color: darkorange;
-}
-.links a:not(.hidden) { /* Looks for any hyperlink under .links that's not hidden */
-	border-left: 1px solid white;
-}
-.links a:first-of-type { /* Considers the first hyperlink under .links */
-	border-left: none;
 }
