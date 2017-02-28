@@ -1,4 +1,4 @@
-$.fn.followTo = function(limitDiv) {
+$.fn.followAlong = function(limitDiv) {
 	var $window = $(window)
     var container = $(this);
     var minTop = $(limitDiv).top;
