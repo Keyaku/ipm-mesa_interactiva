@@ -8,16 +8,16 @@ $(document).ready(function() {
 	/* Scroll automatically to main upon detecting down-scroll */
 	var scroll_time = 800;
 	// Firefox
-	$('header').bind('DOMMouseScroll', function(e){
-		if (e.originalEvent.detail > 0) {
-			$('body').scrollTo("main", scroll_time);
-		}
-	});
-
-	// IE, Opera, Safari
-	$('header').bind('mousewheel', function(e){
-		if (e.originalEvent.wheelDelta < 0) {
-			$('body').scrollTo("main", scroll_time);
+	$("header").on({
+		"DOMMouseScroll" : function(e) { // Firefox
+			if (e.originalEvent.detail > 0) {
+				$('body').scrollTo("main", scroll_time);
+			}
+		},
+		"mousewheel" : function(e) { // IE, Opera, Safari
+			if (e.originalEvent.wheelDelta < 0) {
+				$('body').scrollTo("main", scroll_time);
+			}
 		}
 	});
 });
