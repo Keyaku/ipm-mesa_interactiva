@@ -1,14 +1,24 @@
 /****** Code execution *******/
 $(document).ready(function() {
-	// Animating title
+	/* Animating title */
 	setTimeout(function() {
 		$(".titleSubtitle").fadeIn(2500);
 	}, 500);
 
-	// Scrolling automatically to bottom
-	// FIXME: Doesn't work for some reason
-	$("header").scroll(function() {
-		$('html, body').scrollTo("main", 1000);
+	/* Scroll automatically to main upon detecting down-scroll */
+	var scroll_time = 800;
+	// Firefox
+	$('header').bind('DOMMouseScroll', function(e){
+		if (e.originalEvent.detail > 0) {
+			$('body').scrollTo("main", scroll_time);
+		}
+	});
+
+	// IE, Opera, Safari
+	$('header').bind('mousewheel', function(e){
+		if (e.originalEvent.wheelDelta < 0) {
+			$('body').scrollTo("main", scroll_time);
+		}
 	});
 });
 
