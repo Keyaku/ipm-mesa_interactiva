@@ -3,7 +3,7 @@ html, body {
 	overflow-x: hidden;
 }
 body {
-	font: initial;
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 header {
