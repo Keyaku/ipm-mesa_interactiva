@@ -11,12 +11,16 @@ $(document).ready(function() {
 	$("header").on({
 		"DOMMouseScroll" : function(e) { // Firefox
 			if (e.originalEvent.detail > 0) {
-				$('body').scrollTo("main", scroll_time);
+				$('body').animate({
+					scrollTop : $("main").offset().top
+				}, 1000);
 			}
 		},
-		"mousewheel" : function(e) { // IE, Opera, Safari
+		"mousewheel" : function(e) { // IE, Opera, Safari, Chrome
 			if (e.originalEvent.wheelDelta < 0) {
-				$('body').scrollTo("main", scroll_time);
+				$('body').animate({
+					scrollTop : $("main").offset().top
+				}, 1000);
 			}
 		}
 	});
