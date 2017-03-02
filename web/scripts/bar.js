@@ -1,11 +1,6 @@
 /***** Variables *****/
 var timer;
 
-var googleMapsKey = "?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo";
-var googleMapsOrigin = "&origin=taguspark";
-var googleMapsMode = "driving";
-var googleMapsUnits = "&units=metric";
-
 /****** Code execution *******/
 $(document).ready(function(){
 	// Showing default overlay
@@ -75,14 +70,4 @@ function openBrowser(link) {
 	// makes all the social media buttons shrink
 	$(".fa").css("height", "150px");
 	$(".fa").css("padding", "50px 40px 0 40px");
-}
-
-/****** Google Maps code *******/
-function searchMap(keyWords) {
-	var url = "https://www.google.com/maps/embed/v1/search"+googleMapsKey+"&q="+keyWords;
-	$("#iframeMap").attr("src", url);
-}
-function directionsMap(destination, travelMode) {
-	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
-	$("#iframeMap").attr("src", url);
 }
