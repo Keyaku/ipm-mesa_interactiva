@@ -28,6 +28,14 @@ $(document).ready(function(){
 	$("#carButton").click(function() { directionsMap($("#mapsDestinationInput").val(), "driving"); });
 	$("#publicTransportButton").click(function() { directionsMap($("#mapsDestinationInput").val(), "transit"); });
 
+	//Show the correct overlay
+	$(".verticalBarButton").click(function() {
+		$(".overlay").hide() // Hide ALL submenus, just in case
+		$("#overlay" + $(this).children(".menuTitle").text()).css("display", "inline-block") // Show the appropriate submenu
+	});
+
+
+
 });
 
 /***** Timer-related code *****/
@@ -51,12 +59,6 @@ $("#countdown").countdown360({
     startOverAfterAdding: true,          // Start the timer over after time is added with addSeconds
     onComplete  : function() {}
 }).start()
-
-/***** Overlays code *****/
-function showSubMenu(menu) {
-	$(".overlay").hide() // Hide ALL submenus, just in case
-	$("#" + menu).css("display", "inline-block") // Show the appropriate submenu
-}
 
 /***** Ordered elements list -related code *****/
 function showBanner(text) {
