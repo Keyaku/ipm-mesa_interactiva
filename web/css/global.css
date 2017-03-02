@@ -13,6 +13,10 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
+p, a, label, table {
+	cursor: default;
+}
+
 /* Helper classes */
 .wrapper {
 	align-items: center;

@@ -1,3 +1,7 @@
+/****** Code execution *******/
+$(":header").css({cursor: "default"});
+
+/* Functions to attach to elements */
 $.fn.followAlong = function() {
 	var $window = $(window)
     var container = $(this);
