@@ -5,25 +5,26 @@ $(document).ready(function() {
 		$(".titleSubtitle").fadeIn(2500);
 	}, 500);
 
-	/* Scroll automatically to main upon detecting down-scroll */
+	/* Scroll automatically to main upon detecting down-scroll
+	FIXME: Use "The Outline"'s snap feature
 	var scroll_time = 800;
-	// Firefox
 	$("header").on({
 		"DOMMouseScroll" : function(e) { // Firefox
 			if (e.originalEvent.detail > 0) {
 				$('body').animate({
 					scrollTop : $("main").offset().top
-				}, 1000);
+				}, scroll_time);
 			}
 		},
 		"mousewheel" : function(e) { // IE, Opera, Safari, Chrome
 			if (e.originalEvent.wheelDelta < 0) {
 				$('body').animate({
 					scrollTop : $("main").offset().top
-				}, 1000);
+				}, scroll_time);
 			}
 		}
 	});
+	*/
 });
 
 // Sliding logo along its parent's height
