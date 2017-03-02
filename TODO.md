@@ -10,4 +10,4 @@
 * [ ] Rearrange Table of Contents
 
 ### Table
-* [ ] Rename "bar" to "table"
+* [x] Rename "bar" to "table"
