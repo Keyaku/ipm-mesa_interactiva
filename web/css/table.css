@@ -58,7 +58,6 @@ div {
 	width: 48px;
 	height: 100%;
 }
-#arrowIcon.open { transform: scaleX(-1); }
 
 /*overlay css*/ .overlay {
 	display: none;

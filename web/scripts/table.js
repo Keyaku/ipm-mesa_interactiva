@@ -10,7 +10,7 @@ $(document).ready(function(){
 	$("#arrowIcon").click(function() {
 		var menu = $('#mainMenu');
 		menu.toggle(!menu.is(':visible')); // Switches between hidden and shown
-		$(this).toggleClass("open");       // Enables rotation/flipping
+		$(this).css("transform", "scaleX(-1)");
 	});
 
 	// Activating order triggers
