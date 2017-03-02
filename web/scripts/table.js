@@ -33,9 +33,6 @@ $(document).ready(function(){
 		$(".overlay").hide() // Hide ALL submenus, just in case
 		$("#overlay" + $(this).children(".menuTitle").text()).css("display", "inline-block") // Show the appropriate submenu
 	});
-
-
-
 });
 
 /***** Timer-related code *****/
@@ -65,11 +62,4 @@ function showBanner(text) {
 	clearTimeout(timer);
 	$("#orderElementsListBanner").css("background","rgba(255,140,0,1)").css("color","rgba(255,255,255,1)").children(".orderName").text(text);
 	timer = setTimeout(function() { $("#orderElementsListBanner").css("background","rgba(255,140,0,0)").css("color","rgba(255,255,255,0)") }, 3000);
-}
-
-/***** Social Networks code *****/
-function openBrowser(link) {
-	// makes all the social media buttons shrink
-	$(".fa").css("height", "150px");
-	$(".fa").css("padding", "50px 40px 0 40px");
 }
