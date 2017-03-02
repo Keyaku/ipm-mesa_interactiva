@@ -1,7 +1,7 @@
 # TODO
 
 ## Global
-* [ ] Add fonts locally
+* [x] Add fonts locally
 * [ ] Remove any object fetching instance through the internet (a.k.a. Everything must run locally)
 * [ ] Change font to Raleway
 

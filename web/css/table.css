@@ -69,7 +69,7 @@ div {
 .orderElementsList {
 	color: white;
 	cursor: context-menu;
-	font-family: raleway, sans-serif;
+	font-family: "Raleway", Fallback, sans-serif;
 	font-size: 20px;
 }
 .orderElementsRow > td {
@@ -79,7 +79,7 @@ div {
 .orderIncrement {
 	color: darkorange;
 	cursor: pointer;
-	font-family: bangers, cursive;
+	font-family: "Bangers", Fallback, cursive;
 	font-size: 70px;
 }
 .orderIncrement:active { color: black; }

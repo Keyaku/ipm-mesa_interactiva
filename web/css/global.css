@@ -1,5 +1,30 @@
 /* Palette: black, #333, darkorange, lightgrey & white */
 
+/******* Adding local Fonts *******/
+/* Adding Bangers font */
+@font-face {
+	font-family: "Bangers";
+	src: url("../fonts/Bangers/Bangers-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Adding Kanit font */
+@font-face {
+	font-family: "Kanit";
+	src: url("../fonts/Kanit/Kanit-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Adding Raleway font */
+@font-face {
+	font-family: "Raleway";
+	src: url("../fonts/Raleway/Raleway-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
 /* Main types */
 body {
 	-webkit-touch-callout: none;
@@ -10,7 +35,7 @@ body {
 	user-select: none;
 
 	background-color: #333;
-	font-family: 'Raleway', sans-serif;
+	font-family: "Raleway", Fallback, sans-serif;
 }
 
 p, a, label, table {
