@@ -6,6 +6,9 @@ $(document).ready(function(){
 	// Showing default overlay
 	$("#overlayOrder").show();
 
+	$(".verticalBarButton").children().addClass("menuTitle");
+
+
 	// Activating arrow toggle
 	$("#arrowIcon").click(function() {
 		$('#mainMenu').toggle(); // Switches between hidden and shown
