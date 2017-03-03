@@ -20,8 +20,8 @@ main {
 }
 
 section {
-	margin-top: 15pt;
-	margin-bottom: 15pt;
+	margin-top: 30pt;
+	margin-bottom: 30pt;
 }
 
 a {
@@ -91,11 +91,10 @@ a {
 
 .links {
 	color: white;
-	margin: 50pt;
+	margin: 50pt inherit;
 }
 .links h2 {
 	color: darkorange;
-	font-size: 26pt;
 }
 .links h3 {
 	margin-top: 10pt;
