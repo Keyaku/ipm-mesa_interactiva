@@ -136,20 +136,18 @@ div {
 	display: block;
 }
 #mapsDestinationInput {
-	font-size: 20px;
+	border: 0;
 	color: black;
-	margin: 5px 0 5px 0;
+	font-size: 20px;
+	margin: 10px 0;
+	padding: 15px 10px 15px 10px;
 	width: 300px;
 }
 #iframeMap {
 	border: 0;
 	box-shadow: 0 10px 10px 0 black;
 	width: 1550px;
-	height: 600px;
+	height: 670px;
 }
-#mapError {
-	background-color: red;
-	color: white;
-	margin: 15px 0;
-	padding: 20px 50px 20px 50px;
-}
+::-webkit-input-placeholder { color: black; }
+::-moz-placeholder { color: black; }

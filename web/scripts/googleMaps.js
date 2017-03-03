@@ -9,9 +9,11 @@ function searchMap(keyWords) {
 	$("#iframeMap").attr("src", url);
 }
 function directionsMap(destination, travelMode) {
-	$("#mapError").hide();
 	if (destination == "") {
-		$("#mapError").show();
+		var inputBar = $("#mapsDestinationInput")
+		inputBar.css("background-color", "red");
+		setTimeout(function() { inputBar.css("background-color", "white"); }, 1250);
+		for (var i = 1; i <= 20; i++) inputBar.fadeOut(30).fadeIn(30);
 		return;
 	}
 	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
