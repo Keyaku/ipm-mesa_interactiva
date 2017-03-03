@@ -38,6 +38,10 @@ body {
 	font-family: "Raleway", Fallback, sans-serif;
 }
 
+h1 { font-size: 36pt; }
+h2 { font-size: 30pt; }
+h3 { font-size: 24pt; }
+
 p, a, label, table {
 	cursor: default;
 }
