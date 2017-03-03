@@ -8,9 +8,14 @@ $(document).ready(function(){
 
 	// Activating arrow toggle
 	$("#arrowIcon").click(function() {
-		var menu = $('#mainMenu');
-		menu.toggle(!menu.is(':visible')); // Switches between hidden and shown
+		$('#mainMenu').toggle(); // Switches between hidden and shown
 		$(this).css("transform", "scaleX(-1)");
+	});
+
+	//Show the correct overlay
+	$(".verticalBarButton").click(function() {
+		$(".overlay").hide() // Hide ALL submenus, just in case
+		$("#overlay" + $(this).children(".menuTitle").text()).css("display", "inline-block") // Show the appropriate submenu
 	});
 
 	// Activating order triggers
@@ -28,11 +33,7 @@ $(document).ready(function(){
 	$("#carButton").click(function() { directionsMap($("#mapsDestinationInput").val(), "driving"); });
 	$("#publicTransportButton").click(function() { directionsMap($("#mapsDestinationInput").val(), "transit"); });
 
-	//Show the correct overlay
-	$(".verticalBarButton").click(function() {
-		$(".overlay").hide() // Hide ALL submenus, just in case
-		$("#overlay" + $(this).children(".menuTitle").text()).css("display", "inline-block") // Show the appropriate submenu
-	});
+
 });
 
 /***** Timer-related code *****/
