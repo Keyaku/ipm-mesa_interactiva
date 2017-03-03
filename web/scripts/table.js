@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 	// Activating order triggers
 	$('.orderIncrement').click(function() {
-		var counter = $(this).siblings('.orderNumber');
+		var counter = $(this).siblings().first();
     	counter.text(parseInt(counter.text()) + 1 + "x");
     	var bannerText = $(this).siblings('.orderName').text();
     	showBanner(bannerText);
