@@ -35,7 +35,7 @@ div {
 .verticalBarButton:hover { background-color: darkorange; }
 .verticalBarButton:hover > p { color: white; }
 .verticalBarButton:hover > div.menuIcon { filter: invert(100%); }
-.menuTitle { padding: 20px 0 10px 0; }
+.menuTitle { display: block; padding: 20px 0 10px 0; }
 #orderIcon { background-image: url("../img/icons/pizzaWhite.svg"); }
 #socialIcon { background-image: url("../img/icons/shareWhite.svg"); }
 #entertainmentIcon1 { background-image: url("../img/icons/musicWhite.svg"); display: inline-block; width: 48px;}

@@ -6,8 +6,10 @@ $(document).ready(function(){
 	// Showing default overlay
 	$("#overlayOrder").show();
 
-	$(".verticalBarButton").children().addClass("menuTitle");
-
+	//Adds classes so that the html isn't cluttered
+	$(".verticalBarButton").children("label").addClass("menuTitle");
+	$(".informationSubMenu").children("label").addClass("informationSubMenuTitle");
+	$(".orderElementsRow").children("td:contains('+')").addClass("orderIncrement");
 
 	// Activating arrow toggle
 	$("#arrowIcon").click(function() {
@@ -25,7 +27,7 @@ $(document).ready(function(){
 	$('.orderIncrement').click(function() {
 		var counter = $(this).siblings().first();
     	counter.text(parseInt(counter.text()) + 1 + "x");
-    	showBanner($(this).siblings('.orderName').text());
+		showBanner($(this).siblings('.orderName').text());
 	});
 
 	//Google Maps search
