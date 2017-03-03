@@ -148,5 +148,11 @@ div {
 	border: 0;
 	box-shadow: 0 10px 10px 0 black;
 	width: 1550px;
-	height: 650px;
+	height: 600px;
+}
+#mapError {
+	background-color: red;
+	color: white;
+	margin: 15px 0;
+	padding: 20px 50px 20px 50px;
 }

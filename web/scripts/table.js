@@ -5,6 +5,7 @@ var timer;
 $(document).ready(function(){
 	// Showing default overlay
 	$("#overlayOrder").show();
+	$("#mapError").hide();
 
 	//Adds classes so that the html isn't cluttered
 	$(".verticalBarButton").children("label").addClass("menuTitle");
