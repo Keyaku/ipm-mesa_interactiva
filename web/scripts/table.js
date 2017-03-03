@@ -25,8 +25,7 @@ $(document).ready(function(){
 	$('.orderIncrement').click(function() {
 		var counter = $(this).siblings().first();
     	counter.text(parseInt(counter.text()) + 1 + "x");
-    	var bannerText = $(this).siblings('.orderName').text();
-    	showBanner(bannerText);
+    	showBanner($(this).siblings('.orderName').text());
 	});
 
 	//Google Maps search
