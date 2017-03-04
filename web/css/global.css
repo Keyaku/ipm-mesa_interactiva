@@ -26,6 +26,10 @@
 }
 
 /* Main types */
+* {
+	cursor: default;
+}
+
 body {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -41,10 +45,6 @@ body {
 h1 { font-size: 36pt; }
 h2 { font-size: 30pt; }
 h3 { font-size: 24pt; }
-
-p, a, label, table {
-	cursor: default;
-}
 
 /* Helper classes */
 .wrapper {
