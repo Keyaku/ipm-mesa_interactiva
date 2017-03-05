@@ -56,19 +56,18 @@
         	$slides = null,
         	$next = $container.find(".next:first"),
         	$prev = $container.find(".prev:first"),
-        	$bullets = $container.find(".bullet")
-,
+        	$bullets = $container.find(".bullet"),
+
         	viewportSize = 0,
         	contentStyle = {},
         	slidesVisible = 0,
         	slideSize = 0,
-        	slideIndex = 0
-,
+        	slideIndex = 0,
+
         	isHorizontal = this.options.axis === 'x',
         	sizeLabel = isHorizontal ? "Width" : "Height",
         	posiLabel = isHorizontal ? "left" : "top",
-        	intervalTimer = null
-        ;
+        	intervalTimer = null;
 
         /**
          * The index of the current slide.
