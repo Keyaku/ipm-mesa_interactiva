@@ -1,0 +1,54 @@
+body {
+	height: 100%;
+	overflow: hidden;
+}
+.viewport {
+	border: 1px solid #dcdcdc;
+	float: left;
+	width: 250pt;
+	height: 250pt;
+	overflow: hidden;
+	position: relative;
+	vertical-align: middle;
+}
+.buttons {
+    background: black;
+	background-image: url("../img/icons/arrowLeftWhite.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+    border-radius: 35px;
+    display: block;
+    float: left;
+    position: relative;
+	margin: 30px 10px;
+	width: 35px;
+    height: 35px;
+}
+.buttons:hover {
+	background-color: darkorange;
+}
+.buttons.next {
+	transform: scaleX(-1);
+}
+.overview {
+	list-style: none;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	width: 250pt;
+	top: 0;
+	left: 0;
+}
+.overview li {
+	float: left;
+	margin: 0 20px 0 0;
+	padding: 1px;
+	width: 250pt;
+	height: 250pt;
+}
+
+/* FIXME: remove the following */
+img {
+	width: 100%;
+}
