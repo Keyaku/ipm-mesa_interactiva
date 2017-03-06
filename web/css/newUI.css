@@ -1,4 +1,7 @@
-body { margin: 0; background-color: black; }
+body {
+	background-image: url("../img/tableBack1.jpg");
+	margin: 0;
+}
 a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
 a:focus:hover { text-decoration: none; }
@@ -18,12 +21,13 @@ div {
 .menuIcon, .subMenuIcon { width: 48px; height: 48px; }
 #logoIcon {
 	background-image: url("../img/paradiziaLogo.png");
+	margin: 0 auto 0 auto;
 	width: 250px;
 	height: 250px;
 }
 
 .verticalBar {
-	background-color: black;
+	background-color: rgba(0,0,0,0.7);
 	float: left;
 	width: 300px;
 	height: 100%;
@@ -35,7 +39,6 @@ div {
 	height: 48px;
 }
 .verticalBarButton:hover svg { fill: white; }
-
 .menuTitle {
 	color: white;
 	margin: 5px 0 0 10px;
@@ -43,7 +46,7 @@ div {
 .menuIcon {
 	float: left;
 	margin: 0 0 0 20px;
-	fill: orange;
+	fill: #009505;
 }
 #newsIcon { background-image: url("../img/icons/worldWhite.svg"); }
 #informationIcon { background-image: url("../img/icons/navigationWhite.svg"); }
@@ -51,7 +54,26 @@ div {
 /* arrow that toggles the visibility of the vertical bar */
 #arrowIcon {
 	background-image: url("../img/icons/arrowLeftWhite.svg");
+	filter: invert(100%);
 	float: left;
 	width: 48px;
 	height: 100%;
+}
+
+/*overlay css*/ .overlay {
+	display: none;
+	font-size: 0px;
+	width: 1550px;
+}
+
+/*order overlay*/
+.pizzaMakerList {
+	color: black;
+	cursor: context-menu;
+	font-family: "Raleway", Fallback, sans-serif;
+	font-size: 20px;
+}
+.pizzaMakerItem > td {
+	border-bottom: 1px dashed black;
+	padding: 0 20px 0 20px;
 }
