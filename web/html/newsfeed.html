@@ -12,25 +12,31 @@
 
 <body>
 	<div class="buttons prev"></div>
-	<div class="viewport">
-		<ul class="overview">
-			<li><img src="../img/about/student1.jpg" /></li>
-			<li><img src="../img/about/student2.jpg" /></li>
-			<li><img src="../img/about/student3.jpg" /></li>
-		</ul>
-	</div>
+	<div class="viewport"><div class="loader"></div></div>
 	<div class="buttons next"></div>
 
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="../scripts/jquery-3.1.1.min.js"></script>
 <script src="../scripts/jquery.tinycarousel.js"></script>
+<script src="../scripts/jquery.afeeder.js"></script>
 <script>
 $(document).ready(function() {
-    $("body").tinycarousel({
-		interval: true,
-		intervalTime: 4000,
-		animation: true,
-		animationTime: 1000,
+	// Activate live feed
+	$(".viewport").aFeeder({
+		key : "vrbfbxr98hh5uzoiooefwgcs7rscmo9sbhgzeyvw", // Keyaku's API key
+		feedURL     : "http://feeds.feedburner.com/PublicoRSS",
+		maxCount    : 3,
+		showDesc    : false,
+		dateFormat  : "pt-PT",
+		onComplete  : function() {
+			// Apply TinyCarousel effect on the feed
+			$("body").tinycarousel({
+				interval: true,
+				intervalTime: 4000,
+				animation: true,
+				animationTime: 1000,
+			});
+		}
 	});
 });
 </script>

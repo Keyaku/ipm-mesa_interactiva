@@ -32,6 +32,7 @@ body {
 	transform: scaleX(-1);
 }
 .overview {
+	color: white;
 	list-style: none;
 	position: absolute;
 	padding: 0;
