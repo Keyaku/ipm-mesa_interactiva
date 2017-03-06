@@ -6,7 +6,7 @@ a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
 a:focus:hover { text-decoration: none; }
 p, label {
-	color: black;
+	color: white;
 	font-weight: normal;
 	font-size: 30px;
 	margin: 0;
@@ -26,22 +26,29 @@ div {
 	height: 250px;
 }
 
-.verticalBar {
-	background-color: rgba(0,0,0,0.7);
+#superBar {
+	position: relative;
 	float: left;
+	margin: 0;
+	padding: 0;
+	width: 348px;
+	height: 100%;
+}
+
+#mainMenu {
+	background-color: rgba(0,0,0,0.7);
+	left: 0;
+	position: absolute;
 	width: 300px;
 	height: 100%;
 }
-.verticalBarButton {
+.mainMenuButton {
 	border-bottom: 1px dashed white;
 	padding: 20px 0 20px 0;
 	width: 100%;
 }
-.verticalBarButton:hover svg { fill: white; }
-.menuTitle {
-	color: white;
-	margin: 10px 0 10px 10px;
-}
+.mainMenuButton:hover svg { fill: white; }
+.menuTitle { margin: 10px 0 10px 10px; }
 .menuIcon {
 	float: left;
 	margin: 0 0 0 20px;
@@ -54,14 +61,16 @@ div {
 #arrowIcon {
 	background-image: url("../img/icons/arrowLeftWhite.svg");
 	filter: invert(100%);
-	float: left;
+	left: 300px;
+	position: absolute;
 	width: 48px;
 	height: 100%;
 }
 
 /*overlay css*/ .overlay {
-	display: none;
 	font-size: 0px;
+	left: 348px;
+	position: absolute;
 	width: 1550px;
 }
 
@@ -75,4 +84,22 @@ div {
 .pizzaMakerItem > td {
 	border-bottom: 1px dashed black;
 	padding: 0 20px 0 20px;
+}
+#paymentMethodList {
+	border-top: 1px dashed white;
+	border-right: 2px solid white;
+	border-left: 2px solid white;
+	width: 400px;
+
+}
+
+.paymentMethod {
+	font-size: 25px;
+	padding: 10px 20px 10px 20px;
+}
+.fa {
+	background-color: white;
+	float: left;
+	width: 48px;
+	height: 48px;
 }
