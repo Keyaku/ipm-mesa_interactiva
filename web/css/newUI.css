@@ -1,5 +1,5 @@
 body {
-	background-image: url("../img/tableBack1.jpg");
+	background-image: url("../img/tableBack2.jpg");
 	margin: 0;
 }
 a:hover { text-decoration: none; }
@@ -34,19 +34,18 @@ div {
 }
 .verticalBarButton {
 	border-bottom: 1px dashed white;
-	margin: 20px 0 20px 0;
+	padding: 20px 0 20px 0;
 	width: 100%;
-	height: 48px;
 }
 .verticalBarButton:hover svg { fill: white; }
 .menuTitle {
 	color: white;
-	margin: 5px 0 0 10px;
+	margin: 10px 0 10px 10px;
 }
 .menuIcon {
 	float: left;
 	margin: 0 0 0 20px;
-	fill: #009505;
+	fill: #C8190E;
 }
 #newsIcon { background-image: url("../img/icons/worldWhite.svg"); }
 #informationIcon { background-image: url("../img/icons/navigationWhite.svg"); }
