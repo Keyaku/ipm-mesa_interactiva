@@ -14,123 +14,28 @@
 <body>
 	<div class="verticalBar" id="mainMenu">
 		<div class="verticalBarButton">
-				<label>Order</label>
-				<div class="menuIcon" id="orderIcon"></div>
+			<div class="menuIcon" id="orderIcon"></div>
+			<label class="menuTitle">Order</label>
 		</div>
 		<div class="verticalBarButton">
-				<label>Social</label>
-				<div class="menuIcon" id="socialIcon"></div>
+			<div class="menuIcon" id="socialIcon"></div>
+			<label class="menuTitle">Social</label>
 		</div>
 		<div class="verticalBarButton">
-				<label>Entertainment</label>
-				<div class="menuIcon" id="entertainmentIcon1"></div>
-				<div class="menuIcon" id="entertainmentIcon2"></div>
+			<div class="menuIcon" id="entertainmentIcon1"></div>
+			<label class="menuTitle">Entertainment</label>
 		</div>
 		<div class="verticalBarButton">
-				<label>News</label>
-				<div class="menuIcon" id="newsIcon"></div>
+			<div class="menuIcon" id="newsIcon"></div>
+			<label class="menuTitle">News</label>
 		</div>
 		<div class="verticalBarButton">
-				<label>Information</label>
-				<div class="menuIcon" id="informationIcon"></div>
+			<div class="menuIcon" id="informationIcon"></div>
+			<label class="menuTitle">Information</label>
 		</div>
 		<div id="countdown"></div>
 	</div>
 	<div id="arrowIcon"></div>
-
-	<div class="overlay" id="overlayOrder">
-		<table class="orderElementsList">
-			<tr class="orderElementsRow">
-				<td>1x</td>
-				<td class="orderName">Coca-cola</td>
-				<td class="">+</td>
-			</tr>
-			<tr class="orderElementsRow">
-				<td>1x</td>
-				<td class="orderName">Pizza Hawaii</td>
-				<td class="">+</td>
-			</tr>
-			<tr class="orderElementsRow">
-				<td>1x</td>
-				<td class="orderName">Pizza Prosciutto Funchi</td>
-				<td class="">+</td>
-			</tr>
-			<tr class="orderElementsRow">
-				<td>2x</td>
-				<td class="orderName">Gelato al Cioccolato</td>
-				<td class="">+</td>
-			</tr>
-			<tr class="orderElementsRow">
-				<td>3x</td>
-				<td class="orderName">Coffee</td>
-				<td>+</td>
-			</tr>
-
-			<tr id="orderElementsListBanner">
-				<td></td>
-				<td class="orderName">Ordered one more</td>
-				<td></td>
-			</tr>
-		</table>
-	</div>
-
-	<div class="overlay" id="overlaySocial">
-		<a class="fa fa-facebook"></a>
-		<a class="fa fa-twitter"></a>
-		<a class="fa fa-instagram"></a>
-	</div>
-
-	<div class="overlay" id="overlayEntertainment">
-		<a class="fa fa-spotify"></a>
-		<a class="fa fa-youtube"></a>
-	</div>
-	<div class="overlay" id="overlayNews"></div>
-
-	<div class="overlay" id="overlayInformation">
-		<div class="informationSubMenu">
-			<label>Search nearby</label>
-			<div class="informationButton" id="barButton">
-				<label class="subMenuTitle">Bar/Cafe</label>
-				<div class="submenuIcon" id="barIcon"></div>
-			</div>
-			<div class="informationButton" id="mallButton">
-				<label class="subMenuTitle">Mall</label>
-				<div class="submenuIcon" id="mallIcon"></div>
-			</div>
-			<div class="informationButton" id="movietheaterButton">
-				<label class="subMenuTitle">Movie Theater</label>
-				<div class="submenuIcon" id="movietheaterIcon"></div>
-			</div>
-		</div>
-		<div class="informationSubMenu">
-			<label>Call a ride</label>
-			<div class="informationButton" id="taxiButton">
-				<label class="subMenuTitle">Taxi</label>
-				<div class="submenuIcon" id="taxiIcon"></div>
-			</div>
-			<div class="informationButton" id="uberButton">
-				<label class="subMenuTitle">Uber</label>
-				<div class="submenuIcon" id="uberIcon"></div>
-			</div>
-		</div>
-		<div class="informationSubMenu">
-			<label>Get directions</label>
-			<div class="informationButton" id="publicTransportButton">
-				<label class="subMenuTitle">Public Transport</label>
-				<div class="submenuIcon" id="publictransportIcon"></div>
-			</div>
-			<div class="informationButton" id="carButton">
-				<label class="subMenuTitle">Car</label>
-				<div class="submenuIcon" id="uberIcon"></div>
-			</div>
-		</div>
-
-		<div>
-			<input id="mapsDestinationInput" type="text" placeholder="Enter the destination">
-			<div id="micIcon"></div>
-		</div>
-		<iframe id="iframeMap"src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&q=taguspark"></iframe>
-
 	</div>
 
 <!-- SCRIPTS GO UNDER HERE -->
