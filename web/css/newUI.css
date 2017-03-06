@@ -34,19 +34,17 @@ div {
 	width: 100%;
 	height: 48px;
 }
+.verticalBarButton:hover svg { fill: white; }
+
 .menuTitle {
 	color: white;
 	margin: 5px 0 0 10px;
 }
 .menuIcon {
 	float: left;
+	margin: 0 0 0 20px;
 	fill: orange;
-
 }
-/*#orderIcon { background-image: url("../img/icons/pizzaWhite.svg"); }*/
-#socialIcon { background-image: url("../img/icons/shareWhite.svg"); }
-#entertainmentIcon1 { background-image: url("../img/icons/musicWhite.svg"); display: inline-block; width: 48px;}
-#entertainmentIcon2 { background-image: url("../img/icons/gamesWhite.svg"); display: inline-block; width: 48px;}
 #newsIcon { background-image: url("../img/icons/worldWhite.svg"); }
 #informationIcon { background-image: url("../img/icons/navigationWhite.svg"); }
 
