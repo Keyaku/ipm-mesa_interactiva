@@ -1,0 +1,59 @@
+body { margin: 0; background-color: black; }
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:focus:hover { text-decoration: none; }
+p, label {
+	color: black;
+	font-weight: normal;
+	font-size: 30px;
+	margin: 0;
+}
+div {
+	background-position: center;
+	background-repeat: no-repeat;
+}
+::-webkit-input-placeholder { color: black; }
+::-moz-placeholder { color: black; }
+
+.menuIcon, .subMenuIcon { width: 48px; height: 48px; }
+#logoIcon {
+	background-image: url("../img/paradiziaLogo.png");
+	width: 250px;
+	height: 250px;
+}
+
+.verticalBar {
+	background-color: black;
+	float: left;
+	width: 300px;
+	height: 100%;
+}
+.verticalBarButton {
+	border-bottom: 1px dashed white;
+	margin: 20px 0 20px 0;
+	width: 100%;
+	height: 48px;
+}
+.menuTitle {
+	color: white;
+	margin: 5px 0 0 10px;
+}
+.menuIcon {
+	float: left;
+	fill: orange;
+
+}
+/*#orderIcon { background-image: url("../img/icons/pizzaWhite.svg"); }*/
+#socialIcon { background-image: url("../img/icons/shareWhite.svg"); }
+#entertainmentIcon1 { background-image: url("../img/icons/musicWhite.svg"); display: inline-block; width: 48px;}
+#entertainmentIcon2 { background-image: url("../img/icons/gamesWhite.svg"); display: inline-block; width: 48px;}
+#newsIcon { background-image: url("../img/icons/worldWhite.svg"); }
+#informationIcon { background-image: url("../img/icons/navigationWhite.svg"); }
+
+/* arrow that toggles the visibility of the vertical bar */
+#arrowIcon {
+	background-image: url("../img/icons/arrowLeftWhite.svg");
+	float: left;
+	width: 48px;
+	height: 100%;
+}
