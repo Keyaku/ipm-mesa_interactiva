@@ -122,7 +122,6 @@ div {
 .fa-youtube { background: rgba(229,45,39,0.8); /*#e52d27;*/ }
 
 
-.twitter-timeline {
-	width: 500px;
+.ytplayer {
 	height: 700px;
 }
