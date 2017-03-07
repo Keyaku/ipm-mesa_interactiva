@@ -1,95 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome Screen</title>
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-        }
+	<title>Welcome Screen</title>
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
 
-        body {
-            background-color: black;
-        }
+	body {
+		background-color: black;
+	}
 
-        .welcomeList {
-            list-style: none;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-			transform: translate(-50%, -50%);
-        }
+	.welcomeList {
+		list-style: none;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.welcomeList li {
+		display: inline-block;
+		margin-right: 50px;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 300;
+		font-size: 40px;
+		color: rgba(255, 255, 255, 1);
+		transition: all 3s ease;
+	}
 
-        .welcomeList li {
-            display: inline-block;
-            margin-right: 50px;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 300;
-            font-size: 40px;
-            color: rgba(255, 255, 255, 1);
-            transition: all 3s ease;
-        }
-
-        .welcomeList.hidden li {
-            opacity: 0;
-        }
-        .welcomeList.hidden li:nth-child(1) {
-        	transform: translate(-200px, -100px)
-        }
-        .welcomeList.hidden li:nth-child(2) {
-        	transform: translate(20px, 90px)
-        }
-        .welcomeList.hidden li:nth-child(3) {
-        	transform: translate(-150px, -80px)
-        }
-        .welcomeList.hidden li:nth-child(4) {
-        	transform: translate(10px, -200px)
-        }
-        .welcomeList.hidden li:nth-child(5) {
-        	transform: translate(-300px, 200px)
-        }
-        .welcomeList.hidden li:nth-child(6) {
-        	transform: translate(20px, -20px)
-        }
-        .welcomeList.hidden li:nth-child(7) {
-        	transform: translate(30px, 300px)
-        }
-
-        .paradizia {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-    </style>
+	.paradizia {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+</style>
 </head>
 
 <body>
 	<img class="paradizia" src="../img/paradiziaLogo.png" width="250" height="250" />
+	<ul class="welcomeList">
+		<li>W</li>
+		<li>E</li>
+		<li>L</li>
+		<li>C</li>
+		<li>O</li>
+		<li>M</li>
+		<li>E</li>
+	</ul>
 
-    <ul class="welcomeList hidden">
-        <li>W</li>
-        <li>E</li>
-        <li>L</li>
-        <li>C</li>
-        <li>O</li>
-        <li>M</li>
-        <li>E</li>
-    </ul>
-
-    <script src="../scripts/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript">
-
-        $('.paradizia').fadeOut(2500);
-
-        setTimeout(function() {
-            $('.welcomeList').removeClass('hidden').fadeOut(5200);
-        }, 2700);
-
-        setTimeout(function() {
-        	window.location.replace("table.html");
-        }, 5300);
-
-    </script>
+<script src="../scripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	$('.paradizia').fadeOut(2500);
+	var cc = $("li");
+	cc.each(function() {$(this).hide().css({"transform": "translate(" + (Math.random()*600 - 200) + "px," + (Math.random()*600 - 200) + "px)"}); });
+	setTimeout(function(){ cc.each(function() { $(this).fadeIn(300).css({"transform": "translate(0px,0px)"}); }); }, 2000);
+	setTimeout(function() { $('.welcomeList').fadeOut(5200); }, 2700);
+</script>
 </body>
 </html>
