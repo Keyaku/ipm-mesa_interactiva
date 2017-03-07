@@ -85,6 +85,8 @@ div {
 	border-bottom: 1px dashed black;
 	padding: 0 20px 0 20px;
 }
+
+/*
 #paymentMethodList {
 	border-top: 1px dashed white;
 	border-right: 2px solid white;
@@ -92,14 +94,28 @@ div {
 	width: 400px;
 
 }
-
 .paymentMethod {
 	font-size: 25px;
 	padding: 10px 20px 10px 20px;
 }
+*/
+
 .fa {
-	background-color: white;
-	float: left;
-	width: 48px;
-	height: 48px;
+	color: white;
+	font-size: 60px;
+	padding: 120px 40px 120px 40px;
+	text-align: center;
+	transition: 0.3s linear;
+	width: 200px;
+	height: 300px;
 }
+.fa:hover { color: #333; }
+
+/*social media overlay*/
+.fa-facebook { background: rgba(59,89,152,0.8); /* #3B5998;*/ }
+.fa-twitter { background: rgba(85,172,238,0.8); /* #55ACEE;*/ }
+.fa-instagram { background: rgba(18,86,136,0.8); /* #125688;*/ }
+
+/*entertainment overlay*/
+.fa-spotify { background: rgba(104,206,2,0.8); /*#68CE02;*/ }
+.fa-youtube { background: rgba(229,45,39,0.8); /*#e52d27;*/ }

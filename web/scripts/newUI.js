@@ -8,10 +8,6 @@ $(document).ready(function(){
 	$(".overlay").hide();
 	$("#overlayOrder").show();
 
-	//Adds classes so that the html isn't cluttered
-	$(".verticalBarButton").children("label").addClass("menuTitle");
-	$(".informationSubMenu").children("label").addClass("informationSubMenuTitle");
-	$(".orderElementsRow").children("td:contains('+')").addClass("orderIncrement");
 
 	$(".doneIcon").append('<svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>');
 
@@ -19,19 +15,19 @@ $(document).ready(function(){
 	$("#arrowIcon").click(function() {
 		var main = $("#superBar");
 		if (main.css("left") == "0px") {
-			main.animate( {"left": "-300px"}, mainMenuAnimSpeed);
-			$(".overlay").animate( {"left": "48px"}, mainMenuAnimSpeed);
+			main.animate({"left": "-300px"}, mainMenuAnimSpeed);
+			$(".overlay").animate({"left": "48px"}, mainMenuAnimSpeed);
 			$(this).css("transform", "scaleX(-1)");
 		}
 		else {
-			main.animate( {"left": "0px"}, mainMenuAnimSpeed);
-			$(".overlay").animate( {"left": "348px"}, mainMenuAnimSpeed);
+			main.animate({"left": "0px"}, mainMenuAnimSpeed);
+			$(".overlay").animate({"left": "348px"}, mainMenuAnimSpeed);
 			$(this).css("transform", "scaleX(1)");
 		}
 	});
 
 	//Show the correct overlay
-	$(".verticalBarButton").click(function() {
+	$(".mainMenuButton").click(function() {
 		$(".overlay").hide() // Hide ALL submenus, just in case
 		$("#overlay" + $(this).children(".menuTitle").text()).css("display", "block") // Show the appropriate submenu
 	});
