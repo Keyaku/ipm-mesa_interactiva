@@ -1,34 +1,40 @@
 /***** Variables *****/
 var timer;
+var mainMenuAnimSpeed = 500;
 
 /****** Code execution *******/
 $(document).ready(function(){
 	// Showing default overlay
+	$(".overlay").hide();
 	$("#overlayOrder").show();
-	$("#mapError").hide();
 
-	//Adds classes so that the html isn't cluttered
-	$(".verticalBarButton").children("label").addClass("menuTitle");
 	$(".informationSubMenu").children("label").addClass("informationSubMenuTitle");
-	$(".orderElementsRow").children("td:contains('+')").addClass("orderIncrement");
+	$(".doneIcon").append('<svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>');
 
 	// Activating arrow toggle
 	$("#arrowIcon").click(function() {
-		$('#mainMenu').toggle(); // Switches between hidden and shown
-		$(this).css("transform", "scaleX(-1)");
+		var main = $("#superBar");
+		if (main.css("left") == "0px") {
+			main.animate({"left": "-300px"}, mainMenuAnimSpeed);
+			$(".overlay").animate({"left": "48px"}, mainMenuAnimSpeed);
+			$(this).css("transform", "scaleX(-1)");
+		}
+		else {
+			main.animate({"left": "0px"}, mainMenuAnimSpeed);
+			$(".overlay").animate({"left": "348px"}, mainMenuAnimSpeed);
+			$(this).css("transform", "scaleX(1)");
+		}
 	});
 
 	//Show the correct overlay
-	$(".verticalBarButton").click(function() {
+	$(".mainMenuButton").click(function() {
 		$(".overlay").hide() // Hide ALL submenus, just in case
-		$("#overlay" + $(this).children(".menuTitle").text()).css("display", "inline-block") // Show the appropriate submenu
+		$("#overlay" + $(this).children(".menuTitle").text()).css("display", "block") // Show the appropriate submenu
 	});
 
-	// Activating order triggers
-	$('.orderIncrement').click(function() {
-		var counter = $(this).siblings().first();
-    	counter.text(parseInt(counter.text()) + 1 + "x");
-		showBanner($(this).siblings('.orderName').text());
+	$(".pizzaMakerItem").click(function() {
+		$(this).children(".doneIcon").children().css("fill", "green");
+		$(this).children(".orderName").css("color", "white");
 	});
 
 	//Google Maps search
@@ -37,7 +43,6 @@ $(document).ready(function(){
 	$("#movietheaterButton").click(function() { searchMap("cinema+oeiras"); });
 	$("#carButton").click(function() { directionsMap($("#mapsDestinationInput").val(), "driving"); });
 	$("#publicTransportButton").click(function() { directionsMap($("#mapsDestinationInput").val(), "transit"); });
-
 
 });
 
@@ -62,6 +67,7 @@ $("#countdown").countdown360({
     startOverAfterAdding: true,          // Start the timer over after time is added with addSeconds
     onComplete  : function() {}
 }).start()
+
 
 /***** Ordered elements list -related code *****/
 function showBanner(text) {

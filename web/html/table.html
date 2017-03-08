@@ -12,80 +12,104 @@
 </head>
 
 <body>
-	<div class="verticalBar" id="mainMenu">
-		<div class="verticalBarButton">
-				<label>Order</label>
-				<div class="menuIcon" id="orderIcon"></div>
+	<div id="superBar">
+	<div id="mainMenu">
+		<div id="logoIcon"></div>
+		<div class="mainMenuButton">
+			<svg class="menuIcon" id="orderIcon" fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+			    <path d="M0 0h24v24H0z" fill="none"/>
+			    <path d="M12 2C8.43 2 5.23 3.54 3.01 6L12 22l8.99-16C18.78 3.55 15.57 2 12 2zM7 7c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm5 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+			</svg>
+			<label class="menuTitle">Order</label>
 		</div>
-		<div class="verticalBarButton">
-				<label>Social</label>
-				<div class="menuIcon" id="socialIcon"></div>
+		<div class="mainMenuButton">
+			<svg class="menuIcon" id="socialIcon" fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+			    <path d="M0 0h24v24H0z" fill="none"/>
+			    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+			</svg>
+			<label class="menuTitle">Social</label>
 		</div>
-		<div class="verticalBarButton">
-				<label>Entertainment</label>
-				<div class="menuIcon" id="entertainmentIcon1"></div>
-				<div class="menuIcon" id="entertainmentIcon2"></div>
+		<div class="mainMenuButton">
+			<svg class="menuIcon" id="entertainmentIcon1" fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+			    <path d="M0 0h24v24H0z" fill="none"/>
+			    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+			</svg>
+			<label class="menuTitle">Entertainment</label>
 		</div>
-		<div class="verticalBarButton">
-				<label>News</label>
-				<div class="menuIcon" id="newsIcon"></div>
+		<div class="mainMenuButton">
+			<svg class="menuIcon" id="newsIcon" fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+			    <path d="M0 0h24v24H0z" fill="none"/>
+			    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+			</svg>
+			<label class="menuTitle">News</label>
 		</div>
-		<div class="verticalBarButton">
-				<label>Information</label>
-				<div class="menuIcon" id="informationIcon"></div>
+		<div class="mainMenuButton">
+			<svg class="menuIcon" id="informationIcon" fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+			    <path d="M0 0h24v24H0z" fill="none"/>
+			    <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/>
+			</svg>
+			<label class="menuTitle">Information</label>
 		</div>
 		<div id="countdown"></div>
 	</div>
 	<div id="arrowIcon"></div>
+	</div>
 
 	<div class="overlay" id="overlayOrder">
-		<table class="orderElementsList">
-			<tr class="orderElementsRow">
-				<td>1x</td>
-				<td class="orderName">Coca-cola</td>
-				<td class="">+</td>
+		<table class="pizzaMakerList">
+			<tr class="pizzaMakerItem">
+				<td class="doneIcon"><!--Icon added in table.js--></td>
+				<td class="orderName">Dough</td>
 			</tr>
-			<tr class="orderElementsRow">
-				<td>1x</td>
-				<td class="orderName">Pizza Hawaii</td>
-				<td class="">+</td>
+			<tr class="pizzaMakerItem">
+				<td class="doneIcon"><!--Icon added in table.js--></td>
+				<td class="orderName">Base ingredients</td>
 			</tr>
-			<tr class="orderElementsRow">
-				<td>1x</td>
-				<td class="orderName">Pizza Prosciutto Funchi</td>
-				<td class="">+</td>
+			<tr class="pizzaMakerItem">
+				<td class="doneIcon"><!--Icon added in table.js--></td>
+				<td class="orderName">Toppings</td>
 			</tr>
-			<tr class="orderElementsRow">
-				<td>2x</td>
-				<td class="orderName">Gelato al Cioccolato</td>
-				<td class="">+</td>
+			<tr class="pizzaMakerItem">
+				<td class="doneIcon"><!--Icon added in table.js--></td>
+				<td class="orderName">Sides</td>
 			</tr>
-			<tr class="orderElementsRow">
-				<td>3x</td>
-				<td class="orderName">Coffee</td>
-				<td>+</td>
-			</tr>
-
-			<tr id="orderElementsListBanner">
-				<td></td>
-				<td class="orderName">Ordered one more</td>
-				<td></td>
+			<tr class="pizzaMakerItem">
+				<td class="doneIcon"><!--Icon added in table.js--></td>
+				<td class="orderName">Drinks</td>
 			</tr>
 		</table>
+
+<!--
+		<div id="paymentMethodList">
+			<div class="pmdiv">
+				<label class="paymentMethod">Payment method:</label>
+			</div>
+			<div class="pmdiv">
+				<i class="fa fa-cc-visa"></i>
+				<label class="paymentMethod">Card</label>
+			</div>
+			<div class="pmdiv">
+				<i class="fa fa-money"></i>
+				<label class="paymentMethod">Cash</label>
+			</div>
+		</div>
+	</div>
+-->
 	</div>
 
 	<div class="overlay" id="overlaySocial">
 		<a class="fa fa-facebook"></a>
 		<a class="fa fa-twitter"></a>
 		<a class="fa fa-instagram"></a>
+		<!--<iframe id="ytplayer" type="text/html" width="1244" height="700" src="https://www.youtube.com/embed/ua3JVPGuG98"  frameborder="0" allowfullscreen></iframe>-->
 	</div>
 
 	<div class="overlay" id="overlayEntertainment">
 		<a class="fa fa-spotify"></a>
 		<a class="fa fa-youtube"></a>
 	</div>
-	<div class="overlay" id="overlayNews"></div>
 
+	<div class="overlay" id="overlayNews"></div>
 	<div class="overlay" id="overlayInformation">
 		<div class="informationSubMenu">
 			<label>Search nearby</label>
@@ -135,8 +159,8 @@
 
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="../scripts/jquery-3.1.1.min.js"></script>
-<script src="../scripts/jquery.countdown360.js"></script>
 <script src="../scripts/table.js"></script>
+<script src="../scripts/jquery.countdown360.js"></script>
 <script src="../scripts/googleMaps.js"></script>
 </body>
 </html>
