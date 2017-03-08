@@ -54,12 +54,12 @@ div {
 	margin: 0 0 0 20px;
 	fill: #C8190E;
 }
-#newsIcon { background-image: url("../img/icons/worldWhite.svg"); }
-#informationIcon { background-image: url("../img/icons/navigationWhite.svg"); }
+#newsIcon { background-image: url("../img/icons/world.svg"); }
+#informationIcon { background-image: url("../img/icons/navigation.svg"); }
 
 /* arrow that toggles the visibility of the vertical bar */
 #arrowIcon {
-	background-image: url("../img/icons/arrowLeftWhite.svg");
+	background-image: url("../img/icons/arrowLeft.svg");
 	filter: invert(100%);
 	left: 300px;
 	position: absolute;

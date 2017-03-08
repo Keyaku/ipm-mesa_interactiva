@@ -13,7 +13,7 @@ body {
 }
 .buttons {
     background: black;
-	background-image: url("../img/icons/arrowLeftWhite.svg");
+	background-image: url("../img/icons/arrowLeft.svg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;

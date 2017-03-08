@@ -34,18 +34,18 @@ div {
 .verticalBarButton:hover > p { color: white; }
 .verticalBarButton:hover > div.menuIcon { filter: invert(100%); }
 .menuTitle { display: block; padding: 20px 0 10px 0; }
-#orderIcon { background-image: url("../img/icons/pizzaWhite.svg"); }
-#socialIcon { background-image: url("../img/icons/shareWhite.svg"); }
-#entertainmentIcon1 { background-image: url("../img/icons/musicWhite.svg"); display: inline-block; width: 48px;}
-#entertainmentIcon2 { background-image: url("../img/icons/gamesWhite.svg"); display: inline-block; width: 48px;}
-#newsIcon { background-image: url("../img/icons/worldWhite.svg"); }
-#informationIcon { background-image: url("../img/icons/navigationWhite.svg"); }
+#orderIcon { background-image: url("../img/icons/pizza.svg"); }
+#socialIcon { background-image: url("../img/icons/share.svg"); }
+#entertainmentIcon1 { background-image: url("../img/icons/music.svg"); display: inline-block; width: 48px;}
+#entertainmentIcon2 { background-image: url("../img/icons/games.svg"); display: inline-block; width: 48px;}
+#newsIcon { background-image: url("../img/icons/world.svg"); }
+#informationIcon { background-image: url("../img/icons/navigation.svg"); }
 
 /*countdown for the order ETA*/ #countdown { margin: 50px 0 0 0; }
 
 /* arrow that toggles the visibility of the vertical bar */
 #arrowIcon {
-	background-image: url("../img/icons/arrowLeftWhite.svg");
+	background-image: url("../img/icons/arrowLeft.svg");
 	float: left;
 	width: 48px;
 	height: 100%;
@@ -120,12 +120,12 @@ div {
 	font-size: 30px;
 	padding: 20px 0 10px 0;
 }
-#barIcon { background-image: url("../img/icons/barWhite.svg"); }
-#mallIcon { background-image: url("../img/icons/mallWhite.svg"); }
-#movietheaterIcon { background-image: url("../img/icons/movietheaterWhite.svg"); }
-#taxiIcon { background-image: url("../img/icons/taxiWhite.svg"); }
-#UberIcon { background-image: url("../img/icons/uberWhite.svg"); }
-#publicTransportIcon { background-image: url("../img/icons/publictransportWhite.svg"); }
+#barIcon { background-image: url("../img/icons/bar.svg"); }
+#mallIcon { background-image: url("../img/icons/mall.svg"); }
+#movietheaterIcon { background-image: url("../img/icons/movietheater.svg"); }
+#taxiIcon { background-image: url("../img/icons/taxi.svg"); }
+#UberIcon { background-image: url("../img/icons/uber.svg"); }
+#publicTransportIcon { background-image: url("../img/icons/publictransport.svg"); }
 
 .informationSubMenu {
 	display: inline-block;
@@ -146,7 +146,7 @@ div {
 	width: 300px;
 }
 #micIcon {
-	background-image: url("../img/icons/micWhite.svg");
+	background-image: url("../img/icons/mic.svg");
 	display: inline-block;
 	margin: 15px 0 0 0;
 	width: 48px;
