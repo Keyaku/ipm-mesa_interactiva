@@ -1,12 +1,9 @@
-body {
-	background-image: url("../img/tableBack2.jpg");
-	margin: 0;
-}
+body { margin: 0; }
 a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
 a:focus:hover { text-decoration: none; }
 p, label {
-	color: white;
+	color: black;
 	font-weight: normal;
 	font-size: 30px;
 	margin: 0;
@@ -18,110 +15,146 @@ div {
 ::-webkit-input-placeholder { color: black; }
 ::-moz-placeholder { color: black; }
 
-.menuIcon, .subMenuIcon { width: 48px; height: 48px; }
-#logoIcon {
-	background-image: url("../img/paradiziaLogo.png");
-	margin: 0 auto 0 auto;
+.menuIcon, .subMenuIcon, #micIcon { height: 48px; }
+
+.verticalBar {
+	background-color: black;
+	float: left;
+	text-align: center;
 	width: 250px;
-	height: 250px;
-}
-
-#superBar {
-	position: relative;
-	float: left;
-	margin: 0;
-	padding: 0;
-	width: 348px;
 	height: 100%;
 }
-
-#mainMenu {
-	background-color: rgba(0,0,0,0.7);
-	left: 0;
-	position: absolute;
-	width: 300px;
-	height: 100%;
-}
-.mainMenuButton {
-	border-bottom: 1px dashed white;
-	padding: 20px 0 20px 0;
+.verticalBarButton {
+	background-color: grey;
+	border: 1px solid white;
 	width: 100%;
+	height: 150px;
 }
-.mainMenuButton:hover svg { fill: white; }
-.menuTitle { margin: 10px 0 10px 10px; }
-.menuIcon {
-	float: left;
-	margin: 0 0 0 20px;
-	fill: #C8190E;
-}
+.verticalBarButton:hover { background-color: darkorange; }
+.verticalBarButton:hover > p { color: white; }
+.verticalBarButton:hover > div.menuIcon { filter: invert(100%); }
+.menuTitle { display: block; padding: 20px 0 10px 0; }
+#orderIcon { background-image: url("../img/icons/pizzaWhite.svg"); }
+#socialIcon { background-image: url("../img/icons/shareWhite.svg"); }
+#entertainmentIcon1 { background-image: url("../img/icons/musicWhite.svg"); display: inline-block; width: 48px;}
+#entertainmentIcon2 { background-image: url("../img/icons/gamesWhite.svg"); display: inline-block; width: 48px;}
 #newsIcon { background-image: url("../img/icons/worldWhite.svg"); }
 #informationIcon { background-image: url("../img/icons/navigationWhite.svg"); }
+
+/*countdown for the order ETA*/ #countdown { margin: 50px 0 0 0; }
 
 /* arrow that toggles the visibility of the vertical bar */
 #arrowIcon {
 	background-image: url("../img/icons/arrowLeftWhite.svg");
-	filter: invert(100%);
-	left: 300px;
-	position: absolute;
+	float: left;
 	width: 48px;
 	height: 100%;
 }
 
 /*overlay css*/ .overlay {
+	display: none;
 	font-size: 0px;
-	left: 348px;
-	position: absolute;
 	width: 1550px;
-	height: 100%;
 }
 
 /*order overlay*/
-.pizzaMakerList {
-	color: black;
+.orderElementsList {
+	color: white;
 	cursor: context-menu;
 	font-family: "Raleway", Fallback, sans-serif;
 	font-size: 20px;
 }
-.pizzaMakerItem > td {
-	border-bottom: 1px dashed black;
+.orderElementsRow > td {
+	border-bottom: 1px dashed white;
 	padding: 0 20px 0 20px;
 }
-
-/*
-#paymentMethodList {
-	border-top: 1px dashed white;
-	border-right: 2px solid white;
-	border-left: 2px solid white;
-	width: 400px;
-
+.orderIncrement {
+	color: darkorange;
+	cursor: pointer;
+	font-family: "Bangers", Fallback, cursive;
+	font-size: 70px;
 }
-.paymentMethod {
-	font-size: 25px;
-	padding: 10px 20px 10px 20px;
+.orderIncrement:active { color: black; }
+#orderElementsListBanner {
+	background-color: rgba(0,0,0,0);
+	color: rgba(255,255,225,0);
+	height: 70px;
+	text-align: center;
+	transition: all 300ms linear;
 }
-*/
 
 .fa {
 	color: white;
 	font-size: 60px;
-	padding: 70px 40px 60px 40px;
+	padding: 120px 40px 120px 40px;
 	text-align: center;
 	transition: 0.3s linear;
 	width: 200px;
-	height: 200px;
+	height: 300px;
 }
 .fa:hover { color: #333; }
 
 /*social media overlay*/
-.fa-facebook { background: rgba(59,89,152,0.8); /* #3B5998;*/ }
-.fa-twitter { background: rgba(85,172,238,0.8); /* #55ACEE;*/ }
-.fa-instagram { background: rgba(18,86,136,0.8); /* #125688;*/ }
+.fa-facebook { background: #3B5998; }
+.fa-twitter { background: #55ACEE; }
+.fa-instagram { background: #125688; }
 
 /*entertainment overlay*/
-.fa-spotify { background: rgba(87,172,2,0.8); /*#57AC02;*/ }
-.fa-youtube { background: rgba(229,45,39,0.8); /*#e52d27;*/ }
+.fa-spotify { background: #68CE02; }
+.fa-youtube { background: #e52d27; }
 
+.informationButton {
+	background-color: grey;
+	border: 1px solid white;
+	display: inline-block;
+	height: 150px;
+	min-width: 150px;
+	max-width: 250px;
+	padding: 0 10px 0 10px;
+	text-align: center;
+}
+.informationButton:hover { background-color: darkorange; }
+.informationButton:hover > div.subMenuIcon { filter: invert(100%); }
+.subMenuTitle {
+	color: white;
+	font-size: 30px;
+	padding: 20px 0 10px 0;
+}
+#barIcon { background-image: url("../img/icons/barWhite.svg"); }
+#mallIcon { background-image: url("../img/icons/mallWhite.svg"); }
+#movietheaterIcon { background-image: url("../img/icons/movietheaterWhite.svg"); }
+#taxiIcon { background-image: url("../img/icons/taxiWhite.svg"); }
+#UberIcon { background-image: url("../img/icons/uberWhite.svg"); }
+#publicTransportIcon { background-image: url("../img/icons/publictransportWhite.svg"); }
 
-.ytplayer {
-	height: 700px;
+.informationSubMenu {
+	display: inline-block;
+	margin: 0 10px 0 0;
+	text-align: center;
+}
+.informationSubMenuTitle {
+	color: white;
+	display: block;
+}
+#mapsDestinationInput {
+	border: 0;
+	color: black;
+	float: left;
+	font-size: 20px;
+	margin: 10px 0;
+	padding: 15px 10px 15px 10px;
+	width: 300px;
+}
+#micIcon {
+	background-image: url("../img/icons/micWhite.svg");
+	display: inline-block;
+	margin: 15px 0 0 0;
+	width: 48px;
+}
+#micIcon:hover { filter: invert(100%); }
+#iframeMap {
+	border: 0;
+	box-shadow: 0 10px 10px 0 black;
+	width: 1550px;
+	height: 670px;
 }
