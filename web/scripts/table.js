@@ -9,6 +9,8 @@ $(document).ready(function(){
 	$("#overlayOrder").show();
 
 	$(".informationSubMenu").children("label").addClass("informationSubMenuTitle");
+	$(".informationSubMenu div.subMenuIcon").css("filter", "invert(100%)");
+	
 	$(".doneIcon").append('<svg fill="#FFFFFF" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>');
 
 	// Activating arrow toggle
@@ -40,7 +42,6 @@ $(document).ready(function(){
 	//Google Maps search
 	$("#barButton").click(function() { searchMap("bar+taguspark"); });
 	$("#mallButton").click(function() { searchMap("centro+comercial+oeiras"); });
-	$("#movietheaterButton").click(function() { searchMap("cinema+oeiras"); });
 	$("#carButton").click(function() { directionsMap($("#mapsDestinationInput").val(), "driving"); });
 	$("#publicTransportButton").click(function() { directionsMap($("#mapsDestinationInput").val(), "transit"); });
 

@@ -18,7 +18,7 @@ div {
 ::-webkit-input-placeholder { color: black; }
 ::-moz-placeholder { color: black; }
 
-.menuIcon, .subMenuIcon { width: 48px; height: 48px; }
+.menuIcon, .subMenuIcon, #micIcon { width: 48px; height: 48px; margin: 0 auto 0 auto; }
 #logoIcon {
 	background-image: url("../img/paradiziaLogo.png");
 	margin: 0 auto 0 auto;
@@ -128,8 +128,7 @@ div {
 
 
 .informationButton {
-	background-color: grey;
-	border: 1px solid white;
+	background-color: rgba(255,255,255,0.8);
 	display: inline-block;
 	height: 150px;
 	min-width: 150px;
@@ -138,9 +137,8 @@ div {
 	text-align: center;
 }
 .informationButton:hover { background-color: darkorange; }
-.informationButton:hover > div.subMenuIcon { filter: invert(100%); }
 .subMenuTitle {
-	color: white;
+	color: black;
 	font-size: 30px;
 	padding: 20px 0 10px 0;
 }
