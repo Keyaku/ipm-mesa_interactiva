@@ -125,3 +125,60 @@ div {
 .ytplayer {
 	height: 700px;
 }
+
+
+.informationButton {
+	background-color: grey;
+	border: 1px solid white;
+	display: inline-block;
+	height: 150px;
+	min-width: 150px;
+	max-width: 250px;
+	padding: 0 10px 0 10px;
+	text-align: center;
+}
+.informationButton:hover { background-color: darkorange; }
+.informationButton:hover > div.subMenuIcon { filter: invert(100%); }
+.subMenuTitle {
+	color: white;
+	font-size: 30px;
+	padding: 20px 0 10px 0;
+}
+#barIcon { background-image: url("../img/icons/bar.svg"); }
+#mallIcon { background-image: url("../img/icons/mall.svg"); }
+#movietheaterIcon { background-image: url("../img/icons/movietheater.svg"); }
+#taxiIcon { background-image: url("../img/icons/taxi.svg"); }
+#UberIcon { background-image: url("../img/icons/uber.svg"); }
+#publicTransportIcon { background-image: url("../img/icons/publictransport.svg"); }
+
+.informationSubMenu {
+	display: inline-block;
+	margin: 0 10px 0 0;
+	text-align: center;
+}
+.informationSubMenuTitle {
+	color: white;
+	display: block;
+}
+#mapsDestinationInput {
+	border: 0;
+	color: black;
+	float: left;
+	font-size: 20px;
+	margin: 10px 0;
+	padding: 15px 10px 15px 10px;
+	width: 300px;
+}
+#micIcon {
+	background-image: url("../img/icons/mic.svg");
+	display: inline-block;
+	margin: 15px 0 0 0;
+	width: 48px;
+}
+#micIcon:hover { filter: invert(100%); }
+#iframeMap {
+	border: 0;
+	box-shadow: 0 10px 10px 0 black;
+	width: 1550px;
+	height: 670px;
+}
