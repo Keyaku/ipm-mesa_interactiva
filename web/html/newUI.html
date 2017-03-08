@@ -110,10 +110,57 @@
 	</div>
 
 	<div class="overlay" id="overlayNews"></div>
+	<div class="overlay" id="overlayInformation">
+		<div class="informationSubMenu">
+			<label>Search nearby</label>
+			<div class="informationButton" id="barButton">
+				<label class="subMenuTitle">Bar/Cafe</label>
+				<div class="submenuIcon" id="barIcon"></div>
+			</div>
+			<div class="informationButton" id="mallButton">
+				<label class="subMenuTitle">Mall</label>
+				<div class="submenuIcon" id="mallIcon"></div>
+			</div>
+			<div class="informationButton" id="movietheaterButton">
+				<label class="subMenuTitle">Movie Theater</label>
+				<div class="submenuIcon" id="movietheaterIcon"></div>
+			</div>
+		</div>
+		<div class="informationSubMenu">
+			<label>Call a ride</label>
+			<div class="informationButton" id="taxiButton">
+				<label class="subMenuTitle">Taxi</label>
+				<div class="submenuIcon" id="taxiIcon"></div>
+			</div>
+			<div class="informationButton" id="uberButton">
+				<label class="subMenuTitle">Uber</label>
+				<div class="submenuIcon" id="uberIcon"></div>
+			</div>
+		</div>
+		<div class="informationSubMenu">
+			<label>Get directions</label>
+			<div class="informationButton" id="publicTransportButton">
+				<label class="subMenuTitle">Public Transport</label>
+				<div class="submenuIcon" id="publictransportIcon"></div>
+			</div>
+			<div class="informationButton" id="carButton">
+				<label class="subMenuTitle">Car</label>
+				<div class="submenuIcon" id="uberIcon"></div>
+			</div>
+		</div>
 
+		<div>
+			<input id="mapsDestinationInput" type="text" placeholder="Enter the destination">
+			<div id="micIcon"></div>
+		</div>
+		<iframe id="iframeMap"src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&q=taguspark"></iframe>
+
+	</div>
 
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="../scripts/jquery-3.1.1.min.js"></script>
 <script src="../scripts/newUI.js"></script>
+<script src="../scripts/jquery.countdown360.js"></script>
+<script src="../scripts/googleMaps.js"></script>
 </body>
 </html>
