@@ -91,11 +91,12 @@ div {
 	padding: 0 20px 0 20px;
 }
 .orderChoose {
-	background-color: rgba(255,255,255,0.8);
-	display: inline-block;
-	margin: 300px 10px 0 10px;
+	background-color: rgba(255,255,255,0.6);
+	display: none;
+	margin: 0 10px 0 10px;
+	padding: 400px 0 0 0 ;
 	min-width: 300px;
-	height: 200px;
+	height: 100%;
 }
 .orderChooseLabel {
 	color: black;
@@ -139,7 +140,6 @@ div {
 .ytplayer {
 	height: 700px;
 }
-
 
 .informationButton {
 	background-color: rgba(255,255,255,0.8);
