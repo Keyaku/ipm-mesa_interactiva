@@ -56,7 +56,6 @@ div {
 /* arrow that toggles the visibility of the vertical bar */
 #arrowIcon {
 	background-image: url("../img/icons/arrowLeft.svg");
-	filter: invert(100%);
 	left: 300px;
 	position: absolute;
 	width: 48px;
@@ -105,7 +104,7 @@ div {
 	width: 100%;
 	height: 500px;
 }
-#menuBannerDrink { background-image: url("../img/menuBannerDrink.jpg"); }
+#menuBannerDrinks { background-image: url("../img/menuBannerDrinks.jpg"); }
 
 .menuTable {
 	/*background-color: rgba(0,0,0,0.8);*/
