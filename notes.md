@@ -39,7 +39,7 @@
 ### Menu Flow
 * [x] Welcome screen
 * [ ] Order overlay with 3 options
-	* [ ] Choose food
+	* [ ] Choose dish
 		* [ ] Choose from menu
 		* [ ] Build your own
 	* [ ] Choose drink (presents a list of drinks with names, images and prices)

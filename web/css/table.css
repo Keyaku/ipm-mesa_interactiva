@@ -76,15 +76,29 @@ div {
 }
 
 /*order overlay*/
+#overlayOrder {
+	text-align: center;
+}
 .pizzaMakerList {
 	color: black;
 	cursor: context-menu;
+	display: none;
 	font-family: "Raleway", Fallback, sans-serif;
 	font-size: 20px;
 }
 .pizzaMakerItem > td {
 	border-bottom: 1px dashed black;
 	padding: 0 20px 0 20px;
+}
+.orderChoose {
+	background-color: rgba(255,255,255,0.8);
+	display: inline-block;
+	margin: 300px 10px 0 10px;
+	min-width: 300px;
+	height: 200px;
+}
+.orderChooseLabel {
+	color: black;
 }
 
 /*
