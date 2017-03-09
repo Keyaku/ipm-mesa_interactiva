@@ -92,17 +92,20 @@ div {
 	background-color: rgba(0,0,0,0.8);
 	display: none;
 	margin: 0 10px 0 10px;
-	padding: 400px 0 0 0 ;
+	padding: 400px 0 0 0;
 	min-width: 300px;
 	height: 100%;
 }
 .orderChooseLabel {
 	color: white;
 }
-.menuBannerImage {
+.menuBanner {
 	background-size: 100% 600px;
+	position: absolute;
+	top: 0;
 	width: 100%;
 	height: 500px;
+	z-index: -1;
 }
 #menuBannerDrinks { background-image: url("../img/menuBannerDrinks.jpg"); }
 
@@ -111,8 +114,12 @@ div {
 	color: white;
 }
 .chooseMenu label {
+	background-color: rgba(255, 255, 255, 0.6);
+	color: black;
 	font-size: 40px;
 	font-weight: bolder;
+	margin: 200px 0 300px 0;
+	width: 100%;
 }
 .menuTable td {
 	font-size: 20px;
@@ -124,7 +131,7 @@ div {
 	color: #C8190E;
 	font-size: 30px;
 	font-weight: bolder;
-	padding: 30px 0 0 0 ;
+	padding: 30px 0 0 0;
 }
 
 /*
