@@ -90,6 +90,9 @@ div {
 	border-bottom: 1px dashed black;
 	padding: 0 20px 0 20px;
 }
+
+
+
 .orderChoose {
 	background-color: rgba(0,0,0,0.8);
 	display: none;
@@ -101,6 +104,11 @@ div {
 .orderChooseLabel {
 	color: white;
 }
+.menuBannerImage {
+	width: 100%;
+	height: 300px;
+}
+#menuBannerDrink { background-image: url(); }
 
 .menuTable {
 	/*background-color: rgba(0,0,0,0.8);*/
