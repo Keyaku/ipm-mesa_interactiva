@@ -21,7 +21,10 @@
 @font-face {
 	font-family: "Raleway";
 	src: url("../fonts/Raleway/Raleway-Regular.ttf") format("truetype");
+	font-weight: lighter;
 	font-weight: normal;
+	font-weight: bold;
+	font-weight: bolder;
 	font-style: normal;
 }
 
