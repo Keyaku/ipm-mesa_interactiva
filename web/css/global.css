@@ -41,8 +41,9 @@ body {
 	-ms-user-select: none;
 	user-select: none;
 
-	background-color: #333;
+	background-color: black;
 	font-family: "Raleway", Fallback, sans-serif;
+	margin: 0;
 }
 
 h1 { font-size: 36pt; }

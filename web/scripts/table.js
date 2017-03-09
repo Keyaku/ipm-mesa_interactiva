@@ -34,8 +34,15 @@ $(document).ready(function(){
 
 	//Show the correct overlay
 	$(".mainMenuButton").click(function() {
-		$(".overlay").hide() // Hide ALL submenus, just in case
-		$("#overlay" + $(this).children(".menuTitle").text()).css("display", "block") // Show the appropriate submenu
+		$(".overlay").hide(); // Hide ALL submenus, just in case
+
+		var b = $("body");
+		var name = $(this).children(".menuTitle").text();
+		console.log(name);
+		if (name == "Order") { b.css("background-color", "black").css("background-image", "none"); }
+		else { b.css("background-image", "url('../img/tableBack2.jpg')"); }
+
+		$("#overlay" + name).css("display", "block"); // Show the appropriate submenu
 	});
 
 	$(".pizzaMakerItem").click(function() {
