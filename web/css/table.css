@@ -15,8 +15,8 @@ div {
 ::-moz-placeholder { color: black; }
 
 .menuIcon, .subMenuIcon, #micIcon { width: 48px; height: 48px; margin: 0 auto 0 auto; }
-#logoIcon {
-	background-image: url("../img/paradiziaLogo.png");
+#logo {
+	background-image: url("../img/paradiziaLogo.svg");
 	margin: 0 auto 0 auto;
 	width: 250px;
 	height: 250px;
