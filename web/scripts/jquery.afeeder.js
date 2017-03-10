@@ -80,6 +80,8 @@
 			/* Appending final HTML string */
 			container.empty();
 			container.append('<ul class="overview">' + s + '</ul>');
+			/* Adding source's logo */
+			container.append('<div class="logoIcon" style="background-image: url(\'' + response.feed.image + '\')"></div>');
 
 			/* Activating attached callback */
 			def.onComplete();

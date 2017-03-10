@@ -11,19 +11,30 @@ body {
 	position: relative;
 	vertical-align: middle;
 }
+.logoIcon {
+	background-repeat:no-repeat;
+	background-size:cover;
+	border: 5pt solid white;
+	border-radius: 7px;
+	right: 10;
+	bottom: 10;
+	position: absolute;
+	width: 50px;
+	height:50px;
+}
 .buttons {
-    background: black;
+	background: white;
 	background-image: url("../img/icons/arrowLeft.svg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
-    border-radius: 35px;
-    display: block;
-    float: left;
-    position: relative;
+	border-radius: 35px;
+	display: block;
+	float: left;
+	position: relative;
 	margin: 30px 10px;
 	width: 35px;
-    height: 35px;
+	height: 35px;
 }
 .buttons:hover {
 	background-color: darkorange;
