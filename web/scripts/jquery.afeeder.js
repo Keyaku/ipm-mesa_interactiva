@@ -21,10 +21,12 @@
 		/* Stop everything if feedURL is undefined */
 		if (def.feedURL == undefined) {
 			/* If it's not supposed to be offline, attach a message */
-			if (!offline) {
+			if (!def.offline) {
 				container.empty();
 				container.append("<p>No feed URL defined.</p>");
 			}
+			return;
+		} else if (def.offline) {
 			return;
 		}
 
