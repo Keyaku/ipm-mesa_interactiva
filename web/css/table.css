@@ -50,8 +50,6 @@ div {
 	margin: 0 0 0 20px;
 	fill: #C8190E;
 }
-#newsIcon { background-image: url("../img/icons/world.svg"); }
-#informationIcon { background-image: url("../img/icons/navigation.svg"); }
 
 /* arrow that toggles the visibility of the vertical bar */
 #arrowIcon {

@@ -4,6 +4,9 @@ var mainMenuAnimSpeed = 500;
 
 /****** Code execution *******/
 $(document).ready(function(){
+	// Starting svg4everybody
+	svg4everybody();
+
 	// Showing default overlay
 	$(".overlay").hide();
 	$("#overlayOrder").show();
