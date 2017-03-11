@@ -80,7 +80,7 @@
 				}
 
 				/* Closing link */
-				s += '>' + item.title + '</a>';
+				s += '><a class="newsTitle" href="' + item.link + '">' + item.title + '</a>';
 
 				/* Showing description */
 				if (def.showDesc) {
