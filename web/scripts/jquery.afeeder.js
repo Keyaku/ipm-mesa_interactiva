@@ -101,7 +101,8 @@
 			container.empty();
 			container.append('<ul class="overview">' + s + '</ul>');
 			/* Adding source's logo */
-			container.append('<div class="logoIcon" style="background-image: url(\'' + response.feed.image + '\')"></div>');
+			var logo = response.feed.image;
+			container.append('<img class="logoIcon" src=\'' + logo + '\' />');
 
 			/* Activating attached callback */
 			def.onComplete();

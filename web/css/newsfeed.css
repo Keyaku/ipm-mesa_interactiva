@@ -12,14 +12,12 @@ body {
 	vertical-align: middle;
 }
 .logoIcon {
-	background-repeat:no-repeat;
-	background-size:cover;
 	border: 5pt solid white;
 	border-radius: 7px;
 	right: 10;
 	bottom: 10;
 	position: absolute;
-	width: 50px;
+	width: auto;
 	height:50px;
 }
 .buttons {
