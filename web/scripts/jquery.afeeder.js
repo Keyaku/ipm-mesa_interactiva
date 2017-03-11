@@ -48,7 +48,7 @@
 			/* If it's not supposed to be offline, attach a message */
 			if (!def.offline) {
 				container.empty();
-				container.append("<p>No feed URL defined.</p>");
+				container.append('<p>No feed URL defined.</p>');
 			}
 			return;
 		} else if (def.offline) {
@@ -69,10 +69,10 @@
 			if (response.status != 'ok') { throw response.message; }
 
 			/* Parsing HTML */
-			var s = "";
+			var s = '';
 			$.each(response.items, function(i, item) {
 				/* Opening list item */
-				s += "<li"
+				s += '<li'
 
 				/* Fetching thumbnail */
 				if (item.thumbnail.length > 0) {
@@ -80,7 +80,7 @@
 				}
 
 				/* Closing link */
-				s += '><a class="newsTitle" href="' + item.link + '">' + item.title + '</a>';
+				s += '>' + item.title + '</a>';
 
 				/* Showing description */
 				if (def.showDesc) {
@@ -94,7 +94,7 @@
 				}
 
 				/* Closing list item */
-				s += "</li>"
+				s += '</li>'
 			});
 
 			/* Appending final HTML string */
