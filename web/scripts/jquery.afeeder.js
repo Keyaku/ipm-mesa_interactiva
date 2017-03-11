@@ -74,14 +74,9 @@
 				/* Opening list item */
 				s += "<li"
 
-				/* Fetching image */
-				// FIXME: Doesn't work properly or at all
-				if (item.content.includes("<img")) {
-					var img = item.content;
-					img = img.substring(img.indexOf("src=\"") + 5);
-					img = img.substring(0, img.indexOf("\""));
-
-					s += ' style="background-image: url(\'' + img + '\'); background-size: cover;"';
+				/* Fetching thumbnail */
+				if (item.thumbnail.length > 0) {
+					s += ' style="background-image: url(\'' + item.thumbnail + '\'); background-size: cover;"';
 				}
 
 				/* Closing link */
