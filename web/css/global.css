@@ -5,27 +5,63 @@
 @font-face {
 	font-family: "Bangers";
 	src: url("../fonts/Bangers/Bangers-Regular.ttf") format("truetype");
-	font-weight: normal;
 	font-style: normal;
+	font-weight: normal;
 }
 
 /* Adding Kanit font */
 @font-face {
 	font-family: "Kanit";
 	src: url("../fonts/Kanit/Kanit-Regular.ttf") format("truetype");
-	font-weight: normal;
 	font-style: normal;
+	font-weight: normal;
 }
 
 /* Adding Raleway font */
 @font-face {
 	font-family: "Raleway";
 	src: url("../fonts/Raleway/Raleway-Regular.ttf") format("truetype");
-	font-weight: lighter;
-	font-weight: normal;
-	font-weight: bold;
-	font-weight: bolder;
 	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "Raleway";
+	src: url("../fonts/Raleway/Raleway-Light.ttf") format("truetype");
+	font-style: normal;
+	font-weight: lighter;
+}
+@font-face {
+	font-family: "Raleway";
+	src: url("../fonts/Raleway/Raleway-LightItalic.ttf") format("truetype");
+	font-style: italic;
+	font-weight: lighter;
+}
+
+@font-face {
+	font-family: "Raleway";
+	src: url("../fonts/Raleway/Raleway-ExtraBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: bold;
+}
+@font-face {
+	font-family: "Raleway";
+	src: url("../fonts/Raleway/Raleway-ExtraBoldItalic.ttf") format("truetype");
+	font-style: italic;
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: "Raleway";
+	src: url("../fonts/Raleway/Raleway-Black.ttf") format("truetype");
+	font-style: normal;
+	font-weight: bolder;
+}
+@font-face {
+	font-family: "Raleway";
+	src: url("../fonts/Raleway/Raleway-BlackItalic.ttf") format("truetype");
+	font-style: italic;
+	font-weight: bolder;
 }
 
 /* Main types */
