@@ -11,9 +11,7 @@
 </head>
 
 <body>
-	<div class="buttons prev"></div>
 	<div class="viewport"><div class="loader"></div></div>
-	<div class="buttons next"></div>
 
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="../scripts/jquery-3.1.1.min.js"></script>
@@ -25,11 +23,12 @@ $(document).ready(function() {
 	$(".viewport").aFeeder({
 		key : "vrbfbxr98hh5uzoiooefwgcs7rscmo9sbhgzeyvw", // Keyaku's API key
 		feedURL     : "http://feeds.bbci.co.uk/news/rss.xml",
-		maxCount    : 3,
+		maxCount    : 5,
 		showDesc    : false,
 		onComplete  : function() {
 			// Apply TinyCarousel effect on the feed
 			$("body").tinycarousel({
+				buttons: false,
 				interval: true,
 				intervalTime: 4000,
 				animation: true,

@@ -20,26 +20,6 @@ body {
 	width: auto;
 	height:50px;
 }
-.buttons {
-	background: white;
-	background-image: url("../img/icons/arrowLeft.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-	border-radius: 35px;
-	display: block;
-	float: left;
-	position: relative;
-	margin: 30px 10px;
-	width: 35px;
-	height: 35px;
-}
-.buttons:hover {
-	background-color: darkorange;
-}
-.buttons.next {
-	transform: scaleX(-1);
-}
 .overview {
 	color: white;
 	list-style: none;
