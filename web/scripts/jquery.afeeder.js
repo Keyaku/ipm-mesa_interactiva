@@ -76,7 +76,7 @@
 
 				/* Fetching thumbnail */
 				if (item.thumbnail.length > 0) {
-					s += ' style="background-image: url(\'' + item.thumbnail + '\'); background-size: cover;"';
+					s += ' style="background-image: url(\'' + item.thumbnail + '\');"';
 				}
 
 				/* Closing link */
