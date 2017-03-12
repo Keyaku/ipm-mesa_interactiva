@@ -3,6 +3,15 @@ body {
 	overflow: hidden;
 }
 
+.logoIcon {
+	border-radius: 7px;
+	right: 10;
+	bottom: 10;
+	position: absolute;
+	width: auto;
+	height:50px;
+}
+
 .viewport {
 	border: 1px solid #dcdcdc;
 	float: left;
@@ -11,16 +20,6 @@ body {
 	overflow: hidden;
 	position: relative;
 	vertical-align: middle;
-}
-
-.logoIcon {
-	border: 5pt solid white;
-	border-radius: 7px;
-	right: 10;
-	bottom: 10;
-	position: absolute;
-	width: auto;
-	height:50px;
 }
 
 .overview {
