@@ -26,6 +26,8 @@ $(document).ready(function() {
 		maxCount    : 5,
 		showDesc    : false,
 		onComplete  : function() {
+			// Remove loader div
+			$(".loader").remove();
 			// Apply TinyCarousel effect on the feed
 			$("body").tinycarousel({
 				buttons: false,

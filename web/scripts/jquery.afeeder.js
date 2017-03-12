@@ -98,7 +98,6 @@
 			});
 
 			/* Appending final HTML string */
-			container.empty();
 			container.append('<ul class="overview">' + s + '</ul>');
 			/* Adding source's logo */
 			var logo = response.feed.image;
