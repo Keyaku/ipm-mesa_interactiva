@@ -1,5 +1,4 @@
 body {
-	height: 100%;
 	overflow: hidden;
 }
 
@@ -13,32 +12,26 @@ body {
 }
 
 .viewport {
-	border: 1px solid #dcdcdc;
 	float: left;
-	width: 250pt;
-	height: 250pt;
 	overflow: hidden;
 	position: relative;
 	vertical-align: middle;
+
+	width: 100%;
+	height: 100%;
 }
 
 .overview {
-	color: white;
 	list-style: none;
 	position: absolute;
 	padding: 0;
 	margin: 0;
-	width: 250pt;
-	top: 0;
-	left: 0;
 }
 .overview li {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position-x: 50%;
 	float: left;
-	margin: 0 20px 0 0;
-	padding: 1px;
 
 	width: 250pt;
 	height: 250pt;
@@ -57,4 +50,6 @@ body {
 	text-align: center;
 	-webkit-text-stroke-color: black;
 	-webkit-text-stroke-width: 1px;
+
+	margin: 5pt 0;
 }
