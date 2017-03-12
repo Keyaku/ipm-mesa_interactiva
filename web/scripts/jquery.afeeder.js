@@ -68,40 +68,36 @@
 			/* Throw error message */
 			if (response.status != 'ok') { throw response.message; }
 
-			/* Parsing HTML */
-			var s = '';
-			$.each(response.items, function(i, item) {
-				/* Opening list item */
-				s += '<li'
-
-				/* Fetching thumbnail */
-				if (item.thumbnail.length > 0) {
-					s += ' style="background-image: url(\'' + item.thumbnail + '\');"';
-				}
-
-				/* Closing link */
-				s += '><a href="' + item.link + '"><p class="newsTitle">' + item.title + '</p></a>';
-
-				/* Showing description */
-				if (def.showDesc) {
-					s += '<div class="newsDescription">';
-					if (def.descCharLimit > 0 && item.description.length > def.descCharLimit) {
-						s += item.description.substring(0, def.descCharLimit) + '...';
-					} else {
-						s += item.description;
-					}
-					s += '</div>';
-				}
-
-				/* Closing list item */
-				s += '</li>'
-			});
-
-			/* Appending final HTML string */
-			container.append('<ul class="overview">' + s + '</ul>');
 			/* Adding source's logo */
 			var logo = response.feed.image;
-			container.append('<img class="logoIcon" src=\'' + logo + '\' />');
+			container.prepend('<img class="logoIcon" src=\'' + logo + '\' />');
+
+			/* Creating news list */
+			var list = container.prepend('<ul class="overview"></ul>').children('ul');
+			$.each(response.items, function(i, item) {
+				/* Adding list item */
+				var newsItem = list.append('<li></li>').children('li').last();
+
+				/* Applying thumbnail */
+				if (item.thumbnail.length > 0) {
+					newsItem.css('background-image', 'url(' + item.thumbnail + ')');
+				}
+
+				/* Adding link & headline */
+				var link = newsItem.append('<a></a>').children('a:only-child');
+				link.attr('href', item.link).append('<p class="newsTitle"></p>')
+					.children('p.newsTitle').text(item.title);
+
+				/* Adding description (if wished) */
+				if (def.showDesc) {
+					var desc = link.append('<p class="newsDescription"></p>').children('.newsDescription');
+					if (def.descCharLimit > 0 && item.description.length > def.descCharLimit) {
+						desc.text(item.description.substring(0, def.descCharLimit) + '...');
+					} else {
+						desc.text(item.description);
+					}
+				}
+			});
 
 			/* Activating attached callback */
 			def.onComplete();
