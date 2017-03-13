@@ -6,13 +6,31 @@ body {
 	font-family: "Kanit", Fallback, sans-serif;
 }
 
+/* Header */
 header {
 	background-color: black;
 	text-align: center;
-    height: 100%;
+    height: 100vh;
+}
+.titleSubtitle {
+	color: lightgrey;
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+.titleSubtitle h1 {
+	font-size: 75pt;
+}
+.titleSubtitle p {
+	font-size: 14pt;
 }
 
+/* Rest of page */
 main {
+	background-color: #333;
+	color:white;
 	display: block;
 	align-items: center;
 	justify-content: center;
@@ -34,30 +52,14 @@ a {
 #logoIST {
 	background-image: url("../img/about/logoIST.svg");
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: contain;
 	margin:10pt;
 
 	position: fixed;
 	top:0;
 	left:0;
-	width:148.28pt;
-	height:57.42pt;
-}
-
-
-.titleSubtitle {
-	color: lightgrey;
-	display: none;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
-}
-.titleSubtitle h1 {
-	font-size: 75pt;
-}
-.titleSubtitle p {
-	font-size: 14pt;
+	width: 25vw;
+	height: 12vh;
 }
 
 .studentName {
@@ -68,16 +70,14 @@ a {
 }
 .studentPic {
 	background-color: lightgrey;
-	border: 1px hidden;
 	border-radius: 30px;
-	box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.35);
 	width: 120pt;
-	transition: 0.1s linear;
-	zoom: normal;
+
+	transition: 0.2s;
+	box-shadow: 0 0 5pt 5pt rgba(255, 255, 255, 0);
 }
 .studentPic:hover {
-	transition: 0.1s linear;
-	zoom: 120%;
+	box-shadow: 0 0 5pt 5pt rgba(255, 255, 255, 0.5);
 }
 
 .team {
