@@ -40,7 +40,7 @@
 
 @font-face {
 	font-family: "Raleway";
-	src: url("../fonts/Raleway/Raleway-ExtraBold.ttf") format("truetype");
+	src: url("../fonts/Raleway/Raleway-Bold.ttf") format("truetype");
 	font-style: normal;
 	font-weight: bold;
 }
@@ -53,7 +53,7 @@
 
 @font-face {
 	font-family: "Raleway";
-	src: url("../fonts/Raleway/Raleway-Black.ttf") format("truetype");
+	src: url("../fonts/Raleway/Raleway-ExtraBold.ttf") format("truetype");
 	font-style: normal;
 	font-weight: bolder;
 }
