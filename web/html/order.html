@@ -1,0 +1,90 @@
+<!DOCTYPE>
+<html>
+
+<head>
+	<title>Pizza Menu</title>
+	<meta charset="utf-8" />
+	<!--Links the css files-->
+	<link rel="stylesheet" type="text/css" href="../css/global.css">
+	<link rel="stylesheet" type="text/css" href="../css/newsfeed.css">
+</head>
+
+<style>
+.orderMenu {
+	overflow-x: hidden;
+	width: 50%;
+	height: 100%;
+}
+.menuPizzaItem {
+	display: block;
+	width: 100%;
+	height: 380px;
+}
+.menuPizzaItemImg {
+	background-size: 100% 300px;
+	float: left;
+	width: 50%;
+	height: 300px;
+}
+#mPII1 { background-image: url("../img/pizzaMenu/Pizza1.jpg"); }
+#mPII2 { background-image: url("../img/pizzaMenu/Pizza1.jpg"); }
+#mPII3 { background-image: url("../img/pizzaMenu/Pizza1.jpg"); }
+
+.menuPizzaItemInfo {
+	color: white;
+	float: right;
+	margin: 0 0 0 5%;
+}
+.mPIITitle {
+	display: block;
+	font-size: 40px;
+	font-family: raleway, sans-serif;
+	margin: 0 0 20px 0;
+}
+.mPIIIngredient {
+	display: block;
+	font-size: 15px;
+	font-family: raleway, sans-serif;
+	margin: 0 0 10px 0;
+}
+
+</style>
+<body>
+	<div class="orderMenu" id="menuPizzas">
+		<div class="menuPizzaItem">
+			<div class="menuPizzaItemImg" id="mPII1"></div>
+			<div class="menuPizzaItemInfo">
+				<label class="mPIITitle">Pepperoni Lovers</label>
+				<label class="mPIIIngredient">Queijo 100% Mozzarella extra</label>
+				<label class="mPIIIngredient">Pepperoni extra</label>
+			</div>
+		</div>
+
+		<div class="menuPizzaItem">
+			<div class="menuPizzaItemImg" id="mPII2"></div>
+			<div class="menuPizzaItemInfo">
+				<label class="mPIITitle">FourSeasons</label>
+				<label class="mPIIIngredient">Fiambre</label>
+				<label class="mPIIIngredient">Mistura de vegetais</label>
+				<label class="mPIIIngredient">Milho</label>
+				<label class="mPIIIngredient">Ananás</label>
+			</div>
+		</div>
+
+		<div class="menuPizzaItem">
+			<div class="menuPizzaItemImg" id="mPII3"></div>
+			<div class="menuPizzaItemInfo">
+				<label class="mPIITitle">Camponesa</label>
+				<label class="mPIIIngredient">Fiambre</label>
+				<label class="mPIIIngredient">Cebola</label>
+				<label class="mPIIIngredient">Jalapenôs</label>
+			</div>
+		</div>
+	</div>
+
+<!-- SCRIPTS GO UNDER HERE -->
+<script src="../scripts/jquery-3.1.1.min.js"></script>
+<script src="../scripts/jquery.tinycarousel.js"></script>
+<script src="../scripts/jquery.afeeder.js"></script>
+</body>
+</html>
