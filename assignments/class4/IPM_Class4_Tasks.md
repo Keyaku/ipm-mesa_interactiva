@@ -9,6 +9,7 @@
 		[x] Cenário 1;
 		[x] Cenário 2;
 		[x] Cenário 3;
+		[ ] Rever a escrita;
 
 [ ] Criar um protótipo em papel que simule por completo pelo menos 1 das funcionalidades;
 
