@@ -59,7 +59,7 @@ body { background-image: url("../img/Background_wood.jpg"); }
 </style>
 <body>
 	<!--Scrollable verticle menu of premade pizzas-->
-	<div class="orderMenu" id="menuPremadePizzas"></div>
+	<div class="orderMenu" id="menuPremadePizzas"></div> <!--All spawned using JS--->
 
 	<!--Page to customize the pizza-->
 	<div id="customizeYourPizza">
@@ -91,58 +91,6 @@ body { background-image: url("../img/Background_wood.jpg"); }
 <script src="../scripts/jquery-3.1.1.min.js"></script>
 <script src="../scripts/jquery.tinycarousel.js"></script>
 <script src="../scripts/jquery.afeeder.js"></script>
-<script>
-	var pizzasArray = [];
-	var pizza1 = ["Pepperoni Lovers", "Extra Mozarella", "Extra pepperoni"];
-	var pizza2 = ["Four Seasons", "Ham", "Veggies", "Corn", "Pineapple"];
-	var pizza3 = ["Camponesa", "Ham", "Onion", "Jalapenõs"];
-	var pizza4 = ["Camponesa2", "Ham", "Onion", "Jalapenõs"];
-	var pizza5 = ["Camponesa3", "Ham", "Onion", "Jalapenõs"];
-
-	pizzasArray.push(pizza1);
-	pizzasArray.push(pizza2);
-	pizzasArray.push(pizza3);
-	pizzasArray.push(pizza4);
-	pizzasArray.push(pizza5);
-
-
-	//Cycles all the pizzas on the menu.
-	for (var i = 0; i < pizzasArray.length; i++) {
-		var str = pizzasArray[i][0]; //Gets the pizza's name.
-
-		//Creates a div for each pizza.
-		var division = document.createElement("div");
-		division.className += "menuPizzaItem";
-		document.getElementById("menuPremadePizzas").appendChild(division);
-
-		//Creates a div for the pizza's image.
-		var pizzaItemImgDiv = document.createElement("div");
-		pizzaItemImgDiv.className += "menuPizzaItemImg";
-		pizzaItemImgDiv.id = "mPII" + (i + 1).toString();
-		division.appendChild(pizzaItemImgDiv); //Appends the img division to the main pizza item div.
-
-		//Creates a div for the pizza's name and ingredients list.
-		var pizzaItemInfoDiv = document.createElement("div");
-		pizzaItemInfoDiv.className += "menuPizzaItemInfo";
-		pizzaItemInfoDiv.id = str;
-		division.appendChild(pizzaItemInfoDiv);
-
-		//Creates the label that represents the pizza's name.
-		var label = document.createElement("label");
-		label.className += "mPIITitle";
-		label.appendChild(document.createTextNode(str));
-		//Creates the list of ingredients.
-		var list = document.createElement("ul");
-		//For every ingredient, adds a list element;
-		for (var j = 1; j < pizzasArray[i].length; j++) {
-			var item = document.createElement("li");
-			item.className += ("mPIIIngredient");
-			item.appendChild(document.createTextNode(pizzasArray[i][j]));
-			list.appendChild(item);
-		}
-		pizzaItemInfoDiv.appendChild(label).appendChild(list); //Adds the pizza's name and the ingredients list to the correct div.
-	}
-</script>
-
+<script src="../scripts/order.js"></script>
 </body>
 </html>
