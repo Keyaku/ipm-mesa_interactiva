@@ -71,7 +71,6 @@ header {
 #minimizer {
 	fill: white;
 
-	position: relative;
 	float:left;
 	width: 40pt;
 	height: 100%;
@@ -210,6 +209,4 @@ main {
 #iframeMap {
 	border: 0;
 	box-shadow: 0 10px 10px 0 black;
-	/*width: 1550px;*/
-	/*height: 670px;*/
 }
