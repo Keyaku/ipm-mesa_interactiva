@@ -1,3 +1,10 @@
+/******************************* General rules ********************************/
+html, body {
+	width:  100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
 a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
 a:focus:hover { text-decoration: none; }
@@ -14,64 +21,85 @@ div {
 ::-webkit-input-placeholder { color: black; }
 ::-moz-placeholder { color: black; }
 
-.menuIcon, .subMenuIcon, #micIcon { width: 48px; height: 48px; margin: 0 auto 0 auto; }
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+	padding: 0;
+}
+
+/***************************** Table specifics ********************************/
+/***** Vertical bar *****/
+header {
+	background-color: rgba(0, 0, 0, 0.7);
+
+	position: absolute;
+	height: 100%;
+}
+
 #logo {
 	background-image: url("../img/paradiziaLogo.svg");
-	margin: 0 auto 0 auto;
-	width: 250px;
-	height: 250px;
+	background-size: contain;
+	min-width:  1%;
+	min-height: 1%;
+	width: 100%;
+	height: 30%;
 }
 
-#superBar {
-	position: relative;
+#menuOptions {
 	float: left;
-	margin: 0;
-	padding: 0;
-	width: 348px;
+	padding: 5pt;
 	height: 100%;
-}
 
-#mainMenu {
-	background-color: rgba(0,0,0,0.7);
-	left: 0;
-	position: absolute;
-	width: 300px;
-	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
-.mainMenuButton {
+#menuOptions::-webkit-scrollbar {
+	display: none;
+}
+.menuButton {
 	border-bottom: 1px dashed white;
 	padding: 20px 0 20px 0;
 	width: 100%;
 }
-.mainMenuButton:hover svg { fill: white; }
+.menuButton:hover svg { fill: white; }
 .menuTitle { margin: 10px 0 10px 10px; }
+.menuIcon, .subMenuIcon, #micIcon { width: 48px; height: 48px; margin: 0 auto 0 auto; }
 .menuIcon {
 	float: left;
 	margin: 0 0 0 20px;
 	fill: #C8190E;
 }
 
-/* arrow that toggles the visibility of the vertical bar */
-#arrowIcon {
-	background-image: url("../img/icons/arrowLeft.svg");
-	left: 300px;
-	position: absolute;
-	width: 48px;
+#minimizer {
+	fill: white;
+
+	position: relative;
+	float:left;
+	width: 40pt;
 	height: 100%;
 }
-
-/*overlay css*/ .overlay {
-	font-size: 0px;
-	left: 348px;
-	position: absolute;
-	width: 1550px;
-	height: 100%;
+#minimizer.closed {
+	transform: scaleX(-1);
+}
+#minimizer svg {
+	position: relative;
+	width: 40pt;
+	top: 50%;
 }
 
-/*order overlay*/
-#overlayOrder {
+/***** Page contents *****/
+main {
+	background-size: cover;
+	background-image: url("../img/tableBack2.jpg");
+
+	width:  100%;
+	height: 100%;
+	z-index: -1;
+}
+
+/* Overlay content */
+.overlay {
 	text-align: center;
 }
+
 .pizzaMakerList {
 	color: black;
 	cursor: context-menu;
@@ -84,31 +112,6 @@ div {
 	padding: 0 20px 0 20px;
 }
 
-.orderChoose {
-	background-color: rgba(0,0,0,0.8);
-	display: none;
-	margin: 0 10px 0 10px;
-	padding: 400px 0 0 0;
-	min-width: 300px;
-	height: 100%;
-}
-.orderChooseLabel {
-	color: white;
-}
-.menuBanner {
-	background-size: 100% 600px;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 500px;
-	z-index: -1;
-}
-#menuBannerDrinks { background-image: url("../img/menuBannerDrinks.jpg"); }
-
-.menuTable {
-	/*background-color: rgba(0,0,0,0.8);*/
-	color: white;
-}
 .chooseMenu label {
 	background-color: rgba(255, 255, 255, 0.6);
 	color: black;
@@ -117,11 +120,14 @@ div {
 	margin: 200px 0 300px 0;
 	width: 100%;
 }
+
+.menuTable {
+	color: white;
+}
 .menuTable td {
 	font-size: 20px;
 	font-weight: lighter;
 	padding: 5px 0 20px 0;
-	width: 300px;
 }
 .menuTable th {
 	color: #C8190E;
@@ -150,11 +156,9 @@ div {
 .fa-spotify { background: rgba(87,172,2,0.8); /*#57AC02;*/ }
 .fa-youtube { background: rgba(229,45,39,0.8); /*#e52d27;*/ }
 
-/*news overlay*/
-#newsIframe {
-	width: 90%;
-	height: 100%;
-	border: 0;
+
+.ytplayer {
+	height: 700px;
 }
 
 .informationButton {
@@ -201,12 +205,11 @@ div {
 	background-image: url("../img/icons/mic.svg");
 	display: inline-block;
 	margin: 15px 0 0 0;
-	width: 48px;
 }
 #micIcon:hover { filter: invert(100%); }
 #iframeMap {
 	border: 0;
 	box-shadow: 0 10px 10px 0 black;
-	width: 1550px;
-	height: 670px;
+	/*width: 1550px;*/
+	/*height: 670px;*/
 }

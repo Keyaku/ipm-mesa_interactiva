@@ -12,168 +12,98 @@
 </head>
 
 <body>
-	<div id="superBar">
-		<div id="mainMenu">
+	<header>
+		<div id="menuOptions">
 			<div id="logo"></div>
-			<div class="mainMenuButton">
+			<div class="menuButton">
 				<svg class="menuIcon"><use xlink:href="../img/icons/pizza.svg#pizza" /></svg>
 				<label class="menuTitle">Order</label>
 			</div>
-			<div class="mainMenuButton">
+			<div class="menuButton">
 				<svg class="menuIcon"><use xlink:href="../img/icons/share.svg#share" /></svg>
 				<label class="menuTitle">Social</label>
 			</div>
-			<div class="mainMenuButton">
+			<div class="menuButton">
 				<svg class="menuIcon"><use xlink:href="../img/icons/music.svg#music" /></svg>
 				<label class="menuTitle">Entertainment</label>
 			</div>
-			<div class="mainMenuButton">
+			<div class="menuButton">
 				<svg class="menuIcon"><use xlink:href="../img/icons/world.svg#world" /></svg>
 				<label class="menuTitle">News</label>
 			</div>
-			<div class="mainMenuButton">
+			<div class="menuButton">
 				<svg class="menuIcon"><use xlink:href="../img/icons/navigation.svg#navigation" /></svg>
 				<label class="menuTitle">Information</label>
 			</div>
-			<div id="countdown"></div>
 		</div>
-		<div id="arrowIcon"></div>
-	</div>
+		<div id="minimizer">
+			<svg><use xlink:href="../img/icons/arrowLeft.svg#arrowLeft" /></svg>
+		</div>
+	</header>
 
-	<div class="overlay" id="overlayOrder">
-		<div class="orderChoose" id="orderChooseSides">
-			<label>Appetizer / Sides</label>
-			<div></div>
-		</div>
-		<div class="orderChoose" id="orderChooseDish">
-			<label>Dish</label>
-			<div></div>
-		</div>
-		<div class="orderChoose" id="orderChooseDrinks">
-			<label>Drinks</label>
-			<div></div>
-		</div>
-		<div class="orderChoose" id="orderChooseDessert">
-			<label>Dessert</label>
-			<div></div>
+	<main>
+		<div class="overlay" id="order"></div>
+
+		<div class="overlay" id="social">
+			<a class="fa fa-facebook"></a>
+			<a class="fa fa-twitter"></a>
+			<a class="fa fa-instagram"></a>
 		</div>
 
-		<!--Order Submenus-->
-		<!--Sides submenu
-		<div class="chooseMenu" id="chooseSides">
-			<label>Appetizer / Sides</label>
-			<table class="menuTable">
-				<tr><th>Garlic Bread</th></tr>
-				<tr>
-					<td>Supreme</td>
-					<td>Bacon</td>
-					<td>Pepperoni</td>
-					<td>Philly</td>
-				</tr>
-				<tr><th>Spin Rolls</th></tr>
-				<tr>
-					<td>Veggie</td>
-					<td>Chicken Garlic</td>
-				</tr>
-				<tr><th>Breadsticks Pepperoni</th></tr>
-				<tr><th>Chicken Wings</th></tr>
-			</table>
-			<div class="backIcon" id="backSides"></div>
-		</div>
-		-->
-		<div class="chooseMenu" id="chooseDrinks">
-			<div class="menuBanner" id="menuBannerDrinks"></div>
-			<label>Drinks</label>
-			<table class="menuTable">
-				<tr>
-					<td>Water (33CL)</td>
-					<td>Water (50CL)</td>
-					<td>Sparkling Water</td>
-					<td>Orange Juice</td>
-				</tr>
-				<tr><th>Soda</th></tr>
-				<tr>
-					<td>Glass (25CL)</td>
-					<td>Glass (40CL)</td>
-					<td>Can (33CL)</td>
-				</tr>
-				<tr><th>Beer</th></tr>
-				<tr>
-					<td>Non-alcoholic Beer (20CL)</td>
-					<td>Non-alcoholic Beer (40CL)</td>
-					<td>Beer Glass(20CL)</td>
-					<td>Beer Glass(40CL)</td>
-					<td>Beer Mug(1L)</td>
-				</tr>
-			</table>
-			<div class="backIcon" id="backDrink"></div>
+		<div class="overlay" id="entertainment">
+			<a class="fa fa-spotify"></a>
+			<a class="fa fa-youtube"></a>
 		</div>
 
+		<div class="overlay" id="news"></div>
 
-	</div>
-
-	<div class="overlay" id="overlaySocial">
-		<a class="fa fa-facebook"></a>
-		<a class="fa fa-twitter"></a>
-		<a class="fa fa-instagram"></a>
-		<!--<iframe id="ytplayer" type="text/html" width="1244" height="700" src="https://www.youtube.com/embed/ua3JVPGuG98"  frameborder="0" allowfullscreen></iframe>-->
-	</div>
-
-	<div class="overlay" id="overlayEntertainment">
-		<a class="fa fa-spotify"></a>
-		<a class="fa fa-youtube"></a>
-	</div>
-
-	<div class="overlay" id="overlayNews">
-		<iframe id="newsIframe" src="newsfeed.html"></ifram>
-	</div>
-<!--
-	<div class="overlay" id="overlayInformation">
-		<div class="informationSubMenu">
-			<label>Search nearby</label>
-			<div class="informationButton" id="barButton">
-				<label class="subMenuTitle">Bar/Cafe</label>
-				<div class="submenuIcon" id="barIcon"></div>
+		<div class="overlay" id="information">
+			<!--
+			<div class="informationSubMenu">
+				<label>Search nearby</label>
+				<div class="informationButton" id="barButton">
+					<label class="subMenuTitle">Bar/Cafe</label>
+					<div class="submenuIcon" id="barIcon"></div>
+				</div>
+				<div class="informationButton" id="mallButton">
+					<label class="subMenuTitle">Mall</label>
+					<div class="submenuIcon" id="mallIcon"></div>
+				</div>
 			</div>
-			<div class="informationButton" id="mallButton">
-				<label class="subMenuTitle">Mall</label>
-				<div class="submenuIcon" id="mallIcon"></div>
+			<div class="informationSubMenu">
+				<label>Call a ride</label>
+				<div class="informationButton" id="taxiButton">
+					<label class="subMenuTitle">Taxi</label>
+					<div class="submenuIcon" id="taxiIcon"></div>
+				</div>
+				<div class="informationButton" id="uberButton">
+					<label class="subMenuTitle">Uber</label>
+					<div class="submenuIcon" id="uberIcon"></div>
+				</div>
 			</div>
-		</div>
-		<div class="informationSubMenu">
-			<label>Call a ride</label>
-			<div class="informationButton" id="taxiButton">
-				<label class="subMenuTitle">Taxi</label>
-				<div class="submenuIcon" id="taxiIcon"></div>
+			<div class="informationSubMenu">
+				<label>Get directions</label>
+				<div class="informationButton" id="publicTransportButton">
+					<label class="subMenuTitle">Public Transport</label>
+					<div class="submenuIcon" id="publictransportIcon"></div>
+				</div>
+				<div class="informationButton" id="carButton">
+					<label class="subMenuTitle">Car</label>
+					<div class="submenuIcon" id="uberIcon"></div>
+				</div>
 			</div>
-			<div class="informationButton" id="uberButton">
-				<label class="subMenuTitle">Uber</label>
-				<div class="submenuIcon" id="uberIcon"></div>
-			</div>
-		</div>
-		<div class="informationSubMenu">
-			<label>Get directions</label>
-			<div class="informationButton" id="publicTransportButton">
-				<label class="subMenuTitle">Public Transport</label>
-				<div class="submenuIcon" id="publictransportIcon"></div>
-			</div>
-			<div class="informationButton" id="carButton">
-				<label class="subMenuTitle">Car</label>
-				<div class="submenuIcon" id="uberIcon"></div>
-			</div>
-		</div>
 
-		<div>
-			<input id="mapsDestinationInput" type="text" placeholder="Enter the destination">
-			<div id="micIcon"></div>
+			<div>
+				<input id="mapsDestinationInput" type="text" placeholder="Enter the destination">
+				<div id="micIcon"></div>
+			</div>
+			<iframe id="iframeMap"src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&q=taguspark"></iframe>
+			-->
 		</div>
-		<iframe id="iframeMap"src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&q=taguspark"></iframe>
-	</div>
--->
+	</main>
 
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="../scripts/jquery-3.1.1.min.js"></script>
-<script src="../scripts/jquery.countdown360.js"></script>
 <script src="../scripts/svg4everybody.min.js"></script>
 <script src="../scripts/table.js"></script>
 <script src="../scripts/googleMaps.js"></script>
