@@ -2,18 +2,18 @@
 [ ] Sarmento - Esboçar 3 ecrãs diferentes;
 [x] Ribeiro - Esboçar 3 ecrãs diferentes;
 
-[ ] Melhorar o relatório entrege na aula 3:
+[x] Melhorar o relatório entrege na aula 3:
 	[x] Colocar o número de pessoas que reposnderam ao questionário;
 	[x] Colocar as respostas na ordem certa (2 cenários trocados);
-	[ ] Elaborar as funcionalidades nos cenários:
+	[x] Elaborar as funcionalidades nos cenários:
 		[x] Cenário 1;
 		[x] Cenário 2;
 		[x] Cenário 3;
-		[ ] Rever a escrita;
+		[x] Rever a escrita;
 
 [ ] Criar um protótipo em papel que simule por completo pelo menos 1 das funcionalidades;
 
-[ ] Criar um storyboard para pelo menos essa funcionalidade;
+[x] Criar um storyboard para pelo menos essa funcionalidade;
 
 
 NOTA:
