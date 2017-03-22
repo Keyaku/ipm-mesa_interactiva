@@ -67,23 +67,31 @@ body { background-image: url("../img/Background_wood.jpg"); }
 	float: left;
 	width: 100%;
 }
+.customizeStep {
+	display: block;
+	margin: 0 0 0 50px;
+	height: 70%;
+}
 .customizeStepTitle {
 	color: white;
 	font-size: 80px;
 	margin: 0 0 40px 100px;
 }
-.pizzaSize {
+.pizzaCustomizationItemsContainer {
+	margin: 0 0 0 150px;
+	height: 500px;
+}
+.pizzaCustomizationItem {
 	background-position: center;
 	background-repeat: no-repeat;
 	border-right: 2px dashed white;
 	float:left;
-	display: inline-block;
 	text-align: center;
-	padding: 0 30px 0 100px;
-	min-width: 400px;
+	width: 450px;
 	height: 500px;
 }
-.pizzaSize:last-child { border: none; }
+.pizzaCustomizationItem:last-child { border: none; }
+
 #size1 {
 	background-image: url("../img/pizzaMenu/pizzaMedium.png");
 	background-size: 150px 150px;
@@ -97,8 +105,30 @@ body { background-image: url("../img/Background_wood.jpg"); }
 	background-size: 350px 350px;
 }
 .pizzaSizeText {
+	color: orange;
+	font-size: 60px;
+	font-family: bangers, sans-serif;
+}
+.pizzaSlicesText {
 	color: white;
-	font-size: 40px;
+	font-size: 30px;
+	font-family: raleway, sans-serif;
+}
+
+.pizzaDough {
+	margin: 0 0 0 20px;
+	padding: 0 20px 0 0;
+	text-align: justify;
+	width: 410px;
+}
+.pizzaDoughName {
+	color: orange;
+	font-size: 60px;
+	font-family: bangers, sans-serif;
+}
+.pizzaDoughDesc {
+	color: white;
+	font-size: 20px;
 	font-family: raleway, sans-serif;
 }
 
@@ -112,9 +142,25 @@ body { background-image: url("../img/Background_wood.jpg"); }
 		<label class="menuTitle">Customize Your Own Pizza</label>
 		<div class="customizeStep">
 			<div class="customizeStepTitle">Choose your size</div>
-			<div class="pizzaSize" id="size1"><label class="pizzaSizeText">Small</label><label>(4 Slices)</label></div>
-			<div class="pizzaSize" id="size2"><label class="pizzaSizeText">Medium</label><label>(8 Slices)</label></div>
-			<div class="pizzaSize" id="size3"><label class="pizzaSizeText">King-sized Family</label><label>(16 Slices)</label></div>
+			<div class="pizzaCustomizationItemsContainer">
+				<div class="pizzaCustomizationItem" id="size1"><label class="pizzaSizeText">Small</label><br><label class="pizzaSlicesText">4 Slices</label></div>
+				<div class="pizzaCustomizationItem" id="size2"><label class="pizzaSizeText">Medium</label><br><label class="pizzaSlicesText">8 Slices</label></div>
+				<div class="pizzaCustomizationItem" id="size3"><label class="pizzaSizeText">King-sized Family</label><br><label class="pizzaSlicesText">16 Slices</label></div>
+			</div>
+		</div>
+
+		<div class="customizeStep">
+			<div class="customizeStepTitle">Choose your size</div>
+			<div class="pizzaCustomizationItemsContainer">
+				<div class="pizzaCustomizationItem pizzaDough">
+					<label class="pizzaDoughName">Thin Crust</label>
+					<br><label class="pizzaDoughDesc">Characterized by its buttery, pan-fried taste and outisde texture, with a soft and chwey center</label>
+				</div>
+				<div class="pizzaCustomizationItem pizzaDough">
+					<label class="pizzaDoughName">Thin Crust</label>
+					<br><label class="pizzaDoughDesc">Characterized by its buttery, pan-fried taste and outisde texture, with a soft and chwey center</label>
+				</div>
+			</div>
 		</div>
 	</div>
 
