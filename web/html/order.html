@@ -6,7 +6,6 @@
 	<meta charset="utf-8" />
 	<!--Links the css files-->
 	<link rel="stylesheet" type="text/css" href="../css/global.css">
-	<link rel="stylesheet" type="text/css" href="../css/newsfeed.css">
 </head>
 
 <style>
@@ -17,7 +16,7 @@ body { background-image: url("../img/Background_wood.jpg"); }
 
 .orderMenu {
 	overflow-x: hidden;
-	width: 50%;
+	width: 45%;
 	height: 100%;
 }
 
@@ -41,7 +40,8 @@ body { background-image: url("../img/Background_wood.jpg"); }
 
 .menuPizzaItemInfo {
 	color: white;
-	margin: 0 0 0 55%;
+	float: left;
+	margin: 0 0 0 5%;
 }
 .mPIITitle {
 	display: block;
@@ -56,40 +56,70 @@ body { background-image: url("../img/Background_wood.jpg"); }
 	margin: 20px 0 10px 0;
 }
 
+
+.menuTitle {
+	color: orange;
+	font-size: 150px;
+	font-family: bangers, sans-serif;
+	margin: 0 0 0 50px;
+}
+#customizeYourPizza {
+	float: left;
+	width: 100%;
+}
+.customizeStepTitle {
+	color: white;
+	font-size: 80px;
+	margin: 0 0 40px 100px;
+}
+.pizzaSize {
+	background-position: center;
+	background-repeat: no-repeat;
+	border-right: 2px dashed white;
+	float:left;
+	display: inline-block;
+	text-align: center;
+	padding: 0 30px 0 100px;
+	min-width: 400px;
+	height: 500px;
+}
+.pizzaSize:last-child { border: none; }
+#size1 {
+	background-image: url("../img/pizzaMenu/pizzaMedium.png");
+	background-size: 150px 150px;
+}
+#size2 {
+	background-image: url("../img/pizzaMenu/pizzaMedium.png");
+	background-size: 250px 250px;
+}
+#size3 {
+	background-image: url("../img/pizzaMenu/pizzaFamily.png");
+	background-size: 350px 350px;
+}
+.pizzaSizeText {
+	color: white;
+	font-size: 40px;
+	font-family: raleway, sans-serif;
+}
+
 </style>
 <body>
 
 	<div class="orderMenu" id="menuPremadePizzas"></div> <!--Scrollable verticle menu of premade pizzas--> <!--All spawned using JS--->
 
-	<!--Page to customize the pizza-->
-	<div id="customizeYourPizza">
+	<div class="orderMenu" id="customizeYourPizza">
 		<!--Page label-->
 		<label class="menuTitle">Customize Your Own Pizza</label>
-		<!--Size chosing menu-->
 		<div class="customizeStep">
-			<!--Step title-->
-			<label class="menuSubTitle"> 1/3 Choose your size</label>
-			<div class="pizzaSize">
-				<div class="pizzaSizeImg"></div>
-				<label class="pizzaSizeText">Small</label>
-				<label class="pizzaSizeNumber">4 Slices</label>
-			</div>
-			<div class="pizzaSize">
-				<div class="pizzaSizeImg"></div>
-				<label class="pizzaSizeText">Medium</label>
-				<label class="pizzaSizeNumber">8 Slices</label>
-			</div>
-			<div class="pizzaSize">
-				<div class="pizzaSizeImg"></div>
-				<label class="pizzaSizeText">King-sized Family</label>
-				<label class="pizzaSizeNumber">16 Slices</label>
-			</div>
+			<div class="customizeStepTitle">Choose your size</div>
+			<div class="pizzaSize" id="size1"><label class="pizzaSizeText">Small</label><label>(4 Slices)</label></div>
+			<div class="pizzaSize" id="size2"><label class="pizzaSizeText">Medium</label><label>(8 Slices)</label></div>
+			<div class="pizzaSize" id="size3"><label class="pizzaSizeText">King-sized Family</label><label>(16 Slices)</label></div>
 		</div>
 	</div>
 
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="../scripts/jquery-3.1.1.min.js"></script>
-<script src="../scripts/jquery.afeeder.js"></script>
 <script src="../scripts/order.js"></script>
 </body>
 </html>

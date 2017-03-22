@@ -1,15 +1,10 @@
-var pizzasArray = [];
-var pizza1 = ["Pepperoni Lovers", "Extra Mozarella", "Extra pepperoni"];
-var pizza2 = ["Four Seasons", "Ham", "Veggies", "Corn", "Pineapple"];
-var pizza3 = ["Camponesa", "Ham", "Onion", "Jalapenõs"];
-var pizza4 = ["Camponesa2", "Ham", "Onion", "Jalapenõs"];
-var pizza5 = ["Camponesa3", "Ham", "Onion", "Jalapenõs"];
-
-pizzasArray.push(pizza1);
-pizzasArray.push(pizza2);
-pizzasArray.push(pizza3);
-pizzasArray.push(pizza4);
-pizzasArray.push(pizza5);
+var pizzasArray = [
+	["Pepperoni Lovers", "Extra Mozarella", "Extra pepperoni"],
+	["Four Seasons", "Ham", "Veggies", "Corn", "Pineapple"],
+	["Camponesa", "Ham", "Onion", "Jalapenõs"],
+	["Camponesa2", "Ham", "Onion", "Jalapenõs"],
+	["Camponesa3", "Ham", "Onion", "Jalapenõs"]
+]
 
 //Cycles all the pizzas on the menu.
 for (var i = 0; i < pizzasArray.length; i++) {
