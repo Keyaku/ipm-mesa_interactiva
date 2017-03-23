@@ -86,13 +86,12 @@ body { background-image: url("../img/Background_wood.jpg"); }
 	background-position: center;
 	background-repeat: no-repeat;
 	border-right: 2px dashed white;
-	border-bottom: 2px dashed white;
 	float:left;
 	text-align: center;
 	width: 500px;
 	height: 500px;
 }
-
+.pizzaCustomizationItem:last-child { border: none; }
 
 #size1 {
 	background-image: url("../img/pizzaMenu/pizzaMedium.png");
@@ -118,7 +117,7 @@ body { background-image: url("../img/Background_wood.jpg"); }
 }
 
 .pizzaDough {
-	margin: 0 0 0 20px;
+	margin: 0 0 20px 20px;
 	padding: 0 20px 0 0;
 	text-align: justify;
 	width: 460px;
@@ -133,6 +132,23 @@ body { background-image: url("../img/Background_wood.jpg"); }
 	color: white;
 	font-size: 20px;
 	font-family: raleway, sans-serif;
+}
+
+.pizzaIngredientType {
+}
+
+.pizzaIngredientTypeLabel {
+	color: darkorange;
+	display: block;
+	font-size: 60px;
+	font-family: bangers, sans-serif;
+	margin: 0 0 20px 0;
+}
+
+.pizzaIngredient {
+	display: inline-block;
+	width: 200px;
+	height: 100px;
 }
 
 </style>
@@ -161,7 +177,7 @@ body { background-image: url("../img/Background_wood.jpg"); }
 				</div>
 				<div class="pizzaCustomizationItem pizzaDough">
 					<label class="pizzaDoughName">Italian Original</label>
-					<br><label class="pizzaDoughDesc">Baked in a wood-fired, doomed oven, with no more than 35cm in diameter and no more than one-third of a centimeter thick</label>
+					<br><label class="pizzaDoughDesc">Baked in a wood-fired, domed oven, with no more than 35cm in diameter and no more than one-third of a centimeter thick</label>
 				</div>
 				<div class="pizzaCustomizationItem pizzaDough">
 					<label class="pizzaDoughName">Flatbread Crust</label>
@@ -170,6 +186,32 @@ body { background-image: url("../img/Background_wood.jpg"); }
 				<div class="pizzaCustomizationItem pizzaDough">
 					<label class="pizzaDoughName">Thick Crust</label>
 					<br><label class="pizzaDoughDesc">Thick crust is thick all throughout in order to handle the weight of the sauce and toppings. Typically, the crust can range in thickness anywhere from a 1/8 to 1/4 inch.</label>
+				</div>
+			</div>
+
+			<div class="customizeStep">
+				<div class="customizeStepTitle">Choose your ingredients</div>
+				<div class="pizzaCustomizationItemsContainer">
+					<div class="pizzaIngredientType">
+						<label class="pizzaIngredientTypeLabel">Cheese</label>
+
+						<div class="pizzaIngredient">
+							<div class="pizzaIngredientImg"></div>
+							<label class="pizzaIngredientName">mozzarella</label>
+						</div>
+						<div class="pizzaIngredient">
+							<div class="pizzaIngredientImg"></div>
+							<label class="pizzaIngredientName">parmesan</label>
+						</div>
+						<div class="pizzaIngredient">
+							<div class="pizzaIngredientImg"></div>
+							<label class="pizzaIngredientName">provolone</label>
+						</div>
+					</div>
+
+
+
+
 				</div>
 			</div>
 		</div>
