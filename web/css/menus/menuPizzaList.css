@@ -1,9 +1,10 @@
-body { background-image: url("../../img/Background_wood.jpg"); }
+body { background-image: url("../../img/tableBack2.jpg"); }
 ::-webkit-scrollbar { width: 12px; }
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.5); }
 ::-webkit-scrollbar-thumb:hover { background-color: rgba(255,255,255,1); }
 
 .orderMenu {
+	background-color: rgba(0,0,0,0.7);
 	overflow-x: hidden;
 	width: 45%;
 	height: 100%;
@@ -43,4 +44,18 @@ body { background-image: url("../../img/Background_wood.jpg"); }
 	font-size: 15px;
 	font-family: raleway, sans-serif;
 	margin: 20px 0 10px 0;
+}
+
+
+
+.pizzaInformation {
+	background-color: black;
+	float: left;
+	margin: 0 0 0 5%;
+	width: 45%;
+	height: 100%;
+}
+
+.pizzaNutritionalInfo td{
+	color: white;
 }

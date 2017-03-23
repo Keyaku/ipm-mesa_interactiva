@@ -1,3 +1,4 @@
+//Array of premade pizzas (for the JS generated menu).
 var pizzaList = {
 	"Pepperoni Lovers" : ["Extra Mozarella", "Extra pepperoni"],
 	"Four Seasons"     : ["Ham", "Veggies", "Corn", "Pineapple"],
@@ -6,7 +7,16 @@ var pizzaList = {
 	"Camponesa3"       : ["Ham", "Onion", "Jalapenõs"],
 };
 
-//Cycles all the pizzas on the menu.
+var pizzaNutritionalInfo = {
+	"Pepperoni Lovers" : {"Calories":"120", "Protein":"8", "Carbohydrates":"20", "Fat":"80"},
+	"Four Seasons" : {"Calories":"120", "Protein":"8", "Carbohydrates":"20", "Fat":"80"},
+	"Camponesa" : {"Calories":"120", "Protein":"8", "Carbohydrates":"20", "Fat":"80"},
+	"Camponesa2" : {"Calories":"120", "Protein":"8", "Carbohydrates":"20", "Fat":"80"},
+	"Camponesa3" : {"Calories":"120", "Protein":"8", "Carbohydrates":"20", "Fat":"80"},
+}
+
+
+//Creates all the elements in the premade pizzas menu.
 var pizzaId = 1;
 for (var pizza in pizzaList) {
 	var label = $("<label></label>").addClass("mPIITitle").append(document.createTextNode(pizza)); //Creates the label that represents the pizza's name.
@@ -19,3 +29,8 @@ for (var pizza in pizzaList) {
 	var division = $("<div></div>").addClass("menuPizzaItem").append($("<div></div>").addClass("menuPizzaItemImg").attr("id", "mPII" + (pizzaId++).toString())).append(pizzaItemInfoDiv); //Appends the img division to the main pizza item div.
 	$("#menuPremadePizzas").append(division);
 }
+
+//Generates and shows the extensive information menu of the chosen pizza.
+$(".menuPizzaItem").click(function() {
+	console.log("click");
+});
