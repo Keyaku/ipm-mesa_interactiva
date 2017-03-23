@@ -1,0 +1,57 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Pizza Menu</title>
+	<meta charset="utf-8" />
+	<!--Links the css files-->
+	<link rel="stylesheet" type="text/css" href="../../css/global.css">
+	<link rel="stylesheet" type="text/css" href="../../css/menus/menuCustomizePizza.css">
+</head>
+
+<body>
+	<div class="orderMenu" id="customizeYourPizza">
+		<!--Page label-->
+		<label class="menuTitle">Customize Your Own Pizza</label>
+
+		<div class="customizeStep">
+			<div class="customizeStepTitle">Choose your size</div>
+			<div class="pizzaCustomizationItemsContainer">
+				<div class="pizzaCustomizationItem" id="size1"><label class="pizzaSizeText">Small</label><br><label class="pizzaSlicesText">4 Slices</label></div>
+				<div class="pizzaCustomizationItem" id="size2"><label class="pizzaSizeText">Medium</label><br><label class="pizzaSlicesText">8 Slices</label></div>
+				<div class="pizzaCustomizationItem" id="size3"><label class="pizzaSizeText">King-sized Family</label><br><label class="pizzaSlicesText">16 Slices</label></div>
+			</div>
+		</div>
+
+		<div class="customizeStep">
+			<div class="customizeStepTitle">Choose your dough</div>
+			<div class="pizzaCustomizationItemsContainer">
+				<div class="pizzaCustomizationItem pizzaDough">
+					<label class="pizzaDoughName">Thin Crust</label>
+					<br><label class="pizzaDoughDesc">Characterized by its buttery, pan-fried taste and outisde texture, with a soft and chwey center</label>
+				</div>
+				<div class="pizzaCustomizationItem pizzaDough">
+					<label class="pizzaDoughName">Italian Original</label>
+					<br><label class="pizzaDoughDesc">Baked in a wood-fired, domed oven, with no more than 35cm in diameter and no more than one-third of a centimeter thick</label>
+				</div>
+				<div class="pizzaCustomizationItem pizzaDough">
+					<label class="pizzaDoughName">Flatbread Crust</label>
+					<br><label class="pizzaDoughDesc">This lighter, thin crust is ideal for appetizers and personal-sized pizzas, because it isn’t as filling as other crust types, and makes health-conscious customers feel less guilty about eating pizza</label>
+				</div>
+				<div class="pizzaCustomizationItem pizzaDough">
+					<label class="pizzaDoughName">Thick Crust</label>
+					<br><label class="pizzaDoughDesc">Thick crust is thick all throughout in order to handle the weight of the sauce and toppings. Typically, the crust can range in thickness anywhere from a 1/8 to 1/4 inch.</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="customizeStep">
+			<div class="customizeStepTitle">Choose your ingredients</div>
+			<div class="pizzaCustomizationItemsContainer" id="pizzaIngredients"></div> <!--List of ingredients to add (by type)--> <!--All spawned using JS--->
+		</div>
+	</div>
+
+<!-- SCRIPTS GO UNDER HERE -->
+<script src="../../scripts/jquery-3.1.1.min.js"></script>
+<script src="../../scripts/menus/menuCustomizePizza.js"></script>
+</body>
+</html>
