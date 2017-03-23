@@ -135,8 +135,11 @@ body { background-image: url("../img/Background_wood.jpg"); }
 }
 
 .pizzaIngredientType {
-	margin: 0;
-
+	margin: 0 0 20px 0;
+	overflow-x: scroll;
+	overflow-y: visible;
+	white-space: nowrap;
+	width: 600px;
 }
 
 .pizzaIngredientTypeLabel {
@@ -150,11 +153,16 @@ body { background-image: url("../img/Background_wood.jpg"); }
 .pizzaIngredient {
 	display: inline-block;
 	width: 200px;
-	height: 100px;
 }
 
 #pizzaMushroom {
 	background-image: url("../img/pizzaMenu/pizzaIngredients/pizzaMushroom.png");
+	background-size: 140px 70px;
+	width: 140px;
+	height: 70px;
+}
+#pizzaJalapenos {
+	background-image: url("../img/pizzaMenu/pizzaIngredients/pizzaJalapenos.png");
 	background-size: 140px 70px;
 	width: 140px;
 	height: 70px;
@@ -201,8 +209,8 @@ body { background-image: url("../img/Background_wood.jpg"); }
 			<div class="customizeStep">
 				<div class="customizeStepTitle">Choose your ingredients</div>
 				<div class="pizzaCustomizationItemsContainer" id="pizzaIngredients">
+					<label class="pizzaIngredientTypeLabel">Cheese</label>
 					<div class="pizzaIngredientType">
-						<label class="pizzaIngredientTypeLabel">Cheese</label>
 						<div class="pizzaIngredient">
 							<div class="pizzaIngredientImg"></div>
 							<label class="pizzaIngredientName">Mozzarella</label>
@@ -217,8 +225,8 @@ body { background-image: url("../img/Background_wood.jpg"); }
 						</div>
 					</div>
 
+					<label class="pizzaIngredientTypeLabel">Meat</label>
 					<div class="pizzaIngredientType">
-						<label class="pizzaIngredientTypeLabel">Meat</label>
 						<div class="pizzaIngredient">
 							<div class="pizzaIngredientImg"></div>
 							<label class="pizzaIngredientName">Ham</label>
@@ -245,8 +253,8 @@ body { background-image: url("../img/Background_wood.jpg"); }
 						</div>
 					</div>
 
+					<label class="pizzaIngredientTypeLabel">Fish & Seafood</label>
 					<div class="pizzaIngredientType">
-						<label class="pizzaIngredientTypeLabel">Fish & Seafood</label>
 						<div class="pizzaIngredient">
 							<div class="pizzaIngredientImg"></div>
 							<label class="pizzaIngredientName">Tuna</label>
@@ -261,14 +269,14 @@ body { background-image: url("../img/Background_wood.jpg"); }
 						</div>
 					</div>
 
+					<label class="pizzaIngredientTypeLabel">Vegetables</label>
 					<div class="pizzaIngredientType">
-						<label class="pizzaIngredientTypeLabel">Vegetables</label>
 						<div class="pizzaIngredient">
 							<div class="pizzaIngredientImg" id="pizzaMushroom"></div>
 							<label class="pizzaIngredientName">Mushroom</label>
 						</div>
 						<div class="pizzaIngredient">
-							<div class="pizzaIngredientImg"></div>
+							<div class="pizzaIngredientImg" id="pizzaJalapenos"></div>
 							<label class="pizzaIngredientName">Jalapenõs</label>
 						</div>
 						<div class="pizzaIngredient">
