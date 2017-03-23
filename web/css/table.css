@@ -116,11 +116,6 @@ main {
 }
 .fa:hover { color: #333; }
 
-/*social media overlay*/
-.fa-facebook { background: rgba(59,89,152,0.8); /* #3B5998;*/ }
-.fa-twitter { background: rgba(85,172,238,0.8); /* #55ACEE;*/ }
-.fa-instagram { background: rgba(18,86,136,0.8); /* #125688;*/ }
-
 /*entertainment overlay*/
 .fa-spotify { background: rgba(87,172,2,0.8); /*#57AC02;*/ }
 .fa-youtube { background: rgba(229,45,39,0.8); /*#e52d27;*/ }
