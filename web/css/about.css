@@ -15,10 +15,6 @@ header {
 .titleSubtitle {
 	color: lightgrey;
 	display: none;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
 }
 .titleSubtitle h1 {
 	font-size: 75pt;
