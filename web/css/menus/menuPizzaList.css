@@ -48,14 +48,20 @@ body { background-image: url("../../img/tableBack2.jpg"); }
 
 
 
-.pizzaInformation {
-	background-color: black;
+#pizzaInformation {
+	background-color: grey;
 	float: left;
 	margin: 0 0 0 5%;
 	width: 45%;
 	height: 100%;
 }
 
-.pizzaNutritionalInfo td{
+#pizzaInformation td{
 	color: white;
+}
+
+.positiveRatingImg {
+	background-image: url("../../img/icons/plusone.svg");
+	width: 48px;
+	height: 48px;
 }
