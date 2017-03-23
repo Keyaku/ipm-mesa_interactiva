@@ -1,10 +1,30 @@
 //Array of premade pizzas (for the JS generated menu).
 var pizzaList = {
-	"Pepperoni Lovers" : { "Ingredients" : ["Extra Mozarella", "Extra pepperoni"], "NutInfo" : {"Calories":"120kcal", "Protein":"8g", "Carbohydrates":"20g", "Fat":"80g"}, "Rating":"77%" } ,
-	"Four Seasons"     : { "Ingredients" : ["Ham", "Veggies", "Corn", "Pineapple"], "NutInfo" : {"Calories":"190kcal", "Protein":"8g", "Carbohydrates":"56g", "Fat":"999g"}, "Rating":"88%" },
-	"Camponesa"        : { "Ingredients" : ["Ham", "Onion", "Jalapenõs"], "NutInfo" : {"Calories":"2660kcal", "Protein":"4g", "Carbohydrates":"26g", "Fat":"881g"}, "Rating":"12%" },
-	"Camponesa2"       : { "Ingredients" : ["Ham", "Onion", "Jalapenõs"], "NutInfo" : {"Calories":"887kcal", "Protein":"1g", "Carbohydrates":"12g", "Fat":"125g"}, "Rating":"23%" },
-	"Camponesa3"       : { "Ingredients" : ["Ham", "Onion", "Jalapenõs"], "NutInfo" : {"Calories":"556kcal", "Protein":"23g", "Carbohydrates":"44g", "Fat":"99g"}, "Rating":"59%" }
+	"Pepperoni Lovers" : {
+		"Ingredients" : ["Extra Mozarella", "Extra pepperoni"],
+		"NutInfo" : {"Calories":"120kcal", "Protein":"8g", "Carbohydrates":"20g", "Fat":"80g"},
+		"Rating" : "77%"
+	},
+	"Four Seasons" : {
+		"Ingredients" : ["Ham", "Veggies", "Corn", "Pineapple"],
+		"NutInfo" : {"Calories":"190kcal", "Protein":"8g", "Carbohydrates":"56g", "Fat":"999g"},
+		"Rating" : "88%"
+	},
+	"Camponesa" : {
+		"Ingredients" : ["Ham", "Onion", "Jalapeños"],
+		"NutInfo" : {"Calories":"2660kcal", "Protein":"4g", "Carbohydrates":"26g", "Fat":"881g"},
+		"Rating" : "12%"
+	},
+	"Camponesa2" : {
+		"Ingredients" : ["Ham", "Onion", "Jalapeños"],
+		"NutInfo" : {"Calories":"887kcal", "Protein":"1g", "Carbohydrates":"12g", "Fat":"125g"},
+		"Rating" : "23%"
+	},
+	"Camponesa3" : {
+		"Ingredients" : ["Ham", "Onion", "Jalapeños"],
+		"NutInfo" : {"Calories":"556kcal", "Protein":"23g", "Carbohydrates":"44g", "Fat":"99g"},
+		"Rating" : "59%"
+	}
 };
 
 //Creates all the elements in the premade pizzas menu.
