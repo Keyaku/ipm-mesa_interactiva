@@ -2,62 +2,69 @@
 <html>
 <head>
 	<title>Welcome Screen</title>
-	<style type="text/css">
-	* {
-		margin: 0;
-		padding: 0;
-	}
+	<link rel="stylesheet" type="text/css" href="../css/global.css">
+	<style>
+		body {
+			overflow: hidden;
+		}
 
-	body {
-		background-color: black;
-	}
+		ul {
+			list-style: none;
+			padding:0;
+		}
+		li {
+			display: inline-block;
+			margin: 0 20pt;
+			font-family: 'Raleway', Fallback, sans-serif;
+			font-size: 40pt;
+			font-weight: normal;
+			color: white;
+		}
 
-	.welcomeList {
-		list-style: none;
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-	}
-	.welcomeList li {
-		display: inline-block;
-		margin-right: 50px;
-		font-family: 'Raleway', sans-serif;
-		font-weight: 300;
-		font-size: 40px;
-		color: rgba(255, 255, 255, 1);
-		transition: all 3s ease;
-	}
-
-	.paradizia {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-	}
-</style>
+		#logo {
+			background-image: url("../img/paradiziaLogo.svg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 50%;
+			height: 50%;
+		}
+	</style>
 </head>
 
 <body>
-	<img class="paradizia" src="../img/paradiziaLogo.png" width="250" height="250" />
-	<ul class="welcomeList">
-		<li>W</li>
-		<li>E</li>
-		<li>L</li>
-		<li>C</li>
-		<li>O</li>
-		<li>M</li>
-		<li>E</li>
-	</ul>
+	<div class="absolute-center" id="logo"></div>
+	<ul class="absolute-center" id="welcomeTitle">WELCOME</ul>
 
 <script src="../scripts/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
-	$('.paradizia').fadeOut(2500);
-	var cc = $("li");
-	cc.each(function() {$(this).hide().css({"transform": "translate(" + (Math.random()*600 - 200) + "px," + (Math.random()*600 - 200) + "px)"}); });
-	setTimeout(function(){ cc.each(function() { $(this).fadeIn(300).css({"transform": "translate(0px,0px)"}); }); }, 2000);
-	setTimeout(function() { $('.welcomeList').fadeOut(5200); }, 2700);
-	setTimeout(function() { window.location.replace("table.html"); }, 5500);
+
+	$('#logo').fadeOut(2500);
+
+	var title = $('#welcomeTitle');
+	var message = title.text();
+	$('#welcomeTitle').empty();
+
+	for (var i = 0; i < message.length; i++) {
+		title.append('<li>' + message[i] + '</li>');
+	}
+
+	var characters = $('li');
+	characters.each(function() {
+		var x = Math.random()*600 - 200;
+		var y = Math.random()*600 - 200;
+		$(this).hide().css({'transform': 'translate(' + x + 'px,' + y + 'px)'});
+	});
+	characters.css({'transition':'all 3s ease'});
+	setTimeout(function(){
+		characters.each(function() {
+			$(this).fadeIn(300).css({'transform': 'translate(0, 0)'});
+		});
+	}, 2000);
+
+	setTimeout(function() { title.fadeOut(5200); }, 2700);
+	setTimeout(function() { window.location.replace('table.html'); }, 5500);
+
 </script>
 </body>
 </html>
