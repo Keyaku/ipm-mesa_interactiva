@@ -70,8 +70,7 @@ body { background-image: url("../img/Background_wood.jpg"); }
 }
 .customizeStep {
 	display: block;
-	margin: 80px 20px 0 50px;
-
+	margin: 10px 0 20px 50px;
 }
 .customizeStepTitle {
 	color: white;
@@ -80,7 +79,7 @@ body { background-image: url("../img/Background_wood.jpg"); }
 }
 .pizzaCustomizationItemsContainer {
 	margin: 0 0 0 150px;
-
+	height: 500px;
 }
 .pizzaCustomizationItem {
 	background-position: center;
@@ -117,7 +116,7 @@ body { background-image: url("../img/Background_wood.jpg"); }
 }
 
 .pizzaDough {
-	margin: 0 0 20px 20px;
+	margin: 0 20px 20px 0;
 	padding: 0 20px 0 0;
 	text-align: justify;
 	width: 460px;
@@ -177,6 +176,7 @@ body { background-image: url("../img/Background_wood.jpg"); }
 	<div class="orderMenu" id="customizeYourPizza">
 		<!--Page label-->
 		<label class="menuTitle">Customize Your Own Pizza</label>
+
 		<div class="customizeStep">
 			<div class="customizeStepTitle">Choose your size</div>
 			<div class="pizzaCustomizationItemsContainer">
@@ -209,7 +209,7 @@ body { background-image: url("../img/Background_wood.jpg"); }
 		</div>
 
 		<div class="customizeStep">
-			<div class="customizeStepTitle">Choose your ingredients</div>
+			<div class="customizeStepTitle" id="testst">Choose your ingredients</div>
 			<div class="pizzaCustomizationItemsContainer" id="pizzaIngredients">
 				<label class="pizzaIngredientTypeLabel">Cheese</label>
 				<div class="pizzaIngredientType">
