@@ -1,4 +1,11 @@
-body { background-image: url("../../img/Background_wood.jpg"); }
+body {
+	background-image: url("../../img/tableBack3.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .menuTitle {
 	color: darkorange;
 	font-size: 150px;
