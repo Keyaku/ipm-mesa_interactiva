@@ -31,8 +31,8 @@ $('nav #minimizer').click(function() {
 //Show the correct overlay
 $('nav .button').click(function() {
 	var backgroundImgs = { // Our background "database"
-		'default' : '../img/tableBack2.jpg',
-		'order'   : '../img/menuBannerDrinks.jpg',
+		'default' : 'img/tableBack2.jpg',
+		'order'   : 'img/menuBannerDrinks.jpg',
 	};
 
 	var name = $(this).children('nav .title').text().toLowerCase();
