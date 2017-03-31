@@ -8,34 +8,35 @@
 	<!--Links the css files-->
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/global.css">
+	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="../css/table.css">
 </head>
 
 <body>
-	<header>
-		<div id="menuOptions">
+	<nav>
+		<div id="options">
 			<div id="logo"></div>
-			<div class="menuButton">
-				<svg class="menuIcon"><use xlink:href="../img/icons/pizza.svg#pizza" /></svg>
-				<label class="menuTitle">Order</label>
+			<div class="button">
+				<svg class="icon"><use xlink:href="../img/icons/pizza.svg#pizza" /></svg>
+				<label class="title">Order</label>
 			</div>
-			<div class="menuButton">
-				<svg class="menuIcon"><use xlink:href="../img/icons/music.svg#music" /></svg>
-				<label class="menuTitle">Entertainment</label>
+			<div class="button">
+				<svg class="icon"><use xlink:href="../img/icons/music.svg#music" /></svg>
+				<label class="title">Entertainment</label>
 			</div>
-			<div class="menuButton">
-				<svg class="menuIcon"><use xlink:href="../img/icons/world.svg#world" /></svg>
-				<label class="menuTitle">News</label>
+			<div class="button">
+				<svg class="icon"><use xlink:href="../img/icons/world.svg#world" /></svg>
+				<label class="title">News</label>
 			</div>
-			<div class="menuButton">
-				<svg class="menuIcon"><use xlink:href="../img/icons/navigation.svg#navigation" /></svg>
-				<label class="menuTitle">Information</label>
+			<div class="button">
+				<svg class="icon"><use xlink:href="../img/icons/navigation.svg#navigation" /></svg>
+				<label class="title">Information</label>
 			</div>
 		</div>
 		<div id="minimizer">
 			<svg><use xlink:href="../img/icons/arrowLeft.svg#arrowLeft" /></svg>
 		</div>
-	</header>
+	</nav>
 
 	<main>
 		<div class="overlay" id="order"></div>
@@ -95,6 +96,8 @@
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="../scripts/jquery-3.1.1.min.js"></script>
 <script src="../scripts/svg4everybody.min.js"></script>
+<script src="../scripts/global.js"></script>
+<script src="../scripts/navbar.js"></script>
 <script src="../scripts/table.js"></script>
 <script src="../scripts/googleMaps.js"></script>
 </body>

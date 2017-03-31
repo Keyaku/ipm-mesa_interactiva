@@ -1,4 +1,10 @@
 /****** Code execution *******/
+$(document).ready(function(){
+	// Starting svg4everybody
+	svg4everybody();
+});
+
+/****** Stuff *******/
 $(":header").css({cursor: "default"});
 
 /* Functions to attach to elements */
