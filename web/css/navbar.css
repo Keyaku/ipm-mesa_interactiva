@@ -5,7 +5,7 @@ nav {
 	height: 100%;
 }
 
-#logo {
+nav #logo {
 	background-image: url("../img/paradiziaLogo.svg");
 	background-size: contain;
 	min-width:  1%;
@@ -45,17 +45,17 @@ nav .icon {
 	fill: #C8190E;
 }
 
-#minimizer {
+nav #minimizer {
 	fill: white;
 
 	float:left;
 	width: 40pt;
 	height: 100%;
 }
-#minimizer.closed {
+nav #minimizer.closed {
 	transform: scaleX(-1);
 }
-#minimizer svg {
+nav #minimizer svg {
 	position: relative;
 	width: 48px;
 	top: 50%;
