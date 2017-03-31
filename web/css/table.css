@@ -5,15 +5,6 @@ html, body {
 	overflow: hidden;
 }
 
-a:hover { text-decoration: none; }
-a:focus { text-decoration: none; }
-a:focus:hover { text-decoration: none; }
-p, label {
-	color: white;
-	font-weight: normal;
-	font-size: 30px;
-	margin: 0;
-}
 div {
 	background-position: center;
 	background-repeat: no-repeat;

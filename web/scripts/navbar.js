@@ -1,3 +1,7 @@
+/***** Constants *****/
+const ANIM_SPEED_MENU = 500;
+
+/***** Code execution *****/
 let navbar = `<div id="options">
 	<div id="logo"></div>
 	<div class="button">

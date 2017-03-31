@@ -5,6 +5,11 @@ nav {
 	height: 100%;
 }
 
+nav div {
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 nav #logo {
 	background-image: url("../img/paradiziaLogo.svg");
 	background-size: contain;
@@ -33,7 +38,12 @@ nav .button {
 nav .button:last-child { border-bottom: none; }
 nav .button:hover svg { fill: white; }
 
-nav .title { margin: 10px; }
+nav .title {
+	color: white;
+	font-weight: normal;
+	font-size: 30px;
+	margin: 10px;
+}
 
 nav .icon {
 	width: 48px;
