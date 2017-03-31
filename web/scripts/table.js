@@ -1,6 +1,3 @@
-/***** Constants *****/
-const ANIM_SPEED_MENU = 500;
-
 /****** Code execution *******/
 $(document).ready(function(){
 	// Showing default overlay

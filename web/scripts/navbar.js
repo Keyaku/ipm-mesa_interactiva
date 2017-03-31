@@ -1,3 +1,7 @@
+/***** Constants *****/
+const ANIM_SPEED_MENU = 500;
+
+/***** Code execution *****/
 let navbar = `<div id="options">
 	<div id="logo"></div>
 	<div class="button">
@@ -31,8 +35,8 @@ $('nav #minimizer').click(function() {
 //Show the correct overlay
 $('nav .button').click(function() {
 	var backgroundImgs = { // Our background "database"
-		'default' : '../img/tableBack2.jpg',
-		'order'   : '../img/menuBannerDrinks.jpg',
+		'default' : 'img/tableBack2.jpg',
+		'order'   : 'img/menuBannerDrinks.jpg',
 	};
 
 	var name = $(this).children('nav .title').text().toLowerCase();
