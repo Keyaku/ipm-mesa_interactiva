@@ -10,7 +10,8 @@ body { background-image: url("../../img/tableBack2.jpg"); }
 	height: 100%;
 }
 
-#menuPremadePizzas { float: left; }
+/*			Menu of premade pizzas											*/
+#menuPremadePizzas { float: left; margin: 0 0 0 40pt; }
 .menuPizzaItem {
 	display: block;
 	width: 100%;
@@ -27,7 +28,6 @@ body { background-image: url("../../img/tableBack2.jpg"); }
 #mPII3 { background-image: url("../../img/pizzaMenu/Pizza1.jpg"); }
 #mPII4 { background-image: url("../../img/pizzaMenu/Pizza1.jpg"); }
 #mPII5 { background-image: url("../../img/pizzaMenu/Pizza1.jpg"); }
-
 .menuPizzaItemInfo {
 	color: white;
 	float: left;
@@ -46,22 +46,24 @@ body { background-image: url("../../img/tableBack2.jpg"); }
 	margin: 20px 0 10px 0;
 }
 
-
-
+/*			Lateral pizza information bar									*/
 #pizzaInformation {
-	background-color: grey;
+	background-color: rgba(0,0,0,0.7);
 	float: left;
 	margin: 0 0 0 5%;
-	width: 45%;
+	width: 30%;
 	height: 100%;
 }
-
-#pizzaInformation td{
-	color: white;
-}
-
+#pizzaInformation td{ color: white; }
 .positiveRatingImg {
 	background-image: url("../../img/icons/plusone.svg");
 	width: 48px;
 	height: 48px;
+}
+
+/*			Premade pizza sugestions										*/
+.menuPizzaSugestion {
+	display: inline-block;
+	width: 400px;
+	height: 200px;
 }
