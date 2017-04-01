@@ -31,8 +31,8 @@ var pizzaList = {
 };
 
 //Creates all the elements in the sugestion division.
+$("#menuPremadePizzas").append($("<label></label>").addClass("menuPremadePizzasSugestionsTitle").append(document.createTextNode("Suggestion tailored for you"))).append($("<div></div>").attr("id", "menuPremadePizzasSugestions"));; //Creates the main sugestions division with lateral scroll and it's title.
 var pizzaId = 1;
-$("#menuPremadePizzas").append($("<div><div>").attr("id", "menuPremadePizzasSugestions"));; //Creates the main sugestions division with lateral scroll.
 for (var pizza in suggestionsList) {
 	var label = $("<label></label>").addClass("mPIITitle").append(document.createTextNode(pizza)); //Creates the label that represents the pizza's name.
 	var list = getPizzaIngredientsList(pizza); //Gets the pizza's ingredients.
@@ -42,6 +42,7 @@ for (var pizza in suggestionsList) {
 }
 
 //Creates all the elements in the premade pizzas menu.
+$("#menuPremadePizzas").append($("<label></label>").addClass("menuPremadePizzasSugestionsTitle").append(document.createTextNode("Predesigned pizzas")));
 pizzaId = 1;
 for (var pizza in pizzaList) {
 	var label = $("<label></label>").addClass("mPIITitle").append(document.createTextNode(pizza)); //Creates the label that represents the pizza's name.
@@ -51,6 +52,11 @@ for (var pizza in pizzaList) {
 	$("#menuPremadePizzas").append(division);
 }
 
+//Generates and shows the extensive information menu of the chosen pizza.
+$(".menuPizzaItem").click(function() { showPizzaExtensiveInformation($(this).children(".menuPizzaItemInfo").children(".mPIITitle").text()); });
+$(".menuPizzaSugestion").click(function() { showPizzaExtensiveInformation($(this).children(".menuPizzaItemInfo").children(".mPIITitle").text()); });
+
+//Auxiliar functions
 function getPizzaIngredientsList(name) {
 	var ingredientsList = pizzaList[name]["Ingredients"]; //Gets the ingredient list.
 	var list = $("<ul></ul>"); //Creates the list of ingredients.
@@ -64,23 +70,10 @@ function getPizzaNutritonFactsList(name) {
 	return table;
 }
 function  getPizzaRating(name) { return $("<div></div").append($("<div></div>").addClass("positiveRatingImg")).append($("<label></label>").append(document.createTextNode(pizzaList[name]["Rating"]))); }
-
-//Generates and shows the extensive information menu of the chosen pizza.
-$(".menuPizzaItem").click(function() {
-	var pizzaName = $(this).children(".menuPizzaItemInfo").children(".mPIITitle").text(); //Gets the pizza's name.
-	var labelName = $("<label></label>").addClass("mPIITitle").append(document.createTextNode(pizzaName)); //Creates the label that represents the pizza's name.
-	var list = getPizzaIngredientsList(pizzaName); //Creates the list of the pizza's ingredients.
-	var table = getPizzaNutritonFactsList(pizzaName); //Generates all the nutritional information for the pizza.
-	var ratingDiv = getPizzaRating(pizzaName); //Creates the rating table.
+function showPizzaExtensiveInformation(name) {
+	var labelName = $("<label></label>").addClass("mPIITitle").append(document.createTextNode(name)); //Creates the label that represents the pizza's name.
+	var list = getPizzaIngredientsList(name); //Creates the list of the pizza's ingredients.
+	var table = getPizzaNutritonFactsList(name); //Generates all the nutritional information for the pizza.
+	var ratingDiv = getPizzaRating(name); //Creates the rating table.
 	$("#pizzaInformation").empty().append(labelName).append(list).append(table).append(ratingDiv);
-});
-
-//Generates and shows the extensive information menu of the chosen pizza.
-$(".menuPizzaSugestion").click(function() {
-	var pizzaName = $(this).children(".menuPizzaItemInfo").children(".mPIITitle").text(); //Gets the pizza's name.
-	var labelName = $("<label></label>").addClass("mPIITitle").append(document.createTextNode(pizzaName)); //Creates the label that represents the pizza's name.
-	var list = getPizzaIngredientsList(pizzaName); //Creates the list of the pizza's ingredients.
-	var table = getPizzaNutritonFactsList(pizzaName); //Generates all the nutritional information for the pizza.
-	var ratingDiv = getPizzaRating(pizzaName); //Creates the rating table.
-	$("#pizzaInformation").empty().append(labelName).append(list).append(table).append(ratingDiv);
-});
+}
