@@ -32,13 +32,13 @@ var pizzaList = {
 
 //Creates all the elements in the sugestion division.
 var pizzaId = 1;
-$("<div><div>").addClass("menuPremadePizzasSugestions"); //Creates the main sugestions division with lateral scroll.
+$("#menuPremadePizzas").append($("<div><div>").attr("id", "menuPremadePizzasSugestions"));; //Creates the main sugestions division with lateral scroll.
 for (var pizza in suggestionsList) {
 	var label = $("<label></label>").addClass("mPIITitle").append(document.createTextNode(pizza)); //Creates the label that represents the pizza's name.
 	var list = getPizzaIngredientsList(pizza); //Gets the pizza's ingredients.
 	var pizzaItemInfoDiv = $("<div></div>").addClass("menuPizzaItemInfo").attr("id", pizza).append(label).append(list); //Adds the pizza's name and the ingredients list to the correct div.
 	var division = $("<div></div>").addClass("menuPizzaSugestion").append(pizzaItemInfoDiv); //Appends the img division to the main pizza item div.
-	$("#menuPremadePizzas").append(division);
+	$("#menuPremadePizzasSugestions").append(division);
 }
 
 //Creates all the elements in the premade pizzas menu.

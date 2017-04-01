@@ -62,8 +62,16 @@ body { background-image: url("../../img/tableBack2.jpg"); }
 }
 
 /*			Premade pizza sugestions										*/
+#menuPremadePizzasSugestions {
+	margin: 0 0 20px 0;
+	overflow-x: scroll;
+	overflow-y: visible;
+	white-space: nowrap;
+	width: 100%;
+}
+
 .menuPizzaSugestion {
 	display: inline-block;
 	width: 400px;
-	height: 200px;
+	height: 250px;
 }
