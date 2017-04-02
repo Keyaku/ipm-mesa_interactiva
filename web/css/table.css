@@ -19,7 +19,7 @@ div {
 /***************************** Table specifics ********************************/
 main {
 	background-size: cover;
-	background-image: url("../img/tableBack2.jpg");
+	background-image: url("../img/tableBackgrounds/tableBack2.jpg");
 
 	width:  100%;
 	height: 100%;
