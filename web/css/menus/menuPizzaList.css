@@ -9,14 +9,15 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 	height: 100%;
 }
 
-/*			Premade pizza sugestions										*/
-.menuPremadePizzasSugestionsTitle {
+.menuPremadePizzasSugestionsTitle, .menuPremadeMenuTitle, #createPizzaShorcut {
 	color: darkorange;
 	font-size: 60px;
 	font-family: bangers, sans-serif;
 	margin: 20px 0 0 0;
 	text-shadow: 0px 0px 10px #000;
 }
+
+/*			Premade pizza sugestions										*/
 #menuPremadePizzasSugestions {
 	margin: 0 0 20px 0;
 	overflow-x: scroll;
@@ -49,11 +50,11 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 	width: 30%;
 	height: 75%;
 }
-#mPII1 { background-image: url("../../img/menus/pizzaMenu/menuPizza1.jpg"); }
-#mPII2 { background-image: url("../../img/menus/pizzaMenu/menuPizza2.jpg"); }
-#mPII3 { background-image: url("../../img/menus/pizzaMenu/menuPizza3.jpg"); }
-#mPII4 { background-image: url("../../img/menus/pizzaMenu/menuPizza4.jpg"); }
-#mPII5 { background-image: url("../../img/menus/pizzaMenu/menuPizza4.jpg"); }
+#mPII1 { background-image: url("../../img/menus/pizzaMenu/menuPizza1.png"); }
+#mPII2 { background-image: url("../../img/menus/pizzaMenu/menuPizza2.png"); }
+#mPII3 { background-image: url("../../img/menus/pizzaMenu/menuPizza3.png"); }
+#mPII4 { background-image: url("../../img/menus/pizzaMenu/menuPizza4.png"); }
+#mPII5 { background-image: url("../../img/menus/pizzaMenu/menuPizza5.png"); }
 .menuPizzaItemInfo {
 	color: white;
 	float: left;
@@ -99,4 +100,12 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 	font-size: 40px;
 	margin: 0 20px 0 0;
 	text-align: right;
+}
+
+/*			Create Your Own Pizza Shortcut									*/
+#createPizzaShorcut {
+	bottom: 0;
+	margin: 0 20px 0 0;
+	right: 0;
+	position: absolute;
 }

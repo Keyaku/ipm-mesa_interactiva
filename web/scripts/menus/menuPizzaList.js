@@ -49,7 +49,7 @@ $("#menuPremadePizzas").append($("<label></label>").addClass("menuPremadePizzasS
 for (var pizza in suggestionsList) { $("#menuPremadePizzasSugestions").append($("<div></div>").addClass("menuPizzaSugestion").append(getPizzaInfo(pizza).append(getSizeButtons()))); }
 
 //Creates all the elements in the premade pizzas menu.
-$("#menuPremadePizzas").append($("<label></label>").addClass("menuPremadePizzasSugestionsTitle").append(document.createTextNode("Predesigned pizzas")));
+$("#menuPremadePizzas").append($("<label></label>").addClass("menuPremadeMenuTitle").append(document.createTextNode("Predesigned pizzas")));
 var pizzaId = 1;
 for (var pizza in pizzaList) { $("#menuPremadePizzas").append($("<div></div>").addClass("menuPizzaItem").append($("<div></div>").addClass("menuPizzaItemImg").attr("id", "mPII" + (pizzaId++).toString())).append(getPizzaInfo(pizza).append(getSizeButtons()))); }
 
@@ -93,3 +93,5 @@ function hidePizzaExtensiveInformation() { $("#pizzaInformation").hide(); };
 $(".menuPizzaItem").click(function() { showPizzaExtensiveInformation($(this).children(".menuPizzaItemInfo").children(".mPIITitle").text()); });
 $(".menuPizzaSugestion").click(function() { showPizzaExtensiveInformation($(this).children(".menuPizzaItemInfo").children(".mPIITitle").text()); });
 //$(".mPIISizeButton").click(function() { console.log("button pressed"); });
+
+$("#createPizzaShorcut").click(function() { console.log("CREATE YOUR OWN PIZZA."); });
