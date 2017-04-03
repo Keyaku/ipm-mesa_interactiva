@@ -32,84 +32,67 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 }
 
 /*			Menu of premade pizzas											*/
-#menuPremadePizzas {
+#menuDrinks {
 	float: left;
 	margin: 0 0 0 40pt;
 }
-.menuPizzaItem {
+.menuDrinkItem {
 	border-bottom: 1px dashed white;
 	display: block;
 	margin: 0 0 20px 0;
 	width: 100%;
 	height: 260px;
 }
-.menuPizzaItem:last-child { border: none; }
-.menuPizzaItemImg {
+.menuDrinkItem:last-child { border: none; }
+.menuDrinkItemImg {
 	background-size: 100% 100%;
 	float: left;
 	width: 30%;
 	height: 75%;
 }
-#mPII1 { background-image: url("../../img/menus/pizzaMenu/menuPizza1.png"); }
-#mPII2 { background-image: url("../../img/menus/pizzaMenu/menuPizza2.png"); }
-#mPII3 { background-image: url("../../img/menus/pizzaMenu/menuPizza3.png"); }
-#mPII4 { background-image: url("../../img/menus/pizzaMenu/menuPizza4.png"); }
-#mPII5 { background-image: url("../../img/menus/pizzaMenu/menuPizza5.png"); }
+#mDII1 { background-image: url("../../img/menus/pizzaMenu/menuPizza1.png"); }
+#mDII2 { background-image: url("../../img/menus/pizzaMenu/menuPizza2.png"); }
+#mDII3 { background-image: url("../../img/menus/pizzaMenu/menuPizza3.png"); }
+#mDII4 { background-image: url("../../img/menus/pizzaMenu/menuPizza4.png"); }
+#mDII5 { background-image: url("../../img/menus/pizzaMenu/menuPizza5.png"); }
+
 .menuPizzaItemInfo {
 	color: white;
 	float: left;
 	margin: 0 0 0 5%;
 }
-.mPIITitle {
+.mPDITitle {
 	display: block;
 	font-size: 40px;
 	font-family: raleway, sans-serif;
 	margin: 0 0 10px 0;
 }
-.mPIIIngredient {
-	display: block;
-	font-size: 15px;
-	font-family: raleway, sans-serif;
-	margin: 0;
-}
-.mPIISizeButton {
-	background-color: rgba(0,0,0,0.6);
-	border: none;
-	color: white;
-	font-size: 20px;
-	margin: 10px 20px 0 0;
-	padding: 15px 20px 15px 20px;
-}
 
 /*			Lateral pizza information bar									*/
-#pizzaInformation {
+#drinksInformation {
 	background-color: rgba(0,0,0,0.7);
 	float: left;
 	margin: 0 0 0 5%;
 	width: 30%;
 	height: 100%;
 }
-#pizzaInformation td{ color: white; }
-.pizzaRatingStar {
-	background-image: url("../../img/icons/star.svg");
-	display: inline-block;
-	width: 18px;
-	height: 18px;
-}
-#pizzaInformationClose {
+#drinksInformationClose {
 	color: white;
 	font-size: 40px;
 	margin: 0 20px 0 0;
 	text-align: right;
 }
-
-/*			Create Your Own Pizza Shortcut									*/
-#createPizzaShorcut {
-	bottom: 40%;
-	margin: 0 20px 0 0;
-	right: 0;
-	position: absolute;
+.drinksInformationTypeImg {
+	background-size: 100% 100%;
+	display: block;
+	float: left;
+	width: 100px;
+	height: 100px;
 }
+.drinksInformationTypeLabel {
+	display: block;
+}
+
 
 /*			Buttons															*/
 .buttonContainer {
