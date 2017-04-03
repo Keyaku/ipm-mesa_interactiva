@@ -18,3 +18,6 @@ for (var ingredientType in ingredientsList) {
 	}
 	$("#pizzaIngredients").append(typeLabel).append(typeDiv); //Appends the type's div to the main page.
 }
+
+// Adding navigation bar
+$('nav').navbar();

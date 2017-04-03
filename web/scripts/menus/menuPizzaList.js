@@ -107,3 +107,6 @@ $(".menuPizzaSugestion").click(function() { showPizzaExtensiveInformation($(this
 //$(".mPIISizeButton").click(function() { console.log("button pressed"); });
 
 $("#createPizzaShorcut").click(function() { console.log("CREATE YOUR OWN PIZZA."); });
+
+// Adding navigation bar
+$('nav').navbar();
