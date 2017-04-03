@@ -3,25 +3,6 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.5); }
 ::-webkit-scrollbar-thumb:hover { background-color: rgba(255,255,255,1); }
 
-/*			Top Status Bar													*/
-.topStatusBar {
-	margin: 0 0 0 40pt;
-	top: 0;
-	left: 0;
-}
-.topStatusBarArrows {
-	background-color: green;
-	display: inline-block;
-	text-align: center;
-	width: 520px;
-	height: 30px;
-}
-.topStatusBarNames {
-	display: inline-block;
-	color: white;
-	padding: 0 20px 0 20px;
-}
-
 .orderMenu {
 	overflow-x: hidden;
 	width: 45%;

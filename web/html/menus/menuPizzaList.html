@@ -10,18 +10,12 @@
 	<link rel="stylesheet" type="text/css" href="css/global.css">
 	<link rel="stylesheet" type="text/css" href="css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="css/menus/menuPizzaList.css">
+	<link rel="stylesheet" type="text/css" href="css/menus/menuGlobal.css">
 </head>
 
 <body>
 	<!--<nav></nav>Adds the system-global vertical lateral menu bar-->
-	<div class="topStatusbar">
-		<div class="topStatusBarArrows">------------------------------------------------------------------></div>
-		<div class="topStatusBarNames">Pizza</div>
-		<div class="topStatusBarArrows">------------------------------------------------------------------></div>
-		<div class="topStatusBarNames">Drinks</div>
-		<div class="topStatusBarArrows">------------------------------------------------------------------></div>
-		<div class="topStatusBarNames">Confirm</div>
-	</div>
+	<div id="topStatusbar"></div>
 	<div class="orderMenu" id="menuPremadePizzas"></div> <!--Scrollable verticle menu of premade pizzas--> <!--All spawned using JS--->
 	<div id="pizzaInformation"></div> <!--Information menu of individual premade pizzas--> <!--All information is JS generated-->
 
@@ -39,5 +33,6 @@
 <script src="scripts/jQuery/jquery-3.1.1.min.js"></script>
 <script src="scripts/jQuery/jquery.navbar.js"></script>
 <script src="scripts/menus/menuPizzaList.js"></script>
+<script src="scripts/menus/menuGlobal.js"></script>
 </body>
 </html>

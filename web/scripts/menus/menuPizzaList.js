@@ -42,7 +42,7 @@ var pizzaList = {
 				CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
-$('nav').navbar(); // Adding navigation bar
+$("nav").navbar(); // Adding navigation bar
 $("#pizzaInformation").hide(); //Hides the lateral pizza information bar.
 
 //Creates all the elements in the sugestion division.
