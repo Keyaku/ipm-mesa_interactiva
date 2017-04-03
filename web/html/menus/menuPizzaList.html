@@ -13,15 +13,25 @@
 </head>
 
 <body>
-	<nav></nav><!--Adds the system-global vertical lateral menu bar-->
+	<!--<nav></nav>Adds the system-global vertical lateral menu bar-->
+	<div class="topStatusbar">
+		<div class="topStatusBarArrows">------------------------------------------------------------------></div>
+		<div class="topStatusBarNames">Pizza</div>
+		<div class="topStatusBarArrows">------------------------------------------------------------------></div>
+		<div class="topStatusBarNames">Drinks</div>
+		<div class="topStatusBarArrows">------------------------------------------------------------------></div>
+		<div class="topStatusBarNames">Confirm</div>
+	</div>
 	<div class="orderMenu" id="menuPremadePizzas"></div> <!--Scrollable verticle menu of premade pizzas--> <!--All spawned using JS--->
 	<div id="pizzaInformation"></div> <!--Information menu of individual premade pizzas--> <!--All information is JS generated-->
 
 	<div id="createPizzaShorcut">
 		Create Your Own Pizza --->
 	</div>
-
-
+	<div class="buttonContainer">
+		<button class="cancelButton">Cancel</button>
+		<button class="skipButton">Skip</button>
+	</div>
 
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="scripts/jQuery/jquery-3.1.1.min.js"></script>

@@ -71,12 +71,23 @@ function getPizzaNutritonFactsList(name) {
 	for (var key in nutInfo) table.append($("<tr></tr>").append($("<td></td>").append(document.createTextNode(key))).append($("<td></td").append(document.createTextNode(nutInfo[key])))); //Creates each table row.
 	return table;
 }
-function getPizzaRating(name) { return $("<div></div").append($("<div></div>").addClass("positiveRatingImg")).append($("<label></label>").append(document.createTextNode(pizzaList[name]["Rating"]))); }
+function getPizzaRating(name) {
+	var d = $("<div></div>").addClass("pizzaRatingStarts");
+	for (var i = 0; i < 5; i++) d.append($("<div></div>").addClass("pizzaRatingStar"));
+	d.append($("<label></label>").append(document.createTextNode(pizzaList[name]["Rating"])));
+	return d;
+}
 function getPizzaInfo(name) {
 	var label = $("<label></label>").addClass("mPIITitle").append(document.createTextNode(name)); //Creates the label that represents the pizza's name.
 	var list = getPizzaIngredientsList(name); //Gets the pizza's ingredients.
 	var pizzaItemInfoDiv = $("<div></div>").addClass("menuPizzaItemInfo").attr("id", name).append(label).append(list); //Adds the pizza's name and the ingredients list to the correct div.
 	return pizzaItemInfoDiv;
+}
+function getPizzaPrice() {
+	var d = $("<div></div>");
+	d.append($("<label></label>").append(document.createTextNode("Medium: 12€")));
+	d.append($("<button></button>").addClass("orderButton"));
+	return d;
 }
 function getSizeButtons() { return $("<div></div>").append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("S"))).append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("M"))).append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("L"))); }
 function showPizzaExtensiveInformation(name) {
@@ -86,7 +97,8 @@ function showPizzaExtensiveInformation(name) {
 	var list = getPizzaIngredientsList(name); //Creates the list of the pizza's ingredients.
 	var table = getPizzaNutritonFactsList(name); //Generates all the nutritional information for the pizza.
 	var ratingDiv = getPizzaRating(name); //Creates the rating table.
-	$("#pizzaInformation").empty().append(closeX).append(labelName).append(list).append(table).append(ratingDiv);
+	var priceOrder = getPizzaPrice();
+	$("#pizzaInformation").empty().append(closeX).append(labelName).append(list).append(table).append(ratingDiv).append(priceOrder);
 }
 function hidePizzaExtensiveInformation() { $("#pizzaInformation").hide(); };
 //Generates and shows the lateral pizza information bar of the chosen pizza.
