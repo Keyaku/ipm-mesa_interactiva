@@ -87,7 +87,7 @@ function getPizzaInfo(name) {
 function getPizzaPrice() {
 	var d = $("<div></div>");
 	d.append($("<label></label>").append(document.createTextNode("Medium: 12€")));
-	d.append($("<button></button>").addClass("pizzaOrderButton"));
+	d.append($("<button></button>").addClass("pizzaOrderButton").append(document.createTextNode("Order!")));
 	return d;
 }
 function getSizeButtons() { return $("<div></div>").append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("S"))).append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("M"))).append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("L"))); }
