@@ -137,7 +137,7 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 	bottom: 100px;
 	right: 5%;
 }
-.cancelButton, .skipButton, .orderButton {
+.cancelButton, .skipButton, .pizzaOrderButton {
 	border: none;
 	font-family: raleway, sans-serif;
 	padding: 20px 30px 20px 30px;
@@ -155,7 +155,7 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 	color: white;
 	font-size: 30px;
 }
-.orderButton {
+.pizzaOrderButton {
 	background-color: green;
 	border: none;
 	color: white;

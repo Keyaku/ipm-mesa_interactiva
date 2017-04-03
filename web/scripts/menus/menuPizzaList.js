@@ -42,6 +42,7 @@ var pizzaList = {
 				CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
+$('nav').navbar(); // Adding navigation bar
 $("#pizzaInformation").hide(); //Hides the lateral pizza information bar.
 
 //Creates all the elements in the sugestion division.
@@ -86,7 +87,7 @@ function getPizzaInfo(name) {
 function getPizzaPrice() {
 	var d = $("<div></div>");
 	d.append($("<label></label>").append(document.createTextNode("Medium: 12€")));
-	d.append($("<button></button>").addClass("orderButton"));
+	d.append($("<button></button>").addClass("pizzaOrderButton"));
 	return d;
 }
 function getSizeButtons() { return $("<div></div>").append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("S"))).append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("M"))).append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("L"))); }
@@ -101,12 +102,19 @@ function showPizzaExtensiveInformation(name) {
 	$("#pizzaInformation").empty().append(closeX).append(labelName).append(list).append(table).append(ratingDiv).append(priceOrder);
 }
 function hidePizzaExtensiveInformation() { $("#pizzaInformation").hide(); };
+function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }
+
+/*------------------------------------------------------------------------------
+
+				MENU FLOW
+
+------------------------------------------------------------------------------*/
 //Generates and shows the lateral pizza information bar of the chosen pizza.
 $(".menuPizzaItem").click(function() { showPizzaExtensiveInformation($(this).children(".menuPizzaItemInfo").children(".mPIITitle").text()); });
 $(".menuPizzaSugestion").click(function() { showPizzaExtensiveInformation($(this).children(".menuPizzaItemInfo").children(".mPIITitle").text()); });
-//$(".mPIISizeButton").click(function() { console.log("button pressed"); });
 
-$("#createPizzaShorcut").click(function() { console.log("CREATE YOUR OWN PIZZA."); });
-
-// Adding navigation bar
-$('nav').navbar();
+//Code for the menu buttons.
+//$(".pizzaOrderButton")click(function() { window.location.replace("") }); //Changes the page to the drinks menu.
+//$(".skipButton")click(function() { window.location.replace("") }); //Changes the page to the drinks menu.
+//$(".cancelButton")click(function() {  }); //Changes the page to the main page.
+//$("#createPizzaShorcut").click(function() { window.location.replace(""); }); //Changes the page to the pizza customization menu.
