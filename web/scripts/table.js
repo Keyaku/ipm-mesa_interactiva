@@ -8,6 +8,11 @@ $(document).ready(function(){
 	$('.informationSubMenu div.subMenuIcon').css('filter', 'invert(100%)');
 });
 
+// Adding navigation bar
+$('nav').navbar({
+	minimized : false,
+});
+
 /***** Overlay content *****/
 //Google Maps search
 $('#barButton').click(function() { searchMap('bar+taguspark'); });
