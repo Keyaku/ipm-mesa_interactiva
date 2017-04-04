@@ -13,7 +13,6 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 	color: white;
 	font-size: 60px;
 	font-family: bangers, sans-serif;
-	margin: 20px 0 0 0;
 	text-shadow: 0 0 10px #000;
 }
 
@@ -34,7 +33,10 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 /* Menu of premade pizzas */
 #menuPremadePizzas {
 	float: left;
-	margin: 0 0 0 40pt;
+	position:relative;
+	left: 40pt;
+	top: 5vh;
+	margin: 0 10pt;
 }
 .menuPizzaItem {
 	border-bottom: 1px dashed white;
