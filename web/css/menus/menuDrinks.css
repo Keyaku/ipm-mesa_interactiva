@@ -5,7 +5,7 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 
 .orderMenu {
 	overflow-x: hidden;
-	width: 45%;
+	width: 60%;
 	height: 100%;
 }
 
@@ -22,10 +22,9 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 }
 .menuDrinkItem:last-child { border: none; }
 .menuDrinkItemImg {
-	background-size: 100% 100%;
 	float: left;
 	width: 50%;
-	height: 75%;
+	height: auto;
 }
 .mPDITitle {
 	display: block;
