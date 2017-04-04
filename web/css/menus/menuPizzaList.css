@@ -47,16 +47,15 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 }
 .menuPizzaItem:last-child { border: none; }
 .menuPizzaItemImg {
-	background-size: 100% 100%;
 	float: left;
 	width: 30%;
-	height: 75%;
+	height: auto;
 }
-#mPII1 { background-image: url("../../img/menus/pizzaMenu/menuPizza1.png"); }
-#mPII2 { background-image: url("../../img/menus/pizzaMenu/menuPizza2.png"); }
-#mPII3 { background-image: url("../../img/menus/pizzaMenu/menuPizza3.png"); }
-#mPII4 { background-image: url("../../img/menus/pizzaMenu/menuPizza4.png"); }
-#mPII5 { background-image: url("../../img/menus/pizzaMenu/menuPizza5.png"); }
+.menuSugestedPizzaImg {
+	float: left;
+	width: 20%;
+	height: auto;
+}
 .menuPizzaItemInfo {
 	color: white;
 	float: left;

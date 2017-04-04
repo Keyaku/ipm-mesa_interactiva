@@ -13,31 +13,31 @@ var pizzaList = {
 		"Ingredients" : ["Extra Mozzarella", "Extra pepperoni"],
 		"NutInfo" : {"Calories":"120kcal", "Protein":"8g", "Carbohydrates":"20g", "Fat":"80g"},
 		"Rating" : "77%",
-		"Img" : "url(''img/menus/pizzaMenu/menuPizza1.png')"
+		"Img" : "img/menus/pizzaMenu/menuPizza1.png",
 	},
 	"Four Seasons" : {
 		"Ingredients" : ["Ham", "Veggies", "Corn", "Pineapple"],
 		"NutInfo" : {"Calories":"190kcal", "Protein":"8g", "Carbohydrates":"56g", "Fat":"999g"},
 		"Rating" : "88%",
-		"Img" : "url(''img/menus/pizzaMenu/menuPizza2.png')"
+		"Img" : "img/menus/pizzaMenu/menuPizza2.png",
 	},
 	"Camponesa" : {
 		"Ingredients" : ["Ham", "Onion", "Jalapeños"],
 		"NutInfo" : {"Calories":"2660kcal", "Protein":"4g", "Carbohydrates":"26g", "Fat":"881g"},
 		"Rating" : "12%",
-		"Img" : "url(''img/menus/pizzaMenu/menuPizza3.png')"
+		"Img" : "img/menus/pizzaMenu/menuPizza3.png",
 	},
 	"Camponesa2" : {
 		"Ingredients" : ["Ham", "Onion", "Jalapeños"],
 		"NutInfo" : {"Calories":"887kcal", "Protein":"1g", "Carbohydrates":"12g", "Fat":"125g"},
 		"Rating" : "23%",
-		"Img" : "url(''img/menus/pizzaMenu/menuPizza4.png')"
+		"Img" : "img/menus/pizzaMenu/menuPizza4.png",
 	},
 	"Camponesa3" : {
 		"Ingredients" : ["Ham", "Onion", "Jalapeños"],
 		"NutInfo" : {"Calories":"556kcal", "Protein":"23g", "Carbohydrates":"44g", "Fat":"99g"},
 		"Rating" : "59%",
-		"Img" : "url(''img/menus/pizzaMenu/menuPizza5.png')"
+		"Img" : "img/menus/pizzaMenu/menuPizza5.png",
 	}
 };
 
@@ -53,15 +53,16 @@ $("#pizzaInformation").hide(); //Hides the lateral pizza information bar.
 
 //Creates all the elements in the sugestion division.
 $("#menuPremadePizzas").append($("<label></label>").addClass("menuPremadePizzasSugestionsTitle").append(document.createTextNode("Suggestion tailored for you"))).append($("<div></div>").attr("id", "menuPremadePizzasSugestions"));; //Creates the main sugestions division with lateral scroll and it's title.
-for (var pizza in suggestionsList) { $("#menuPremadePizzasSugestions").append($("<div></div>").addClass("menuPizzaSugestion").append(getPizzaInfo(pizza).append(getSizeButtons()))); }
+for (var pizza in suggestionsList)
+	$("#menuPremadePizzasSugestions").append(getSuggestedItem(pizza));
+
 
 //Creates all the elements in the premade pizzas menu.
 $("#menuPremadePizzas").append($("<label></label>").addClass("menuPremadeMenuTitle").append(document.createTextNode("Predesigned pizzas")));
 var pizzaId = 1;
+for (var pizza in pizzaList)
+	$("#menuPremadePizzas").append(getPizzaItemWithButtons(pizza));
 
-//for (var pizza in pizzaList) { $("#menuPremadePizzas").append($("<div></div>").addClass("menuPizzaItem").append($("<div></div>").addClass("menuPizzaItemImg").attr("id", "mPII" + (pizzaId++).toString())).append(getPizzaInfo(pizza).append(getSizeButtons()))); }
-
-for (var pizza in pizzaList) { $("#menuPremadePizzas").append(getPizzaItemWithButtons(pizza)); }
 
 
 /*------------------------------------------------------------------------------
@@ -74,17 +75,27 @@ function getPizzaInfo(name) {
 	var list = getPizzaIngredientsList(name); //Gets the pizza's ingredients.
 	return  $("<div></div>").addClass("menuPizzaItemInfo").append(label).append(list); //Adds the pizza's name and the ingredients list to the correct div.
 }
+function getPizzaImg(name) {
+	var img = $("<img>").addClass("menuPizzaItemImg"); //Creates the image.
+	img.attr("src", pizzaList[name]["Img"]); //Sets the correct source.
+	return img;
+}
+
 function getPizzaItem(name) {
-	var img = $("<div></div>").addClass("menuPizzaItemImg").attr("id", "mPII" + (pizzaId++).toString()); //Creates the div that contains the pizza's image.
+	var img = getPizzaImg(name); //Gets the pizza's image.
 	var info = getPizzaInfo(name); //Gets the pizza's information.
 	return $("<div></div>").addClass("menuPizzaItem").append(img).append(info);
 }
 function getPizzaItemWithButtons(name) {
-	var img = $("<div></div>").addClass("menuPizzaItemImg").attr("id", "mPII" + (pizzaId++).toString()); //Creates the div that contains the pizza's image.
+	var img = getPizzaImg(name); //Gets the pizza's image.
 	var info = getPizzaInfo(name).append(getSizeButtons()); //Gets the pizza's information and appends the size buttons.
 	return $("<div></div>").addClass("menuPizzaItem").append(img).append(info)
 }
-
+function getSuggestedItem(name) {
+	var info = getPizzaInfo(pizza);
+	info.append(getSizeButtons());
+	return $("<div></div>").addClass("menuPizzaSugestion").append(info);
+}
 
 function getPizzaIngredientsList(name) {
 	var ingredientsList = pizzaList[name]["Ingredients"]; //Gets the ingredient list.
