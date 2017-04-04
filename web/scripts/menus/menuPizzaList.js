@@ -121,7 +121,9 @@ function getPizzaPrice() {
 	d.append($("<button></button>").addClass("pizzaOrderButton").append(document.createTextNode("Order!")));
 	return d;
 }
-function getSizeButtons() { return $("<div></div>").append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("S"))).append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("M"))).append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("L"))); }
+function getSizeButtons() {
+	return $("<div></div>").append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("S"))).append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("M"))).append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("L")));
+}
 
 function showPizzaExtensiveInformation(name) {
 	$("#pizzaInformation").show(); //Unhides the lateral pizza information bar.
@@ -133,7 +135,9 @@ function showPizzaExtensiveInformation(name) {
 	var priceOrder = getPizzaPrice();
 	$("#pizzaInformation").empty().append(closeX).append(labelName).append(list).append(table).append(ratingDiv).append(priceOrder);
 }
-function hidePizzaExtensiveInformation() { $("#pizzaInformation").hide(); };
+function hidePizzaExtensiveInformation() {
+	$("#pizzaInformation").hide();
+}
 function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }
 
 
