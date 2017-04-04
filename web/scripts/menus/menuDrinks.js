@@ -68,13 +68,14 @@ var drinksList = {
 				CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
-$('#menubar').menubar(); // Adding menu bar
-$('#navbar').navbar(); // Adding top navigation bar
+$('#navbar').navbar(); // Adding top navigation bar.
+$('#menubar').menubar(); // Adding menu bar.
 $("#drinksInformation").hide(); //Hides the lateral pizza information bar.
 
 //Creates all the elements in the premade pizzas menu.
 var drinkId = 1;
-for (drink in drinksList) { $("#menuDrinks").append(getDrinkItem(drink)); }
+for (drink in drinksList)
+	$("#menuDrinks").append(getDrinkItem(drink));
 
 
 /*------------------------------------------------------------------------------
@@ -82,6 +83,43 @@ for (drink in drinksList) { $("#menuDrinks").append(getDrinkItem(drink)); }
 				AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
+function getDrinkItem(name) {
+	var label = $("<label></label>").addClass("mPDITitle").append(document.createTextNode(name));
+	var img = $("<div></div>").addClass("menuDrinkItemImg").attr("id", "mDII" + (drinkId++).toString());
+	return $("<div></div>").addClass("menuDrinkItem").append(img).append(label);
+}
+function getDrinkNutritionalInfo (name) {
+	var nutInfo = drinksList[name]["NutInfo"]; //Gets the list of nutritional facts.
+	var table = $("<table></table"); //Creates the table of nutritional facts.
+	for (var key in nutInfo) {
+		var n = $("<td></td>").append(document.createTextNode(key));
+		var v = $("<td></td").append(document.createTextNode(nutInfo[key]));
+		var tr = $("<tr></tr>").append(n).append(v); //Creates the table row.
+		table.append(tr); //Creates each table row.
+	}
+	return table;
+}
+function getDrinkTypes(name) {
+	var d = $("<div></div>");
+	for (size in drinksList[name]["Sizes"]) {
+		var label = $("<label></label>").addClass("drinksInformationTypeLabel").append(document.createTextNode(drinksList[name]["Sizes"][size])); //Gets the label for each of the drink's sizes.
+		d.append(label);
+	}
+	return d;
+}
+function getDrinkOrderButton() {
+	var price = $("<label></label>").addClass("drinksInformationTypeLabel").append(document.createTextNode("5€")); //Creates a label with a price for the drink's type.
+	var button = $("<button></button>").addClass("drinksInformationTypeLabel").append(document.createTextNode("Order")); //Creates a button for ordering.
+	return $("<div></div>").append(price).append(button);
+}
+function showDrinkExtensiveInformation(name) {
+	$("#drinksInformation").empty().show(); //Shows the lateral pizza information bar.
+	var label = $("<label></label>").addClass("mPDITitle").append(document.createTextNode(name)); //Creates the label for the drink's name.
+	var nutInfo = getDrinkNutritionalInfo(name); //Gets the nutritional information for the drink.
+	var drinkTypes = getDrinkTypes(name); //Gets the drink's types.
+	var drinkOrder = getDrinkOrderButton(); //Gets the drink's order price and button.
+	$("#drinksInformation").append(label).append(nutInfo).append(drinkTypes).append(drinkOrder);
+}
 
 
 /*------------------------------------------------------------------------------

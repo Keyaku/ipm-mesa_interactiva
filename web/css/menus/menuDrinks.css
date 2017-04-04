@@ -33,11 +33,6 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 #mDII4 { background-image: url("../../img/menus/pizzaMenu/menuPizza4.png"); }
 #mDII5 { background-image: url("../../img/menus/pizzaMenu/menuPizza5.png"); }
 
-.menuPizzaItemInfo {
-	color: white;
-	float: left;
-	margin: 0 0 0 5%;
-}
 .mPDITitle {
 	display: block;
 	font-size: 40px;
@@ -68,6 +63,7 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 }
 .drinksInformationTypeLabel {
 	display: block;
+	color: white;
 }
 
 
