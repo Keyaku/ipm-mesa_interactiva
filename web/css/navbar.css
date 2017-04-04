@@ -1,16 +1,20 @@
-nav {
-	background-color: rgba(0, 0, 0, 0.7);
-
+/* Shared elements */
+#menubar, #navbar {
 	position: absolute;
-	height: 100%;
 }
 
-nav div {
+/********************** Left-side menu bar **********************/
+#menubar {
+	background-color: rgba(0, 0, 0, 0.7);
+	height: 100vh;
+}
+
+#menubar div {
 	background-position: center;
 	background-repeat: no-repeat;
 }
 
-nav #logo {
+#menubar #logo {
 	background-image: url("../img/paradiziaLogo.svg");
 	background-size: contain;
 	min-width:  1%;
@@ -19,7 +23,7 @@ nav #logo {
 	height: 30%;
 }
 
-nav #options {
+#menubar #options {
 	float: left;
 	padding: 5pt;
 	height: 100%;
@@ -27,45 +31,68 @@ nav #options {
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
-nav #options::-webkit-scrollbar {
+#menubar #options::-webkit-scrollbar {
 	display: none;
 }
-nav .button {
+#menubar .button {
 	border-bottom: 1px dashed white;
 	padding: 20px 0 20px 0;
 	width: 100%;
 }
-nav .button:last-child { border-bottom: none; }
-nav .button:hover svg { fill: white; }
+#menubar .button:last-child { border-bottom: none; }
+#menubar .button:hover svg { fill: white; }
 
-nav .title {
+#menubar .title {
 	color: white;
 	font-weight: normal;
 	font-size: 30px;
 	margin: 10px;
 }
 
-nav .icon {
+#menubar .icon {
 	width: 48px;
 	height: 48px;
 	margin: 5px 10px;
 }
-nav .icon {
+#menubar .icon {
 	float: left;
 	fill: #C8190E;
 }
 
-nav #minimizer {
+#menubar #minimizer {
 	fill: white;
 	float:left;
 	width: 40pt;
 	height: 100%;
 }
-nav #minimizer.closed {
+#menubar #minimizer.closed {
 	transform: scaleX(-1);
 }
-nav #minimizer svg {
+#menubar #minimizer svg {
 	position: relative;
 	width: 48px;
 	top: 50%;
+}
+
+/********************** Top navigation bar **********************/
+#navbar {
+	background-color: rgba(0, 0, 0, 1);
+	float:left;
+
+	width: 100vw;
+	height: 5vh;
+	z-index: -1;
+}
+
+#navbar ul, #navbar ol {
+	list-style: none;
+	margin: 0;
+	padding: 0 10vw;
+}
+
+#navbar li {
+	color: white;
+	float: left;
+	font-size: 3vh;
+	margin: 0 30pt;
 }

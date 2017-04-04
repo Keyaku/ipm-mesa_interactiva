@@ -68,7 +68,8 @@ var drinksList = {
 				CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
-$('#navbar').navbar();
+$('#menubar').menubar(); // Adding menu bar
+$('#navbar').navbar(); // Adding top navigation bar
 $("#drinksInformation").hide(); //Hides the lateral pizza information bar.
 
 //Creates all the elements in the premade pizzas menu.
