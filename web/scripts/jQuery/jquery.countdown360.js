@@ -115,7 +115,7 @@
 				label = "";
 
 			// Converting to minutes if necessary
-			if (secondsLeft > 60) {
+			if (secondsLeft >= 60) {
 				secondsLeft = Math.round(secondsLeft / 60);
 				label = this.settings.label[1];
 			} else {
