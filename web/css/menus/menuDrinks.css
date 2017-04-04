@@ -27,12 +27,6 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 	width: 50%;
 	height: 75%;
 }
-#mDII1 { background-image: url("../../img/menus/pizzaMenu/menuPizza1.png"); }
-#mDII2 { background-image: url("../../img/menus/pizzaMenu/menuPizza2.png"); }
-#mDII3 { background-image: url("../../img/menus/pizzaMenu/menuPizza3.png"); }
-#mDII4 { background-image: url("../../img/menus/pizzaMenu/menuPizza4.png"); }
-#mDII5 { background-image: url("../../img/menus/pizzaMenu/menuPizza5.png"); }
-
 .mPDITitle {
 	display: block;
 	font-size: 40px;

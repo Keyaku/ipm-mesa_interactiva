@@ -8,23 +8,28 @@ var drinksList = {
 	"Water" : {
 		"Sizes" : ["Bottle (25cl)", "Bottle (50cl)", "Bottle (1L)"],
 		"NutInfo" : {"Calories":"120kcal", "Protein":"8g", "Carbohydrates":"20g", "Fat":"80g"},
+		"Img" : "url('img/menus/pizzaMenu/menuPizza1.png')",
 	},
 	"Sparkling Water" : {
 		"Sizes" : ["Bottle (25cl)", "Bottle (50cl)", "Bottle (1L)"],
 		"NutInfo" : {"Calories":"120kcal", "Protein":"8g", "Carbohydrates":"20g", "Fat":"80g"},
+		"Img" : "url('img/menus/pizzaMenu/menuPizza2.png')",
 	},
 	"Fresj Juice" : {
 		"Sizes" : ["Orange Juice (25cl)", "Blueberry Juice (50cl)", "Lemonade (1L)", "Tutti Frutti (50cl)"],
 		"NutInfo" : {"Calories":"120kcal", "Protein":"8g", "Carbohydrates":"20g", "Fat":"80g"},
+		"Img" : "url('img/menus/pizzaMenu/menuPizza3.png')",
 	},
 
 	"Coca-Cola Original" : {
 		"Sizes" : ["Glass (25cl)", "Can (33cl)", "Glass (40cl)"],
 		"NutInfo" : {"Calories":"120kcal", "Protein":"8g", "Carbohydrates":"20g", "Fat":"80g"},
+		"Img" : "url('img/menus/pizzaMenu/menuPizza4.png')",
 	},
 	"Coca-Cola Zero" : {
 		"Sizes" : ["Glass (25cl)", "Can (33cl)", "Glass (40cl)"],
 		"NutInfo" : {"Calories":"120kcal", "Protein":"8g", "Carbohydrates":"20g", "Fat":"80g"},
+		"Img" : "url('img/menus/pizzaMenu/menuPizza5.png')",
 	},
 
 	"Sumol (Orange)" : {
@@ -84,8 +89,8 @@ for (drink in drinksList)
 
 ------------------------------------------------------------------------------*/
 function getDrinkItem(name) {
-	var label = $("<label></label>").addClass("mPDITitle").append(document.createTextNode(name));
-	var img = $("<div></div>").addClass("menuDrinkItemImg").attr("id", "mDII" + (drinkId++).toString());
+	var label = $("<label></label>").addClass("mPDITitle").append(document.createTextNode(name)); //Creates the label for each drink;
+	var img = $("<div></div").addClass("menuDrinkItemImg").css("background-image", drinksList[name]["Img"]); //Creates the div and sets the background-image to the correct image.
 	return $("<div></div>").addClass("menuDrinkItem").append(img).append(label);
 }
 function getDrinkNutritionalInfo (name) {
