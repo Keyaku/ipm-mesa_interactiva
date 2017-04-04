@@ -9,45 +9,22 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 	height: 100%;
 }
 
-.menuPremadePizzasSugestionsTitle, .menuPremadeMenuTitle, #createPizzaShorcut {
-	color: white;
-	font-size: 60px;
-	font-family: bangers, sans-serif;
-	margin: 20px 0 0 0;
-	text-shadow: 0px 0px 10px #000;
-}
-
-/*			Premade pizza sugestions										*/
-#menuPremadePizzasSugestions {
-	margin: 0 0 20px 0;
-	overflow-x: scroll;
-	overflow-y: visible;
-	white-space: nowrap;
-	width: 100%;
-}
-.menuPizzaSugestion {
-	display: inline-block;
-	width: 400px;
-	height: 250px;
-}
-
-/*			Menu of premade pizzas											*/
+/*			Menu of drinks											*/
 #menuDrinks {
 	float: left;
 	margin: 0 0 0 40pt;
 }
 .menuDrinkItem {
 	border-bottom: 1px dashed white;
-	display: block;
-	margin: 0 0 20px 0;
-	width: 100%;
+	display: inline-block;
+	width: 50%;
 	height: 260px;
 }
 .menuDrinkItem:last-child { border: none; }
 .menuDrinkItemImg {
 	background-size: 100% 100%;
 	float: left;
-	width: 30%;
+	width: 50%;
 	height: 75%;
 }
 #mDII1 { background-image: url("../../img/menus/pizzaMenu/menuPizza1.png"); }
@@ -101,7 +78,7 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 	bottom: 100px;
 	right: 5%;
 }
-.cancelButton, .skipButton, .pizzaOrderButton {
+.cancelButton, .skipButton, .DrinkOrderButton {
 	border: none;
 	font-family: raleway, sans-serif;
 	padding: 20px 30px 20px 30px;
@@ -119,7 +96,7 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 	color: white;
 	font-size: 30px;
 }
-.pizzaOrderButton {
+.DrinkOrderButton {
 	background-color: green;
 	border: none;
 	color: white;
