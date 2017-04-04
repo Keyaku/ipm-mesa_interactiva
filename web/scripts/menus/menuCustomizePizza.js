@@ -20,4 +20,4 @@ for (var ingredientType in ingredientsList) {
 }
 
 // Adding navigation bar
-$('nav').navbar();
+$('#navbar').navbar();
