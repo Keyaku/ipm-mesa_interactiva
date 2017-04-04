@@ -11,27 +11,26 @@
 		<link rel="stylesheet" type="text/css" href="css/global.css">
 		<link rel="stylesheet" type="text/css" href="css/navbar.css">
 		<link rel="stylesheet" type="text/css" href="css/tableAfterOrder.css">
+		<link rel="stylesheet" type="text/css" href="css/menus/menuPizzaList.css">
 	</head>
 	<body>
 		<h3 id="orderStatusText"> Order Status </h3>
 		<div id="orderStatusContainer">
-			<div class="col">
-				<img src="img/menus/pizzaMenu/menuPizza5.png" id="pizza">
-			</div>
 			<div class="col" id="pizzaIngredients"></div>
 			<div class="col" id="timer"></div>
 			<div class="col">
 				<button type="button" class="editcancel">Edit</button>
-				<button type="button" class="editcancel">Cancel</button>			
+				<button type="button" class="editcancel">Cancel</button>
 			</div>
 		</div>
 		<button type="button" id="newOrderButton">New Order</button>
-		
+
 		<script src="scripts/jQuery/jquery-3.1.1.min.js"></script>
 		<script src="scripts/jQuery/jquery.countdown360.js"></script>
+		<script src="scripts/jQuery/jquery.navbar.js"></script>
 		<script src="scripts/menus/menuPizzaList.js"></script>
 		<script>
-			$("#pizzaIngredients").append(getPizzaInfo("Camponesa"));
+			$("#pizzaIngredients").append(getPizzaItem("Camponesa"));
 			$("#timer").countdown360({
 				radius: 65,                        // radius of arc
 				strokeStyle: "#ecf0f1",            // the color of the stroke
@@ -47,4 +46,4 @@
 			});
 		</script>
 	</body>
-</html>	
+</html>
