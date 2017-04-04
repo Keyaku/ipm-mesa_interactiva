@@ -12,27 +12,32 @@ var pizzaList = {
 	"Pepperoni Lovers" : {
 		"Ingredients" : ["Extra Mozzarella", "Extra pepperoni"],
 		"NutInfo" : {"Calories":"120kcal", "Protein":"8g", "Carbohydrates":"20g", "Fat":"80g"},
-		"Rating" : "77%"
+		"Rating" : "77%",
+		"Img" : "url(''img/menus/pizzaMenu/menuPizza1.png')"
 	},
 	"Four Seasons" : {
 		"Ingredients" : ["Ham", "Veggies", "Corn", "Pineapple"],
 		"NutInfo" : {"Calories":"190kcal", "Protein":"8g", "Carbohydrates":"56g", "Fat":"999g"},
-		"Rating" : "88%"
+		"Rating" : "88%",
+		"Img" : "url(''img/menus/pizzaMenu/menuPizza2.png')"
 	},
 	"Camponesa" : {
 		"Ingredients" : ["Ham", "Onion", "Jalapeños"],
 		"NutInfo" : {"Calories":"2660kcal", "Protein":"4g", "Carbohydrates":"26g", "Fat":"881g"},
-		"Rating" : "12%"
+		"Rating" : "12%",
+		"Img" : "url(''img/menus/pizzaMenu/menuPizza3.png')"
 	},
 	"Camponesa2" : {
 		"Ingredients" : ["Ham", "Onion", "Jalapeños"],
 		"NutInfo" : {"Calories":"887kcal", "Protein":"1g", "Carbohydrates":"12g", "Fat":"125g"},
-		"Rating" : "23%"
+		"Rating" : "23%",
+		"Img" : "url(''img/menus/pizzaMenu/menuPizza4.png')"
 	},
 	"Camponesa3" : {
 		"Ingredients" : ["Ham", "Onion", "Jalapeños"],
 		"NutInfo" : {"Calories":"556kcal", "Protein":"23g", "Carbohydrates":"44g", "Fat":"99g"},
-		"Rating" : "59%"
+		"Rating" : "59%",
+		"Img" : "url(''img/menus/pizzaMenu/menuPizza5.png')"
 	}
 };
 
@@ -53,7 +58,10 @@ for (var pizza in suggestionsList) { $("#menuPremadePizzasSugestions").append($(
 //Creates all the elements in the premade pizzas menu.
 $("#menuPremadePizzas").append($("<label></label>").addClass("menuPremadeMenuTitle").append(document.createTextNode("Predesigned pizzas")));
 var pizzaId = 1;
-for (var pizza in pizzaList) { $("#menuPremadePizzas").append($("<div></div>").addClass("menuPizzaItem").append($("<div></div>").addClass("menuPizzaItemImg").attr("id", "mPII" + (pizzaId++).toString())).append(getPizzaInfo(pizza).append(getSizeButtons()))); }
+
+//for (var pizza in pizzaList) { $("#menuPremadePizzas").append($("<div></div>").addClass("menuPizzaItem").append($("<div></div>").addClass("menuPizzaItemImg").attr("id", "mPII" + (pizzaId++).toString())).append(getPizzaInfo(pizza).append(getSizeButtons()))); }
+
+for (var pizza in pizzaList) { $("#menuPremadePizzas").append(getPizzaItemWithButtons(pizza)); }
 
 
 /*------------------------------------------------------------------------------
@@ -61,6 +69,23 @@ for (var pizza in pizzaList) { $("#menuPremadePizzas").append($("<div></div>").a
 				AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
+function getPizzaInfo(name) {
+	var label = $("<label></label>").addClass("mPIITitle").append(document.createTextNode(name)); //Creates the label that represents the pizza's name.
+	var list = getPizzaIngredientsList(name); //Gets the pizza's ingredients.
+	return  $("<div></div>").addClass("menuPizzaItemInfo").append(label).append(list); //Adds the pizza's name and the ingredients list to the correct div.
+}
+function getPizzaItem(name) {
+	var img = $("<div></div>").addClass("menuPizzaItemImg").attr("id", "mPII" + (pizzaId++).toString()); //Creates the div that contains the pizza's image.
+	var info = getPizzaInfo(name); //Gets the pizza's information.
+	return $("<div></div>").addClass("menuPizzaItem").append(img).append(info);
+}
+function getPizzaItemWithButtons(name) {
+	var img = $("<div></div>").addClass("menuPizzaItemImg").attr("id", "mPII" + (pizzaId++).toString()); //Creates the div that contains the pizza's image.
+	var info = getPizzaInfo(name).append(getSizeButtons()); //Gets the pizza's information and appends the size buttons.
+	return $("<div></div>").addClass("menuPizzaItem").append(img).append(info)
+}
+
+
 function getPizzaIngredientsList(name) {
 	var ingredientsList = pizzaList[name]["Ingredients"]; //Gets the ingredient list.
 	var list = $("<ul></ul>"); //Creates the list of ingredients.
@@ -79,12 +104,6 @@ function getPizzaRating(name) {
 	d.append($("<label></label>").append(document.createTextNode(pizzaList[name]["Rating"])));
 	return d;
 }
-function getPizzaInfo(name) {
-	var label = $("<label></label>").addClass("mPIITitle").append(document.createTextNode(name)); //Creates the label that represents the pizza's name.
-	var list = getPizzaIngredientsList(name); //Gets the pizza's ingredients.
-	var pizzaItemInfoDiv = $("<div></div>").addClass("menuPizzaItemInfo").attr("id", name).append(label).append(list); //Adds the pizza's name and the ingredients list to the correct div.
-	return pizzaItemInfoDiv;
-}
 function getPizzaPrice() {
 	var d = $("<div></div>");
 	d.append($("<label></label>").append(document.createTextNode("Medium: 12€")));
@@ -92,6 +111,7 @@ function getPizzaPrice() {
 	return d;
 }
 function getSizeButtons() { return $("<div></div>").append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("S"))).append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("M"))).append($("<button></button>").addClass("mPIISizeButton").append(document.createTextNode("L"))); }
+
 function showPizzaExtensiveInformation(name) {
 	$("#pizzaInformation").show(); //Unhides the lateral pizza information bar.
 	var closeX = $("<div></div>").attr("id", "pizzaInformationClose").append(document.createTextNode("X")).click(function(){ hidePizzaExtensiveInformation(); });
@@ -104,6 +124,7 @@ function showPizzaExtensiveInformation(name) {
 }
 function hidePizzaExtensiveInformation() { $("#pizzaInformation").hide(); };
 function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }
+
 
 /*------------------------------------------------------------------------------
 

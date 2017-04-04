@@ -90,7 +90,7 @@ for (drink in drinksList)
 ------------------------------------------------------------------------------*/
 function getDrinkItem(name) {
 	var label = $("<label></label>").addClass("mPDITitle").append(document.createTextNode(name)); //Creates the label for each drink;
-	var img = $("<div></div").addClass("menuDrinkItemImg").css("background-image", drinksList[name]["Img"]); //Creates the div and sets the background-image to the correct image.
+	var img = $("<img>").addClass("menuDrinkItemImg").src(drinksList[name]["Img"]); //Creates the div and sets the background-image to the correct image.
 	return $("<div></div>").addClass("menuDrinkItem").append(img).append(label);
 }
 function getDrinkNutritionalInfo (name) {
