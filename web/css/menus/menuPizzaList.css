@@ -118,25 +118,25 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 	bottom: 100px;
 	right: 5%;
 }
-.cancelButton, .skipButton, .pizzaOrderButton {
+.buttonContainer #cancel, .buttonContainer #skip, .buttonContainer #pizzaOrder {
 	border: none;
 	font-family: raleway, sans-serif;
 	padding: 20px 30px 20px 30px;
 }
-.cancelButton {
+.buttonContainer #cancel {
 	background-color: grey;
 	border: none;
 	color: white;
 	font-size: 30px;
 	padding: 20px 60px 20px 60px;
 }
-.skipButton {
+.buttonContainer #skip {
 	background-color: green;
 	border: none;
 	color: white;
 	font-size: 30px;
 }
-.pizzaOrderButton {
+.buttonContainer #pizzaOrder {
 	background-color: green;
 	border: none;
 	color: white;
