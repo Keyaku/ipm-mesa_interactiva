@@ -97,8 +97,8 @@ function getDrinkNutritionalInfo (name) {
 	var nutInfo = drinksList[name]["NutInfo"]; //Gets the list of nutritional facts.
 	var table = $("<table></table"); //Creates the table of nutritional facts.
 	for (var key in nutInfo) {
-		var n = $("<td></td>").append(document.createTextNode(key));
-		var v = $("<td></td").append(document.createTextNode(nutInfo[key]));
+		var n = $("<td></td>").append(document.createTextNode(key)); //Creates a table item for each nutritional information key.
+		var v = $("<td></td").append(document.createTextNode(nutInfo[key])); //Creates a table item for the value of each key.
 		var tr = $("<tr></tr>").append(n).append(v); //Creates the table row.
 		table.append(tr); //Creates each table row.
 	}
@@ -119,12 +119,14 @@ function getDrinkOrderButton() {
 }
 function showDrinkExtensiveInformation(name) {
 	$("#drinksInformation").empty().show(); //Shows the lateral pizza information bar.
+	var closeX = $("<div></div>").attr("id", "drinksInformationClose").append(document.createTextNode("X")).click(function(){ hidePizzaExtensiveInformation(); });
 	var label = $("<label></label>").addClass("mPDITitle").append(document.createTextNode(name)); //Creates the label for the drink's name.
 	var nutInfo = getDrinkNutritionalInfo(name); //Gets the nutritional information for the drink.
 	var drinkTypes = getDrinkTypes(name); //Gets the drink's types.
 	var drinkOrder = getDrinkOrderButton(); //Gets the drink's order price and button.
-	$("#drinksInformation").append(label).append(nutInfo).append(drinkTypes).append(drinkOrder);
+	$("#drinksInformation").append(closeX).append(label).append(nutInfo).append(drinkTypes).append(drinkOrder);
 }
+function hidePizzaExtensiveInformation() { $("#drinksInformation").hide(); }
 
 
 /*------------------------------------------------------------------------------
