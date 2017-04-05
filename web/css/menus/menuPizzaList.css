@@ -119,19 +119,19 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 	bottom: 100px;
 	right: 5%;
 }
-.buttonContainer #cancel, .buttonContainer #skip, .buttonContainer #pizzaOrder {
+.buttonContainer #cancelButton, .buttonContainer #skipButton, .buttonContainer #pizzaOrder {
 	border: none;
 	font-family: raleway, sans-serif;
 	padding: 20px 30px 20px 30px;
 }
-.buttonContainer #cancel {
+.buttonContainer #cancelButton {
 	background-color: grey;
 	border: none;
 	color: white;
 	font-size: 30px;
 	padding: 20px 60px 20px 60px;
 }
-.buttonContainer #skip {
+.buttonContainer #skipButton {
 	background-color: green;
 	border: none;
 	color: white;

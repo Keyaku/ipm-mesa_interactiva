@@ -65,6 +65,13 @@ for (var pizza in pizzaList)
 
 
 
+Cookies.set("cookieteste1", "234111a");
+$("#cancel").click(function() {
+	window.location.href = "html/menus/menuOrderConfirmation.html";
+});
+
+
+
 /*------------------------------------------------------------------------------
 
 				AUXILIAR FUNCTIONS
@@ -151,7 +158,7 @@ $(".menuPizzaItem").click(function() { showPizzaExtensiveInformation($(this).chi
 $(".menuPizzaSugestion").click(function() { showPizzaExtensiveInformation($(this).children(".menuPizzaItemInfo").children(".mPIITitle").text()); });
 
 //Code for the menu buttons.
-//$(".pizzaOrderButton")click(function() { window.location.replace("") }); //Changes the page to the drinks menu.
-//$(".skipButton")click(function() { window.location.replace("") }); //Changes the page to the drinks menu.
-//$(".cancelButton")click(function() {  }); //Changes the page to the main page.
-//$("#createPizzaShorcut").click(function() { window.location.replace(""); }); //Changes the page to the pizza customization menu.
+$(".pizzaOrderButton").click(function() { ; }); //Changes the page to the drinks menu.
+$("#skipButton").click(function() { console.log("skip"); window.location.href = "html/menus/menuDrinks.html"; }); //Changes the page to the drinks menu.
+$("#cancelButton").click(function() { console.log("cancel"); window.location.href = "html/table.html"; }); //Changes the page to the main page.
+$("#createPizzaShorcut").click(function() { console.log("create"); window.location.href = "html/menus/menuCustomizePizza.html"; }); //Changes the page to the pizza customization menu.
