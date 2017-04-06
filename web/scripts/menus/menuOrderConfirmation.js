@@ -10,11 +10,11 @@ var orderedPizza = localStorage.getItem("orderedPizza"); //Fetches the ordered p
 var orderedDrink = localStorage.getItem("orderedDrink"); //Fetches the ordered drink chosen in the menu screen.
 $("#order").append(getPizzaItem(orderedPizza)).append(getDrinkItem(orderedDrink)); //Draws the order based on what was ordered previously.
 
-console.log(orderedPizza, orderedDrink);
 
 /*------------------------------------------------------------------------------
 
 				MENU FLOW
 
 ------------------------------------------------------------------------------*/
-$("#buttonConfirm").click(function() { window.location.href = "html/table.html"; });
+$("#buttonAdd").click(function() { /*TODO - FranciscoKloganB: Create a popup to ask what the user wants to edit*/ }); //.
+$("#buttonConfirm").click(function() { window.location.href = "html/table.html"; }); //Changes the page to the main page.

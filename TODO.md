@@ -19,13 +19,13 @@
 * [x] Pizza Menu
 * [ ] Customize Pizza
 * [x] Drinks Menu
-* [ ] Confirm Screen
+* [x] Confirm Screen
 * [ ] New Order Screen
 
 ### Scripts to update / change / separate
 * [ ] jquery.navbar.js
 * [x] menuPizzaList.js
-* [ ] menuDrinks.js
+* [x] menuDrinks.js
 
 ### CSS files to refactor / update
 * [ ] menuPizzaList.css
