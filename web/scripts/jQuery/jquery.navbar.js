@@ -33,7 +33,12 @@ const HTML_NAVBAR = `
 `;
 
 //Show the correct overlay
-function orderButton() { window.location.href = "html/tableAfterOrder.html"; }
+function orderButton() {
+	if (sessionStorage.getItem("order") == "true")
+		window.location.href = "html/newOrder.html";
+	else
+		window.location.href = "html/menus/menuPizzaList.html";
+}
 function entertainmentButton()  { window.location.href = "html/entertainment.html"; }
 function newsButton() { window.location.href = "html/news.html"; }
 function informationButton() { window.location.href = "html/information.html"; }

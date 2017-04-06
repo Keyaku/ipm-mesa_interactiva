@@ -36,7 +36,8 @@ function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confir
 
 function setGlobalDrink() {
 	var b = $("#drinksInformation").children(".mPDITitle").text(); //Gets the name of the ordered pizza.
-	localStorage.setItem("orderedDrink", b); //Saves the ordered pizza for later information.
+	sessionStorage.setItem("orderedDrink", b); //Saves the ordered pizza for later information.
+	sessionStorage.setItem("order", "true"); //Indicates thar an order as been placed.
 	window.location.href = "html/menus/menuOrderConfirmation.html"; //Changes the screen (menu flow).
 }
 

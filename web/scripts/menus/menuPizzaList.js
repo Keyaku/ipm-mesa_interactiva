@@ -43,7 +43,8 @@ function confirmSkip() { /*TODO - FranciscoKloganB: Popup that asks for confirma
 
 function setGlobalPizza() {
 	var b = $("#pizzaInformation").children(".mPIITitle").text(); //Gets the name of the ordered pizza.
-	localStorage.setItem("orderedPizza", b); //Saves the ordered pizza for later information.
+	sessionStorage.setItem("orderedPizza", b); //Saves the ordered pizza for later information.
+	sessionStorage.setItem("order", "true"); //Indicates thar an order as been placed.
 	window.location.href = "html/menus/menuDrinks.html"; //Changes the screen (menu flow).
 }
 
