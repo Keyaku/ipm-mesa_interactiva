@@ -11,3 +11,17 @@
 
 ### Table
 * [x] Rename "bar" to "table"
+
+### Screens to correct / finish (code)
+* [x] Welcome Screen
+* [x] Table
+* [ ] Pizza Menu
+* [ ] Customize Pizza
+* [ ] Drinks Menu
+* [ ] Confirm Screen
+* [ ] New Order Screen
+
+### Scripts to update / change / separate
+* [ ] jquery.navbar.js
+* [ ] menuPizzaList.js
+* [ ] menuDrinks.js

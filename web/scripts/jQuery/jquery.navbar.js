@@ -3,19 +3,19 @@ const ANIM_SPEED_MENU = 500;
 const HTML_MENUBAR = `
 	<div id="options">
 		<div id="logo"></div>
-		<div class="button">
+		<div class="button" onclick="orderButton()">
 			<svg class="icon"><use xlink:href="img/icons/pizza.svg#pizza" /></svg>
 			<label class="title">Order</label>
 		</div>
-		<div class="button">
+		<div class="button" onclick="entertainmentButton()">
 			<svg class="icon"><use xlink:href="img/icons/music.svg#music" /></svg>
 			<label class="title">Entertainment</label>
 		</div>
-		<div class="button">
+		<div class="button" onclick="newsButton()">
 			<svg class="icon"><use xlink:href="img/icons/world.svg#world" /></svg>
 			<label class="title">News</label>
 		</div>
-		<div class="button">
+		<div class="button" onclick="informationButton()">
 			<svg class="icon"><use xlink:href="img/icons/navigation.svg#navigation" /></svg>
 			<label class="title">Information</label>
 		</div>
@@ -32,7 +32,16 @@ const HTML_NAVBAR = `
 	</ul>
 `;
 
+//Show the correct overlay
+function orderButton() { window.location.href = "html/tableAfterOrder.html"; }
+function entertainmentButton()  { window.location.href = "html/entertainment.html"; }
+function newsButton() { window.location.href = "html/news.html"; }
+function informationButton() { window.location.href = "html/information.html"; }
+
 (function($) {
+
+
+
     $.fn.menubar = function(opt) {
         var def = $.extend({
 			minimized : true,
@@ -52,7 +61,6 @@ const HTML_NAVBAR = `
 			$(this).toggleClass('closed');
 		});
 
-		//Show the correct overlay
 		buttons.click(function() {
 			// TODO: implement webpage swapping
 		});
