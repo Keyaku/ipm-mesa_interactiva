@@ -81,18 +81,38 @@
 
 	width: 100vw;
 	height: 5vh;
-	z-index: -1;
 }
 
-#navbar ul, #navbar ol {
-	list-style: none;
-	margin: 0;
-	padding: 0 10vw;
-}
-
-#navbar li {
+#navbar a {
 	color: white;
-	float: left;
+	text-decoration: none;
+}
+
+.multi-steps {
+	background-color: transparent;
+	list-style: none;
+	line-height: 5vh;
+	margin: 0;
+	padding: 0 10%;
+	vertical-align: middle;
+	white-space: nowrap;
+
+	height: 100%;
+}
+
+.multi-steps li {
+	color: white;
 	font-size: 3vh;
-	margin: 0 30pt;
+	text-align: center;
+}
+
+.multi-steps li::after {
+	background-color: #96c03d; /* FIXME: change to our color pallette */
+	bottom: 4px;
+	left: 50%;
+	width: calc(100% + 40px); /* FIXME: swap 40px to amount of right margin for <li> */
+}
+
+.multi-steps li.visited::after {
+	background-color: #96c03d; /* FIXME: change to our color pallette */
 }

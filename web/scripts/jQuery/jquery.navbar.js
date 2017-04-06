@@ -25,10 +25,10 @@ const HTML_MENUBAR = `
 	</div>
 `;
 const HTML_NAVBAR = `
-	<ul class="cd-multi-steps text-top">
-		<li>Pizza</li>
-		<li>Drinks</li>
-		<li>Confirm</li>
+	<ul class="multi-steps">
+		<li class="visited"><a href="#">Pizza</a></li>
+		<li class="current"><a href="#">Drinks</a></li>
+		<li class=""><a href="#">Confirm</a></li>
 	</ul>
 `;
 
@@ -70,9 +70,15 @@ const HTML_NAVBAR = `
 		var container = $(this);
 		container.html(HTML_NAVBAR);
 
-		/*** Adding click functions ***/
+		var steps = container.children('.multi-steps').children('li');
+
+		/*** Organizing ***/
+		var col_size = Math.floor(12 / steps.length);
+		steps.addClass('col-md-' + col_size);
 
 		/*** Applying arguments ***/
-
+		if (def.selected == undefined) {
+			//steps.first().addClass('current');
+		} // TODO: highlight selected
     };
 })(jQuery);
