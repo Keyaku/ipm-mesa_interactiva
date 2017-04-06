@@ -4,6 +4,7 @@
 * [x] Add fonts locally
 * [ ] Remove any object fetching instance through the internet (a.k.a. Everything must run locally)
 * [X] Change font to Raleway
+* [ ] Rewrite the interface so it can accommodate a plate
 
 ### Index
 * [X] Change font to Kanit
@@ -12,16 +13,20 @@
 ### Table
 * [x] Rename "bar" to "table"
 
-### Screens to correct / finish (code)
+### Screens to correct / finish (code) (without plate)
 * [x] Welcome Screen
 * [x] Table
-* [ ] Pizza Menu
+* [x] Pizza Menu
 * [ ] Customize Pizza
-* [ ] Drinks Menu
+* [x] Drinks Menu
 * [ ] Confirm Screen
 * [ ] New Order Screen
 
 ### Scripts to update / change / separate
 * [ ] jquery.navbar.js
-* [ ] menuPizzaList.js
+* [x] menuPizzaList.js
 * [ ] menuDrinks.js
+
+### CSS files to refactor / update
+* [ ] menuPizzaList.css
+* [ ] menuDrinks.css
