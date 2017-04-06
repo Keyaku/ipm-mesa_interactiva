@@ -35,8 +35,6 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 	float: left;
 	position:relative;
 	left: 40pt;
-	top: 5vh;
-	margin: 0 10pt;
 }
 .menuPizzaItem {
 	border-bottom: 1px dashed white;
@@ -107,7 +105,6 @@ body { background-image: url("../../img/tableBackgrounds/tableBack2.jpg"); }
 /* Create Your Own Pizza Shortcut */
 #createPizzaShorcut {
 	bottom: 40%;
-	margin: 0 20px 0 0;
 	right: 0;
 	position: absolute;
 }
