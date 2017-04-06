@@ -63,6 +63,8 @@ var pizzaId = 1;
 for (var pizza in pizzaList)
 	$("#menuPremadePizzas").append(getPizzaItemWithButtons(pizza));
 
+localStorage.setItem("lastname", "Smith");
+
 
 /*------------------------------------------------------------------------------
 
@@ -151,6 +153,6 @@ $(".menuPizzaSugestion").click(function() { showPizzaExtensiveInformation($(this
 
 //Code for the menu buttons.
 $(".pizzaOrderButton").click(function() { ; }); //Changes the page to the drinks menu.
-$("#skipButton").click(function() { console.log("skip"); window.location.href = "html/menus/menuDrinks.html"; }); //Changes the page to the drinks menu.
+$("#skipButton").click(function() { console.log("skip"); window.location.href = "html/menus/menuOrderConfirmation.html"; }); //Changes the page to the drinks menu.
 $("#cancelButton").click(function() { console.log("cancel"); window.location.href = "html/table.html"; }); //Changes the page to the main page.
 $("#createPizzaShorcut").click(function() { console.log("create"); window.location.href = "html/menus/menuCustomizePizza.html"; }); //Changes the page to the pizza customization menu.

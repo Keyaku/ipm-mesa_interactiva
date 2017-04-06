@@ -118,6 +118,9 @@ $("#navbar").navbar(); // Adding top navigation bar
 $("#order").append(getPizzaItem("Camponesa")).append(getDrinkItem("Water"));
 
 
+var x = localStorage.getItem("lastname");
+console.log(x);
+
 /*------------------------------------------------------------------------------
 
 				AUXILIAR FUNCTIONS
@@ -130,3 +133,4 @@ $("#order").append(getPizzaItem("Camponesa")).append(getDrinkItem("Water"));
 				MENU FLOW
 
 ------------------------------------------------------------------------------*/
+$("#buttonConfirm").click(function() { window.location.href = "menuPizzaList.html"; });
