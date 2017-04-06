@@ -1,8 +1,9 @@
-// Adding navigation bar
-$('#menubar').menubar({
-	minimized : false,
-});
+/*------------------------------------------------------------------------------
 
+				CODE EXECUTION
+
+------------------------------------------------------------------------------*/
+$("#menubar").menubar({ minimized : false, }); //Adding navigation bar
 
 // Timer related code
 // TODO: Add countdown element in page
