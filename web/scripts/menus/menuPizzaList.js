@@ -64,14 +64,6 @@ for (var pizza in pizzaList)
 	$("#menuPremadePizzas").append(getPizzaItemWithButtons(pizza));
 
 
-
-Cookies.set("cookieteste1", "234111a");
-$("#cancel").click(function() {
-	window.location.href = "html/menus/menuOrderConfirmation.html";
-});
-
-
-
 /*------------------------------------------------------------------------------
 
 				AUXILIAR FUNCTIONS

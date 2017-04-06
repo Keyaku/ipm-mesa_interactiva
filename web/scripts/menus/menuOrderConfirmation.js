@@ -118,9 +118,6 @@ $("#navbar").navbar(); // Adding top navigation bar
 $("#order").append(getPizzaItem("Camponesa")).append(getDrinkItem("Water"));
 
 
-console.log("cookie", Cookies.get("cookieteste1"));
-
-
 /*------------------------------------------------------------------------------
 
 				AUXILIAR FUNCTIONS
