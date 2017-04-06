@@ -116,9 +116,9 @@ var drinksList = {
 $("#menubar").menubar(); // Adding menu bar
 $("#navbar").navbar(); // Adding top navigation bar
 
-var x = localStorage.getItem("pizzaOrdered");
-
-$("#order").append(getPizzaItem(x)).append(getDrinkItem("Water"));
+var orderedPizza = localStorage.getItem("orderedPizza"); //Fetches the ordered pizza chosen in the menu screen.
+var orderedDrink = localStorage.getItem("orderedDrink"); //Fetches the ordered drink chosen in the menu screen.
+$("#order").append(getPizzaItem(orderedPizza)).append(getDrinkItem("Water")); //Draws the order based on what was ordered previously.
 
 /*------------------------------------------------------------------------------
 
@@ -132,4 +132,4 @@ $("#order").append(getPizzaItem(x)).append(getDrinkItem("Water"));
 				MENU FLOW
 
 ------------------------------------------------------------------------------*/
-$("#buttonConfirm").click(function() { window.location.href = "menuPizzaList.html"; });
+$("#buttonConfirm").click(function() { window.location.href = "../table.html"; });

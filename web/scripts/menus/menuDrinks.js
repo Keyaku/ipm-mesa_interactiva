@@ -103,8 +103,9 @@ function getDrinkImg(name) {
 }
 function getDrinkItem(name) {
 	var label = $("<label></label>").addClass("mPDITitle").append(document.createTextNode(name)); //Creates the label for each drink;
-	var img = getDrinkImg(name); //Gets the drink's image.
-	return $("<div></div>").addClass("menuDrinkItem").append(img).append(label);
+	//var img = getDrinkImg(name); //Gets the drink's image.
+	//return $("<div></div>").addClass("menuDrinkItem").append(img).append(label);
+	return $("<div></div>").addClass("menuDrinkItem").append(label);
 }
 function getDrinkNutritionalInfo (name) {
 	var nutInfo = drinksList[name]["NutInfo"]; //Gets the list of nutritional facts.

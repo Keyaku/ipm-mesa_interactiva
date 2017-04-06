@@ -1,5 +1,5 @@
 body {
-	background-image: url("../../img/tableBack3.jpg");
+	background-image: url("../../img/tableBackgrounds/tableBack3.jpg");
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -42,15 +42,15 @@ body {
 .pizzaCustomizationItem:last-child { border: none; }
 
 #size1 {
-	background-image: url("../../img/pizzaMenu/pizzaMedium.png");
+	background-image: url("../../img/menus/customizeMenu/pizzaMedium.png");
 	background-size: 150px 150px;
 }
 #size2 {
-	background-image: url("../../img/pizzaMenu/pizzaLarge.png");
+	background-image: url("../../img/menus/customizeMenu/pizzaLarge.png");
 	background-size: 250px 250px;
 }
 #size3 {
-	background-image: url("../../img/pizzaMenu/pizzaFamily.png");
+	background-image: url("../../img/menus/customizeMenu/pizzaFamily.png");
 	background-size: 350px 350px;
 }
 .pizzaSizeText {
@@ -109,5 +109,5 @@ body {
 	width: 140px;
 	height: 70px;
 }
-#pizzaMushroom { background-image: url("../../img/pizzaMenu/pizzaIngredients/pizzaMushroom.png"); }
-#pizzaJalapenõs { background-image: url("../../img/pizzaMenu/pizzaIngredients/pizzaJalapenos.png"); }
+#pizzaMushroom { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/pizzaMushroom.png"); }
+#pizzaJalapenõs { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/pizzaJalapenos.png"); }

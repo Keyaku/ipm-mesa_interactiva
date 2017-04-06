@@ -141,8 +141,7 @@ function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confir
 
 function setGlobalPizza() {
 	var b = $("#pizzaInformation").children(".mPIITitle").text(); //Gets the name of the ordered pizza.
-	console.log(b);
-	localStorage.setItem("pizzaOrdered", b); //Saves the ordered pizza for later information.
+	localStorage.setItem("orderedPizza", b); //Saves the ordered pizza for later information.
 	window.location.href = "html/menus/menuOrderConfirmation.html"; //Changes the screen (menu flow).
 }
 
@@ -157,7 +156,8 @@ $(".menuPizzaItem").click(function() { showPizzaExtensiveInformation($(this).chi
 $(".menuPizzaSugestion").click(function() { showPizzaExtensiveInformation($(this).children(".menuPizzaItemInfo").children(".mPIITitle").text()); });
 
 //Code for the menu buttons.
-//$(".pizzaOrderButton").click(function() { setGlobalPizza() }); //Changes the page to the drinks menu.
+//The click event of #pizzaInformationClose is defined in the spawning (in showPizzaExtensiveInformation()).
+//The click event of #pizzaOrderButton is defined in the spawning (in getPizzaPrice()).
 $("#skipButton").click(function() { console.log("skip"); window.location.href = "html/menus/menuDrinks.html"; }); //Changes the page to the drinks menu.
 $("#cancelButton").click(function() { console.log("cancel"); window.location.href = "html/table.html"; }); //Changes the page to the main page.
 $("#createPizzaShorcut").click(function() { console.log("create"); window.location.href = "html/menus/menuCustomizePizza.html"; }); //Changes the page to the pizza customization menu.
