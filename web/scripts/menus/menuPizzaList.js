@@ -63,8 +63,6 @@ var pizzaId = 1;
 for (var pizza in pizzaList)
 	$("#menuPremadePizzas").append(getPizzaItemWithButtons(pizza));
 
-localStorage.setItem("lastname", "Smith");
-
 
 /*------------------------------------------------------------------------------
 
@@ -119,7 +117,7 @@ function getPizzaRating(name) {
 function getPizzaPrice() {
 	var d = $("<div></div>");
 	d.append($("<label></label>").append(document.createTextNode("Medium: 12€")));
-	d.append($("<button></button>").addClass("pizzaOrderButton").append(document.createTextNode("Order!")));
+	d.append($("<button></button>").attr("id", "pizzaOrderButton").click(function() { setGlobalPizza(); }).append(document.createTextNode("Order!")));
 	return d;
 }
 function getSizeButtons() {
@@ -141,6 +139,13 @@ function hidePizzaExtensiveInformation() {
 }
 function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }
 
+function setGlobalPizza() {
+	var b = $("#pizzaInformation").children(".mPIITitle").text(); //Gets the name of the ordered pizza.
+	console.log(b);
+	localStorage.setItem("pizzaOrdered", b); //Saves the ordered pizza for later information.
+	window.location.href = "html/menus/menuOrderConfirmation.html"; //Changes the screen (menu flow).
+}
+
 
 /*------------------------------------------------------------------------------
 
@@ -152,7 +157,7 @@ $(".menuPizzaItem").click(function() { showPizzaExtensiveInformation($(this).chi
 $(".menuPizzaSugestion").click(function() { showPizzaExtensiveInformation($(this).children(".menuPizzaItemInfo").children(".mPIITitle").text()); });
 
 //Code for the menu buttons.
-$(".pizzaOrderButton").click(function() { ; }); //Changes the page to the drinks menu.
-$("#skipButton").click(function() { console.log("skip"); window.location.href = "html/menus/menuOrderConfirmation.html"; }); //Changes the page to the drinks menu.
+//$(".pizzaOrderButton").click(function() { setGlobalPizza() }); //Changes the page to the drinks menu.
+$("#skipButton").click(function() { console.log("skip"); window.location.href = "html/menus/menuDrinks.html"; }); //Changes the page to the drinks menu.
 $("#cancelButton").click(function() { console.log("cancel"); window.location.href = "html/table.html"; }); //Changes the page to the main page.
 $("#createPizzaShorcut").click(function() { console.log("create"); window.location.href = "html/menus/menuCustomizePizza.html"; }); //Changes the page to the pizza customization menu.

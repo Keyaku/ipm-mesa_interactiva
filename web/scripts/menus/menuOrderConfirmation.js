@@ -115,11 +115,10 @@ var drinksList = {
 ------------------------------------------------------------------------------*/
 $("#menubar").menubar(); // Adding menu bar
 $("#navbar").navbar(); // Adding top navigation bar
-$("#order").append(getPizzaItem("Camponesa")).append(getDrinkItem("Water"));
 
+var x = localStorage.getItem("pizzaOrdered");
 
-var x = localStorage.getItem("lastname");
-console.log(x);
+$("#order").append(getPizzaItem(x)).append(getDrinkItem("Water"));
 
 /*------------------------------------------------------------------------------
 
