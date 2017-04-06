@@ -9,7 +9,7 @@ $(document).ready(function(){
 });
 
 // Adding navigation bar
-$('nav').navbar({
+$('#menubar').menubar({
 	minimized : false,
 });
 
