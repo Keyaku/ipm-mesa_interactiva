@@ -51,7 +51,7 @@
 
 	------------------------------------------------------------------------------*/
 	function populateSuggestions(obj) {
-		var titleSuggested = $("<label></label>").addClass("menuPremadePizzasSugestionsTitle").append(document.createTextNode("Suggestion tailored for you")); //Creates the title for the suggestion's menu.
+		var titleSuggested = $("<label></label>").addClass("menuPremadePizzasSugestionsTitle").append(document.createTextNode("Suggestions tailored for you")); //Creates the title for the suggestion's menu.
 		obj.append(titleSuggested);
 		var suggestions = $("<div></div>").attr("id", "menuPremadePizzasSugestions") //Creates the main sugestions division with lateral scroll.
 		obj.append(suggestions);

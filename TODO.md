@@ -23,7 +23,7 @@
 * [ ] New Order Screen
 
 ### Scripts to update / change / separate
-* [ ] jquery.navbar.js
+* [x] jquery.navbar.js
 * [x] menuPizzaList.js
 * [x] menuDrinks.js
 

@@ -13,7 +13,7 @@ $("#pizzaIngredients").append(getPizzaItem("Camponesa")); //Show the user's orde
 $("#timer").countdown360({
 	radius: 65,                        // radius of arc
 	strokeStyle: "#ecf0f1",            // the color of the stroke
-	strokeWidth: 5,
+	strokeWidth: 5,					   // border radius
 	fillStyle: "#bdc3a7",              // the fill color
 	fontColor: "#ecf0f1",              // the font color
 	fontWeight: 700,                   // the font weight
@@ -23,3 +23,26 @@ $("#timer").countdown360({
 	smooth: true,                      // should the timer be smooth or stepping
 	onComplete: function () {}
 }); //Adds the timer.
+
+
+/*------------------------------------------------------------------------------
+
+				AUXILIAR FUNCTIONS
+
+------------------------------------------------------------------------------*/
+function orderEdit(index) {
+
+}
+function orderCancel(index) {
+	$("#order" + index.toString()).remove();
+}
+
+
+/*------------------------------------------------------------------------------
+
+				MENU FLOW
+
+------------------------------------------------------------------------------*/
+$("#buttonEdit").click(function() { orderEdit(0) }); //Edits the selected order.
+$("#buttonCancel").click(function() { orderCancel(0) }); //Cancells the selected order.
+$("#buttonNewOrder").click(function() { window.location.href = "html/menus/menuPizzaList.html"; }); //Changes the page to the pizza menu.
