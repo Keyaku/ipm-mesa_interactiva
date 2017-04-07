@@ -6,8 +6,8 @@
 $("#menubar").menubar(); //Adding menu bar
 $("#navbar").navbar(); //Adding top navigation bar
 $("#pizzaInformation").hide(); //Hides the lateral pizza information bar.
-populateSuggestions($("#menuPremadePizzas")); //Populates the suggested pizza's menu dynamically.
-populatePremadeMenu($("#menuPremadePizzas")); //Populates the premade pizza's menu dynamically.
+populateSuggestions($("#suggestions")); //Populates the suggested pizza's menu dynamically.
+populatePremadeMenu($("#premade")); //Populates the premade pizza's menu dynamically.
 
 
 /*------------------------------------------------------------------------------
