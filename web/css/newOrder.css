@@ -50,13 +50,8 @@ body {
 	width: 25%;
 }
 
-#pizza {
-	height: auto;
-	width: 150px;
-	padding-top: 7.5%;
-}
 
-#pizzaIngredients {
+#pizza {
 	padding-top: 2%;
 	padding-left: 2%;
 }

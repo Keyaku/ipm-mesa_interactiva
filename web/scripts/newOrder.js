@@ -9,7 +9,9 @@ $("#navbar").navbar();
 
 var orderedPizza = sessionStorage.getItem("orderedPizza") //Gets the ordered pizza.
 var orderedDrink = sessionStorage.getItem("orderedDrink") //Gets the ordered drink.
-$("#pizzaIngredients").append(getPizzaItem("Camponesa")); //Show the user's order.
+
+$("#pizza").append(getPizzaItem(orderedPizza)); //Shows the user's ordered pizza.
+$("#drink").append(getDrinkItem(orderedDrink)); //Shows the user's ordered drink.
 $("#timer").countdown360({
 	radius: 65,                        // radius of arc
 	strokeStyle: "#ecf0f1",            // the color of the stroke
