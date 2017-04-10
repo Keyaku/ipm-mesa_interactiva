@@ -5,8 +5,9 @@
 
 /********************** Left-side menu bar **********************/
 #menubar {
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.8);
 	height: 100vh;
+	z-index: 101;
 }
 
 #menubar div {
@@ -81,6 +82,7 @@
 
 	width: 100vw;
 	height: 5vh;
+	z-index: 100;
 }
 
 #navbar a {
