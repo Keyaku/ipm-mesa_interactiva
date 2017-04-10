@@ -1,3 +1,13 @@
+/******* (Re)defining Prototypes *******/
+// Array
+Array.prototype.first = function() {
+	return this[0];
+};
+
+Array.prototype.last = function() {
+	return this[this.length - 1];
+};
+
 /****** Code execution *******/
 $(document).ready(function(){
 	// Starting svg4everybody
