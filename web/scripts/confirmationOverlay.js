@@ -10,29 +10,42 @@ const MODAL_HTML = `
 						</div>
 					</div>
 					`;
+
+
+/*------------------------------------------------------------------------------
+
+				CODE EXECUTION
+
+------------------------------------------------------------------------------*/
 $('main').append(MODAL_HTML);
 
 var modal = $('#cancelModal');
 var modalButtons = $('.modalButtons');
-var modalOpener = $('#buttonCancel');
-var modelCloser = $("#return");
-var modalFinish = $("#proceed");
-var destinationURL = "html/table.html";
+var functionCallBack = confirmationOverlayShow;
+var functionCallBackArg1 = 0;
 
-function modalOpen() {
+
+/*------------------------------------------------------------------------------
+
+				AUXILIAR FUNCTIONS
+
+------------------------------------------------------------------------------*/
+function confirmationOverlayShow(callback, fCBA1) {
 	modal.show();
 	modalButtons.show();
+	functionCallBack = callback;
+	functionCallBackArg1 = fCBA1;
 }
+function modalClose() { modal.hide(); }
 
-modalOpener.click(function() {
-	modal.show();
-	modalButtons.show();
-});
 
-modelCloser.click(function() {
-	modal.hide();
-});
+/*------------------------------------------------------------------------------
 
-modalFinish.click(function() {
-	$(location).attr('href', destinationURL)
+				MENU FLOW
+
+------------------------------------------------------------------------------*/
+$("#return").click(function() { modalClose(); });
+$("#proceed").click(function() {
+	functionCallBack(functionCallBackArg1);
+	modalClose();
 });

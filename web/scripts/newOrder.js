@@ -58,19 +58,18 @@ function shell(index) {
 
 function orderEdit(index) {
 	var i = parseInt(index); //Gets the order to edit.
-	//Presents the client with a popup asking wich item he wants to edit.
-	//For testing purposes it is assumed the client wants to edit it's pizza.
 	sessionStorage.setItem("orderNumber", i.toString()); //Sets the number of the current order.
 	window.location.href = "html/menus/menuPizzaList.html";
 }
 function orderCancel(index) {
-	modalOpen();
-/*
+	confirmationOverlayShow(confirmCancel, index);
+}
+
+function confirmCancel(index) {
 	$("#order" + index.toString()).remove();
 	var str = "order" + index.toString();
 	sessionStorage.removeItem("str" + "Pizza");
 	sessionStorage.removeItem("str" + "Drink");
-*/
 }
 
 
