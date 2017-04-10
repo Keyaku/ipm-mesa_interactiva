@@ -8,15 +8,8 @@ $("#navbar").navbar();
 
 var orderNumber = parseInt(sessionStorage.getItem("orders"));
 for (var i = 0; i < orderNumber; i++) {
-	console.log(i, "iteration");
-	var str = "order" + i.toString();
-	var orderedPizza = sessionStorage.getItem(str + "Pizza") //Gets the ordered pizza.
-	var orderedDrink = sessionStorage.getItem(str + "Drink") //Gets the ordered drink.
-	//var b1 = getPizzaItem(orderedPizza);
-	//var b2 = getDrinkItem(orderedDrink);
-	$("#pizza").append(); //Shows the user's ordered pizza.
-	$("#drink").append(); //Shows the user's ordered drink.
-	console.log("cheguei ao fim");
+	createOrderItem(i);
+	shell(i);
 }
 
 $("#timer").countdown360({
@@ -39,6 +32,30 @@ $("#timer").countdown360({
 				AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
+function createOrderItem(index) {
+	var ind = index.toString();
+	var str = "order" + index.toString();
+	var div = $("<div></div>").addClass("orderStatusContainer").attr("id", str);
+	var a = $("<div></div>").addClass("col").attr("id", "pizza" + ind);
+	var b = $("<div></div>").addClass("col").attr("id", "drink" + ind);
+	var c = $("<div></div>").addClass("col").attr("id", "timer" + ind);
+	var d = $("<div></div>").addClass("col");
+		var b1 = $("<button></button>").addClass("editcancel").addClass("buttonEdit").attr("id", "edit" + ind);
+		var b2 = $("<button></button>").addClass("editcancel").addClass("buttonCancel").attr("id", "cancel" + ind);
+	d.append(b1).append(b2);
+	div.append(a).append(b).append(c).append(d);
+	$("#orders").append(div);
+}
+function shell(index) {
+	var str = "order" + index.toString();
+	var orderedPizza = sessionStorage.getItem(str + "Pizza"); //Gets the ordered pizza.
+	var orderedDrink = sessionStorage.getItem(str + "Drink"); //Gets the ordered drink.
+	setTimeout(function() {
+		$("#pizza" + index.toString()).append(getPizzaItem(orderedPizza)); //Shows the user's ordered pizza.
+		$("#drink" + index.toString()).append(getDrinkItem(orderedDrink)); //Shows the user's ordered drink.
+	}, 100);
+}
+
 function orderEdit(index) {
 	var i = parseInt(index); //Gets the order to edit.
 	//Presents the client with a popup asking wich item he wants to edit.
@@ -59,8 +76,14 @@ function orderCancel(index) {
 				MENU FLOW
 
 ------------------------------------------------------------------------------*/
-$("#buttonEdit").click(function() { orderEdit(($(this).parent().parent().attr("id"))[5]); }); //Edits the selected order.
-$("#buttonCancel").click(function() { orderCancel(0) }); //Cancells the selected order.
+$(".buttonEdit").click(function() {
+	var i = ($(this).attr("id"))[4];
+	orderEdit(parseInt(i));
+}); //Edits the selected order.
+$(".buttonCancel").click(function() {
+	var i = ($(this).attr("id"))[6];
+	orderCancel(parseInt(i));
+}); //Cancells the selected order.
 $("#buttonNewOrder").click(function() {
 	var i = sessionStorage.getItem("orders"); //Gets the number of total orders.
 	sessionStorage.setItem("orderNumber", i); //Sets the number of the current order.
