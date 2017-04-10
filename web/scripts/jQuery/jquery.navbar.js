@@ -34,19 +34,17 @@ const HTML_NAVBAR = `
 
 //Show the correct overlay
 function orderButton() {
-	if (sessionStorage.getItem("order") == "true")
-		window.location.href = "html/newOrder.html";
-	else
-		window.location.href = "html/menus/menuPizzaList.html";
+	if (sessionStorage.getItem('order') == 'true') {
+		$(location).attr('href', 'html/newOrder.html');
+	} else {
+		$(location).attr('href', 'html/menus/menuPizzaList.html');
+	}
 }
-function entertainmentButton()  { window.location.href = "html/entertainment.html"; }
-function newsButton() { window.location.href = "html/news.html"; }
-function informationButton() { window.location.href = "html/information.html"; }
+function entertainmentButton() { $(location).attr('href', 'html/entertainment.html';) }
+function newsButton() { $(location).attr('href', 'html/news.html'); }
+function informationButton() { $(location).attr('href', 'html/information.html'); }
 
 (function($) {
-
-
-
     $.fn.menubar = function(opt) {
         var def = $.extend({
 			minimized : true,
