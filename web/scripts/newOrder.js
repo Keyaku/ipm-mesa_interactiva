@@ -8,8 +8,11 @@ $("#navbar").navbar();
 
 var orderNumber = parseInt(sessionStorage.getItem("orders"));
 for (var i = 0; i < orderNumber; i++) {
-	createOrderItem(i);
-	shell(i);
+	if (sessionStorage.getItem("order" + i) === "true") {
+		console.log(i, "iteration");
+		createOrderItem(i);
+		shell(i);
+	}
 }
 
 $("#timer").countdown360({
@@ -61,15 +64,12 @@ function orderEdit(index) {
 	sessionStorage.setItem("orderNumber", i.toString()); //Sets the number of the current order.
 	window.location.href = "html/menus/menuPizzaList.html";
 }
-function orderCancel(index) {
-	confirmationOverlayShow(confirmCancel, index);
-}
-
+function orderCancel(index) { confirmationOverlayShow(confirmCancel, index); }
 function confirmCancel(index) {
 	$("#order" + index.toString()).remove();
 	var str = "order" + index.toString();
-	sessionStorage.removeItem("str" + "Pizza");
-	sessionStorage.removeItem("str" + "Drink");
+	sessionStorage.removeItem(str + "Pizza");
+	sessionStorage.removeItem(str + "Drink");
 }
 
 

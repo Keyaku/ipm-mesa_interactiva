@@ -17,10 +17,9 @@ const MODAL_HTML = `
 				CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
-$('main').append(MODAL_HTML);
-
-var modal = $('#cancelModal');
-var modalButtons = $('.modalButtons');
+$("main").append(MODAL_HTML);
+var modal = $("#cancelModal");
+var modalButtons = $(".modalButtons");
 var functionCallBack = confirmationOverlayShow;
 var functionCallBackArg1 = 0;
 
@@ -30,13 +29,13 @@ var functionCallBackArg1 = 0;
 				AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
+function modalClose() { modal.hide(); }
 function confirmationOverlayShow(callback, fCBA1) {
 	modal.show();
 	modalButtons.show();
 	functionCallBack = callback;
 	functionCallBackArg1 = fCBA1;
 }
-function modalClose() { modal.hide(); }
 
 
 /*------------------------------------------------------------------------------

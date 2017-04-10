@@ -45,7 +45,7 @@ function setGlobalPizza() {
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
 	var b = $('#pizzaInformation').children('.mPIITitle').text(); //Gets the name of the ordered pizza.
 	sessionStorage.setItem('order' + index + 'Pizza', b); //Saves the ordered pizza for later information.
-	sessionStorage.setItem('order', 'true'); //Indicates thar an order as been placed.
+	sessionStorage.setItem('order' + index, "true"); //Indicates thar an order as been placed.
 	$(location).attr('href', 'html/menus/menuDrinks.html'); //Changes the screen (menu flow).
 }
 

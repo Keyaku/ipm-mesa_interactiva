@@ -34,7 +34,7 @@ const HTML_NAVBAR = `
 
 //Show the correct overlay
 function orderButton() {
-	if (sessionStorage.getItem('order') == 'true') {
+	if (sessionStorage.getItem('order0') == 'true') {
 		$(location).attr('href', 'html/newOrder.html');
 	} else {
 		$(location).attr('href', 'html/menus/menuPizzaList.html');
