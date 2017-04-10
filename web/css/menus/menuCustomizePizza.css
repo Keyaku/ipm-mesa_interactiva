@@ -1,11 +1,3 @@
-body {
-	background-image: url("../../img/tableBackgrounds/tableBack1.jpg");
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
 .menuTitle {
 	color: darkorange;
 	font-size: 150px;
