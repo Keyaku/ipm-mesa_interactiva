@@ -55,17 +55,18 @@
 		obj.append(titleSuggested);
 		var suggestions = $('<div></div>').attr('id', 'menuPremadePizzasSugestions') //Creates the main sugestions division with lateral scroll.
 		obj.append(suggestions);
-		for (var pizza in suggestionsList)
+		for (var pizza in suggestionsList) {
 			suggestions.append(getSuggestedItem(pizza)); //Adds each suggested pizza to the passed object.
+		}
 	}
 	function populatePremadeMenu(obj) {
 		var titlePremade = $('<label></label>').addClass('menuPremadeMenuTitle').append(document.createTextNode('Predesigned pizzas')); //Creates the title for the premade pizzas' menu.
 		obj.append(titlePremade);
 		var pizzaId = 1;
-		for (var pizza in pizzaList)
+		for (var pizza in pizzaList) {
 			obj.append(getPizzaItemWithButtons(pizza)); //Adds each premade pizzas to the passed object.
+		}
 	}
-
 
 	function getPizzaInfo(name) {
 		var label = $('<label></label>').addClass('mPIITitle').append(document.createTextNode(name)); //Creates the label that represents the pizza's name.
@@ -73,7 +74,7 @@
 		return  $('<div></div>').addClass('menuPizzaItemInfo').append(label).append(list); //Adds the pizza's name and the ingredients list to the correct div.
 	}
 	function getPizzaImg(name) {
-		var img = $('<img>').addClass('menuPizzaItemImg'); //Creates the image.
+		var img = $('<img>').addClass('pizzaThumbnail'); //Creates the image.
 		img.attr('src', pizzaList[name]['Img']); //Sets the correct source.
 		return img;
 	}
@@ -81,12 +82,14 @@
 	function getPizzaItem(name) {
 		var img = getPizzaImg(name); //Gets the pizza's image.
 		var info = getPizzaInfo(name); //Gets the pizza's information.
-		return $('<div></div>').addClass('menuPizzaItem').append(img).append(info);
+		return $('<div></div>').addClass('menuPizzaItem').append(img).append(info)
+			.addClass('row');
 	}
 	function getPizzaItemWithButtons(name) {
 		var img = getPizzaImg(name); //Gets the pizza's image.
 		var info = getPizzaInfo(name).append(getSizeButtons()); //Gets the pizza's information and appends the size buttons.
 		return $('<div></div>').addClass('menuPizzaItem').append(img).append(info)
+			.addClass('row');
 	}
 	function getSuggestedItem(name) {
 		var info = getPizzaInfo(name);
@@ -97,18 +100,24 @@
 	function getPizzaIngredientsList(name) {
 		var ingredientsList = pizzaList[name]['Ingredients']; //Gets the ingredient list.
 		var list = $('<ul></ul>'); //Creates the list of ingredients.
-		for (i in ingredientsList) list.append($('<li></li>').addClass('mPIIIngredient').append(document.createTextNode(ingredientsList[i]))); //Creates a list element for each ingredient.
+		for (i in ingredientsList) {
+			list.append($('<li></li>').addClass('mPIIIngredient').append(document.createTextNode(ingredientsList[i]))); //Creates a list element for each ingredient.
+		}
 		return list;
 	}
 	function getPizzaNutritonFactsList(name) {
 		var nutInfo = pizzaList[name]['NutInfo']; //Gets the list of nutritional facts.
 		var table = $('<table></table'); //Creates the table of nutritional facts.
-		for (var key in nutInfo) table.append($('<tr></tr>').append($('<td></td>').append(document.createTextNode(key))).append($('<td></td').append(document.createTextNode(nutInfo[key])))); //Creates each table row.
+		for (var key in nutInfo) {
+			table.append($('<tr></tr>').append($('<td></td>').append(document.createTextNode(key))).append($('<td></td').append(document.createTextNode(nutInfo[key])))); //Creates each table row.
+		}
 		return table;
 	}
 	function getPizzaRating(name) {
 		var d = $('<div></div>').addClass('pizzaRatingStarts');
-		for (var i = 0; i < 5; i++) d.append($('<div></div>').addClass('pizzaRatingStar'));
+		for (var i = 0; i < 5; i++) {
+			d.append($('<div></div>').addClass('pizzaRatingStar'));
+		}
 		d.append($('<label></label>').append(document.createTextNode(pizzaList[name]['Rating'])));
 		return d;
 	}
@@ -204,8 +213,9 @@
 		------------------------------------------------------------------------------*/
 		function populateDrinksMenu(obj) {
 			var drinkId = 1;
-			for (drink in drinksList)
+			for (drink in drinksList) {
 				obj.append(getDrinkItem(drink)); //Adds each drink to the passed object.
+			}
 		}
 
 		function getDrinkImg(name) {
@@ -221,7 +231,7 @@
 		}
 		function getDrinkNutritionalInfo (name) {
 			var nutInfo = drinksList[name]['NutInfo']; //Gets the list of nutritional facts.
-			var table = $('<table></table'); //Creates the table of nutritional facts.
+			var table = $('<table></table>'); //Creates the table of nutritional facts.
 			for (var key in nutInfo) {
 				var n = $('<td></td>').append(document.createTextNode(key)); //Creates a table item for each nutritional information key.
 				var v = $('<td></td').append(document.createTextNode(nutInfo[key])); //Creates a table item for the value of each key.
