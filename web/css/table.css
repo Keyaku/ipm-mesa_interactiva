@@ -1,7 +1,15 @@
-main {
+html, body {
+	overflow: hidden;
+	background-image: url('../img/tableBackgrounds/tableBack1.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
 	background-size: cover;
-	background-image: url("../img/tableBackgrounds/tableBack1.jpg");
-	width:  100%;
+}
+
+main {
+	position: relative;
+	margin: 5vh 0;
 	height: 100%;
-	z-index: -1;
+	left: 40pt;
 }
