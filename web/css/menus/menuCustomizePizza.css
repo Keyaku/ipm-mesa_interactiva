@@ -1,3 +1,7 @@
+main {
+	overflow-y: scroll;
+}
+
 .menuTitle {
 	color: darkorange;
 	font-size: 150px;
@@ -5,6 +9,7 @@
 	margin: 0 0 80px 50px;
 	text-shadow: 0px 0px 10px #000;
 }
+
 #customizeYourPizza {
 	float: left;
 	width: 100%;
