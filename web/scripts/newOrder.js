@@ -9,13 +9,13 @@ $("#navbar").navbar();
 var orderNumber = parseInt(sessionStorage.getItem("orders"));
 for (var i = 0; i < orderNumber; i++) {
 	console.log(i, "iteration");
-/*
 	var str = "order" + i.toString();
 	var orderedPizza = sessionStorage.getItem(str + "Pizza") //Gets the ordered pizza.
 	var orderedDrink = sessionStorage.getItem(str + "Drink") //Gets the ordered drink.
-	$("#pizza").append(getPizzaItem(orderedPizza)); //Shows the user's ordered pizza.
-	$("#drink").append(getDrinkItem(orderedDrink)); //Shows the user's ordered drink.
-*/
+	//var b1 = getPizzaItem(orderedPizza);
+	//var b2 = getDrinkItem(orderedDrink);
+	$("#pizza").append(); //Shows the user's ordered pizza.
+	$("#drink").append(); //Shows the user's ordered drink.
 	console.log("cheguei ao fim");
 }
 
