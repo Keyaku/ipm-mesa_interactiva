@@ -40,8 +40,8 @@ function createOrderItem(index) {
 	var b = $("<div></div>").addClass("col").attr("id", "drink" + ind);
 	var c = $("<div></div>").addClass("col").attr("id", "timer" + ind);
 	var d = $("<div></div>").addClass("col");
-		var b1 = $("<button></button>").addClass("editcancel").addClass("buttonEdit").attr("id", "edit" + ind);
-		var b2 = $("<button></button>").addClass("editcancel").addClass("buttonCancel").attr("id", "cancel" + ind);
+		var b1 = $("<button></button>").addClass("editcancel").addClass("buttonEdit").attr("id", "edit" + ind).append(document.createTextNode("Edit"));
+		var b2 = $("<button></button>").addClass("editcancel").addClass("buttonCancel").attr("id", "cancel" + ind).append(document.createTextNode("Cancel"));
 	d.append(b1).append(b2);
 	div.append(a).append(b).append(c).append(d);
 	$("#orders").append(div);
@@ -64,10 +64,13 @@ function orderEdit(index) {
 	window.location.href = "html/menus/menuPizzaList.html";
 }
 function orderCancel(index) {
+	modalOpen();
+/*
 	$("#order" + index.toString()).remove();
 	var str = "order" + index.toString();
 	sessionStorage.removeItem("str" + "Pizza");
 	sessionStorage.removeItem("str" + "Drink");
+*/
 }
 
 

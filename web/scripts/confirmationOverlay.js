@@ -19,6 +19,11 @@ var modelCloser = $("#return");
 var modalFinish = $("#proceed");
 var destinationURL = "html/table.html";
 
+function modalOpen() {
+	modal.show();
+	modalButtons.show();
+}
+
 modalOpener.click(function() {
 	modal.show();
 	modalButtons.show();

@@ -46,7 +46,7 @@ function setGlobalPizza() {
 	var b = $('#pizzaInformation').children('.mPIITitle').text(); //Gets the name of the ordered pizza.
 	sessionStorage.setItem('order' + index + 'Pizza', b); //Saves the ordered pizza for later information.
 	sessionStorage.setItem('order', 'true'); //Indicates thar an order as been placed.
-	$(location).attr('html/menus/menuDrinks.html'); //Changes the screen (menu flow).
+	$(location).attr('href', 'html/menus/menuDrinks.html'); //Changes the screen (menu flow).
 }
 
 
@@ -69,8 +69,8 @@ $('#skipButton').click(function() { // Changes the page to the drinks menu.
 	$(location).attr('href', 'html/menus/menuDrinks.html');
 });
 $('#cancelButton').click(function() { // Changes the page to the main page.
-	$(location).attr('html/table.html');
+	$(location).attr('href', 'html/table.html');
 });
 $('#createPizzaShorcut').click(function() { //Changes the page to the pizza customization menu.
-	$(location).attr('html/menus/menuCustomizePizza.html');
+	$(location).attr('href', 'html/menus/menuCustomizePizza.html');
 });
