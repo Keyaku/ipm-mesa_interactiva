@@ -3,96 +3,101 @@ main {
 }
 
 .menuTitle {
-	color: darkorange;
-	font-size: 150px;
+	color: #9ccc65;
+	font-size: 100px;
 	font-family: bangers, sans-serif;
-	margin: 0 0 80px 50px;
+	margin-top: 5%;
+	margin-left: 5%;
 	text-shadow: 0px 0px 10px #000;
 }
 
-#customizeYourPizza {
-	float: left;
-	width: 100%;
+.pizzaCustomizationItemsContainer {
+	margin-left: 5%;
 }
+
 .customizeStep {
 	display: block;
-	margin: 10px 0 20px 50px;
+	text-shadow: 0px 0px 10px #000;
 }
+
 .customizeStepTitle {
-	color: white;
-	font-size: 60px;
-	margin: 0 0 30px 100px;
+	color: #cfff95;
+	font-size: 50px;
+	padding: 2%;
+	margin-top: 5%;
+	margin-left: 5%;
 }
-.pizzaCustomizationItemsContainer {
-	margin: 0 0 0 150px;
-	height: 500px;
-}
+
 .pizzaCustomizationItem {
 	background-position: center;
 	background-repeat: no-repeat;
-	border-right: 2px dashed white;
+	border-right: 5px dashed white;
 	float:left;
 	text-align: center;
-	width: 500px;
+	width: 33%;
 	height: 500px;
 }
+
 .pizzaCustomizationItem:last-child { border: none; }
 
 #size1 {
-	background-image: url("../../img/menus/customizeMenu/pizzaMedium.png");
-	background-size: 150px 150px;
-}
-#size2 {
-	background-image: url("../../img/menus/customizeMenu/pizzaLarge.png");
+	background-image: url("../../img/svg/4slicePizza.svg");
 	background-size: 250px 250px;
 }
+#size2 {
+	background-image: url("../../img/svg/6slicePizza.svg");
+	background-size: 300px 300px;
+}
 #size3 {
-	background-image: url("../../img/menus/customizeMenu/pizzaFamily.png");
+	background-image: url("../../img/svg/8slicePizza.svg");
 	background-size: 350px 350px;
 }
+
 .pizzaSizeText {
-	color: darkorange;
-	font-size: 60px;
-	font-family: bangers, sans-serif;
-}
-.pizzaSlicesText {
 	color: white;
-	font-size: 30px;
+	font-size: 50px;
 	font-family: raleway, sans-serif;
 }
 
 .pizzaDough {
-	margin: 0 20px 20px 0;
-	padding: 0 20px 0 0;
+	padding: 0 3% 0 3%;
+	width: 33%;
+	height: 250px;
 	text-align: justify;
-	width: 460px;
-	height: 200px;
 }
+
 .pizzaDoughName {
-	color: darkorange;
-	font-size: 60px;
-	font-family: bangers, sans-serif;
+	color: white;
+	font-size: 35px;
+	font-family: raleway, sans-serif;
+	margin-top: 5%;
+	margin-left: 10%;
 }
+
 .pizzaDoughDesc {
 	color: white;
-	font-size: 20px;
-	font-family: raleway, sans-serif;
+	font-size: 22px;
+	font-family: 'Raleway-Medium', sans-serif;
+	text-indent: 11%;
+	margin: 0 auto;
 }
 
 .pizzaIngredientType {
-	margin: 0 0 20px 0;
+	margin-top: 5%;
+	margin-left: 10%;
 	overflow-x: scroll;
 	overflow-y: visible;
 	white-space: nowrap;
-	width: 600px;
+	width: 50%;
 }
 
 .pizzaIngredientTypeLabel {
-	color: darkorange;
+	color: white;
 	display: block;
-	font-size: 60px;
-	font-family: bangers, sans-serif;
-	margin: 0 0 20px 0;
+	font-size: 35px;
+	font-family: 'Raleway', sans-serif;
+	margin-top: 2.5%;
+	margin-left: 5%;
 }
 
 .pizzaIngredient {
@@ -106,5 +111,6 @@ main {
 	width: 140px;
 	height: 70px;
 }
+
 #pizzaMushroom { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/pizzaMushroom.png"); }
 #pizzaJalapenõs { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/pizzaJalapenos.png"); }
