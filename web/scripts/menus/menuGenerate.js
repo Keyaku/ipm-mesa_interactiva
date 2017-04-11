@@ -74,7 +74,7 @@
 		return  $('<div></div>').addClass('menuPizzaItemInfo').append(label).append(list); //Adds the pizza's name and the ingredients list to the correct div.
 	}
 	function getPizzaImg(name) {
-		var img = $('<img>').addClass('pizzaThumbnail'); //Creates the image.
+		var img = $('<img>').addClass('col-md-6').addClass('pizzaThumbnail'); //Creates the image.
 		img.attr('src', pizzaList[name]['Img']); //Sets the correct source.
 		return img;
 	}
@@ -114,11 +114,11 @@
 		return table;
 	}
 	function getPizzaRating(name) {
-		var d = $('<div></div>').addClass('pizzaRatingStarts');
+		var d = $('<div></div>').addClass('pizzaRating');
 		for (var i = 0; i < 5; i++) {
-			d.append($('<div></div>').addClass('pizzaRatingStar'));
+			d.append($('<span></span>').addClass('star'));
 		}
-		d.append($('<label></label>').append(document.createTextNode(pizzaList[name]['Rating'])));
+		d.append($('<p></p>').addClass('pizzaRatingValue').append(document.createTextNode(pizzaList[name]['Rating'])));
 		return d;
 	}
 

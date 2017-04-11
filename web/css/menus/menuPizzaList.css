@@ -1,7 +1,8 @@
 label {
 	color: white;
+	font-family: bangers, Fallback, sans-serif;
 	font-size: 60px;
-	font-family: bangers, sans-serif;
+	text-align: center;
 	text-shadow: 0 0 10px #000;
 }
 
@@ -14,8 +15,6 @@ label {
 }
 .menuPizzaSugestion {
 	display: inline-block;
-	width: 400px;
-	height: 250px;
 }
 
 /* Menu of premade pizzas */
@@ -33,13 +32,16 @@ label {
 	display: block;
 	margin: 0;
 	padding: 4vh 0;
+	vertical-align: middle;
+
 	width: 100%;
 	height:auto;
 }
 .menuPizzaItem:last-child { border: none; }
 .pizzaThumbnail {
 	float: left;
-	width: 30%;
+	padding: 0;
+
 	height: auto;
 }
 .menuSugestedPizzaImg {
@@ -49,8 +51,7 @@ label {
 }
 .menuPizzaItemInfo {
 	color: white;
-	float: left;
-	margin-left: 5%;
+	text-align: center;
 }
 .mPIITitle {
 	display: block;
@@ -70,29 +71,34 @@ label {
 	color: white;
 	font-size: 20px;
 	margin: 10px 20px 0 0;
-	padding: 15px 20px 15px 20px;
+	padding: 15px 20px;
 }
 
 /* Lateral pizza information bar */
 #pizzaInformation {
-	background-color: #6b9b37;
+	background-color: rgba(0, 0, 0, 0.8);
 	float: right;
 	margin-right: 5%;
 	height: 100%;
 	z-index: 5;
 }
 #pizzaInformation td { color: white; }
-.pizzaRatingStar {
+.star {
 	background-image: url("../../img/icons/star.svg");
 	display: inline-block;
 	width: 18px;
 	height: 18px;
 }
+.pizzaRatingValue {
+	display: inline-block;
+	font-size: 14pt;
+	margin: 0 10pt;
+}
 #pizzaInformationClose {
 	color: white;
+	float: right;
 	font-size: 40px;
 	margin-top: 20px;
-	text-align: right;
 }
 
 /* Create Your Own Pizza Shortcut */
@@ -109,21 +115,17 @@ label {
 	text-align: center;
 }
 .buttonContainer button {
+	background-color: green;
 	border: none;
 	color: white;
 	font-family: raleway, sans-serif;
-	padding: 20px 30px 20px 30px;
+	font-size: 30px;
+	padding: 4% 6%;
 }
 .buttonContainer #cancelButton {
 	background-color: grey;
-	font-size: 30px;
-	padding: 20px 60px;
-}
-.buttonContainer #skipButton {
-	background-color: green;
-	font-size: 30px;
+	padding: 4% 8%;
 }
 .buttonContainer #pizzaOrder {
-	background-color: green;
 	font-size: 20px;
 }
