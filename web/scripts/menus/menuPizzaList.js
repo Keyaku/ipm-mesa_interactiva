@@ -47,7 +47,14 @@ function setGlobalPizza() {
 	sessionStorage.setItem('order' + index + 'Pizza', b); //Saves the ordered pizza for later information.
 	sessionStorage.setItem('order' + index, "true"); //Indicates thar an order as been placed.
 	sessionStorage.setItem('ordered', "true"); //Indicates thar an order as been placed.
-	$(location).attr('href', 'html/menus/menuDrinks.html'); //Changes the screen (menu flow).
+
+	if (sessionStorage.getItem("editing") == "true") {
+		$(location).attr('href', 'html/table.html'); //Confirms.
+	}
+	else {
+		$(location).attr('href', 'html/menus/menuDrinks.html'); //Changes the screen (menu flow).
+	}
+
 }
 
 

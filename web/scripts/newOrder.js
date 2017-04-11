@@ -61,8 +61,10 @@ function shell(index) {
 }
 
 function orderEdit(index) {
+	editGetCategory(); //Checks if the user wants to edit the pizza or the drink.
 	var i = parseInt(index); //Gets the order to edit.
 	sessionStorage.setItem("orderNumber", i.toString()); //Sets the number of the current order.
+	sessionStorage.setItem("editing", "true");
 	window.location.href = "html/menus/menuPizzaList.html";
 }
 function orderCancel(index) { confirmationOverlayShow(confirmCancel, index); }
@@ -73,6 +75,7 @@ function confirmCancel(index) {
 	sessionStorage.removeItem(str + "Drink");
 	sessionStorage.setItem("order" + index.toString(), "false");
 }
+function editGetCategory() {  }
 
 
 /*------------------------------------------------------------------------------
@@ -80,15 +83,10 @@ function confirmCancel(index) {
 				MENU FLOW
 
 ------------------------------------------------------------------------------*/
-$(".buttonEdit").click(function() {
-	var i = ($(this).attr("id"))[4];
-	orderEdit(parseInt(i));
-}); //Edits the selected order.
-$(".buttonCancel").click(function() {
-	var i = ($(this).attr("id"))[6];
-	orderCancel(parseInt(i));
-}); //Cancells the selected order.
+$(".buttonEdit").click(function() {	orderEdit(parseInt(($(this).attr("id"))[4])); }); //Edits the selected order.
+$(".buttonCancel").click(function() { orderCancel(parseInt(($(this).attr("id"))[6])); }); //Cancells the selected order.
 $("#buttonNewOrder").click(function() {
 	var i = sessionStorage.getItem("orders"); //Gets the number of total orders.
 	sessionStorage.setItem("orderNumber", i); //Sets the number of the current order.
-	window.location.href = "html/menus/menuPizzaList.html"; }); //Changes the page to the pizza menu.
+	window.location.href = "html/menus/menuPizzaList.html";
+}); //Changes the page to the pizza menu.
