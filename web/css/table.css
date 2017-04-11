@@ -17,3 +17,7 @@ main {
 	margin-left: 40pt; /* Size of left-side menubar */
 	height: 100%;
 }
+
+p {
+	color: white;
+}
