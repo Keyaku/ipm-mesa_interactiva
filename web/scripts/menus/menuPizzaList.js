@@ -49,12 +49,12 @@ function setGlobalPizza() {
 	sessionStorage.setItem('ordered', "true"); //Indicates thar an order as been placed.
 
 	if (sessionStorage.getItem("editing") == "true") {
+		sessionStorage.setItem("editing", "false");
 		$(location).attr('href', 'html/table.html'); //Confirms.
 	}
 	else {
 		$(location).attr('href', 'html/menus/menuDrinks.html'); //Changes the screen (menu flow).
 	}
-
 }
 
 
