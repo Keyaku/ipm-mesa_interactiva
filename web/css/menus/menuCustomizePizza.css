@@ -42,16 +42,28 @@ main {
 .pizzaCustomizationItem:last-child { border: none; }
 
 #size1 {
-	background-image: url("../../img/svg/4slicePizza.svg");
-	background-size: 250px 250px;
+	margin-top: 15%;
+	width: 250px;
+	height: 250px;
 }
+
 #size2 {
-	background-image: url("../../img/svg/6slicePizza.svg");
-	background-size: 300px 300px;
+	margin-top: 9%;
+	width: 300px;
+	height: 300px;
 }
+
 #size3 {
-	background-image: url("../../img/svg/8slicePizza.svg");
-	background-size: 350px 350px;
+	margin-top: 3%;
+	width: 350px;
+	height: 350px;
+}
+
+.pizzaSizes {
+	fill: white;
+}
+.pizzaSizes.active text {
+	fill: #6b9b37;
 }
 
 .pizzaSizeText {
@@ -105,10 +117,12 @@ main {
 	display: inline-block;
 	margin: 0 0 10px 0;
 	width: 200px;
+	text-align: center;
 }
 
 .pizzaIngredientImg {
 	background-size: 140px 70px;
+	margin: 0 70px 0 0; // change this to center texto and imagem
 	width: 140px;
 	height: 70px;
 }
@@ -118,6 +132,7 @@ main {
 	font-family: 'Raleway', sans-serif;
 	font-size: 22px;
 	text-align: center;
+	margin-left: -25%;
 }
 
 #pizzaArugula { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/arugula.png"); }
