@@ -5,7 +5,7 @@
 ------------------------------------------------------------------------------*/
 $("#menubar").menubar({ minimized : false, }); //Adding navigation bar
 sessionStorage.setItem("orderNumber", "0");
-if (sessionStorage.getItem("order0") != "true") {
+if (sessionStorage.getItem("ordered") != "true") {
 	sessionStorage.setItem("orders", "0");
 }
 

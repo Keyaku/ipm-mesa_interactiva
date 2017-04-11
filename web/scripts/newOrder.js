@@ -8,7 +8,8 @@ $("#navbar").navbar();
 
 var orderNumber = parseInt(sessionStorage.getItem("orders"));
 for (var i = 0; i < orderNumber; i++) {
-	if (sessionStorage.getItem("order" + i) === "true") {
+	console.log(sessionStorage.getItem("order" + i));
+	if (sessionStorage.getItem("order" + i) == "true") {
 		console.log(i, "iteration");
 		createOrderItem(i);
 		shell(i);
@@ -70,6 +71,7 @@ function confirmCancel(index) {
 	var str = "order" + index.toString();
 	sessionStorage.removeItem(str + "Pizza");
 	sessionStorage.removeItem(str + "Drink");
+	sessionStorage.setItem("order" + index.toString(), "false");
 }
 
 
