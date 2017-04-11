@@ -1,8 +1,8 @@
 var ingredientsList = {
-	"Cheese"	: ["Mozzarella", "Parmesan", "Provolone"],
-	"Meat"		: ["Ham", "Pepperoni", "Bacon", "Prosciutto", "Chicken", "Beef"],
-	"Fish & Seafood" : ["Tuna", "Sardin", "Shrimp"],
-	"Vegetables" : ["Mushroom", "Jalapenõs", "Tomato", "Peppers"],
+	"Cheese"	: ["Mozzarella", "Parmesan", "ElementalCheese", "FrenchCheese", "GoatCheese", "Parmesan", "SourCream" ],
+	"Meat"		: ["Ham", "Pepperoni", "Bacon", "Prosciutto", "Chicken", "Beef", "Sausage"],
+	"Fish & Seafood" : ["Tuna", "Sardin"],
+	"Vegetables" : ["Mushroom", "Jalapenõs", "Tomato", "Peppers", "Arugula", "Basil", "Garlic", "GreenOlive", "Olives", "Onion", "Pineapple", "Spinach", "SweetCorn" ],
 };
 
 for (var ingredientType in ingredientsList) {
