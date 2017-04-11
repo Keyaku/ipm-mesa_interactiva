@@ -45,8 +45,10 @@ function createOrderItem(index) {
 	var c = $("<div></div>").addClass("col").attr("id", "timer" + ind);
 	var d = $("<div></div>").addClass("col");
 	var b1 = $("<button></button>").addClass("editcancel").addClass("buttonEdit").attr("id", "edit" + ind).append(document.createTextNode("Edit"));
+		var b11 = $("<button></button>").addClass("buttonEditPizza").attr("id", "editPizza" + ind).append(document.createTextNode("Pizza"));
+		var b12 = $("<button></button>").addClass("buttonEditDrink").attr("id", "editDrink" + ind).append(document.createTextNode("Drink"));
 	var b2 = $("<button></button>").addClass("editcancel").addClass("buttonCancel").attr("id", "cancel" + ind).append(document.createTextNode("Cancel"));
-	d.append(b1).append(b2);
+	d.append(b1).append(b11).append(b12).append(b2);
 	div.append(a).append(b).append(c).append(d);
 	$("#orders").append(div);
 }
@@ -61,11 +63,7 @@ function shell(index) {
 }
 
 function orderEdit(index) {
-	editGetCategory(); //Checks if the user wants to edit the pizza or the drink.
-	var i = parseInt(index); //Gets the order to edit.
-	sessionStorage.setItem("orderNumber", i.toString()); //Sets the number of the current order.
-	sessionStorage.setItem("editing", "true");
-	window.location.href = "html/menus/menuPizzaList.html";
+	editGetCategory(index); //Checks if the user wants to edit the pizza or the drink.
 }
 function orderCancel(index) { confirmationOverlayShow(confirmCancel, index); }
 function confirmCancel(index) {
@@ -75,7 +73,20 @@ function confirmCancel(index) {
 	sessionStorage.removeItem(str + "Drink");
 	sessionStorage.setItem("order" + index.toString(), "false");
 }
-function editGetCategory() {  }
+function editGetCategory(index) {
+	$("#editPizza" + index.toString()).show();
+	$("#editDrink" + index.toString()).show();
+}
+function editPizza(index) {
+	sessionStorage.setItem("orderNumber", index.toString()); //Sets the number of the current order.
+	sessionStorage.setItem("editing", "true");
+	window.location.href = "html/menus/menuPizzaList.html";
+}
+function editDrink(index) {
+	sessionStorage.setItem("orderNumber", index.toString()); //Sets the number of the current order.
+	sessionStorage.setItem("editing", "true");
+	window.location.href = "html/menus/menuDrinks.html";
+}
 
 
 /*------------------------------------------------------------------------------
@@ -83,7 +94,10 @@ function editGetCategory() {  }
 MENU FLOW
 
 ------------------------------------------------------------------------------*/
-$(".buttonEdit").click(function() {	orderEdit(parseInt(($(this).attr("id"))[4])); }); //Edits the selected order.
+$(".buttonEdit").click(function() {	editGetCategory(parseInt(($(this).attr("id"))[4])); }); //Edits the selected order.
+$(".buttonEditPizza").click(function() { editPizza(parseInt(($(this).attr("id"))[9])); }); //Edits the selected pizza.
+$(".buttonEditDrink").click(function() { editDrink(parseInt(($(this).attr("id"))[9])); }); //Edits the selected drink.
+
 $(".buttonCancel").click(function() { orderCancel(parseInt(($(this).attr("id"))[6])); }); //Cancells the selected order.
 $("#buttonNewOrder").click(function() {
 	var i = sessionStorage.getItem("orders"); //Gets the number of total orders.

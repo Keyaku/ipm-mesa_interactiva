@@ -64,6 +64,9 @@
 	height: 50px;
 	width: 250px;
 }
+.buttonEditPizza, .buttonEditDrink {
+	display: none;
+}
 
 #buttonNewOrder {
 	background-color: #2ecc31;
