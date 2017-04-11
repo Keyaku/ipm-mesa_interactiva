@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------
 
-				CODE EXECUTION
+CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
 $("#menubar").menubar();
@@ -33,7 +33,7 @@ $("#timer").countdown360({
 
 /*------------------------------------------------------------------------------
 
-				AUXILIAR FUNCTIONS
+AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
 function createOrderItem(index) {
@@ -44,8 +44,8 @@ function createOrderItem(index) {
 	var b = $("<div></div>").addClass("col").attr("id", "drink" + ind);
 	var c = $("<div></div>").addClass("col").attr("id", "timer" + ind);
 	var d = $("<div></div>").addClass("col");
-		var b1 = $("<button></button>").addClass("editcancel").addClass("buttonEdit").attr("id", "edit" + ind).append(document.createTextNode("Edit"));
-		var b2 = $("<button></button>").addClass("editcancel").addClass("buttonCancel").attr("id", "cancel" + ind).append(document.createTextNode("Cancel"));
+	var b1 = $("<button></button>").addClass("editcancel").addClass("buttonEdit").attr("id", "edit" + ind).append(document.createTextNode("Edit"));
+	var b2 = $("<button></button>").addClass("editcancel").addClass("buttonCancel").attr("id", "cancel" + ind).append(document.createTextNode("Cancel"));
 	d.append(b1).append(b2);
 	div.append(a).append(b).append(c).append(d);
 	$("#orders").append(div);
@@ -80,7 +80,7 @@ function editGetCategory() {  }
 
 /*------------------------------------------------------------------------------
 
-				MENU FLOW
+MENU FLOW
 
 ------------------------------------------------------------------------------*/
 $(".buttonEdit").click(function() {	orderEdit(parseInt(($(this).attr("id"))[4])); }); //Edits the selected order.

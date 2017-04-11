@@ -40,7 +40,15 @@ function setGlobalDrink() {
 	sessionStorage.setItem("order" + index + "Drink", b); //Saves the ordered pizza for later information.
 	sessionStorage.setItem('order' + index, "true"); //Indicates thar an order as been placed.
 	sessionStorage.setItem('ordered', "true"); //Indicates thar an order as been placed.
-	window.location.href = "html/menus/menuOrderConfirmation.html"; //Changes the screen (menu flow).
+
+	if (sessionStorage.getItem("editing") == "true") {
+		sessionStorage.setItem("editing", "false");
+		$(location).attr('href', 'html/table.html'); //Confirms.
+	}
+	else {
+		window.location.href = "html/menus/menuOrderConfirmation.html"; //Changes the screen (menu flow).
+	}
+
 }
 
 
