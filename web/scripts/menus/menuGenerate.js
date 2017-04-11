@@ -99,7 +99,7 @@
 
 	function getPizzaIngredientsList(name) {
 		var ingredientsList = pizzaList[name]['Ingredients']; //Gets the ingredient list.
-		var list = $('<ul></ul>'); //Creates the list of ingredients.
+		var list = $('<ul></ul>').addClass('mPIIIngredientList'); //Creates the list of ingredients.
 		for (i in ingredientsList) {
 			list.append($('<li></li>').addClass('mPIIIngredient').append(document.createTextNode(ingredientsList[i]))); //Creates a list element for each ingredient.
 		}

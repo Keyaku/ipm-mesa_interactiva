@@ -8,13 +8,15 @@ label {
 
 /* Premade pizza sugestions */
 #menuPremadePizzasSugestions {
+	display: inline-block;
 	overflow-x: scroll;
 	overflow-y: visible;
 	white-space: nowrap;
 	width: 100%;
 }
 .menuPizzaSugestion {
-	display: inline-block;
+	display: inline-table;
+	margin:0 15pt;
 }
 
 /* Menu of premade pizzas */
@@ -54,15 +56,19 @@ label {
 	text-align: center;
 }
 .mPIITitle {
-	display: block;
+	display: table-caption;
 	font-size: 40px;
 	font-family: raleway, sans-serif;
 	margin-bottom: 10px;
 }
+.mPIIIngredientList {
+	margin: 0;
+	padding: 0;
+}
 .mPIIIngredient {
 	display: block;
-	font-size: 15px;
-	font-family: raleway, sans-serif;
+	font-family: raleway, Fallback, sans-serif;
+	font-size: 16px;
 	margin: 0;
 }
 .mPIISizeButton {
@@ -70,7 +76,7 @@ label {
 	border: none;
 	color: white;
 	font-size: 20px;
-	margin: 10px 20px 0 0;
+	margin: 10px 10px;
 	padding: 15px 20px;
 }
 
@@ -109,22 +115,13 @@ label {
 	top: 50%;
 	right: 0;
 }
-
-/* Buttons */
-.buttonContainer {
-	text-align: center;
-}
-.buttonContainer button {
-	background-color: green;
-	border: none;
-	color: white;
-	font-family: raleway, sans-serif;
-	font-size: 30px;
-	padding: 4% 6%;
-}
 .buttonContainer #cancelButton {
 	background-color: grey;
 	padding: 4% 8%;
+}
+.buttonContainer #skipButton {
+	background-color: green;
+	padding: 4% 6%;
 }
 .buttonContainer #pizzaOrder {
 	font-size: 20px;

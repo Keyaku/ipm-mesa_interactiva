@@ -21,3 +21,14 @@ main {
 p {
 	color: white;
 }
+
+/* Buttons */
+.buttonContainer {
+	text-align: center;
+}
+.buttonContainer button {
+	border: none;
+	color: white;
+	font-family: raleway, sans-serif;
+	font-size: 30px;
+}

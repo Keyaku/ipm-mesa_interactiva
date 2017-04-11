@@ -18,11 +18,17 @@ populatePremadeMenu($('#premade')); //Populates the premade pizza's menu dynamic
 function getPizzaPrice() {
 	var d = $('<div></div>');
 	d.append($('<label></label>').append(document.createTextNode('Medium: 12€')));
-	d.append($('<button></button>').attr('id', 'pizzaOrderButton').click(function() { setGlobalPizza(); }).append(document.createTextNode('Order!')));
+	d.append($('<button></button>').attr('id', 'pizzaOrderButton').click(function() {
+		setGlobalPizza();
+	}).append(document.createTextNode('Order!')));
 	return d;
 }
 function getSizeButtons() {
-	return $('<div></div>').append($('<button></button>').addClass('mPIISizeButton').append(document.createTextNode('S'))).append($('<button></button>').addClass('mPIISizeButton').append(document.createTextNode('M'))).append($('<button></button>').addClass('mPIISizeButton').append(document.createTextNode('L')));
+	return $('<div></div>').addClass('buttonContainer')
+		.append($('<button></button>').addClass('mPIISizeButton')
+		.append(document.createTextNode('S')))
+		.append($('<button></button>').addClass('mPIISizeButton').append(document.createTextNode('M')))
+		.append($('<button></button>').addClass('mPIISizeButton').append(document.createTextNode('L')));
 }
 
 function showPizzaExtensiveInformation(name) {
@@ -51,8 +57,7 @@ function setGlobalPizza() {
 	if (sessionStorage.getItem("editing") == "true") {
 		sessionStorage.setItem("editing", "false");
 		$(location).attr('href', 'html/table.html'); //Confirms.
-	}
-	else {
+	} else {
 		$(location).attr('href', 'html/menus/menuDrinks.html'); //Changes the screen (menu flow).
 	}
 }
