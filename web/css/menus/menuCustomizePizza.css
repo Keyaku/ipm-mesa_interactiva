@@ -58,10 +58,11 @@ main {
 }
 
 svg.pizzaSizes {
-	fill: white;
+	stroke: white;
 }
 svg.pizzaSizes.active text {
 	fill: #6b9b37;
+	stroke: #6b9b37;
 }
 
 .pizzaSizeText {

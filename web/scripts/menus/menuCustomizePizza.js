@@ -33,25 +33,7 @@ for (var ingredientType in LIST_INGREDIENTS) {
 $('#menubar').menubar();		// Adding menu bar
 $('#navbar').navbar(); 			// Adding top navigation bar
 
-$('pizzaSizes').click(function() {
+$('.pizzaSizes').click(function() {
+	$('.pizzaSizes').removeClass('active');
 	$(this).toggleClass('active');
-	console.log("hello");
 });
-
-smallPizza.click(function() {
-	smallPizza.toggleClass('active');
-	mediumPizza.removeClass('active');
-	largePizza.removeClass('active');
-});
-/*
-mediumPizza.click(function() {
-	smallPizza.css({ "fill" : "#ffffff", "stroke" : "#ffffff" });
-	mediumPizza.css({ "fill" : "#6b9b37", "stroke" : "#6b9b37"  });
-	largePizza.css({ "fill" : "#ffffff", "stroke" : "#ffffff" });
-});
-
-largePizza.click(function() {
-	smallPizza.css({ "fill" : "#ffffff", "stroke" : "#ffffff" });
-	mediumPizza.css({ "fill" : "#ffffff", "stroke" : "#ffffff" });
-	largePizza.css({ "fill" : "#6b9b37", "stroke" : "#6b9b37"  });
-});*/
