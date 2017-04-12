@@ -7,13 +7,15 @@ main {
 	font-size: 100px;
 	font-family: bangers, sans-serif;
 	margin-top: 5%;
-	margin-left: 5%;
+	margin-left: 3.7%;
 	text-shadow: 0px 0px 10px #000;
 }
 
 .pizzaCustomizationItemsContainer {
 	margin-left: 5%;
 }
+
+
 
 .customizeStep {
 	display: block;
@@ -22,22 +24,30 @@ main {
 }
 
 .customizeStepTitle {
+	font-family: bangers, sans-serif;
 	color: #cfff95;
 	font-size: 50px;
 	padding: 2%;
-	margin-top: 5%;
-	margin-left: 5%;
+	margin-left: 2.5%;
 }
 
+/* removed white dashed line of code that I liked
+* It caused consistency problems on selected state
+border-right: 5px dashed white;
+*/
 .pizzaCustomizationItem {
 	background-position: center;
 	background-repeat: no-repeat;
-	border-right: 5px dashed white;
 	float:left;
 	text-align: center;
-	width: 33%;
-	height: 500px;
+	width: 33.3333%;
+	height: 55%;
 }
+
+/*
+* adding new css styling with borders pizzaCustomizationItem pizzaDough for consistency
+* if you dislike it, delete the next block of code.
+*/
 .pizzaCustomizationItem:last-child { border: none; }
 
 .pizzaCustomizationItem:nth-of-type(1) .pizzaSizes {
@@ -57,31 +67,62 @@ main {
 	height: 350px;
 }
 
+/*
+* Keyaku choose the style you like the most, i like the commented version the most
+* But I think it causes consistency problems with pizzaDough selection state.
+* I have also removed this line of code:
 svg.pizzaSizes {
 	stroke: white;
 }
+* It did nothing.
+*/
+
+/*
+* Alternative styling, must pair with pizzaDough.active and pizzaSizes.circle
+fill: #6b9b37;
+stroke: #6b9b37;
+*/
 svg.pizzaSizes.active text {
-	fill: #6b9b37;
-	stroke: #6b9b37;
+	fill: white;
 }
 
+/*
+* Alternative styling, must pair with pizzaDough.active and pizzaSizes.text
+stroke: #6b9b37;
+stroke-width: 10px;
+fill: rgba(207,255,149, 0.1);
+*/
 svg.pizzaSizes.active circle {
-	stroke: #6b9b37;
+	stroke: white;
 	stroke-width: 10px;
 	fill: rgba(207,255,149, 0.1);
 }
 
 .pizzaSizeText {
 	color: white;
-	font-size: 50px;
+	font-size: 40px;
 	font-family: raleway, sans-serif;
 }
 
 .pizzaDough {
 	padding: 0 3%;
 	width: 33%;
-	height: 250px;
+	height: 40%;
 	text-align: justify;
+}
+
+/*
+* Alternative styling, must pair with pizzaSizes.circle and pizzaSizes.text
+background-color: rgba(207,255,149, 0.1);
+border-color: #6b9b37;
+border-radius: 20px;
+border-width: 5px;
+color: #6b9b37;
+*/
+.pizzaDoughName.active {
+	background-color: rgba(207,255,149, 0.1);
+	border-radius: 20px;
+	border-width: 5px;
 }
 
 .pizzaDoughName {
@@ -89,15 +130,24 @@ svg.pizzaSizes.active circle {
 	font-size: 35px;
 	font-family: raleway, sans-serif;
 	margin-top: 5%;
-	margin-left: 10%;
+	padding: 10%;
+	border: 2px solid white;
+	border-radius: 20px;
+	width: 100%;
+	text-align: center;
 }
 
+/*
+* Changed font style to kanit for extra sharpness and less roundiness.
+* Decreased width to 90% of div.
+*/
 .pizzaDoughDesc {
 	color: white;
-	font-size: 22px;
-	font-family: 'Raleway-Medium', sans-serif;
-	text-indent: 11%;
+	font-size: 18px;
+	font-family: kanit, sans-serif;
+	width: 90%;
 	margin: 0 auto;
+	margin-top: 5%;
 }
 
 .pizzaIngredientType {
@@ -145,7 +195,7 @@ svg.pizzaSizes.active circle {
 
 ::-webkit-scrollbar {
     background-color: rgba(207,255,149, 0.1);
-		border-radius: 5px;
+		border-radius: 20px;
 }
 
 ::-webkit-scrollbar-button:horizontal:increment {
@@ -161,7 +211,7 @@ svg.pizzaSizes.active circle {
 }
 
 ::-webkit-scrollbar-thumb {
-	border-radius: 5px;
+	border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

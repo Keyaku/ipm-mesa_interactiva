@@ -38,3 +38,8 @@ $('.pizzaSizes').click(function() {
 	$('.pizzaSizes').removeClass('active');
 	$(this).toggleClass('active');
 });
+
+$('.pizzaDoughName').click(function() {
+	$('.pizzaDoughName').removeClass('active');
+	$(this).toggleClass('active');
+});
