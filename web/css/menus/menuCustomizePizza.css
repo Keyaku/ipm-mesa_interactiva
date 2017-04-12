@@ -106,7 +106,7 @@ svg.pizzaSizes.active circle {
 	overflow-x: scroll;
 	overflow-y: visible;
 	white-space: nowrap;
-	width: 50%;
+	width: 33%;
 }
 
 .pizzaIngredientTypeLabel {
@@ -154,6 +154,10 @@ svg.pizzaSizes.active circle {
 
 ::-webkit-scrollbar-button:horizontal:decrement {
     background-image: url(../../img/menus/customizeMenu/back.svg);
+}
+
+#fish::-webkit-scrollbar-button {
+		background-image: none;
 }
 
 ::-webkit-scrollbar-thumb {

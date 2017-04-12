@@ -18,6 +18,7 @@ const LIST_INGREDIENTS = {
 for (var ingredientType in LIST_INGREDIENTS) {
 	var typeLabel = $('<label></label>').addClass('pizzaIngredientTypeLabel').append(document.createTextNode(ingredientType)); // Creates the ingredient type label.
 	var typeDiv = $('<div></div>').addClass('pizzaIngredientType'); // Creates the div that contains the all the type's ingredients and their images.
+	typeDiv.attr('id', ingredientType.toLowerCase()); // Gives each of the created division an attribute id.
 	for (i in LIST_INGREDIENTS[ingredientType]) {
 		var ingredientName = LIST_INGREDIENTS[ingredientType][i];
 		var ingredientDiv = $('<div></div>').addClass('pizzaIngredient'); // Creates a div for each ingredient.
