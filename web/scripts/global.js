@@ -11,7 +11,7 @@ Array.prototype.last = function() {
 /****** Code execution *******/
 $(document).ready(function(){
 	// Starting svg4everybody
-	svg4everybody();
+	svg4everybody({polyfill:true});
 });
 
 /****** Stuff *******/
