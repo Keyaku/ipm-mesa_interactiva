@@ -134,33 +134,3 @@ main {
 	text-align: center;
 	margin-left: -25%;
 }
-
-#pizzaArugula { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/arugula.png"); }
-#pizzaBacon { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/bacon.png"); }
-#pizzaBasil { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/basil.png"); }
-#pizzaBeef { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/beef.png"); }
-#pizzaCheese { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/cheese.png"); }
-#pizzaChicken { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/chicken.png"); }
-#pizzaElementalCheese { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/elementalcheese.png"); }
-#pizzaFrenchCheese { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/frenchcheese.png"); }
-#pizzaGarlic { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/garlic.png"); }
-#pizzaGoatCheese { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/goatcheese.png"); }
-#pizzaGreenOlive { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/greenolive.png"); }
-#pizzaPeppers { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/peppers.png"); }
-#pizzaHam { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/ham.png"); }
-#pizzaMozzarella { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/mozzarella.png"); }
-#pizzaMushroom { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/mushroom.png"); }
-#pizzaOlives { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/olives.png"); }
-#pizzaOnion { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/onion.png"); }
-#pizzaParmesan { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/parmesan.png"); }
-#pizzaPineapple { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/pineapple.png"); }
-#pizzaProsciutto { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/prosciutto.png"); }
-#pizzaJalapenõs { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/jalapenos.png"); }
-#pizzaPepperoni { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/pepperoni.png"); }
-#pizzaSardin { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/sardin.png"); }
-#pizzaSausage { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/sausage.png"); }
-#pizzaSourCream { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/sourcream.png"); }
-#pizzaSpinach { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/spinach.png"); }
-#pizzaSweetCorn { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/sweetcorn.png"); }
-#pizzaTomato { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/tomato.png"); }
-#pizzaTuna { background-image: url("../../img/menus/customizeMenu/pizzaIngredients/tuna.png"); }
