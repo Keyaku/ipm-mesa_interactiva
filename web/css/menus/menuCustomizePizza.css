@@ -45,6 +45,13 @@ border-right: 5px dashed white;
 }
 
 /*
+* Defines some sort of margin bot. Useful for consistency and possible new sections.
+*/
+.pizzaCustomizationItemsContainer.ingredients {
+	height: 135%;
+}
+
+/*
 * adding new css styling with borders pizzaCustomizationItem pizzaDough for consistency
 * if you dislike it, delete the next block of code.
 */
@@ -204,6 +211,16 @@ color: #6b9b37;
 
 ::-webkit-scrollbar-button:horizontal:decrement {
     background-image: url(../../img/menus/customizeMenu/back.svg);
+}
+
+/* decrement is up, do not be fooled - fools */
+::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url(../../img/menus/customizeMenu/up.svg);
+}
+
+/* increment is down, do not be fooled - fools */
+::-webkit-scrollbar-button:vertical:increment {
+    background-image: url(../../img/menus/customizeMenu/down.svg);
 }
 
 #fish::-webkit-scrollbar-button {
