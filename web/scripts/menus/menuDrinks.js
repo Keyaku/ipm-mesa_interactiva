@@ -35,12 +35,8 @@ function hidePizzaExtensiveInformation() {
 function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }
 
 function setGlobalDrink() {
-	var index = sessionStorage.getItem("orderNumber"); //Gets the order number (in case the user is editing an order).
 	var b = $("#drinksInformation").children(".mPDITitle").text(); //Gets the name of the ordered pizza.
-	sessionStorage.setItem("order" + index + "Drink", b); //Saves the ordered pizza for later information.
-	sessionStorage.setItem('order' + index, "true"); //Indicates thar an order as been placed.
-	sessionStorage.setItem('ordered', "true"); //Indicates thar an order as been placed.
-
+	managerAddNewDrink(b);
 	if (sessionStorage.getItem("editing") == "true") {
 		sessionStorage.setItem("editing", "false");
 		$(location).attr('href', 'html/table.html'); //Confirms.

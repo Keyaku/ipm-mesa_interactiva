@@ -48,16 +48,15 @@ function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confir
 function confirmSkip() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for skipping the pizza order.*/}
 
 function setGlobalPizza() {
-	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
 	var b = $('#pizzaInformation').children('.mPIITitle').text(); //Gets the name of the ordered pizza.
-	sessionStorage.setItem('order' + index + 'Pizza', b); //Saves the ordered pizza for later information.
-	sessionStorage.setItem('order' + index, "true"); //Indicates thar an order as been placed.
-	sessionStorage.setItem('ordered', "true"); //Indicates thar an order as been placed.
 
 	if (sessionStorage.getItem("editing") == "true") {
 		sessionStorage.setItem("editing", "false");
+		managerEditPizza(b);
 		$(location).attr('href', 'html/table.html'); //Confirms.
-	} else {
+	}
+	else {
+		managerAddNewPizza(b);
 		$(location).attr('href', 'html/menus/menuDrinks.html'); //Changes the screen (menu flow).
 	}
 }
