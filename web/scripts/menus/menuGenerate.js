@@ -149,69 +149,82 @@
 		//Array of premade drinks (for the JS generated menu).
 		var drinksList = {
 			'Water' : {
+				'drinkName' : 'Water',
 				'Sizes' : ['Bottle (25cl)', 'Bottle (50cl)', 'Bottle (1L)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza1.png',
 			},
 			'Sparkling Water' : {
+				'drinkName' : 'Sparkling Water',
 				'Sizes' : ['Bottle (25cl)', 'Bottle (50cl)', 'Bottle (1L)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza2.png',
 			},
 			'Fresj Juice' : {
+				'drinkName' : 'Fresh Juice',
 				'Sizes' : ['Orange Juice (25cl)', 'Blueberry Juice (50cl)', 'Lemonade (1L)', 'Tutti Frutti (50cl)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza3.png',
 			},
 
 			'Coca-Cola Original' : {
+				'drinkName' : 'Coca-Cola Original',
 				'Sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza4.png',
 			},
 			'Coca-Cola Zero' : {
+				'drinkName' : 'Coca-Cola Zero',
 				'Sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza5.png',
 			},
 
 			'Sumol (Orange)' : {
+				'drinkName' : 'Sumol (Orange)',
 				'Sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza5.png',
 			},
 			'Sumol (Pineapple)' : {
+				'drinkName' : 'Sumol (Pineapple)',
 				'Sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza5.png',
 			},
 			'Sumol (Passion Fruit)' : {
+				'drinkName' : 'Sumol (Passion Fruit)',
 				'Sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza5.png',
 			},
 			'Sumol (Mango)' : {
+				'drinkName' : 'Sumol (Mango)',
 				'Sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza5.png',
 			},
 
 			'Lipton Ice Tea (Orange)' : {
+				'drinkName' : 'Lipton Ice Tea (Orange)',
 				'Sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza5.png',
 			},
 			'Lipton Ice Tea (Pineapple)' : {
+				'drinkName' : 'Lipton Ice Tea (Pineapple)',
 				'Sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza5.png',
 			},
 			'Lipton Ice Tea (Passion Fruit)' : {
+				'drinkName' : 'Lipton Ice Tea (Passion Fruit)',
 				'Sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza5.png',
 			},
 			'Lipton Ice Tea (Mango)' : {
+				'drinkName' : 'Lipton Ice Tea (Mango)',
 				'Sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza5.png',
@@ -227,7 +240,8 @@
 		function populateDrinksMenu(obj) {
 			var drinkId = 1;
 			for (drink in drinksList) {
-				obj.append(getDrinkItem(drink)); //Adds each drink to the passed object.
+				drinkStruct = getDrinkStruct(drink);
+				obj.append(getDrinkItem(drinkStruct)); //Adds each drink to the passed object.
 			}
 		}
 
@@ -240,7 +254,9 @@
 			img.attr('src', drinkStruct['Img']); //Sets the correct source.
 			return img;
 		}
-		function getDrinkItem(drinkName) {
+		function getDrinkItem(drinkStruct) {
+			var drinkName = drinkStruct['drinkName'];
+			console.log(drinkStruct);
 			var label = $('<label></label>').addClass('mPDITitle').append(document.createTextNode(drinkName)); //Creates the label for each drink;
 			//var img = getDrinkImg(name); //Gets the drink's image.
 			//return $('<div></div>').addClass('menuDrinkItem').append(img).append(label);

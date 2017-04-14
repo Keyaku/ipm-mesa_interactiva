@@ -50,7 +50,8 @@ function managerAddNewDrink(drinkName) {
 	var key = "order" + index.toString();
 	var value = managerGetMetaValues(key);
 	var pizza = value[0];
-	var valueNew = [pizza, drink];
+	var drinkStruct = getDrinkStruct(drinkName);
+	var valueNew = [pizza, drinkStruct];
 	managerAddToMeta(key, valueNew);
 }
 
