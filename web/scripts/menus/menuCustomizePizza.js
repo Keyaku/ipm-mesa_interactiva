@@ -20,7 +20,7 @@ const LIST_INGREDIENTS = {
 $("#menubar").menubar();		// Adding menu bar
 $("#navbar").navbar(); 			// Adding top navigation bar
 
-var pizzaMaker = {"pizzaName" : "", "pizzaSize" : "", "pizzaDough" : "", "pizzaIngredients" : [] };
+var pizzaMaker = {"pizzaName" : "", "Size" : "", "Dough" : "", "Ingredients" : [] };
 
 for (var ingredientType in LIST_INGREDIENTS) {
 	var typeLabel = $("<label></label>").addClass("pizzaIngredientTypeLabel").append(document.createTextNode(ingredientType)); // Creates the ingredient type label.
@@ -49,16 +49,23 @@ function makePizza(field, value) {
 	pizzaMaker[field] = value;
 }
 
+
+
 function pizzaSetSize(size) {
-	makePizza("pizzaSize", size);
+	makePizza("Size", size);
 }
 function pizzaSetDough(dough) {
-	makePizza("pizzaDough", dough);
+	makePizza("Dough", dough);
 }
 function pizzaAddIngredient(ing) {
-	(pizzaMaker["pizzaIngredients"]).push(ing);
+	(pizzaMaker['Ingredients']).push(ing);
 }
 function setGlobalPizza() {
+	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
+	pizzaMaker['pizzaName'] = "Customized" + index.toString();
+	pizzaMaker['NutInfo'] = {'Calories':'556kcal', 'Protein':'23g', 'Carbohydrates':'44g', 'Fat':'99g'};
+	pizzaMaker['Rating'] = '88%';
+	pizzaMaker['Img'] = 'img/menus/pizzaMenu/menuPizza5.png';
 	if (sessionStorage.getItem("editing") == "true") {
 		sessionStorage.setItem("editing", "false");
 		managerEditCustomizedPizza(pizzaMaker);

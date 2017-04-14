@@ -36,15 +36,14 @@ function managerAddNewPizza(pizzaName) {
 	var value = [pizzaStruct, ""];
 	managerAddToMeta(key, value);
 }
-/*
+
 function managerAddNewCustomizedPizza(pizzaMaker) {
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
 	var key = "order" + index.toString();
-	sessionStorage.setItem(key + "custom", "true");
 	var value = [pizzaMaker, ""];
 	managerAddToMeta(key, value);
 }
-*/
+
 function managerAddNewDrink(drinkName) {
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
 	var key = "order" + index.toString();
