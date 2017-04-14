@@ -20,12 +20,13 @@ function getDrinkOrderButton() {
 	return $("<div></div>").append(price).append(button);
 }
 
-function showDrinkExtensiveInformation(name) {
+function showDrinkExtensiveInformation(drinkName) {
 	$("#drinksInformation").empty().show(); //Shows the lateral pizza information bar.
+	var drinkStruct = getDrinkStruct(drinkName);
 	var closeX = $("<div></div>").attr("id", "drinksInformationClose").append(document.createTextNode("X")).click(function(){ hidePizzaExtensiveInformation(); });
-	var label = $("<label></label>").addClass("mPDITitle").append(document.createTextNode(name)); //Creates the label for the drink's name.
-	var nutInfo = getDrinkNutritionalInfo(name); //Gets the nutritional information for the drink.
-	var drinkTypes = getDrinkTypes(name); //Gets the drink's types.
+	var label = $("<label></label>").addClass("mPDITitle").append(document.createTextNode(drinkName)); //Creates the label for the drink's name.
+	var nutInfo = getDrinkNutritionalInfo(drinkStruct); //Gets the nutritional information for the drink.
+	var drinkTypes = getDrinkTypes(drinkStruct); //Gets the drink's types.
 	var drinkOrder = getDrinkOrderButton(); //Gets the drink's order price and button.
 	$("#drinksInformation").append(closeX).append(label).append(nutInfo).append(drinkTypes).append(drinkOrder);
 }

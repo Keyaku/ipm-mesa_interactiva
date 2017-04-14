@@ -35,15 +35,17 @@ function showPizzaExtensiveInformation(name) {
 	$('#pizzaInformation').show(); //Unhides the lateral pizza information bar.
 	var closeX = $('<div></div>').attr('id', 'pizzaInformationClose').append(document.createTextNode('X')).click(function(){ hidePizzaExtensiveInformation(); });
 	var labelName = $('<label></label>').addClass('mPIITitle').append(document.createTextNode(name)); //Creates the label that represents the pizza's name.
-	var list = getPizzaIngredientsList(name); //Creates the list of the pizza's ingredients.
-	var table = getPizzaNutritonFactsList(name); //Generates all the nutritional information for the pizza.
-	var ratingDiv = getPizzaRating(name); //Creates the rating table.
+	var pizzaStruct = getPremadePizzaStruct(name);
+	var list = getPizzaIngredientsList(pizzaStruct); //Creates the list of the pizza's ingredients.
+	var table = getPizzaNutritonFactsList(pizzaStruct); //Generates all the nutritional information for the pizza.
+	var ratingDiv = getPizzaRating(pizzaStruct); //Creates the rating table.
 	var priceOrder = getPizzaPrice();
 	$('#pizzaInformation').empty().append(closeX).append(labelName).append(list).append(table).append(ratingDiv).append(priceOrder);
 }
 function hidePizzaExtensiveInformation() {
 	$('#pizzaInformation').hide();
 }
+
 function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }
 function confirmSkip() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for skipping the pizza order.*/}
 
