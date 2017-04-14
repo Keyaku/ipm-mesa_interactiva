@@ -36,6 +36,13 @@ function managerAddNewPizza(pizza) {
 	var value = [pizza, ""];
 	managerAddToMeta(key, value);
 }
+function managerAddNewCustomizedPizza(pizzaMaker) {
+	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
+	var key = "order" + index.toString();
+	sessionStorage.setItem(key + "custom", "true");
+	var value = [pizzaMaker, ""];
+	managerAddToMeta(key, value);
+}
 function managerAddNewDrink(drink) {
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
 	var key = "order" + index.toString();
@@ -53,6 +60,7 @@ function managerEditPizza(pizza) {
 	var value = [pizza, drink];
 	managerAddToMeta(key, value);
 }
+function managerEditCustomizedPizza(pizza) {}
 
 function managerDeleteOrder(orderNumber) {
 	var str = "order" + orderNumber.toString();

@@ -8,7 +8,7 @@
 
 ### Index
 * [X] Change font to Kanit
-* [ ] Rearrange Table of Contents
+* [x] Rearrange Table of Contents
 
 ### Table
 * [x] Rename "bar" to "table"
@@ -20,7 +20,7 @@
 * [ ] Customize Pizza
 * [x] Drinks Menu
 * [x] Confirm Screen
-* [ ] New Order Screen
+* [x] New Order Screen
 
 ### Scripts to update / change / separate
 * [x] jquery.navbar.js
@@ -30,3 +30,9 @@
 ### CSS files to refactor / update
 * [ ] menuPizzaList.css
 * [ ] menuDrinks.css
+
+### CSS errors to correct
+* [ ] global - change the color scheme to black, white and blue
+* [ ] menuPizzaList - make the menu wider
+* [ ] menuPizzaList - make the suggested pizza's menu taller
+* [ ] menuPizzaList - make the pizza's images smaller

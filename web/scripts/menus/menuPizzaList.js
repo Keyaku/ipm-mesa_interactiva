@@ -83,6 +83,6 @@ $('#skipButton').click(function() { // Changes the page to the drinks menu.
 $('#cancelButton').click(function() { // Changes the page to the main page.
 	$(location).attr('href', 'html/table.html');
 });
-$('#createPizzaShorcut').click(function() { //Changes the page to the pizza customization menu.
+$('#customizationShortcut').click(function() { //Changes the page to the pizza customization menu.
 	$(location).attr('href', 'html/menus/menuCustomizePizza.html');
 });

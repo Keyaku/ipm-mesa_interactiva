@@ -68,6 +68,27 @@
 		}
 	}
 
+
+/*
+	function addCustomizedPizza(pizza) {
+		console.log("addCustomizedPizza");
+		pizzaParsed = {};
+		var pizzaName = pizza["pizzaName"];
+		var pizzaIngredients = pizza["pizzaIngredients"];
+		var pizzaNutInfo = {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'};
+		var pizzaRating = "77%";
+		var pizzaImg = 'img/menus/pizzaMenu/menuPizza1.png';
+		pizzaParsed["Ingredients"] = pizzaIngredients;
+		pizzaParsed["NutInfo"] = pizzaNutInfo;
+		pizzaParsed["Rating"] = pizzaRating;
+		pizzaParsed["Img"] = pizzaImg;
+
+		pizzaList[pizzaName] = pizzaParsed;
+		console.log("pizzaName - addCustomizedPizza:", "pizzaName, pizza - addCustomizedPizza:", pizzaList[pizzaName]);
+		console.log(pizzaList);
+	}
+*/
+
 	function getPizzaInfo(name) {
 		var label = $('<label></label>').addClass('mPIITitle').append(document.createTextNode(name)); //Creates the label that represents the pizza's name.
 		var list = getPizzaIngredientsList(name); //Gets the pizza's ingredients.
@@ -75,6 +96,7 @@
 	}
 	function getPizzaImg(name) {
 		var img = $('<img>').addClass('col-md-6').addClass('pizzaThumbnail'); //Creates the image.
+		console.log("pizzaName - getPizzaImg:", name, "pizza - getPizzaImg:", pizzaList[name]);
 		img.attr('src', pizzaList[name]['Img']); //Sets the correct source.
 		return img;
 	}
