@@ -36,12 +36,28 @@ function managerAddNewPizza(pizzaName) {
 	var value = [pizzaStruct, ""];
 	managerAddToMeta(key, value);
 }
-
+function managerEditPizza(pizzaName) {
+	var pizzaStruct = getPremadePizzaStruct(pizzaName);
+	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
+	var key = "order" + index.toString();
+	var value = managerGetMetaValues(key);
+	var drink = value[1];
+	var valueNew = [pizzaStruct, drink];
+	managerAddToMeta(key, valueNew);
+}
 function managerAddNewCustomizedPizza(pizzaMaker) {
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
 	var key = "order" + index.toString();
 	var value = [pizzaMaker, ""];
 	managerAddToMeta(key, value);
+}
+function managerEditCustomizedPizza(pizzaMaker) {
+	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
+	var key = "order" + index.toString();
+	var value = managerGetMetaValues(key);
+	var drink = value[1];
+	var valueNew = [pizzaMaker, drink];
+	managerAddToMeta(key, valueNew);
 }
 
 function managerAddNewDrink(drinkName) {
@@ -53,19 +69,6 @@ function managerAddNewDrink(drinkName) {
 	var valueNew = [pizza, drinkStruct];
 	managerAddToMeta(key, valueNew);
 }
-
-function managerEditPizza(pizzaName) {
-	var pizzaStruct = getPremadePizzaStruct(pizzaName);
-	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
-	var key = "order" + index.toString();
-	var value = managerGetMetaValues(key);
-	var drink = value[1];
-	var valueNew = [pizzaStruct, drink];
-	managerAddToMeta(key, valueNew);
-}
-/*
-function managerEditCustomizedPizza(pizza) {}
-*/
 
 function managerDeleteOrder(orderNumber) {
 	var str = "order" + orderNumber.toString();

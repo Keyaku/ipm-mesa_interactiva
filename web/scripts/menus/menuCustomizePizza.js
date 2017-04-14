@@ -62,7 +62,7 @@ function pizzaAddIngredient(ing) {
 }
 function setGlobalPizza() {
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
-	pizzaMaker['pizzaName'] = "Customized" + index.toString();
+	pizzaMaker['pizzaName'] = "Customized " + index.toString();
 	pizzaMaker['NutInfo'] = {'Calories':'556kcal', 'Protein':'23g', 'Carbohydrates':'44g', 'Fat':'99g'};
 	pizzaMaker['Rating'] = '88%';
 	pizzaMaker['Img'] = 'img/menus/pizzaMenu/menuPizza5.png';
