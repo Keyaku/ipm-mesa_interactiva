@@ -9,7 +9,7 @@ function populateSuggestions(obj) {
 	var suggestions = $('<div>', { 'id': 'menuPremadePizzasSugestions' }); //Creates the main sugestions division with lateral scroll.
 	for (var pizzaName in suggestionsList) {
 		var pizza = getPremadePizza(pizzaName);
-		suggestions.append(getSuggestedItem(pizza)); //Adds each suggested pizza to the passed object.
+		suggestions.append(createPizzaSuggestion(pizza)); //Adds each suggested pizza to the passed object.
 	}
 	obj.append(suggestions);
 }
@@ -76,7 +76,7 @@ function createPizzaItemWithButtons(pizza) {
 	});
 }
 
-function getSuggestedItem(name) {
+function createPizzaSuggestion(name) {
 	return $('<div>', {
 		html: createPizzaInfo(name).append(getSizeButtons()),
 		'class': 'menuPizzaSugestion'
