@@ -8,7 +8,7 @@ function populateSuggestions(obj) {
 	}));
 	var suggestions = $('<div>', { 'id': 'menuPremadePizzasSugestions' }); //Creates the main sugestions division with lateral scroll.
 	for (var pizzaName in suggestionsList) {
-		var pizza = getPremadePizzaStruct(pizzaName);
+		var pizza = getPremadePizza(pizzaName);
 		suggestions.append(getSuggestedItem(pizza)); //Adds each suggested pizza to the passed object.
 	}
 	obj.append(suggestions);
@@ -20,58 +20,58 @@ function populatePremadeMenu(obj) {
 		'class': 'menuPremadeMenuTitle'
 	}));
 	for (var pizzaName in pizzaList) {
-		var pizza = getPremadePizzaStruct(pizzaName);
+		var pizza = getPremadePizza(pizzaName);
 		obj.append(getPizzaItemWithButtons(pizza)); //Adds each premade pizzas to the passed object.
 	}
 }
 
-function getPizzaName(pizzaStruct) {
+function getPizzaName(pizza) {
 	return $('<label>', { //Creates the label that represents the pizza's name.
-		html: pizzaStruct['name'],
+		html: pizza['name'],
 		'class': 'mPIITitle'
 	});
 }
 
-function getPizzaInfo(pizzaStruct) {
+function getPizzaInfo(pizza) {
 	return  $('<div>', { //Adds the pizza's name and the ingredients list to the correct div.
-		html: [getPizzaName(pizzaStruct), getPizzaIngredientsList(pizzaStruct)],
+		html: [getPizzaName(pizza), getPizzaIngredientsList(pizza)],
 		'class': 'menuPizzaItemInfo'
 	});
 }
 
-function getPizzaInfoWithSize(pizzaStruct) {
-	var label = getPizzaName(pizzaStruct).append(' (' + pizzaStruct['pizzaSize'] + ')');
-	var list = getPizzaIngredientsList(pizzaStruct); //Gets the pizza's ingredients.
+function getPizzaInfoWithSize(pizza) {
+	var label = getPizzaName(pizza).append(' (' + pizza['pizzaSize'] + ')');
+	var list = getPizzaIngredientsList(pizza); //Gets the pizza's ingredients.
 	return  $('<div>', { //Adds the pizza's name and the ingredients list to the correct div.
 		html: [label, list],
 		'class': 'menuPizzaItemInfo'
 	});
 }
 
-function getPizzaImg(pizzaStruct) {
+function getPizzaImg(pizza) {
 	return $('<img>', {
-		'src': pizzaStruct['image'],
+		'src': pizza['image'],
 		'class': 'col-md-6 pizzaThumbnail'
 	});
 }
 
-function getPizzaItem(pizzaStruct) {
+function getPizzaItem(pizza) {
 	return $('<div>', {
-		html: [getPizzaImg(pizzaStruct), getPizzaInfo(pizzaStruct)],
+		html: [getPizzaImg(pizza), getPizzaInfo(pizza)],
 		'class': 'menuPizzaItem row'
 	});
 }
 
-function getPizzaItemWithSize(pizzaStruct) {
+function getPizzaItemWithSize(pizza) {
 	return $('<div>', {
-		html: [getPizzaImg(pizzaStruct), getPizzaInfoWithSize(pizzaStruct)],
+		html: [getPizzaImg(pizza), getPizzaInfoWithSize(pizza)],
 		'class': 'menuPizzaItem row'
 	});
 }
 
-function getPizzaItemWithButtons(pizzaStruct) {
+function getPizzaItemWithButtons(pizza) {
 	return $('<div>', {
-		html: [getPizzaImg(pizzaStruct), getPizzaInfo(pizzaStruct).append(getSizeButtons())],
+		html: [getPizzaImg(pizza), getPizzaInfo(pizza).append(getSizeButtons())],
 		'class': 'menuPizzaItem row'
 	});
 }
@@ -83,8 +83,8 @@ function getSuggestedItem(name) {
 	});
 }
 
-function getPizzaIngredientsList(pizzaStruct) {
-	var ingredientsList = pizzaStruct['ingredients']; //Gets the ingredient list.
+function getPizzaIngredientsList(pizza) {
+	var ingredientsList = pizza['ingredients']; //Gets the ingredient list.
 	var ul = $('<ul>', { 'class': 'mPIIIngredientList' });
 	for (i in ingredientsList) {
 		ul.append($('<li>', {
@@ -95,8 +95,8 @@ function getPizzaIngredientsList(pizzaStruct) {
 	return ul;
 }
 
-function getPizzaNutritonFactsList(pizzaStruct) {
-	var nutInfo = pizzaStruct['nutritions']; //Gets the list of nutritional facts.
+function getPizzaNutritonFactsList(pizza) {
+	var nutInfo = pizza['nutritions']; //Gets the list of nutritional facts.
 	var table = $('<table>'); //Creates the table of nutritional facts.
 	for (var key in nutInfo) {
 		table.append($('<tr></tr>')
@@ -107,13 +107,13 @@ function getPizzaNutritonFactsList(pizzaStruct) {
 	return table;
 }
 
-function getPizzaRating(pizzaStruct) {
+function getPizzaRating(pizza) {
 	var d = $('<div>', { 'class': 'pizzaRating' });
 	for (var i = 0; i < 5; i++) {
 		d.append($('<span>', { 'class': 'star' }));
 	}
 	d.append($('<p>', {
-		html: pizzaStruct['rating'],
+		html: pizza['rating'],
 		'class': 'pizzaRatingValue'
 	}));
 	return d;
@@ -125,34 +125,34 @@ function getPizzaRating(pizzaStruct) {
 function populateDrinksMenu(obj) {
 	var drinkId = 1;
 	for (drink in drinksList) {
-		drinkStruct = getDrinkStruct(drink);
-		obj.append(getDrinkItem(drinkStruct)); //Adds each drink to the passed object.
+		drink = getDrinkStruct(drink);
+		obj.append(getDrinkItem(drink)); //Adds each drink to the passed object.
 	}
 }
 
-function getDrinkName(drinkStruct) {
+function getDrinkName(drink) {
 	return $('<label>', { //Creates the label that represents the pizza's name.
-		html: drinkStruct['name'],
+		html: drink['name'],
 		'class': 'mPDITitle'
 	});
 }
 
-function getDrinkImg(drinkStruct) {
+function getDrinkImg(drink) {
 	return $('<img>', {
-		'src': drinkStruct['image'],
+		'src': drink['image'],
 		'class': 'menuDrinkItemImg'
 	});
 }
 
-function getDrinkItem(drinkStruct) {
+function getDrinkItem(drink) {
 	return $('<div>', {
-		html: [getDrinkName(drinkStruct), getDrinkImg(drinkStruct)],
+		html: [getDrinkName(drink), getDrinkImg(drink)],
 		'class': 'menuDrinkItem'
 	});
 }
 
-function getDrinkNutritionalInfo(drinkStruct) {
-	var nutInfo = drinkStruct['nutritions']; //Gets the list of nutritional facts.
+function getDrinkNutritionalInfo(drink) {
+	var nutInfo = drink['nutritions']; //Gets the list of nutritional facts.
 	var table = $('<table>'); //Creates the table of nutritional facts.
 	for (var key in nutInfo) {
 		var n = $('<td>', { html: key }); //Creates a table item for each nutritional information key.
@@ -162,11 +162,11 @@ function getDrinkNutritionalInfo(drinkStruct) {
 	return table;
 }
 
-function getDrinkTypes(drinkStruct) {
+function getDrinkTypes(drink) {
 	var d = $('<div>');
-	for (size in drinkStruct['sizes']) {
+	for (size in drink['sizes']) {
 		var label = $('<label>', { //Gets the label for each of the drink's sizes.
-			html: drinkStruct['sizes'][size],
+			html: drink['sizes'][size],
 			'class': 'drinksInformationTypeLabel'
 		});
 		d.append(label);
