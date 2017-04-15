@@ -88,7 +88,6 @@
 		var pizzaName = pizzaStruct['pizzaName'];
 		var pizzaSize = pizzaStruct['pizzaSize'];
 		var labelText = pizzaName + ' (' + pizzaSize + ')';
-		console.log(labelText);
 		var label = $('<label></label>').addClass('mPIITitle').append(document.createTextNode(labelText)); //Creates the label that represents the pizza's name.
 		var list = getPizzaIngredientsList(pizzaStruct); //Gets the pizza's ingredients.
 		return  $('<div></div>').addClass('menuPizzaItemInfo').append(label).append(list); //Adds the pizza's name and the ingredients list to the correct div.
@@ -175,7 +174,7 @@
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 				'Img' : 'img/menus/pizzaMenu/menuPizza2.png',
 			},
-			'Fresj Juice' : {
+			'Fresh Juice' : {
 				'drinkName' : 'Fresh Juice',
 				'Sizes' : ['Orange Juice (25cl)', 'Blueberry Juice (50cl)', 'Lemonade (1L)', 'Tutti Frutti (50cl)'],
 				'NutInfo' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
