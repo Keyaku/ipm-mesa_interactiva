@@ -22,9 +22,9 @@ function createPizzaPrice(pizzaSize) {
 		'Large'  : 12,
 	}
 	var pizzaPrice = (pizzaSize in prices) ? prices[pizzaSize] : 0;
-	var d = $('<div>');
-	d.append($('<label>', { html: pizzaSize + ' : ' + pizzaPrice + '€' }));
-	d.append($('<button>', {
+	var d = $('<div>')
+	.append($('<label>', { html: pizzaSize + ' : ' + pizzaPrice + '€' }))
+	.append($('<button>', {
 		html: 'Order!',
 		'click': function() { setGlobalPizza(pizzaSize); },
 		'id': 'pizzaOrderButton',

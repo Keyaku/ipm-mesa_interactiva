@@ -99,10 +99,10 @@ function createPizzaNutritonFactsList(pizza) {
 	var nutInfo = pizza['nutritions']; //Gets the list of nutritional facts.
 	var table = $('<table>'); //Creates the table of nutritional facts.
 	for (var key in nutInfo) {
-		table.append($('<tr></tr>')
+		table.append($('<tr>') //Creates each table row.
 		.append($('<td>', { html: key }))
 		.append($('<td>', { html: nutInfo[key] }))
-		); //Creates each table row.
+		);
 	}
 	return table;
 }
