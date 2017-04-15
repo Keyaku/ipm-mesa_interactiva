@@ -1,9 +1,3 @@
-var meta = {
-	"order0" : ["Pepperoni Lovers", "Water"],
-	"order1" : ["Camponesa", "Coca-Cola Original"],
-}
-
-
 /*------------------------------------------------------------------------------
 
 				AUXILIAR FUNCTIONS
@@ -29,15 +23,17 @@ function managerGetMetaValues(orderNumber) {
 	return parsed[orderNumber]; //Returns the array of the ordered elements.
 }
 
-function managerAddNewPizza(pizzaName) {
+function managerAddNewPizza(pizzaName, pizzaSize) {
 	var pizzaStruct = getPremadePizzaStruct(pizzaName);
+	pizzaStruct['pizzaSize'] = pizzaSize;
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
 	var key = "order" + index.toString();
 	var value = [pizzaStruct, ""];
 	managerAddToMeta(key, value);
 }
-function managerEditPizza(pizzaName) {
+function managerEditPizza(pizzaName, pizzaSize) {
 	var pizzaStruct = getPremadePizzaStruct(pizzaName);
+	pizzaStruct['pizzaSize'] = pizzaSize;
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
 	var key = "order" + index.toString();
 	var value = managerGetMetaValues(key);

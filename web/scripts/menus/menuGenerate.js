@@ -78,10 +78,18 @@
 		return pizzaList[pizzaName];
 	}
 
-
 	function getPizzaInfo(pizzaStruct) {
-		var pizzaName = pizzaStruct["pizzaName"];
+		var pizzaName = pizzaStruct['pizzaName'];
 		var label = $('<label></label>').addClass('mPIITitle').append(document.createTextNode(pizzaName)); //Creates the label that represents the pizza's name.
+		var list = getPizzaIngredientsList(pizzaStruct); //Gets the pizza's ingredients.
+		return  $('<div></div>').addClass('menuPizzaItemInfo').append(label).append(list); //Adds the pizza's name and the ingredients list to the correct div.
+	}
+	function getPizzaInfoWithSize(pizzaStruct) {
+		var pizzaName = pizzaStruct['pizzaName'];
+		var pizzaSize = pizzaStruct['pizzaSize'];
+		var labelText = pizzaName + ' (' + pizzaSize + ')';
+		console.log(labelText);
+		var label = $('<label></label>').addClass('mPIITitle').append(document.createTextNode(labelText)); //Creates the label that represents the pizza's name.
 		var list = getPizzaIngredientsList(pizzaStruct); //Gets the pizza's ingredients.
 		return  $('<div></div>').addClass('menuPizzaItemInfo').append(label).append(list); //Adds the pizza's name and the ingredients list to the correct div.
 	}
@@ -97,6 +105,13 @@
 		var info = getPizzaInfo(pizzaStruct); //Gets the pizza's information.
 		return $('<div></div>').addClass('menuPizzaItem').append(img).append(info).addClass('row');
 	}
+	function getPizzaItemWithSize(pizzaStruct) {
+		var img = getPizzaImg(pizzaStruct); //Gets the pizza's image.
+		var info = getPizzaInfoWithSize(pizzaStruct); //Gets the pizza's information.
+		return $('<div></div>').addClass('menuPizzaItem').append(img).append(info).addClass('row');
+	}
+
+
 	function getPizzaItemWithButtons(pizzaStruct) {
 		var img = getPizzaImg(pizzaStruct); //Gets the pizza's image.
 		var info = getPizzaInfo(pizzaStruct).append(getSizeButtons()); //Gets the pizza's information and appends the size buttons.

@@ -57,7 +57,7 @@ function shell(pizza, drink, index) {
 	var orderedPizza = pizza; //Gets the ordered pizza.
 	var orderedDrink = drink; //Gets the ordered drink.
 	setTimeout(function() {
-		$("#pizza" + index.toString()).append(getPizzaItem(orderedPizza)); //Shows the user's ordered pizza.
+		$("#pizza" + index.toString()).append(getPizzaItemWithSize(orderedPizza)); //Shows the user's ordered pizza.
 		$("#drink" + index.toString()).append(getDrinkItem(orderedDrink)); //Shows the user's ordered drink.
 	}, 100);
 }
