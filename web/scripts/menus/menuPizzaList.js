@@ -25,8 +25,7 @@ function getPizzaPrice() {
 }
 function getSizeButtons() {
 	return $('<div></div>').addClass('buttonContainer')
-		.append($('<button></button>').addClass('mPIISizeButton')
-		.append(document.createTextNode('S')))
+		.append($('<button></button>').addClass('mPIISizeButton').append(document.createTextNode('S')))
 		.append($('<button></button>').addClass('mPIISizeButton').append(document.createTextNode('M')))
 		.append($('<button></button>').addClass('mPIISizeButton').append(document.createTextNode('L')));
 }
