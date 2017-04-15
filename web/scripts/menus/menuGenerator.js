@@ -9,9 +9,9 @@ function populateSuggestions(obj) {
 	obj.append(titleSuggested);
 	var suggestions = $('<div>', { 'id': 'menuPremadePizzasSugestions' }); //Creates the main sugestions division with lateral scroll.
 	obj.append(suggestions);
-	for (var pizza in suggestionsList) {
-		var pizzaStruct = getPremadePizzaStruct(pizza);
-		suggestions.append(getSuggestedItem(pizzaStruct)); //Adds each suggested pizza to the passed object.
+	for (var pizzaName in suggestionsList) {
+		var pizza = getPremadePizzaStruct(pizzaName);
+		suggestions.append(getSuggestedItem(pizza)); //Adds each suggested pizza to the passed object.
 	}
 }
 
@@ -22,9 +22,9 @@ function populatePremadeMenu(obj) {
 	});
 	obj.append(titlePremade);
 	var pizzaId = 1;
-	for (var pizza in pizzaList) {
-		var pizzaStruct = getPremadePizzaStruct(pizza);
-		obj.append(getPizzaItemWithButtons(pizzaStruct)); //Adds each premade pizzas to the passed object.
+	for (var pizzaName in pizzaList) {
+		var pizza = getPremadePizzaStruct(pizzaName);
+		obj.append(getPizzaItemWithButtons(pizza)); //Adds each premade pizzas to the passed object.
 	}
 }
 
