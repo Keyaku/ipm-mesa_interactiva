@@ -8,11 +8,12 @@ $("#navbar").navbar();
 
 var orderNumber = parseInt(sessionStorage.getItem("orders"));
 for (var i = 0; i < orderNumber; i++) {
-	console.log(sessionStorage.getItem("order" + i));
-	if (sessionStorage.getItem("order" + i) == "true") {
-		console.log(i, "iteration");
+	var str = "order" + i.toString();
+	var values = managerGetMetaValues(str);
+	console.log(values);
+	if (values != null && values[0] != null && values[1] != null && (values[0] != ""  || values[1] != "")) {
 		createOrderItem(i);
-		shell(i);
+		shell(values[0], values[1], i);
 	}
 }
 
@@ -52,10 +53,9 @@ function createOrderItem(index) {
 	div.append(a).append(b).append(c).append(d);
 	$("#orders").append(div);
 }
-function shell(index) {
-	var str = "order" + index.toString();
-	var orderedPizza = sessionStorage.getItem(str + "Pizza"); //Gets the ordered pizza.
-	var orderedDrink = sessionStorage.getItem(str + "Drink"); //Gets the ordered drink.
+function shell(pizza, drink, index) {
+	var orderedPizza = pizza; //Gets the ordered pizza.
+	var orderedDrink = drink; //Gets the ordered drink.
 	setTimeout(function() {
 		$("#pizza" + index.toString()).append(getPizzaItem(orderedPizza)); //Shows the user's ordered pizza.
 		$("#drink" + index.toString()).append(getDrinkItem(orderedDrink)); //Shows the user's ordered drink.
@@ -64,14 +64,6 @@ function shell(index) {
 
 function orderEdit(index) {
 	editGetCategory(index); //Checks if the user wants to edit the pizza or the drink.
-}
-function orderCancel(index) { confirmationOverlayShow(confirmCancel, index); }
-function confirmCancel(index) {
-	$("#order" + index.toString()).remove();
-	var str = "order" + index.toString();
-	sessionStorage.removeItem(str + "Pizza");
-	sessionStorage.removeItem(str + "Drink");
-	sessionStorage.setItem("order" + index.toString(), "false");
 }
 function editGetCategory(index) {
 	$("#editPizza" + index.toString()).show();
@@ -86,6 +78,11 @@ function editDrink(index) {
 	sessionStorage.setItem("orderNumber", index.toString()); //Sets the number of the current order.
 	sessionStorage.setItem("editing", "true");
 	window.location.href = "html/menus/menuDrinks.html";
+}
+function orderCancel(index) { confirmationOverlayShow(confirmCancel, index); }
+function confirmCancel(index) {
+	$("#order" + index.toString()).remove();
+	managerDeleteOrder(index);
 }
 
 

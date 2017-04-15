@@ -20,12 +20,13 @@ function getDrinkOrderButton() {
 	return $("<div></div>").append(price).append(button);
 }
 
-function showDrinkExtensiveInformation(name) {
+function showDrinkExtensiveInformation(drinkName) {
 	$("#drinksInformation").empty().show(); //Shows the lateral pizza information bar.
+	var drinkStruct = getDrinkStruct(drinkName);
 	var closeX = $("<div></div>").attr("id", "drinksInformationClose").append(document.createTextNode("X")).click(function(){ hidePizzaExtensiveInformation(); });
-	var label = $("<label></label>").addClass("mPDITitle").append(document.createTextNode(name)); //Creates the label for the drink's name.
-	var nutInfo = getDrinkNutritionalInfo(name); //Gets the nutritional information for the drink.
-	var drinkTypes = getDrinkTypes(name); //Gets the drink's types.
+	var label = $("<label></label>").addClass("mPDITitle").append(document.createTextNode(drinkName)); //Creates the label for the drink's name.
+	var nutInfo = getDrinkNutritionalInfo(drinkStruct); //Gets the nutritional information for the drink.
+	var drinkTypes = getDrinkTypes(drinkStruct); //Gets the drink's types.
 	var drinkOrder = getDrinkOrderButton(); //Gets the drink's order price and button.
 	$("#drinksInformation").append(closeX).append(label).append(nutInfo).append(drinkTypes).append(drinkOrder);
 }
@@ -35,12 +36,8 @@ function hidePizzaExtensiveInformation() {
 function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }
 
 function setGlobalDrink() {
-	var index = sessionStorage.getItem("orderNumber"); //Gets the order number (in case the user is editing an order).
 	var b = $("#drinksInformation").children(".mPDITitle").text(); //Gets the name of the ordered pizza.
-	sessionStorage.setItem("order" + index + "Drink", b); //Saves the ordered pizza for later information.
-	sessionStorage.setItem('order' + index, "true"); //Indicates thar an order as been placed.
-	sessionStorage.setItem('ordered', "true"); //Indicates thar an order as been placed.
-
+	managerAddNewDrink(b);
 	if (sessionStorage.getItem("editing") == "true") {
 		sessionStorage.setItem("editing", "false");
 		$(location).attr('href', 'html/table.html'); //Confirms.
