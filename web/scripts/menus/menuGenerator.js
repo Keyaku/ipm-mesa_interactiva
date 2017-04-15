@@ -21,69 +21,69 @@ function populatePremadeMenu(obj) {
 	}));
 	for (var pizzaName in pizzaList) {
 		var pizza = getPremadePizza(pizzaName);
-		obj.append(getPizzaItemWithButtons(pizza)); //Adds each premade pizzas to the passed object.
+		obj.append(createPizzaItemWithButtons(pizza)); //Adds each premade pizzas to the passed object.
 	}
 }
 
-function getPizzaName(pizza) {
+function createPizzaName(pizza) {
 	return $('<label>', { //Creates the label that represents the pizza's name.
 		html: pizza['name'],
 		'class': 'mPIITitle'
 	});
 }
 
-function getPizzaInfo(pizza) {
+function createPizzaInfo(pizza) {
 	return  $('<div>', { //Adds the pizza's name and the ingredients list to the correct div.
-		html: [getPizzaName(pizza), getPizzaIngredientsList(pizza)],
+		html: [createPizzaName(pizza), createPizzaIngredientsList(pizza)],
 		'class': 'menuPizzaItemInfo'
 	});
 }
 
-function getPizzaInfoWithSize(pizza) {
-	var label = getPizzaName(pizza).append(' (' + pizza['pizzaSize'] + ')');
-	var list = getPizzaIngredientsList(pizza); //Gets the pizza's ingredients.
+function createPizzaInfoWithSize(pizza) {
+	var label = createPizzaName(pizza).append(' (' + pizza['pizzaSize'] + ')');
+	var list = createPizzaIngredientsList(pizza); //Gets the pizza's ingredients.
 	return  $('<div>', { //Adds the pizza's name and the ingredients list to the correct div.
 		html: [label, list],
 		'class': 'menuPizzaItemInfo'
 	});
 }
 
-function getPizzaImg(pizza) {
+function createPizzaImg(pizza) {
 	return $('<img>', {
 		'src': pizza['image'],
 		'class': 'col-md-6 pizzaThumbnail'
 	});
 }
 
-function getPizzaItem(pizza) {
+function createPizzaItem(pizza) {
 	return $('<div>', {
-		html: [getPizzaImg(pizza), getPizzaInfo(pizza)],
+		html: [createPizzaImg(pizza), createPizzaInfo(pizza)],
 		'class': 'menuPizzaItem row'
 	});
 }
 
-function getPizzaItemWithSize(pizza) {
+function createPizzaItemWithSize(pizza) {
 	return $('<div>', {
-		html: [getPizzaImg(pizza), getPizzaInfoWithSize(pizza)],
+		html: [createPizzaImg(pizza), createPizzaInfoWithSize(pizza)],
 		'class': 'menuPizzaItem row'
 	});
 }
 
-function getPizzaItemWithButtons(pizza) {
+function createPizzaItemWithButtons(pizza) {
 	return $('<div>', {
-		html: [getPizzaImg(pizza), getPizzaInfo(pizza).append(getSizeButtons())],
+		html: [createPizzaImg(pizza), createPizzaInfo(pizza).append(getSizeButtons())],
 		'class': 'menuPizzaItem row'
 	});
 }
 
 function getSuggestedItem(name) {
 	return $('<div>', {
-		html: getPizzaInfo(name).append(getSizeButtons()),
+		html: createPizzaInfo(name).append(getSizeButtons()),
 		'class': 'menuPizzaSugestion'
 	});
 }
 
-function getPizzaIngredientsList(pizza) {
+function createPizzaIngredientsList(pizza) {
 	var ingredientsList = pizza['ingredients']; //Gets the ingredient list.
 	var ul = $('<ul>', { 'class': 'mPIIIngredientList' });
 	for (i in ingredientsList) {
@@ -95,7 +95,7 @@ function getPizzaIngredientsList(pizza) {
 	return ul;
 }
 
-function getPizzaNutritonFactsList(pizza) {
+function createPizzaNutritonFactsList(pizza) {
 	var nutInfo = pizza['nutritions']; //Gets the list of nutritional facts.
 	var table = $('<table>'); //Creates the table of nutritional facts.
 	for (var key in nutInfo) {
@@ -107,7 +107,7 @@ function getPizzaNutritonFactsList(pizza) {
 	return table;
 }
 
-function getPizzaRating(pizza) {
+function createPizzaRating(pizza) {
 	var d = $('<div>', { 'class': 'pizzaRating' });
 	for (var i = 0; i < 5; i++) {
 		d.append($('<span>', { 'class': 'star' }));
@@ -125,33 +125,33 @@ function getPizzaRating(pizza) {
 function populateDrinksMenu(obj) {
 	var drinkId = 1;
 	for (drink in drinksList) {
-		drink = getDrinkStruct(drink);
-		obj.append(getDrinkItem(drink)); //Adds each drink to the passed object.
+		drink = getDrink(drink);
+		obj.append(createDrinkItem(drink)); //Adds each drink to the passed object.
 	}
 }
 
-function getDrinkName(drink) {
+function createDrinkName(drink) {
 	return $('<label>', { //Creates the label that represents the pizza's name.
 		html: drink['name'],
 		'class': 'mPDITitle'
 	});
 }
 
-function getDrinkImg(drink) {
+function createDrinkImg(drink) {
 	return $('<img>', {
 		'src': drink['image'],
 		'class': 'menuDrinkItemImg'
 	});
 }
 
-function getDrinkItem(drink) {
+function createDrinkItem(drink) {
 	return $('<div>', {
-		html: [getDrinkName(drink), getDrinkImg(drink)],
+		html: [createDrinkName(drink), createDrinkImg(drink)],
 		'class': 'menuDrinkItem'
 	});
 }
 
-function getDrinkNutritionalInfo(drink) {
+function createDrinkNutritionalInfo(drink) {
 	var nutInfo = drink['nutritions']; //Gets the list of nutritional facts.
 	var table = $('<table>'); //Creates the table of nutritional facts.
 	for (var key in nutInfo) {
@@ -162,7 +162,7 @@ function getDrinkNutritionalInfo(drink) {
 	return table;
 }
 
-function getDrinkTypes(drink) {
+function createDrinkTypes(drink) {
 	var d = $('<div>');
 	for (size in drink['sizes']) {
 		var label = $('<label>', { //Gets the label for each of the drink's sizes.
