@@ -3,12 +3,14 @@ main {
 }
 
 .menuTitle {
-	color: #9ccc65;
+	color: #D32F2F;
 	font-size: 100px;
 	font-family: bangers, sans-serif;
 	margin-top: 5%;
 	margin-left: 3.7%;
 	text-shadow: 0px 0px 10px #000;
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: black;
 }
 
 .pizzaCustomizationItemsContainer {
@@ -25,10 +27,12 @@ main {
 
 .customizeStepTitle {
 	font-family: bangers, sans-serif;
-	color: #cfff95;
-	font-size: 50px;
+	color: white;
+	font-size: 60px;
 	padding: 2%;
 	margin-left: 2.5%;
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: black;
 }
 
 /* removed white dashed line of code that I liked
@@ -86,21 +90,28 @@ svg.pizzaSizes {
 
 /*
 * Alternative styling, must pair with pizzaDough.active and pizzaSizes.circle
-fill: #6b9b37;
-stroke: #6b9b37;
+fill: #D32F2F;
+stroke: #2E7D32;
+*
+fill: white;
 */
 svg.pizzaSizes.active text {
-	fill: white;
+	fill: #2E7D32;
 }
 
 /*
 * Alternative styling, must pair with pizzaDough.active and pizzaSizes.text
-stroke: #6b9b37;
+stroke: #D32F2F;
+stroke-width: 10px;
+fill: rgba(244,67,54, 0.05);
+*
+* Alternative styling, must pair with pizzaDough.active and pizzaSizes.text
+stroke: white;
 stroke-width: 10px;
 fill: rgba(207,255,149, 0.1);
 */
 svg.pizzaSizes.active circle {
-	stroke: white;
+	stroke: #2E7D32;
 	stroke-width: 10px;
 	fill: rgba(207,255,149, 0.1);
 }
@@ -120,16 +131,22 @@ svg.pizzaSizes.active circle {
 
 /*
 * Alternative styling, must pair with pizzaSizes.circle and pizzaSizes.text
-background-color: rgba(207,255,149, 0.1);
-border-color: #6b9b37;
+background-color: rgba(244,67,54, 0.05);
+border-color: #D32F2F;
 border-radius: 20px;
 border-width: 5px;
-color: #6b9b37;
+color: #D32F2F;
+*
+background-color: rgba(207,255,149, 0.1);
+border-radius: 20px;
+border-width: 5px;
 */
 .pizzaDoughName.active {
 	background-color: rgba(207,255,149, 0.1);
+	border-color: #2E7D32;
 	border-radius: 20px;
 	border-width: 5px;
+	color: #2E7D32;
 }
 
 .pizzaDoughName {
@@ -182,14 +199,23 @@ color: #6b9b37;
 	text-align: center;
 }
 
+/*
+*
+background-size: 140px 70px;
+margin: 5px 70px 0 0;
+width: 140px;
+height: 70px;
+border-style: solid;
+border-radius: 0.5px;
+border-color: rgba(207,255,149, 0.2);
+*/
 .pizzaIngredientImg {
 	background-size: 140px 70px;
-	margin: 0 70px 0 0; /* change this to center texto and imagem */
+	margin: 5px 70px 0 0; /* change this to center texto and imagem */
 	width: 140px;
 	height: 70px;
-	border-style: solid;
-	border-radius: 0.5px;
-	border-color: rgba(207,255,149, 0.2);
+	border: 2px solid white;
+	border-radius: 15px;
 }
 
 .pizzaIngredientName {
@@ -200,8 +226,37 @@ color: #6b9b37;
 	margin-left: -27%;
 }
 
+#controlButtons {
+	margin-top: 5%;
+	margin-left: 60%;
+}
+
+#customizationConfirmation {
+	background-color: rgba(46, 125, 50, 0.2);
+	border-radius: 20px;
+	color: #6B9B37;
+	font-size: 30px;
+	font-family: raleway, sans-serif;
+	padding: 1% 4% 1% 4%;
+	text-align: center;
+}
+
+#back {
+	background-color: rgba(213, 0, 0, 0.2);
+	border-radius: 20px;
+	color: #D32F2F;
+	font-size: 30px;
+	font-family: raleway, sans-serif;
+	padding: 1% 4% 1% 4%;
+	margin-left: 15%;
+	text-align: center;
+}
+/*
+background-color: rgba(183,28,28, 0.2);
+border-radius: 20px;
+*/
 ::-webkit-scrollbar {
-    background-color: rgba(207,255,149, 0.1);
+    background-color: rgba(46, 125, 50, 0.2);
 		border-radius: 20px;
 }
 
@@ -232,5 +287,5 @@ color: #6b9b37;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background-color: rgba(236,240,241, 0.8);
+	background-color: rgba(107, 155, 55, 0.4);
 }
