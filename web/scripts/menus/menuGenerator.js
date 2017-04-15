@@ -76,9 +76,9 @@ function createPizzaItemWithButtons(pizza) {
 	});
 }
 
-function createPizzaSuggestion(name) {
+function createPizzaSuggestion(pizza) {
 	return $('<div>', {
-		html: createPizzaInfo(name).append(createSizeButtons()),
+		html: createPizzaInfo(pizza).append(createSizeButtons()),
 		'class': 'menuPizzaSugestion'
 	});
 }
