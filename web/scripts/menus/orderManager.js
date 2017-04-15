@@ -10,10 +10,10 @@ function managerStart() {
 	sessionStorage.setItem("orderNumber", "0"); //Sets the number of total placed orders to 0.
 }
 
-function managerAddToMeta(orderNumber, pizzaStruct) {
+function managerAddToMeta(orderNumber, pizza) {
 	var meta = sessionStorage.getItem("meta"); //Gets the dictionary that stores the orders.
 	var parsed = JSON.parse(meta); //Parses it (it's current state is a string).
-	parsed[orderNumber] = pizzaStruct; //Adds the order.
+	parsed[orderNumber] = pizza; //Adds the order.
 	sessionStorage.setItem("meta", JSON.stringify(parsed)); //Sets the sessionStorage again.
 	sessionStorage.setItem("ordered", "true"); //Sets the ordered "global flag" to true.
 }
@@ -24,20 +24,20 @@ function managerGetMetaValues(orderNumber) {
 }
 
 function managerAddNewPizza(pizzaName, pizzaSize) {
-	var pizzaStruct = getPremadePizzaStruct(pizzaName); //Gets the pizza's structure.
-	pizzaStruct['pizzaSize'] = pizzaSize; //Adds the pizza's size to the the structure.
+	var pizza = getPremadePizza(pizzaName); //Gets the pizza's structure.
+	pizza['pizzaSize'] = pizzaSize; //Adds the pizza's size to the the structure.
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
 	var key = "order" + index.toString(); //Gets the dictionary key.
-	var value = [pizzaStruct, ""]; //Sets the value for the key.
+	var value = [pizza, ""]; //Sets the value for the key.
 	managerAddToMeta(key, value); //Adds the order to the global data structure.
 }
 function managerEditPizza(pizzaName, pizzaSize) {
-	var pizzaStruct = getPremadePizzaStruct(pizzaName); //Gets the pizza's structure.
-	pizzaStruct['pizzaSize'] = pizzaSize; //Adds the pizza's size to the the structure.
+	var pizza = getPremadePizza(pizzaName); //Gets the pizza's structure.
+	pizza['pizzaSize'] = pizzaSize; //Adds the pizza's size to the the structure.
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
 	var key = "order" + index.toString(); //Gets the dictionary key.
 	var drink = (managerGetMetaValues(key))[1]; //Gets the ordered drink.
-	var valueNew = [pizzaStruct, drink]; //Sets the value for the key.
+	var valueNew = [pizza, drink]; //Sets the value for the key.
 	managerAddToMeta(key, valueNew); //Adds the order to the global data structure.
 }
 function managerAddNewCustomizedPizza(pizzaMaker) {
@@ -55,11 +55,11 @@ function managerEditCustomizedPizza(pizzaMaker) {
 }
 
 function managerAddNewDrink(drinkName) {
-	var drinkStruct = getDrinkStruct(drinkName); //Gets the drink's structure.
+	var drink = getPremadeDrink(drinkName); //Gets the drink's structure.
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
 	var key = "order" + index.toString(); //Gets the dictionary key.
 	var pizza = (managerGetMetaValues(key))[0]; //Gets the ordered pizza.
-	var valueNew = [pizza, drinkStruct]; //Sets the value for the key.
+	var valueNew = [pizza, drink]; //Sets the value for the key.
 	managerAddToMeta(key, valueNew); //Adds the order to the global data structure.
 }
 

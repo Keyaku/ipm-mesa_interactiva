@@ -14,7 +14,7 @@ populateDrinksMenu($("#menuDrinks")); //Populates the drink's menu dynamically.
 				AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
-function getDrinkOrderButton() {
+function createDrinkOrderButton() {
 	var price = $("<label></label>").addClass("drinksInformationTypeLabel").append(document.createTextNode("5€")); //Creates a label with a price for the drink's type.
 	var button = $("<button></button>").attr("id", "drinkOrderButton").click(function() { setGlobalDrink(); }).append(document.createTextNode("Order")); //Creates a button for ordering.
 	return $("<div></div>").append(price).append(button);
@@ -22,12 +22,12 @@ function getDrinkOrderButton() {
 
 function showDrinkExtensiveInformation(drinkName) {
 	$("#drinksInformation").empty().show(); //Shows the lateral pizza information bar.
-	var drinkStruct = getDrinkStruct(drinkName);
+	var drink = getPremadeDrink(drinkName);
 	var closeX = $("<div></div>").attr("id", "drinksInformationClose").append(document.createTextNode("X")).click(function(){ hidePizzaExtensiveInformation(); });
 	var label = $("<label></label>").addClass("mPDITitle").append(document.createTextNode(drinkName)); //Creates the label for the drink's name.
-	var nutInfo = getDrinkNutritionalInfo(drinkStruct); //Gets the nutritional information for the drink.
-	var drinkTypes = getDrinkTypes(drinkStruct); //Gets the drink's types.
-	var drinkOrder = getDrinkOrderButton(); //Gets the drink's order price and button.
+	var nutInfo = createDrinkNutritionalInfo(drink); //Gets the nutritional information for the drink.
+	var drinkTypes = createDrinkTypes(drink); //Gets the drink's types.
+	var drinkOrder = createDrinkOrderButton(); //Gets the drink's order price and button.
 	$("#drinksInformation").append(closeX).append(label).append(nutInfo).append(drinkTypes).append(drinkOrder);
 }
 function hidePizzaExtensiveInformation() {
@@ -58,5 +58,5 @@ function setGlobalDrink() {
 $(".menuDrinkItem").click(function() { showDrinkExtensiveInformation($(this).children(".mPDITitle").text()); });
 
 //The click event of #drinksInformationClose is defined in the spawning (in showDrinkExtensiveInformation()).
-//The click event of #drinkOrderButton is defined in the spawning (in getDrinkOrderButton()).
+//The click event of #drinkOrderButton is defined in the spawning (in createDrinkOrderButton()).
 $("#cancelButton").click(function() { window.location.href = "html/table.html"; }); //Changes the page to the main page.

@@ -15,7 +15,7 @@ populatePremadeMenu($('#premade')); //Populates the premade pizza's menu dynamic
 				AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
-function getPizzaPrice(pizzaSize) {
+function createPizzaPrice(pizzaSize) {
 	var pizzaPrice = '0€';
 	switch(pizzaSize) { //Sets the price of the pizza (based only on size).
 		case 'Small': pizzaPrice = '8€';
@@ -44,11 +44,11 @@ function showPizzaExtensiveInformation(pizzaName, pizzaSize) {
 	var closeX = $('<div></div>').attr('id', 'pizzaInformationClose').append(document.createTextNode('X'))
 		.click(function(){ hidePizzaExtensiveInformation(); }); //Sets the behaviour of click event.
 	var labelName = $('<label></label>').addClass('mPIITitle').append(document.createTextNode(pizzaName)); //Creates the label that represents the pizza's name.
-	var pizzaStruct = getPremadePizzaStruct(pizzaName); //Gets the pizza's structure.
-	var list = getPizzaIngredientsList(pizzaStruct); //Gets the list of the pizza's ingredients.
-	var table = getPizzaNutritonFactsList(pizzaStruct); //Gets all the nutritional information for the pizza.
-	var ratingDiv = getPizzaRating(pizzaStruct); //Gets the rating.
-	var priceOrder = getPizzaPrice(pizzaSize); //Gets the price and order button.
+	var pizza = getPremadePizza(pizzaName); //Gets the pizza's structure.
+	var list = createPizzaIngredientsList(pizza); //Gets the list of the pizza's ingredients.
+	var table = createPizzaNutritonFactsList(pizza); //Gets all the nutritional information for the pizza.
+	var ratingDiv = createPizzaRating(pizza); //Gets the rating.
+	var priceOrder = createPizzaPrice(pizzaSize); //Gets the price and order button.
 	$('#pizzaInformation').empty().append(closeX).append(labelName).append(list).append(table).append(ratingDiv).append(priceOrder);
 }
 function hidePizzaExtensiveInformation() {
@@ -83,7 +83,7 @@ $('.mPIISizeButton').click(function(){ //Generates and shows the lateral pizza i
 	showPizzaExtensiveInformation(pizzaName, pizzaSize); //Shows the lateral pizza information bar.
 });
 //The click event of #pizzaInformationClose is defined in the spawning (in showPizzaExtensiveInformation()).
-//The click event of #pizzaOrderButton is defined in the spawning (in getPizzaPrice()).
+//The click event of #pizzaOrderButton is defined in the spawning (in createPizzaPrice()).
 $('#skipButton').click(function() { //Changes the page to the drinks menu.
 	$(location).attr('href', 'html/menus/menuDrinks.html');
 });

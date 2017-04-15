@@ -11,7 +11,7 @@ var key = "order" + index.toString();
 var values = managerGetMetaValues(key);
 var orderedPizza = values[0];
 var orderedDrink = values[1];
-$("#order").append(getPizzaItemWithSize(orderedPizza)).append(getDrinkItem(orderedDrink)); //Draws the order based on what was ordered previously.
+$("#order").append(getPizzaItemWithSize(orderedPizza)).append(createDrinkItem(orderedDrink)); //Draws the order based on what was ordered previously.
 
 
 /*------------------------------------------------------------------------------

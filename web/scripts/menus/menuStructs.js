@@ -134,6 +134,6 @@ var drinksList = {
 	},
 };
 
-function getDrink(drinkName) {
+function getPremadeDrink(drinkName) {
 	return drinksList[drinkName];
 }

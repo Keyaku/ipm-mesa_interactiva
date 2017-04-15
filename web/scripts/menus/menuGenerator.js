@@ -125,7 +125,7 @@ function createPizzaRating(pizza) {
 function populateDrinksMenu(obj) {
 	var drinkId = 1;
 	for (drink in drinksList) {
-		drink = getDrink(drink);
+		drink = getPremadeDrink(drink);
 		obj.append(createDrinkItem(drink)); //Adds each drink to the passed object.
 	}
 }
