@@ -37,9 +37,15 @@ function getPizzaPrice(pizzaSize) {
 }
 function getSizeButtons() {
 	return $('<div></div>').addClass('buttonContainer')
+<<<<<<< HEAD
 		.append($('<button></button>').addClass('mPIISizeButton').attr("id", "Small").append(document.createTextNode('S')))
 		.append($('<button></button>').addClass('mPIISizeButton').attr("id", "Medium").append(document.createTextNode('M')))
 		.append($('<button></button>').addClass('mPIISizeButton').attr("id", "Large").append(document.createTextNode('L')));
+=======
+		.append($('<button></button>').addClass('mPIISizeButton').append(document.createTextNode('S')))
+		.append($('<button></button>').addClass('mPIISizeButton').append(document.createTextNode('M')))
+		.append($('<button></button>').addClass('mPIISizeButton').append(document.createTextNode('L')));
+>>>>>>> 50458aa5bfb47e9f09a950f535d9272b97daa6f4
 }
 
 function showPizzaExtensiveInformation(pizzaName, pizzaSize) {
