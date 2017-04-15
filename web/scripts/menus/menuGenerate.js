@@ -262,12 +262,13 @@
 		function getDrinkStruct(drinkName) {
 			return drinksList[drinkName];
 		}
-
+/*
 		function getDrinkImg(drinkStruct) {
 			var img = $('<img>').addClass('menuDrinkItemImg'); //Creates the image.
 			img.attr('src', drinkStruct['Img']); //Sets the correct source.
 			return img;
 		}
+*/
 		function getDrinkItem(drinkStruct) {
 			var drinkName = drinkStruct['drinkName'];
 			console.log(drinkStruct);

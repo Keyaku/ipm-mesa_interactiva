@@ -17,22 +17,19 @@ populatePremadeMenu($('#premade')); //Populates the premade pizza's menu dynamic
 ------------------------------------------------------------------------------*/
 function getPizzaPrice(pizzaSize) {
 	var pizzaPrice = '0€';
-	switch(pizzaSize) {
-		case 'Small':
-			pizzaPrice = '8€';
+	switch(pizzaSize) { //Sets the price of the pizza (based only on size).
+		case 'Small': pizzaPrice = '8€';
 			break;
-		case 'Medium':
-			pizzaPrice = '10€';
+		case 'Medium': pizzaPrice = '10€';
 			break;
-		case 'Large':
-			pizzaPrice = '12€';
+		case 'Large': pizzaPrice = '12€';
 			break;
 	}
 	var d = $('<div></div>');
 	d.append($('<label></label>').append(document.createTextNode(pizzaSize + ' : ' + pizzaPrice)));
-	d.append($('<button></button>').attr('id', 'pizzaOrderButton').click(function() {
-		setGlobalPizza(pizzaSize);
-	}).append(document.createTextNode('Order!')));
+	d.append($('<button></button>').attr('id', 'pizzaOrderButton')
+		.click(function() { setGlobalPizza(pizzaSize); }) //Sets the behaviour of click event.
+		.append(document.createTextNode('Order!')));
 	return d;
 }
 function getSizeButtons() {
@@ -44,13 +41,14 @@ function getSizeButtons() {
 
 function showPizzaExtensiveInformation(pizzaName, pizzaSize) {
 	$('#pizzaInformation').show(); //Unhides the lateral pizza information bar.
-	var closeX = $('<div></div>').attr('id', 'pizzaInformationClose').append(document.createTextNode('X')).click(function(){ hidePizzaExtensiveInformation(); });
+	var closeX = $('<div></div>').attr('id', 'pizzaInformationClose').append(document.createTextNode('X'))
+		.click(function(){ hidePizzaExtensiveInformation(); }); //Sets the behaviour of click event.
 	var labelName = $('<label></label>').addClass('mPIITitle').append(document.createTextNode(pizzaName)); //Creates the label that represents the pizza's name.
-	var pizzaStruct = getPremadePizzaStruct(pizzaName);
-	var list = getPizzaIngredientsList(pizzaStruct); //Creates the list of the pizza's ingredients.
-	var table = getPizzaNutritonFactsList(pizzaStruct); //Generates all the nutritional information for the pizza.
-	var ratingDiv = getPizzaRating(pizzaStruct); //Creates the rating table.
-	var priceOrder = getPizzaPrice(pizzaSize);
+	var pizzaStruct = getPremadePizzaStruct(pizzaName); //Gets the pizza's structure.
+	var list = getPizzaIngredientsList(pizzaStruct); //Gets the list of the pizza's ingredients.
+	var table = getPizzaNutritonFactsList(pizzaStruct); //Gets all the nutritional information for the pizza.
+	var ratingDiv = getPizzaRating(pizzaStruct); //Gets the rating.
+	var priceOrder = getPizzaPrice(pizzaSize); //Gets the price and order button.
 	$('#pizzaInformation').empty().append(closeX).append(labelName).append(list).append(table).append(ratingDiv).append(priceOrder);
 }
 function hidePizzaExtensiveInformation() {
@@ -63,12 +61,12 @@ function confirmSkip() { /*TODO - FranciscoKloganB: Popup that asks for confirma
 function setGlobalPizza(pizzaSize) {
 	var pizzaName = $('#pizzaInformation').children('.mPIITitle').text(); //Gets the name of the ordered pizza.
 	if (sessionStorage.getItem("editing") == "true") {
-		sessionStorage.setItem("editing", "false");
-		managerEditPizza(pizzaName, pizzaSize);
+		sessionStorage.setItem("editing", "false"); //Sets the editing flag to false.
+		managerEditPizza(pizzaName, pizzaSize); //Adds the pizza to the system.
 		$(location).attr('href', 'html/table.html'); //Confirms.
 	}
 	else {
-		managerAddNewPizza(pizzaName, pizzaSize);
+		managerAddNewPizza(pizzaName, pizzaSize); //Adds the pizza to the system.
 		$(location).attr('href', 'html/menus/menuDrinks.html'); //Changes the screen (menu flow).
 	}
 }
@@ -80,9 +78,9 @@ function setGlobalPizza(pizzaSize) {
 
 ------------------------------------------------------------------------------*/
 $('.mPIISizeButton').click(function(){ //Generates and shows the lateral pizza information bar of the chosen pizza.
-	var pizzaName = ($(this).parent().parent()).children('.mPIITitle').text();
-	var pizzaSize = $(this).attr("id");
-	showPizzaExtensiveInformation(pizzaName, pizzaSize);
+	var pizzaName = ($(this).parent().parent()).children('.mPIITitle').text(); //Gets the chosen pizza's name.
+	var pizzaSize = $(this).attr("id"); //Gets the chosen pizza's size.
+	showPizzaExtensiveInformation(pizzaName, pizzaSize); //Shows the lateral pizza information bar.
 });
 //The click event of #pizzaInformationClose is defined in the spawning (in showPizzaExtensiveInformation()).
 //The click event of #pizzaOrderButton is defined in the spawning (in getPizzaPrice()).
