@@ -30,7 +30,7 @@ function populatePremadeMenu(obj) {
 
 function getPizzaName(pizzaStruct) {
 	return $('<label>', { //Creates the label that represents the pizza's name.
-		html: pizzaStruct['pizzaName'],
+		html: pizzaStruct['name'],
 		'class': 'mPIITitle'
 	});
 }
@@ -53,7 +53,7 @@ function getPizzaInfoWithSize(pizzaStruct) {
 
 function getPizzaImg(pizzaStruct) {
 	return $('<img>', {
-		'src': pizzaStruct["Img"],
+		'src': pizzaStruct['image'],
 		'class': 'col-md-6 pizzaThumbnail'
 	});
 }
@@ -87,7 +87,7 @@ function getSuggestedItem(name) {
 }
 
 function getPizzaIngredientsList(pizzaStruct) {
-	var ingredientsList = pizzaStruct['Ingredients']; //Gets the ingredient list.
+	var ingredientsList = pizzaStruct['ingredients']; //Gets the ingredient list.
 	var ul = $('<ul>', { 'class': 'mPIIIngredientList' });
 	for (i in ingredientsList) {
 		ul.append($('<li>', {
@@ -99,7 +99,7 @@ function getPizzaIngredientsList(pizzaStruct) {
 }
 
 function getPizzaNutritonFactsList(pizzaStruct) {
-	var nutInfo = pizzaStruct['NutInfo']; //Gets the list of nutritional facts.
+	var nutInfo = pizzaStruct['nutritions']; //Gets the list of nutritional facts.
 	var table = $('<table>'); //Creates the table of nutritional facts.
 	for (var key in nutInfo) {
 		table.append($('<tr></tr>')
@@ -116,7 +116,7 @@ function getPizzaRating(pizzaStruct) {
 		d.append($('<span>', { 'class': 'star' }));
 	}
 	d.append($('<p>', {
-		html: pizzaStruct['Rating'],
+		html: pizzaStruct['rating'],
 		'class': 'pizzaRatingValue'
 	}));
 	return d;
@@ -135,14 +135,14 @@ function populateDrinksMenu(obj) {
 
 function getDrinkName(drinkStruct) {
 	return $('<label>', { //Creates the label that represents the pizza's name.
-		html: drinkStruct['drinkName'],
+		html: drinkStruct['name'],
 		'class': 'mPDITitle'
 	});
 }
 
 function getDrinkImg(drinkStruct) {
 	return $('<img>', {
-		'src': drinkStruct['Img'],
+		'src': drinkStruct['image'],
 		'class': 'menuDrinkItemImg'
 	});
 }
@@ -155,7 +155,7 @@ function getDrinkItem(drinkStruct) {
 }
 
 function getDrinkNutritionalInfo(drinkStruct) {
-	var nutInfo = drinkStruct['NutInfo']; //Gets the list of nutritional facts.
+	var nutInfo = drinkStruct['nutritions']; //Gets the list of nutritional facts.
 	var table = $('<table>'); //Creates the table of nutritional facts.
 	for (var key in nutInfo) {
 		var n = $('<td>', { html: key }); //Creates a table item for each nutritional information key.
@@ -167,9 +167,9 @@ function getDrinkNutritionalInfo(drinkStruct) {
 
 function getDrinkTypes(drinkStruct) {
 	var d = $('<div>');
-	for (size in drinkStruct['Sizes']) {
+	for (size in drinkStruct['sizes']) {
 		var label = $('<label>', { //Gets the label for each of the drink's sizes.
-			html: drinkStruct['Sizes'][size],
+			html: drinkStruct['sizes'][size],
 			'class': 'drinksInformationTypeLabel'
 		});
 		d.append(label);
