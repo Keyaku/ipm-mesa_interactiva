@@ -71,14 +71,14 @@ function createPizzaItemWithSize(pizza) {
 
 function createPizzaItemWithButtons(pizza) {
 	return $('<div>', {
-		html: [createPizzaImg(pizza), createPizzaInfo(pizza).append(getSizeButtons())],
+		html: [createPizzaImg(pizza), createPizzaInfo(pizza).append(createSizeButtons())],
 		'class': 'menuPizzaItem row'
 	});
 }
 
 function createPizzaSuggestion(name) {
 	return $('<div>', {
-		html: createPizzaInfo(name).append(getSizeButtons()),
+		html: createPizzaInfo(name).append(createSizeButtons()),
 		'class': 'menuPizzaSugestion'
 	});
 }

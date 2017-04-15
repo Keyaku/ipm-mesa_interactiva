@@ -31,7 +31,7 @@ function createPizzaPrice(pizzaSize) {
 	}));
 	return d;
 }
-function getSizeButtons() {
+function createSizeButtons() {
 	var d = $('<div>', { 'class': 'buttonContainer' });
 	['Small', 'Medium', 'Large'].forEach(function(size) {
 		d.append($('<button>', {
