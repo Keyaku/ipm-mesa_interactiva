@@ -2,26 +2,23 @@
 				PIZZA-RELATED CODE
 ------------------------------------------------------------------------------*/
 function populateSuggestions(obj) {
-	var titleSuggested = $('<label>', { //Creates the title for the suggestion's menu.
+	obj.append($('<label>', { //Creates the title for the suggestion's menu.
 		html: 'Suggestions tailored for you',
 		'class': 'menuPremadePizzasSugestionsTitle'
-	});
-	obj.append(titleSuggested);
+	}));
 	var suggestions = $('<div>', { 'id': 'menuPremadePizzasSugestions' }); //Creates the main sugestions division with lateral scroll.
-	obj.append(suggestions);
 	for (var pizzaName in suggestionsList) {
 		var pizza = getPremadePizzaStruct(pizzaName);
 		suggestions.append(getSuggestedItem(pizza)); //Adds each suggested pizza to the passed object.
 	}
+	obj.append(suggestions);
 }
 
 function populatePremadeMenu(obj) {
-	var titlePremade = $('<label>', { //Creates the title for the premade pizzas' menu.
+	obj.append($('<label>', { //Creates the title for the premade pizzas' menu.
 		html: 'Predesigned pizzas',
 		'class': 'menuPremadeMenuTitle'
-	});
-	obj.append(titlePremade);
-	var pizzaId = 1;
+	}));
 	for (var pizzaName in pizzaList) {
 		var pizza = getPremadePizzaStruct(pizzaName);
 		obj.append(getPizzaItemWithButtons(pizza)); //Adds each premade pizzas to the passed object.
