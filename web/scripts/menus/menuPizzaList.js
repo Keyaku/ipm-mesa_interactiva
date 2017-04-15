@@ -16,40 +16,51 @@ populatePremadeMenu($('#premade')); //Populates the premade pizza's menu dynamic
 
 ------------------------------------------------------------------------------*/
 function createPizzaPrice(pizzaSize) {
-	var pizzaPrice = '0€';
-	switch(pizzaSize) { //Sets the price of the pizza (based only on size).
-		case 'Small': pizzaPrice = '8€';
-			break;
-		case 'Medium': pizzaPrice = '10€';
-			break;
-		case 'Large': pizzaPrice = '12€';
-			break;
+	var prices = {
+		'Small'  : 8,
+		'Medium' : 10,
+		'Large'  : 12,
 	}
-	var d = $('<div></div>');
-	d.append($('<label></label>').append(document.createTextNode(pizzaSize + ' : ' + pizzaPrice)));
-	d.append($('<button></button>').attr('id', 'pizzaOrderButton')
-		.click(function() { setGlobalPizza(pizzaSize); }) //Sets the behaviour of click event.
-		.append(document.createTextNode('Order!')));
+	var pizzaPrice = (pizzaSize in prices) ? prices[pizzaSize] : 0;
+	var d = $('<div>');
+	d.append($('<label>', { html: pizzaSize + ' : ' + pizzaPrice + '€' }));
+	d.append($('<button>', {
+		html: 'Order!',
+		'click': function() { setGlobalPizza(pizzaSize); },
+		'id': 'pizzaOrderButton',
+	}));
 	return d;
 }
 function getSizeButtons() {
-	return $('<div></div>').addClass('buttonContainer')
-		.append($('<button></button>').addClass('mPIISizeButton').attr("id", "Small").append(document.createTextNode('S')))
-		.append($('<button></button>').addClass('mPIISizeButton').attr("id", "Medium").append(document.createTextNode('M')))
-		.append($('<button></button>').addClass('mPIISizeButton').attr("id", "Large").append(document.createTextNode('L')));
+	var d = $('<div>', { 'class': 'buttonContainer' });
+	['Small', 'Medium', 'Large'].forEach(function(size) {
+		d.append($('<button>', {
+			html: size[0], // Get first character from size
+			'class': 'mPIISizeButton',
+			'id': size
+		}));
+	});
+	return d;
 }
 
 function showPizzaExtensiveInformation(pizzaName, pizzaSize) {
-	$('#pizzaInformation').show(); //Unhides the lateral pizza information bar.
-	var closeX = $('<div></div>').attr('id', 'pizzaInformationClose').append(document.createTextNode('X'))
-		.click(function(){ hidePizzaExtensiveInformation(); }); //Sets the behaviour of click event.
-	var labelName = $('<label></label>').addClass('mPIITitle').append(document.createTextNode(pizzaName)); //Creates the label that represents the pizza's name.
+	var closeX = $('<div>', {
+		html: 'X',
+		'click': function(){ hidePizzaExtensiveInformation(); },
+		'id': 'pizzaInformationClose'
+	});
+	var labelName = $('<label>', {
+		html: pizzaName,
+		'class': 'mPIITitle'
+	}); //Creates the label that represents the pizza's name.
 	var pizza = getPremadePizza(pizzaName); //Gets the pizza's structure.
 	var list = createPizzaIngredientsList(pizza); //Gets the list of the pizza's ingredients.
 	var table = createPizzaNutritonFactsList(pizza); //Gets all the nutritional information for the pizza.
 	var ratingDiv = createPizzaRating(pizza); //Gets the rating.
 	var priceOrder = createPizzaPrice(pizzaSize); //Gets the price and order button.
-	$('#pizzaInformation').empty().append(closeX).append(labelName).append(list).append(table).append(ratingDiv).append(priceOrder);
+
+	$('#pizzaInformation').empty().append([closeX, labelName, list, table, ratingDiv, priceOrder])
+		.show();
 }
 function hidePizzaExtensiveInformation() {
 	$('#pizzaInformation').hide();
