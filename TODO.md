@@ -5,7 +5,6 @@
 * [ ] Remove any object fetching instance through the internet (a.k.a. Everything must run locally)
 * [ ] Rewrite the interface so it can accommodate a plate
 * [X] Change font to Raleway
-
 ### Index
 * [X] Change font to Kanit
 * [X] Rearrange Table of Contents
@@ -24,3 +23,18 @@
 * [X] jquery.navbar.js
 * [X] menuPizzaList.js
 * [X] menuDrinks.js
+
+# NOTES
+* [ ] quando adicionamos um ingrediente aparece a imagem simulada na pizza
+* [ ] existe alteração de tamanho dinâmica a meio da customização
+* [ ] botão "done" por baixo da pizza
+* [ ] aparece uma mensagem a dizer: "Em preparação"
+
+### Menu Flow
+* [x] Welcome screen
+* [ ] Order overlay with 3 options
+	* [ ] Choose dish
+		* [ ] Choose from menu
+		* [ ] Build your own
+	* [ ] Choose drink (presents a list of drinks with names, images and prices)
+	* [ ] Choose dessert
