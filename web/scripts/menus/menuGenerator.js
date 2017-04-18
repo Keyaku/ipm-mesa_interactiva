@@ -7,17 +7,14 @@ function showExtensiveInformation(objName, objSize = 0) {
 		'class': 'fa fa-times',
 		'click': function(){ hideExtensiveInformation(); },
 	});
-	var objTitle = $('<label>', { //Creates the label that represents the object's name.
-		html: objName,
-		'class': 'mPIITitle'
-	});
+	var objTitle = createItemName(objName);
 
 	// Pizza elements
-	var pizza;
+	var pizza = getPremadePizza(objName); //Gets the pizza's structure.
 	var ingredients;
 
 	// Drink elements
-	var drink;
+	var drink = getPremadeDrink(objName);
 	var drinkTypes;
 
 	// Global
@@ -27,17 +24,15 @@ function showExtensiveInformation(objName, objSize = 0) {
 
 	$('#extensiveInfoBar').empty().append([closeX, objTitle]);
 	if (objSize != 0) { // If objSize is given, then it's a pizza
-		pizza = getPremadePizza(objName); //Gets the pizza's structure.
 		ingredients = createPizzaIngredientsList(pizza); //Gets the list of the pizza's ingredients.
-		nutInfo = createPizzaNutritonFactsList(pizza); //Gets all the nutritional information for the pizza.
+		nutInfo = createNutritonalInfo(pizza); //Gets all the nutritional information for the pizza.
 		priceOrder = createPizzaPrice(objSize); //Gets the price and order button.
 
 		ratingDiv = createRating(pizza); //Gets the rating.
 
 		$('#extensiveInfoBar').append([ingredients, nutInfo, ratingDiv]);
 	} else {
-		drink = getPremadeDrink(objName);
-		nutInfo = createDrinkNutritionalInfo(drink); //Gets the nutritional information for the drink.
+		nutInfo = createNutritonalInfo(drink); //Gets the nutritional information for the drink.
 		drinkTypes = createDrinkTypes(drink); //Gets the drink's types.
 		priceOrder = createDrinkOrderButton(); //Gets the drink's order price and button.
 
@@ -47,6 +42,27 @@ function showExtensiveInformation(objName, objSize = 0) {
 }
 function hideExtensiveInformation() {
 	$('#extensiveInfoBar').hide();
+}
+
+/* Element creation */
+function createItemName(obj) {
+	if ($.type(obj) !== "string") { obj = obj['name'] }
+	return $('<label>', { //Creates the label that represents the item's name.
+		html: obj,
+		'class': 'mPITitle'
+	});
+}
+
+function createNutritonalInfo(obj) {
+	var nutInfo = obj['nutritions']; //Gets the list of nutritional facts.
+	var table = $('<table>'); //Creates the table of nutritional facts.
+	for (var key in nutInfo) {
+		table.append($('<tr>') //Creates each table row.
+			.append($('<td>', { html: key }))
+			.append($('<td>', { html: nutInfo[key] }))
+		);
+	}
+	return table;
 }
 
 function createRating(obj) {
@@ -89,13 +105,6 @@ function populatePremadeMenu(obj) {
 }
 
 /* Element creation */
-function createPizzaName(pizza) {
-	return $('<label>', { //Creates the label that represents the pizza's name.
-		html: pizza['name'],
-		'class': 'mPIITitle'
-	});
-}
-
 function createPizzaImg(pizza) {
 	return $('<img>', {
 		'src': pizza['image'],
@@ -115,28 +124,16 @@ function createPizzaIngredientsList(pizza) {
 	return ul;
 }
 
-function createPizzaNutritonFactsList(pizza) {
-	var nutInfo = pizza['nutritions']; //Gets the list of nutritional facts.
-	var table = $('<table>'); //Creates the table of nutritional facts.
-	for (var key in nutInfo) {
-		table.append($('<tr>') //Creates each table row.
-		.append($('<td>', { html: key }))
-		.append($('<td>', { html: nutInfo[key] }))
-		);
-	}
-	return table;
-}
-
 /* Whole Pizza creation */
 function createPizzaInfo(pizza) {
 	return  $('<div>', { //Adds the pizza's name and the ingredients list to the correct div.
-		html: [createPizzaName(pizza), createPizzaIngredientsList(pizza)],
+		html: [createItemName(pizza), createPizzaIngredientsList(pizza)],
 		'class': 'menuPizzaItemInfo'
 	});
 }
 
 function createPizzaInfoWithSize(pizza) {
-	var label = createPizzaName(pizza).append(' (' + pizza['pizzaSize'] + ')');
+	var label = createItemName(pizza).append(' (' + pizza['pizzaSize'] + ')');
 	var list = createPizzaIngredientsList(pizza); //Gets the pizza's ingredients.
 	return  $('<div>', { //Adds the pizza's name and the ingredients list to the correct div.
 		html: [label, list],
@@ -182,36 +179,12 @@ function populateDrinksMenu(obj) {
 	}
 }
 
-function createDrinkName(drink) {
-	return $('<label>', { //Creates the label that represents the pizza's name.
-		html: drink['name'],
-		'class': 'mPDITitle'
-	});
-}
-
+/* Element creation */
 function createDrinkImg(drink) {
 	return $('<img>', {
 		'src': drink['image'],
 		'class': 'menuDrinkItemImg'
 	});
-}
-
-function createDrinkItem(drink) {
-	return $('<div>', {
-		html: [createDrinkName(drink), createDrinkImg(drink)],
-		'class': 'menuDrinkItem'
-	});
-}
-
-function createDrinkNutritionalInfo(drink) {
-	var nutInfo = drink['nutritions']; //Gets the list of nutritional facts.
-	var table = $('<table>'); //Creates the table of nutritional facts.
-	for (var key in nutInfo) {
-		var n = $('<td>', { html: key }); //Creates a table item for each nutritional information key.
-		var v = $('<td>', { html: nutInfo[key] }); //Creates a table item for the value of each key.
-		table.append($('<tr>', { html: [n, v]})); //Creates each table row.
-	}
-	return table;
 }
 
 function createDrinkTypes(drink) {
@@ -224,4 +197,12 @@ function createDrinkTypes(drink) {
 		d.append(label);
 	}
 	return d;
+}
+
+/* Whole Drink creation */
+function createDrinkItem(drink) {
+	return $('<div>', {
+		html: [createItemName(drink), createDrinkImg(drink)],
+		'class': 'menuDrinkItem'
+	});
 }

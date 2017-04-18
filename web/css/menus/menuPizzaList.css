@@ -46,12 +46,6 @@ main label {
 	color: white;
 	text-align: center;
 }
-.mPIITitle {
-	display: table-caption;
-	font-size: 40px;
-	font-family: raleway, sans-serif;
-	margin-bottom: 10px;
-}
 .mPIIIngredientList {
 	margin: 0;
 	padding: 0;

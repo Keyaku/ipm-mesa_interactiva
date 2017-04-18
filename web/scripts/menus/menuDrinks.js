@@ -29,7 +29,7 @@ function createDrinkOrderButton() {
 function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }
 
 function setGlobalDrink() {
-	var b = $('#drinksInformation').children('.mPDITitle').text(); //Gets the name of the ordered pizza.
+	var b = $('#drinksInformation').children('.mPITitle').text(); //Gets the name of the ordered pizza.
 	managerAddNewDrink(b);
 	if (sessionStorage.getItem('editing') == 'true') {
 		sessionStorage.setItem('editing', 'false');
@@ -46,7 +46,7 @@ function setGlobalDrink() {
 
 ------------------------------------------------------------------------------*/
 //Generates and shows the lateral drink information.
-$('.menuDrinkItem').click(function() { showExtensiveInformation($(this).children('.mPDITitle').text()); });
+$('.menuDrinkItem').click(function() { showExtensiveInformation($(this).children('.mPITitle').text()); });
 
 //The click event of #drinksInformationClose is defined in the spawning (in showExtensiveInformation()).
 //The click event of #drinkOrderButton is defined in the spawning (in createDrinkOrderButton()).

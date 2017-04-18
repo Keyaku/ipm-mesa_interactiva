@@ -46,7 +46,7 @@ function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confir
 function confirmSkip() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for skipping the pizza order.*/}
 
 function setGlobalPizza(pizzaSize) {
-	var pizzaName = $('#pizzaInformation').children('.mPIITitle').text(); //Gets the name of the ordered pizza.
+	var pizzaName = $('#pizzaInformation').children('.mPITitle').text(); //Gets the name of the ordered pizza.
 	if (sessionStorage.getItem("editing") == "true") {
 		sessionStorage.setItem("editing", "false"); //Sets the editing flag to false.
 		managerEditPizza(pizzaName, pizzaSize); //Adds the pizza to the system.
@@ -65,7 +65,7 @@ function setGlobalPizza(pizzaSize) {
 
 ------------------------------------------------------------------------------*/
 $('.mPIISizeButton').click(function(){ //Generates and shows the lateral pizza information bar of the chosen pizza.
-	var pizzaName = ($(this).parent().parent()).children('.mPIITitle').text(); //Gets the chosen pizza's name.
+	var pizzaName = ($(this).parent().parent()).children('.mPITitle').text(); //Gets the chosen pizza's name.
 	var pizzaSize = $(this).attr("id"); //Gets the chosen pizza's size.
 	showExtensiveInformation(pizzaName, pizzaSize); //Shows the lateral pizza information bar.
 });
