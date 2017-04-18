@@ -42,6 +42,13 @@ p {
 	font-size: 30px;
 }
 
+/* Font-Awesome icons */
 .fa.fa-star {
 	color: white;
+}
+.fa.fa-times {
+	color: white;
+	float: right;
+	font-size: 50px;
+	font-weight: bolder;
 }

@@ -44,10 +44,9 @@ function createSizeButtons() {
 }
 
 function showPizzaExtensiveInformation(pizzaName, pizzaSize) {
-	var closeX = $('<div>', {
-		html: 'X',
+	var closeX = $('<i>', {
+		'class': 'fa fa-times',
 		'click': function(){ hidePizzaExtensiveInformation(); },
-		'id': 'pizzaInformationClose'
 	});
 	var labelName = $('<label>', {
 		html: pizzaName,

@@ -28,24 +28,23 @@ function createDrinkOrderButton() {
 }
 
 function showDrinkExtensiveInformation(drinkName) {
-	var drink = getPremadeDrink(drinkName);
-	var closeX = $('<div>', {
-		html: 'X',
-		'click': function() { hidePizzaExtensiveInformation(); },
-		'id': 'drinksInformationClose'
+	var closeX = $('<i>', {
+		'class': 'fa fa-times',
+		'click': function(){ hideDrinkExtensiveInformation(); },
 	});
 	var label = $('<label>', { //Creates the label for the drink's name.
 		html: drinkName,
 		'class': 'mPDITitle'
 	});
+	var drink = getPremadeDrink(drinkName);
 	var nutInfo = createDrinkNutritionalInfo(drink); //Gets the nutritional information for the drink.
 	var drinkTypes = createDrinkTypes(drink); //Gets the drink's types.
 	var drinkOrder = createDrinkOrderButton(); //Gets the drink's order price and button.
 
 	$('#drinksInformation').empty().append([closeX, label, nutInfo, drinkTypes, drinkOrder])
-		.show();//Shows the lateral pizza information bar.
+		.show();//Shows the lateral drink information bar.
 }
-function hidePizzaExtensiveInformation() {
+function hideDrinkExtensiveInformation() {
 	$('#drinksInformation').hide();
 }
 function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }

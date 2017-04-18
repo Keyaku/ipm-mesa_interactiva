@@ -94,12 +94,6 @@ main label {
 	font-size: 14pt;
 	margin: 0 10pt;
 }
-#pizzaInformationClose {
-	color: white;
-	float: right;
-	font-size: 40px;
-	margin-top: 20px;
-}
 
 /* Create Your Own Pizza Shortcut */
 #createPizzaShortcut {
