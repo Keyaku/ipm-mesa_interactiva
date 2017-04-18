@@ -20,15 +20,6 @@ main label {
 }
 
 /* Menu of premade pizzas */
-#menuPremadePizzas {
-	float: left;
-	position: relative;
-	overflow-x: hidden;
-	height: 100%;
-}
-#menuPremadePizzas section {
-	margin: 10px 0;
-}
 .menuPizzaItem {
 	border-bottom: 1px dashed white;
 	display: block;

@@ -31,6 +31,17 @@ p {
 	color: white;
 }
 
+/* Left-side of the menu */
+.menuItems {
+	float: left;
+	position: relative;
+	overflow-x: hidden;
+	height: 100%;
+}
+.menuItems section {
+	margin: 10px 0;
+}
+
 /* Buttons */
 .buttonContainer {
 	text-align: center;

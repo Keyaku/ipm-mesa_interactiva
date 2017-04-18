@@ -1,14 +1,4 @@
-.orderMenu {
-	overflow-x: hidden;
-	width: 60%;
-	height: 100%;
-}
-
 /*			Menu of drinks													*/
-#menuDrinks {
-	float: left;
-	margin: 0 0 0 40pt;
-}
 .menuDrinkItem {
 	border-bottom: 1px dashed white;
 	display: inline-block;

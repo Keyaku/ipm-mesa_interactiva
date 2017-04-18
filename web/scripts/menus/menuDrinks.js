@@ -5,7 +5,7 @@
 ------------------------------------------------------------------------------*/
 $('#navbar').navbar(); //Adding top navigation bar.
 $('#menubar').menubar(); //Adding menu bar.
-populateDrinksMenu($('#menuDrinks')); //Populates the drink's menu dynamically.
+populateDrinksMenu($('.menuItems')); //Populates the drink's menu dynamically.
 
 
 /*------------------------------------------------------------------------------
