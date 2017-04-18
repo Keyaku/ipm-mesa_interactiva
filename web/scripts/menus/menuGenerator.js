@@ -41,7 +41,7 @@ function showExtensiveInformation(objName, objSize = 0) {
 		drinkTypes = createDrinkTypes(drink); //Gets the drink's types.
 		priceOrder = createDrinkOrderButton(); //Gets the drink's order price and button.
 
-		$('#drinksInformation').append([nutInfo, drinkTypes])
+		$('#extensiveInfoBar').append([nutInfo, drinkTypes]);
 	}
 	$('#extensiveInfoBar').append([priceOrder, priceOrder]).show();
 }
