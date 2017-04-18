@@ -25,6 +25,7 @@ function populatePremadeMenu(obj) {
 	}
 }
 
+/* Element creation */
 function createPizzaName(pizza) {
 	return $('<label>', { //Creates the label that represents the pizza's name.
 		html: pizza['name'],
@@ -32,54 +33,10 @@ function createPizzaName(pizza) {
 	});
 }
 
-function createPizzaInfo(pizza) {
-	return  $('<div>', { //Adds the pizza's name and the ingredients list to the correct div.
-		html: [createPizzaName(pizza), createPizzaIngredientsList(pizza)],
-		'class': 'menuPizzaItemInfo'
-	});
-}
-
-function createPizzaInfoWithSize(pizza) {
-	var label = createPizzaName(pizza).append(' (' + pizza['pizzaSize'] + ')');
-	var list = createPizzaIngredientsList(pizza); //Gets the pizza's ingredients.
-	return  $('<div>', { //Adds the pizza's name and the ingredients list to the correct div.
-		html: [label, list],
-		'class': 'menuPizzaItemInfo'
-	});
-}
-
 function createPizzaImg(pizza) {
 	return $('<img>', {
 		'src': pizza['image'],
 		'class': 'col-md-6 pizzaThumbnail'
-	});
-}
-
-function createPizzaItem(pizza) {
-	return $('<div>', {
-		html: [createPizzaImg(pizza), createPizzaInfo(pizza)],
-		'class': 'menuPizzaItem row'
-	});
-}
-
-function createPizzaItemWithSize(pizza) {
-	return $('<div>', {
-		html: [createPizzaImg(pizza), createPizzaInfoWithSize(pizza)],
-		'class': 'menuPizzaItem row'
-	});
-}
-
-function createPizzaItemWithButtons(pizza) {
-	return $('<div>', {
-		html: [createPizzaImg(pizza), createPizzaInfo(pizza).append(createSizeButtons())],
-		'class': 'menuPizzaItem row'
-	});
-}
-
-function createPizzaSuggestion(pizza) {
-	return $('<div>', {
-		html: createPizzaInfo(pizza).append(createSizeButtons()),
-		'class': 'menuPizzaSugestion'
 	});
 }
 
@@ -117,6 +74,51 @@ function createPizzaRating(pizza) {
 		'class': 'pizzaRatingValue'
 	}));
 	return d;
+}
+
+/* Whole Pizza creation */
+function createPizzaInfo(pizza) {
+	return  $('<div>', { //Adds the pizza's name and the ingredients list to the correct div.
+		html: [createPizzaName(pizza), createPizzaIngredientsList(pizza)],
+		'class': 'menuPizzaItemInfo'
+	});
+}
+
+function createPizzaInfoWithSize(pizza) {
+	var label = createPizzaName(pizza).append(' (' + pizza['pizzaSize'] + ')');
+	var list = createPizzaIngredientsList(pizza); //Gets the pizza's ingredients.
+	return  $('<div>', { //Adds the pizza's name and the ingredients list to the correct div.
+		html: [label, list],
+		'class': 'menuPizzaItemInfo'
+	});
+}
+
+function createPizzaItem(pizza) {
+	return $('<div>', {
+		html: [createPizzaImg(pizza), createPizzaInfo(pizza)],
+		'class': 'menuPizzaItem row'
+	});
+}
+
+function createPizzaItemWithSize(pizza) {
+	return $('<div>', {
+		html: [createPizzaImg(pizza), createPizzaInfoWithSize(pizza)],
+		'class': 'menuPizzaItem row'
+	});
+}
+
+function createPizzaItemWithButtons(pizza) {
+	return $('<div>', {
+		html: [createPizzaImg(pizza), createPizzaInfo(pizza).append(createSizeButtons())],
+		'class': 'menuPizzaItem row'
+	});
+}
+
+function createPizzaSuggestion(pizza) {
+	return $('<div>', {
+		html: createPizzaInfo(pizza).append(createSizeButtons()),
+		'class': 'menuPizzaSugestion'
+	});
 }
 
 /*------------------------------------------------------------------------------
