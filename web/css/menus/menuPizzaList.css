@@ -89,12 +89,6 @@ main label {
 	z-index: 5;
 }
 #pizzaInformation td { color: white; }
-.star {
-	background-image: url("../../img/icons/star.svg");
-	display: inline-block;
-	width: 18px;
-	height: 18px;
-}
 .pizzaRatingValue {
 	display: inline-block;
 	font-size: 14pt;

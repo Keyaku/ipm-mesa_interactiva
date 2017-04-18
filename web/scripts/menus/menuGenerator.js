@@ -67,7 +67,7 @@ function createPizzaNutritonFactsList(pizza) {
 function createPizzaRating(pizza) {
 	var d = $('<div>', { 'class': 'pizzaRating' });
 	for (var i = 0; i < 5; i++) {
-		d.append($('<span>', { 'class': 'star' }));
+		d.append($('<i>', { 'class': 'fa fa-star' }));
 	}
 	d.append($('<p>', {
 		html: pizza['rating'],

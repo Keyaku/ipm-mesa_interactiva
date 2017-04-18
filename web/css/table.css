@@ -41,3 +41,7 @@ p {
 	font-family: raleway, sans-serif;
 	font-size: 30px;
 }
+
+.fa.fa-star {
+	color: white;
+}
