@@ -5,7 +5,6 @@
 ------------------------------------------------------------------------------*/
 $('#navbar').navbar(); //Adding top navigation bar.
 $('#menubar').menubar(); //Adding menu bar.
-$('#drinksInformation').hide(); //Hides the lateral pizza information bar.
 populateDrinksMenu($('#menuDrinks')); //Populates the drink's menu dynamically.
 
 
@@ -27,26 +26,6 @@ function createDrinkOrderButton() {
 	return $('<div>').append([price, button]);
 }
 
-function showDrinkExtensiveInformation(drinkName) {
-	var closeX = $('<i>', {
-		'class': 'fa fa-times',
-		'click': function(){ hideDrinkExtensiveInformation(); },
-	});
-	var label = $('<label>', { //Creates the label for the drink's name.
-		html: drinkName,
-		'class': 'mPDITitle'
-	});
-	var drink = getPremadeDrink(drinkName);
-	var nutInfo = createDrinkNutritionalInfo(drink); //Gets the nutritional information for the drink.
-	var drinkTypes = createDrinkTypes(drink); //Gets the drink's types.
-	var drinkOrder = createDrinkOrderButton(); //Gets the drink's order price and button.
-
-	$('#drinksInformation').empty().append([closeX, label, nutInfo, drinkTypes, drinkOrder])
-		.show();//Shows the lateral drink information bar.
-}
-function hideDrinkExtensiveInformation() {
-	$('#drinksInformation').hide();
-}
 function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }
 
 function setGlobalDrink() {
@@ -67,8 +46,8 @@ function setGlobalDrink() {
 
 ------------------------------------------------------------------------------*/
 //Generates and shows the lateral drink information.
-$('.menuDrinkItem').click(function() { showDrinkExtensiveInformation($(this).children('.mPDITitle').text()); });
+$('.menuDrinkItem').click(function() { showExtensiveInformation($(this).children('.mPDITitle').text()); });
 
-//The click event of #drinksInformationClose is defined in the spawning (in showDrinkExtensiveInformation()).
+//The click event of #drinksInformationClose is defined in the spawning (in showExtensiveInformation()).
 //The click event of #drinkOrderButton is defined in the spawning (in createDrinkOrderButton()).
 $('#cancelButton').click(function() { window.location.href = 'html/table.html'; }); //Changes the page to the main page.

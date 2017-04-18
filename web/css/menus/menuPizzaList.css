@@ -80,21 +80,6 @@ main label {
 	padding: 15px 20px;
 }
 
-/* Lateral pizza information bar */
-#pizzaInformation {
-	background-color: rgba(0, 0, 0, 0.8);
-	float: right;
-	margin-right: 5%;
-	height: 100%;
-	z-index: 5;
-}
-#pizzaInformation td { color: white; }
-.pizzaRatingValue {
-	display: inline-block;
-	font-size: 14pt;
-	margin: 0 10pt;
-}
-
 /* Create Your Own Pizza Shortcut */
 #createPizzaShortcut {
 	position: absolute;

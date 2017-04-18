@@ -5,7 +5,6 @@
 ------------------------------------------------------------------------------*/
 $('#menubar').menubar(); //Adding menu bar
 $('#navbar').navbar(); //Adding top navigation bar
-$('#pizzaInformation').hide(); //Hides the lateral pizza information bar.
 populateSuggestions($('#suggestions')); //Populates the suggested pizza's menu dynamically.
 populatePremadeMenu($('#premade')); //Populates the premade pizza's menu dynamically.
 
@@ -43,28 +42,6 @@ function createSizeButtons() {
 	return d;
 }
 
-function showPizzaExtensiveInformation(pizzaName, pizzaSize) {
-	var closeX = $('<i>', {
-		'class': 'fa fa-times',
-		'click': function(){ hidePizzaExtensiveInformation(); },
-	});
-	var labelName = $('<label>', {
-		html: pizzaName,
-		'class': 'mPIITitle'
-	}); //Creates the label that represents the pizza's name.
-	var pizza = getPremadePizza(pizzaName); //Gets the pizza's structure.
-	var list = createPizzaIngredientsList(pizza); //Gets the list of the pizza's ingredients.
-	var table = createPizzaNutritonFactsList(pizza); //Gets all the nutritional information for the pizza.
-	var ratingDiv = createPizzaRating(pizza); //Gets the rating.
-	var priceOrder = createPizzaPrice(pizzaSize); //Gets the price and order button.
-
-	$('#pizzaInformation').empty().append([closeX, labelName, list, table, ratingDiv, priceOrder])
-		.show();
-}
-function hidePizzaExtensiveInformation() {
-	$('#pizzaInformation').hide();
-}
-
 function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }
 function confirmSkip() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for skipping the pizza order.*/}
 
@@ -90,9 +67,9 @@ function setGlobalPizza(pizzaSize) {
 $('.mPIISizeButton').click(function(){ //Generates and shows the lateral pizza information bar of the chosen pizza.
 	var pizzaName = ($(this).parent().parent()).children('.mPIITitle').text(); //Gets the chosen pizza's name.
 	var pizzaSize = $(this).attr("id"); //Gets the chosen pizza's size.
-	showPizzaExtensiveInformation(pizzaName, pizzaSize); //Shows the lateral pizza information bar.
+	showExtensiveInformation(pizzaName, pizzaSize); //Shows the lateral pizza information bar.
 });
-//The click event of #pizzaInformationClose is defined in the spawning (in showPizzaExtensiveInformation()).
+//The click event of #pizzaInformationClose is defined in the spawning (in showExtensiveInformation()).
 //The click event of #pizzaOrderButton is defined in the spawning (in createPizzaPrice()).
 $('#skipButton').click(function() { //Changes the page to the drinks menu.
 	$(location).attr('href', 'html/menus/menuDrinks.html');

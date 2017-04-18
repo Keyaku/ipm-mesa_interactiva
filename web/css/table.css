@@ -42,6 +42,24 @@ p {
 	font-size: 30px;
 }
 
+/* Extensive Information Bar */
+#extensiveInfoBar {
+	background-color: rgba(0, 0, 0, 0.8);
+	float: right;
+	margin-right: 5%;
+	height: 100%;
+	z-index: 5;
+}
+#extensiveInfoBar td {
+	color: white;
+}
+.rating {}
+.ratingValue {
+	display: inline-block;
+	font-size: 14pt;
+	margin: 0 10pt;
+}
+
 /* Font-Awesome icons */
 .fa.fa-star {
 	color: white;

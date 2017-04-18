@@ -1,4 +1,67 @@
 /*------------------------------------------------------------------------------
+				SHARED CODE
+------------------------------------------------------------------------------*/
+$('#extensiveInfoBar').hide(); //Hides the lateral pizza information bar.
+function showExtensiveInformation(objName, objSize = 0) {
+	var closeX = $('<i>', {
+		'class': 'fa fa-times',
+		'click': function(){ hideExtensiveInformation(); },
+	});
+	var objTitle = $('<label>', { //Creates the label that represents the object's name.
+		html: objName,
+		'class': 'mPIITitle'
+	});
+
+	// Pizza elements
+	var pizza;
+	var ingredients;
+
+	// Drink elements
+	var drink;
+	var drinkTypes;
+
+	// Global
+	var nutInfo;
+	var ratingDiv;
+	var priceOrder;
+
+	$('#extensiveInfoBar').empty().append([closeX, objTitle]);
+	if (objSize != 0) { // If objSize is given, then it's a pizza
+		pizza = getPremadePizza(objName); //Gets the pizza's structure.
+		ingredients = createPizzaIngredientsList(pizza); //Gets the list of the pizza's ingredients.
+		nutInfo = createPizzaNutritonFactsList(pizza); //Gets all the nutritional information for the pizza.
+		priceOrder = createPizzaPrice(objSize); //Gets the price and order button.
+
+		ratingDiv = createRating(pizza); //Gets the rating.
+
+		$('#extensiveInfoBar').append([ingredients, nutInfo, ratingDiv]);
+	} else {
+		drink = getPremadeDrink(objName);
+		nutInfo = createDrinkNutritionalInfo(drink); //Gets the nutritional information for the drink.
+		drinkTypes = createDrinkTypes(drink); //Gets the drink's types.
+		priceOrder = createDrinkOrderButton(); //Gets the drink's order price and button.
+
+		$('#drinksInformation').append([nutInfo, drinkTypes])
+	}
+	$('#extensiveInfoBar').append([priceOrder, priceOrder]).show();
+}
+function hideExtensiveInformation() {
+	$('#extensiveInfoBar').hide();
+}
+
+function createRating(obj) {
+	var d = $('<div>', { 'class': 'rating' });
+	for (var i = 0; i < 5; i++) {
+		d.append($('<i>', { 'class': 'fa fa-star' }));
+	}
+	d.append($('<p>', {
+		html: obj['rating'],
+		'class': 'ratingValue'
+	}));
+	return d;
+}
+
+/*------------------------------------------------------------------------------
 				PIZZA-RELATED CODE
 ------------------------------------------------------------------------------*/
 function populateSuggestions(obj) {
@@ -62,18 +125,6 @@ function createPizzaNutritonFactsList(pizza) {
 		);
 	}
 	return table;
-}
-
-function createPizzaRating(pizza) {
-	var d = $('<div>', { 'class': 'pizzaRating' });
-	for (var i = 0; i < 5; i++) {
-		d.append($('<i>', { 'class': 'fa fa-star' }));
-	}
-	d.append($('<p>', {
-		html: pizza['rating'],
-		'class': 'pizzaRatingValue'
-	}));
-	return d;
 }
 
 /* Whole Pizza creation */
