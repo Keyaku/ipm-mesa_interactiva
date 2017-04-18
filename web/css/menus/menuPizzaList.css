@@ -1,9 +1,7 @@
 main label {
-	color: white;
 	font-family: bangers, Fallback, sans-serif;
 	font-size: 60px;
-	text-align: center;
-	text-shadow: 0 0 10px #000;
+	text-align: center
 }
 
 /* Premade pizza sugestions */
