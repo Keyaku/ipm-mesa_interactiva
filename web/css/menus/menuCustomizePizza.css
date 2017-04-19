@@ -231,24 +231,28 @@ border-color: rgba(207,255,149, 0.2);
 }
 
 #customizationConfirmation {
-	background-color: rgba(46, 125, 50, 0.2);
+	background-color: rgba(255,255,255, 0.3);
 	border-radius: 20px;
-	color: #6B9B37;
+	color: #FFFFFF;
 	font-size: 30px;
 	font-family: raleway, sans-serif;
 	padding: 1% 4% 1% 4%;
 	text-align: center;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: black;
 }
 
 #back {
-	background-color: rgba(213, 0, 0, 0.2);
+	background-color: rgba(255,255,255, 0.3);
 	border-radius: 20px;
-	color: #D32F2F;
+	color: #FFFFFF;
 	font-size: 30px;
 	font-family: raleway, sans-serif;
 	padding: 1% 4% 1% 4%;
 	margin-left: 15%;
 	text-align: center;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: black;
 }
 /*
 background-color: rgba(183,28,28, 0.2);
