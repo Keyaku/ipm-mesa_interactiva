@@ -2,25 +2,12 @@ main {
 	overflow-y: scroll;
 }
 
-/* Specific buttons */
-.buttonContainer#customizeButtons {
-	float: right;
-	top:50%;
-}
-.buttonContainer#customizeButtons #confirm {
-	margin-left: 15%;
-}
-.buttonContainer#customizeButtons #back {
-	margin-left: 15%;
-}
-
 .menuTitle {
 	color: #D32F2F;
 	font-size: 100px;
 	font-family: bangers, sans-serif;
-	margin-top: 5%;
 	margin-left: 3.7%;
-	text-shadow: 0px 0px 10px #000;
+	text-shadow: 0 0 10px #000;
 	-webkit-text-stroke-width: 3px;
 	-webkit-text-stroke-color: black;
 }
@@ -34,7 +21,7 @@ main {
 }
 
 .customizeStep {
-	text-shadow: 0px 0px 10px #000;
+	text-shadow: 0 0 10px #000;
 	height: 100%;
 }
 
@@ -158,14 +145,24 @@ svg.pizzaSizes.active circle {
 	margin-left: -27%;
 }
 
+/* Specific buttons */
+.buttonContainer#customizeButtons {
+	float: right;
+	top:50%;
+}
+.buttonContainer#customizeButtons #confirm {
+	margin-left: 15%;
+}
+.buttonContainer#customizeButtons #back {
+	margin-left: 15%;
+}
+
 ::-webkit-scrollbar {
     background-color: rgba(46, 125, 50, 0.2);
 	border-radius: 20px;
 }
 
 ::-webkit-scrollbar:vertical {
-	background-color: rgba(46, 125, 50, 0.2);
-	border-radius: 20px;
 	width: 0.5%;
 }
 
@@ -176,26 +173,4 @@ svg.pizzaSizes.active circle {
 
 ::-webkit-scrollbar-thumb:hover {
 	background-color: white;
-}
-
-::-webkit-scrollbar-button:horizontal:increment {
-    background-image: url(../../img/menus/customizeMenu/next.svg);
-}
-
-::-webkit-scrollbar-button:horizontal:decrement {
-    background-image: url(../../img/menus/customizeMenu/back.svg);
-}
-
-/* decrement is up, do not be fooled - fools */
-::-webkit-scrollbar-button:vertical:decrement {
-    background-image: url(../../img/menus/customizeMenu/up.svg);
-}
-
-/* increment is down, do not be fooled - fools */
-::-webkit-scrollbar-button:vertical:increment {
-    background-image: url(../../img/menus/customizeMenu/down.svg);
-}
-
-#fish::-webkit-scrollbar-button {
-		background-image: none;
 }
