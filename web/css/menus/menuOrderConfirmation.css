@@ -1,53 +1,28 @@
-#order {
-	margin: 0 0 0 40pt;
-	width: 50%;
+main {
+	height: 105%; /* FIXME: experimentation */
 }
 
-.menuPizzaItem {
-	display: block;
-	margin: 0 0 20px 0;
-	width: 100%;
-	height: 280px;
-}
-.pizzaThumbnail {
-	float: left;
-	width: 30%;
-	height: auto;
-}
-.menuPizzaItemInfo {
-	color: white;
-	float: left;
-	margin: 0 0 0 5%;
-}
-.mPIITitle {
-	display: block;
-	font-size: 40px;
-	font-family: raleway, sans-serif;
-	margin: 0 0 10px 0;
-}
-.mPIIIngredient {
-	display: block;
-	font-size: 15px;
-	font-family: raleway, sans-serif;
-	margin: 0;
+main h1 {
+	color: #ecf0f1;
+	font-size: 60px;
+	font-family: bangers, sans-serif;
+	margin-left: 5%;
+	/*text-shadow: 0 0 10px #000;*/
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: black;
 }
 
-#menuDrinks {
-	float: left;
-	margin: 0 0 0 40pt;
+#orderList {
+	overflow-y: scroll;
 }
-.menuDrinkItem {
+
+.buttonContainer button {
+	background-color: #2ecc31;
+	border-color: #27ae60;
+	box-shadow: 0px 5px 10px black;
+	font-family: 'Raleway', sans-serif;
+	font-size: 30px;
+	padding: 1% 4%;
 	text-align: center;
-	width: 30%;
-	height: 350px;
-}
-.menuDrinkItemImg {
-	width: 100%;
-	height: auto;
-}
-.mPDITitle {
-	display: block;
-	font-size: 40px;
-	font-family: raleway, sans-serif;
-	margin: 0 0 10px 0;
+	-webkit-text-stroke: inherit;
 }
