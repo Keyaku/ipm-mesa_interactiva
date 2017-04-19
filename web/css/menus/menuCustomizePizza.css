@@ -169,10 +169,10 @@ svg.pizzaSizes.active circle {
 .buttonContainer#customizeButtons {
 	display: inline-block;
 	float: right;
-	margin: 20% 15% 0 0;
+	margin-top: 20%;
 }
-#confirm, #back {
-	width: 200px;
+.buttonContainer#customizeButtons button {
+	padding: 1% 5%;
 }
 
 ::-webkit-scrollbar {
