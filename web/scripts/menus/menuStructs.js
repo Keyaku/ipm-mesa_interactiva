@@ -54,83 +54,98 @@ var drinksList = {
 	'Water' : {
 		'name' : 'Water',
 		'sizes' : ['Bottle (25cl)', 'Bottle (50cl)', 'Bottle (1L)'],
-		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/pizzaMenu/menuPizza1.png',
+		'nutritions' : {'Calories':'1kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
+		'image' : 'img/menus/drinksMenu/aqua.png',
 	},
 	'Sparkling Water' : {
 		'name' : 'Sparkling Water',
 		'sizes' : ['Bottle (25cl)', 'Bottle (50cl)', 'Bottle (1L)'],
+		'nutritions' : {'Calories':'1kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
+		'image' : 'img/menus/drinksMenu/pedras.png',
+	},
+	'Heineken' : {
+		'name' : 'Heineken',
+		'sizes' : ['Bottle (25cl)', 'Can (33cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/pizzaMenu/menuPizza2.png',
+		'image' : 'img/menus/drinksMenu/heineken.png',
+	},
+	'Bavaria' : {
+		'name' : 'Bavaria',
+		'sizes' : ['Can (33cl)'],
+		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
+		'image' : 'img/menus/drinksMenu/bavaria.png',
+	},
+	'Sweppes Citrus' : {
+		'name' : 'Sweppes Citrus',
+		'sizes' : ['Bottle (25cl)', 'Can (33cl)'],
+		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
+		'image' : 'img/menus/drinksMenu/sweppescitrus.png',
 	},
 	'Fresh Juice' : {
 		'name' : 'Fresh Juice',
-		'sizes' : ['Orange Juice (25cl)', 'Blueberry Juice (50cl)', 'Lemonade (1L)', 'Tutti Frutti (50cl)'],
-		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/pizzaMenu/menuPizza3.png',
+		'sizes' : ['Orange Juice (25cl)', 'Blueberry Juice (25cl)', 'Lemonade (25cl)', 'Tutti Frutti (25cl)'],
+		'nutritions' : {'Calories':'55kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
+		'image' : 'img/menus/drinksMenu/freshjuice.png',
 	},
-
-	'Coca-Cola Original' : {
-		'name' : 'Coca-Cola Original',
-		'sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
+	'Coca-Cola Classic' : {
+		'name' : 'Coca-Cola Classic',
+		'sizes' : ['Bottle (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/pizzaMenu/menuPizza4.png',
+		'image' : 'img/menus/drinksMenu/cocacolaclassic.png',
 	},
 	'Coca-Cola Zero' : {
 		'name' : 'Coca-Cola Zero',
-		'sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
+		'sizes' : ['Bottle (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/pizzaMenu/menuPizza5.png',
+		'image' : 'img/menus/drinksMenu/cocacolazero.png',
 	},
-
-	'Sumol (Orange)' : {
-		'name' : 'Sumol (Orange)',
-		'sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
+	'Coca-Cola Light' : {
+		'name' : 'Coca-Cola Light',
+		'sizes' : ['Bottle (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/pizzaMenu/menuPizza5.png',
+		'image' : 'img/menus/drinksMenu/cocacolalight.png',
 	},
-	'Sumol (Pineapple)' : {
-		'name' : 'Sumol (Pineapple)',
-		'sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
+	'Fanta Orange' : {
+		'name' : 'Fanta Orange',
+		'sizes' : ['Can (33cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/pizzaMenu/menuPizza5.png',
+		'image' : 'img/menus/drinksMenu/fantaorange.png',
 	},
-	'Sumol (Passion Fruit)' : {
-		'name' : 'Sumol (Passion Fruit)',
-		'sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
+	'Fanta Grape' : {
+		'name' : 'Fanta Grape',
+		'sizes' : ['Can (33cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/pizzaMenu/menuPizza5.png',
+		'image' : 'img/menus/drinksMenu/fantagrape.png',
 	},
-	'Sumol (Mango)' : {
-		'name' : 'Sumol (Mango)',
-		'sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
+	'Sprite' : {
+		'name' : 'Sprite',
+		'sizes' : ['Can (33cl)', 'Glass (40cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/pizzaMenu/menuPizza5.png',
+		'image' : 'img/menus/drinksMenu/sprite.png',
 	},
-
-	'Lipton Ice Tea (Orange)' : {
-		'name' : 'Lipton Ice Tea (Orange)',
-		'sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
+	'Lipton Ice Tea Peach' : {
+		'name' : 'Lipton Ice Tea Peach',
+		'sizes' : ['Can (33cl)', 'Glass (40cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/pizzaMenu/menuPizza5.png',
+		'image' : 'img/menus/drinksMenu/iceteapeach.png',
 	},
-	'Lipton Ice Tea (Pineapple)' : {
-		'name' : 'Lipton Ice Tea (Pineapple)',
-		'sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
+	'Lipton Ice Tea Lemon' : {
+		'name' : 'Lipton Ice Tea Lemon',
+		'sizes' : ['Can (33cl)', 'Glass (40cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/pizzaMenu/menuPizza5.png',
+		'image' : 'img/menus/drinksMenu/icetealemon.png',
 	},
-	'Lipton Ice Tea (Passion Fruit)' : {
-		'name' : 'Lipton Ice Tea (Passion Fruit)',
-		'sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
+	'Lipton Ice Tea Mango' : {
+		'name' : 'Lipton Ice Tea Mango',
+		'sizes' : ['Can (33cl)', 'Glass (40cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/pizzaMenu/menuPizza5.png',
+		'image' : 'img/menus/drinksMenu/iceteamango.png',
 	},
-	'Lipton Ice Tea (Mango)' : {
-		'name' : 'Lipton Ice Tea (Mango)',
-		'sizes' : ['Glass (25cl)', 'Can (33cl)', 'Glass (40cl)'],
-		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/pizzaMenu/menuPizza5.png',
+	'Burn' : {
+		'name' : 'Burn',
+		'sizes' : ['Can (33cl)'],
+		'nutritions' : {'Calories':'240kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
+		'image' : 'img/menus/drinksMenu/burn.png',
 	},
 };
 
