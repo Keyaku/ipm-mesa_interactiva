@@ -76,17 +76,6 @@ p {
 	margin-right: 5%;
 }
 
-/* Specific buttons */
-.buttonContainer#customizeButtons {
-	float: right;
-}
-.buttonContainer#customizeButtons #confirm {
-	margin-left: 15%;
-}
-.buttonContainer#customizeButtons #back {
-	margin-left: 15%;
-}
-
 /************************* Extensive Information Bar *************************/
 #extensiveInfoBar {
 	background-color: rgba(0, 0, 0, 0.8);

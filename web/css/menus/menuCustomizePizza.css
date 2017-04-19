@@ -2,6 +2,18 @@ main {
 	overflow-y: scroll;
 }
 
+/* Specific buttons */
+.buttonContainer#customizeButtons {
+	float: right;
+	top:50%;
+}
+.buttonContainer#customizeButtons #confirm {
+	margin-left: 15%;
+}
+.buttonContainer#customizeButtons #back {
+	margin-left: 15%;
+}
+
 .menuTitle {
 	color: #D32F2F;
 	font-size: 100px;
@@ -13,29 +25,17 @@ main {
 	-webkit-text-stroke-color: black;
 }
 
-.pizzaCustomizationItemsContainer.sizes {
-	height: 50%;
-}
-
-.pizzaCustomizationItemsContainer.dough {
-	height: 125%;
-}
-
-.pizzaCustomizationItemsContainer.ingredients {
-	height: 145%;
-}
-
-.pizzaCustomizationItemsContainer:not(.ingredients) {
+.pizzaCustomizationItemsContainer:not(#pizzaIngredients) {
 	text-align: center;
 }
 
-.pizzaCustomizationItemsContainer:not(.sizes) {
+.pizzaCustomizationItemsContainer.dough {
 	margin-left: 5%;
 }
 
 .customizeStep {
-	display: block;
 	text-shadow: 0px 0px 10px #000;
+	height: 100%;
 }
 
 .customizeStep h1 {
@@ -124,7 +124,6 @@ svg.pizzaSizes.active circle {
 	overflow-x: scroll;
 	overflow-y: visible;
 	white-space: nowrap;
-	width: 33%;
 }
 
 .pizzaIngredientTypeLabel {
