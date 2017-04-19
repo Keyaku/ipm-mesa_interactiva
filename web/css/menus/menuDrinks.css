@@ -77,7 +77,11 @@ main {
 	height: 100%;
 }
 
-
+.buttonContainer button {
+	margin-top: 15%;
+	margin-left: 60%;
+	width: 200px;
+}
 
 .col-md-7.menuItems {
 		width: 50%;
