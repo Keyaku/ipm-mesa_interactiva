@@ -48,15 +48,15 @@ function createOrderItem(index) {
 		var b11 = $("<button></button>").addClass("buttonEditPizza").attr("id", "editPizza" + ind).append(document.createTextNode("Pizza"));
 		var b12 = $("<button></button>").addClass("buttonEditDrink").attr("id", "editDrink" + ind).append(document.createTextNode("Drink"));
 	var b2 = $("<button></button>").addClass("editcancel").addClass("buttonCancel").attr("id", "cancel" + ind).append(document.createTextNode("Cancel"));
-	d.append(b1).append(b11).append(b12).append(b2);
-	div.append(a).append(b).append(c).append(d);
+	d.append(b1, b11, b12, b2);
+	div.append(a, b, c, d);
 	$("#orders").append(div);
 }
 function shell(pizza, drink, index) {
 	var orderedPizza = pizza; //Gets the ordered pizza.
 	var orderedDrink = drink; //Gets the ordered drink.
 	setTimeout(function() {
-		$("#pizza" + index.toString()).append(createPizzaInfoWithSize(orderedPizza)); //Shows the user's ordered pizza.
+		$("#pizza" + index.toString()).append(createPizzaItemWithSize(orderedPizza)); //Shows the user's ordered pizza.
 		$("#drink" + index.toString()).append(createDrinkItem(orderedDrink)); //Shows the user's ordered drink.
 	}, 100);
 }
