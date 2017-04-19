@@ -19,7 +19,6 @@ main {
 	display: inline-block;
 	margin-bottom: 100px;
 	padding: 0 7%;
-	width: 1000px;
 }
 
 .pizzaCustomizationItemsContainer.dough {
@@ -170,7 +169,10 @@ svg.pizzaSizes.active circle {
 .buttonContainer#customizeButtons {
 	display: inline-block;
 	float: right;
-	top: 50%;
+	margin: 20% 15% 0 0;
+}
+#confirm, #back {
+	width: 200px;
 }
 
 ::-webkit-scrollbar {
