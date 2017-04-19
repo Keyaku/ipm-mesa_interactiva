@@ -20,7 +20,7 @@ const LIST_INGREDIENTS = {
 $('#menubar').menubar();		// Adding menu bar
 $('#navbar').navbar(); 			// Adding top navigation bar
 
-var pizzaMaker = {'pizzaName' : '', 'pizzaSize' : '', 'Dough' : '', 'Ingredients' : [] };
+var pizzaMaker = {'name' : '', 'pizzaSize' : '', 'Dough' : '', 'ingredients' : [] };
 
 for (var ingredientType in LIST_INGREDIENTS) {
 	var typeLabel = $('<label>', { // Creates the ingredient type label.
@@ -68,11 +68,11 @@ function pizzaSetDough(dough) {
 	makePizza('Dough', dough);
 }
 function pizzaAddIngredient(ing) {
-	(pizzaMaker['Ingredients']).push(ing);
+	(pizzaMaker['ingredients']).push(ing);
 }
 function setGlobalPizza() {
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
-	pizzaMaker['pizzaName'] = 'Custom #' + index.toString();
+	pizzaMaker['name'] = 'Custom #' + index.toString();
 	pizzaMaker['NutInfo'] = {'Calories':'556kcal', 'Protein':'23g', 'Carbohydrates':'44g', 'Fat':'99g'};
 	pizzaMaker['Rating'] = '88%';
 	pizzaMaker['Img'] = 'img/menus/pizzaMenu/menuPizza5.png';
