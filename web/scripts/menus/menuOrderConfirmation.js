@@ -20,6 +20,6 @@ if (sessionStorage.orderNumber != undefined) {
 ------------------------------------------------------------------------------*/
 $('button#add').click(function() { /*TODO - FranciscoKloganB: Create a popup to ask what the user wants to edit*/ });
 $('button#confirm').click(function() {
-	sessionStorage.orders = parseInt(sessionStorage.orders) + 1;
+	sessionStorage.orders = Number(sessionStorage.orders) + 1;
 	window.location.href = 'html/table.html';
 }); //Changes the page to the main page.
