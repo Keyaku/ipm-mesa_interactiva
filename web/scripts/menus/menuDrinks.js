@@ -18,6 +18,7 @@ function createDrinkOrderButton() {
 		html: '5€',
 		'class': 'drinksInformationTypeLabel'
 	});
+	price.addClass('priceContainer');
 	var button = $('<button>', {
 		html: 'Order',
 		'click': function() { setGlobalDrink(); },

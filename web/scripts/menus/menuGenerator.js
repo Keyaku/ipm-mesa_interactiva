@@ -56,6 +56,7 @@ function createItemName(obj) {
 function createNutritonalInfo(obj) {
 	var nutInfo = obj['nutritions']; //Gets the list of nutritional facts.
 	var table = $('<table>'); //Creates the table of nutritional facts.
+	table.addClass('nutritionalTable');
 	for (var key in nutInfo) {
 		table.append($('<tr>') //Creates each table row.
 			.append($('<td>', { html: key }))
@@ -191,12 +192,13 @@ function createDrinkImg(drink) {
 
 function createDrinkTypes(drink) {
 	var d = $('<div>');
+	d.addClass('drinksInformationContainer');
 	for (size in drink['sizes']) {
 		var label = $('<label>', { //Gets the label for each of the drink's sizes.
 			html: drink['sizes'][size],
 			'class': 'drinksInformationTypeLabel'
 		});
-		d.append(label);
+		d.append(label).append($("<br>"));
 	}
 	return d;
 }
