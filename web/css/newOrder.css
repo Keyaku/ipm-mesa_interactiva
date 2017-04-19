@@ -1,6 +1,6 @@
 #orders {
 	overflow-y: scroll;
-	height: 64vh;
+	height: 72vh;
 }
 
 .orderStatusContainer {
@@ -15,8 +15,7 @@
 	font-family: 'Bangers', cursive;
 	font-size: 50px;
 	color: #ecf0f1;
-	margin-top: 3vh;
-	margin-left: 9vh;
+	margin: 0 0 0 9vh;
 }
 
 #timer {
@@ -30,6 +29,10 @@
 	font-family: 'Raleway', sans-serif;
 	font-size: 10px;
 	text-align: center;
+}
+
+.buttons {
+	padding: 8vh 0 0 0;
 }
 
 .editcancel {
@@ -47,6 +50,13 @@
 }
 .buttonEditPizza, .buttonEditDrink {
 	display: none;
+	background-color: #25a327;
+	border-color: #27ae60;
+	box-shadow: 0px 5px 10px black;
+	color: #ecf0f1;
+	height: 50px;
+	width: 100px;
+	margin: 10px 10px 0 10px;
 }
 
 #buttonNewOrder {
@@ -59,21 +69,21 @@
 	font-size: 30px;
 	margin: 0 auto;
 	margin-top: 1%;
-    padding: 3%;
+    padding: 2% 3%;
     text-align: center;
 	width: 40%;
 }
 
 .mPITitle {
-	display: inline-block;
+	display: block;
 	font-size: 40px;
 	font-family: raleway, sans-serif;
 	margin: 0 0 10px 0;
-	text-align: left;
+	text-align: center;
 }
 
 .menuPizzaItem {
-	padding: 4vh 0 4vh 2vh;
+	padding: 4vh 0 0 2vh;
 	width: 650px;
 	height: auto;
 }
@@ -95,7 +105,7 @@
 }
 
 .menuDrinkItem {
-	padding: 4vh 0;
+	padding: 4vh 0 0 0;
 	margin-right: 200px;
 	width: 400px;
 	height: auto;

@@ -43,7 +43,7 @@ function createOrderItem(index) {
 	var a = $("<div></div>").addClass("col").attr("id", "pizza" + ind);
 	var b = $("<div></div>").addClass("col").attr("id", "drink" + ind);
 	var c = $("<div></div>").addClass("col").attr("id", "timer" + ind);
-	var d = $("<div></div>").addClass("col");
+	var d = $("<div></div>").addClass("col buttons");
 	var b1 = $("<button></button>").addClass("editcancel").addClass("buttonEdit").attr("id", "edit" + ind).append(document.createTextNode("Edit"));
 		var b11 = $("<button></button>").addClass("buttonEditPizza").attr("id", "editPizza" + ind).append(document.createTextNode("Pizza"));
 		var b12 = $("<button></button>").addClass("buttonEditDrink").attr("id", "editDrink" + ind).append(document.createTextNode("Drink"));
@@ -65,8 +65,8 @@ function orderEdit(index) {
 	editGetCategory(index); //Checks if the user wants to edit the pizza or the drink.
 }
 function editGetCategory(index) {
-	$("#editPizza" + index.toString()).show();
-	$("#editDrink" + index.toString()).show();
+	$("#editPizza" + index.toString()).toggle();
+	$("#editDrink" + index.toString()).toggle();
 }
 function editPizza(index) {
 	sessionStorage.setItem("orderNumber", index.toString()); //Sets the number of the current order.
