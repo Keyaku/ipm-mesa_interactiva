@@ -13,11 +13,12 @@ main {
 	-webkit-text-stroke-color: black;
 }
 
-.pizzaCustomizationItemsContainer {
+.pizzaCustomizationItemsContainer:not(.ingredients) {
+	text-align: center;
+}
+.pizzaCustomizationItemsContainer:not(.sizes) {
 	margin-left: 5%;
 }
-
-
 
 .customizeStep {
 	display: block;
@@ -25,7 +26,6 @@ main {
 	text-shadow: 0px 0px 10px #000;
 	height: 100%;
 }
-
 .customizeStep h1 {
 	font-family: bangers, sans-serif;
 	color: white;
@@ -34,26 +34,6 @@ main {
 	margin-left: 2.5%;
 	-webkit-text-stroke-width: 3px;
 	-webkit-text-stroke-color: black;
-}
-
-/* removed white dashed line of code that I liked
-* It caused consistency problems on selected state
-border-right: 5px dashed white;
-*/
-.pizzaCustomizationItem {
-	background-position: center;
-	background-repeat: no-repeat;
-	float:left;
-	text-align: center;
-	width: 33.3333%;
-	height: 55%;
-}
-
-/*
-* Defines some sort of margin bot. Useful for consistency and possible new sections.
-*/
-.pizzaCustomizationItemsContainer.ingredients {
-	height: 135%;
 }
 
 /*
@@ -72,7 +52,6 @@ border-right: 5px dashed white;
 	width: 300px;
 	height: 300px;
 }
-
 .pizzaCustomizationItem:nth-of-type(3) .pizzaSizes {
 	margin-top: 3%;
 	width: 350px;
@@ -123,13 +102,6 @@ svg.pizzaSizes.active circle {
 	font-family: raleway, sans-serif;
 }
 
-.pizzaDough {
-	padding: 0 3%;
-	width: 33%;
-	height: 40%;
-	text-align: justify;
-}
-
 /*
 * Alternative styling, must pair with pizzaSizes.circle and pizzaSizes.text
 background-color: rgba(244,67,54, 0.05);
@@ -142,7 +114,15 @@ background-color: rgba(207,255,149, 0.1);
 border-radius: 20px;
 border-width: 5px;
 */
-.pizzaDoughName.active {
+
+.pizzaDough {
+	padding: 0 3%;
+	width: 33%;
+	height: 40%;
+	text-align: justify;
+}
+
+.pizzaDough label.active {
 	background-color: rgba(207,255,149, 0.1);
 	border-color: #2E7D32;
 	border-radius: 20px;
@@ -150,7 +130,7 @@ border-width: 5px;
 	color: #2E7D32;
 }
 
-.pizzaDoughName {
+.pizzaDough label {
 	color: white;
 	font-size: 35px;
 	font-family: raleway, sans-serif;
@@ -161,12 +141,7 @@ border-width: 5px;
 	width: 100%;
 	text-align: center;
 }
-
-/*
-* Changed font style to kanit for extra sharpness and less roundiness.
-* Decreased width to 90% of div.
-*/
-.pizzaDoughDesc {
+.pizzaDough p {
 	color: white;
 	font-size: 18px;
 	font-family: kanit, sans-serif;

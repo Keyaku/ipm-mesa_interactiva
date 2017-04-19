@@ -15,23 +15,21 @@
 <body>
 	<nav id="menubar"></nav>
 	<nav id="navbar"></nav>
-	<main>
-	<div class="orderMenu" id="customizeYourPizza">
-		<!--Page label-->
+	<main class="orderMenu" id="customizeYourPizza">
 		<label class="menuTitle">Customize Your Own Pizza</label>
 
 		<div class="customizeStep">
-			<h1 class="size">Choose your size</h1>
-			<div class="pizzaCustomizationItemsContainer">
-				<div class="pizzaCustomizationItem">
+			<h1>Choose your size</h1>
+			<div class="pizzaCustomizationItemsContainer sizes">
+				<div class="pizzaCustomizationItem col-md-4">
 					<p class="pizzaSizeText">Small</p>
 					<svg class="pizzaSizes" id="small"><use xlink:href="img/menus/customizeMenu/4slicePizza.svg#4slicePizza" /></svg>
 				</div>
-				<div class="pizzaCustomizationItem">
+				<div class="pizzaCustomizationItem col-md-4">
 					<p class="pizzaSizeText">Medium</p>
 					<svg class="pizzaSizes" id="medium"><use xlink:href="img/menus/customizeMenu/6slicePizza.svg#6slicePizza" /></svg>
 				</div>
-				<div class="pizzaCustomizationItem">
+				<div class="pizzaCustomizationItem col-md-4">
 					<p class="pizzaSizeText">Large</p>
 					<svg class="pizzaSizes" id="large"><use xlink:href="img/menus/customizeMenu/8slicePizza.svg#8slicePizza" /></svg>
 				</div>
@@ -39,19 +37,19 @@
 		</div>
 
 		<div class="customizeStep">
-			<h1 class="dough">Choose your dough</h1>
+			<h1>Choose your dough</h1>
 			<div class="pizzaCustomizationItemsContainer">
-				<div class="pizzaCustomizationItem pizzaDough">
-					<label class="pizzaDoughName" id="thin">Thin Crust</label><br>
-					<p class="pizzaDoughDesc">Characterized by its buttery, pan-fried taste and outside texture, with a soft and chewey center.</p>
+				<div class="pizzaDough col-md-4">
+					<label id="thin">Thin Crust</label><br>
+					<p>Characterized by its buttery, pan-fried taste and outside texture, with a soft and chewey center.</p>
 				</div>
-				<div class="pizzaCustomizationItem pizzaDough">
-					<label class="pizzaDoughName" id="italian">Italian Original</label><br>
-					<p class="pizzaDoughDesc">Baked in a firewood oven. This dough allows for a faster cooking process while increasing flavors of every single ingredient.</p>
+				<div class="pizzaDough col-md-4">
+					<label id="italian">Italian Original</label><br>
+					<p>Baked in a firewood oven. This dough allows for a faster cooking process while increasing flavors of every single ingredient.</p>
 				</div>
-				<div class="pizzaCustomizationItem pizzaDough">
-					<label class="pizzaDoughName" id="thick">Thick Crust</label><br>
-					<p class="pizzaDoughDesc">Thick crust capable of handling sauce and toppings in higher quantities.</p>
+				<div class="pizzaDough col-md-4">
+					<label id="thick">Thick Crust</label><br>
+					<p>Thick crust capable of handling sauce and toppings in higher quantities.</p>
 				</div>
 			</div>
 		</div>
@@ -67,8 +65,6 @@
 			<button id="confirm">CONFIRM</button>
 			<button id="back">BACK</button>
 		</div>
-
-	</div>
 	</main>
 
 <!-- SCRIPTS GO UNDER HERE -->

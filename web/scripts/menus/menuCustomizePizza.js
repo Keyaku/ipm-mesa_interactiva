@@ -88,12 +88,12 @@ $(".pizzaSizes").click(function() {
 	var id = $(this).attr("id");
 	pizzaSetSize(id);
 });
-$(".pizzaDoughName").click(function() {
-	$(".pizzaDoughName").removeClass("active");
+$(".pizzaDough label").click(function() {
+	$(".pizzaDough label").removeClass("active");
 	$(this).toggleClass("active");
 	var id = $(this).attr("id");
 	pizzaSetDough(id);
 });
-$("#customizationConfirmation").click(function() {
+$("#confirm").click(function() {
 	setGlobalPizza();
 });
