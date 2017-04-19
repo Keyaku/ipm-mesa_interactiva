@@ -81,10 +81,10 @@ p {
 	float: right;
 }
 .buttonContainer#customizeButtons #confirm {
-	/* TODO: Insert rules here */
+	margin-left: 15%;
 }
 .buttonContainer#customizeButtons #back {
-	/* TODO: Insert rules here */
+	margin-left: 15%;
 }
 
 /************************* Extensive Information Bar *************************/
