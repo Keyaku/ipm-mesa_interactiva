@@ -47,7 +47,6 @@ function hideExtensiveInformation() {
 /* Element creation */
 function createItemName(obj) {
 	if ($.type(obj) !== "string") { obj = obj['name'] }
-	console.log(obj);
 	return $('<label>', { //Creates the label that represents the item's name.
 		html: obj,
 		'class': 'mPITitle'
