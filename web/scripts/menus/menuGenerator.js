@@ -103,6 +103,8 @@ function populatePremadeMenu(obj) {
 		var pizza = getPremadePizza(pizzaName);
 		obj.append(createPizzaItemWithButtons(pizza)); //Adds each premade pizzas to the passed object.
 	}
+	var itemInfo = (obj.children('.menuPizzaItem')).children('.menuPizzaItemInfo');
+	itemInfo.addClass('col-md-6');
 }
 
 /* Element creation */
