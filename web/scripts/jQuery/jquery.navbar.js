@@ -26,9 +26,9 @@ const HTML_MENUBAR = `
 `;
 const HTML_NAVBAR = `
 	<ul class="multi-steps">
-		<li class="visited"><a href="#">Pizza</a></li>
-		<li class="current"><a href="#">Drinks</a></li>
-		<li class=""><a href="#">Confirm</a></li>
+		<li class="visited"><a href="html/menus/menuPizzaList.html">Pizza</a></li>
+		<li class="current"><a href="html/menus/menuDrinks.html">Drinks</a></li>
+		<li class=""><a href="html/menus/menuOrderConfirmation.html">Confirm</a></li>
 	</ul>
 `;
 
