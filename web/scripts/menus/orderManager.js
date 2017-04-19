@@ -25,6 +25,7 @@ function managerGetMetaValues(orderNumber) {
 
 function managerAddNewPizza(pizzaName, pizzaSize) {
 	var pizza = getPremadePizza(pizzaName); //Gets the pizza's structure.
+	
 	pizza['pizzaSize'] = pizzaSize; //Adds the pizza's size to the the structure.
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
 	var key = "order" + index.toString(); //Gets the dictionary key.

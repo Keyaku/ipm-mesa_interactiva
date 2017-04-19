@@ -29,7 +29,7 @@ function createDrinkOrderButton() {
 function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }
 
 function setGlobalDrink() {
-	var b = $('#drinksInformation').children('.mPITitle').text(); //Gets the name of the ordered pizza.
+	var b = $('#extensiveInfoBar').children('.mPITitle').text(); //Gets the name of the ordered pizza.
 	managerAddNewDrink(b);
 	if (sessionStorage.getItem('editing') == 'true') {
 		sessionStorage.setItem('editing', 'false');

@@ -10,7 +10,6 @@ var orderNumber = parseInt(sessionStorage.getItem("orders"));
 for (var i = 0; i < orderNumber; i++) {
 	var str = "order" + i.toString();
 	var values = managerGetMetaValues(str);
-	console.log(values);
 	if (values != null && values[0] != null && values[1] != null && (values[0] != ""  || values[1] != "")) {
 		createOrderItem(i);
 		shell(values[0], values[1], i);
@@ -57,7 +56,7 @@ function shell(pizza, drink, index) {
 	var orderedPizza = pizza; //Gets the ordered pizza.
 	var orderedDrink = drink; //Gets the ordered drink.
 	setTimeout(function() {
-		$("#pizza" + index.toString()).append(getPizzaItemWithSize(orderedPizza)); //Shows the user's ordered pizza.
+		$("#pizza" + index.toString()).append(createPizzaInfoWithSize(orderedPizza)); //Shows the user's ordered pizza.
 		$("#drink" + index.toString()).append(createDrinkItem(orderedDrink)); //Shows the user's ordered drink.
 	}, 100);
 }

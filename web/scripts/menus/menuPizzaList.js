@@ -46,7 +46,7 @@ function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confir
 function confirmSkip() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for skipping the pizza order.*/}
 
 function setGlobalPizza(pizzaSize) {
-	var pizzaName = $('#pizzaInformation').children('.mPITitle').text(); //Gets the name of the ordered pizza.
+	var pizzaName = $('#extensiveInfoBar').children('.mPITitle').text(); //Gets the name of the ordered pizza.
 	if (sessionStorage.getItem("editing") == "true") {
 		sessionStorage.setItem("editing", "false"); //Sets the editing flag to false.
 		managerEditPizza(pizzaName, pizzaSize); //Adds the pizza to the system.
