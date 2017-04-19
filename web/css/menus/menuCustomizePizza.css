@@ -6,26 +6,25 @@ main {
 	color: #D32F2F;
 	font-size: 100px;
 	font-family: bangers, sans-serif;
-	margin-top: 5%;
 	margin-left: 3.7%;
-	text-shadow: 0px 0px 10px #000;
+	text-shadow: 0 0 10px #000;
 	-webkit-text-stroke-width: 3px;
 	-webkit-text-stroke-color: black;
 }
 
-.pizzaCustomizationItemsContainer:not(.ingredients) {
+.pizzaCustomizationItemsContainer:not(#pizzaIngredients) {
 	text-align: center;
 }
-.pizzaCustomizationItemsContainer:not(.sizes) {
+
+.pizzaCustomizationItemsContainer.dough {
 	margin-left: 5%;
 }
 
 .customizeStep {
-	display: block;
-	margin-bottom: 5%;
-	text-shadow: 0px 0px 10px #000;
+	text-shadow: 0 0 10px #000;
 	height: 100%;
 }
+
 .customizeStep h1 {
 	font-family: bangers, sans-serif;
 	color: white;
@@ -36,10 +35,6 @@ main {
 	-webkit-text-stroke-color: black;
 }
 
-/*
-* adding new css styling with borders pizzaCustomizationItem pizzaDough for consistency
-* if you dislike it, delete the next block of code.
-*/
 .pizzaCustomizationItem:last-child { border: none; }
 
 .pizzaCustomizationItem:nth-of-type(1) .pizzaSizes {
@@ -58,38 +53,10 @@ main {
 	height: 350px;
 }
 
-/*
-* Keyaku choose the style you like the most, i like the commented version the most
-* But I think it causes consistency problems with pizzaDough selection state.
-* I have also removed this line of code:
-svg.pizzaSizes {
-	stroke: white;
-}
-* It did nothing.
-*/
-
-/*
-* Alternative styling, must pair with pizzaDough.active and pizzaSizes.circle
-fill: #D32F2F;
-stroke: #2E7D32;
-*
-fill: white;
-*/
 svg.pizzaSizes.active text {
 	fill: #2E7D32;
 }
 
-/*
-* Alternative styling, must pair with pizzaDough.active and pizzaSizes.text
-stroke: #D32F2F;
-stroke-width: 10px;
-fill: rgba(244,67,54, 0.05);
-*
-* Alternative styling, must pair with pizzaDough.active and pizzaSizes.text
-stroke: white;
-stroke-width: 10px;
-fill: rgba(207,255,149, 0.1);
-*/
 svg.pizzaSizes.active circle {
 	stroke: #2E7D32;
 	stroke-width: 10px;
@@ -101,19 +68,6 @@ svg.pizzaSizes.active circle {
 	font-size: 40px;
 	font-family: raleway, sans-serif;
 }
-
-/*
-* Alternative styling, must pair with pizzaSizes.circle and pizzaSizes.text
-background-color: rgba(244,67,54, 0.05);
-border-color: #D32F2F;
-border-radius: 20px;
-border-width: 5px;
-color: #D32F2F;
-*
-background-color: rgba(207,255,149, 0.1);
-border-radius: 20px;
-border-width: 5px;
-*/
 
 .pizzaDough {
 	padding: 0 3%;
@@ -141,6 +95,7 @@ border-width: 5px;
 	width: 100%;
 	text-align: center;
 }
+
 .pizzaDough p {
 	color: white;
 	font-size: 18px;
@@ -156,7 +111,6 @@ border-width: 5px;
 	overflow-x: scroll;
 	overflow-y: visible;
 	white-space: nowrap;
-	width: 33%;
 }
 
 .pizzaIngredientTypeLabel {
@@ -174,16 +128,6 @@ border-width: 5px;
 	text-align: center;
 }
 
-/*
-*
-background-size: 140px 70px;
-margin: 5px 70px 0 0;
-width: 140px;
-height: 70px;
-border-style: solid;
-border-radius: 0.5px;
-border-color: rgba(207,255,149, 0.2);
-*/
 .pizzaIngredientImg {
 	background-size: 140px 70px;
 	margin: 5px 70px 0 0; /* change this to center texto and imagem */
@@ -201,18 +145,18 @@ border-color: rgba(207,255,149, 0.2);
 	margin-left: -27%;
 }
 
-/*
-background-color: rgba(183,28,28, 0.2);
-border-radius: 20px;
-*/
+/* Specific buttons */
+.buttonContainer#customizeButtons {
+	float: right;
+	top: 50%;
+}
+
 ::-webkit-scrollbar {
     background-color: rgba(46, 125, 50, 0.2);
 	border-radius: 20px;
 }
 
 ::-webkit-scrollbar:vertical {
-	background-color: rgba(46, 125, 50, 0.2);
-	border-radius: 20px;
 	width: 0.5%;
 }
 
@@ -223,26 +167,4 @@ border-radius: 20px;
 
 ::-webkit-scrollbar-thumb:hover {
 	background-color: white;
-}
-
-::-webkit-scrollbar-button:horizontal:increment {
-    background-image: url(../../img/menus/customizeMenu/next.svg);
-}
-
-::-webkit-scrollbar-button:horizontal:decrement {
-    background-image: url(../../img/menus/customizeMenu/back.svg);
-}
-
-/* decrement is up, do not be fooled - fools */
-::-webkit-scrollbar-button:vertical:decrement {
-    background-image: url(../../img/menus/customizeMenu/up.svg);
-}
-
-/* increment is down, do not be fooled - fools */
-::-webkit-scrollbar-button:vertical:increment {
-    background-image: url(../../img/menus/customizeMenu/down.svg);
-}
-
-#fish::-webkit-scrollbar-button {
-		background-image: none;
 }

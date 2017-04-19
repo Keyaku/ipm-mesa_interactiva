@@ -18,7 +18,7 @@
 	<main class="orderMenu" id="customizeYourPizza">
 		<label class="menuTitle">Customize Your Own Pizza</label>
 
-		<div class="customizeStep">
+		<section class="customizeStep">
 			<h1>Choose your size</h1>
 			<div class="pizzaCustomizationItemsContainer sizes">
 				<div class="pizzaCustomizationItem col-md-4">
@@ -34,11 +34,11 @@
 					<svg class="pizzaSizes" id="large"><use xlink:href="img/menus/customizeMenu/8slicePizza.svg#8slicePizza" /></svg>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="customizeStep">
+		<section class="customizeStep">
 			<h1>Choose your dough</h1>
-			<div class="pizzaCustomizationItemsContainer">
+			<div class="pizzaCustomizationItemsContainer dough">
 				<div class="pizzaDough col-md-4">
 					<label id="thin">Thin Crust</label><br>
 					<p>Characterized by its buttery, pan-fried taste and outside texture, with a soft and chewey center.</p>
@@ -52,19 +52,19 @@
 					<p>Thick crust capable of handling sauce and toppings in higher quantities.</p>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="customizeStep">
-			<h1 class="ingredients">Choose your ingredients</h1>
-			<div class="pizzaCustomizationItemsContainer ingredients" id="pizzaIngredients">
+		<section class="customizeStep">
+			<h1>Choose your ingredients</h1>
+			<div class="pizzaCustomizationItemsContainer col-md-6" id="pizzaIngredients">
 				<!--List of ingredients to add (by type)--> <!--All spawned using JS--->
 			</div>
-		</div>
 
-		<div class="col-md-6 buttonContainer" id="customizeButtons">
-			<button id="confirm">CONFIRM</button>
-			<button id="back">BACK</button>
-		</div>
+			<div class="buttonContainer col-md-6" id="customizeButtons">
+				<button id="confirm">CONFIRM</button>
+				<button id="back">BACK</button>
+			</div>
+		</section>
 	</main>
 
 <!-- SCRIPTS GO UNDER HERE -->
