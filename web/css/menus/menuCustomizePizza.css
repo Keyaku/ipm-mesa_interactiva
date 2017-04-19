@@ -152,7 +152,7 @@ svg.pizzaSizes.active circle {
 }
 
 ::-webkit-scrollbar {
-    background-color: rgba(46, 125, 50, 0.2);
+  background-color: rgba(46, 125, 50, 0.2);
 	border-radius: 20px;
 }
 
