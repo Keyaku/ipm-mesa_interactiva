@@ -36,7 +36,7 @@ p {
 	color: white;
 }
 
-/* Menu Pizza Items */
+/****************************** Menu Pizza Items ******************************/
 .mPITitle {
 	font-size: 40px;
 	font-family: "Raleway", Fallback, sans-serif;
@@ -55,18 +55,39 @@ p {
 	margin: 10px 0;
 }
 
-/* Buttons */
+/******************************** Buttons *********************************/
+/* General rules */
 .buttonContainer {
 	text-align: center;
 }
+
 .buttonContainer button {
-	border: none;
+	background-color: rgba(255,255,255, 0.3);
+	border-radius: 20px;
 	color: white;
 	font-family: raleway, sans-serif;
 	font-size: 30px;
+	padding: 1% 4%;
+	text-align: center;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: black;
+}
+.buttonContainer button:not(:last-child) {
+	margin-right: 5%;
 }
 
-/* Extensive Information Bar */
+/* Specific buttons */
+.buttonContainer#customizeButtons {
+	float: right;
+}
+.buttonContainer#customizeButtons #confirm {
+	/* TODO: Insert rules here */
+}
+.buttonContainer#customizeButtons #back {
+	/* TODO: Insert rules here */
+}
+
+/************************* Extensive Information Bar *************************/
 #extensiveInfoBar {
 	background-color: rgba(0, 0, 0, 0.8);
 	float: right;
@@ -84,7 +105,7 @@ p {
 	margin: 0 10pt;
 }
 
-/* Font-Awesome icons */
+/***************************** Font-Awesome icons *****************************/
 .fa.fa-star {
 	color: white;
 }
