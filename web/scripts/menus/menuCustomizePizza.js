@@ -35,7 +35,6 @@ for (var ingredientType in LIST_INGREDIENTS) {
 			'class': 'pizzaIngredient',
 			'id': ingredientName
 		});
-		ingredientDiv.click(function() { pizzaAddIngredient($(this).attr('id')); }) //Sets the behaviour for the click event.
 		var ingredientLabel = $('<label>', { // Creates the ingredient's label.
 			html: ingredientName,
 			'class': 'pizzaIngredientName'
@@ -67,9 +66,24 @@ function pizzaSetSize(size) {
 function pizzaSetDough(dough) {
 	makePizza('Dough', dough);
 }
+function pizzaCheckIngredient(ing) {
+	for (var ingr in pizzaMaker['ingredients']) {
+		if (pizzaMaker['ingredients'][ingr] == ing) {
+			console.log("sim");
+			return true;
+		}
+	}
+	console.log("nao");
+	return false;
+}
 function pizzaAddIngredient(ing) {
 	(pizzaMaker['ingredients']).push(ing);
 }
+function pizzaRemoveIngredient(ing) {
+	var arr = pizzaMaker['ingredients'];
+	arr.splice($.inArray(ing, arr),1);
+}
+
 function setGlobalPizza() {
 	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
 	pizzaMaker['name'] = 'Custom #' + index.toString();
@@ -106,4 +120,15 @@ $('.pizzaDough label').click(function() {
 });
 $('#confirm').click(function() {
 	setGlobalPizza();
+});
+$('.pizzaIngredient').click(function() {
+	$(this).children('.pizzaIngredientImg').toggleClass('active');
+	$(this).children('.pizzaIngredientName').toggleClass('active');
+	var ing = $(this).attr('id');
+	if (pizzaCheckIngredient(ing)) {
+		pizzaRemoveIngredient(ing);
+	}
+	else {
+		pizzaAddIngredient(ing);
+	}
 });

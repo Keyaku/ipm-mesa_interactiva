@@ -15,6 +15,12 @@ main {
 .pizzaCustomizationItemsContainer:not(#pizzaIngredients) {
 	text-align: center;
 }
+#pizzaIngredients {
+	display: inline-block;
+	margin-bottom: 100px;
+	padding: 0 7%;
+	width: 1000px;
+}
 
 .pizzaCustomizationItemsContainer.dough {
 	margin-left: 5%;
@@ -22,7 +28,7 @@ main {
 
 .customizeStep {
 	text-shadow: 0 0 10px #000;
-	height: 100%;
+	min-height: 60%;
 }
 
 .customizeStep h1 {
@@ -136,6 +142,14 @@ svg.pizzaSizes.active circle {
 	border: 2px solid white;
 	border-radius: 15px;
 }
+.pizzaIngredientImg.active {
+	background-size: 140px 70px;
+	margin: 5px 70px 0 0; /* change this to center texto and imagem */
+	width: 140px;
+	height: 70px;
+	border: 2px solid green;
+	border-radius: 15px;
+}
 
 .pizzaIngredientName {
 	color: white;
@@ -144,9 +158,17 @@ svg.pizzaSizes.active circle {
 	text-align: center;
 	margin-left: -27%;
 }
+.pizzaIngredientName.active {
+	color: green;
+	font-family: 'Raleway', sans-serif;
+	font-size: 22px;
+	text-align: center;
+	margin-left: -27%;
+}
 
 /* Specific buttons */
 .buttonContainer#customizeButtons {
+	display: inline-block;
 	float: right;
 	top: 50%;
 }
