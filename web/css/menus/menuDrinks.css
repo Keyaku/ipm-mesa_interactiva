@@ -93,8 +93,13 @@ main {
 	right: -2.5%;
 }
 
-.buttonContainer button {
-	width: 200px;
+.buttonContainer button#cancelButton {
+	background-color: #D50000;
+	border-color: #D50012;
+}
+
+.buttonContainer button#skipButton {
+	background-color: green;
 }
 
 ::-webkit-scrollbar {
@@ -113,16 +118,4 @@ main {
 
 ::-webkit-scrollbar-thumb:hover {
 	background-color: white;
-}
-.buttonContainer #cancelButton {
-	background-color: #D50000;
-	border-color: #D50012;
-	padding: 4% 8%;
-	width: auto;
-}
-
-.buttonContainer #skipButton {
-	background-color: green;
-	padding: 4% 6%;
-	width: auto;
 }
