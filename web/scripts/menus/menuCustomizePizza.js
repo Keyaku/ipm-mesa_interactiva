@@ -113,26 +113,29 @@ function setGlobalPizza() {
 
 ------------------------------------------------------------------------------*/
 //The click event of .pizzaIngredient is defined in the spawning.
+//The click event for the pizza size buttons sets the pizza's size.
 $('.pizzaSizes').click(function() {
-	$('.pizzaSizes').removeClass('active');
-	$(this).toggleClass('active');
-	pizzaSetSize($(this).attr('id'));
+	$('.pizzaSizes').removeClass('active'); //Clears the previously chosen size.
+	$(this).toggleClass('active'); //Shows the size that is selected.
+	pizzaSetSize($(this).attr('id')); //Sets the pizza's size.
 });
+//The click event for the pizza dough buttons sets the pizza's dough.
 $('.pizzaDough label').click(function() {
-	$('.pizzaDough label').removeClass('active');
-	$(this).toggleClass('active');
-	pizzaSetDough($(this).attr('id'));
+	$('.pizzaDough label').removeClass('active'); //Clears the previously chosen dough.
+	$(this).toggleClass('active'); //Shows the dough that is selected.
+	pizzaSetDough($(this).attr('id')); //Sets the pizza's dough.
 });
-$('#confirm').click(function() {
-	setGlobalPizza();
-});
+//The click event for the confirm button confirms the customized pizza.
+$('#confirm').click(function() { setGlobalPizza(); });
+//The click event for the ingredient buttons adds/removes it from the ingredients list.
 $('.pizzaIngredient').click(function() {
-	$(this).children('.pizzaIngredientImg').toggleClass('active');
-	$(this).children('.pizzaIngredientName').toggleClass('active');
-	var ing = $(this).attr('id');
-	if (pizzaCheckIngredient(ing)) {
-		pizzaRemoveIngredient(ing);
-	} else {
-		pizzaAddIngredient(ing);
+	$(this).children('.pizzaIngredientImg').toggleClass('active'); //Show the ingredient is selected.
+	$(this).children('.pizzaIngredientName').toggleClass('active'); //Show the ingredient is selected.
+	var ing = $(this).attr('id'); //Gets the ingredients name.
+	if (pizzaCheckIngredient(ing)) { //If the ingredient is in the list.
+		pizzaRemoveIngredient(ing); //Removes the ingredient from the list.
+	}
+	else { //If the ingredient is NOT in the list.
+		pizzaAddIngredient(ing); //Adds the ingredient to the list.
 	}
 });
