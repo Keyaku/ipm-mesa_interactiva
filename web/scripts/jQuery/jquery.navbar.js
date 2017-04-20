@@ -26,15 +26,15 @@ const HTML_MENUBAR = `
 `;
 const HTML_NAVBAR = `
 	<ul class="multi-steps">
-		<li class="visited"><a href="html/menus/menuPizzaList.html">Pizza</a></li>
-		<li class="current"><a href="html/menus/menuDrinks.html">Drinks</a></li>
-		<li class=""><a href="html/menus/menuOrderConfirmation.html">Confirm</a></li>
+		<li><a href="html/menus/menuPizzaList.html">Pizza</a></li>
+		<li><a href="html/menus/menuDrinks.html">Drinks</a></li>
+		<li><a href="html/menus/menuOrderConfirmation.html">Confirm</a></li>
 	</ul>
 `;
 
 //Show the correct overlay
 function orderButton() {
-	if (sessionStorage.getItem('ordered') == 'true') {
+	if (sessionStorage.ordered == 'true') {
 		$(location).attr('href', 'html/newOrder.html');
 	} else {
 		$(location).attr('href', 'html/menus/menuPizzaList.html');
@@ -64,10 +64,6 @@ function informationButton() { $(location).attr('href', 'html/information.html')
 			$(this).toggleClass('closed');
 		});
 
-		buttons.click(function() {
-			// TODO: implement webpage swapping
-		});
-
 		/*** Applying arguments ***/
 		if (def.minimized) {
 			minimizer.click();
@@ -89,7 +85,11 @@ function informationButton() { $(location).attr('href', 'html/information.html')
 
 		/*** Applying arguments ***/
 		if (def.selected == undefined) {
-			//steps.first().addClass('current');
-		} // TODO: highlight selected
+			steps.first().addClass('current');
+		} else {
+			var current = steps.children(':contains(' + def.selected + ')').parent();
+			console.log(current.siblings());
+			current.addClass('current');
+		}
     };
 })(jQuery);

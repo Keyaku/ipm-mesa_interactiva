@@ -18,7 +18,7 @@ const LIST_INGREDIENTS = {
 
 ------------------------------------------------------------------------------*/
 $('#menubar').menubar();		// Adding menu bar
-$('#navbar').navbar(); 			// Adding top navigation bar
+$('#navbar').navbar({selected: 'Pizza'}); 			// Adding top navigation bar
 
 var pizzaMaker = {'name' : '', 'pizzaSize' : '', 'Dough' : '', 'ingredients' : [] };
 
