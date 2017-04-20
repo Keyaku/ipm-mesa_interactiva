@@ -6,8 +6,7 @@ CODE EXECUTION
 $('#menubar').menubar();
 $('#navbar').navbar({selected: 'Confirm'});
 
-var orderNumber = parseInt(sessionStorage.getItem("orders"));
-var str = "order" + orderNumber.toString();
+var str = "order" + Number(sessionStorage.orders);
 var values = managerGetMetaValues(str);
 createOrderItem();
 shell(values[0], values[1]);
@@ -19,12 +18,12 @@ AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
 function createOrderItem() {
-	var div = $("<div></div>").addClass("orderStatusContainer");
-	var a = $("<div></div>").addClass("col").attr("id", "pizza");
-	var b = $("<div></div>").addClass("col").attr("id", "drink");
-	var d = $("<div></div>").addClass("col buttons");
-	var b1 = $("<button></button>").addClass("editcancel").addClass("buttonCancel").attr("id", "cancel").append(document.createTextNode("Cancel"));
-	var b2 = $("<button></button>").addClass("editcancel").addClass("buttonConfirm").attr("id", "confirm").append(document.createTextNode("Confirm"));
+	var div = $("<div>").addClass("orderStatusContainer");
+	var a = $("<div>").addClass("col").attr("id", "pizza");
+	var b = $("<div>").addClass("col").attr("id", "drink");
+	var d = $("<div>").addClass("col buttons");
+	var b1 = $("<button>", { html: "Cancel" }).addClass("editcancel buttonCancel").attr("id", "cancel");
+	var b2 = $("<button>", { html: "Confirm" }).addClass("editcancel buttonConfirm").attr("id", "confirm");
 	d.append(b1, b2);
 	div.append(a, b, d);
 	$("#order").append(div);
@@ -42,9 +41,7 @@ function orderCancel() {
 	window.location.href = "html/table.html";
 }
 function orderConfirm() {
-	var i = sessionStorage.getItem("orders");
-	var index = parseInt(i) + 1;
-	sessionStorage.setItem("orders", index.toString());
+	sessionStorage.orders = Number(sessionStorage.orders) + 1;
 	window.location.href = "html/table.html";
 }
 
