@@ -59,12 +59,20 @@ for (var ingredientType in LIST_INGREDIENTS) {
 function makePizza(field, value) {
 	pizzaMaker[field] = value;
 }
+function pizzaUpdateLabel() {
+	var size = pizzaMaker['size'] != undefined ? ' <b>' + pizzaMaker['size'] + '</b>' : '';
+	var dough = pizzaMaker['dough'] != undefined ? ' <i>' + pizzaMaker['dough'] + '</i>' : '';
+	var str = 'Your' + size + dough + ' pizza contains:'
+	$('label#customPizza').html(str);
+}
 
 function pizzaSetSize(size) {
-	makePizza('pizzaSize', size);
+	makePizza('size', size);
+	pizzaUpdateLabel();
 }
 function pizzaSetDough(dough) {
-	makePizza('Dough', dough);
+	makePizza('dough', dough);
+	pizzaUpdateLabel();
 }
 function pizzaCheckIngredient(ing) {
 	return pizzaMaker['ingredients'].find(function(val) { return val == ing; }) != undefined;

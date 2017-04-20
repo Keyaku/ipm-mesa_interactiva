@@ -160,7 +160,14 @@ svg.pizzaSizes.active circle {
 /************* Ingredients and stuff *************/
 #confirmationArea label {
 	font-size: 35px;
+	font-weight: lighter;
 	text-align: center;
+}
+#confirmationArea label b {
+	color: #D32F2F;
+}
+#confirmationArea label i {
+	color: green;
 }
 #ingredientsPicked {
 	background-color: rgba(0, 0, 0, 0.5);
