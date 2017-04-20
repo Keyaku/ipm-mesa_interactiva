@@ -4,7 +4,7 @@
 $('#extensiveInfoBar').hide(); //Hides the lateral pizza information bar.
 function showExtensiveInformation(objName, objSize = 0) {
 	var closeX = $('<i>', {
-		'class': 'fa fa-times',
+		'class': 'fa fa-close',
 		'click': function(){ hideExtensiveInformation(); },
 	});
 	var objTitle = createItemName(objName);

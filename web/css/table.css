@@ -141,6 +141,7 @@ p {
 	font-family: "Bangers", Fallback, sans-serif;
 	text-align: center;
 }
+
 .rating {
 	font-size: 30px;
 	text-align: center;
@@ -155,7 +156,7 @@ p {
 .fa.fa-star {
 	color: white;
 }
-.fa.fa-times {
+.fa.fa-close {
 	color: white;
 	float: right;
 	font-size: 50px;
