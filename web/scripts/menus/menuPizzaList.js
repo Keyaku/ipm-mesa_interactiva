@@ -14,6 +14,7 @@ populatePremadeMenu($('#premade')); //Populates the premade pizza's menu dynamic
 				AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
+//TODO - @RafaelRibeiro - Move this to menuGenerate.js
 function createPizzaPrice(pizzaSize) {
 	var prices = {
 		'Small'  : 8,
@@ -30,6 +31,7 @@ function createPizzaPrice(pizzaSize) {
 	}));
 	return d;
 }
+//TODO - @RafaelRibeiro - Move this to menuGenerate.js
 function createSizeButtons() {
 	var d = $('<div>', { 'class': 'buttonContainer' });
 	['Small', 'Medium', 'Large'].forEach(function(size) {
@@ -42,24 +44,25 @@ function createSizeButtons() {
 	return d;
 }
 
-function pizzaOrderCancel(index) { confirmationOverlayShow(pizzaConfirmCancel, []); }
-function pizzaConfirmCancel(args) {
-	window.location.href = 'html/table.html';
-}
-
-
+//When the client clicks in the order button.
 function setGlobalPizza(pizzaSize) {
-	var pizzaName = $('#extensiveInfoBar').children('.mPITitle').text(); //Gets the name of the ordered pizza.
-	if (sessionStorage.getItem("editing") == "true") {
+	var pizzaName = $('#extensiveInfoBar').children('.mPITitle').text(); //Gets the chosen pizza's name.
+	if (sessionStorage.getItem("editing") == "true") { //If the client is editing a previous order.
 		sessionStorage.setItem("editing", "false"); //Sets the editing flag to false.
 		managerEditPizza(pizzaName, pizzaSize); //Adds the pizza to the system.
-		$(location).attr('href', 'html/table.html'); //Confirms.
+		window.location.href = 'html/table.html';
+		//TODO - @RafaelRibeiro - Show the confirmation popup.
 	}
-	else {
+	else { //If the client is NOT editing a previous order.
 		managerAddNewPizza(pizzaName, pizzaSize); //Adds the pizza to the system.
-		$(location).attr('href', 'html/menus/menuDrinks.html'); //Changes the screen (menu flow).
+		window.location.href = 'html/menus/menuDrinks.html'; //Continues with the order.
 	}
 }
+
+//When the client clicks the cancel button.
+function pizzaOrderCancel(index) { confirmationOverlayShow(pizzaConfirmCancel, []); }
+//When the client clicks the "Yes" button in the confirmation overlay (callback from confirmationOverlayShow).
+function pizzaConfirmCancel(args) { window.location.href = 'html/table.html'; }
 
 
 /*------------------------------------------------------------------------------
@@ -67,19 +70,17 @@ function setGlobalPizza(pizzaSize) {
 				MENU FLOW
 
 ------------------------------------------------------------------------------*/
-$('.mPIISizeButton').click(function(){ //Generates and shows the lateral pizza information bar of the chosen pizza.
+//The click event of #pizzaInformationClose is defined in the spawning (in showExtensiveInformation()).
+//The click event of #pizzaOrderButton is defined in the spawning (in createPizzaPrice()).
+//The click event for the size buttons opens the extensive information bar.
+$('.mPIISizeButton').click(function(){
 	var pizzaName = ($(this).parent().parent()).children('.mPITitle').text(); //Gets the chosen pizza's name.
 	var pizzaSize = $(this).attr("id"); //Gets the chosen pizza's size.
 	showExtensiveInformation(pizzaName, pizzaSize); //Shows the lateral pizza information bar.
 });
-//The click event of #pizzaInformationClose is defined in the spawning (in showExtensiveInformation()).
-//The click event of #pizzaOrderButton is defined in the spawning (in createPizzaPrice()).
-$('#skipButton').click(function() { //Changes the page to the drinks menu.
-	$(location).attr('href', 'html/menus/menuDrinks.html');
-});
-$('#cancelButton').click(function() { //Changes the page to the main page.
-	pizzaOrderCancel();
-});
-$('#customizationShortcut').click(function() { //Changes the page to the pizza customization menu.
-	$(location).attr('href', 'html/menus/menuCustomizePizza.html');
-});
+//The click event for the Customize Your Own Pizza page changes the page to that.
+$('#customizationShortcut').click(function() { window.location.href = 'html/menus/menuCustomizePizza.html'; });
+//The click event for the skip button changes the page to the drinks menu.
+$('#skipButton').click(function() { window.location.href = 'html/menus/menuDrinks.html'; });
+//The click event for the cancel button changes the page to the main page.
+$('#cancelButton').click(function() { pizzaOrderCancel(); });
