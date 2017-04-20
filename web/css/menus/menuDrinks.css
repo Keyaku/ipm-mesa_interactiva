@@ -36,10 +36,17 @@ main {
 }
 
 .menuDrinkItem:last-child { border: none; }
+
 .menuDrinkItemImg {
 	display: block;
 	margin: 5% auto;
 	height: 150px;
+	border: 5px solid white;
+	border-radius: 10px;
+}
+
+.pizzaIngredientImg.active {
+	border: 5px solid #2E7D32;
 }
 
 .mPITitle {
@@ -48,6 +55,10 @@ main {
 	margin-top: 10%;
 	text-align: center;
 	width: 100%;
+}
+
+.mPITitle.active {
+	color: #2E7D32;
 }
 
 #extensiveInfoBar .mPITitle  {

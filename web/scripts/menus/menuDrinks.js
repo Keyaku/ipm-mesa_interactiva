@@ -48,6 +48,16 @@ function drinksConfirmCancel(args) {
 	window.location.href = 'html/table.html';
 }
 
+$('.menuDrinkItem').click(function() {
+	$(this).children('.mPITitle').toggleClass('active');
+	$(this).children('.menuDrinkItemImg').toggleClass('active');
+	var ing = $(this).attr('id');
+	if (pizzaCheckIngredient(ing)) {
+		pizzaRemoveIngredient(ing);
+	} else {
+		pizzaAddIngredient(ing);
+	}
+});
 
 /*------------------------------------------------------------------------------
 
