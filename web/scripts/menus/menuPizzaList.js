@@ -42,8 +42,11 @@ function createSizeButtons() {
 	return d;
 }
 
-function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }
-function confirmSkip() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for skipping the pizza order.*/}
+function pizzaOrderCancel(index) { confirmationOverlayShow(pizzaConfirmCancel, []); }
+function pizzaConfirmCancel(args) {
+	window.location.href = 'html/table.html';
+}
+
 
 function setGlobalPizza(pizzaSize) {
 	var pizzaName = $('#extensiveInfoBar').children('.mPITitle').text(); //Gets the name of the ordered pizza.
@@ -75,7 +78,7 @@ $('#skipButton').click(function() { //Changes the page to the drinks menu.
 	$(location).attr('href', 'html/menus/menuDrinks.html');
 });
 $('#cancelButton').click(function() { //Changes the page to the main page.
-	$(location).attr('href', 'html/table.html');
+	pizzaOrderCancel();
 });
 $('#customizationShortcut').click(function() { //Changes the page to the pizza customization menu.
 	$(location).attr('href', 'html/menus/menuCustomizePizza.html');
