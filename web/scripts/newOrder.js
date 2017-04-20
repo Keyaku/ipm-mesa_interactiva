@@ -77,7 +77,14 @@ function editDrink(index) {
 	sessionStorage.setItem("editing", "true");
 	window.location.href = "html/menus/menuDrinks.html";
 }
-function orderCancel(index) { confirmationOverlayShow(confirmCancel, index); }
+function cancelAllOrders() {
+	for (var order = 0; i < orderNumber; i++) {
+		orderCancel(order);
+	}
+}
+function orderCancel(index) {
+	confirmationOverlayShow(confirmCancel, index);
+}
 function confirmCancel(index) {
 	$("#order" + index.toString()).remove();
 	managerDeleteOrder(index);
