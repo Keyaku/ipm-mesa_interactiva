@@ -63,6 +63,12 @@ var drinksList = {
 		'nutritions' : {'Calories':'1kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 		'image' : 'img/menus/drinksMenu/pedras.png',
 	},
+	'Fresh Juice' : {
+		'name' : 'Fresh Juice',
+		'sizes' : ['Orange Juice (25cl)', 'Blueberry Juice (25cl)', 'Lemonade (25cl)', 'Tutti Frutti (25cl)'],
+		'nutritions' : {'Calories':'55kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
+		'image' : 'img/menus/drinksMenu/freshjuice.png',
+	},
 	'Heineken' : {
 		'name' : 'Heineken',
 		'sizes' : ['Bottle (25cl)', 'Can (33cl)'],
@@ -81,14 +87,8 @@ var drinksList = {
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 		'image' : 'img/menus/drinksMenu/sweppescitrus.png',
 	},
-	'Fresh Juice' : {
-		'name' : 'Fresh Juice',
-		'sizes' : ['Orange Juice (25cl)', 'Blueberry Juice (25cl)', 'Lemonade (25cl)', 'Tutti Frutti (25cl)'],
-		'nutritions' : {'Calories':'55kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
-		'image' : 'img/menus/drinksMenu/freshjuice.png',
-	},
-	'Coca-Cola Classic' : {
-		'name' : 'Coca-Cola Classic',
+	'Coca-Cola' : {
+		'name' : 'Coca-Cola',
 		'sizes' : ['Bottle (25cl)', 'Can (33cl)', 'Glass (40cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 		'image' : 'img/menus/drinksMenu/cocacolaclassic.png',
@@ -123,20 +123,20 @@ var drinksList = {
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 		'image' : 'img/menus/drinksMenu/sprite.png',
 	},
-	'Lipton Ice Tea Peach' : {
-		'name' : 'Lipton Ice Tea Peach',
+	'Ice Tea Peach' : {
+		'name' : 'Ice Tea Peach',
 		'sizes' : ['Can (33cl)', 'Glass (40cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 		'image' : 'img/menus/drinksMenu/iceteapeach.png',
 	},
-	'Lipton Ice Tea Lemon' : {
-		'name' : 'Lipton Ice Tea Lemon',
+	'Ice Tea Lemon' : {
+		'name' : 'Ice Tea Lemon',
 		'sizes' : ['Can (33cl)', 'Glass (40cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 		'image' : 'img/menus/drinksMenu/icetealemon.png',
 	},
-	'Lipton Ice Tea Mango' : {
-		'name' : 'Lipton Ice Tea Mango',
+	'Ice Tea Mango' : {
+		'name' : 'Ice Tea Mango',
 		'sizes' : ['Can (33cl)', 'Glass (40cl)'],
 		'nutritions' : {'Calories':'120kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 		'image' : 'img/menus/drinksMenu/iceteamango.png',

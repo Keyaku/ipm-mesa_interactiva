@@ -2,22 +2,28 @@ main {
 	overflow-y: scroll;
 }
 
+.col-md-7.menuItems {
+		width: 50%;
+		height: 175%;
+}
+
 /*			Menu of drinks													*/
 .menuDrinkItem {
 	border-bottom: 1px dashed white;
 	display: inline-block;
-	width: 20%;
-	height: auto;
-}
-.menuDrinkItem:last-child { border: none; }
-.menuDrinkItemImg {
-	float: left;
-	width: 50%;
+	width: 33%;
 	height: auto;
 }
 
+.menuDrinkItem:last-child { border: none; }
+.menuDrinkItemImg {
+	display: block;
+	margin: 5% auto;
+	height: 150px;
+}
+
 .mPITitle {
-	font-size: 40px;
+	font-size: 20px;
 	font-family: "Raleway", Fallback, sans-serif;
 	margin-top: 10%;
 	text-align: center;
@@ -83,15 +89,13 @@ main {
 	width: 200px;
 }
 
-.col-md-7.menuItems {
-		width: 50%;
-		height: 150%;
-}
-
 .buttonContainer {
-	position: absolute;
-	bottom: 150px;
+	display: inline;
+	float: right;
+	position: fixed;
+	bottom: 100px;
 	right: 100px;
+	width: 550px;
 }
 
 ::-webkit-scrollbar {
