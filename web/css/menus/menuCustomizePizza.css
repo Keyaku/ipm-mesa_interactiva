@@ -111,8 +111,11 @@ svg.pizzaSizes.active circle {
 }
 
 .pizzaIngredientType {
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
 	margin-top: 5%;
 	margin-left: 5%;
+	padding: 5%;
 	overflow-x: scroll;
 	overflow-y: visible;
 	white-space: nowrap;
@@ -128,26 +131,20 @@ svg.pizzaSizes.active circle {
 
 .pizzaIngredient {
 	display: inline-block;
-	margin: 0 0 10px 0;
-	width: 200px;
+	padding: 1% 5%;
 	text-align: center;
 }
 
 .pizzaIngredientImg {
 	background-size: 140px 70px;
-	margin: 5px 70px 0 0; /* change this to center texto and imagem */
-	width: 140px;
-	height: 70px;
 	border: 2px solid white;
 	border-radius: 15px;
-}
-.pizzaIngredientImg.active {
-	background-size: 140px 70px;
-	margin: 5px 70px 0 0; /* change this to center texto and imagem */
+	margin: 0 auto;
 	width: 140px;
 	height: 70px;
+}
+.pizzaIngredientImg.active {
 	border: 2px solid green;
-	border-radius: 15px;
 }
 
 .pizzaIngredientName {
@@ -155,21 +152,16 @@ svg.pizzaSizes.active circle {
 	font-family: 'Raleway', sans-serif;
 	font-size: 22px;
 	text-align: center;
-	margin-left: -27%;
 }
 .pizzaIngredientName.active {
 	color: green;
-	font-family: 'Raleway', sans-serif;
-	font-size: 22px;
-	text-align: center;
-	margin-left: -27%;
 }
 
 /* Specific buttons */
 .buttonContainer#customizeButtons {
-	display: inline-block;
 	float: right;
-	margin-top: 20%;
+	margin-top: 50%;
+	width: 100%;
 }
 .buttonContainer#customizeButtons button {
 	padding: 1% 5%;
