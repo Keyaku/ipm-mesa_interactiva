@@ -85,13 +85,13 @@ function pizzaRemoveIngredient(ing) {
 }
 
 function setGlobalPizza() {
-	var index = sessionStorage.getItem('orderNumber'); //Gets the order number (in case the user is editing an order).
-	pizzaMaker['name'] = 'Custom #' + index.toString();
-	pizzaMaker['NutInfo'] = {'Calories':'556kcal', 'Protein':'23g', 'Carbohydrates':'44g', 'Fat':'99g'};
-	pizzaMaker['Rating'] = '88%';
-	pizzaMaker['Img'] = 'img/menus/pizzaMenu/menuPizza5.png';
-	if (sessionStorage.getItem('editing') == 'true') {
-		sessionStorage.setItem('editing', 'false');
+	var index = sessionStorage.orderNumber; //Gets the order number (in case the user is editing an order).
+	pizzaMaker['name'] = 'Custom #' + index;
+	pizzaMaker['nutritions'] = {'Calories':'556kcal', 'Protein':'23g', 'Carbohydrates':'44g', 'Fat':'99g'};
+	pizzaMaker['rating'] = '88%';
+	pizzaMaker['image'] = 'img/menus/pizzaMenu/menuPizza5.png';
+	if (sessionStorage.editing == 'true') {
+		sessionStorageediting = false;
 		managerEditCustomizedPizza(pizzaMaker);
 		$(location).attr('href', 'html/table.html'); //Confirms.
 	}
