@@ -67,17 +67,10 @@ function pizzaSetDough(dough) {
 	makePizza('Dough', dough);
 }
 function pizzaCheckIngredient(ing) {
-	for (var ingr in pizzaMaker['ingredients']) {
-		if (pizzaMaker['ingredients'][ingr] == ing) {
-			console.log("sim");
-			return true;
-		}
-	}
-	console.log("nao");
-	return false;
+	return pizzaMaker['ingredients'].find(function(val) { val == ing }) != undefined;
 }
 function pizzaAddIngredient(ing) {
-	(pizzaMaker['ingredients']).push(ing);
+	pizzaMaker['ingredients'].push(ing);
 }
 function pizzaRemoveIngredient(ing) {
 	var arr = pizzaMaker['ingredients'];
@@ -91,7 +84,7 @@ function setGlobalPizza() {
 	pizzaMaker['rating'] = '88%';
 	pizzaMaker['image'] = 'img/menus/pizzaMenu/menuPizza5.png';
 	if (sessionStorage.editing == 'true') {
-		sessionStorageediting = false;
+		sessionStorage.editing = false;
 		managerEditCustomizedPizza(pizzaMaker);
 		$(location).attr('href', 'html/table.html'); //Confirms.
 	}
