@@ -71,7 +71,7 @@ p {
 }
 
 .buttonContainer button {
-	background-color: rgba(255,255,255, 0.3);
+	background-color: grey;
 	border-radius: 20px;
 	color: white;
 	font-family: raleway, sans-serif;
