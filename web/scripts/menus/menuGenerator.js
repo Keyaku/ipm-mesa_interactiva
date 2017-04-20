@@ -1,5 +1,7 @@
 /*------------------------------------------------------------------------------
-				SHARED CODE
+
+SHARED CODE
+
 ------------------------------------------------------------------------------*/
 $('#extensiveInfoBar').hide(); //Hides the lateral pizza information bar.
 function showExtensiveInformation(objName, objSize = 0) {
@@ -86,7 +88,9 @@ function createRating(obj) {
 }
 
 /*------------------------------------------------------------------------------
-				PIZZA-RELATED CODE
+
+PIZZA-RELATED CODE
+
 ------------------------------------------------------------------------------*/
 function populateSuggestions(obj) {
 	obj.append($('<label>', { //Creates the title for the suggestion's menu.
@@ -180,7 +184,9 @@ function createPizzaSuggestion(pizza) {
 }
 
 /*------------------------------------------------------------------------------
-			DRINKS-RELATED CODE
+
+DRINKS-RELATED CODE
+
 ------------------------------------------------------------------------------*/
 function populateDrinksMenu(obj) {
 	for (drink in drinksList) {
