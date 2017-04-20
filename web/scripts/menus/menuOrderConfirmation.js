@@ -37,12 +37,13 @@ function shell(pizza, drink) {
 	}, 100);
 }
 
-function orderCancel() {
-	window.location.href = "html/table.html";
+function confirmationOrderCancel() {
+	confirmationOverlayShow(confirmationConfirmCancel, []);
 }
-function orderConfirm() {
-	sessionStorage.orders = Number(sessionStorage.orders) + 1;
-	window.location.href = "html/table.html";
+function confirmationConfirmCancel() {
+	var index = sessionStorage.orderNumber;
+	managerDeleteOrder(index);
+	window.location.href = 'html/table.html';
 }
 
 /*------------------------------------------------------------------------------
@@ -50,5 +51,5 @@ function orderConfirm() {
 			MENU FLOW
 
 ------------------------------------------------------------------------------*/
-$(".buttonCancel").click(function() { orderCancel(); }); //Cancells the selected order.
+$(".buttonCancel").click(function() { confirmationOrderCancel(); }); //Cancells the selected order.
 $(".buttonConfirm").click(function() { orderConfirm(); }); //Cancells the selected order.
