@@ -83,9 +83,10 @@ function cancelAllOrders() {
 	}
 }
 function orderCancel(index) {
-	confirmationOverlayShow(confirmCancel, index);
+	confirmationOverlayShow(confirmCancel, [index]);
 }
-function confirmCancel(index) {
+function confirmCancel(args) {
+	var index = args[0];
 	$("#order" + index.toString()).remove();
 	managerDeleteOrder(index);
 }
