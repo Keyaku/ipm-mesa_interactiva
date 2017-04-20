@@ -16,20 +16,18 @@ populateDrinksMenu($('.menuItems')); //Populates the drink's menu dynamically.
 function createDrinkOrderButton() {
 	var price = $('<label>', { //Creates a label with a price for the drink's type.
 		html: '5€',
-		'class': 'drinksInformationTypeLabel'
+		'class': 'drinksInformationTypeLabel',
+		'class': 'priceContainer'
 	});
-	price.addClass('priceContainer');
 	var button = $('<button>', {
+		'id': 'drinkOrderButton',
 		html: 'Order',
-		'click': function() { setGlobalDrink(); },
-		'id': 'drinkOrderButton'
+		'click': function() { setGlobalDrink(); }
 	}); //Creates a button for ordering.
 	return $('<div>').append([price, button]);
 }
 
-function drinksOrderCancel(index) {
-	confirmationOverlayShow(drinksConfirmCancel, []);
-}
+function drinksOrderCancel(index) { confirmationOverlayShow(drinksConfirmCancel, []); }
 function drinksConfirmCancel(args) {
 	var index = sessionStorage.orderNumber;
 	managerDeleteOrder(index);
@@ -41,10 +39,9 @@ function setGlobalDrink() {
 	managerAddNewDrink(b);
 	if (sessionStorage.getItem('editing') == 'true') {
 		sessionStorage.setItem('editing', 'false');
-		$(location).attr('href', 'html/table.html'); //Confirms.
-	} else {
-		window.location.href = 'html/menus/menuOrderConfirmation.html'; //Changes the screen (menu flow).
-	}
+		$(location).attr('href', 'html/table.html');
+	} //Confirms.
+	else { window.location.href = 'html/menus/menuOrderConfirmation.html'; } //Changes the screen (menu flow).
 }
 
 

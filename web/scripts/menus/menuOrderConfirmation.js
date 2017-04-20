@@ -45,6 +45,10 @@ function confirmationConfirmCancel() {
 	managerDeleteOrder(index);
 	window.location.href = 'html/table.html';
 }
+function orderConfirm() {
+	sessionStorage.orders = Number(sessionStorage.orders) + 1;
+	window.location.href = "html/table.html";
+}
 
 /*------------------------------------------------------------------------------
 
