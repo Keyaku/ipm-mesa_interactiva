@@ -63,7 +63,6 @@ $('#backButton').click(function() { window.location.href = 'html/menus/menuPizza
 
 $('#skipButton').click(function() {
 	var orderNumber = "order" + sessionStorage.orderNumber;
-	console.log(orderNumber);
 	if (managerCheckIf(orderNumber)) {
 		window.location.href = 'html/menus/menuOrderConfirmation.html'
 	}
