@@ -4,7 +4,7 @@ CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
 $('#menubar').menubar();
-$('#navbar').navbar({{selected: 'Confirm'}});
+$('#navbar').navbar({selected: 'Confirm'});
 
 var orderNumber = Number(sessionStorage.orders);
 for (var i = 0; i < orderNumber; i++) {
