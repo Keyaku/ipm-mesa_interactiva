@@ -67,7 +67,7 @@ function pizzaSetDough(dough) {
 	makePizza('Dough', dough);
 }
 function pizzaCheckIngredient(ing) {
-	return pizzaMaker['ingredients'].find(function(val) { val == ing }) != undefined;
+	return pizzaMaker['ingredients'].find(function(val) { return val == ing; }) != undefined;
 }
 function pizzaAddIngredient(ing) {
 	pizzaMaker['ingredients'].push(ing);
