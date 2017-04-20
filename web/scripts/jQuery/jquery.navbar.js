@@ -88,7 +88,11 @@ function informationButton() { $(location).attr('href', 'html/information.html')
 			steps.first().addClass('current');
 		} else {
 			var current = steps.children(':contains(' + def.selected + ')').parent();
-			console.log(current.siblings());
+			var others = current.siblings();
+			var index = current.index();
+			for (var i = 0; i < index; i++) {
+				others.eq(i).addClass('visited');
+			}
 			current.addClass('current');
 		}
     };
