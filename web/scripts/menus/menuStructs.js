@@ -42,9 +42,8 @@ var pizzaList = {
 	}
 };
 
-function getPremadePizza(pizzaName) {
-	return pizzaList[pizzaName];
-}
+//Returns the structure of the the given pizza.
+function getPremadePizza(pizzaName) { return pizzaList[pizzaName]; }
 
 /*------------------------------------------------------------------------------
 				DRINKS
@@ -149,6 +148,5 @@ var drinksList = {
 	},
 };
 
-function getPremadeDrink(drinkName) {
-	return drinksList[drinkName];
-}
+//Returns the structure of the the given drink.
+function getPremadeDrink(drinkName) { return drinksList[drinkName]; }
