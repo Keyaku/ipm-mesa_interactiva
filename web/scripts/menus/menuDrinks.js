@@ -52,3 +52,15 @@ $('.menuDrinkItem').click(function() { showExtensiveInformation($(this).children
 //The click event of #drinksInformationClose is defined in the spawning (in showExtensiveInformation()).
 //The click event of #drinkOrderButton is defined in the spawning (in createDrinkOrderButton()).
 $('#cancelButton').click(function() { window.location.href = 'html/table.html'; }); //Changes the page to the main page.
+$('#backButton').click(function() { window.location.href = 'html/menus/menuPizzaList.html'; }); //Changes the page to the main page.
+
+$('#skipButton').click(function() {
+	var orderNumber = "order" + sessionStorage.orderNumber;
+	console.log(orderNumber);
+	if (managerCheckIf(orderNumber)) {
+		window.location.href = 'html/menus/menuOrderConfirmation.html'
+	}
+	else {
+		window.location.href = 'html/table.html'
+	}
+});

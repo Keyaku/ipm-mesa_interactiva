@@ -71,3 +71,17 @@ function managerDeleteOrder(orderNumber) {
 
 	managerAddToMeta(key, v); //Adds the empty order to the global data structure.
 }
+
+function managerCheckIf(orderNumber) {
+	var values = managerGetMetaValues(orderNumber);
+	if (values == null) {
+		return false;
+	}
+
+	if (values[0] != "" || values[1]) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
