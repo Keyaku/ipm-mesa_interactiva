@@ -2,8 +2,29 @@ main {
 	overflow-y: scroll;
 }
 
+::-webkit-scrollbar {
+  background-color: rgba(46, 125, 50, 0.2);
+	border-radius: 20px;
+}
+
+::-webkit-scrollbar:vertical {
+	width: 0.5%;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(107, 155, 55, 0.4);
+	border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: white;
+}
+
 .menuItems {
 	height: 175%;
+}
+.menuItems::-webkit-scrollbar {
+ 	display:none;
 }
 
 /*			Menu of drinks													*/
@@ -101,22 +122,4 @@ main {
 .buttonContainer button#skipButton {
 	background-color: green;
 	border-color: green;
-}
-
-::-webkit-scrollbar {
-  background-color: rgba(46, 125, 50, 0.2);
-	border-radius: 20px;
-}
-
-::-webkit-scrollbar:vertical {
-	width: 0.5%;
-}
-
-::-webkit-scrollbar-thumb {
-	background-color: rgba(107, 155, 55, 0.4);
-	border-radius: 20px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background-color: white;
 }
