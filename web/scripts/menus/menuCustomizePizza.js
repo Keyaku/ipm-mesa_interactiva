@@ -71,10 +71,14 @@ function pizzaCheckIngredient(ing) {
 }
 function pizzaAddIngredient(ing) {
 	pizzaMaker['ingredients'].push(ing);
+	// Adding it to the HTML
+	$('#ingredientsPicked').append($('<li>', { html: ing }));
 }
 function pizzaRemoveIngredient(ing) {
-	var arr = pizzaMaker['ingredients'];
-	arr.splice($.inArray(ing, arr),1);
+	var index = pizzaMaker['ingredients'].indexOf(ing);
+	pizzaMaker['ingredients'].splice(index, 1);
+	// Removing it from the HTML
+	$('#ingredientsPicked').children(':contains(' + ing + ')').remove();
 }
 
 function setGlobalPizza() {
@@ -120,8 +124,7 @@ $('.pizzaIngredient').click(function() {
 	var ing = $(this).attr('id');
 	if (pizzaCheckIngredient(ing)) {
 		pizzaRemoveIngredient(ing);
-	}
-	else {
+	} else {
 		pizzaAddIngredient(ing);
 	}
 });
