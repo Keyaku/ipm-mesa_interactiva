@@ -27,7 +27,14 @@ function createDrinkOrderButton() {
 	return $('<div>').append([price, button]);
 }
 
-function confirmCancel() { /*TODO - FranciscoKloganB: Popup that asks for confirmation for cancelling the order.*/ }
+function drinksOrderCancel(index) {
+	confirmationOverlayShow(drinksConfirmCancel, []);
+}
+function drinksConfirmCancel(args) {
+	var index = sessionStorage.orderNumber;
+	managerDeleteOrder(index);
+	window.location.href = 'html/table.html';
+}
 
 function setGlobalDrink() {
 	var b = $('#extensiveInfoBar').children('.mPITitle').text(); //Gets the name of the ordered pizza.
@@ -51,7 +58,7 @@ $('.menuDrinkItem').click(function() { showExtensiveInformation($(this).children
 
 //The click event of #drinksInformationClose is defined in the spawning (in showExtensiveInformation()).
 //The click event of #drinkOrderButton is defined in the spawning (in createDrinkOrderButton()).
-$('#cancelButton').click(function() { window.location.href = 'html/table.html'; }); //Changes the page to the main page.
+$('#cancelButton').click(function() { drinksOrderCancel(); }); //Changes the page to the main page.
 $('#backButton').click(function() { window.location.href = 'html/menus/menuPizzaList.html'; }); //Changes the page to the main page.
 
 $('#skipButton').click(function() {

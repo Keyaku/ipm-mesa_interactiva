@@ -25,7 +25,6 @@ function managerGetMetaValues(orderNumber) {
 /* Wrapper functions */
 function managerAddNewPizza(pizzaName, pizzaSize) {
 	var pizza = getPremadePizza(pizzaName); //Gets the pizza's structure.
-
 	pizza['pizzaSize'] = pizzaSize; //Adds the pizza's size to the the structure.
 	var key = "order" + sessionStorage.orderNumber; //Gets the dictionary key.
 	var value = [pizza, ""]; //Sets the value for the key.
@@ -68,7 +67,6 @@ function managerAddNewDrink(drinkName) {
 function managerDeleteOrder(orderNumber) {
 	var key = "order" + orderNumber; //Gets the dictionary key.
 	var v = ["", ""]; //Sets the value for the key (empty fields).
-
 	managerAddToMeta(key, v); //Adds the empty order to the global data structure.
 }
 
