@@ -2,9 +2,8 @@ main {
 	overflow-y: scroll;
 }
 
-.col-md-7.menuItems {
-		width: 50%;
-		height: 175%;
+.menuItems {
+	height: 175%;
 }
 
 /*			Menu of drinks													*/
@@ -83,19 +82,14 @@ main {
 	height: 100%;
 }
 
-.buttonContainer button {
-	margin-top: 15%;
-	margin-left: 60%;
-	width: 200px;
+.buttonContainer {
+	position: fixed;
+	top: 50%;
+	right: 0;
 }
 
-.buttonContainer {
-	display: inline;
-	float: right;
-	position: fixed;
-	bottom: 100px;
-	right: 100px;
-	width: 550px;
+.buttonContainer button {
+	width: 200px;
 }
 
 ::-webkit-scrollbar {
