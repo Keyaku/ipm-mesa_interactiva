@@ -4,7 +4,6 @@ CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
 $("#menubar").menubar();
-$("#navbar").navbar();
 
 var orderNumber = parseInt(sessionStorage.getItem("orders"));
 for (var i = 0; i < orderNumber; i++) {

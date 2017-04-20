@@ -29,7 +29,6 @@ function managerAddNewPizza(pizzaName, pizzaSize) {
 	pizza['pizzaSize'] = pizzaSize; //Adds the pizza's size to the the structure.
 	var key = "order" + sessionStorage.orderNumber; //Gets the dictionary key.
 	var value = [pizza, ""]; //Sets the value for the key.
-
 	managerAddToMeta(key, value); //Adds the order to the global data structure.
 }
 function managerEditPizza(pizzaName, pizzaSize) {
