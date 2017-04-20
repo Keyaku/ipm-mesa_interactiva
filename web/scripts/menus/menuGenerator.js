@@ -22,7 +22,12 @@ function showExtensiveInformation(objName, objSize = 0) {
 	var ratingDiv;
 	var priceOrder;
 
-	$('#extensiveInfoBar').empty().append([closeX, objTitle]);
+	$('#extensiveInfoBar').empty().append(closeX);
+
+	var container = $('<div>', {
+		html: objTitle,
+		'id': 'infoContents'
+	});
 	if (objSize != 0) { // If objSize is given, then it's a pizza
 		ingredients = createPizzaIngredientsList(pizza); //Gets the list of the pizza's ingredients.
 		nutInfo = createNutritonalInfo(pizza); //Gets all the nutritional information for the pizza.
@@ -30,15 +35,17 @@ function showExtensiveInformation(objName, objSize = 0) {
 
 		ratingDiv = createRating(pizza); //Gets the rating.
 
-		$('#extensiveInfoBar').append([ingredients, nutInfo, ratingDiv]);
+		container.append([ingredients, nutInfo, ratingDiv]);
 	} else {
 		nutInfo = createNutritonalInfo(drink); //Gets the nutritional information for the drink.
 		drinkTypes = createDrinkTypes(drink); //Gets the drink's types.
 		priceOrder = createDrinkOrderButton(); //Gets the drink's order price and button.
 
-		$('#extensiveInfoBar').append([nutInfo, drinkTypes]);
+		container.append([nutInfo, drinkTypes]);
 	}
-	$('#extensiveInfoBar').append([priceOrder, priceOrder]).show();
+	container.append([priceOrder, priceOrder]);
+
+	$('#extensiveInfoBar').append(container).show();
 }
 function hideExtensiveInformation() {
 	$('#extensiveInfoBar').hide();

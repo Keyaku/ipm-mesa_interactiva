@@ -22,7 +22,7 @@ function createPizzaPrice(pizzaSize) {
 		'Large'  : 12,
 	}
 	var pizzaPrice = (pizzaSize in prices) ? prices[pizzaSize] : 0;
-	var d = $('<div>').addClass('pizzaPriceDiv')
+	var d = $('<div>').addClass('priceContainer')
 	.append($('<label>', { html: pizzaSize + ' : ' + pizzaPrice + '€' }))
 	.append($('<button>', {
 		html: 'Order!',
