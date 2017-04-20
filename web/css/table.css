@@ -87,7 +87,7 @@ p {
 
 /************************* Extensive Information Bar *************************/
 #extensiveInfoBar {
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.95);
 	float: right;
 	margin-right: 5%;
 	height: 100%;

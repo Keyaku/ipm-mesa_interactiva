@@ -29,6 +29,10 @@ main {
 	width: 100%;
 }
 
+#extensiveInfoBar .mPITitle  {
+	font-size: 50px;
+}
+
 .nutritionalTable {
 	font-family: raleway, sans-serif;
 	font-size: 20px;
@@ -84,8 +88,8 @@ main {
 
 .buttonContainer {
 	position: fixed;
-	top: 50%;
-	right: 0;
+	top: 90%;
+	right: -50;
 }
 
 .buttonContainer button {
