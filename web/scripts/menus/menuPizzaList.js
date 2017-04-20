@@ -3,8 +3,8 @@
 				CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
-$('#menubar').menubar(); //Adding menu bar
-$('#navbar').navbar(); //Adding top navigation bar
+$('#menubar').menubar(); //Adds menu bar.
+$('#navbar').navbar(); //Adds top navigation bar.
 populateSuggestions($('#suggestions')); //Populates the suggested pizza's menu dynamically.
 populatePremadeMenu($('#premade')); //Populates the premade pizza's menu dynamically.
 
@@ -80,7 +80,7 @@ $('.mPIISizeButton').click(function(){
 });
 //The click event for the Customize Your Own Pizza page changes the page to that.
 $('#customizationShortcut').click(function() { window.location.href = 'html/menus/menuCustomizePizza.html'; });
-//The click event for the skip button changes the page to the drinks menu.
-$('#skipButton').click(function() { window.location.href = 'html/menus/menuDrinks.html'; });
 //The click event for the cancel button changes the page to the main page.
 $('#cancelButton').click(function() { pizzaOrderCancel(); });
+//The click event for the skip button changes the page to the drinks menu.
+$('#skipButton').click(function() { window.location.href = 'html/menus/menuDrinks.html'; });
