@@ -51,7 +51,7 @@ function setGlobalPizza(pizzaSize) {
 		sessionStorage.setItem("editing", "false"); //Sets the editing flag to false.
 		managerEditPizza(pizzaName, pizzaSize); //Adds the pizza to the system.
 		window.location.href = 'html/table.html';
-		//TODO - @RafaelRibeiro - Show the confirmation popup.
+		//TODO - @FranciscoKloganB - Show the confirmation popup.
 	}
 	else { //If the client is NOT editing a previous order.
 		managerAddNewPizza(pizzaName, pizzaSize); //Adds the pizza to the system.
