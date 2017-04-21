@@ -42,7 +42,7 @@
 ### JS files to comment
 * [X] menuCustomizePizza.js
 * [X] menuDrinks.js
-* [ ] menuGenerator.js
+* [X] menuGenerator.js
 * [X] menuOrderConfirmation.js
 * [X] menuPizzaList.js
 * [X] menuStructs.js
