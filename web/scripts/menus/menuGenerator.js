@@ -12,8 +12,6 @@ function showExtensiveInformation(objName, objSize = 0) {
 	});
 	$('#extensiveInfoBar').empty().append(closeX); //Emptys the extensive information bar.
 
-	var objTitle = createItemName(objName);
-
 	// Pizza elements
 	var pizza = getPremadePizza(objName); //Gets the pizza's structure.
 	var ingredients;
@@ -23,19 +21,19 @@ function showExtensiveInformation(objName, objSize = 0) {
 	var drinkTypes;
 
 	// Global
-	var nutInfo;
+	var nutInfo = createNutritonalInfo(pizza); //Creates a div for the nutritional information table.
 	var ratingDiv;
 	var priceOrder;
 
 	var container = $('<div>', {
-		'id': 'infoContents'
-		html: objTitle
+		'id': 'infoContents',
+		html: createItemName(objName)
 	});
 	if (objSize != 0) { //If objSize is given, it's a pizza.
 		ingredients = createPizzaIngredientsList(pizza); //Creates the pizza's ingredient list.
-		nutInfo = createNutritonalInfo(pizza); //Creates a div for the nutritional information table.
-		priceOrder = createPizzaPrice(objSize);
+
 		ratingDiv = createRating(pizza); //Creates a div for the rating stars and the rating label.
+		priceOrder = createPizzaPrice(objSize);
 		container.append([ingredients, nutInfo, ratingDiv]);
 	}
 	else { //If objSize is NOT given, it's a drink.
@@ -44,11 +42,9 @@ function showExtensiveInformation(objName, objSize = 0) {
 		priceOrder = createDrinkOrderButton(); //Gets the drink's order price and button.
 		container.append([nutInfo, drinkTypes]);
 	}
-	container.append([priceOrder, priceOrder]);
-
+	container.append(priceOrder);
 	$('#extensiveInfoBar').append(container).show();
 }
-
 //Hides the extensive information bar.
 function hideExtensiveInformation() { $('#extensiveInfoBar').hide(); }
 
@@ -60,7 +56,6 @@ function createItemName(obj) {
 		html: obj
 	});
 }
-
 //Creates a div for the nutritional information table.
 function createNutritonalInfo(obj) {
 	var nutInfo = obj['nutritions']; //Gets the list of nutritional facts.
@@ -77,7 +72,7 @@ function createNutritonalInfo(obj) {
 function createRating(obj) {
 	var d = $('<div>').addClass('rating');
 	for (var i = 0; i < 5; i++) {
-		d.append($('<i>').addClass('fa fa-star');
+		d.append($('<i>').addClass('fa fa-star'));
 	}
 	d.append($('<p>', {
 		'class': 'ratingValue',
@@ -92,7 +87,7 @@ function createRating(obj) {
 
 ------------------------------------------------------------------------------*/
 //TODO - @RafaelRibeiro - delete this and replace it for a symbol in the corresponding pizzas in the premade pizza menu.
-/*
+
 function populateSuggestions(obj) {
 	obj.append($('<label>', { //Creates the title for the suggestion's menu.
 		html: 'Suggestions tailored for you',
@@ -111,7 +106,7 @@ function createPizzaSuggestion(pizza) {
 		'class': 'menuPizzaSugestion'
 	});
 }
-*/
+
 
 //Creates and populates the premade pizzas menu.
 function populatePremadeMenu(obj) {
