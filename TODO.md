@@ -46,6 +46,6 @@
 * [X] menuOrderConfirmation.js
 * [X] menuPizzaList.js
 * [X] menuStructs.js
-* [ ] orderManager.js
+* [X] orderManager.js
 * [X] newOrder.js
 * [X] table.js

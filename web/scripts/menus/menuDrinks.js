@@ -70,7 +70,7 @@ $('#cancelButton').click(function() { drinksOrderCancel(); }); //Changes the pag
 $('#backButton').click(function() { window.location.href = 'html/menus/menuPizzaList.html'; });
 //The click event for the skip button changes the page to the confirmation page or the main page.
 $('#skipButton').click(function() {
-	if (managerCheckIf(sessionStorage.orderNumber)) { //If the client ordered a pizza.
+	if (managerCheckOrderNotEmpty(sessionStorage.orderNumber)) { //If the client ordered a pizza.
 		window.location.href = 'html/menus/menuOrderConfirmation.html'
 	}
 	else { //If the client also skipped the pizza.
