@@ -6,8 +6,7 @@
 $('#menubar').menubar(); //Adds the menu bar..
 $('#navbar').navbar({selected: 'Confirm'}); //Adds top navigation bar.
 
-var str = "order" + Number(sessionStorage.orders);
-var values = managerGetMetaValues(str);
+var values = managerGetMetaValues(Number(sessionStorage.orders));
 createOrderItem(); //Creates the HTML structure for the order.
 createOrderElements(values[0], values[1]); //Fills the order item with the chosen pizza and drink.
 
