@@ -38,3 +38,14 @@
 		* [ ] Build your own
 	* [ ] Choose drink (presents a list of drinks with names, images and prices)
 	* [ ] Choose dessert
+
+### JS files to comment
+* [X] menuCustomizePizza.js
+* [X] menuDrinks.js
+* [ ] menuGenerator.js
+* [X] menuOrderConfirmation.js
+* [X] menuPizzaList.js
+* [X] menuStructs.js
+* [ ] orderManager.js
+* [X] newOrder.js
+* [X] table.js

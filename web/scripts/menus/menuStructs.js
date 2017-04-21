@@ -1,5 +1,7 @@
 /*------------------------------------------------------------------------------
-				PIZZAS
+
+			PIZZAS
+
 ------------------------------------------------------------------------------*/
 //Array of premade suggested pizzas (for the JS generated menu).
 var suggestionsList = { 'Pepperoni Lovers' : {}, 'Four Seasons' : {}, 'Camponesa' : {} };
@@ -46,7 +48,9 @@ var pizzaList = {
 function getPremadePizza(pizzaName) { return pizzaList[pizzaName]; }
 
 /*------------------------------------------------------------------------------
-				DRINKS
+
+			DRINKS
+
 ------------------------------------------------------------------------------*/
 //Array of premade drinks (for the JS generated menu).
 var drinksList = {

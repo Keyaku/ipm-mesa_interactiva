@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------
 
-				CODE EXECUTION
+			CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
 $('#menubar').menubar(); //Adds the menu bar..
@@ -11,7 +11,7 @@ populatePremadeMenu($('#premade')); //Populates the premade pizza's menu dynamic
 
 /*------------------------------------------------------------------------------
 
-				AUXILIAR FUNCTIONS
+			AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
 //TODO - @RafaelRibeiro - Move this to menuGenerate.js
@@ -67,7 +67,7 @@ function pizzaConfirmCancel(args) { window.location.href = 'html/table.html'; }
 
 /*------------------------------------------------------------------------------
 
-				MENU FLOW
+			MENU FLOW
 
 ------------------------------------------------------------------------------*/
 //The click event of #pizzaInformationClose is defined in the spawning (in showExtensiveInformation()).

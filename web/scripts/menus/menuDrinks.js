@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------
 
-				CODE EXECUTION
+			CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
 $('#menubar').menubar(); //Adds the menu bar..
@@ -10,7 +10,7 @@ populateDrinksMenu($('.menuItems')); //Populates the drink's menu dynamically.
 
 /*------------------------------------------------------------------------------
 
-				AUXILIAR FUNCTIONS
+			AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
 //TODO - @RafaelRibeiro - Move this to menuGenerate.js
@@ -51,7 +51,7 @@ function drinksConfirmCancel(args) {
 
 /*------------------------------------------------------------------------------
 
-				MENU FLOW
+			MENU FLOW
 
 ------------------------------------------------------------------------------*/
 //The click event of #drinksInformationClose is defined in the spawning (in showExtensiveInformation()).

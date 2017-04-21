@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------
 
-				DATA STRUCTURES
+			DATA STRUCTURES
 
 ------------------------------------------------------------------------------*/
 const PATH_INGREDIENTS = 'img/menus/customizeMenu/pizzaIngredients/'; // Don't forget to consider our <base> rule.
@@ -14,7 +14,7 @@ const LIST_INGREDIENTS = {
 
 /*------------------------------------------------------------------------------
 
-				CODE EXECUTION
+			CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
 $('#menubar').menubar();		// Adding menu bar
@@ -53,7 +53,7 @@ for (var ingredientType in LIST_INGREDIENTS) {
 
 /*------------------------------------------------------------------------------
 
-				AUXILIAR FUNCTIONS
+			AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
 //Sets the key's value to the given value in the customized pizza's structure.
