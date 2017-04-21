@@ -58,8 +58,8 @@ for (var ingredientType in LIST_INGREDIENTS) {
 ------------------------------------------------------------------------------*/
 //Sets the key's value to the given value in the customized pizza's structure.
 function pizzaCustomizeField(field, value) {
-	pizzaMaker[field] = value;
-	pizzaUpdateLabel();
+	pizzaMaker[field] = value; //Sets the value;
+	pizzaUpdateLabel(); //Updates the visual information for the client.
 }
 
 //TODO - @keyaku - comment this
@@ -90,23 +90,19 @@ function pizzaRemoveIngredient(ing) {
 
 function setGlobalPizza() {
 	var index = sessionStorage.orderNumber; //Gets the order number (in case the user is editing an order).
-	pizzaCustomizeField('name', 'Custom #' + index);
-	pizzaCustomizeField('nutritions', {'Calories':'556kcal', 'Protein':'23g', 'Carbohydrates':'44g', 'Fat':'99g'});
-	pizzaCustomizeField('rating', '88%');
-	pizzaCustomizeField('image', 'img/menus/pizzaMenu/menuPizza5.png');
-	/*pizzaMaker['name'] = 'Custom #' + index;
-	pizzaMaker['nutritions'] = {'Calories':'556kcal', 'Protein':'23g', 'Carbohydrates':'44g', 'Fat':'99g'};
-	pizzaMaker['rating'] = '88%';
-	pizzaMaker['image'] = 'img/menus/pizzaMenu/menuPizza5.png';
-	*/
-	if (sessionStorage.editing == 'true') {
-		sessionStorage.editing = false;
-		managerEditCustomizedPizza(pizzaMaker);
-		$(location).attr('href', 'html/table.html'); //Confirms.
+	pizzaCustomizeField('name', 'Custom #' + index); //Sets the name of the custom pizza.
+	pizzaCustomizeField('nutritions', {'Calories':'556kcal', 'Protein':'23g', 'Carbohydrates':'44g', 'Fat':'99g'}); //Sets the caloric of the custom pizza.
+	pizzaCustomizeField('rating', '88%'); //Sets the rating of the custom pizza.
+	pizzaCustomizeField('image', 'img/menus/pizzaMenu/menuPizza5.png'); //Sets the image of the custom pizza.
+	if (sessionStorage.editing == 'true') { //If the client is editing a previous order.
+		sessionStorage.editing = false; //Sets the editing flag to false.
+		managerEditCustomizedPizza(pizzaMaker); //Adds the pizza to the system.
+		window.location.href = 'html/table.html');
+		//TODO - @FranciscoKloganB - Show the confirmation popup.
 	}
-	else {
-		managerAddNewCustomizedPizza(pizzaMaker);
-		$(location).attr('href', 'html/menus/menuDrinks.html'); //Changes the screen (menu flow).
+	else { //If the client is NOT editing a previous order.
+		managerAddNewCustomizedPizza(pizzaMaker); //Adds the pizza to the system.
+		window.location.href = 'html/menus/menuDrinks.html'); //Continues with the order.
 	}
 }
 
