@@ -129,8 +129,6 @@ $('.pizzaDough label').click(function() {
 	$(this).toggleClass('active'); //Shows the dough that is selected.
 	pizzaSetDough($(this).attr('id')); //Sets the pizza's dough.
 });
-//The click event for the confirm button confirms the customized pizza.
-$('#confirm').click(function() { setGlobalPizza(); });
 //The click event for the ingredient buttons adds/removes it from the ingredients list.
 $('.pizzaIngredient').click(function() {
 	$(this).children('.pizzaIngredientImg').toggleClass('active'); //Show the ingredient is selected.
@@ -143,3 +141,5 @@ $('.pizzaIngredient').click(function() {
 		pizzaAddIngredient(ing); //Adds the ingredient to the list.
 	}
 });
+//The click event for the confirm button confirms the customized pizza.
+$('#confirm').click(function() { setGlobalPizza(); });
