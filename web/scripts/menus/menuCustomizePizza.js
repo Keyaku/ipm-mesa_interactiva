@@ -56,9 +56,13 @@ for (var ingredientType in LIST_INGREDIENTS) {
 				AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
-function makePizza(field, value) {
+//Sets the key's value to the given value in the customized pizza's structure.
+function pizzaCustomizeField(field, value) {
 	pizzaMaker[field] = value;
+	pizzaUpdateLabel();
 }
+
+//TODO - @keyaku - comment this
 function pizzaUpdateLabel() {
 	var size = pizzaMaker['size'] != undefined ? ' <b>' + pizzaMaker['size'] + '</b>' : '';
 	var dough = pizzaMaker['dough'] != undefined ? ' <i>' + pizzaMaker['dough'] + '</i>' : '';
@@ -66,35 +70,35 @@ function pizzaUpdateLabel() {
 	$('label#customPizza').html(str);
 }
 
-function pizzaSetSize(size) {
-	makePizza('size', size);
-	pizzaUpdateLabel();
-}
-function pizzaSetDough(dough) {
-	makePizza('dough', dough);
-	pizzaUpdateLabel();
-}
-function pizzaCheckIngredient(ing) {
-	return pizzaMaker['ingredients'].find(function(val) { return val == ing; }) != undefined;
-}
+//Sets the customized pizza's size.
+function pizzaCustomizeSize(size) { pizzaCustomizeField('size', size); }
+//Sets the customized pizza's dough.
+function pizzaSetDough(dough) { pizzaCustomizeField('dough', dough); }
+//Checks if the ingredient is selected.
+function pizzaIsIngredientSelected(ing) { return pizzaMaker['ingredients'].find(function(val) { return val == ing; }) != undefined; }
+//Adds the ingredient to the customized pizza's structure.
 function pizzaAddIngredient(ing) {
-	pizzaMaker['ingredients'].push(ing);
-	// Adding it to the HTML
-	$('#ingredientsPicked').append($('<li>', { html: ing }));
+	pizzaMaker['ingredients'].push(ing); //Adds it to the structure.
+	$('#ingredientsPicked').append($('<li>', { html: ing })); //Adds it to the HTML.
 }
+//Removes the ingredient from the customized pizza's structure.
 function pizzaRemoveIngredient(ing) {
 	var index = pizzaMaker['ingredients'].indexOf(ing);
-	pizzaMaker['ingredients'].splice(index, 1);
-	// Removing it from the HTML
-	$('#ingredientsPicked').children(':contains(' + ing + ')').remove();
+	pizzaMaker['ingredients'].splice(index, 1); //Removes it from the structure.
+	$('#ingredientsPicked').children(':contains(' + ing + ')').remove(); //Removes it from the HTML.
 }
 
 function setGlobalPizza() {
 	var index = sessionStorage.orderNumber; //Gets the order number (in case the user is editing an order).
-	pizzaMaker['name'] = 'Custom #' + index;
+	pizzaCustomizeField('name', 'Custom #' + index);
+	pizzaCustomizeField('nutritions', {'Calories':'556kcal', 'Protein':'23g', 'Carbohydrates':'44g', 'Fat':'99g'});
+	pizzaCustomizeField('rating', '88%');
+	pizzaCustomizeField('image', 'img/menus/pizzaMenu/menuPizza5.png');
+	/*pizzaMaker['name'] = 'Custom #' + index;
 	pizzaMaker['nutritions'] = {'Calories':'556kcal', 'Protein':'23g', 'Carbohydrates':'44g', 'Fat':'99g'};
 	pizzaMaker['rating'] = '88%';
 	pizzaMaker['image'] = 'img/menus/pizzaMenu/menuPizza5.png';
+	*/
 	if (sessionStorage.editing == 'true') {
 		sessionStorage.editing = false;
 		managerEditCustomizedPizza(pizzaMaker);
@@ -117,7 +121,7 @@ function setGlobalPizza() {
 $('.pizzaSizes').click(function() {
 	$('.pizzaSizes').removeClass('active'); //Clears the previously chosen size.
 	$(this).toggleClass('active'); //Shows the size that is selected.
-	pizzaSetSize($(this).attr('id')); //Sets the pizza's size.
+	pizzaCustomizeSize($(this).attr('id')); //Sets the pizza's size.
 });
 //The click event for the pizza dough buttons sets the pizza's dough.
 $('.pizzaDough label').click(function() {
@@ -132,7 +136,7 @@ $('.pizzaIngredient').click(function() {
 	$(this).children('.pizzaIngredientImg').toggleClass('active'); //Show the ingredient is selected.
 	$(this).children('.pizzaIngredientName').toggleClass('active'); //Show the ingredient is selected.
 	var ing = $(this).attr('id'); //Gets the ingredients name.
-	if (pizzaCheckIngredient(ing)) { //If the ingredient is in the list.
+	if (pizzaIsIngredientSelected(ing)) { //If the ingredient is in the list.
 		pizzaRemoveIngredient(ing); //Removes the ingredient from the list.
 	}
 	else { //If the ingredient is NOT in the list.
