@@ -72,3 +72,11 @@ function managerDeleteOrder(orderNumber) {
 	var v = ['', '']; //Sets the value for the key (empty fields).
 	managerAddToMeta(orderNumber, v); //Adds the empty order to the global data structure.
 }
+
+//Makes the order empty (for the system, if the order is empty, it doesn't show up).
+function manageDeleteAllOrders() {
+	var v = ['', '']; //Sets the value for the key (empty fields).
+	for (var i = 0; i < sessionStorage.orders; i++) {
+		managerAddToMeta(i, v);
+	}
+}

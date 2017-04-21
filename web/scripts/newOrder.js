@@ -85,8 +85,12 @@ function confirmCancel(args) {
 	managerDeleteOrder(index);
 }
 //When the client clicks the cancel all button.
-//TODO - @RafaelRibeiro
-function orderAllCancel() {  }
+function orderAllCancel() { confirmationOverlayShow(confirmCancelAll, []); }
+//When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
+function confirmCancelAll() {
+	$('#orders').empty();
+	manageDeleteAllOrders();
+}
 
 
 /*------------------------------------------------------------------------------
@@ -102,6 +106,8 @@ $('.buttonEditPizza').click(function() { orderEditPizza(parseInt(($(this).attr('
 $('.buttonEditDrink').click(function() { orderEditDrink(parseInt(($(this).attr('id'))[9])); });
 //The click event for the cancel button cancels the order.
 $('.buttonCancel').click(function() { orderCancel(parseInt(($(this).attr('id'))[6])); }); //Cancells the selected order.
+//The click event for the cancel all button cancels the order.
+$('#buttonCancelAll').click(function() { orderAllCancel(); }); //Cancells the selected order.
 //The click event for the new order buttons enables the client to order again.
 $('#buttonNewOrder').click(function() {
 	sessionStorage.setItem('orderNumber', sessionStorage.orders); //Sets the number of the current order.
