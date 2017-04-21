@@ -4,9 +4,6 @@
 
 ------------------------------------------------------------------------------*/
 $("#menubar").menubar({ minimized : false, }); //Adds the navigation bar
-if (sessionStorage.getItem("ordered") != "true") {
-	managerStart();
+if (sessionStorage.ordered != "true") { //If no orders have been placed.
+	managerStart(); //Initializes the order manager.
 }
-
-// Timer related code
-// TODO: Add countdown element in page
