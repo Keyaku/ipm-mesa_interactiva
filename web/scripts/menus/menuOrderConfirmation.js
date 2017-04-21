@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------
 
-CODE EXECUTION
+			CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
 $('#menubar').menubar(); //Adds menu bar.
@@ -14,7 +14,7 @@ createOrderElements(values[0], values[1]); //Fills the order item with the chose
 
 /*------------------------------------------------------------------------------
 
-AUXILIAR FUNCTIONS
+			AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
 //Creates the HTML structure for the order.
