@@ -21,7 +21,7 @@ function showExtensiveInformation(objName, objSize = 0) {
 	var drinkTypes;
 
 	// Global
-	var nutInfo = createNutritonalInfo(pizza); //Creates a div for the nutritional information table.
+	var nutInfo;
 	var ratingDiv;
 	var priceOrder;
 
@@ -31,18 +31,18 @@ function showExtensiveInformation(objName, objSize = 0) {
 	});
 	if (objSize != 0) { //If objSize is given, it's a pizza.
 		ingredients = createPizzaIngredientsList(pizza); //Creates the pizza's ingredient list.
-
+		nutInfo = createNutritonalInfo(pizza); //Creates a div for the nutritional information table.
 		ratingDiv = createRating(pizza); //Creates a div for the rating stars and the rating label.
 		priceOrder = createPizzaPrice(objSize);
-		container.append([ingredients, nutInfo, ratingDiv]);
+		container.append([ingredients, ratingDiv]);
 	}
 	else { //If objSize is NOT given, it's a drink.
-		nutInfo = createNutritonalInfo(drink); //Gets the nutritional information for the drink.
 		drinkTypes = createDrinkTypes(drink); //Gets the drink's types.
+		nutInfo = createNutritonalInfo(drink); //Creates a div for the nutritional information table.
 		priceOrder = createDrinkOrderButton(); //Gets the drink's order price and button.
-		container.append([nutInfo, drinkTypes]);
+		container.append([drinkTypes]);
 	}
-	container.append(priceOrder);
+	container.append(nutInfo, ratingDiv, priceOrder);
 	$('#extensiveInfoBar').append(container).show();
 }
 //Hides the extensive information bar.
@@ -87,7 +87,6 @@ function createRating(obj) {
 
 ------------------------------------------------------------------------------*/
 //TODO - @RafaelRibeiro - delete this and replace it for a symbol in the corresponding pizzas in the premade pizza menu.
-
 function populateSuggestions(obj) {
 	obj.append($('<label>', { //Creates the title for the suggestion's menu.
 		html: 'Suggestions tailored for you',
