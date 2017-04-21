@@ -3,7 +3,7 @@
 				CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
-$('#menubar').menubar(); //Adds menu bar.
+$('#menubar').menubar(); //Adds the menu bar..
 $('#navbar').navbar({selected: 'Drinks'}); //Adds top navigation bar.
 populateDrinksMenu($('.menuItems')); //Populates the drink's menu dynamically.
 

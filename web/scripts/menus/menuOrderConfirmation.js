@@ -3,7 +3,7 @@
 			CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
-$('#menubar').menubar(); //Adds menu bar.
+$('#menubar').menubar(); //Adds the menu bar..
 $('#navbar').navbar({selected: 'Confirm'}); //Adds top navigation bar.
 
 var str = "order" + Number(sessionStorage.orders);

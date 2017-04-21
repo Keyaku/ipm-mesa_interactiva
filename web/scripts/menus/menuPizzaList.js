@@ -3,7 +3,7 @@
 				CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
-$('#menubar').menubar(); //Adds menu bar.
+$('#menubar').menubar(); //Adds the menu bar..
 $('#navbar').navbar(); //Adds top navigation bar.
 populateSuggestions($('#suggestions')); //Populates the suggested pizza's menu dynamically.
 populatePremadeMenu($('#premade')); //Populates the premade pizza's menu dynamically.

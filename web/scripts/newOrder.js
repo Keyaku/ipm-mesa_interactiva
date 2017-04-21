@@ -3,7 +3,7 @@
 			CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
-$('#menubar').menubar(); //Adds menu bar.
+$('#menubar').menubar(); //Adds the menu bar..
 //Shows the orders.
 for (var i = 0; i < sessionStorage.orders; i++) {
 	var str = 'order' + i.toString();
