@@ -33,10 +33,7 @@ main label { text-align: left; }
 	border: 5px solid white;
 	border-radius: 10px;
 }
-
-.pizzaIngredientImg.active {
-	border: 5px solid #2E7D32;
-}
+.menuDrinkItemImg.active { border: 5px solid #2E7D32; }
 
 .mPITitle {
 	font-size: 20px;
