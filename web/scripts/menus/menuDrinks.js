@@ -48,16 +48,6 @@ function drinksConfirmCancel(args) {
 	window.location.href = 'html/table.html';
 }
 
-$('.menuDrinkItem').click(function() {
-	$(this).children('.mPITitle').toggleClass('active');
-	$(this).children('.menuDrinkItemImg').toggleClass('active');
-	var ing = $(this).attr('id');
-	if (pizzaCheckIngredient(ing)) {
-		pizzaRemoveIngredient(ing);
-	} else {
-		pizzaAddIngredient(ing);
-	}
-});
 
 /*------------------------------------------------------------------------------
 
@@ -67,7 +57,13 @@ $('.menuDrinkItem').click(function() {
 //The click event of #drinksInformationClose is defined in the spawning (in showExtensiveInformation()).
 //The click event of #drinkOrderButton is defined in the spawning (in createDrinkOrderButton()).
 //The click event for the drink items opens the extensive information bar.
-$('.menuDrinkItem').click(function() { showExtensiveInformation($(this).children('.mPITitle').text()); });
+$('.menuDrinkItem').click(function() {
+	$('.mPITitle').removeClass('active'); //Clears the previously chosen drink.
+	$('.menuDrinkItemImg').removeClass('active'); //Clears the previously chosen drink.
+	$(this).children('.mPITitle').toggleClass('active'); ////Shows the drink that is selected.
+	$(this).children('.menuDrinkItemImg').toggleClass('active'); //Shows the drink that is selected.
+	showExtensiveInformation($(this).children('.mPITitle').text()); //Shows the extensive information bar.
+});
 //The click event for the cancel button changes the page to the main page.
 $('#cancelButton').click(function() { drinksOrderCancel(); }); //Changes the page to the main page.
 //The click event for the back button changes the page to the pizza menu.
