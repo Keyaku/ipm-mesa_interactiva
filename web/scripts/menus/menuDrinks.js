@@ -13,21 +13,6 @@ populateDrinksMenu($('.menuItems')); //Populates the drink's menu dynamically.
 			AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
-//TODO - @RafaelRibeiro - Move this to menuGenerate.js
-function createDrinkOrderButton() {
-	var price = $('<label>', { //Creates a label with a price for the drink's type.
-		html: '5€',
-		'class': 'drinksInformationTypeLabel',
-		'class': 'priceContainer'
-	});
-	var button = $('<button>', {
-		'id': 'drinkOrderButton',
-		html: 'Order',
-		'click': function() { setGlobalDrink(); }
-	}); //Creates a button for ordering.
-	return $('<div>').append([price, button]);
-}
-
 //When the client clicks in the order button.
 function setGlobalDrink() {
 	var pizzaName = $('#extensiveInfoBar').children('#infoContents').children('.mPITitle').text(); //Gets the name of the ordered pizza.
