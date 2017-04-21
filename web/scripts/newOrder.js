@@ -15,6 +15,7 @@ for (var i = 0; i < orderNumber; i++) {
 	}
 }
 
+/*
 $("#timer").countdown360({
 	radius: 65,                        // radius of arc
 	strokeStyle: "#ecf0f1",            // the color of the stroke
@@ -28,6 +29,7 @@ $("#timer").countdown360({
 	smooth: true,                      // should the timer be smooth or stepping
 	onComplete: function () {}
 }); //Adds the timer.
+*/
 
 
 /*------------------------------------------------------------------------------
