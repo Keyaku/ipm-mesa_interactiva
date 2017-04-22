@@ -81,6 +81,10 @@ function createRating(obj) {
 	return d;
 }
 
+function createIncrementButtons() {
+	return;
+}
+
 /*------------------------------------------------------------------------------
 
 			PIZZA-RELATED CODE

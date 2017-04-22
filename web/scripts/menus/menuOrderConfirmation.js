@@ -32,9 +32,10 @@ function createOrderItem() {
 function createOrderElements(pizza, drink) {
 	var orderedPizza = pizza; //Gets the ordered pizza.
 	var orderedDrink = drink; //Gets the ordered drink.
+	var incButtons = createIncrementButtons();
 	setTimeout(function() {
-		$("#pizza").append(createPizzaItemWithSize(orderedPizza)); //Shows the ordered pizza.
-		$("#drink").append(createDrinkItem(orderedDrink)); //Shows the ordered drink.
+		$("#pizza").append(createPizzaItemWithSize(orderedPizza), incButtons[0]); //Shows the ordered pizza.
+		$("#drink").append(createDrinkItem(orderedDrink), incButtons[1]); //Shows the ordered drink.
 	}, 100);
 }
 
