@@ -44,9 +44,6 @@ function managerAddNewPizza(pizzaName, pizzaSize) {
 function managerEditPizza(pizzaName, pizzaSize) {
 	var oldPizza = (managerGetMetaValues(sessionStorage.orderNumber))[0]; //Gets the ordered pizza.
 	var pizzaNumber = oldPizza['pizzaNumber']; //Gets the number of pizzas of the order.
-
-	console.log(pizzaNumber);
-
 	var pizza = getPremadePizza(pizzaName); //Gets the pizza's structure.
 	pizza['pizzaSize'] = pizzaSize; //Adds the pizza's size to the the structure.
 	pizza['pizzaNumber'] = pizzaNumber; //Sets the same number to the edited pizza.
@@ -72,9 +69,19 @@ function managerEditCustomizedPizza(pizzaMaker) {
 
 //Adds a drink to the order.
 function managerAddNewDrink(drinkName) {
-	var drink = getPremadeDrink(drinkName); //Gets the drink's structure.
 	var pizza = (managerGetMetaValues(sessionStorage.orderNumber))[0]; //Gets the ordered pizza.
+	var drink = getPremadeDrink(drinkName); //Gets the drink's structure.
+	drink['drinkNumber'] = 1; //Sets number of drinks of the order to 1.
 	var valueNew = [pizza, drink]; //Sets the value for the key.
+	managerAddToMeta(sessionStorage.orderNumber, valueNew); //Adds the order to the global data structure.
+}
+//Adds a drink to the order (in case of order editing).
+function managerAddNewDrink(drinkName) {
+	var pizza = (managerGetMetaValues(sessionStorage.orderNumber))[0]; //Gets the ordered pizza.
+	var drink = (managerGetMetaValues(sessionStorage.orderNumber))[1]; //Gets the ordered drink.
+	var drinkNew = getPremadeDrink(drinkName); //Gets the drink's structure.
+	drinkNew['drinkNumber'] = drink['drinkNumber'] ; //Sets the same number to the edited drink.
+	var valueNew = [pizza, drinkNew]; //Sets the value for the key.
 	managerAddToMeta(sessionStorage.orderNumber, valueNew); //Adds the order to the global data structure.
 }
 
