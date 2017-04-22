@@ -8,7 +8,7 @@ $('#extensiveInfoBar').hide(); //Hides the lateral pizza information bar.
 function showExtensiveInformation(objName, objSize = 0) {
 	var closeX = $('<i>', {
 		'class': 'fa fa-close',
-		'click': function(){ hideExtensiveInformation(); },
+		'click': function(){ hideExtensiveInformation(); }
 	});
 	$('#extensiveInfoBar').empty().append(closeX); //Emptys the extensive information bar.
 
@@ -82,7 +82,37 @@ function createRating(obj) {
 }
 
 function createIncrementButtons() {
-	return;
+	var incPizza = $('<button>', {
+		'class': 'incrementButton incPizza',
+		html: '+',
+		'click': function() { orderIncrementPizza(1); }
+	});
+	var labelPizza = $('<label>', {
+		'class': 'elementNumber elNumberPizza',
+		html: '1'
+	});
+	var decPizza = $('<button>', {
+		'class': 'incrementButton decPizza',
+		html: '-',
+		'click': function() { orderIncrementPizza(-1); }
+	});
+	var incDrink = $('<button>', {
+		'class': 'incrementButton incDrink',
+		html: '+',
+		'click': function() { orderIncrementDrink(1); }
+	});
+	var labelDrink = $('<label>', {
+		'class': 'elementNumber elNumberDrink',
+		html: '1'
+	});
+	var decDrink = $('<button>', {
+		'class': 'incrementButton decDrink',
+		html: '-',
+		'click': function() { orderIncrementDrink(-1); }
+	});
+	var d1 = $('<div>').addClass('incButtons').append(decPizza, labelPizza, incPizza);
+	var d2 = $('<div>').addClass('incButtons').append(decDrink, labelDrink, incDrink);
+	return [d1, d2];
 }
 
 /*------------------------------------------------------------------------------
