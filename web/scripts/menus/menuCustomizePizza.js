@@ -97,12 +97,12 @@ function setGlobalPizza() {
 	if (sessionStorage.editing == 'true') { //If the client is editing a previous order.
 		sessionStorage.editing = false; //Sets the editing flag to false.
 		managerEditCustomizedPizza(pizzaMaker); //Adds the pizza to the system.
-		window.location.href = 'html/table.html');
+		window.location.href = 'html/table.html';
 		//TODO - @FranciscoKloganB - Show the confirmation popup.
 	}
 	else { //If the client is NOT editing a previous order.
 		managerAddNewCustomizedPizza(pizzaMaker); //Adds the pizza to the system.
-		window.location.href = 'html/menus/menuDrinks.html'); //Continues with the order.
+		window.location.href = 'html/menus/menuDrinks.html'; //Continues with the order.
 	}
 }
 
