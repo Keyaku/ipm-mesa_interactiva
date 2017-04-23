@@ -153,11 +153,10 @@ p {
 }
 
 /***************************** Font-Awesome icons *****************************/
-.fa.fa-star {
+.fa {
 	color: white;
 }
 .fa.fa-close {
-	color: white;
 	float: right;
 	font-size: 50px;
 	font-weight: bolder;
