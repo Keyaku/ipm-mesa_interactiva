@@ -14,17 +14,21 @@ populatePremadeMenu($('#premade')); //Populates the premade pizza's menu dynamic
 			AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
-//TODO - @RafaelRibeiro - Move this to menuGenerate.js
-function createPizzaPrice(pizzaSize) {
+function getPizzaPrice(pizzaSize) {
 	var prices = {
 		'Small'  : 8,
 		'Medium' : 10,
 		'Large'  : 12,
 	}
 	var pizzaPrice = (pizzaSize in prices) ? prices[pizzaSize] : 0;
+	return pizzaSize + ' : ' + pizzaPrice + '€';
+}
+
+
+function createPizzaPrice(pizzaSize) {
 	var d = $('<div>').addClass('priceContainer')
 	.append(createSizeButtons())
-	.append($('<label>', { html: pizzaSize + ' : ' + pizzaPrice + '€' }))
+	.append($('<label>', { html: getPizzaPrice(pizzaSize) }))
 	.append($('<button>', {
 		html: 'Order!',
 		'click': function() { setGlobalPizza(pizzaSize); },
@@ -39,6 +43,10 @@ function createSizeButtons() {
 		d.append($('<button>', {
 			html: size[0], // Get first character from size
 			'class': 'mPIISizeButton',
+			'click': function() {
+				var pizzaSize = $(this).attr('id');
+				$('.priceContainer label').text(getPizzaPrice(pizzaSize));
+			},
 			'id': size
 		}));
 	});
@@ -77,11 +85,6 @@ function pizzaConfirmCancel(args) { window.location.href = 'html/table.html'; }
 $('.menuPizzaItem, .menuPizzaSuggestion').click(function(){
 	var pizzaName = $(this).find('.mPITitle').text(); //Gets the chosen pizza's name.
 	showExtensiveInformation(pizzaName, 'Small'); //Shows the lateral pizza information bar.
-});
-$('.mPIISizeButton').click(function(){
-	var pizzaSize = $(this).attr('id'); //Gets the chosen pizza's size.
-	$('.priceContainer label').text(pizzaSize);
-	console.log("Change the size label!!!!!!"); // TODO
 });
 //The click event for the Customize Your Own Pizza page changes the page to that.
 $('#customizationShortcut').click(function() { window.location.href = 'html/menus/menuCustomizePizza.html'; });
