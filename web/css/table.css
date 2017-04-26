@@ -99,6 +99,7 @@ p {
 }
 #extensiveInfoBar td {
 	color: white;
+	padding: 0 10px;
 }
 
 #infoContents {
