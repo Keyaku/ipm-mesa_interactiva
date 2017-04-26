@@ -1,3 +1,7 @@
+main {
+	margin: 2%;
+}
+
 .informationButton {
 	background-color: rgba(255,255,255,0.8);
 	display: inline-block;
@@ -52,7 +56,33 @@
 #iframeMap {
 	border: 0;
 	box-shadow: 0 10px 10px 0 black;
-	margin: 10px auto;
-	width: 90%;
-	height: 60%;
+	margin: 0 2.5%;
+	width: 95%;
+	height: 70%;
+}
+
+button {
+	background-color: #2566ce;
+	border: none;
+	color: white;
+	font-family: raleway, sans-serif;
+	font-size: 20px;
+	margin: 0;
+	padding: 20px 30px;
+}
+
+#mapsMainButtonContainer {
+	margin: 10px 2.5%;
+}
+.mapsMainButton {
+	min-width: 200px;
+}
+
+#shareButtonContainer, #interestsButtonContainer, #directionsButtonContainer {
+	margin: 10px 0;
+}
+.shareButton, .interestsButton, .directionsButton {
+	background-color: white;
+	color: black;
+	min-width: 50px;
 }

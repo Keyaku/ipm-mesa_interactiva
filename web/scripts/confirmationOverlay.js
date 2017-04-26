@@ -45,6 +45,6 @@ function confirmationOverlayShow(callback, args) {
 ------------------------------------------------------------------------------*/
 $("#return").click(function() { modalClose(); });
 $("#proceed").click(function() {
-	functionCallBack(functionCallBackArgs)
 	modalClose();
+	functionCallBack(functionCallBackArgs);
 });

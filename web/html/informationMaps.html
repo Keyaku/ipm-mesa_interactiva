@@ -15,6 +15,7 @@
 <body>
 	<nav id="menubar"></nav><!--Adds the system-global vertical lateral menu bar-->
 	<main>
+<!--
 		<div class="informationSubMenu">
 			<label>Search nearby</label>
 			<div class="informationButton" id="barButton">
@@ -55,8 +56,39 @@
 			<input id="mapsDestinationInput" type="text" placeholder="Enter the destination">
 			<div id="micIcon"></div>
 		</div>
-		
+	-->
 		<iframe id="iframeMap"src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&q=taguspark"></iframe>
+		<div id="mapsMainButtonContainer">
+			<div id="buttonLevel1">
+				<button class="mapsMainButton" id="mapsShare">Share</button>
+				<button class="mapsMainButton" id="mapsInterests">Points of Interest</button>
+				<button class="mapsMainButton" id="mapsDirections">Get Directions</button>
+			</div>
+
+			<div id="buttonLevel2">
+				<div id="shareButtonContainer">
+					<button class="shareButton" id="share1">User 1</button>
+					<button class="shareButton" id="share2">User 2</button>
+					<button class="shareButton" id="share3">User 3</button>
+				</div>
+
+				<div id="interestsButtonContainer">
+					<button class="interestsButton" id="interest1">Bars</button>
+					<button class="interestsButton" id="interest3">Landscapes</button>
+					<button class="interestsButton" id="interest3">Mall</button>
+					<button class="interestsButton" id="interest4">Monuments</button>
+					<button class="interestsButton" id="interest5">Museums</button>
+				</div>
+
+				<div id="directionsButtonContainer">
+					<button class="directionsButton" id="directions1">On foot</button>
+					<button class="directionsButton" id="directions3">Car</button>
+					<button class="directionsButton" id="directions3">Public Transport</button>
+					<button class="directionsButton" id="directions4">Uber</button>
+					<button class="directionsButton" id="directions5">Taxi</button>
+				</div>
+			</div>
+		</div>
 	</main>
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="scripts/jQuery/jquery-3.1.1.min.js"></script>
