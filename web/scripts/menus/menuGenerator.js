@@ -135,8 +135,8 @@ function populateSuggestions(obj) {
 }
 function createPizzaSuggestion(pizza) {
 	return $('<div>', {
-		html: createPizzaInfo(pizza).append(createSizeButtons()),
-		'class': 'menuPizzaSugestion'
+		html: createPizzaInfo(pizza),
+		'class': 'menuPizzaSuggestion'
 	});
 }
 
@@ -149,7 +149,7 @@ function populatePremadeMenu(obj) {
 	}));
 	for (var pizzaName in pizzaList) {
 		var pizza = getPremadePizza(pizzaName); //Gets the structure of the pizza (by name).
-		obj.append(createPizzaItemWithButtons(pizza)); //Creates a div with the pizza's name, image, and size buttons.
+		obj.append(createPizzaItem(pizza)); //Creates a div with the pizza's name, image, and size buttons.
 	}
 	var itemInfo = (obj.children('.menuPizzaItem')).children('.menuPizzaItemInfo');
 	itemInfo.addClass('col-md-6');
@@ -200,13 +200,6 @@ function createPizzaItemWithSize(pizza) {
 	return $('<div>', {
 		'class': 'menuPizzaItem row',
 		html: [createPizzaImg(pizza), createPizzaInfoWithSize(pizza)]
-	});
-}
-//Creates a div with the pizza's name, image, ingredient list and size buttons.
-function createPizzaItemWithButtons(pizza) {
-	return $('<div>', {
-		'class': 'menuPizzaItem row',
-		html: [createPizzaImg(pizza), createPizzaInfo(pizza).append(createSizeButtons())]
 	});
 }
 

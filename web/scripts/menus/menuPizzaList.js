@@ -23,6 +23,7 @@ function createPizzaPrice(pizzaSize) {
 	}
 	var pizzaPrice = (pizzaSize in prices) ? prices[pizzaSize] : 0;
 	var d = $('<div>').addClass('priceContainer')
+	.append(createSizeButtons())
 	.append($('<label>', { html: pizzaSize + ' : ' + pizzaPrice + '€' }))
 	.append($('<button>', {
 		html: 'Order!',
@@ -47,8 +48,8 @@ function createSizeButtons() {
 //When the client clicks in the order button.
 function setGlobalPizza(pizzaSize) {
 	var pizzaName = $('#extensiveInfoBar').children('#infoContents').children('.mPITitle').text(); //Gets the chosen pizza's name.
-	if (sessionStorage.getItem("editing") == "true") { //If the client is editing a previous order.
-		sessionStorage.setItem("editing", "false"); //Sets the editing flag to false.
+	if (sessionStorage.editing == "true") { //If the client is editing a previous order.
+		sessionStorage.editing = false; //Sets the editing flag to false.
 		managerEditPizza(pizzaName, pizzaSize); //Adds the pizza to the system.
 		window.location.href = 'html/table.html';
 		//TODO - @FranciscoKloganB - Show the confirmation popup.
@@ -73,10 +74,14 @@ function pizzaConfirmCancel(args) { window.location.href = 'html/table.html'; }
 //The click event of #pizzaInformationClose is defined in the spawning (in showExtensiveInformation()).
 //The click event of #pizzaOrderButton is defined in the spawning (in createPizzaPrice()).
 //The click event for the size buttons opens the extensive information bar.
+$('.menuPizzaItem, .menuPizzaSuggestion').click(function(){
+	var pizzaName = $(this).find('.mPITitle').text(); //Gets the chosen pizza's name.
+	showExtensiveInformation(pizzaName, 'Small'); //Shows the lateral pizza information bar.
+});
 $('.mPIISizeButton').click(function(){
-	var pizzaName = ($(this).parent().parent()).children('.mPITitle').text(); //Gets the chosen pizza's name.
-	var pizzaSize = $(this).attr("id"); //Gets the chosen pizza's size.
-	showExtensiveInformation(pizzaName, pizzaSize); //Shows the lateral pizza information bar.
+	var pizzaSize = $(this).attr('id'); //Gets the chosen pizza's size.
+	$('.priceContainer label').text(pizzaSize);
+	console.log("Change the size label!!!!!!"); // TODO
 });
 //The click event for the Customize Your Own Pizza page changes the page to that.
 $('#customizationShortcut').click(function() { window.location.href = 'html/menus/menuCustomizePizza.html'; });
