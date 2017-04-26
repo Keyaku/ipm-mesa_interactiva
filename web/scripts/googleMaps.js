@@ -10,12 +10,12 @@ function searchMap(keyWords) {
 }
 function directionsMap(destination, travelMode) {
 	if (destination == "") {
-		var inputBar = $("#mapsDestinationInput")
+		var inputBar = $("#mapsDestinationInput");
 		inputBar.css("background-color", "red");
 		setTimeout(function() { inputBar.css("background-color", "white"); }, 1250);
 		for (var i = 1; i <= 20; i++) inputBar.fadeOut(30).fadeIn(30);
 		return;
 	}
-	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
+	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+googleMapsMode;
 	$("#iframeMap").attr("src", url);
 }
