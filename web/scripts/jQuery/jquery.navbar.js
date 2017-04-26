@@ -42,7 +42,7 @@ function orderButton() {
 }
 function entertainmentButton() { $(location).attr('href', 'html/entertainment.html'); }
 function newsButton() { $(location).attr('href', 'html/news.html'); }
-function informationButton() { $(location).attr('href', 'html/information.html'); }
+function informationButton() { $(location).attr('href', 'html/informationMaps.html'); }
 
 (function($) {
     $.fn.menubar = function(opt) {
