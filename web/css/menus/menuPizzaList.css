@@ -84,6 +84,13 @@ main label {
 	font-family: raleway, sans-serif;
 }
 
+
+#extensiveInfoBar .mPITitle {
+	font-family: bangers, sans-serif;
+	font-size: 70px;
+	margin-bottom: 3%;
+}
+
 .menuPizzaItemInfo {
 	color: white;
 	text-align: center;
@@ -106,31 +113,19 @@ main label {
 	padding: 4% 6%;
 }
 
-/* Create Your Own Pizza Shortcut */
+.rating { margin-top: 6%; }
+#pizzaOrderButton { margin-left: 60%; }
+
 #createPizzaShortcut {
 	position: absolute;
-
 	transform: translateY(-50%);
 	top: 50%;
 	right: 0;
 }
-
-#pizzaOrderButton {
-	margin-left: 60%;
-}
-.rating {
-	margin-top: 10%;
-}
-.buttonContainer {
-	margin-top: 5%;
-}
+.buttonContainer { margin-top: 5%; }
 .buttonContainer #cancelButton {
 	background-color: #D50000;
 	border-color: #D50012;
 }
-.buttonContainer #skipButton {
-	background-color: grey;
-}
-.buttonContainer #pizzaOrder {
-	font-size: 20px;
-}
+.buttonContainer #skipButton { background-color: grey; }
+.buttonContainer #pizzaOrder { font-size: 20px; }
