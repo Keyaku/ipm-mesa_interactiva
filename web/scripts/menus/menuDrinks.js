@@ -15,8 +15,8 @@ populateDrinksMenu($('.menuItems')); //Populates the drink's menu dynamically.
 ------------------------------------------------------------------------------*/
 //When the client clicks in the order button.
 function setGlobalDrink() {
-	var pizzaName = $('#extensiveInfoBar').children('#infoContents').children('.mPITitle').text(); //Gets the name of the ordered pizza.
-	managerAddNewDrink(pizzaName); //Adds the drink to the system.
+	var drinkName = $('#extensiveInfoBar').children('#infoContents').children('.mPITitle').text(); //Gets the name of the ordered pizza.
+	managerAddNewDrink(drinkName); //Adds the drink to the system.
 	if (sessionStorage.getItem('editing') == 'true') { //If the client is editing a previous order.
 		sessionStorage.setItem('editing', 'false'); //Sets the editing flag to false.
 		window.location.href = 'html/table.html';

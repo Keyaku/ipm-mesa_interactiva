@@ -43,11 +43,12 @@ function createOrderItem() {
 function createOrderElements(pizza, drink) {
 	var pizzaNumber = pizza['pizzaNumber'];
 	var drinkNumber = drink['drinkNumber'];
-	console.log(pizzaNumber, drinkNumber);
 	var incButtons = createIncrementButtons(pizzaNumber, 1);
 	setTimeout(function() {
-		if (pizza != '' ) { $('#pizza').append(createPizzaItemWithSize(pizza), incButtons[0]); } //Shows the ordered pizza.
-		$('#drink').append(createDrinkItem(drink), incButtons[1]); //Shows the ordered drink.
+		//Shows the ordered pizza.
+		if (pizza != '' ) { $('#pizza').append(createPizzaItemWithSize(pizza), incButtons[0]); }
+		//Shows the ordered drink.
+		if (drink != '') { $('#drink').append(createDrinkItem(drink), incButtons[1]); }
 	}, 100);
 }
 

@@ -75,21 +75,6 @@ function managerAddNewDrink(drinkName) {
 	var valueNew = [pizza, drink]; //Sets the value for the key.
 	managerAddToMeta(sessionStorage.orderNumber, valueNew); //Adds the order to the global data structure.
 }
-//Adds a drink to the order (in case of order editing).
-function managerAddNewDrink(drinkName) {
-	var pizza = (managerGetMetaValues(sessionStorage.orderNumber))[0]; //Gets the ordered pizza.
-	var drink = (managerGetMetaValues(sessionStorage.orderNumber))[1]; //Gets the ordered drink.
-	var drinkNew = getPremadeDrink(drinkName); //Gets the drink's structure.
-	drinkNew['drinkNumber'] = drink['drinkNumber'] ; //Sets the same number to the edited drink.
-	var valueNew = [pizza, drinkNew]; //Sets the value for the key.
-	managerAddToMeta(sessionStorage.orderNumber, valueNew); //Adds the order to the global data structure.
-}
-
-//Makes the order empty (for the system, if the order is empty, it doesn't show up).
-function managerDeleteOrder(orderNumber) {
-	var v = ['', '']; //Sets the value for the key (empty fields).
-	managerAddToMeta(orderNumber, v); //Adds the empty order to the global data structure.
-}
 
 function managerDeletePizza(orderNumber) {
 	var order = managerGetMetaValues(orderNumber);
@@ -101,7 +86,11 @@ function managerDeleteDrink(orderNumber) {
 	var pizza = order[0];
 	managerAddToMeta(orderNumber, [pizza, '']);
 }
-
+//Makes the order empty (for the system, if the order is empty, it doesn't show up).
+function managerDeleteOrder(orderNumber) {
+	var v = ['', '']; //Sets the value for the key (empty fields).
+	managerAddToMeta(orderNumber, v); //Adds the empty order to the global data structure.
+}
 //Makes the order empty (for the system, if the order is empty, it doesn't show up).
 function manageDeleteAllOrders() {
 	var v = ['', '']; //Sets the value for the key (empty fields).
