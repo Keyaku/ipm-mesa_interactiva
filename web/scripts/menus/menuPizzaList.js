@@ -24,19 +24,17 @@ function getPizzaPrice(pizzaSize) {
 	return pizzaSize + ' : ' + pizzaPrice + '€';
 }
 
-
 function createPizzaPrice(pizzaSize) {
 	var d = $('<div>').addClass('priceContainer')
 	.append(createSizeButtons())
 	.append($('<label>', { html: getPizzaPrice(pizzaSize) }))
 	.append($('<button>', {
 		html: 'Order!',
-		'click': function() { setGlobalPizza(pizzaSize); },
 		'id': 'pizzaOrderButton',
 	}));
 	return d;
 }
-//TODO - @RafaelRibeiro - Move this to menuGenerate.js
+
 function createSizeButtons() {
 	var d = $('<div>', { 'class': 'buttonContainer' });
 	['Small', 'Medium', 'Large'].forEach(function(size) {
@@ -46,6 +44,7 @@ function createSizeButtons() {
 			'click': function() {
 				var pizzaSize = $(this).attr('id');
 				$('.priceContainer label').text(getPizzaPrice(pizzaSize));
+				$('#pizzaOrderButton').click(function() { setGlobalPizza(pizzaSize); });
 			},
 			'id': size
 		}));
