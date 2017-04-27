@@ -4,7 +4,17 @@ main label {
 	text-align: center
 }
 
-.menuPremadePizzasSugestionsTitle, .menuPremadeMenuTitle, #customizationShortcut {
+.menuPremadePizzasSugestionsTitle, .menuPremadeMenuTitle {
+	font-family: bangers, sans-serif;
+	color: white;
+	font-size: 70px;
+	padding: 2%;
+	margin-left: 2.5%;
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: black;
+}
+
+#customizationShortcut, .menuStep {
 	color: #D32F2F;
 	font-size: 75px;
 	font-family: bangers, sans-serif;
