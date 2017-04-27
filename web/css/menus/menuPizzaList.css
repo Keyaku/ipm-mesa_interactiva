@@ -14,9 +14,8 @@ main label {
 	-webkit-text-stroke-color: black;
 }
 
-.mPITitle {
-	font-size: 35px;
-}
+#extensiveInfoBar .mPITitle  { font-size: 60px; }
+.mPITitle { font-size: 35px; }
 
 #customizationShortcut {
 	margin-left: 10%;

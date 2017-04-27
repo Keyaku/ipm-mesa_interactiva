@@ -30,11 +30,11 @@ function showExtensiveInformation(objName, objSize = 0) {
 		html: createItemName(objName)
 	});
 	if (objSize != 0) { //If objSize is given, it's a pizza.
-		ingredients = createPizzaIngredientsList(pizza); //Creates the pizza's ingredient list.
+		//ingredients = createPizzaIngredientsList(pizza); //Creates the pizza's ingredient list.
 		nutInfo = createNutritonalInfo(pizza); //Creates a div for the nutritional information table.
 		ratingDiv = createRating(pizza); //Creates a div for the rating stars and the rating label.
 		priceOrder = createPizzaPrice(objSize);
-		container.append([ingredients, ratingDiv]);
+		container.append([ratingDiv]);
 	}
 	else { //If objSize is NOT given, it's a drink.
 		drinkTypes = createDrinkTypes(drink); //Gets the drink's types.
