@@ -81,7 +81,7 @@ function createRating(obj) {
 	return d;
 }
 
-function createIncrementButtons() {
+function createIncrementButtons(pizzaNumber, drinkNumber) {
 	var incPizza = $('<button>', {
 		'class': 'incrementButton incPizza',
 		html: '+',
@@ -89,7 +89,7 @@ function createIncrementButtons() {
 	});
 	var labelPizza = $('<label>', {
 		'class': 'elementNumber elNumberPizza',
-		html: '1'
+		html: pizzaNumber.toString()
 	});
 	var decPizza = $('<button>', {
 		'class': 'incrementButton decPizza',
@@ -103,7 +103,7 @@ function createIncrementButtons() {
 	});
 	var labelDrink = $('<label>', {
 		'class': 'elementNumber elNumberDrink',
-		html: '1'
+		html: drinkNumber.toString()
 	});
 	var decDrink = $('<button>', {
 		'class': 'incrementButton decDrink',

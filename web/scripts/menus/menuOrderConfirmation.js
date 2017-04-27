@@ -41,7 +41,10 @@ function createOrderItem() {
 }
 //Fills the order item with the chosen pizza and drink.
 function createOrderElements(pizza, drink) {
-	var incButtons = createIncrementButtons();
+	var pizzaNumber = pizza['pizzaNumber'];
+	var drinkNumber = drink['drinkNumber'];
+	console.log(pizzaNumber, drinkNumber);
+	var incButtons = createIncrementButtons(pizzaNumber, 1);
 	setTimeout(function() {
 		if (pizza != '' ) { $('#pizza').append(createPizzaItemWithSize(pizza), incButtons[0]); } //Shows the ordered pizza.
 		$('#drink').append(createDrinkItem(drink), incButtons[1]); //Shows the ordered drink.

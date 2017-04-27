@@ -53,7 +53,9 @@ function createOrderItem(index) {
 }
 //Fills the order item with the chosen pizza and drink.
 function createOrderElements(pizza, drink, index) {
-	var incButtons = createIncrementButtons();
+	var pizzaNumber = pizza['pizzaNumber'];
+	var drinkNumber = drink['drinkNumber'];
+	var incButtons = createIncrementButtons(pizzaNumber, drinkNumber);
 	setTimeout(function() {
 		if (pizza != '') { $('#pizza' + index.toString()).append(createPizzaItemWithSize(pizza), incButtons[0]); }//Shows the ordered pizza.
 		if (drink != '') { $('#drink' + index.toString()).append(createDrinkItem(drink), incButtons[1]); }//Shows the ordered drink.
@@ -108,8 +110,7 @@ function orderIncrementPizza(incValue, button) {
 		managerIncrementPizza(orderNumber, number); //Changes the number in the system.
 	}
 	else if (number == 0) { //If the number of pizzas would be 0.
-		managerDeletePizza(orderNumber);
-		refreshOrder(orderNumber);
+		confirmationDeleteElement(deletePizza, orderNumber);
 	}
 	else if (number < 0) { //Security redundancy.
 		//The number won't reach negative values because when it reaches 0, the order is canceled (with the client's permission).
@@ -127,8 +128,7 @@ function orderIncrementDrink(incValue, button){
 		managerIncrementDrink(orderNumber, number); //Changes the number in the system.
 	}
 	else if (number == 0) { //If the number of pizzas would be 0.
-		managerDeleteDrink(orderNumber);
-		refreshOrder(orderNumber);
+		confirmationDeleteElement(deleteDrink, orderNumber);
 	}
 	else if (number < 0) { //Security redundancy.
 		//The number won't reach negative values because when it reaches 0, the order is canceled (with the client's permission).
@@ -150,7 +150,15 @@ function refreshOrder(orderNumber) {
 }
 
 
-
+function confirmationDeleteElement(func, arg) { confirmationOverlayShow(func, arg); }
+function deletePizza(arg) {
+	managerDeletePizza(arg);
+	refreshOrder(arg);
+}
+function deleteDrink() {
+	managerDeleteDrink(arg);
+	refreshOrder(arg);
+}
 
 
 
