@@ -1,0 +1,20 @@
+﻿1: 	FEITO
+	adicionar botão para cancelar a tarefa de pedir;
+2: adicionar indicação adicional para retroceder na tarefa de customização da pizza;
+3: 	FEITO
+	permitir que o utilizador edite apenas o item clicado (no ecrã de confirmação e na tab "order" quando já tem um pedido realizado);
+4: adicionar feedback que indique que o pedido foi recebido pelo sistema;
+5: 	FEITO
+	adicionar um popup de confirmação quando o utilizador pressiona o botão de cancelar pedido;
+6: adicionar informação que explicite o intuito do botão "share" nos mapas;
+7: 	ESTE ERRO NÃO EXISTE;
+8: 	A PROFESSORA DISSE QUE NÃO PRECISÁVAMOS DE NOS PREOCUPAR COM O PRATO;
+9: adicionar um botão de ajuda;
+10: 	FEITO
+	NÃO EXISTE ECRÃ PRINICIPAL;
+11: 	FEITO
+	adicionar preços no menu de bebidas;
+12: 	ESTE ERRO NÃO EXISTE - análogo à compra de roupa e aparece um ecrã lateral a dizer o tamanho escolhido e o preço respetivo;
+
+global: adicionar um botão de ajuda global que mostra todas as funcionalidades do ecrã em que o utilizador está;
+
