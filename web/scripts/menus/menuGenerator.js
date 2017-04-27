@@ -239,7 +239,7 @@ function createDrinkTypes(drink) {
 //Creates the div for the drink's price and order button in the extensive information bar.
 function createDrinkOrderButton() {
 	var price = $('<label>', { //Creates the label for the drink's price.
-		'class': 'drinksInformationTypeLabel priceContainer',
+		'class': 'drinksInformationTypeLabel',
 		html: '5€'
 	});
 	var button = $('<button>', { //Creates the button for ordering.
@@ -247,7 +247,7 @@ function createDrinkOrderButton() {
 		html: 'Order',
 		'click': function() { setGlobalDrink(); }
 	});
-	return $('<div>').append([price, button]);
+	return $('<div>', { 'class':'priceContainer' }).append([price, button]);
 }
 
 //Creates a div with the drink's name and image.
