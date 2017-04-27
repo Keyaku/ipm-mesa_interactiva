@@ -72,14 +72,13 @@ main label { text-align: left; }
   font-family: raleway, sans-serif;
   font-size: 30px;
 }
-#infoContents label { font-size: 30px; }
 
 .priceContainer {
-	font-family: raleway, sans-serif;
-	font-size: 20px;
+  color: green;
+  font-family: "Bangers", Fallback, sans-serif;
+  text-align: left;
 	margin-top: 5%;
 	margin-left: 27%;
-	text-align: left;
 	width: 100%;
 }
 
