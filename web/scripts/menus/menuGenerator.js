@@ -85,7 +85,7 @@ function createIncrementButtons() {
 	var incPizza = $('<button>', {
 		'class': 'incrementButton incPizza',
 		html: '+',
-		'click': function() { orderIncrementPizza(1); }
+		'click': function() { orderIncrementPizza(1, $(this)); }
 	});
 	var labelPizza = $('<label>', {
 		'class': 'elementNumber elNumberPizza',
@@ -94,12 +94,12 @@ function createIncrementButtons() {
 	var decPizza = $('<button>', {
 		'class': 'incrementButton decPizza',
 		html: '-',
-		'click': function() { orderIncrementPizza(-1); }
+		'click': function() { orderIncrementPizza(-1, $(this)); }
 	});
 	var incDrink = $('<button>', {
 		'class': 'incrementButton incDrink',
 		html: '+',
-		'click': function() { orderIncrementDrink(1); }
+		'click': function() { orderIncrementDrink(1, $(this)); }
 	});
 	var labelDrink = $('<label>', {
 		'class': 'elementNumber elNumberDrink',
@@ -108,7 +108,7 @@ function createIncrementButtons() {
 	var decDrink = $('<button>', {
 		'class': 'incrementButton decDrink',
 		html: '-',
-		'click': function() { orderIncrementDrink(-1); }
+		'click': function() { orderIncrementDrink(-1, $(this)); }
 	});
 	var d1 = $('<div>').addClass('incButtons').append(decPizza, labelPizza, incPizza);
 	var d2 = $('<div>').addClass('incButtons').append(decDrink, labelDrink, incDrink);

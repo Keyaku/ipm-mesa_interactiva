@@ -91,6 +91,17 @@ function managerDeleteOrder(orderNumber) {
 	managerAddToMeta(orderNumber, v); //Adds the empty order to the global data structure.
 }
 
+function managerDeletePizza(orderNumber) {
+	var order = managerGetMetaValues(orderNumber);
+	var drink = order[1];
+	managerAddToMeta(orderNumber, ['', drink]);
+}
+function managerDeleteDrink(orderNumber) {
+	var order = managerGetMetaValues(orderNumber);
+	var pizza = order[0];
+	managerAddToMeta(orderNumber, [pizza, '']);
+}
+
 //Makes the order empty (for the system, if the order is empty, it doesn't show up).
 function manageDeleteAllOrders() {
 	var v = ['', '']; //Sets the value for the key (empty fields).

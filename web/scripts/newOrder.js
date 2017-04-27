@@ -53,9 +53,10 @@ function createOrderItem(index) {
 }
 //Fills the order item with the chosen pizza and drink.
 function createOrderElements(pizza, drink, index) {
+	var incButtons = createIncrementButtons();
 	setTimeout(function() {
-		$('#pizza' + index.toString()).append(createPizzaItemWithSize(pizza)); //Shows the ordered pizza.
-		$('#drink' + index.toString()).append(createDrinkItem(drink)); //Shows the ordered drink.
+		if (pizza != '') { $('#pizza' + index.toString()).append(createPizzaItemWithSize(pizza), incButtons[0]); }//Shows the ordered pizza.
+		if (drink != '') { $('#drink' + index.toString()).append(createDrinkItem(drink), incButtons[1]); }//Shows the ordered drink.
 	}, 100);
 }
 
@@ -91,6 +92,73 @@ function confirmCancelAll() {
 	$('#orders').empty();
 	manageDeleteAllOrders();
 }
+
+
+
+
+//When the client clicks the increment or decrement pizza buttons.
+function orderIncrementPizza(incValue, button) {
+	var number = Number($('.elNumberPizza').text()) + incValue; //Gets the number of current pizzas in the order.
+
+	var id = button.parent().parent().attr('id');
+	var orderNumber = id[5];
+
+	if (number > 0) { //If the number of pizzas would still be more than 0.
+		$('.elNumberPizza').text(number); //Increment or decrements the number of pizzas in the display.
+		managerIncrementPizza(orderNumber, number); //Changes the number in the system.
+	}
+	else if (number == 0) { //If the number of pizzas would be 0.
+		managerDeletePizza(orderNumber);
+		refreshOrder(orderNumber);
+	}
+	else if (number < 0) { //Security redundancy.
+		//The number won't reach negative values because when it reaches 0, the order is canceled (with the client's permission).
+	}
+}
+//When the client clicks the increment or decrement drink buttons.
+function orderIncrementDrink(incValue, button){
+	var number = Number($('.elNumberDrink').text()) + incValue; //Gets the number of current drinks in the order.
+
+	var id = button.parent().parent().attr('id');
+	var orderNumber = id[5];
+
+	if (number > 0) { //If the number of pizzas would still be more than 0.
+		$('.elNumberDrink').text(number); //Increment or decrements the number of drinks in the display.
+		managerIncrementDrink(orderNumber, number); //Changes the number in the system.
+	}
+	else if (number == 0) { //If the number of pizzas would be 0.
+		managerDeleteDrink(orderNumber);
+		refreshOrder(orderNumber);
+	}
+	else if (number < 0) { //Security redundancy.
+		//The number won't reach negative values because when it reaches 0, the order is canceled (with the client's permission).
+	}
+}
+
+function refreshOrder(orderNumber) {
+	$('#order').empty();
+
+	var pizza = '#pizza' + orderNumber.toString();
+	var i = $(pizza).parent('.orderStatusContainer');
+	i.remove();
+	var values = managerGetMetaValues(Number(orderNumber));
+	if (values[0] == '' && values[1] == '') {
+		confirmationOrderCancel();
+	}
+	createOrderItem(orderNumber); //Creates the HTML structure for the order.
+	createOrderElements(values[0], values[1], orderNumber); //Fills the order item with the chosen pizza and drink.
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*------------------------------------------------------------------------------
