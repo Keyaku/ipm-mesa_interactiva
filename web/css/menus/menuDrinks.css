@@ -75,9 +75,10 @@ main label { text-align: left; }
 
 .priceContainer {
   color: green;
+  font-size: 50px;
   font-family: "Bangers", Fallback, sans-serif;
   text-align: left;
-	margin-top: 5%;
+	margin-top: 7.5%;
 	margin-left: 27%;
 	width: 100%;
 }

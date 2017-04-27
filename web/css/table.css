@@ -104,10 +104,11 @@ p {
 	text-align: center;
 	height: 100%;
 }
+
 #infoContents label {
-	font-size: 50px;
 	width: 100%;
 }
+
 #extensiveInfoBar .mPIIIngredient {
 	display: block;
 	font-size: 20px;
@@ -136,7 +137,6 @@ p {
 
 .priceContainer {
 	font-family: raleway, sans-serif;
-	font-size: 20px;
 }
 .priceContainer label {
 	color: green;
