@@ -30,6 +30,7 @@ function createPizzaPrice(pizzaSize) {
 	.append($('<label>', { html: getPizzaPrice(pizzaSize) }))
 	.append($('<button>', {
 		html: 'Order!',
+		'click': function() { setGlobalPizza(pizzaSize); },
 		'id': 'pizzaOrderButton',
 	}));
 	return d;
