@@ -187,7 +187,8 @@ svg.pizzaSizes.active circle {
 	width: 100%;
 }
 .buttonContainer#customizeButtons button {
-	padding: 1% 5%;
+	padding: 4% 6%;
+	margin-top: 23%;
 }
 
 ::-webkit-scrollbar {

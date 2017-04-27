@@ -75,11 +75,9 @@ p {
 	border-radius: 20px;
 	color: white;
 	font-family: raleway, sans-serif;
-	font-size: 30px;
+	font-size: 40px;
 	padding: 4% 6%;
 	text-align: center;
-	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: black;
 }
 
 .buttonContainer button:not(:last-child) {
@@ -161,4 +159,8 @@ p {
 	float: right;
 	font-size: 50px;
 	font-weight: bolder;
+}
+
+#customPizza {
+	margin-top: 5%;
 }
