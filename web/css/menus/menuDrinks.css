@@ -70,7 +70,7 @@ main label { text-align: left; }
 .drinksInformationContainer {
 	font-family: raleway, sans-serif;
 	font-size: 20px;
-	margin-top: 7.5%;
+	margin-top: 15%;
 	margin-left: 10%;
 	text-align: left;
 	width: 100%;
@@ -99,13 +99,10 @@ main label { text-align: left; }
 	border-radius: 20px;
 	color: white;
 	font-family: raleway, sans-serif;
-	font-size: 30px;
-	margin-top: 10%;
+	font-size: 35px;
 	margin-left: 60%;
 	text-align: center;
 	width: 200px;
-	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: black;
 }
 
 .buttonContainer {
