@@ -61,7 +61,6 @@ main label {
 .pizzaThumbnail {
 	float: left;
 	padding: 0;
-
 	height: auto;
 }
 .menuSugestedPizzaImg {
@@ -69,6 +68,22 @@ main label {
 	width: 20%;
 	height: auto;
 }
+
+#menuPremadePizzasSugestions .menuPizzaItemInfo { margin-right: 20px; }
+#menuPremadePizzasSugestions .mPITitle { font-size: 50px; }
+
+
+#premade .menuPizzaItemInfo { margin-top: 3%; }
+#premade .mPITitle {
+	font-family: bangers, sans-serif;
+	font-size: 65px;
+	margin-bottom: 20%;
+}
+#premade .mPIIIngredient {
+	font-size: 35px;
+	font-family: raleway, sans-serif;
+}
+
 .menuPizzaItemInfo {
 	color: white;
 	text-align: center;
