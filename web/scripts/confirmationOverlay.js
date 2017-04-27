@@ -1,11 +1,11 @@
 const MODAL_HTML = `
-					<div id="cancelModal">
-						<div id="modalContainer">
-							<p id="varMsg">Do you really wish to cancel your order?</p>
-							<p id="conMsg">This action is irreversible.</p>
-							<div id="buttonContainer">
-								<button class="modalButtons" id="proceed">Yes</button>
-								<button class="modalButtons" id="return">No</button>
+					<div id='cancelModal'>
+						<div id='modalContainer'>
+							<p id='varMsg'>Do you really wish to cancel your order?</p>
+							<p id='conMsg'>This action is irreversible.</p>
+							<div id='modalButtonContainer'>
+								<button class='modalButton' id='proceed'>Yes</button>
+								<button class='modalButton' id='return'>No</button>
 							</div>
 						</div>
 					</div>
@@ -17,9 +17,7 @@ const MODAL_HTML = `
 				CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
-$("main").append(MODAL_HTML);
-var modal = $("#cancelModal");
-var modalButtons = $(".modalButtons");
+$('main').append(MODAL_HTML);
 var functionCallBack = confirmationOverlayShow;
 var functionCallBackArgs = [];
 
@@ -29,10 +27,17 @@ var functionCallBackArgs = [];
 				AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
-function modalClose() { modal.hide(); }
+function modalClose() { $('#cancelModal').hide(); }
 function confirmationOverlayShow(callback, args) {
-	modal.show();
-	modalButtons.show();
+	$('#cancelModal').show();
+	$('.modalButton').show();
+	functionCallBack = callback;
+	functionCallBackArgs = args;
+}
+function confirmationOverlayShow(textQuestion, callback, args) {
+	$('#varMsg').html(textQuestion);
+	$('#cancelModal').show();
+	$('.modalButton').show();
 	functionCallBack = callback;
 	functionCallBackArgs = args;
 }
@@ -43,8 +48,8 @@ function confirmationOverlayShow(callback, args) {
 				MENU FLOW
 
 ------------------------------------------------------------------------------*/
-$("#return").click(function() { modalClose(); });
-$("#proceed").click(function() {
+$('#return').click(function() { modalClose(); });
+$('#proceed').click(function() {
 	modalClose();
 	functionCallBack(functionCallBackArgs);
 });
