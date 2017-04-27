@@ -30,14 +30,12 @@ var functionCallBackArgs = [];
 function modalClose() { $('#cancelModal').hide(); }
 function confirmationOverlayShow(callback, args) {
 	$('#cancelModal').show();
-	$('.modalButton').show();
 	functionCallBack = callback;
 	functionCallBackArgs = args;
 }
 function confirmationOverlayShow(textQuestion, callback, args) {
 	$('#varMsg').html(textQuestion);
 	$('#cancelModal').show();
-	$('.modalButton').show();
 	functionCallBack = callback;
 	functionCallBackArgs = args;
 }
@@ -48,8 +46,8 @@ function confirmationOverlayShow(textQuestion, callback, args) {
 				MENU FLOW
 
 ------------------------------------------------------------------------------*/
-$('#return').click(function() { modalClose(); });
 $('#proceed').click(function() {
 	modalClose();
 	functionCallBack(functionCallBackArgs);
 });
+$('#return').click(function() { modalClose(); });

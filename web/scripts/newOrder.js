@@ -88,7 +88,7 @@ function confirmCancel(args) {
 	managerDeleteOrder(index);
 }
 //When the client clicks the cancel all button.
-function orderAllCancel() { confirmationOverlayShow(confirmCancelAll, []); }
+function orderAllCancel() { confirmationOverlayShow('Do you really wish to cancell all your orders?',confirmCancelAll, []); }
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
 function confirmCancelAll() {
 	$('#orders').empty();
