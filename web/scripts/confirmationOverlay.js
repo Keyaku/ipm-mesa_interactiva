@@ -4,8 +4,8 @@ const MODAL_HTML = `
 							<p id='varMsg'>Do you really wish to cancel your order?</p>
 							<p id='conMsg'>This action is irreversible.</p>
 							<div id='modalButtonContainer'>
-								<button class='modalButton' id='proceed'>Yes</button>
-								<button class='modalButton' id='return'>No</button>
+								<button class='modalButton buttonDanger' id='proceed'>Yes</button>
+								<button class='modalButton buttonNeutral' id='return'>No</button>
 							</div>
 						</div>
 					</div>

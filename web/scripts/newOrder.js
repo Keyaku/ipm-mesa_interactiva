@@ -79,6 +79,56 @@ function orderEditDrink(index) {
 	sessionStorage.setItem('editing', 'true'); //Sets the editing flag to false.
 	window.location.href = 'html/menus/menuDrinks.html';
 }
+
+//When the client clicks the increment or decrement pizza buttons.
+function orderIncrementPizza(incValue, button) {
+	var number = Number($('.elNumberPizza').text()) + incValue; //Gets the number of current pizzas in the order.
+	var id = button.parent().parent().attr('id');
+	var orderNumber = id[5];
+	if (number > 0) { //If the number of pizzas would still be more than 0.
+		$('.elNumberPizza').text(number); //Increment or decrements the number of pizzas in the display.
+		managerIncrementPizza(orderNumber, number); //Changes the number in the system.
+	}
+	//If the number of pizzas would be 0.
+	else if (number == 0) { confirmationDeleteElement('Do you really wish to delete this element?', deletePizza, orderNumber); }
+	//The number won't reach negative values because when it reaches 0, the order is canceled (with the client's permission).
+	else if (number < 0) { /*Security redundancy.*/ }
+}
+//When the client clicks the increment or decrement drink buttons.
+function orderIncrementDrink(incValue, button){
+	var number = Number($('.elNumberDrink').text()) + incValue; //Gets the number of current drinks in the order.
+	var id = button.parent().parent().attr('id');
+	var orderNumber = id[5];
+	if (number > 0) { //If the number of pizzas would still be more than 0.
+		$('.elNumberDrink').text(number); //Increment or decrements the number of drinks in the display.
+		managerIncrementDrink(orderNumber, number); //Changes the number in the system.
+	}
+	//If the number of pizzas would be 0.
+	else if (number == 0) { confirmationDeleteElement('Do you really wish to delete this element?', deleteDrink, orderNumber); }
+	//The number won't reach negative values because when it reaches 0, the order is canceled (with the client's permission).
+	else if (number < 0) { /*Security redundancy.*/ }
+}
+
+function refreshOrder(orderNumber) {
+	$('#order').empty();
+	var pizza = '#pizza' + orderNumber.toString();
+	$(pizza).parent('.orderStatusContainer').remove();
+	var values = managerGetMetaValues(Number(orderNumber));
+	if (values[0] == '' && values[1] == '') { confirmationOrderCancel(); }
+	createOrderItem(orderNumber); //Creates the HTML structure for the order.
+	createOrderElements(values[0], values[1], orderNumber); //Fills the order item with the chosen pizza and drink.
+}
+
+	function confirmationDeleteElement(confirmationQuestion, func, arg) { confirmationOverlayShow(confirmationQuestion, func, arg); }
+function deletePizza(arg) {
+	managerDeletePizza(arg);
+	refreshOrder(arg);
+}
+function deleteDrink(arg) {
+	managerDeleteDrink(arg);
+	refreshOrder(arg);
+}
+
 //When the client clicks the cancel button.
 function orderCancel(index) { confirmationOverlayShow(confirmCancel, [index]); }
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
@@ -94,79 +144,6 @@ function confirmCancelAll() {
 	$('#orders').empty();
 	manageDeleteAllOrders();
 }
-
-
-
-
-//When the client clicks the increment or decrement pizza buttons.
-function orderIncrementPizza(incValue, button) {
-	var number = Number($('.elNumberPizza').text()) + incValue; //Gets the number of current pizzas in the order.
-
-	var id = button.parent().parent().attr('id');
-	var orderNumber = id[5];
-
-	if (number > 0) { //If the number of pizzas would still be more than 0.
-		$('.elNumberPizza').text(number); //Increment or decrements the number of pizzas in the display.
-		managerIncrementPizza(orderNumber, number); //Changes the number in the system.
-	}
-	else if (number == 0) { //If the number of pizzas would be 0.
-		confirmationDeleteElement(deletePizza, orderNumber);
-	}
-	else if (number < 0) { //Security redundancy.
-		//The number won't reach negative values because when it reaches 0, the order is canceled (with the client's permission).
-	}
-}
-//When the client clicks the increment or decrement drink buttons.
-function orderIncrementDrink(incValue, button){
-	var number = Number($('.elNumberDrink').text()) + incValue; //Gets the number of current drinks in the order.
-
-	var id = button.parent().parent().attr('id');
-	var orderNumber = id[5];
-
-	if (number > 0) { //If the number of pizzas would still be more than 0.
-		$('.elNumberDrink').text(number); //Increment or decrements the number of drinks in the display.
-		managerIncrementDrink(orderNumber, number); //Changes the number in the system.
-	}
-	else if (number == 0) { //If the number of pizzas would be 0.
-		confirmationDeleteElement(deleteDrink, orderNumber);
-	}
-	else if (number < 0) { //Security redundancy.
-		//The number won't reach negative values because when it reaches 0, the order is canceled (with the client's permission).
-	}
-}
-
-function refreshOrder(orderNumber) {
-	$('#order').empty();
-
-	var pizza = '#pizza' + orderNumber.toString();
-	var i = $(pizza).parent('.orderStatusContainer');
-	i.remove();
-	var values = managerGetMetaValues(Number(orderNumber));
-	if (values[0] == '' && values[1] == '') {
-		confirmationOrderCancel();
-	}
-	createOrderItem(orderNumber); //Creates the HTML structure for the order.
-	createOrderElements(values[0], values[1], orderNumber); //Fills the order item with the chosen pizza and drink.
-}
-
-
-function confirmationDeleteElement(func, arg) { confirmationOverlayShow(func, arg); }
-function deletePizza(arg) {
-	managerDeletePizza(arg);
-	refreshOrder(arg);
-}
-function deleteDrink() {
-	managerDeleteDrink(arg);
-	refreshOrder(arg);
-}
-
-
-
-
-
-
-
-
 
 
 /*------------------------------------------------------------------------------
