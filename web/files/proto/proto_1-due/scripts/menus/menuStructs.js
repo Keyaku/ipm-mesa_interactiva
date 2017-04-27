@@ -68,7 +68,7 @@ var drinksList = {
 	},
 	'Fresh Juice' : {
 		'name' : 'Fresh Juice',
-		'sizes' : ['Orange Juice (25cl)', 'Blueberry Juice (25cl)', 'Lemonade (25cl)', 'Tutti Frutti (25cl)'],
+		'sizes' : ['Orange Juice (25cl)', 'Blueberry Juice (25cl)', 'Lemonade (25cl)'],
 		'nutritions' : {'Calories':'55kcal', 'Protein':'8g', 'Carbohydrates':'20g', 'Fat':'80g'},
 		'image' : 'img/menus/drinksMenu/freshjuice.png',
 	},

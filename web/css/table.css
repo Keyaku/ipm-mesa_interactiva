@@ -110,24 +110,28 @@ p {
 }
 #extensiveInfoBar .mPIIIngredient {
 	display: block;
-	font-size: 16px;
+	font-size: 20px;
 	width: 100%;
 }
+
 .nutritionalTable {
-	font-size: 20px;
-	margin: 5% auto;
+	font-family: raleway, sans-serif;
+	font-size: 25px;
+	margin-top: 7.5%;
+	margin-left: 25%;
+	width: 45%;
 }
+
 #pizzaOrderButton {
-	background-color: #2ecc31;
-	border-color: #27ae60;
+	background-color: grey;
 	border-radius: 20px;
 	color: white;
 	font-family: raleway, sans-serif;
 	font-size: 30px;
 	text-align: center;
 	width: 200px;
-	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: black;
+	margin-top: 5%;
+	padding: 4% 6%;
 }
 
 .priceContainer {

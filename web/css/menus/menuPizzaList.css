@@ -4,6 +4,24 @@ main label {
 	text-align: center
 }
 
+.menuPremadePizzasSugestionsTitle, .menuPremadeMenuTitle, #customizationShortcut {
+	color: #D32F2F;
+	font-size: 75px;
+	font-family: bangers, sans-serif;
+	margin-left: 3.7%;
+	text-shadow: 0 0 10px #000;
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: black;
+}
+
+.mPITitle {
+	font-size: 35px;
+}
+
+#customizationShortcut {
+	margin-left: 10%;
+	margin-top: 50%;
+}
 /* Premade pizza sugestions */
 #menuPremadePizzasSugestions {
 	display: inline-block;
@@ -13,6 +31,7 @@ main label {
 	white-space: nowrap;
 	width: 100%;
 }
+
 .menuPizzaSuggestion {
 	display: inline-table;
 	margin:0 15pt;
@@ -52,16 +71,15 @@ main label {
 .mPIIIngredient {
 	display: block;
 	font-family: raleway, Fallback, sans-serif;
-	font-size: 16px;
+	font-size: 22px;
 	margin: 0;
 }
 .mPIISizeButton {
 	background-color: rgba(0,0,0,0.6);
-	border: none;
 	color: white;
 	font-size: 20px;
-	margin: 10px 10px;
-	padding: 15px 20px;
+	margin-top: 5%;
+	padding: 4% 6%;
 }
 
 /* Create Your Own Pizza Shortcut */
@@ -72,13 +90,22 @@ main label {
 	top: 50%;
 	right: 0;
 }
+
+#pizzaOrderButton {
+	margin-left: 60%;
+}
+.rating {
+	margin-top: 10%;
+}
+.buttonContainer {
+	margin-top: 5%;
+}
 .buttonContainer #cancelButton {
 	background-color: #D50000;
 	border-color: #D50012;
 }
 .buttonContainer #skipButton {
-	background-color: green;
-	border-color: green;
+	background-color: grey;
 }
 .buttonContainer #pizzaOrder {
 	font-size: 20px;
