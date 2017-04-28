@@ -120,36 +120,20 @@ function createIncrementButtons(pizzaNumber, drinkNumber) {
 			PIZZA-RELATED CODE
 
 ------------------------------------------------------------------------------*/
-//TODO - @RafaelRibeiro - delete this and replace it for a symbol in the corresponding pizzas in the premade pizza menu.
-function populateSuggestions(obj) {
-	obj.append($('<label>', { //Creates the title for the suggestion's menu.
-		html: 'Suggestions tailored for you',
-		'class': 'menuPremadePizzasSugestionsTitle'
-	}));
-	var suggestions = $('<div>', { 'id': 'menuPremadePizzasSugestions' }); //Creates the main sugestions division with lateral scroll.
-	for (var pizzaName in suggestionsList) {
-		var pizza = getPremadePizza(pizzaName);
-		suggestions.append(createPizzaSuggestion(pizza)); //Adds each suggested pizza to the passed object.
-	}
-	obj.append(suggestions);
+//Checks if the pizza is suggested.
+function isPizzaSuggested(pizza) {
+	var pizzaName = pizza['name'];
+	//If the pizza is suggedted, return true.
+	if (getIsSuggested(pizzaName)) { return true; }
+	//If the pizza is NOT suggedted, return false.
+	else { return false; }
 }
-function createPizzaSuggestion(pizza) {
-	return $('<div>', {
-		html: createPizzaInfo(pizza),
-		'class': 'menuPizzaSuggestion'
-	});
-}
-
 
 //Creates and populates the premade pizzas menu.
 function populatePremadeMenu(obj) {
-	obj.append($('<label>', { //Creates the label for the menu title.
-		'class': 'menuPremadeMenuTitle',
-		html: 'Predesigned pizzas'
-	}));
 	for (var pizzaName in pizzaList) {
-		var pizza = getPremadePizza(pizzaName); //Gets the structure of the pizza (by name).
-		obj.append(createPizzaItem(pizza)); //Creates a div with the pizza's name, image, and size buttons.
+		var pizzaStruct = getPremadePizza(pizzaName); //Gets the structure of the pizza (by name).
+		obj.append(createPizzaItem(pizzaStruct)); //Creates a div with the pizza's name, image, and size buttons.
 	}
 	var itemInfo = (obj.children('.menuPizzaItem')).children('.menuPizzaItemInfo');
 	itemInfo.addClass('col-md-6');
@@ -174,11 +158,18 @@ function createPizzaIngredientsList(pizza) {
 	}
 	return ul;
 }
+
 //Creates the div for the pizza's name and ingredient list.
 function createPizzaInfo(pizza) {
+	var sug = null;
+	var sugTip = null;
+	if (isPizzaSuggested(pizza)) {
+		sug = $('<i>').addClass('fa fa-user');
+		sugTip = $('<label>').addClass('suggestedToolTip').html('( Suggested for you )');
+	}
 	return  $('<div>', {
 		'class': 'menuPizzaItemInfo',
-		html: [createItemName(pizza), createPizzaIngredientsList(pizza)]
+		html: [createItemName(pizza), createPizzaIngredientsList(pizza), sug, sugTip]
 	});
 }
 //Creates the div for the pizza's name, ingredient list and size buttons.

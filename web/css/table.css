@@ -168,3 +168,10 @@ p { color: white; }
 	font-weight: bolder;
 }
 #customPizza { margin-top: 5%; }
+
+.fa.fa-user {
+	color: darkgreen;
+	font-size: 50px;
+	font-weight: bolder;
+	margin-top: 10%;
+}

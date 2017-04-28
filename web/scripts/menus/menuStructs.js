@@ -4,7 +4,7 @@
 
 ------------------------------------------------------------------------------*/
 //Array of premade suggested pizzas (for the JS generated menu).
-var suggestionsList = { 'Pepperoni Lovers' : {}, 'Four Seasons' : {}, 'Camponesa' : {} };
+var suggestionsList = { 'Pepperoni Lovers' : {}, 'Camponesa3' : {}, 'Camponesa2' : {} };
 //Array of premade pizzas (for the JS generated menu).
 var pizzaList = {
 	'Pepperoni Lovers' : {
@@ -46,6 +46,8 @@ var pizzaList = {
 
 //Returns the structure of the the given pizza.
 function getPremadePizza(pizzaName) { return pizzaList[pizzaName]; }
+//Returns if the pizza is in the suggested pizza list.
+function getIsSuggested(pizzaName) { return pizzaName in suggestionsList; }
 
 /*------------------------------------------------------------------------------
 
