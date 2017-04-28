@@ -42,7 +42,6 @@ main label { text-align: left; }
 	display: block;
 	margin: 5% auto;
 	height: 150px;
-	border: 5px solid white;
 	border-radius: 10px;
 }
 
@@ -88,28 +87,8 @@ main label { text-align: left; }
 	right: 0px;
 }
 
-#drinkOrderButton {
-	background-color: grey;
-	border-radius: 20px;
-	color: white;
-	font-family: raleway, sans-serif;
-	font-size: 35px;
-  padding: 4% 6%;
-  margin-top: 5%;
-	margin-left: 60%;
-	text-align: center;
-	width: 200px;
-}
-
 .buttonContainer {
 	position: fixed;
 	top: 80%;
 	right: -2.5%;
-}
-.buttonContainer button#cancelButton {
-	background-color: #D50000;
-	border-color: #D50012;
-}
-.buttonContainer button#skipButton {
-	background-color: grey;
 }

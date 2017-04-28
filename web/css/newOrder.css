@@ -36,56 +36,6 @@
 	text-align: center;
 }
 
-.buttons {
-	padding: 4vh 0 0 0;
-}
-
-.editcancel {
-	background-color: #ECF0F1;
-	border-color: #FFFFFF;
-	box-shadow: 0px 5px 10px black;
-	border-radius: 20px;
-	color: #FFFFFF;
-	display: block;
-	font-family: 'Raleway', sans-serif;
-	font-size: 25px;
-	margin: 2% auto;
-	padding: 4% 6%;
-	text-align: center;
-	width: 300px;
-	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: black;
-
-}
-.buttonEditPizza, .buttonEditDrink {
-	background-color: #ECF0F1;
-	border-color: #FFFFFF;
-	border-radius: 12px;
-	color: white;
-	display: none;
-	margin: 0% 5%;
-	font-family: raleway, sans-serif;
-	font-size: 30px;
-	padding: 2% 5%;
-	text-align: center;
-	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: black;
-}
-
-#buttonNewOrder {
-	background-color: #6B9C15;
-	border-color: #2E7D32;
-	font-size: 25px;
-	padding: 1% 3%;
-}
-
-#buttonCancelAll {
-	background-color: #D50000;
-	border-color: #D32F2F;
-	font-size: 25px;
-	padding: 1% 3%;
-}
-
 .mPITitle {
 	display: block;
 	font-size: 40px;
@@ -134,11 +84,7 @@
 	height: 200px;
 }
 
-.buttonCancel {
-	background-color: #D50000;
-	border-color: #D50012;
-	border-radius: 20px;
-}
+
 
 
 .menuPizzaItem {
@@ -146,22 +92,28 @@
 }
 
 
-.incrementButton {
-	background-color: white;
-	color: black;
-	font-size: 20px;
-	padding: 10px 20px;
-}
+
 .elementNumber {
 	color: white;
 	font-size: 20px;
 	width: 50px;
 }
-.incButtons {
-	margin: 20px;
+.incButtons { margin: 20px; }
+.buttons { padding: 4vh 0 0 0; }
+.buttonEdit, .buttonCancel {
+	display: block;
+	margin: 2% auto;
+	padding: 4% 6%;
+	width: 300px;
 }
-
-
-.buttonContainer {
-	margin-top: 20px;
+.buttonEditPizza, .buttonEditDrink {
+	display: none;
+	margin: 0% 5%;
+	padding: 2% 5%;
+	width: 120px;
+}
+.buttonContainer { margin-top: 20px; }
+#buttonNewOrder, #buttonCancelAll {
+	padding: 1% 3%;
+	width: 300px;
 }

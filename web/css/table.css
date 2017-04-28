@@ -71,10 +71,6 @@ p {
 }
 
 .buttonContainer button {
-	background-color: grey;
-	border-radius: 20px;
-	color: white;
-	font-family: raleway, sans-serif;
 	font-size: 40px;
 	padding: 4% 6%;
 	text-align: center;
@@ -82,6 +78,38 @@ p {
 
 .buttonContainer button:not(:last-child) {
 	margin-right: 5%;
+}
+
+.buttonDanger, .buttonNeutral, .buttonReward {
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0px 5px 10px black;
+	color: white;
+	font-family: bangers, sans-serif;
+	font-size: 30px;
+	text-align: center;
+}
+.buttonDanger { background-color: darkred; }
+.buttonNeutral { background-color: grey; }
+.buttonReward { background-color: darkgreen; }
+
+#pizzaOrderButton {
+	margin-top: 5%;
+	margin-left: 60%;
+	padding: 4% 6%;
+	width: 200px;
+}
+#drinkOrderButton {
+	margin-top: 5%;
+	margin-left: 40%;
+	padding: 4% 6%;
+	width: 200px;
+}
+
+.incrementButton {
+	font-size: 35px;
+	padding: 10px 20px;
+	width: 100px;
 }
 
 /************************* Extensive Information Bar *************************/
@@ -121,18 +149,6 @@ p {
 	margin-top: 5%;
 	margin-left: 25%;
 	width: 45%;
-}
-
-#pizzaOrderButton {
-	background-color: grey;
-	border-radius: 20px;
-	color: white;
-	font-family: raleway, sans-serif;
-	font-size: 30px;
-	text-align: center;
-	width: 200px;
-	margin-top: 5%;
-	padding: 4% 6%;
 }
 
 .priceContainer {
