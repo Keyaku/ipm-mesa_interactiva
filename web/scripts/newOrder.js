@@ -44,10 +44,10 @@ function createOrderItem(index) {
 	var b = $('<div></div>').addClass('col').attr('id', 'drink' + ind); //Creates the div for the ordered drink.
 	//Creates the buttons.
 	var c = $('<div></div>').addClass('col buttons')
-			.append($('<button>', { html: 'Edit' }).addClass('editcancel buttonEdit').attr('id', 'edit' + ind))
-			.append($('<button>', { html: 'Pizza' }).addClass('buttonEditPizza').attr('id', 'editPizza' + ind))
-			.append($('<button>', { html: 'Drink' }).addClass('buttonEditDrink').attr('id', 'editDrink' + ind))
-			.append($('<button>', { html: 'Cancel' }).addClass('editcancel buttonCancel').attr('id', 'cancel' + ind));
+			.append($('<button>', { html: 'Edit' }).addClass('buttonEdit buttonNeutral').attr('id', 'edit' + ind))
+			.append($('<button>', { html: 'Pizza' }).addClass('buttonEditPizza buttonNeutral').attr('id', 'editPizza' + ind))
+			.append($('<button>', { html: 'Drink' }).addClass('buttonEditDrink buttonNeutral').attr('id', 'editDrink' + ind))
+			.append($('<button>', { html: 'Cancel' }).addClass('buttonCancel buttonDanger').attr('id', 'cancel' + ind));
 	div.append(a, b, c);
 	$('#orders').append(div);
 }

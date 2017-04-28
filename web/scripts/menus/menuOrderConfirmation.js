@@ -34,8 +34,8 @@ function createOrderItem() {
 	var b = $('<div>').addClass('col').attr('id', 'drink'); //Creates the div for the ordered drink.
 	//Creates the buttons.
 	var c = $('<div>').addClass('col buttons')
-			.append($('<button>', { html: 'Cancel' }).addClass('editcancel buttonCancel').attr('id', 'cancel'))
-			.append($('<button>', { html: 'Confirm' }).addClass('editcancel buttonConfirm').attr('id', 'confirm'));
+			.append($('<button>', { html: 'Cancel' }).addClass('editcancel buttonCancel buttonDanger').attr('id', 'cancel'))
+			.append($('<button>', { html: 'Confirm' }).addClass('editcancel buttonConfirm buttonReward').attr('id', 'confirm'));
 	div.append(a, b, c);
 	$('#order').append(div);
 }

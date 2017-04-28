@@ -32,6 +32,7 @@ function createPizzaPrice(pizzaSize) {
 		html: 'Order!',
 		'click': function() { setGlobalPizza(pizzaSize); },
 		'id': 'pizzaOrderButton',
+		'class': 'buttonNeutral'
 	}));
 	return d;
 }
@@ -41,7 +42,7 @@ function createSizeButtons() {
 	['Small', 'Medium', 'Large'].forEach(function(size) {
 		d.append($('<button>', {
 			html: size[0], // Get first character from size
-			'class': 'mPIISizeButton',
+			'class': 'mPIISizeButton buttonNeutral',
 			'click': function() {
 				var pizzaSize = $(this).attr('id');
 				$('.priceContainer label').text(getPizzaPrice(pizzaSize));

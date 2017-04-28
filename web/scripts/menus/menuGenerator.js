@@ -83,7 +83,7 @@ function createRating(obj) {
 
 function createIncrementButtons(pizzaNumber, drinkNumber) {
 	var incPizza = $('<button>', {
-		'class': 'incrementButton incPizza',
+		'class': 'buttonNeutral incrementButton incPizza',
 		html: '+',
 		'click': function() { orderIncrementPizza(1, $(this)); }
 	});
@@ -92,12 +92,12 @@ function createIncrementButtons(pizzaNumber, drinkNumber) {
 		html: pizzaNumber.toString()
 	});
 	var decPizza = $('<button>', {
-		'class': 'incrementButton decPizza',
+		'class': 'buttonNeutral incrementButton decPizza',
 		html: '-',
 		'click': function() { orderIncrementPizza(-1, $(this)); }
 	});
 	var incDrink = $('<button>', {
-		'class': 'incrementButton incDrink',
+		'class': 'buttonNeutral incrementButton incDrink',
 		html: '+',
 		'click': function() { orderIncrementDrink(1, $(this)); }
 	});
@@ -106,7 +106,7 @@ function createIncrementButtons(pizzaNumber, drinkNumber) {
 		html: drinkNumber.toString()
 	});
 	var decDrink = $('<button>', {
-		'class': 'incrementButton decDrink',
+		'class': 'buttonNeutral incrementButton decDrink',
 		html: '-',
 		'click': function() { orderIncrementDrink(-1, $(this)); }
 	});
@@ -244,6 +244,7 @@ function createDrinkOrderButton() {
 	});
 	var button = $('<button>', { //Creates the button for ordering.
 		'id': 'drinkOrderButton',
+		'class': 'buttonNeutral',
 		html: 'Order',
 		'click': function() { setGlobalDrink(); }
 	});
