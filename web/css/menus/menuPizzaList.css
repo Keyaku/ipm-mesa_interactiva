@@ -117,4 +117,7 @@ main label {
 }
 
 
-.buttonContainer { margin-top: 5%; }
+.buttonContainer {
+	margin-top: 5%;
+	text-align: center;
+}
