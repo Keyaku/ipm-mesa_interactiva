@@ -91,13 +91,6 @@
 	border: none;
 }
 
-
-
-.elementNumber {
-	color: white;
-	font-size: 20px;
-	width: 50px;
-}
 .incButtons { margin: 20px; }
 .buttons { padding: 4vh 0 0 0; }
 .buttonEdit, .buttonCancel {

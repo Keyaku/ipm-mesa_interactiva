@@ -89,9 +89,9 @@ p {
 	font-size: 30px;
 	text-align: center;
 }
-.buttonDanger { background-color: darkred; }
+.buttonDanger { background-color: #D50000; }
 .buttonNeutral { background-color: grey; }
-.buttonReward { background-color: darkgreen; }
+.buttonReward { background-color: #2ecc31; }
 
 #pizzaOrderButton {
 	margin-top: 5%;
@@ -110,6 +110,11 @@ p {
 	font-size: 35px;
 	padding: 10px 20px;
 	width: 100px;
+}
+.elementNumber {
+	color: white;
+	font-size: 35px;
+	width: 50px;
 }
 
 /************************* Extensive Information Bar *************************/
