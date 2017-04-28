@@ -83,7 +83,7 @@ function createRating(obj) {
 
 function createIncrementButtons(pizzaNumber, drinkNumber) {
 	var incPizza = $('<button>', {
-		'class': 'buttonNeutral incrementButton incPizza',
+		'class': 'buttonWhite incrementButton incPizza',
 		html: '+',
 		'click': function() { orderIncrementPizza(1, $(this)); }
 	});
@@ -92,12 +92,12 @@ function createIncrementButtons(pizzaNumber, drinkNumber) {
 		html: pizzaNumber.toString()
 	});
 	var decPizza = $('<button>', {
-		'class': 'buttonNeutral incrementButton decPizza',
+		'class': 'buttonWhite incrementButton decPizza',
 		html: '-',
 		'click': function() { orderIncrementPizza(-1, $(this)); }
 	});
 	var incDrink = $('<button>', {
-		'class': 'buttonNeutral incrementButton incDrink',
+		'class': 'buttonWhite incrementButton incDrink',
 		html: '+',
 		'click': function() { orderIncrementDrink(1, $(this)); }
 	});
@@ -106,7 +106,7 @@ function createIncrementButtons(pizzaNumber, drinkNumber) {
 		html: drinkNumber.toString()
 	});
 	var decDrink = $('<button>', {
-		'class': 'buttonNeutral incrementButton decDrink',
+		'class': 'buttonWhite incrementButton decDrink',
 		html: '-',
 		'click': function() { orderIncrementDrink(-1, $(this)); }
 	});
