@@ -40,8 +40,7 @@ function directionsStart(button) {
 }
 
 function share() { confirmationOverlayShow('Do you really wish to share your map?', shared, []); }
-function shared(arg) { }
-
+function shared(arg) { acknowledgementOverlayShow('Your map was shared.'); }
 
 function mapGetPointsOfInterest(button) {
 	$('.interestsButton').removeClass('active');
@@ -76,11 +75,6 @@ function mapDirectionsChooseMode(button) {
 	$('#go').show();
 	googleMapsMode = (button.attr("id")).toLowerCase();
 }
-function go() {
-	var destination = $('#mapsDestinationInput').val();
-	directionsMap(destination, googleMapsMode);
-}
-
 function directionsMap(destination, travelMode) {
 	if (travelMode == '') { travelMode = 'driving'; }
 	if (destination == '') {
@@ -93,6 +87,11 @@ function directionsMap(destination, travelMode) {
 	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
 	$("#iframeMap").attr("src", url);
 }
+function go() {
+	var destination = $('#mapsDestinationInput').val();
+	directionsMap(destination, googleMapsMode);
+}
+
 
 
 /*------------------------------------------------------------------------------
