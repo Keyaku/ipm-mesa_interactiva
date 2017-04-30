@@ -16,6 +16,8 @@ const MODAL_HTML2 = `
 
 ------------------------------------------------------------------------------*/
 $('main').append(MODAL_HTML2);
+var functionCallBack2 = confirmationOverlayShow;
+var functionCallBackArgs2 = [];
 
 
 /*------------------------------------------------------------------------------
@@ -24,9 +26,11 @@ $('main').append(MODAL_HTML2);
 
 ------------------------------------------------------------------------------*/
 function modalClose2() { $('#modal2').hide(); }
-function acknowledgementOverlayShow(text) {
+function acknowledgementOverlayShow(text, callback, args) {
 	$('#varMsg2').html(text);
 	$('#modal2').show();
+	functionCallBack2 = callback;
+	functionCallBackArgs2 = args;
 }
 
 
@@ -35,4 +39,7 @@ function acknowledgementOverlayShow(text) {
 				MENU FLOW
 
 ------------------------------------------------------------------------------*/
-$('#return2').click(function() { modalClose2(); });
+$('#return2').click(function() {
+	modalClose2();
+	if (functionCallBack2 != undefined) { functionCallBack2(functionCallBackArgs); }
+});
