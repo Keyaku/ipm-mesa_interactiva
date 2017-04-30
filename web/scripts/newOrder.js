@@ -119,7 +119,7 @@ function refreshOrder(orderNumber) {
 	createOrderElements(values[0], values[1], orderNumber); //Fills the order item with the chosen pizza and drink.
 }
 
-	function confirmationDeleteElement(confirmationQuestion, func, arg) { confirmationOverlayShow(confirmationQuestion, func, arg); }
+function confirmationDeleteElement(confirmationQuestion, func, arg) { confirmationOverlayShow(confirmationQuestion, func, arg); }
 function deletePizza(arg) {
 	managerDeletePizza(arg);
 	refreshOrder(arg);
@@ -130,7 +130,7 @@ function deleteDrink(arg) {
 }
 
 //When the client clicks the cancel button.
-function orderCancel(index) { confirmationOverlayShow(confirmCancel, [index]); }
+function orderCancel(index) { confirmationOverlayShow('Do you really wish to cancel this order?', confirmCancel, [index]); }
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
 function confirmCancel(args) {
 	var index = args[0];

@@ -82,7 +82,7 @@ function orderIncrementDrink(incValue,button){
 }
 
 
-function confirmationDeleteElement(func) { confirmationOverlayShow(func, []); }
+function confirmationDeleteElement(func) { confirmationOverlayShow('Do you really wish to remove this item?', func, []); }
 function deletePizza(arg) {
 	managerDeletePizza(sessionStorage.orderNumber);
 	refreshOrder();
@@ -94,7 +94,7 @@ function deleteDrink() {
 
 
 //When the client clicks the cancel button.
-function confirmationOrderCancel() { confirmationOverlayShow(confirmationConfirmCancel, []); }
+function confirmationOrderCancel() { confirmationOverlayShow('Do you really wish to cancel your order?', confirmationConfirmCancel, []); }
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
 function confirmationConfirmCancel() {
 	managerDeleteOrder(sessionStorage.orderNumber); //Deletes the ongoing order.

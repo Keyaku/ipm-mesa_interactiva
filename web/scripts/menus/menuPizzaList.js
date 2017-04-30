@@ -70,7 +70,7 @@ function setGlobalPizza(pizzaSize) {
 }
 
 //When the client clicks the cancel button.
-function pizzaOrderCancel(index) { confirmationOverlayShow(pizzaConfirmCancel, []); }
+function pizzaOrderCancel(index) { confirmationOverlayShow('Do you really wish to cancel your order?', pizzaConfirmCancel, []); }
 //When the client clicks the "Yes" button in the confirmation overlay (callback from confirmationOverlayShow).
 function pizzaConfirmCancel(args) { window.location.href = 'html/table.html'; }
 

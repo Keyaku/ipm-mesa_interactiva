@@ -28,11 +28,6 @@ var functionCallBackArgs = [];
 
 ------------------------------------------------------------------------------*/
 function modalClose() { $('#cancelModal').hide(); }
-function confirmationOverlayShow(callback, args) {
-	$('#cancelModal').show();
-	functionCallBack = callback;
-	functionCallBackArgs = args;
-}
 function confirmationOverlayShow(textQuestion, callback, args) {
 	$('#varMsg').html(textQuestion);
 	$('#cancelModal').show();
