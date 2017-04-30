@@ -1,5 +1,5 @@
 const MODAL_HTML = `
-					<div id='cancelModal'>
+					<div id='modal'>
 						<div id='modalContainer'>
 							<p id='varMsg'>Do you really wish to cancel your order?</p>
 							<p id='conMsg'>This action is irreversible.</p>
@@ -27,10 +27,10 @@ var functionCallBackArgs = [];
 				AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
-function modalClose() { $('#cancelModal').hide(); }
+function modalClose() { $('#modal').hide(); }
 function confirmationOverlayShow(textQuestion, callback, args) {
 	$('#varMsg').html(textQuestion);
-	$('#cancelModal').show();
+	$('#modal').show();
 	functionCallBack = callback;
 	functionCallBackArgs = args;
 }
