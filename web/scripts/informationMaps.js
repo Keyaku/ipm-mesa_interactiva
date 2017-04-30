@@ -39,8 +39,11 @@ function directionsStart(button) {
 	$('#directionsButtonContainer').toggle();
 }
 
-function share() { confirmationOverlayShow('Do you really wish to share your map?', shared, []); }
+function mapSharedWhitMe() { mapGetDirections('alameda lisboa', 'driving'); }
+function mapShare() { confirmationOverlayShow('Do you really wish to share your map?', shared, []); }
 function shared(arg) { acknowledgementOverlayShow('Your map was shared.'); }
+
+
 
 function mapGetPointsOfInterest(button) {
 	$('.interestsButton').removeClass('active');
@@ -48,20 +51,15 @@ function mapGetPointsOfInterest(button) {
 	var pointType = button.attr('id');
 	var keyWords = '';
 	switch(pointType) {
-		case 'bars':
-			keyWords = 'bars+oeiras';
+		case 'bars': keyWords = 'bars+oeiras';
 			break;
-		case 'landscapes':
-			keyWords = 'parks+oeiras';
+		case 'landscapes': keyWords = 'parks+oeiras';
 			break;
-		case 'mall':
-			keyWords = 'malls+oeiras';
+		case 'mall': keyWords = 'malls+oeiras';
 			break;
-		case 'monuments':
-			keyWords = 'monuments+oeiras';
+		case 'monuments': keyWords = 'monuments+oeiras';
 			break;
-		case 'museums':
-			keyWords = 'museums+oeiras';
+		case 'museums':	keyWords = 'museums+oeiras';
 			break;
 	}
 	var url = "https://www.google.com/maps/embed/v1/search"+googleMapsKey+"&q="+keyWords;
@@ -75,7 +73,7 @@ function mapDirectionsChooseMode(button) {
 	$('#go').show();
 	googleMapsMode = (button.attr("id")).toLowerCase();
 }
-function directionsMap(destination, travelMode) {
+function mapGetDirections(destination, travelMode) {
 	if (travelMode == '') { travelMode = 'driving'; }
 	if (destination == '') {
 		var inputBar = $("#mapsDestinationInput");
@@ -89,7 +87,7 @@ function directionsMap(destination, travelMode) {
 }
 function go() {
 	var destination = $('#mapsDestinationInput').val();
-	directionsMap(destination, googleMapsMode);
+	mapGetDirections(destination, googleMapsMode);
 }
 
 
@@ -102,7 +100,11 @@ function go() {
 $('#mapsShare').click(function() { shareStart($(this)); });
 $('#mapsInterests').click(function() { interestsStart($(this)); });
 $('#mapsDirections').click(function() { directionsStart($(this)); });
-$('.shareButton').click(function() { share(); });
+$('.shareButton').click(function() { mapShare(); });
 $('.interestsButton').click(function() { mapGetPointsOfInterest($(this)); });
 $('.directionsButton').click(function() { mapDirectionsChooseMode($(this)); });
 $('#go').click(function() { go(); });
+$(document).keypress(function(e){
+	//'S' key pressed.
+	if (e.which == 115) { mapSharedWhitMe(); }
+});
