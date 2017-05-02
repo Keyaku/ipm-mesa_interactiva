@@ -44,6 +44,8 @@ function createSizeButtons() {
 			html: size[0], // Get first character from size
 			'class': 'mPIISizeButton buttonWhite',
 			'click': function() {
+				$('.mPIISizeButton').addClass('buttonWhite').removeClass('buttonReward');
+				$(this).removeClass('buttonWhite').addClass('buttonReward');
 				var pizzaSize = $(this).attr('id');
 				$('.priceContainer label').text(getPizzaPrice(pizzaSize));
 				$('#pizzaOrderButton').click(function() { setGlobalPizza(pizzaSize); });

@@ -42,7 +42,10 @@ function showExtensiveInformation(objName, objSize = 0) {
 		priceOrder = createDrinkOrderButton(); //Gets the drink's order price and button.
 		container.append([drinkTypes]);
 	}
-	container.append(nutInfo, ratingDiv, priceOrder);
+	container.append([nutInfo, ratingDiv, priceOrder]);
+	container.children(':not(:first-child)').each(function (i, val) {
+		$(val).addClass('infoContent');
+	});
 	$('#extensiveInfoBar').append(container).show();
 }
 //Hides the extensive information bar.

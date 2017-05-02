@@ -123,11 +123,17 @@ p { color: white; }
 	color: white;
 	padding: 0 10px 15px 10px;
 }
+/* This is the ID, the whole thing*/
 #infoContents {
 	text-align: center;
 	height: 100%;
 }
 #infoContents label { width: 100%; }
+/* This is the Class, its elements */
+.infoContent {
+	margin-top: 5%;
+}
+
 #extensiveInfoBar .mPIIIngredient {
 	display: block;
 	font-size: 20px;
@@ -136,7 +142,6 @@ p { color: white; }
 .nutritionalTable {
 	font-family: raleway, sans-serif;
 	font-size: 25px;
-	margin-top: 5%;
 	margin-left: 25%;
 	width: 45%;
 }
