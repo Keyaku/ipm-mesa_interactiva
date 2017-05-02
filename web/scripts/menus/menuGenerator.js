@@ -226,7 +226,7 @@ function createDrinkTypes(drink) {
 			'class': 'drinksInformationTypeLabel',
 			html: drink['sizes'][size]
 		});
-		d.append(label).append($('<br>'));
+		d.append(label);
 	}
 	return d;
 }
@@ -248,7 +248,7 @@ function createDrinkOrderButton() {
 //Creates a div with the drink's name and image.
 function createDrinkItem(drink) {
 	return $('<div>', {
-		'class': 'menuDrinkItem',
+		'class': 'col-md-4 menuDrinkItem',
 		html: [createItemName(drink), createDrinkImg(drink)]
 	});
 }

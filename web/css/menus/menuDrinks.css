@@ -34,8 +34,8 @@ main label { text-align: left; }
 .menuDrinkItem {
 	border-bottom: 1px dashed white;
 	display: inline-block;
-	width: 33%;
 	height: auto;
+	padding: 5% 0;
 }
 .menuDrinkItem:last-child { border: none; }
 .menuDrinkItemImg {
@@ -51,7 +51,6 @@ main label { text-align: left; }
 .mPITitle {
 	font-size: 20px;
 	font-family: "Raleway", Fallback, sans-serif;
-	margin-top: 10%;
 	text-align: center;
 	width: 100%;
 }
@@ -61,24 +60,13 @@ main label { text-align: left; }
 	font-family: raleway, sans-serif;
 	font-size: 20px;
 	margin-top: 5%;
-  margin-left: 26%;
-	text-align: justify;
+ 	margin-left: 26%;
 	width: 100%;
 }
 
 .drinksInformationTypeLabel {
-  font-family: raleway, sans-serif;
-  font-size: 30px;
-}
-
-.priceContainer {
-  color: green;
-  font-size: 50px;
-  font-family: "Bangers", Fallback, sans-serif;
-  text-align: left;
-	margin-top: 7.5%;
-	margin-left: 27%;
-	width: 100%;
+	font-family: raleway, sans-serif;
+	font-size: 30px;
 }
 
 #extensiveInfoBar {
