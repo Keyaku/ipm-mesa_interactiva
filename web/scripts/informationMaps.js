@@ -43,8 +43,6 @@ function mapSharedWhitMe() { mapGetDirections('alameda lisboa', 'driving'); }
 function mapShare() { confirmationOverlayShow('Do you really wish to share your map?', shared, []); }
 function shared(arg) { acknowledgementOverlayShow('Your map was shared.'); }
 
-
-
 function mapGetPointsOfInterest(button) {
 	$('.interestsButton').removeClass('active');
 	button.addClass('active');
@@ -91,7 +89,6 @@ function go() {
 }
 
 
-
 /*------------------------------------------------------------------------------
 
 			MENU FLOW
@@ -104,6 +101,9 @@ $('.shareButton').click(function() { mapShare(); });
 $('.interestsButton').click(function() { mapGetPointsOfInterest($(this)); });
 $('.directionsButton').click(function() { mapDirectionsChooseMode($(this)); });
 $('#go').click(function() { go(); });
+$('#mapsDestinationInput').keypress(function(e) {
+	e.stopPropagation(); //Stops the key press from propagating when the user presses 'S' while typing the destination.
+});
 $(document).keypress(function(e){
 	//'S' key pressed.
 	if (e.which == 115) { mapSharedWhitMe(); }
