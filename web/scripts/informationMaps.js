@@ -40,7 +40,7 @@ function directionsStart(button) {
 	$('#directionsButtonContainer').toggle();
 }
 
-function mapSharedWhitMe() { mapGetDirections('alameda lisboa', 'driving'); }
+function mapSharedWithMe() { mapGetDirections('alameda lisboa', 'driving'); }
 function mapShare() { confirmationOverlayShow('Do you really wish to share your map?', shared, []); }
 function shared(arg) { acknowledgementOverlayShow('Your map was shared.'); }
 
@@ -110,5 +110,5 @@ $('#mapsDestinationInput').keypress(function(e) {
 });
 $(document).keypress(function(e){
 	//'S' key pressed.
-	if (e.which == 115) { mapSharedWhitMe(); }
+	if (e.which == 115) { mapSharedWithMe(); }
 });

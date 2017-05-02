@@ -1,6 +1,6 @@
 main {
 	position: relative;
-	margin-top: 1vh;
+	margin-top: 0;
 	height: 100%;
 }
 
@@ -44,10 +44,13 @@ main {
 	box-shadow: 0 10px 10px 0 black;
 	margin: 0 2.5%;
 	width: 95%;
-	height: 80%;
+	height: 70%;
 }
 
-#mapsMainButtonContainer { margin: 10px 2.5%; }
+#mapsMainButtonContainer {
+	margin: 10px 2.5%;
+	height: 30%;
+}
 .mapsMainButton {
 	margin: 0;
 	padding: 20px 30px;
