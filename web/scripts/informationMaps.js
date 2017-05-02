@@ -9,6 +9,7 @@ $('#interestsButtonContainer').hide();
 $('#directionsButtonContainer').hide();
 $('#mapsDestinationInput').hide();
 $('#go').hide();
+$('#mic').hide();
 
 
 //Default map variables
@@ -69,17 +70,20 @@ function mapDirectionsChooseMode(button) {
 	button.addClass('active');
 	$('#mapsDestinationInput').show();
 	$('#go').show();
+	$('#mic').show();
 	googleMapsMode = (button.attr("id")).toLowerCase();
 }
+
+function mapInputDirection() { }
 function mapGetDirections(destination, travelMode) {
 	if (travelMode == '') { travelMode = 'driving'; }
-	if (destination == '') {
-		var inputBar = $("#mapsDestinationInput");
-		inputBar.css("background-color", "red");
-		setTimeout(function() { inputBar.css("background-color", "white"); }, 1250);
-		for (var i = 1; i <= 15; i++) inputBar.fadeOut(30).fadeIn(30);
-		return;
-	}
+	// if (destination == '') {
+	// 	var inputBar = $("#mapsDestinationInput");
+	// 	inputBar.css("background-color", "red");
+	// 	setTimeout(function() { inputBar.css("background-color", "white"); }, 1250);
+	// 	for (var i = 1; i <= 15; i++) inputBar.fadeOut(30).fadeIn(30);
+	// 	return;
+	// }
 	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
 	$("#iframeMap").attr("src", url);
 }
@@ -100,6 +104,7 @@ $('#mapsDirections').click(function() { directionsStart($(this)); });
 $('.shareButton').click(function() { mapShare(); });
 $('.interestsButton').click(function() { mapGetPointsOfInterest($(this)); });
 $('.directionsButton').click(function() { mapDirectionsChooseMode($(this)); });
+$('#mic').click(function() { mapInputDirection(); });
 $('#go').click(function() { go(); });
 $('#mapsDestinationInput').keypress(function(e) {
 	e.stopPropagation(); //Stops the key press from propagating when the user presses 'S' while typing the destination.

@@ -1,5 +1,7 @@
 main {
-	margin: 2%;
+	position: relative;
+	margin-top: 1vh;
+	height: 100%;
 }
 
 .informationButton {
@@ -47,18 +49,12 @@ main {
 	padding: 15px 10px 15px 10px;
 	width: 300px;
 }
-#micIcon {
-	background-image: url("../img/icons/mic.svg");
-	display: inline-block;
-	margin: 15px 0 0 0;
-}
-#micIcon:hover { filter: invert(100%); }
 #iframeMap {
 	border: 0;
 	box-shadow: 0 10px 10px 0 black;
 	margin: 0 2.5%;
 	width: 95%;
-	height: 70%;
+	height: 80%;
 }
 
 #mapsMainButtonContainer { margin: 10px 2.5%; }
@@ -73,18 +69,37 @@ main {
 	min-width: 100px;
 	padding: 10px;
 }
-.interestsButton.active { background-color: green; }
-.directionsButton.active { background-color: green; }
+.interestsButton.active { background-color: #2ecc31; }
+.directionsButton.active { background-color: #2ecc31; }
 
 #go {
+	border: none;
+	border-radius: 0;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	box-shadow: none;
 	float: right;
 	margin: 0;
-	padding: 10px 30px;
+	padding: 9px 30px;
 }
 #mapsDestinationInput {
-	border-radius: 20px;
+	border: none;
 	float: right;
 	margin: 0;
 	padding: 16px;
 	width: 450px;
+}
+#mic {
+	background-image: url("../img/icons/mic.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+	border-radius: 0;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	float: right;
+	margin: 0;
+	padding: 10px 30px;
+	width: 97px;
+	height: 60px;
 }
