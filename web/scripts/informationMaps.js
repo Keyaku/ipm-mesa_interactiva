@@ -71,19 +71,18 @@ function mapDirectionsChooseMode(button) {
 	$('#mapsDestinationInput').show();
 	$('#go').show();
 	$('#mic').show();
+	//micEffect();
 	googleMapsMode = (button.attr("id")).toLowerCase();
 }
 
-function mapInputDirection() { }
+//function micEffect() { for (var i = 0; i < 15; i++) { $('#mic').fadeOut(400).fadeIn(400); } }
+
 function mapGetDirections(destination, travelMode) {
 	if (travelMode == '') { travelMode = 'driving'; }
-	// if (destination == '') {
-	// 	var inputBar = $("#mapsDestinationInput");
-	// 	inputBar.css("background-color", "red");
-	// 	setTimeout(function() { inputBar.css("background-color", "white"); }, 1250);
-	// 	for (var i = 1; i <= 15; i++) inputBar.fadeOut(30).fadeIn(30);
-	// 	return;
-	// }
+	if (destination == '') {
+		acknowledgementOverlayShow('Please input a destination.', null, []);
+		return;
+	}
 	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
 	$("#iframeMap").attr("src", url);
 }
