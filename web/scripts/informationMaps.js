@@ -106,7 +106,14 @@ $('.directionsButton').click(function() { mapDirectionsChooseMode($(this)); });
 $('#mic').click(function() { mapInputDirection(); });
 $('#go').click(function() { go(); });
 $('#mapsDestinationInput').keypress(function(e) {
-	e.stopPropagation(); //Stops the key press from propagating when the user presses 'S' while typing the destination.
+	switch (e.which) {
+		case 13: // Enter/Return: Runs "Go" button
+			$('#go').click();
+			break;
+		default:
+			e.stopPropagation(); //Stops the key press from propagating presses like 'S' while typing the destination.
+	}
+
 });
 $(document).keypress(function(e){
 	//'S' key pressed.
