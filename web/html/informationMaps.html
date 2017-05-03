@@ -46,14 +46,17 @@
 				</div>
 
 				<div id="directionsButtonContainer">
-					<div class="col-md-6">
+					<div class="col-md-6" id="transportation">
 						<button class="directionsButton buttonWhite" id="WALKING">On foot</button>
 						<button class="directionsButton buttonWhite" id="DRIVING">Car</button>
 						<button class="directionsButton buttonWhite" id="TRANSIT">Public Transport</button>
 						<button class="directionsButton buttonWhite" id="TRANSIT">Uber</button>
 						<button class="directionsButton buttonWhite" id="TRANSIT">Taxi</button>
+						<div class="tooltip right" id="cabDetails">
+							<span class="tooltiptext">My cabbie</span>
+						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6" id="directionInput">
 						<button class="col-md-3 buttonReward" id="go">GO!</button>
 						<input class="col-md-8" id="mapsDestinationInput" type="text" placeholder="Enter the destination">
 						<i class="col-md-1 fa fa-microphone" id="mic"></i>

@@ -7,9 +7,7 @@ $('#menubar').menubar(); //Adds the menu bar..
 $('#shareButtonContainer').hide();
 $('#interestsButtonContainer').hide();
 $('#directionsButtonContainer').hide();
-$('#mapsDestinationInput').hide();
-$('#go').hide();
-$('#mic').hide();
+$('#directionInput').hide();
 
 
 //Default map variables
@@ -66,23 +64,22 @@ function mapGetPointsOfInterest(button) {
 }
 
 function mapDirectionsChooseMode(button) {
-	let modes = {
-		'default' : 'Go',
-		'transit' : 'Order',
-	}
+	const MODES_GO = ['on foot', 'car', 'public transport'];
+	const MODES_ORDER = ['taxi', 'uber'];
+	var transportation = button.text().toLowerCase();
 
 	$('.directionsButton').removeClass('active');
 	button.addClass('active');
-	$('#mapsDestinationInput').show();
-	$('#go').show();
-	$('#mic').show();
+	$('#directionInput').show();
 	//micEffect();
+
+	/* Affecting transportation modes */
 	googleMapsMode = (button.attr("id")).toLowerCase();
 
-	if (googleMapsMode in modes && button.text() != 'Public Transport') {
-		$('#go').text(modes[googleMapsMode]);
-	} else {
-		$('#go').text(modes['default']);
+	if (transportation in MODES_GO) {
+		$('#go').text('Go!');
+	} else if (transportation in MODES_ORDER) {
+		$('#go').text('Order!');
 	}
 }
 
