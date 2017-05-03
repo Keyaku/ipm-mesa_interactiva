@@ -50,11 +50,8 @@
 						<button class="directionsButton buttonWhite" id="WALKING">On foot</button>
 						<button class="directionsButton buttonWhite" id="DRIVING">Car</button>
 						<button class="directionsButton buttonWhite" id="TRANSIT">Public Transport</button>
-						<button class="directionsButton buttonWhite" id="TRANSIT">Uber</button>
-						<button class="directionsButton buttonWhite" id="TRANSIT">Taxi</button>
-						<div class="tooltip right" id="cabDetails">
-							<span class="tooltiptext">My cabbie</span>
-						</div>
+						<button class="directionsButton buttonWhite" id="TRANSIT" data-toggle="tooltip" data-placement="right" title="Uberino">Uber</button>
+						<button class="directionsButton buttonWhite" id="TRANSIT" data-toggle="tooltip" data-placement="right" title="Cabbie">Taxi</button>
 					</div>
 					<div class="col-md-6" id="directionInput">
 						<button class="col-md-3 buttonReward" id="go">GO!</button>
@@ -68,6 +65,7 @@
 	</main>
 <!-- SCRIPTS GO UNDER HERE -->
 <script src="scripts/jQuery/jquery-3.1.1.min.js"></script>
+<script src="scripts/jQuery/bootstrap.min.js"></script>
 <script src="scripts/jQuery/jquery-ui.min.js"></script>
 <script src="scripts/jQuery/jquery.navbar.js"></script>
 <script src="scripts/plugins/svg4everybody.min.js"></script>

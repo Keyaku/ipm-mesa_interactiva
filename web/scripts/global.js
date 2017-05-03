@@ -9,6 +9,7 @@ String.prototype.empty = function() { return !this.trim(); };
 $(document).ready(function(){
 	// Starting svg4everybody
 	svg4everybody({polyfill:true});
+	$('[data-toggle="tooltip"]').tooltip();
 });
 
 /****** Stuff *******/
