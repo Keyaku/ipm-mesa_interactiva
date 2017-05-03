@@ -79,16 +79,20 @@ function mapDirectionsChooseMode(button) {
 
 function mapGetDirections(destination, travelMode) {
 	if (travelMode == '') { travelMode = 'driving'; }
-	if (destination == '') {
-		acknowledgementOverlayShow('Please input a destination.', null, []);
-		return;
-	}
 	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
 	$("#iframeMap").attr("src", url);
 }
 function go() {
-	var destination = $('#mapsDestinationInput').val();
-	mapGetDirections(destination, googleMapsMode);
+	var input = $('#mapsDestinationInput');
+	var destination = input.val();
+
+	if (destination.empty()) {
+		input.effect('shake', {times:2}, 300)
+			.css({'background-color':'rgb(200, 0, 0)'})
+			.animate({'background-color':'rgb(255, 255, 255)'}, 500);
+	} else {
+		mapGetDirections(destination, googleMapsMode);
+	}
 }
 
 
@@ -108,11 +112,7 @@ $('#go').click(function() { go(); });
 $('#mapsDestinationInput').keypress(function(e) {
 	switch (e.which) {
 		case 13: // Enter/Return: Runs "Go" button
-			if ($(this).text().empty()) {
-				alert('Query is empty.');
-			} else {
-				$('#go').click();
-			}
+			$('#go').click();
 			break;
 		default:
 			e.stopPropagation(); //Stops the key press from propagating presses like 'S' while typing the destination.
