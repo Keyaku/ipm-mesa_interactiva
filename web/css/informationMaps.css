@@ -67,6 +67,9 @@ main {
 .interestsButton.active { background-color: #2ecc31; }
 .directionsButton.active { background-color: #2ecc31; }
 
+#directionsButtonContainer div.col-md-6 {
+	padding: 0;
+}
 #go {
 	border: none;
 	border-radius: 0;
@@ -84,7 +87,6 @@ main {
 	float: right;
 	margin: 0;
 	padding: 16px;
-	width: 450px;
 }
 #mapsDestinationInput:focus { outline-width: 0; }
 #mic {
@@ -98,8 +100,7 @@ main {
 	float: right;
 	margin: 0;
 	padding: 10px 0 10px 30px;
-	width: 80px;
-	height: 60px;
+	height: auto;
 }
 #mic.active {
 	color: white;
