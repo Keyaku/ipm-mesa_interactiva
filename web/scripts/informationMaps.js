@@ -66,7 +66,7 @@ function mapGetPointsOfInterest(button) {
 function mapDirectionsChooseMode(button) {
 	const MODES_GO = ['on foot', 'car', 'public transport'];
 	const MODES_ORDER = ['taxi', 'uber'];
-	var transportation = button.text().toLowerCase();
+	var transport = button.text().toLowerCase();
 
 	$('.directionsButton').removeClass('active');
 	button.addClass('active');
@@ -76,9 +76,9 @@ function mapDirectionsChooseMode(button) {
 	/* Affecting transportation modes */
 	googleMapsMode = (button.attr("id")).toLowerCase();
 
-	if (transportation in MODES_GO) {
+	if (MODES_GO.includes(transport)) {
 		$('#go').text('Go!');
-	} else if (transportation in MODES_ORDER) {
+	} else if (MODES_ORDER.includes(transport)) {
 		$('#go').text('Order!');
 	}
 }
@@ -100,6 +100,15 @@ function go() {
 			.animate({'background-color':'rgb(255, 255, 255)'}, 500);
 	} else {
 		mapGetDirections(destination, googleMapsMode);
+	}
+
+	if ($('#go').text() == 'Order!') { // FIXME: Too specific and fragile
+		var details = {
+			'type' : $('.directionsButton.active').text(),
+			'time' : 180, // FIXME: Randomize value
+		};
+		console.log(details);
+		sessionStorage.myTransportation = JSON.stringify(details);
 	}
 }
 

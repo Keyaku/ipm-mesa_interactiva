@@ -19,6 +19,9 @@ const HTML_MENUBAR = `
 			<svg class="icon"><use xlink:href="img/icons/navigation.svg#navigation" /></svg>
 			<label class="title">Information</label>
 		</div>
+		<div id="shortcuts" class="col-md-12">
+			<div id="myTransportation" class="fa fa-taxi" aria-hidden="true"></div>
+		</div>
 	</div>
 	<div id="minimizer">
 		<svg><use xlink:href="img/icons/arrowLeft.svg#arrowLeft" /></svg>
@@ -54,8 +57,9 @@ function informationButton() { $(location).attr('href', 'html/informationMaps.ht
 		container.html(HTML_MENUBAR);
 
 		var minimizer = container.children('#minimizer');
-		var buttons   = container.children('.button');
 		var options   = container.children('#options');
+		var buttons   = container.find('.button');
+		var transport = container.find('#myTransportation');
 
 		/*** Adding click functions ***/
 		// Activating arrow toggle
@@ -63,10 +67,23 @@ function informationButton() { $(location).attr('href', 'html/informationMaps.ht
 			options.toggle(ANIM_SPEED_MENU);
 			$(this).toggleClass('closed');
 		});
+		transport.click(function() {
+			informationButton(); // FIXME: incomplete action
+		});
 
 		/*** Applying arguments ***/
 		if (def.minimized) {
 			minimizer.click();
+		}
+
+		/*** Cooperating with sessionStorage ***/
+		if (typeof(sessionStorage.myTransportation) !== "undefined") {
+			var details = JSON.parse(sessionStorage.myTransportation);
+			transport.attr('title', details.type);
+
+			transport.show();
+		} else {
+			transport.hide();
 		}
     };
 	$.fn.navbar = function(opt) {
