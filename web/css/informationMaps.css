@@ -42,22 +42,24 @@ main {
 #iframeMap {
 	border: 0;
 	box-shadow: 0 10px 10px 0 black;
-	margin: 0 2.5%;
+	margin: 1% 2.5%;
 	width: 95%;
 	height: 70%;
 }
 
 #mapsMainButtonContainer {
-	margin: 10px 2.5%;
-	height: 30%;
+	margin: 0 2.5%;
 }
+#buttonLevel1, #buttonLevel2 {
+	margin: 1% auto;
+}
+
 .mapsMainButton {
 	margin: 0;
 	padding: 20px 30px;
 	min-width: 200px;
 }
 
-#shareButtonContainer, #interestsButtonContainer, #directionsButtonContainer { margin: 10px 0; }
 .shareButton, .interestsButton, .directionsButton {
 	min-width: 100px;
 	padding: 10px;
