@@ -66,6 +66,11 @@ function mapGetPointsOfInterest(button) {
 }
 
 function mapDirectionsChooseMode(button) {
+	let modes = {
+		'default' : 'Go',
+		'transit' : 'Order',
+	}
+
 	$('.directionsButton').removeClass('active');
 	button.addClass('active');
 	$('#mapsDestinationInput').show();
@@ -73,6 +78,12 @@ function mapDirectionsChooseMode(button) {
 	$('#mic').show();
 	//micEffect();
 	googleMapsMode = (button.attr("id")).toLowerCase();
+
+	if (googleMapsMode in modes && button.text() != 'Public Transport') {
+		$('#go').text(modes[googleMapsMode]);
+	} else {
+		$('#go').text(modes['default']);
+	}
 }
 
 //function micEffect() { for (var i = 0; i < 15; i++) { $('#mic').fadeOut(400).fadeIn(400); } }
