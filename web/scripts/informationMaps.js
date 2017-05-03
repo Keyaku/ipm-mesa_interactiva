@@ -108,7 +108,11 @@ $('#go').click(function() { go(); });
 $('#mapsDestinationInput').keypress(function(e) {
 	switch (e.which) {
 		case 13: // Enter/Return: Runs "Go" button
-			$('#go').click();
+			if ($(this).text().empty()) {
+				alert('Query is empty.');
+			} else {
+				$('#go').click();
+			}
 			break;
 		default:
 			e.stopPropagation(); //Stops the key press from propagating presses like 'S' while typing the destination.
