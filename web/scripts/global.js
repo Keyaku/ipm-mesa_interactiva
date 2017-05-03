@@ -2,6 +2,8 @@
 // Array
 Array.prototype.first = function() { return this[0]; };
 Array.prototype.last  = function() { return this[this.length - 1]; };
+// String
+String.prototype.empty = function() { return !this.trim(); };
 
 /****** Code execution *******/
 $(document).ready(function(){
