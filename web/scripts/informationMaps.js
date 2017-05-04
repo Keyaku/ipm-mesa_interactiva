@@ -99,9 +99,11 @@ function go() {
 	}
 	else {
 		if ($('#go').text() == 'Verify') { // FIXME: Too specific and fragile
-			$('#taxiTime').show();
-			$('#mic').addClass('taxi');
-			confirmationOverlayShow('Are you sure you want to call a cab?', callTaxi, []);
+			callTaxi();
+		}
+		else if ($('#go').text() == 'Order!') {
+			confirmationOverlayShow('Are you sure you want to call a cab?', calledTaxi, []);
+			mapGetDirections(destination, googleMapsMode);
 		}
 		else {
 			mapGetDirections(destination, googleMapsMode);
@@ -111,7 +113,12 @@ function go() {
 
 }
 
-function callTaxi(args) {
+function callTaxi() {
+	$('#taxiTime').show();
+	$('#mic').addClass('taxi');
+	$('#go').text('Order!');
+}
+function calledTaxi(args) {
 	var details = {
 		'type' : $('.directionsButton.active').text(),
 		'time' : 180, // FIXME: Randomize value
