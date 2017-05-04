@@ -101,18 +101,16 @@ function mapDirectionsChooseMode(button) {
 	const MODES_GO = ['on foot', 'car', 'public transport'];
 	const MODES_ORDER = ['taxi', 'uber'];
 	var transport = button.text().toLowerCase();
-
 	$('.directionsButton').removeClass('buttonReward').addClass('buttonWhite');
 	button.toggleClass('buttonWhite').toggleClass('buttonReward');
 	$('#directionInput').show();
-	/* Affecting transportation modes */
 	googleMapsMode = (button.attr('id')).toLowerCase();
-
 	if (MODES_GO.includes(transport)) {
 		$('#go').text('Go!');
 		$('#taxiTime').hide();
 		$('#mic').removeClass('taxi');
-	} else if (MODES_ORDER.includes(transport)) {
+	}
+	else if (MODES_ORDER.includes(transport)) {
 		$('#go').text('Verify');
 	}
 }

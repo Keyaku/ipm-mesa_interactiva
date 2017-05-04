@@ -4,16 +4,6 @@ main {
 	height: 100%;
 }
 
-.informationButton {
-	background-color: rgba(255,255,255,0.8);
-	display: inline-block;
-	height: 150px;
-	min-width: 150px;
-	max-width: 250px;
-	padding: 0 10px 0 10px;
-	text-align: center;
-}
-
 #barIcon { background-image: url("../img/icons/bar.svg"); }
 #mallIcon { background-image: url("../img/icons/mall.svg"); }
 #movietheaterIcon { background-image: url("../img/icons/movietheater.svg"); }
@@ -28,16 +18,13 @@ main {
 	width: 95%;
 	height: 70%;
 }
-
 #mapsMainButtonContainer { margin: 0 2.5%; }
 #buttonLevel1, #buttonLevel2 { margin: 1% auto; }
-
 .mapsMainButton {
 	margin: 0;
 	padding: 20px 30px;
 	min-width: 200px;
 }
-
 .shareButton, .interestsButton, .directionsButton {
 	min-width: 100px;
 	padding: 10px;
@@ -46,10 +33,7 @@ main {
 	min-width: 100px;
 	padding: 10px;
 }
-
-#directionsButtonContainer div.col-md-6 {
-	padding: 0;
-}
+#directionsButtonContainer div.col-md-6 { padding: 0; }
 #go {
 	border: none;
 	border-radius: 0;
@@ -82,30 +66,17 @@ main {
 	padding: 10px 0 10px 20px;
 	height: auto;
 }
-#mic.active {
-	color: white;
-}
-#mic.taxi {
-	border-bottom-left-radius: 0px;
-}
-
-
+#mic.active { color: white; }
+#mic.taxi { border-bottom-left-radius: 0px; }
 #taxiETA, #taxiDestinationETA {
+	border: none;
+	border-radius: 0;
 	background-color: white;
 	color: black;
 	font-family: bangers, sans-serif;
 	font-size: 30px;
-	padding: 20px;
-	max-width: 332px;
+	padding: 10px;
+	width: 300px;
 }
-
-#taxiETA {
-	border: none;
-	border-radius: 0;
-	border-bottom-left-radius: 20px;
-}
-#taxiDestinationETA {
-	border: none;
-	border-radius: 0;
-	border-bottom-right-radius: 20px;
-}
+#taxiETA { border-bottom-left-radius: 20px; }
+#taxiDestinationETA { border-bottom-right-radius: 20px; }
