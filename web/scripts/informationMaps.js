@@ -3,7 +3,7 @@
 			CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
-$('#menubar').menubar(); //Adds the menu bar..
+$('#menubar').menubar(); //Adds the menu bar.
 $('#shareButtonContainer').hide();
 $('#interestsButtonContainer').hide();
 $('#directionsButtonContainer').hide();
@@ -100,17 +100,15 @@ function go() {
 	else {
 		if ($('#go').text() == 'Verify') { // FIXME: Too specific and fragile
 			callTaxi();
+			mapGetDirections(destination, googleMapsMode);
 		}
 		else if ($('#go').text() == 'Order!') {
 			confirmationOverlayShow('Are you sure you want to call a cab?', calledTaxi, []);
-			mapGetDirections(destination, googleMapsMode);
 		}
 		else {
 			mapGetDirections(destination, googleMapsMode);
 		}
 	}
-
-
 }
 
 function callTaxi() {
@@ -125,6 +123,12 @@ function calledTaxi(args) {
 	};
 	sessionStorage.myTransportation = JSON.stringify(details);
 	acknowledgementOverlayShow('Your taxi has been called.', null, []);
+	$('#menubar').menubar(); //Adds the menu bar.
+}
+
+function cancelTaxi() {
+	console.log("cancelsad")
+	sessionStorage.myTransportation = '';
 }
 
 
@@ -153,5 +157,10 @@ $('#mapsDestinationInput').keypress(function(e) {
 });
 $(document).keypress(function(e){
 	//'S' key pressed.
-	if (e.which == 115) { mapSharedWithMe(); }
+	if (e.which == 115) { shareSure(); }
 });
+
+
+function shareSure() {
+	confirmationOverlayShow('Do you allow user 1 to share the map with you?', mapSharedWithMe, []);
+}
