@@ -110,17 +110,22 @@ main {
 }
 
 
+#taxiETA, #taxiDestinationETA {
+	background-color: white;
+	color: black;
+	font-family: bangers, sans-serif;
+	font-size: 30px;
+	padding: 20px;
+	max-width: 332px;
+}
+
 #taxiETA {
 	border: none;
 	border-radius: 0;
 	border-bottom-left-radius: 20px;
-	padding: 10px 0 10px 20px;
-	width: 332px;
 }
 #taxiDestinationETA {
 	border: none;
 	border-radius: 0;
 	border-bottom-right-radius: 20px;
-	padding: 10px 0 10px 20px;
-	width: 332px;
 }
