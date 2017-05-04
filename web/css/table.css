@@ -45,11 +45,18 @@ p { color: white; }
 			Menu bar taxi
 
 --------------------------------------------------------------------------*/
+#taxiNavBarDiv { text-align: center; }
+#taxiNavBarIcon { font-size: 40px; }
 .taxiETALabel {
 	margin-left: 30px;
 	color: white;
 	font-family: raleway, sans-serif;
 	font-size:30px;
+}
+#taxiCancelButton {
+	display: block;
+	margin: 15px auto;
+	padding: 20px;
 }
 
 

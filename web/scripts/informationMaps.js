@@ -18,7 +18,7 @@ var googleMapsOrigin = '&origin=taguspark';
 var googleMapsMode = 'driving';
 var googleMapsUnits = '&units=metric';
 
-
+console.log(sessionStorage.myTransportation);
 /*------------------------------------------------------------------------------
 
 			AUXILIAR FUNCTIONS
@@ -158,8 +158,8 @@ function taxiCall(args) {
 }
 //Cancels the ordered taxi.
 function taxiCancel() {
-	console.log('taxiCancel() called.');
-	//sessionStorage.myTransportation = '';
+	// FIXME - @keyaku - incomplete.
+	$('#menubar').menubar(); //Reloads the menu bar.
 }
 
 

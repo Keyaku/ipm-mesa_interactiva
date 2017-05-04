@@ -19,10 +19,10 @@ const HTML_MENUBAR = `
 			<svg class="icon"><use xlink:href="img/icons/navigation.svg#navigation" /></svg>
 			<label class="title">Information</label>
 		</div>
-		<div id="shortcuts" class="col-md-12" style='margin-top:50px'>
-			<div id="myTransportation" class="fa fa-taxi" aria-hidden="true"></div>
-			<label class='taxiETALabel'>ETA:14min</label>
-			<button onclick='taxiCancel()'>Cancel Taxi</button>
+		<div id="taxiNavBarDiv" class="col-md-12" style='margin-top:50px'>
+			<div id="taxiNavBarIcon" class="fa fa-taxi"></div>
+			<label class='taxiETALabel'>ETA: 14min</label>
+			<button class='buttonDanger' id='taxiCancelButton' onclick='taxiCancel()'>Cancel Taxi</button>
 		</div>
 	</div>
 	<div id="minimizer">
@@ -61,7 +61,7 @@ function informationButton() { $(location).attr('href', 'html/informationMaps.ht
 		var minimizer = container.children('#minimizer');
 		var options   = container.children('#options');
 		var buttons   = container.find('.button');
-		var transport = container.find('#shortcuts');
+		var transport = container.find('#taxiNavBarDiv');
 
 		/*** Adding click functions ***/
 		// Activating arrow toggle
