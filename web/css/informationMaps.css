@@ -105,3 +105,22 @@ main {
 #mic.active {
 	color: white;
 }
+#mic.taxi {
+	border-bottom-left-radius: 0px;
+}
+
+
+#taxiETA {
+	border: none;
+	border-radius: 0;
+	border-bottom-left-radius: 20px;
+	padding: 10px 0 10px 20px;
+	width: 332px;
+}
+#taxiDestinationETA {
+	border: none;
+	border-radius: 0;
+	border-bottom-right-radius: 20px;
+	padding: 10px 0 10px 20px;
+	width: 332px;
+}

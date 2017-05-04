@@ -50,13 +50,17 @@
 						<button class="directionsButton buttonWhite" id="WALKING">On foot</button>
 						<button class="directionsButton buttonWhite" id="DRIVING">Car</button>
 						<button class="directionsButton buttonWhite" id="TRANSIT">Public Transport</button>
-						<button class="directionsButton buttonWhite" id="TRANSIT" data-toggle="tooltip" data-placement="right" title="Uberino">Uber</button>
-						<button class="directionsButton buttonWhite" id="TRANSIT" data-toggle="tooltip" data-placement="right" title="Cabbie">Taxi</button>
+						<button class="directionsButton buttonWhite" id="DRIVING" data-toggle="tooltip" data-placement="right" title="Uberino">Uber</button>
+						<button class="directionsButton buttonWhite" id="DRIVING" data-toggle="tooltip" data-placement="right" title="Cabbie">Taxi</button>
 					</div>
 					<div class="col-md-6" id="directionInput">
 						<button class="col-md-3 buttonReward" id="go">GO!</button>
 						<input class="col-md-8" id="mapsDestinationInput" type="text" placeholder="Enter the destination">
 						<i class="col-md-1 fa fa-microphone" id="mic"></i>
+						<div id="taxiTime">
+							<button class="buttonReward" id="taxiETA">Time to arrival: 14min</label>
+							<button class="buttonReward" id="taxiDestinationETA">Time to destination: 23min</label>
+						</div>
 					</div>
 
 				</div>

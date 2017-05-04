@@ -8,7 +8,7 @@ $('#shareButtonContainer').hide();
 $('#interestsButtonContainer').hide();
 $('#directionsButtonContainer').hide();
 $('#directionInput').hide();
-
+$('#taxiTime').hide();
 
 //Default map variables
 var googleMapsKey = "?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo";
@@ -71,19 +71,17 @@ function mapDirectionsChooseMode(button) {
 	$('.directionsButton').removeClass('active');
 	button.addClass('active');
 	$('#directionInput').show();
-	//micEffect();
-
 	/* Affecting transportation modes */
 	googleMapsMode = (button.attr("id")).toLowerCase();
 
 	if (MODES_GO.includes(transport)) {
 		$('#go').text('Go!');
+		$('#taxiTime').hide();
+		$('#mic').removeClass('taxi');
 	} else if (MODES_ORDER.includes(transport)) {
-		$('#go').text('Order!');
+		$('#go').text('Verify');
 	}
 }
-
-//function micEffect() { for (var i = 0; i < 15; i++) { $('#mic').fadeOut(400).fadeIn(400); } }
 
 function mapGetDirections(destination, travelMode) {
 	if (travelMode == '') { travelMode = 'driving'; }
@@ -95,21 +93,31 @@ function go() {
 	var destination = input.val();
 
 	if (destination.empty()) {
-		input.effect('shake', {times:2}, 300)
-			.css({'background-color':'rgb(200, 0, 0)'})
+		input.effect('shake', {times:4}, 300)
+			.css({'background-color':'rgb(0, 0, 0)'})
 			.animate({'background-color':'rgb(255, 255, 255)'}, 500);
-	} else {
-		mapGetDirections(destination, googleMapsMode);
+	}
+	else {
+		if ($('#go').text() == 'Verify') { // FIXME: Too specific and fragile
+			$('#taxiTime').show();
+			$('#mic').addClass('taxi');
+			confirmationOverlayShow('Are you sure you want to call a cab?', callTaxi, []);
+		}
+		else {
+			mapGetDirections(destination, googleMapsMode);
+		}
 	}
 
-	if ($('#go').text() == 'Order!') { // FIXME: Too specific and fragile
-		var details = {
-			'type' : $('.directionsButton.active').text(),
-			'time' : 180, // FIXME: Randomize value
-		};
-		console.log(details);
-		sessionStorage.myTransportation = JSON.stringify(details);
-	}
+
+}
+
+function callTaxi(args) {
+	var details = {
+		'type' : $('.directionsButton.active').text(),
+		'time' : 180, // FIXME: Randomize value
+	};
+	sessionStorage.myTransportation = JSON.stringify(details);
+	acknowledgementOverlayShow('Your taxi has been called.', null, []);
 }
 
 
