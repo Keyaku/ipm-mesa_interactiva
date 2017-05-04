@@ -46,8 +46,6 @@ main {
 	min-width: 100px;
 	padding: 10px;
 }
-.interestsButton.active { background-color: #2ecc31; }
-.directionsButton.active { background-color: #2ecc31; }
 
 #directionsButtonContainer div.col-md-6 {
 	padding: 0;

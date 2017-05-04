@@ -76,8 +76,8 @@ function mapShare() { confirmationOverlayShow('Do you really wish to share your 
 function shared(arg) { acknowledgementOverlayShow('Your map was shared.'); }
 
 function mapGetPointsOfInterest(button) {
-	$('.interestsButton').removeClass('active');
-	button.addClass('active');
+	$('.interestsButton').removeClass('buttonReward').addClass('buttonWhite');
+	button.toggleClass('buttonWhite').toggleClass('buttonReward');
 	var pointType = button.attr('id');
 	var keyWords = '';
 	switch(pointType) {
@@ -102,8 +102,8 @@ function mapDirectionsChooseMode(button) {
 	const MODES_ORDER = ['taxi', 'uber'];
 	var transport = button.text().toLowerCase();
 
-	$('.directionsButton').removeClass('active');
-	button.addClass('active');
+	$('.directionsButton').removeClass('buttonReward').addClass('buttonWhite');
+	button.toggleClass('buttonWhite').toggleClass('buttonReward');
 	$('#directionInput').show();
 	/* Affecting transportation modes */
 	googleMapsMode = (button.attr('id')).toLowerCase();
