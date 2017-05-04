@@ -13,16 +13,7 @@ main {
 	padding: 0 10px 0 10px;
 	text-align: center;
 }
-.informationButton:hover { background-color: darkorange; }
-.subMenuTitle {
-	font-size: 30px;
-	padding: 20px 0 10px 0;
-}
-.subMenuIcon {
-	width: 48px;
-	height: 48px;
-	margin: 5px 10px;
-}
+
 #barIcon { background-image: url("../img/icons/bar.svg"); }
 #mallIcon { background-image: url("../img/icons/mall.svg"); }
 #movietheaterIcon { background-image: url("../img/icons/movietheater.svg"); }
@@ -30,15 +21,6 @@ main {
 #UberIcon { background-image: url("../img/icons/uber.svg"); }
 #publicTransportIcon { background-image: url("../img/icons/publictransport.svg"); }
 
-.informationSubMenu {
-	display: inline-block;
-	margin: 0 10px 0 0;
-	text-align: center;
-}
-.informationSubMenuTitle {
-	color: white;
-	display: block;
-}
 #iframeMap {
 	border: 0;
 	box-shadow: 0 10px 10px 0 black;
@@ -47,12 +29,8 @@ main {
 	height: 70%;
 }
 
-#mapsMainButtonContainer {
-	margin: 0 2.5%;
-}
-#buttonLevel1, #buttonLevel2 {
-	margin: 1% auto;
-}
+#mapsMainButtonContainer { margin: 0 2.5%; }
+#buttonLevel1, #buttonLevel2 { margin: 1% auto; }
 
 .mapsMainButton {
 	margin: 0;
@@ -61,6 +39,10 @@ main {
 }
 
 .shareButton, .interestsButton, .directionsButton {
+	min-width: 100px;
+	padding: 10px;
+}
+#shareConfirm {
 	min-width: 100px;
 	padding: 10px;
 }

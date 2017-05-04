@@ -30,7 +30,7 @@ function mapInit() {
 	mapQuery(url);
 }
 function mapQuery(url) {
-	mapQuery(url)
+	$('#iframeMap').attr('src', url);
 }
 
 function shareStart(button) {
@@ -68,6 +68,8 @@ function mapSharedWithMe() {
 	var url = 'https://www.google.com/maps/embed/v1/directions'+googleMapsKey+googleMapsOrigin+'&destination='+destination+'&mode='+travelMode;
 	mapQuery(url)
 }
+//Adds a user to the share-to-poll.
+function mapShareAddUser(button) { button.toggleClass('buttonWhite').toggleClass('buttonReward'); }
 //Simulates sharing the map with another user.
 function mapShare() { confirmationOverlayShow('Do you really wish to share your map?', shared, []); }
 //Feedback for the user.
@@ -171,7 +173,9 @@ function taxiCancel() {
 $('#mapsShare').click(function() { shareStart($(this)); });
 $('#mapsInterests').click(function() { interestsStart($(this)); });
 $('#mapsDirections').click(function() { directionsStart($(this)); });
-$('.shareButton').click(function() { mapShare(); });
+$('.shareButton').click(function() { mapShareAddUser($(this)); });
+$('#shareConfirm').click(function() { mapShare(); });
+$('#mapsCloseShare').click(function() { mapRevertState()});
 $('.interestsButton').click(function() { mapGetPointsOfInterest($(this)); });
 $('.directionsButton').click(function() { mapDirectionsChooseMode($(this)); });
 $('#mic').click(function() { mapInputDirection(); });
@@ -181,18 +185,11 @@ $('#mapsDestinationInput').keypress(function(e) {
 		case 13: // Enter/Return: Runs 'Go' button
 			$('#go').click();
 			break;
-		default:
-			e.stopPropagation(); //Stops the key press from propagating presses like 'S' while typing the destination.
+		default: //Stops the key press from propagating presses like 'S' while typing the destination.
+			e.stopPropagation();
 	}
 });
 $(document).keypress(function(e){
-	//'S' key pressed.
-	if (e.which == 115) { mapShareWithMeAllow(); }
+	if (e.which == 115) { mapShareWithMeAllow(); } //'S' key pressed.
+	else if (e.which == 114) { mapRevertState(); } //'R' key pressed.
 });
-$(document).keypress(function(e){
-	//'R' key pressed.
-	if (e.which == 114) { mapRevertState(); }
-});
-
-
-$('#mapsCloseShare').click(function() { mapRevertState()});
