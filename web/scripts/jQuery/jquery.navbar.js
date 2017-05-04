@@ -21,8 +21,8 @@ const HTML_MENUBAR = `
 		</div>
 		<div id="shortcuts" class="col-md-12" style='margin-top:50px'>
 			<div id="myTransportation" class="fa fa-taxi" aria-hidden="true"></div>
-			<label class='taxiETA' style='margin-left:30px; color:white; font-family:raleway, sans-serif; font-size:30px;'>ETA:14min</label>
-			<button onclick='cancelTaxi()'>Cancel Taxi</button>
+			<label class='taxiETALabel'>ETA:14min</label>
+			<button onclick='taxiCancel()'>Cancel Taxi</button>
 		</div>
 	</div>
 	<div id="minimizer">
