@@ -49,7 +49,7 @@ function mapRevertState() {
 //Confirms if the user allows another user to share the map.
 function mapShareWithMeAllow() { confirmationOverlayShow('Do you allow user 1 to share the map with you?', mapSharedWithMe, []); }
 //Simulates the other user's map.
-function mapSharedWithMe() { 
+function mapSharedWithMe() {
 	destination = 'alameda lisboa';
 	travelMode = 'driving';
 	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
@@ -180,3 +180,6 @@ $(document).keypress(function(e){
 	//'R' key pressed.
 	if (e.which == 114) { mapRevertState(); }
 });
+
+
+$('#mapsCloseShare').click(function() { mapRevertState()});
