@@ -38,9 +38,16 @@ function directionsStart(button) {
 	$('#directionsButtonContainer').toggle();
 }
 
+//Confirms if the user allows another user to share the map.
 function mapShareWithMeAllow() { confirmationOverlayShow('Do you allow user 1 to share the map with you?', mapSharedWithMe, []); }
-function mapSharedWithMe() { mapGetDirections('alameda lisboa', 'driving'); }
+//When another user shares the map (with permission).
+function mapSharedWithMe() {
+	//mapSaveMapState(); //Saves the current user's map state.
+	mapGetDirections('alameda lisboa', 'driving'); //Simulates the other user's map.
+}
+//Simulates sharing the map with another user.
 function mapShare() { confirmationOverlayShow('Do you really wish to share your map?', shared, []); }
+//Feedback for the user.
 function shared(arg) { acknowledgementOverlayShow('Your map was shared.'); }
 
 function mapGetPointsOfInterest(button) {
