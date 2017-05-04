@@ -4,17 +4,19 @@
 
 ------------------------------------------------------------------------------*/
 $('#menubar').menubar(); //Adds the menu bar.
+$('#mapsCloseShare').hide();
 $('#shareButtonContainer').hide();
 $('#interestsButtonContainer').hide();
 $('#directionsButtonContainer').hide();
 $('#directionInput').hide();
 $('#taxiTime').hide();
+mapInit();
 
 //Default map variables
-var googleMapsKey = "?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo";
-var googleMapsOrigin = "&origin=taguspark";
-var googleMapsMode = "driving";
-var googleMapsUnits = "&units=metric";
+var googleMapsKey = '?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo';
+var googleMapsOrigin = '&origin=taguspark';
+var googleMapsMode = 'driving';
+var googleMapsUnits = '&units=metric';
 
 
 /*------------------------------------------------------------------------------
@@ -22,6 +24,15 @@ var googleMapsUnits = "&units=metric";
 			AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
+function mapInit() {
+	var url ='https://www.google.com/maps/embed/v1/place?key=AIzaSyB1UiEgTrMu4oUPFCxorbwhTBMbX19RVGo&q=taguspark';
+	mapSaveMapState(url);
+	mapQuery(url);
+}
+function mapQuery(url) {
+	mapQuery(url)
+}
+
 function shareStart(button) {
 	$('#shareButtonContainer').toggle();
 	$('#interestsButtonContainer').hide();
@@ -42,18 +53,20 @@ function directionsStart(button) {
 function mapSaveMapState(url) { sessionStorage.mapSavedQuery = JSON.stringify(url); }
 //Reverts to the previously saved state (before the received shared map).
 function mapRevertState() {
+	$('#mapsCloseShare').hide();
 	var url = JSON.parse(sessionStorage.mapSavedQuery);
-	$("#iframeMap").attr("src", url);
+	mapQuery(url)
 }
 
 //Confirms if the user allows another user to share the map.
 function mapShareWithMeAllow() { confirmationOverlayShow('Do you allow user 1 to share the map with you?', mapSharedWithMe, []); }
 //Simulates the other user's map.
 function mapSharedWithMe() {
+	$('#mapsCloseShare').show();
 	destination = 'alameda lisboa';
 	travelMode = 'driving';
-	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
-	$("#iframeMap").attr("src", url);
+	var url = 'https://www.google.com/maps/embed/v1/directions'+googleMapsKey+googleMapsOrigin+'&destination='+destination+'&mode='+travelMode;
+	mapQuery(url)
 }
 //Simulates sharing the map with another user.
 function mapShare() { confirmationOverlayShow('Do you really wish to share your map?', shared, []); }
@@ -77,9 +90,9 @@ function mapGetPointsOfInterest(button) {
 		case 'museums':	keyWords = 'museums+oeiras';
 			break;
 	}
-	var url = "https://www.google.com/maps/embed/v1/search"+googleMapsKey+"&q="+keyWords;
+	var url = 'https://www.google.com/maps/embed/v1/search'+googleMapsKey+'&q='+keyWords;
 	mapSaveMapState(url);
-	$("#iframeMap").attr("src", url);
+	mapQuery(url)
 }
 
 function mapDirectionsChooseMode(button) {
@@ -91,7 +104,7 @@ function mapDirectionsChooseMode(button) {
 	button.addClass('active');
 	$('#directionInput').show();
 	/* Affecting transportation modes */
-	googleMapsMode = (button.attr("id")).toLowerCase();
+	googleMapsMode = (button.attr('id')).toLowerCase();
 
 	if (MODES_GO.includes(transport)) {
 		$('#go').text('Go!');
@@ -104,9 +117,9 @@ function mapDirectionsChooseMode(button) {
 
 function mapGetDirections(destination, travelMode) {
 	if (travelMode == '') { travelMode = 'driving'; }
-	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
+	var url = 'https://www.google.com/maps/embed/v1/directions'+googleMapsKey+googleMapsOrigin+'&destination='+destination+'&mode='+travelMode;
 	mapSaveMapState(url);
-	$("#iframeMap").attr("src", url);
+	mapQuery(url)
 }
 function go() {
 	var input = $('#mapsDestinationInput');
@@ -145,7 +158,7 @@ function taxiCall(args) {
 }
 //Cancels the ordered taxi.
 function taxiCancel() {
-	console.log("taxiCancel() called.");
+	console.log('taxiCancel() called.');
 	//sessionStorage.myTransportation = '';
 }
 
@@ -165,7 +178,7 @@ $('#mic').click(function() { mapInputDirection(); });
 $('#go').click(function() { go(); });
 $('#mapsDestinationInput').keypress(function(e) {
 	switch (e.which) {
-		case 13: // Enter/Return: Runs "Go" button
+		case 13: // Enter/Return: Runs 'Go' button
 			$('#go').click();
 			break;
 		default:
