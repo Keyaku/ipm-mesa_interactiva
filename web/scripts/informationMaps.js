@@ -99,7 +99,7 @@ function go() {
 	}
 	else { //If the destination input bar is NOT empty.
 		// FIXME: Too specific and fragile
-		if ($('#go').text() == 'Verify') {  taxiShowInformation(); }
+		if ($('#go').text() == 'Verify') {  taxiShowInformation(destination); }
 		//If the user has verified the cab information and clicked the order button.
 		else if ($('#go').text() == 'Order!') { confirmationOverlayShow('Are you sure you want to call a cab?', taxiCall, []); }
 		//If the user selected any other method (not Uber or Taxi) shows the route.
@@ -108,7 +108,7 @@ function go() {
 }
 
 //Shows the taxi information and prepares the screen for ordering a taxi.
-function taxiShowInformation() {
+function taxiShowInformation(destination) {
 	mapGetDirections(destination, googleMapsMode); //Shows the taxi route.
 	$('#taxiTime').show(); //Shows the taxi information (ETAs).
 	$('#mic').addClass('taxi'); //Changes the styling of the mic borders.
@@ -124,11 +124,10 @@ function taxiCall(args) {
 	acknowledgementOverlayShow('Your taxi has been called.', null, []); //Feedback for the user.
 	$('#menubar').menubar(); //Reloads the menu bar.
 }
-
 //Cancels the ordered taxi.
-function cancelTaxi() {
-	console.log("cancelsad");
-	sessionStorage.myTransportation = '';
+function taxiCancel() {
+	console.log("taxiCancel() called.");
+	//sessionStorage.myTransportation = '';
 }
 
 
