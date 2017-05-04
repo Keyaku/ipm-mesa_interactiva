@@ -38,6 +38,7 @@ function directionsStart(button) {
 	$('#directionsButtonContainer').toggle();
 }
 
+function mapShareWithMeAllow() { confirmationOverlayShow('Do you allow user 1 to share the map with you?', mapSharedWithMe, []); }
 function mapSharedWithMe() { mapGetDirections('alameda lisboa', 'driving'); }
 function mapShare() { confirmationOverlayShow('Do you really wish to share your map?', shared, []); }
 function shared(arg) { acknowledgementOverlayShow('Your map was shared.'); }
@@ -91,43 +92,42 @@ function mapGetDirections(destination, travelMode) {
 function go() {
 	var input = $('#mapsDestinationInput');
 	var destination = input.val();
-
-	if (destination.empty()) {
+	if (destination.empty()) { //If the destination input bar is empty.
 		input.effect('shake', {times:4}, 300)
 			.css({'background-color':'rgb(0, 0, 0)'})
-			.animate({'background-color':'rgb(255, 255, 255)'}, 500);
+			.animate({'background-color':'rgb(255, 255, 255)'}, 500); //Shakes the input bar.
 	}
-	else {
-		if ($('#go').text() == 'Verify') { // FIXME: Too specific and fragile
-			callTaxi();
-			mapGetDirections(destination, googleMapsMode);
-		}
-		else if ($('#go').text() == 'Order!') {
-			confirmationOverlayShow('Are you sure you want to call a cab?', calledTaxi, []);
-		}
-		else {
-			mapGetDirections(destination, googleMapsMode);
-		}
+	else { //If the destination input bar is NOT empty.
+		// FIXME: Too specific and fragile
+		if ($('#go').text() == 'Verify') {  taxiShowInformation(); }
+		//If the user has verified the cab information and clicked the order button.
+		else if ($('#go').text() == 'Order!') { confirmationOverlayShow('Are you sure you want to call a cab?', taxiCall, []); }
+		//If the user selected any other method (not Uber or Taxi) shows the route.
+		else { mapGetDirections(destination, googleMapsMode); }
 	}
 }
 
-function callTaxi() {
-	$('#taxiTime').show();
-	$('#mic').addClass('taxi');
-	$('#go').text('Order!');
+//Shows the taxi information and prepares the screen for ordering a taxi.
+function taxiShowInformation() {
+	mapGetDirections(destination, googleMapsMode); //Shows the taxi route.
+	$('#taxiTime').show(); //Shows the taxi information (ETAs).
+	$('#mic').addClass('taxi'); //Changes the styling of the mic borders.
+	$('#go').text('Order!'); //Changes the button text to 'Order!' so the user can order the taxi.
 }
-function calledTaxi(args) {
+//Orders the taxi
+function taxiCall(args) {
 	var details = {
 		'type' : $('.directionsButton.active').text(),
 		'time' : 180, // FIXME: Randomize value
 	};
 	sessionStorage.myTransportation = JSON.stringify(details);
-	acknowledgementOverlayShow('Your taxi has been called.', null, []);
-	$('#menubar').menubar(); //Adds the menu bar.
+	acknowledgementOverlayShow('Your taxi has been called.', null, []); //Feedback for the user.
+	$('#menubar').menubar(); //Reloads the menu bar.
 }
 
+//Cancels the ordered taxi.
 function cancelTaxi() {
-	console.log("cancelsad")
+	console.log("cancelsad");
 	sessionStorage.myTransportation = '';
 }
 
@@ -153,14 +153,8 @@ $('#mapsDestinationInput').keypress(function(e) {
 		default:
 			e.stopPropagation(); //Stops the key press from propagating presses like 'S' while typing the destination.
 	}
-
 });
 $(document).keypress(function(e){
 	//'S' key pressed.
-	if (e.which == 115) { shareSure(); }
+	if (e.which == 115) { mapShareWithMeAllow(); }
 });
-
-
-function shareSure() {
-	confirmationOverlayShow('Do you allow user 1 to share the map with you?', mapSharedWithMe, []);
-}
