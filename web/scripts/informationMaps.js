@@ -38,12 +38,22 @@ function directionsStart(button) {
 	$('#directionsButtonContainer').toggle();
 }
 
+//Saves the state of the map.
+function mapSaveMapState(url) { sessionStorage.mapSavedQuery = JSON.stringify(url); }
+//Reverts to the previously saved state (before the received shared map).
+function mapRevertState() {
+	var url = JSON.parse(sessionStorage.mapSavedQuery);
+	$("#iframeMap").attr("src", url);
+}
+
 //Confirms if the user allows another user to share the map.
 function mapShareWithMeAllow() { confirmationOverlayShow('Do you allow user 1 to share the map with you?', mapSharedWithMe, []); }
-//When another user shares the map (with permission).
-function mapSharedWithMe() {
-	//mapSaveMapState(); //Saves the current user's map state.
-	mapGetDirections('alameda lisboa', 'driving'); //Simulates the other user's map.
+//Simulates the other user's map.
+function mapSharedWithMe() { 
+	destination = 'alameda lisboa';
+	travelMode = 'driving';
+	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
+	$("#iframeMap").attr("src", url);
 }
 //Simulates sharing the map with another user.
 function mapShare() { confirmationOverlayShow('Do you really wish to share your map?', shared, []); }
@@ -68,6 +78,7 @@ function mapGetPointsOfInterest(button) {
 			break;
 	}
 	var url = "https://www.google.com/maps/embed/v1/search"+googleMapsKey+"&q="+keyWords;
+	mapSaveMapState(url);
 	$("#iframeMap").attr("src", url);
 }
 
@@ -94,6 +105,7 @@ function mapDirectionsChooseMode(button) {
 function mapGetDirections(destination, travelMode) {
 	if (travelMode == '') { travelMode = 'driving'; }
 	var url = "https://www.google.com/maps/embed/v1/directions"+googleMapsKey+googleMapsOrigin+"&destination="+destination+"&mode="+travelMode;
+	mapSaveMapState(url);
 	$("#iframeMap").attr("src", url);
 }
 function go() {
@@ -163,4 +175,8 @@ $('#mapsDestinationInput').keypress(function(e) {
 $(document).keypress(function(e){
 	//'S' key pressed.
 	if (e.which == 115) { mapShareWithMeAllow(); }
+});
+$(document).keypress(function(e){
+	//'R' key pressed.
+	if (e.which == 114) { mapRevertState(); }
 });
