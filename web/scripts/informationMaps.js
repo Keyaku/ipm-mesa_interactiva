@@ -19,6 +19,7 @@ var googleMapsMode = 'driving';
 var googleMapsUnits = '&units=metric';
 
 var preliminarTaxiNumber = 0;
+var taxiETA = 0;
 
 
 /*------------------------------------------------------------------------------
@@ -121,7 +122,7 @@ function mapGetDirections(destination, travelMode) {
 	if (travelMode == '') { travelMode = 'driving'; }
 	var url = 'https://www.google.com/maps/embed/v1/directions'+googleMapsKey+googleMapsOrigin+'&destination='+destination+'&mode='+travelMode;
 	mapSaveMapState(url);
-	mapQuery(url)
+	mapQuery(url);
 }
 function go() {
 	var input = $('#mapsDestinationInput');
@@ -148,6 +149,8 @@ function taxiShowInformation(destination) {
 	$('#mic').addClass('taxi'); //Changes the styling of the mic borders.
 	$('#go').text('Order!'); //Changes the button text to 'Order!' so the user can order the taxi.
 	preliminarTaxiNumber = 1;
+	taxiETA = Math.random() * 10 + 7; //Gets a random number between 7 and 17.
+	$('#taxiETA').text('ETA: ' + parseInt(taxiETA) + 'MIN');
 }
 //Increments/Decrements the number of taxis to order.
 function taxiIncrementNumber(incValue) {
@@ -164,7 +167,7 @@ function taxiCall(args) {
 	var details = {
 		'type': $('.directionsButton.active').text(),
 		'number': preliminarTaxiNumber,
-		'time': 180, // FIXME: Randomize value
+		'time': taxiETA
 	};
 	sessionStorage.myTransportation = JSON.stringify(details);
 	acknowledgementOverlayShow('Your taxi has been called.', null, []); //Feedback for the user.
