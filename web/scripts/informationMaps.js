@@ -167,7 +167,8 @@ function taxiCall(args) {
 	var details = {
 		'type': $('.directionsButton.active').text(),
 		'number': preliminarTaxiNumber,
-		'time': taxiETA
+		'ETA': taxiETA,
+		'destinationETA': 23,
 	};
 	sessionStorage.myTransportation = JSON.stringify(details);
 	acknowledgementOverlayShow('Your taxi has been called.', null, []); //Feedback for the user.
