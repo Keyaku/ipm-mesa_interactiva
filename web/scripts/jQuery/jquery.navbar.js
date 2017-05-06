@@ -21,7 +21,8 @@ const HTML_MENUBAR = `
 		</div>
 		<div id="taxiNavBarDiv" class="col-md-12" style='margin-top:50px'>
 			<div id="taxiNavBarIcon" class="fa fa-taxi"></div>
-			<label class='taxiETALabel'>ETA: 14min</label>
+			<label id='MBtaxiNumberLabel'>1</label>
+			<label class='taxiETALabel' id='MBtaxiETALabel'>ETA: 14min</label>
 			<button class='buttonDanger' id='taxiCancelButton' onclick='taxiCancel()'>Cancel Taxi</button>
 		</div>
 	</div>
@@ -82,9 +83,13 @@ function informationButton() { $(location).attr('href', 'html/informationMaps.ht
 		if (typeof(sessionStorage.myTransportation) !== "undefined") {
 			var details = JSON.parse(sessionStorage.myTransportation);
 			transport.attr('title', details.type);
-
+			var taxiETA = details['ETA'];
+			$('#MBtaxiETALabel').text('ETA: ' + taxiETA + 'MIN');
+			var taxiNumber = details['number'];
+			$('#MBtaxiNumberLabel').text(taxiNumber);
 			transport.show();
-		} else {
+		}
+		else {
 			transport.hide();
 		}
     };

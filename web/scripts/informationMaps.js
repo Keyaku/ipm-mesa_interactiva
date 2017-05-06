@@ -149,8 +149,8 @@ function taxiShowInformation(destination) {
 	$('#mic').addClass('taxi'); //Changes the styling of the mic borders.
 	$('#go').text('Order!'); //Changes the button text to 'Order!' so the user can order the taxi.
 	preliminarTaxiNumber = 1;
-	taxiETA = Math.random() * 10 + 7; //Gets a random number between 7 and 17.
-	$('#taxiETA').text('ETA: ' + parseInt(taxiETA) + 'MIN');
+	taxiETA = parseInt(Math.random() * 10 + 7); //Gets a random number between 7 and 17.
+	$('#taxiETA').text('ETA: ' + taxiETA + 'MIN');
 }
 //Increments/Decrements the number of taxis to order.
 function taxiIncrementNumber(incValue) {
