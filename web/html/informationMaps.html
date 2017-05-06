@@ -60,8 +60,13 @@
 						<input class='col-md-8' id='mapsDestinationInput' type='text' placeholder='Speak'>
 						<i class='col-md-1 fa fa-microphone' id='mic'></i>
 						<div id='taxiTime'>
-							<button class='' id='taxiETA'>ETA: 14min</label>
-							<button class='' id='taxiDestinationETA'>Destination ETA: 23min</label>
+							<button class='buttonNeutral' id='taxiETA'>ETA: 14min</button>
+							<button class='buttonNeutral' id='taxiDestinationETA'>Destination ETA: 23min</button>
+							<div id="taxiIncrementButtonContainer">
+								<button class='buttonWhite taxiIncrementButton' id='taxiDec'>-</button>
+								<label id='taxiNumberLabel'>1</label>
+								<button class='buttonWhite taxiIncrementButton' id='taxiInc'>+</button>
+							</div>
 						</div>
 					</div>
 

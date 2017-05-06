@@ -18,7 +18,9 @@ var googleMapsOrigin = '&origin=taguspark';
 var googleMapsMode = 'driving';
 var googleMapsUnits = '&units=metric';
 
-console.log(sessionStorage.myTransportation);
+var preliminarTaxiNumber = 0;
+
+
 /*------------------------------------------------------------------------------
 
 			AUXILIAR FUNCTIONS
@@ -145,7 +147,20 @@ function taxiShowInformation(destination) {
 	$('#taxiTime').show(); //Shows the taxi information (ETAs).
 	$('#mic').addClass('taxi'); //Changes the styling of the mic borders.
 	$('#go').text('Order!'); //Changes the button text to 'Order!' so the user can order the taxi.
+	preliminarTaxiNumber = 1;
 }
+
+function taxiIncrementNumber(incValue) {
+	var i = preliminarTaxiNumber + incValue;
+	//Do nothing.
+	if (i == 0) { /*If the new number of taxis would be 0.*/ }
+	else if (i > 0) {
+		preliminarTaxiNumber += incValue;
+		$('#taxiNumberLabel').text(preliminarTaxiNumber);
+	}
+}
+
+
 //Orders the taxi
 function taxiCall(args) {
 	var details = {
@@ -171,11 +186,16 @@ function taxiCancel() {
 $('#mapsShare').click(function() { shareStart($(this)); });
 $('#mapsInterests').click(function() { interestsStart($(this)); });
 $('#mapsDirections').click(function() { directionsStart($(this)); });
+
 $('.shareButton').click(function() { mapShareAddUser($(this)); });
 $('#shareConfirm').click(function() { mapShare(); });
 $('#mapsCloseShare').click(function() { mapRevertState()});
+
 $('.interestsButton').click(function() { mapGetPointsOfInterest($(this)); });
+
 $('.directionsButton').click(function() { mapDirectionsChooseMode($(this)); });
+$('#taxiDec').click(function() { taxiIncrementNumber(-1); });
+$('#taxiInc').click(function() { taxiIncrementNumber(1); });
 $('#mic').click(function() { mapInputDirection(); });
 $('#go').click(function() { go(); });
 $('#mapsDestinationInput').keypress(function(e) {
