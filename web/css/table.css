@@ -37,6 +37,8 @@ main label {
 }
 p { color: white; }
 
+button:focus { outline: 0; }
+
 /*-------------------------------------------------------------------------
 
 			Menu bar taxi
