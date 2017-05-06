@@ -46,8 +46,8 @@ function orderButton() {
 		$(location).attr('href', 'html/menus/menuPizzaList.html');
 	}
 }
-function entertainmentButton() { $(location).attr('href', 'html/entertainment.html'); }
-function newsButton() { $(location).attr('href', 'html/news.html'); }
+function entertainmentButton() { /*$(location).attr('href', 'html/entertainment.html');*/ }
+function newsButton() { /*$(location).attr('href', 'html/news.html');*/ }
 function informationButton() { $(location).attr('href', 'html/informationMaps.html'); }
 
 (function($) {
