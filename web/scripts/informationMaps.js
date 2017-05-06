@@ -149,23 +149,22 @@ function taxiShowInformation(destination) {
 	$('#go').text('Order!'); //Changes the button text to 'Order!' so the user can order the taxi.
 	preliminarTaxiNumber = 1;
 }
-
+//Increments/Decrements the number of taxis to order.
 function taxiIncrementNumber(incValue) {
 	var i = preliminarTaxiNumber + incValue;
 	//Do nothing.
 	if (i == 0) { /*If the new number of taxis would be 0.*/ }
-	else if (i > 0) {
+	else if (i > 0) { //If the number of taxis would still be more than 0.
 		preliminarTaxiNumber += incValue;
 		$('#taxiNumberLabel').text(preliminarTaxiNumber);
 	}
 }
-
-
-//Orders the taxi
+//Orders the taxi(s)
 function taxiCall(args) {
 	var details = {
-		'type' : $('.directionsButton.active').text(),
-		'time' : 180, // FIXME: Randomize value
+		'type': $('.directionsButton.active').text(),
+		'number': preliminarTaxiNumber,
+		'time': 180, // FIXME: Randomize value
 	};
 	sessionStorage.myTransportation = JSON.stringify(details);
 	acknowledgementOverlayShow('Your taxi has been called.', null, []); //Feedback for the user.
