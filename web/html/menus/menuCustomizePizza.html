@@ -18,25 +18,12 @@
 	<main class="orderMenu" id="customizeYourPizza">
 		<label class="menuTitle">Customize Your Own Pizza</label>
 
-		<section class="customizeStep">
+		<section class="customizeStep" id="customizeStepSize">
 			<h1>Choose your size</h1>
-			<div class="pizzaCustomizationItemsContainer sizes">
-				<div class="pizzaCustomizationItem col-md-4">
-					<p class="pizzaSizeText">Small</p>
-					<svg class="pizzaSizes" id="small"><use xlink:href="img/menus/customizeMenu/4slicePizza.svg#4slicePizza" /></svg>
-				</div>
-				<div class="pizzaCustomizationItem col-md-4">
-					<p class="pizzaSizeText">Medium</p>
-					<svg class="pizzaSizes" id="medium"><use xlink:href="img/menus/customizeMenu/6slicePizza.svg#6slicePizza" /></svg>
-				</div>
-				<div class="pizzaCustomizationItem col-md-4">
-					<p class="pizzaSizeText">Large</p>
-					<svg class="pizzaSizes" id="large"><use xlink:href="img/menus/customizeMenu/8slicePizza.svg#8slicePizza" /></svg>
-				</div>
-			</div>
+			<div id='sizeButtons'></div>
 		</section>
 
-		<section class="customizeStep">
+		<section class="customizeStep" id="customizeStepDough">
 			<h1>Choose your dough</h1>
 			<div class="pizzaCustomizationItemsContainer dough">
 				<div class="pizzaDough col-md-4">

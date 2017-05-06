@@ -25,11 +25,7 @@ main {
 	margin-left: 5%;
 }
 
-.customizeStep {
-	text-shadow: 0 0 10px #000;
-	min-height: 60%;
-}
-
+.customizeStep { text-shadow: 0 0 10px #000; }
 .customizeStep h1 {
 	font-family: bangers, sans-serif;
 	color: white;
@@ -41,7 +37,6 @@ main {
 }
 
 .pizzaCustomizationItem:last-child { border: none; }
-
 .pizzaCustomizationItem:nth-of-type(1) .pizzaSizes {
 	margin-top: 15%;
 	width: 250px;
@@ -58,14 +53,10 @@ main {
 	height: 350px;
 }
 
-svg.pizzaSizes.active text {
-	fill: #2E7D32;
-}
-
-svg.pizzaSizes.active circle {
-	stroke: #2E7D32;
-	stroke-width: 10px;
-	fill: rgba(207,255,149, 0.1);
+#customizeStepSize { height: 400px; }
+.mPIISizeButton {
+	width: 60%;
+	height: 220px;
 }
 
 .pizzaSizeText {

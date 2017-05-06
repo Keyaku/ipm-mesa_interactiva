@@ -17,38 +17,13 @@ const LIST_INGREDIENTS = {
 			CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
-$('#menubar').menubar();		// Adding menu bar
-$('#navbar').navbar({selected: 'Pizza'}); 			// Adding top navigation bar
-
+$('#menubar').menubar(); // Adding menu bar
+$('#navbar').navbar({selected: 'Pizza'}); // Adding top navigation bar
 var pizzaMaker = {'name' : '', 'pizzaSize' : '', 'Dough' : '', 'ingredients' : [] };
+populateIngredientsLists(); //Generates the ingredients lists.
 
-for (var ingredientType in LIST_INGREDIENTS) {
-	var typeLabel = $('<label>', { // Creates the ingredient type label.
-		html: ingredientType,
-		'class': 'pizzaIngredientTypeLabel'
-	});
-	var typeDiv = $('<div>', { 'class': 'pizzaIngredientType' }); // Creates the div that contains the all the type's ingredients and their images.
-	typeDiv.attr('id', ingredientType.toLowerCase()); // Gives each of the created division an attribute id.
-	for (i in LIST_INGREDIENTS[ingredientType]) {
-		var ingredientName = LIST_INGREDIENTS[ingredientType][i];
-		var ingredientDiv = $('<div>', { // Creates a div for each ingredient.
-			'class': 'pizzaIngredient',
-			'id': ingredientName
-		});
-		var ingredientLabel = $('<label>', { // Creates the ingredient's label.
-			html: ingredientName,
-			'class': 'pizzaIngredientName'
-		});
 
-		ingredientName = ingredientName.toLowerCase().replace(/\s/g,'')
-		ingredientDiv.append($('<div>', { // Attaches the ingredient's image div and label to the ingredient's div.
-			'css': {'background-image' : 'url("' + PATH_INGREDIENTS + ingredientName + '.png")'},
-			'class': 'pizzaIngredientImg'
-		})).append(ingredientLabel);
-		typeDiv.append(ingredientDiv); // Appends the individual ingredients div to the types's div.
-	}
-	$('#pizzaIngredients').append([typeLabel, typeDiv]); // Appends the type's div to the main page.
-}
+$('#sizeButtons').append(createSizeButtons());
 
 
 /*------------------------------------------------------------------------------
@@ -56,16 +31,67 @@ for (var ingredientType in LIST_INGREDIENTS) {
 			AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
+//Generates the ingredients lists.
+function populateIngredientsLists() {
+	for (var ingredientType in LIST_INGREDIENTS) {
+		var typeLabel = $('<label>', { // Creates the ingredient type label.
+			html: ingredientType,
+			'class': 'pizzaIngredientTypeLabel'
+		});
+		var typeDiv = $('<div>', { 'class': 'pizzaIngredientType' }); // Creates the div that contains the all the type's ingredients and their images.
+		typeDiv.attr('id', ingredientType.toLowerCase()); // Gives each of the created division an attribute id.
+		for (i in LIST_INGREDIENTS[ingredientType]) {
+			var ingredientName = LIST_INGREDIENTS[ingredientType][i];
+			var ingredientDiv = $('<div>', { // Creates a div for each ingredient.
+				'class': 'pizzaIngredient',
+				'id': ingredientName
+			});
+			var ingredientLabel = $('<label>', { // Creates the ingredient's label.
+				html: ingredientName,
+				'class': 'pizzaIngredientName'
+			});
+
+			ingredientName = ingredientName.toLowerCase().replace(/\s/g,'')
+			ingredientDiv.append($('<div>', { // Attaches the ingredient's image div and label to the ingredient's div.
+				'css': {'background-image' : 'url("' + PATH_INGREDIENTS + ingredientName + '.png")'},
+				'class': 'pizzaIngredientImg'
+			})).append(ingredientLabel);
+			typeDiv.append(ingredientDiv); // Appends the individual ingredients div to the types's div.
+		}
+		$('#pizzaIngredients').append([typeLabel, typeDiv]); // Appends the type's div to the main page.
+	}
+}
+//Creates the pizza size buttons.
+function createSizeButtons() {
+	var d = $('<div>', { 'class': 'buttonContainer' });
+	['Small', 'Medium', 'Large'].forEach(function(size) {
+		var d2 = $('<div>', { 'class': 'pizzaCustomizationItem col-md-4' });
+		d.append(d2);
+		d2.append($('<button>', {
+			html: size[0], //Gets the first character from size.
+			'class': 'mPIISizeButton buttonWhite',
+			'id': size,
+			'click': function() {
+				$('.mPIISizeButton').addClass('buttonWhite').removeClass('buttonReward');
+				$(this).removeClass('buttonWhite').addClass('buttonReward');
+				pizzaCustomizeSize($(this).attr('id'));
+			},
+			'id': size
+		}));
+	});
+	return d;
+}
+
 //Sets the key's value to the given value in the customized pizza's structure.
 function pizzaCustomizeField(field, value) {
 	pizzaMaker[field] = value; //Sets the value;
 	pizzaUpdateLabel(); //Updates the visual information for the client.
 }
 
-//TODO - @keyaku - comment this
+//Updates the label that shows the client the current customization.
 function pizzaUpdateLabel() {
-	var size = pizzaMaker['size'] != undefined ? ' <b>' + pizzaMaker['size'] + '</b>' : '';
-	var dough = pizzaMaker['dough'] != undefined ? ' <i>' + pizzaMaker['dough'] + '</i>' : '';
+	var size = pizzaMaker['size'] != undefined ? ' <b>' + pizzaMaker['size'] + '</b>' : ''; //Updates the size.
+	var dough = pizzaMaker['dough'] != undefined ? ' <i>' + pizzaMaker['dough'] + '</i>' : ''; //Updates the dough.
 	var str = 'Your' + size + dough + ' pizza contains:'
 	$('label#customPizza').html(str);
 }
