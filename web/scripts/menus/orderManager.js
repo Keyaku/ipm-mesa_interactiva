@@ -34,6 +34,10 @@ function managerCheckOrderNotEmpty(orderNumber) {
 
 //Adds a premade pizza to the order.
 function managerAddNewPizza(pizzaName, pizzaSize) {
+	if (pizzaName == '') {
+		managerAddToMeta(sessionStorage.orderNumber, ['', '']); //Adds the order to the global data structure.
+		return;
+	}
 	var pizza = getPremadePizza(pizzaName); //Gets the pizza's structure.
 	pizza['pizzaSize'] = pizzaSize; //Adds the pizza's size to the the structure.
 	pizza['pizzaNumber'] = 1; //Sets number of pizzas of the order to 1.
@@ -48,6 +52,11 @@ function managerEditPizza(pizzaName, pizzaSize) {
 	pizza['pizzaSize'] = pizzaSize; //Adds the pizza's size to the the structure.
 	pizza['pizzaNumber'] = pizzaNumber; //Sets the same number to the edited pizza.
 	var drink = (managerGetMetaValues(sessionStorage.orderNumber))[1]; //Gets the ordered drink.
+
+	if (pizzaName == '') {
+		managerAddToMeta(sessionStorage.orderNumber, ['', drink]); //Adds the order to the global data structure.
+		return;
+	}
 	var valueNew = [pizza, drink]; //Sets the value for the key.
 	managerAddToMeta(sessionStorage.orderNumber, valueNew); //Adds the order to the global data structure.
 }

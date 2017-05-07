@@ -94,4 +94,15 @@ $('#customizationShortcut').click(function() { window.location.href = 'html/menu
 //The click event for the cancel button changes the page to the main page.
 $('#cancelButton').click(function() { pizzaOrderCancel(); });
 //The click event for the skip button changes the page to the drinks menu.
-$('#skipButton').click(function() { window.location.href = 'html/menus/menuDrinks.html'; });
+$('#skipButton').click(function() {
+	if (sessionStorage.editing == "true") { //If the client is editing a previous order.
+		sessionStorage.editing = false; //Sets the editing flag to false.
+		managerEditPizza('', 'Small'); //Adds the pizza to the system.
+		window.location.href = 'html/table.html';
+	}
+	else { //If the client is NOT editing a previous order.
+		managerAddNewPizza('', 'Small'); //Adds the pizza to the system.
+		window.location.href = 'html/menus/menuDrinks.html'; //Continues with the order.
+	}
+	window.location.href = 'html/menus/menuDrinks.html';
+});
