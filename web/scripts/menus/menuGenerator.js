@@ -49,7 +49,10 @@ function showExtensiveInformation(objName, objSize = 0) {
 	$('#extensiveInfoBar').append(container).show();
 }
 //Hides the extensive information bar.
-function hideExtensiveInformation() { $('#extensiveInfoBar').hide(); }
+function hideExtensiveInformation() {
+	$('.menuDrinkItem').removeClass('active'); //Clears the previously chosen drink.
+	$('#extensiveInfoBar').hide();
+}
 
 //Creates the label for the name.
 function createItemName(obj) {

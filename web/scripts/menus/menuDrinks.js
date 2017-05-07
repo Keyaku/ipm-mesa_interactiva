@@ -22,7 +22,8 @@ function setGlobalDrink() {
 		window.location.href = 'html/table.html';
 	}
 	else { //If the client is NOT editing a previous order.
-		window.location.href = 'html/menus/menuOrderConfirmation.html'; } //Continues with the order.
+		window.location.href = 'html/menus/menuOrderConfirmation.html'; //Continues with the order.
+	}
 }
 
 //When the client clicks the cancel button.
@@ -45,10 +46,6 @@ function drinksConfirmCancel(args) {
 $('.menuDrinkItem').click(function() {
 	$('.menuDrinkItem').removeClass('active'); //Clears the previously chosen drink.
 	$(this).toggleClass('active');
-/*
-	$(this).children('.mPITitle').toggleClass('active'); ////Shows the drink that is selected.
-	$(this).children('.menuDrinkItemImg').toggleClass('active'); //Shows the drink that is selected.
-*/
 	showExtensiveInformation($(this).children('.mPITitle').text()); //Shows the extensive information bar.
 });
 //The click event for the cancel button changes the page to the main page.
