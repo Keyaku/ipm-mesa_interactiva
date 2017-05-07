@@ -235,7 +235,7 @@ function createDrinkOrderButton() {
 	var button = $('<button>', { //Creates the button for ordering.
 		'id': 'drinkOrderButton',
 		'class': 'buttonNeutral',
-		html: 'Order',
+		html: 'Order!',
 		'click': function() { setGlobalDrink(); }
 	});
 	return $('<div>', { 'class':'priceContainer' }).append([price, button]);
