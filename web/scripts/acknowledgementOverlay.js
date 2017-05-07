@@ -16,7 +16,7 @@ const MODAL_HTML2 = `
 
 ------------------------------------------------------------------------------*/
 $('main').append(MODAL_HTML2);
-var functionCallBack2 = confirmationOverlayShow;
+var functionCallBack2 = null;
 var functionCallBackArgs2 = [];
 
 

@@ -112,8 +112,16 @@ function pizzaRemoveIngredient(ing) {
 	pizzaMaker['ingredients'].splice(index, 1); //Removes it from the structure.
 	$('#ingredientsPicked').children(':contains(' + ing + ')').remove(); //Removes it from the HTML.
 }
+//Checks if the pizza has size, dough and ingredients.
+function pizzaNotComplete() {
+	return pizzaMaker['size'] == undefined || pizzaMaker['dough'] == undefined || pizzaMaker['ingredients'].length == 0
+}
 
 function setGlobalPizza() {
+	if (pizzaNotComplete()) {
+		acknowledgementOverlayShow('Your pizza is not complete.', null, []);
+		return;
+	}
 	var index = sessionStorage.orderNumber; //Gets the order number (in case the user is editing an order).
 	pizzaCustomizeField('name', 'Custom #' + index); //Sets the name of the custom pizza.
 	pizzaCustomizeField('nutritions', {'Calories':'556kcal', 'Protein':'23g', 'Carbohydrates':'44g', 'Fat':'99g'}); //Sets the caloric of the custom pizza.
