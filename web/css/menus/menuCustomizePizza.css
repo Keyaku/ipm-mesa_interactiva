@@ -50,42 +50,41 @@ main { overflow-y: scroll; }
 
 
 #pizzaIngredients {
-	color: white;
 	font-family: 'Raleway', sans-serif;
 	padding: 0 7% 2% 7%;
 }
-.pizzaIngredientTypeLabel {
-	font-size: 35px;
-	margin: 0;
-}
+.pizzaIngredientTypeLabel { font-size: 35px; }
 .pizzaIngredientType {
 	background-color: rgba(0, 0, 0, 0.5);
 	margin-bottom: 5%;
 	padding: 2%;
 	overflow-x: auto;
 	white-space: nowrap;
-	max-width: 668px;
 }
 .pizzaIngredient {
 	display: inline-block;
-	padding: 1% 5%;
-	text-align: center;
+	padding: 1% 5% 1% 0;
 }
-.pizzaIngredientImg {
-	background-size: 140px 70px;
-	border: 2px solid white;
-	border-radius: 15px;
-	width: 140px;
-	height: 70px;
+.ingredientImgButton {
+	background-size: 120px 80px;
+	border-radius: 0;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	width: 120px;
+	height: 80px;
 }
-.pizzaIngredientImg.active { border: 2px solid green; }
-.pizzaIngredientName { font-size: 22px; }
-.pizzaIngredientName.active { color: green; }
+.ingredientNameButton {
+	border-radius: 0;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	float: right;
+	min-width: 100px;
+	height: 80px;
+}
 
 #confirmationArea label {
 	font-size: 35px;
 	font-weight: lighter;
-	text-align: center;
 }
 #confirmationArea label b { color: #D32F2F; }
 #confirmationArea label i { color: green; }

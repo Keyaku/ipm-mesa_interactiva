@@ -40,27 +40,26 @@ function populateIngredientsLists() {
 		});
 		var typeDiv = $('<div>', { 'class': 'pizzaIngredientType' }); // Creates the div that contains the all the type's ingredients and their images.
 		typeDiv.attr('id', ingredientType.toLowerCase()); // Gives each of the created division an attribute id.
-		for (i in LIST_INGREDIENTS[ingredientType]) {
+
+		for (var i in LIST_INGREDIENTS[ingredientType]) {
 			var ingredientName = LIST_INGREDIENTS[ingredientType][i];
-			var ingredientDiv = $('<div>', { // Creates a div for each ingredient.
-				'class': 'pizzaIngredient',
-				'id': ingredientName
-			});
-			var ingredientLabel = $('<label>', { // Creates the ingredient's label.
-				html: ingredientName,
-				'class': 'pizzaIngredientName'
-			});
+			var ingredientDiv = $('<div>').addClass('pizzaIngredient').attr('id', ingredientName); // Creates a div for each ingredient.
+
+			var ingredientButton = $('<button>').addClass('ingredientNameButton buttonWhite').html(ingredientName); // Creates a div for each ingredient's label.
 
 			ingredientName = ingredientName.toLowerCase().replace(/\s/g,'')
-			ingredientDiv.append($('<div>', { // Attaches the ingredient's image div and label to the ingredient's div.
+			var ingredientImgButton = $('<button>', { // Attaches the ingredient's image div and label to the ingredient's div.
 				'css': {'background-image' : 'url("' + PATH_INGREDIENTS + ingredientName + '.png")'},
-				'class': 'pizzaIngredientImg'
-			})).append(ingredientLabel);
+				'class': 'ingredientImgButton buttonWhite'
+			});
+			ingredientDiv.append(ingredientImgButton).append(ingredientButton);
 			typeDiv.append(ingredientDiv); // Appends the individual ingredients div to the types's div.
 		}
+
 		$('#pizzaIngredients').append([typeLabel, typeDiv]); // Appends the type's div to the main page.
 	}
 }
+
 //Creates the pizza size buttons.
 function createSizeButtons() {
 	var d = $('<div>', { 'class': 'buttonContainer' });
@@ -139,6 +138,7 @@ function setGlobalPizza() {
 
 ------------------------------------------------------------------------------*/
 //The click event of .pizzaIngredient is defined in the spawning.
+//The click event of .mPIISizeButton is defined in the spawning (createSizeButtons()).
 //The click event for the pizza dough buttons sets the pizza's dough.
 $('.mPIIDoughButton').click(function() {
 	$('.mPIIDoughButton').addClass('buttonWhite').removeClass('buttonReward');
@@ -147,8 +147,7 @@ $('.mPIIDoughButton').click(function() {
 });
 //The click event for the ingredient buttons adds/removes it from the ingredients list.
 $('.pizzaIngredient').click(function() {
-	$(this).children('.pizzaIngredientImg').toggleClass('active'); //Show the ingredient is selected.
-	$(this).children('.pizzaIngredientName').toggleClass('active'); //Show the ingredient is selected.
+	$(this).children('.ingredientNameButton').toggleClass('buttonWhite buttonReward'); //Show the ingredient is selected.
 	var ing = $(this).attr('id'); //Gets the ingredients name.
 	if (pizzaIsIngredientSelected(ing)) { //If the ingredient is in the list.
 		pizzaRemoveIngredient(ing); //Removes the ingredient from the list.
