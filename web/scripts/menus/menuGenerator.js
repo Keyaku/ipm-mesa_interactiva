@@ -74,13 +74,9 @@ function createNutritonalInfo(obj) {
 //Creates a div for the rating stars and the rating label.
 function createRating(obj) {
 	var d = $('<div>').addClass('rating');
-	for (var i = 0; i < 5; i++) {
-		d.append($('<i>').addClass('fa fa-star'));
-	}
-	d.append($('<p>', {
-		'class': 'ratingValue',
-		html: obj['rating']
-	}));
+	var starNum = parseInt(obj['rating']);
+	for (var i = 1; i <= starNum; i++) { d.append($('<i>').addClass('fa fa-star').addClass('coloredStar')); }
+	for (var i = starNum + 1; i <= 5; i++) { d.append($('<i>').addClass('fa fa-star')); }
 	return d;
 }
 

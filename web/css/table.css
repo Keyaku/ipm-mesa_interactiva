@@ -176,11 +176,7 @@ button:focus { outline: 0; }
 	font-size: 50px;
 	text-align: center;
 }
-.ratingValue {
-	display: inline-block;
-	font-size: 14pt;
-	margin: 0 10pt;
-}
+
 
 /*-------------------------------------------------------------------------
 
@@ -194,10 +190,11 @@ button:focus { outline: 0; }
 	font-weight: bolder;
 }
 #customPizza { margin-top: 5%; }
-
 .fa.fa-user {
 	color: darkred;
 	font-size: 50px;
 	font-weight: bolder;
 	margin-top: 10%;
 }
+.fa.fa-star {  }
+.coloredStar { color: green; }
