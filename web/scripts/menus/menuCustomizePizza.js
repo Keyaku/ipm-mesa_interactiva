@@ -74,7 +74,7 @@ function createSizeButtons() {
 			'click': function() {
 				$('.mPIISizeButton').addClass('buttonWhite').removeClass('buttonReward');
 				$(this).removeClass('buttonWhite').addClass('buttonReward');
-				pizzaCustomizeSize($(this).attr('id'));
+				pizzaSetSize($(this).attr('id'));
 			},
 			'id': size
 		}));
@@ -97,7 +97,7 @@ function pizzaUpdateLabel() {
 }
 
 //Sets the customized pizza's size.
-function pizzaCustomizeSize(size) { pizzaCustomizeField('size', size); }
+function pizzaSetSize(size) { pizzaCustomizeField('size', size); }
 //Sets the customized pizza's dough.
 function pizzaSetDough(dough) { pizzaCustomizeField('dough', dough); }
 //Checks if the ingredient is selected.
@@ -139,16 +139,10 @@ function setGlobalPizza() {
 
 ------------------------------------------------------------------------------*/
 //The click event of .pizzaIngredient is defined in the spawning.
-//The click event for the pizza size buttons sets the pizza's size.
-$('.pizzaSizes').click(function() {
-	$('.pizzaSizes').removeClass('active'); //Clears the previously chosen size.
-	$(this).toggleClass('active'); //Shows the size that is selected.
-	pizzaCustomizeSize($(this).attr('id')); //Sets the pizza's size.
-});
 //The click event for the pizza dough buttons sets the pizza's dough.
-$('.pizzaDough label').click(function() {
-	$('.pizzaDough label').removeClass('active'); //Clears the previously chosen dough.
-	$(this).toggleClass('active'); //Shows the dough that is selected.
+$('.mPIIDoughButton').click(function() {
+	$('.mPIIDoughButton').addClass('buttonWhite').removeClass('buttonReward');
+	$(this).removeClass('buttonWhite').addClass('buttonReward');
 	pizzaSetDough($(this).attr('id')); //Sets the pizza's dough.
 });
 //The click event for the ingredient buttons adds/removes it from the ingredients list.
