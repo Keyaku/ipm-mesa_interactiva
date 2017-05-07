@@ -86,7 +86,7 @@ body { background-image: url("../../img/tableBackgrounds/tableBack4.jpg"); }
 #confirmationArea label b { color: #D32F2F; }
 #confirmationArea label i { color: green; }
 #ingredientsPicked {
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.8);
 	color: white;
 	font-size: 20px;
 	list-style: none;
