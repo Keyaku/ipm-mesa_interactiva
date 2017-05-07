@@ -7,9 +7,9 @@ main label { text-align: left; }
 ::-webkit-scrollbar-thumb:hover { background-color: white; }
 
 .menuTitle {
-  float: left;
 	color: #D32F2F;
-	font-size: 100px;
+	display: block;
+	font-size: 75px;
 	font-family: bangers, sans-serif;
 	margin-left: 3.7%;
 	text-shadow: 0 0 10px #000;
@@ -17,11 +17,7 @@ main label { text-align: left; }
 	-webkit-text-stroke-color: black;
 }
 
-
-.menuItems {
-  height: 175%;
-}
-
+.menuItems { height: 175%; }
 .menuItems::-webkit-scrollbar { display:none; }
 
 /*			Menu of drinks													*/
@@ -32,6 +28,7 @@ main label { text-align: left; }
 	padding: 5% 0;
 }
 .menuDrinkItem:last-child { border: none; }
+.menuDrinkItem.active { background-color: rgba(0,255,0,0.2); }
 .menuDrinkItemImg {
 	display: block;
 	margin: 5% auto;
