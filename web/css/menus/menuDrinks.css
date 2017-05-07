@@ -36,8 +36,6 @@ main label { text-align: left; }
 	border-radius: 10px;
 }
 
-.menuDrinkItemImg.active { border: 5px solid #2E7D32; }
-
 #extensiveInfoBar .mPITitle {
 	font-family: bangers, sans-serif;
 	font-size: 70px;
