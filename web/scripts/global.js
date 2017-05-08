@@ -14,6 +14,12 @@ $(document).ready(function(){
 /****** Stuff *******/
 $(":header").css({cursor: "default"});
 
+function randomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 /* Functions to attach to elements */
 $.fn.followAlong = function() {
     var container = $(this);
