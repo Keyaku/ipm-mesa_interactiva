@@ -14,7 +14,7 @@ $(document).ready(function(){
 /****** Stuff *******/
 $(":header").css({cursor: "default"});
 
-function setTimer(div, time) {
+function setTimer(div, time, callback=function(){}) {
 	div.countdown360({
 		radius: 65,                           // radius of arc
 		strokeStyle: 'rgb(46, 204, 29)',      // the color of the stroke
@@ -26,7 +26,7 @@ function setTimer(div, time) {
 		seconds: time,                        // the number of seconds to count down
 		label: ['second', 'minute'],          // the label to use or false if none
 		smooth: true,                         // should the timer be smooth or stepping
-		onComplete: function () {}
+		onComplete: callback
 	});
 }
 
