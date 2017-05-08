@@ -3,7 +3,7 @@
 			CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
-$('#menubar').menubar(); //Adds the menu bar..
+$('#menubar').menubar(); //Adds the menu bar.
 //Shows the orders.
 for (var i = 0; i < sessionStorage.orders; i++) {
 	var values = managerGetMetaValues(i.toString()); //Gets the ordered pizza and drink.
@@ -13,21 +13,20 @@ for (var i = 0; i < sessionStorage.orders; i++) {
 	}
 }
 
-/*
-$('#timer').countdown360({
-	radius: 65,                        // radius of arc
-	strokeStyle: '#ecf0f1',            // the color of the stroke
-	strokeWidth: 5,					   // border radius
-	fillStyle: '#bdc3a7',              // the fill color
-	fontColor: '#ecf0f1',              // the font color
-	fontWeight: 700,                   // the font weight
-	autostart: true,                   // start the countdown automatically
-	seconds: 480,                      // the number of seconds to count down
-	label: ['second', 'minute'],       // the label to use or false if none
-	smooth: true,                      // should the timer be smooth or stepping
-	onComplete: function () {}
-}); //Adds the timer.
-*/
+$(document).ready(function() {
+	let all_timers = JSON.parse(sessionStorage.timer_orders);
+	for (var i = 0; i < sessionStorage.orders; i++) {
+		var timer = 'timer_order' + i;
+		if (!(timer in all_timers)) {
+			var newTime = randomInt(5*60, 15*60);
+			setTimer($('#' + timer), newTime);
+			all_timers[timer] = newTime;
+		} else {
+			setTimer($('#' + timer), all_timers[timer]);
+		}
+	}
+	sessionStorage.timer_orders = JSON.stringify(all_timers);
+});
 
 
 /*------------------------------------------------------------------------------
@@ -35,6 +34,17 @@ $('#timer').countdown360({
 			AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
+function switchPageTo(url) {
+	let all_timers = JSON.parse(sessionStorage.timer_orders);
+	for (var i = 0; i < sessionStorage.orders; i++) {
+		var timer = 'timer_order' + i;
+		$('#' + timer).countdown360().stop();
+		all_timers[timer] = $('#' + timer).countdown360().getTimeRemaining();
+	}
+
+	window.location.href = url;
+}
+
 //Creates the HTML structure for the order.
 function createOrderItem(ind) {
 	$('#orders').append($('<div>', { // Creates order content
@@ -51,7 +61,7 @@ function createOrderItem(ind) {
 			$('<button>', { html: 'Drink', 'class': 'buttonEditDrink buttonNeutral', 'id':'editDrink' + ind }),
 			$('<button>', { html: 'Cancel', 'class': 'buttonCancel buttonDanger', 'id':'cancel' }),
 		]
-	}))
+	})).append($('<div>', { 'id': 'timer_order' + ind }))
 	);
 }
 //Fills the order item with the chosen pizza and drink.
@@ -74,13 +84,13 @@ function orderEdit(index) {
 function orderEditPizza(index) {
 	sessionStorage.orderNumber = index; //Sets the number of the current order.
 	sessionStorage.editing = true; //Sets the editing flag to false.
-	window.location.href = 'html/menus/menuPizzaList.html';
+	switchPageTo('html/menus/menuPizzaList.html');
 }
 //When the client clicks the edit drink button.
 function orderEditDrink(index) {
 	sessionStorage.orderNumber = index; //Sets the number of the current order.
 	sessionStorage.editing = true; //Sets the editing flag to false.
-	window.location.href = 'html/menus/menuDrinks.html';
+	switchPageTo('html/menus/menuDrinks.html');
 }
 
 //When the client clicks the increment or decrement pizza buttons.
@@ -167,5 +177,5 @@ $('#buttonCancelAll').click(function() { orderAllCancel(); }); //Cancells the se
 //The click event for the new order buttons enables the client to order again.
 $('#buttonNewOrder').click(function() {
 	sessionStorage.orderNumber = sessionStorage.orders; //Sets the number of the current order.
-	window.location.href = 'html/menus/menuPizzaList.html'; //Continues with the ordering process.
+	switchPageTo('html/menus/menuPizzaList.html'); //Continues with the ordering process).
 });
