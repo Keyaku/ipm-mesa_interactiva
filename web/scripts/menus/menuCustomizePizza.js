@@ -104,7 +104,14 @@ function pizzaIsIngredientSelected(ing) { return pizzaMaker['ingredients'].find(
 //Adds the ingredient to the customized pizza's structure.
 function pizzaAddIngredient(ing) {
 	pizzaMaker['ingredients'].push(ing); //Adds it to the structure.
-	$('#ingredientsPicked').append($('<li>', { html: ing })); //Adds it to the HTML.
+	$('#ingredientsPicked').append($('<li>', {
+		html: ing
+	}).prepend($('<i>', {
+		'class': ['fa fa-close'],
+		'click': function() {
+			$('.pizzaIngredient#' + ing).click();
+		}
+	}))); //Adds it to the HTML.
 }
 //Removes the ingredient from the customized pizza's structure.
 function pizzaRemoveIngredient(ing) {

@@ -94,6 +94,9 @@ body { background-image: url("../../img/tableBackgrounds/tableBack4.jpg"); }
 	overflow-y: auto;
 	max-height: 50%;
 }
+#ingredientsPicked .fa {
+	margin-right: 2%;
+}
 .buttonContainer#customizeButtons { width: 100%; }
 .buttonContainer#customizeButtons button {
 	padding: 4% 6%;
