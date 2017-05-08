@@ -32,8 +32,8 @@ function createOrderItem() {
 	$('#order').append($('<div>', { // Creates order content
 		'class': 'orderStatusContainer',
 		html: [
-			$('<div>', { 'class': 'col', 'id': 'pizza'}),
-			$('<div>', { 'class': 'col', 'id': 'drink'})
+			$('<div>', { 'class': 'col', 'id': 'pizza' }),
+			$('<div>', { 'class': 'col', 'id': 'drink' })
 		]
 	}).append($('<div>', { 'class': 'col buttons', // Creates buttons
 		html: [
