@@ -42,6 +42,7 @@ function switchPageTo(url) {
 		all_timers[timer] = $('#' + timer).countdown360().getTimeRemaining();
 	}
 
+	sessionStorage.timer_orders = JSON.stringify(all_timers);
 	window.location.href = url;
 }
 
@@ -148,13 +149,17 @@ function orderCancel(index) { confirmationOverlayShow('Do you really wish to can
 function confirmCancel(args) {
 	var index = args[0];
 	$('#order' + index).remove();
+	let all_timers = JSON.parse(sessionStorage.timer_orders);
+	all_timers.remove('#timer_order' + index);
+	sessionStorage.timer_orders = JSON.stringify(all_timers);
 	managerDeleteOrder(index);
 }
 //When the client clicks the cancel all button.
-function orderAllCancel() { confirmationOverlayShow('Do you really wish to cancell all your orders?',confirmCancelAll, []); }
+function orderAllCancel() { confirmationOverlayShow('Do you really wish to cancel all your orders?', confirmCancelAll); }
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
 function confirmCancelAll() {
 	$('#orders').empty();
+	sessionStorage.timer_orders = JSON.stringify({});
 	manageDeleteAllOrders();
 }
 
