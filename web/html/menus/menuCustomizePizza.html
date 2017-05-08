@@ -49,8 +49,10 @@
 				<label id="customPizza">Your pizza contains:</label>
 				<ul id="ingredientsPicked"></ul>
 				<div class="buttonContainer" id="customizeButtons">
-					<button id="confirm" class="buttonReward">Confirm</button>
+					<button id="cancel" class="buttonDanger">Cancel</button>
 					<button id="back" class="buttonNeutral">Back</button>
+					<button id="skip" class="buttonNeutral">Skip</button>
+					<button id="confirm" class="buttonReward">Confirm</button>
 				</div>
 			</div>
 		</section>
@@ -64,6 +66,7 @@
 <script src="scripts/menus/menuGenerator.js"></script>
 <script src="scripts/menus/orderManager.js"></script>
 <script src="scripts/acknowledgementOverlay.js"></script>
+<script src="scripts/confirmationOverlay.js"></script>
 <script src="scripts/menus/menuCustomizePizza.js"></script>
 <script src="scripts/global.js">/* For some reason, this script breaks toLowerCase(), so it must be moved down */</script>
 </body>

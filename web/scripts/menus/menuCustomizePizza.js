@@ -146,6 +146,11 @@ function setGlobalPizza() {
 	}
 }
 
+//When the client clicks the cancel button.
+function pizzaOrderCancel(index) { confirmationOverlayShow('Do you really wish to cancel your order?', pizzaConfirmCancel, []); }
+//When the client clicks the "Yes" button in the confirmation overlay (callback from confirmationOverlayShow).
+function pizzaConfirmCancel(args) { window.location.href = 'html/table.html'; }
+
 
 /*------------------------------------------------------------------------------
 
@@ -172,4 +177,7 @@ $('.pizzaIngredient').click(function() {
 	}
 });
 //The click event for the confirm button confirms the customized pizza.
-$('#confirm').click(function() { setGlobalPizza(); });
+$('#customizeButtons #cancel').click(function() { pizzaOrderCancel(); });
+$('#customizeButtons #back').click(function() { window.location.href = 'html/menu/menuPizzaList.html'; });
+$('#customizeButtons #skip').click(function() { window.location.href = 'html/menu/menuDrinks.html'; });
+$('#customizeButtons #confirm').click(function() { setGlobalPizza(); });
