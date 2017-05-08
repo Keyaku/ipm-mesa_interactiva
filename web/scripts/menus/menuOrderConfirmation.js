@@ -29,15 +29,19 @@ function refreshOrder() {
 
 //Creates the HTML structure for the order.
 function createOrderItem() {
-	var div = $('<div>').addClass('orderStatusContainer'); //Creates the div for the order.
-	var a = $('<div>').addClass('col').attr('id', 'pizza'); //Creates the div for the ordered pizza.
-	var b = $('<div>').addClass('col').attr('id', 'drink'); //Creates the div for the ordered drink.
-	//Creates the buttons.
-	var c = $('<div>').addClass('col buttons')
-			.append($('<button>', { html: 'Cancel' }).addClass('editcancel buttonCancel buttonDanger').attr('id', 'cancel'))
-			.append($('<button>', { html: 'Confirm' }).addClass('editcancel buttonConfirm buttonReward').attr('id', 'confirm'));
-	div.append(a, b, c);
-	$('#order').append(div);
+	$('#order').append($('<div>', { // Creates order content
+		'class': 'orderStatusContainer',
+		html: [
+			$('<div>', { 'class': 'col', 'id': 'pizza'}),
+			$('<div>', { 'class': 'col', 'id': 'drink'})
+		]
+	}).append($('<div>', { 'class': 'col buttons', // Creates buttons
+		html: [
+			$('<button>', { html: 'Cancel', 'class': 'editcancel buttonCancel buttonDanger', 'id': 'cancel' }),
+			$('<button>', { html: 'Confirm', 'class': 'editcancel buttonConfirm buttonReward', 'id': 'confirm' })
+		]
+	}))
+	);
 }
 //Fills the order item with the chosen pizza and drink.
 function createOrderElements(pizza, drink) {

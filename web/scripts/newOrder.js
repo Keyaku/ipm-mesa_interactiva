@@ -36,29 +36,23 @@ $('#timer').countdown360({
 
 ------------------------------------------------------------------------------*/
 //Creates the HTML structure for the order.
-function createOrderItem(index) {
-	var ind = index;
-	var str = 'order' + index;
-	var div = $('<div>', {
+function createOrderItem(ind) {
+	$('#orders').append($('<div>', { // Creates order content
 		'class': 'orderStatusContainer',
-		'id': str
-	}); //Creates the div for the order.
-	var a = $('<div>', {
-		'class': 'col',
-		'id': 'pizza' + ind
-	}); //Creates the div for the ordered pizza.
-	var b = $('<div>', {
-		'class': 'col',
-		'id': 'drink' + ind
-	}); //Creates the div for the ordered drink.
-	//Creates the buttons.
-	var c = $('<div>', { 'class': 'col buttons' })
-			.append($('<button>', { html: 'Edit' }).addClass('buttonEdit buttonNeutral').attr('id', 'edit' + ind))
-			.append($('<button>', { html: 'Pizza' }).addClass('buttonEditPizza buttonNeutral').attr('id', 'editPizza' + ind))
-			.append($('<button>', { html: 'Drink' }).addClass('buttonEditDrink buttonNeutral').attr('id', 'editDrink' + ind))
-			.append($('<button>', { html: 'Cancel' }).addClass('buttonCancel buttonDanger').attr('id', 'cancel' + ind));
-	div.append([a, b, c]);
-	$('#orders').append(div);
+		'id': 'order' + ind,
+		html: [
+			$('<div>', { 'class': 'col', 'id': 'pizza' + ind }),
+			$('<div>', { 'class': 'col', 'id': 'drink' + ind })
+		]
+	}).append($('<div>', { 'class': 'col buttons', // Creates buttons
+		html: [
+			$('<button>', { html: 'Edit', 'class': 'buttonEdit buttonNeutral', 'id':'edit' + ind }),
+			$('<button>', { html: 'Pizza', 'class': 'buttonEditPizza buttonNeutral', 'id':'editPizza' + ind }),
+			$('<button>', { html: 'Drink', 'class': 'buttonEditDrink buttonNeutral', 'id':'editDrink' + ind }),
+			$('<button>', { html: 'Cancel', 'class': 'buttonCancel buttonDanger', 'id':'cancel' }),
+		]
+	}))
+	);
 }
 //Fills the order item with the chosen pizza and drink.
 function createOrderElements(pizza, drink, index) {
@@ -161,13 +155,13 @@ function confirmCancelAll() {
 
 ------------------------------------------------------------------------------*/
 //The click event for the edit button shows the two buttons so the user chooses to edit the pizza or drink.
-$('.buttonEdit').click(function() {	orderEdit(parseInt(($(this).attr('id'))[4])); });
+$('.buttonEdit').click(function() {	orderEdit(Number(($(this).attr('id'))[4])); });
 //The click event for the edit pizza button edits the pizza.
-$('.buttonEditPizza').click(function() { orderEditPizza(parseInt(($(this).attr('id'))[9])); });
+$('.buttonEditPizza').click(function() { orderEditPizza(Number(($(this).attr('id'))[9])); });
 //The click event for the edit drink button edits the drink.
-$('.buttonEditDrink').click(function() { orderEditDrink(parseInt(($(this).attr('id'))[9])); });
+$('.buttonEditDrink').click(function() { orderEditDrink(Number(($(this).attr('id'))[9])); });
 //The click event for the cancel button cancels the order.
-$('.buttonCancel').click(function() { orderCancel(parseInt(($(this).attr('id'))[6])); }); //Cancells the selected order.
+$('.buttonCancel').click(function() { orderCancel(Number(($(this).attr('id'))[6])); }); //Cancells the selected order.
 //The click event for the cancel all button cancels the order.
 $('#buttonCancelAll').click(function() { orderAllCancel(); }); //Cancells the selected order.
 //The click event for the new order buttons enables the client to order again.
