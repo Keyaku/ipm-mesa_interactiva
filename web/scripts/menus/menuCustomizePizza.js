@@ -178,6 +178,6 @@ $('.pizzaIngredient').click(function() {
 });
 //The click event for the confirm button confirms the customized pizza.
 $('#customizeButtons #cancel').click(function() { pizzaOrderCancel(); });
-$('#customizeButtons #back').click(function() { window.location.href = 'html/menu/menuPizzaList.html'; });
-$('#customizeButtons #skip').click(function() { window.location.href = 'html/menu/menuDrinks.html'; });
+$('#customizeButtons #back').click(function() { window.location.href = 'html/menus/menuPizzaList.html'; });
+$('#customizeButtons #skip').click(function() { window.location.href = 'html/menus/menuDrinks.html'; });
 $('#customizeButtons #confirm').click(function() { setGlobalPizza(); });
