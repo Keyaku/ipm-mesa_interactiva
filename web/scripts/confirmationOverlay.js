@@ -28,7 +28,7 @@ var functionCallBackArgs = [];
 
 ------------------------------------------------------------------------------*/
 function modalClose() { $('#modal').hide(); }
-function confirmationOverlayShow(textQuestion, callback, args) {
+function confirmationOverlayShow(textQuestion, callback, args=[]) {
 	$('#varMsg').html(textQuestion);
 	$('#modal').show();
 	functionCallBack = callback;

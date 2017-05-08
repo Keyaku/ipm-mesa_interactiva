@@ -74,7 +74,7 @@ function mapSharedWithMe() {
 //Adds a user to the share-to-poll.
 function mapShareAddUser(button) { button.toggleClass('buttonWhite').toggleClass('buttonReward'); }
 //Simulates sharing the map with another user.
-function mapShare() { confirmationOverlayShow('Do you really wish to share your map?', shared, []); }
+function mapShare() { confirmationOverlayShow('Do you really wish to share your map?', shared); }
 //Feedback for the user.
 function shared(arg) { acknowledgementOverlayShow('Your map was shared.'); }
 
