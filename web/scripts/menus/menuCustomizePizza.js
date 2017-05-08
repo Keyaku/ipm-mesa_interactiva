@@ -130,7 +130,7 @@ function setGlobalPizza() {
 		return;
 	}
 	var index = sessionStorage.orderNumber; //Gets the order number (in case the user is editing an order).
-	pizzaCustomizeField('name', 'Custom #' + index); //Sets the name of the custom pizza.
+	pizzaCustomizeField('name', 'Custom'); //Sets the name of the custom pizza.
 	pizzaCustomizeField('nutritions', {'Calories':'556kcal', 'Protein':'23g', 'Carbohydrates':'44g', 'Fat':'99g'}); //Sets the caloric of the custom pizza.
 	pizzaCustomizeField('rating', '88%'); //Sets the rating of the custom pizza.
 	pizzaCustomizeField('image', 'img/menus/pizzaMenu/menuPizza5.png'); //Sets the image of the custom pizza.
