@@ -112,8 +112,8 @@ function createIncrementButtons(pizzaNumber, drinkNumber) {
 		html: '-',
 		'click': function() { orderIncrementDrink(-1, $(this)); }
 	});
-	var d1 = $('<div>').addClass('incButtons').append(decPizza, labelPizza, incPizza);
-	var d2 = $('<div>').addClass('incButtons').append(decDrink, labelDrink, incDrink);
+	var d1 = $('<div>').addClass('incButtons pizza').append(decPizza, labelPizza, incPizza);
+	var d2 = $('<div>').addClass('incButtons drinks').append(decDrink, labelDrink, incDrink);
 	return [d1, d2];
 }
 

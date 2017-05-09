@@ -94,7 +94,11 @@ main h1 {
 	height: 350px;
 }
 
-.incButtons { margin: 20px; }
+.incButtons { margin: 6.5%; }
+.incButtons.drinks {
+	margin-top: 90%;
+	margin-left: -12%;
+}
 .buttons { padding: 8vh 0 0 0; }
 .editcancel {
 	display: block;
