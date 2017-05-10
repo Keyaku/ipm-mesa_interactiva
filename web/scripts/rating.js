@@ -8,18 +8,19 @@ const MAX_RATING = 5;
 function createRating() {
 	var sC = $('#starContainer');
 	for (var i = 1; i <= MAX_RATING; i++) {
-		sC.append($('<span>').addClass('fa fa-star').attr('id', 'star' + i));
+		sC.append($('<i>').addClass('fa fa-star').attr('id', 'star' + i));
 	}
 }
 
 $(document).ready(function() {
 	createRating();
+	$('#buttonConfirm').hide();
 });
 
-// TODO Click not working
 $('#starContainer').on("click", ".fa.fa-star", function() {
 	var currentStar;
 	var clickedIndex = $('.fa').index(this) + 1;
+	$('#buttonConfirm').show();
 	for (var i = 1; i <= MAX_RATING; i++) {
 		currentStar = $('#star' + i);
 		if (i <= clickedIndex) {
@@ -42,4 +43,8 @@ function execute(args) {
 
 $('#buttonCancel').click(function() {
 	confirmationOverlayShow("Do you really wish to skip the rating step?", execute, []);
+});
+
+$('#buttonConfirm').click(function() {
+	execute([]);
 });
