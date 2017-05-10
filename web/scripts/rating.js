@@ -8,7 +8,7 @@ const MAX_RATING = 5;
 function createRating() {
 	var sC = $('#starContainer');
 	for (var i = 1; i <= MAX_RATING; i++) {
-		sC.append($('<i>').addClass('fa fa-star').attr('id', 'star' + i));
+		sC.append($('<span>').addClass('fa fa-star').attr('id', 'star' + i));
 	}
 }
 
@@ -17,10 +17,9 @@ $(document).ready(function() {
 });
 
 // TODO Click not working
-$('.fa.fa-star').click(function() {
-	alert("fa star clicked");
+$('#starContainer').on("click", ".fa.fa-star", function() {
 	var currentStar;
-	var clickedIndex = $('.fa.fa-star').index(this) + 1;
+	var clickedIndex = $('.fa').index(this) + 1;
 	for (var i = 1; i <= MAX_RATING; i++) {
 		currentStar = $('#star' + i);
 		if (i <= clickedIndex) {
