@@ -3,17 +3,33 @@
 				STAR RATING
 
 ------------------------------------------------------------------------------*/
+const MAX_RATING = 5;
 
-//Appends 5 stars to starContainer div.
 function createRating() {
-	var maxRating = 5;
 	var sC = $('#starContainer');
-	for (var i = 1; i <= maxRating; i++) {
-		sC.append($('<i>').addClass('fa fa-star'));
+	for (var i = 1; i <= MAX_RATING; i++) {
+		sC.append($('<i>').addClass('fa fa-star').attr('id', 'star' + i));
 	}
 }
 
-$('window').load(createRating());
+$(document).ready(function() {
+	createRating();
+});
+
+// TODO Click not working
+$('.fa.fa-star').click(function() {
+	alert("fa star clicked");
+	var currentStar;
+	var clickedIndex = $('.fa.fa-star').index(this) + 1;
+	for (var i = 1; i <= MAX_RATING; i++) {
+		currentStar = $('#star' + i);
+		if (i <= clickedIndex) {
+			currentStar.css({"color" : "green"});
+		} else {
+			currentStar.css({"color" : "white"});
+		}
+	}
+});
 
 /*------------------------------------------------------------------------------
 
