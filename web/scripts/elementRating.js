@@ -8,6 +8,7 @@ $(document).ready(function() {
 	$('#buttonConfirm').hide();
 	$('#menubar').menubar();
 });
+
 /*******************************************************************************
 
 	MAIN SCRIPTS - RATING
@@ -23,28 +24,27 @@ $(document).ready(function() {
 
 //Shows the orders.
 for (var i = 0; i < sessionStorage.orders; i++) {
-	var values = managerGetMetaValues(i.toString()); //Gets the ordered pizza and drink.
-	if (values != null && values[0] != null && values[1] != null && (values[0] != '' || values[1] != '')) { //If the order wasn't deleted.
-		createOrderItem(i); //Creates the HTML structure for the order.
-		createOrderElements(values[0], values[1], i); //Fills the order item with the chosen pizza and drink.
+	var values = managerGetMetaValues(i.toString()); // Gets the ordered pizzas
+	if (values != null && values[0] != null && values[1] != null && (values[0] != '' || values[1] != '')) { // If the order wasn't deleted.
+		createOrderItem(i); // Creates the HTML structure for the order.
+		createOrderElements(values[0], values[1], i); // Fills the order item with the chosen pizza and drink.
 	}
 }
 
 //Creates the HTML structure for the order.
-function createOrderItem(ind) {
+function createOrderItem(index) {
 	$('#orders').append($('<div>', { // Creates order content
 		'class': 'orderStatusContainer',
-		'id': 'order' + ind,
-		html: [ $('<div>', { 'class': 'col', 'id': 'pizza' + ind })	]
+		'id': 'order' + index,
+		html: [ $('<div>', { 'class': 'col', 'id': 'pizza' + index })	]
 	}));
 }
 
 //Fills the order item with the chosen pizza and drink.
 function createOrderElements(pizza, drink, index) {
 	var pizzaNumber = Number(pizza['pizzaNumber']);
-	var incButtons = createIncrementButtons(pizzaNumber, drinkNumber);
 	setTimeout(function() {
-		if (pizza != '') { $('#pizza' + index).append(createPizzaItemWithSize(pizza), incButtons[0]); }//Shows the ordered pizza.
+		if (pizza != '') { $('#pizza' + index).append(createPizzaItemWithSize(pizza)); } //Shows the ordered pizza.
 	}, 100);
 }
 
