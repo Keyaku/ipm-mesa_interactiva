@@ -8,6 +8,10 @@
 	-webkit-text-stroke-color: black;
 }
 
+#buttonCancel, #buttonConfirm {
+	padding: 2.25% 4%;
+}
+
 #starContainer {
 	margin: 8% auto;
 	font-size: 150px;
