@@ -193,10 +193,8 @@ function taxiCancel() {
 
 ------------------------------------------------------------------------------*/
 $('.mapsMainButton').click(function() {
-	var id = $(this).attr('id');
-	$('.mapsMainButton').removeClass('buttonReward').addClass('buttonWhite');
-	$('#mapsCloseShare').removeClass('buttonWhite');
-	$(this).removeClass('buttonWhite').addClass('buttonReward');
+	$('.mapsMainButton').not(this).removeClass('buttonReward').addClass('buttonWhite');
+	$(this).toggleClass('buttonWhite').toggleClass('buttonReward');
 });
 $('#mapsShare').click(function() { shareStart($(this)); });
 $('#mapsInterests').click(function() { interestsStart($(this)); });
