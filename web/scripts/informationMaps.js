@@ -1,13 +1,21 @@
 /*------------------------------------------------------------------------------
 
-			CODE EXECUTION
+			REUSED VARIABLES
+
+------------------------------------------------------------------------------*/
+const ButtonLevels = [
+	$('#mapsMainButtonContainer > section:nth-child(1) > *'),
+	$('#mapsMainButtonContainer > section:nth-child(2) > *'),
+];
+
+/*------------------------------------------------------------------------------
+
+			EXECUTION AT LOAD
 
 ------------------------------------------------------------------------------*/
 $('#menubar').menubar(); //Adds the menu bar.
 $('#mapsCloseShare').hide();
-$('#shareButtonContainer').hide();
-$('#interestsButtonContainer').hide();
-$('#directionsButtonContainer').hide();
+ButtonLevels[1].hide();
 $('#directionInput').hide();
 $('#taxiTime').hide();
 mapInit();
@@ -23,13 +31,13 @@ var taxiETA = 0;
 
 /*------------------------------------------------------------------------------
 
-			CONTENT GENERATION
+			EXECUTION WHEN READY
 
 ------------------------------------------------------------------------------*/
 $(document).ready(function() {
 	/*** Generating Share menu ***/
 	let container_share = $('#shareButtonContainer');
-	$('.shareButton').click(function() { mapShareAddUser($(this)); });
+	$('.shareButton').click(function() { toggleButton($(this)); });
 	var num_users = $('.shareButton').length;
 	// Randomly select ONE (or none) user to disable
 	var disabled_user = parseInt(Math.random() * (num_users+1));
@@ -51,21 +59,7 @@ function mapQuery(url) {
 	$('#iframeMap').attr('src', url);
 }
 
-function shareStart(button) {
-	$('#shareButtonContainer').toggle();
-	$('#interestsButtonContainer').hide();
-	$('#directionsButtonContainer').hide();
-}
-function interestsStart(button) {
-	$('#shareButtonContainer').hide();
-	$('#interestsButtonContainer').toggle();
-	$('#directionsButtonContainer').hide();
-}
-function directionsStart(button) {
-	$('#shareButtonContainer').hide();
-	$('#interestsButtonContainer').hide();
-	$('#directionsButtonContainer').toggle();
-}
+function toggleButton(button) { button.toggleClass('buttonWhite').toggleClass('buttonReward'); }
 
 //Saves the state of the map.
 function mapSaveMapState(url) { sessionStorage.mapSavedQuery = JSON.stringify(url); }
@@ -73,7 +67,7 @@ function mapSaveMapState(url) { sessionStorage.mapSavedQuery = JSON.stringify(ur
 function mapRevertState() {
 	$('#mapsCloseShare').hide();
 	var url = JSON.parse(sessionStorage.mapSavedQuery);
-	mapQuery(url)
+	mapQuery(url);
 }
 
 //Confirms if the user allows another user to share the map.
@@ -86,8 +80,6 @@ function mapSharedWithMe() {
 	var url = 'https://www.google.com/maps/embed/v1/directions'+googleMapsKey+googleMapsOrigin+'&destination='+destination+'&mode='+travelMode;
 	mapQuery(url)
 }
-//Adds a user to the share-to-poll.
-function mapShareAddUser(button) { button.toggleClass('buttonWhite').toggleClass('buttonReward'); }
 //Simulates sharing the map with another user.
 function mapShare() { confirmationOverlayShow('Do you really wish to share your map?', shared); }
 //Feedback for the user.
@@ -158,6 +150,10 @@ function go() {
 }
 
 //Shows the taxi information and prepares the screen for ordering a taxi.
+function getTaxiNumber() {
+	return parseInt($('#taxiNumberLabel').text());
+}
+
 function taxiShowInformation(destination) {
 	mapGetDirections(destination, googleMapsMode); //Shows the taxi route.
 	$('#taxiTime').show(); //Shows the taxi information (ETAs).
@@ -168,20 +164,11 @@ function taxiShowInformation(destination) {
 	$('#taxiETA').text('ETA: ' + taxiETA + 'MIN');
 }
 //Increments/Decrements the number of taxis to order.
-function taxiIncrementNumber(incValue) {
-	var i = preliminarTaxiNumber + incValue;
-	//Do nothing.
-	if (i == 0) { /*If the new number of taxis would be 0.*/ }
-	else if (i > 0) { //If the number of taxis would still be more than 0.
-		preliminarTaxiNumber += incValue;
-		$('#taxiNumberLabel').text(preliminarTaxiNumber);
-	}
-}
 //Orders the taxi(s)
 function taxiCall(args) {
 	var details = {
 		'type': $('.directionsButton.active').text(),
-		'number': preliminarTaxiNumber,
+		'number': getTaxiNumber(),
 		'ETA': taxiETA,
 		'destinationETA': 23,
 	};
@@ -208,12 +195,15 @@ function taxiCancel() {
 
 ------------------------------------------------------------------------------*/
 $('.mapsMainButton').click(function() {
+	// Highlighting button
 	$('.mapsMainButton').not(this).removeClass('buttonReward').addClass('buttonWhite');
-	$(this).toggleClass('buttonWhite').toggleClass('buttonReward');
+	toggleButton($(this));
+
+	// Opening proper section
+	var id = $(this).attr('id') + 'ButtonContainer';
+	ButtonLevels[1].not('#' + id).hide();
+	ButtonLevels[1].siblings('#' + id).toggle();
 });
-$('#mapsShare').click(function() { shareStart($(this)); });
-$('#mapsInterests').click(function() { interestsStart($(this)); });
-$('#mapsDirections').click(function() { directionsStart($(this)); });
 
 $('#shareConfirm').click(function() { mapShare(); });
 $('#mapsCloseShare').click(function() { mapRevertState()});
@@ -221,8 +211,14 @@ $('#mapsCloseShare').click(function() { mapRevertState()});
 $('.interestsButton').click(function() { mapGetPointsOfInterest($(this)); });
 
 $('.directionsButton').click(function() { mapDirectionsChooseMode($(this)); });
-$('#taxiDec').click(function() { taxiIncrementNumber(-1); });
-$('#taxiInc').click(function() { taxiIncrementNumber(1); });
+$('.taxiIncrementButton').click(function() {
+	var numberLabel = $('#taxiNumberLabel');
+	var val = parseInt(numberLabel.text());
+	val = $(this).text() == '+' ? val+1 : val-1;
+	if (0 < val /*&& val < 6*/) { // Update val if it's between 1 and 5 taxis
+		numberLabel.text(val);
+	}
+});
 $('#mic').click(function() { mapInputDirection(); });
 $('#go').click(function() { go(); });
 $('#mapsDestinationInput').keypress(function(e) {
@@ -230,11 +226,17 @@ $('#mapsDestinationInput').keypress(function(e) {
 		case 13: // Enter/Return: Runs 'Go' button
 			$('#go').click();
 			break;
-		default: //Stops the key press from propagating presses like 'S' while typing the destination.
-			e.stopPropagation();
 	}
+	// Stops the keypress from propagating for the document while typing the destination
+	e.stopPropagation();
 });
 $(document).keypress(function(e){
-	if (e.which == 115) { mapShareWithMeAllow(); } //'S' key pressed.
-	else if (e.which == 114) { mapRevertState(); } //'R' key pressed.
+	switch(e.which) {
+		case 114: // 'R'
+			mapRevertState();
+			break;
+		case 115: // 'S'
+			mapShareWithMeAllow();
+			break;
+	}
 });
