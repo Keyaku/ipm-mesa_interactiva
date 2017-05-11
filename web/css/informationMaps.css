@@ -18,22 +18,23 @@ main {
 	width: 95%;
 	height: 70%;
 }
+
 #mapsMainButtonContainer { margin: 0 2.5%; }
 #mapsMainButtonContainer > section { margin: 1% auto; }
-#mapsMainButtonContainer > section:first-child button {
+#mapsMainButtonContainer > section:nth-child(1) button {
 	margin: 0;
-	padding: 20px 30px;
 	min-width: 200px;
+	padding: 20px 30px;
 }
-.shareButton, .interestsButton, .directionsButton {
+#mapsMainButtonContainer > section:nth-child(2) button {
 	min-width: 100px;
 	padding: 10px;
 }
 #shareConfirm {
-	min-width: 100px;
 	padding: 10px 50px;
 	margin-left: 50px;
 }
+
 #directionsButtonContainer div.col-md-6 { padding: 0; }
 #go {
 	border: none;
