@@ -186,6 +186,12 @@ function taxiCancel() {
 			MENU FLOW
 
 ------------------------------------------------------------------------------*/
+$('.mapsMainButton').click(function() {
+	var id = $(this).attr('id');
+	$('.mapsMainButton').removeClass('buttonReward').addClass('buttonWhite');
+	$('#mapsCloseShare').removeClass('buttonWhite');
+	$(this).removeClass('buttonWhite').addClass('buttonReward');
+});
 $('#mapsShare').click(function() { shareStart($(this)); });
 $('#mapsInterests').click(function() { interestsStart($(this)); });
 $('#mapsDirections').click(function() { directionsStart($(this)); });
