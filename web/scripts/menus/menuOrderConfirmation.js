@@ -84,7 +84,12 @@ function orderIncrementDrink(incValue,button){
 }
 
 
-function confirmationDeleteElement(func) { confirmationOverlayShow('Do you really wish to remove this item?', func, []); }
+function confirmationDeleteElement(func) {
+	confirmationOverlayShow('Do you really wish to remove this item?', {
+		'Yes': ['buttonDanger', func],
+		'No' : ['buttonNeutral']
+	});
+}
 function deletePizza(arg) {
 	managerDeletePizza(sessionStorage.orderNumber);
 	refreshOrder();
@@ -96,14 +101,23 @@ function deleteDrink() {
 
 
 //When the client clicks the cancel button.
-function confirmationOrderCancel() { confirmationOverlayShow('Do you really wish to cancel your order?', confirmationConfirmCancel, []); }
+function confirmationOrderCancel() {
+	confirmationOverlayShow('Do you really wish to cancel your order?', {
+		'Yes': ['buttonDanger', confirmationConfirmCancel],
+		'No' : ['buttonNeutral']
+	});
+}
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
 function confirmationConfirmCancel() {
 	managerDeleteOrder(sessionStorage.orderNumber); //Deletes the ongoing order.
 	window.location.href = 'html/table.html';
 }
 //When the client clicks the confirm button.
-function orderConfirm() { acknowledgementOverlayShow('Your order was received.', {'OK': ['buttonNeutral', userConfirmation]}); }
+function orderConfirm() {
+	confirmationOverlayShow('Your order was received.', {
+		'OK': ['buttonNeutral', userConfirmation]
+	});
+}
 function userConfirmation() {
 	sessionStorage.orders = Number(sessionStorage.orders) + 1; //Increments the order number.
 	window.location.href = 'html/table.html';

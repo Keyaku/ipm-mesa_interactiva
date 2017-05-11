@@ -40,7 +40,10 @@ function execute(args) {
 }
 
 $('#buttonCancel').click(function() {
-	confirmationOverlayShow("Do you really wish to skip the rating step?", execute, []);
+	confirmationOverlayShow("Do you really wish to skip the rating step?", {
+		'Yes': ['buttonDanger', execute,
+		'No' : ['buttonNeutral']
+	});
 });
 
 $('#buttonConfirm').click(function() {

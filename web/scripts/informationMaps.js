@@ -71,7 +71,12 @@ function mapRevertState() {
 }
 
 //Confirms if the user allows another user to share the map.
-function mapShareWithMeAllow() { confirmationOverlayShow('Do you allow user 1 to share the map with you?', mapSharedWithMe, []); }
+function mapShareWithMeAllow() {
+	confirmationOverlayShow('Do you allow user 1 to share the map with you?', {
+		'Yes': ['buttonDanger', mapSharedWithMe],
+		'No' : ['buttonNeutral']
+	});
+}
 //Simulates the other user's map.
 function mapSharedWithMe() {
 	$('#mapsCloseShare').show();
@@ -81,9 +86,17 @@ function mapSharedWithMe() {
 	mapQuery(url)
 }
 //Simulates sharing the map with another user.
-function mapShare() { confirmationOverlayShow('Do you really wish to share your map?', shared); }
+function mapShare() {
+	confirmationOverlayShow('Do you really wish to share your map?', {
+		'Yes': ['buttonDanger', shared],
+		'No' : ['buttonNeutral']
+	});
+}
 //Feedback for the user.
-function shared(arg) { acknowledgementOverlayShow('Your map was shared.'); }
+function shared() {
+	modalClose();
+	confirmationOverlayShow('Your map was shared.');
+}
 
 function mapGetPointsOfInterest(button) {
 	$('.interestsButton').removeClass('buttonReward').addClass('buttonWhite');
@@ -143,7 +156,12 @@ function go() {
 		// FIXME: Too specific and fragile
 		if ($('#go').text() == 'Verify') {  taxiShowInformation(destination); }
 		//If the user has verified the cab information and clicked the order button.
-		else if ($('#go').text() == 'Order!') { confirmationOverlayShow('Are you sure you want to call a cab?', taxiCall, []); }
+		else if ($('#go').text() == 'Order!') {
+			confirmationOverlayShow('Are you sure you want to call a cab?', {
+				'Yes': ['buttonDanger', taxiCall],
+				'No' : ['buttonNeutral']
+			});
+	}
 		//If the user selected any other method (not Uber or Taxi) shows the route.
 		else { mapGetDirections(destination, googleMapsMode); }
 	}
@@ -173,7 +191,7 @@ function taxiCall(args) {
 		'destinationETA': 23,
 	};
 	sessionStorage.myTransportation = JSON.stringify(details);
-	acknowledgementOverlayShow('Your taxi has been called.'); //Feedback for the user.
+	confirmationOverlayShow('Your taxi has been called.'); //Feedback for the user.
 
 	/*** Cooperating with sessionStorage ***/
 	var transport = $('#menubar').find('#taxiNavBarDiv');
@@ -219,7 +237,9 @@ $('.taxiIncrementButton').click(function() {
 		numberLabel.text(val);
 	}
 });
-$('#mic').click(function() { mapInputDirection(); });
+$('#mic').click(function() {
+	//confirmationOverlayShow('Speak your destination.', );
+});
 $('#go').click(function() { go(); });
 $('#mapsDestinationInput').keypress(function(e) {
 	switch (e.which) {

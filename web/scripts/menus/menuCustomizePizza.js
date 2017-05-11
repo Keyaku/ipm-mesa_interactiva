@@ -126,7 +126,7 @@ function pizzaNotComplete() {
 
 function setGlobalPizza() {
 	if (pizzaNotComplete()) {
-		acknowledgementOverlayShow('Your pizza is not complete.');
+		confirmationOverlayShow('Your pizza is not complete.');
 		return;
 	}
 	var index = sessionStorage.orderNumber; //Gets the order number (in case the user is editing an order).
@@ -147,9 +147,14 @@ function setGlobalPizza() {
 }
 
 //When the client clicks the cancel button.
-function pizzaOrderCancel(index) { confirmationOverlayShow('Do you really wish to cancel your order?', pizzaConfirmCancel); }
+function pizzaOrderCancel(index) {
+	confirmationOverlayShow('Do you really wish to cancel your order?', {
+		'Yes': ['buttonDanger', pizzaConfirmCancel],
+		'No' : ['buttonNeutral']
+	});
+}
 //When the client clicks the "Yes" button in the confirmation overlay (callback from confirmationOverlayShow).
-function pizzaConfirmCancel(args) { window.location.href = 'html/table.html'; }
+function pizzaConfirmCancel() { window.location.href = 'html/table.html'; }
 
 
 /*------------------------------------------------------------------------------

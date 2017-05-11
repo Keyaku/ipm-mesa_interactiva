@@ -118,7 +118,10 @@ function orderIncrementDrink(incValue, button){
 		managerIncrementDrink(orderNumber, number); //Changes the number in the system.
 	}
 	//If the number of pizzas would be 0.
-	else if (number == 0) { confirmationDeleteElement('Do you really wish to delete this element?', deleteDrink, orderNumber); }
+	else if (number == 0) { confirmationDeleteElement('Do you really wish to delete this element?', {
+		'Yes': ['buttonDanger', function() { deleteDrink(orderNumber); }],
+		'No' : ['buttonNeutral']
+	}); }
 	//The number won't reach negative values because when it reaches 0, the order is canceled (with the client's permission).
 	else if (number < 0) { /*Security redundancy.*/ }
 }
@@ -133,7 +136,12 @@ function refreshOrder(orderNumber) {
 	createOrderElements(values[0], values[1], orderNumber); //Fills the order item with the chosen pizza and drink.
 }
 
-function confirmationDeleteElement(confirmationQuestion, func, arg) { confirmationOverlayShow(confirmationQuestion, func, arg); }
+function confirmationDeleteElement(confirmationQuestion, func, arg) {
+	confirmationOverlayShow(confirmationQuestion, {
+		'Yes': ['buttonDanger', function() { func(arg); }],
+		'No' : ['buttonNeutral']
+	});
+}
 function deletePizza(arg) {
 	managerDeletePizza(arg);
 	refreshOrder(arg);
@@ -144,7 +152,12 @@ function deleteDrink(arg) {
 }
 
 //When the client clicks the cancel button.
-function orderCancel(index) { confirmationOverlayShow('Do you really wish to cancel this order?', confirmCancel, [index]); }
+function orderCancel(index) {
+	confirmationOverlayShow('Do you really wish to cancel this order?', {
+		'Yes': ['buttonDanger', function() { confirmCancel(index); } ],
+		'No' : ['buttonNeutral']
+	});
+}
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
 function confirmCancel(args) {
 	var index = args[0];
@@ -155,7 +168,12 @@ function confirmCancel(args) {
 	managerDeleteOrder(index);
 }
 //When the client clicks the cancel all button.
-function orderAllCancel() { confirmationOverlayShow('Do you really wish to cancel all your orders?', confirmCancelAll); }
+function orderAllCancel() {
+	confirmationOverlayShow('Do you really wish to cancel all your orders?', {
+		'Yes': ['buttonDanger', confirmCancelAll],
+		'No' : ['buttonNeutral']
+	});
+}
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
 function confirmCancelAll() {
 	$('#orders').empty();

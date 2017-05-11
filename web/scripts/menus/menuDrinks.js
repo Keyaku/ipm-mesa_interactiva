@@ -27,9 +27,14 @@ function setGlobalDrink() {
 }
 
 //When the client clicks the cancel button.
-function drinksOrderCancel(index) { confirmationOverlayShow('Do you really wish to cancel your order?', drinksConfirmCancel, []); }
+function drinksOrderCancel(index) {
+	confirmationOverlayShow('Do you really wish to cancel your order?', {
+		'Yes': ['buttonDanger', drinksConfirmCancel],
+		'No' : ['buttonNeutral']
+	});
+}
 //When the client clicks the "Yes" button in the confirmation overlay (callback from confirmationOverlayShow).
-function drinksConfirmCancel(args) {
+function drinksConfirmCancel() {
 	managerDeleteOrder(sessionStorage.orderNumber); //Deletes the ongoing order.
 	window.location.href = 'html/table.html';
 }

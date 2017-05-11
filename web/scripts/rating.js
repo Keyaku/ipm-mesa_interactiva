@@ -37,12 +37,15 @@ $('#starContainer').on("click", ".fa.fa-star", function() {
 
 ------------------------------------------------------------------------------*/
 
-function execute(args) {
+function execute() {
 	window.location.href = 'html/table.html';
 }
 
 $('#buttonCancel').click(function() {
-	confirmationOverlayShow("Do you really wish to skip the rating step?", execute, []);
+	confirmationOverlayShow("Do you really wish to skip the rating step?", {
+		'Yes': ['buttonDanger', execute],
+		'No' : ['buttonNeutral']
+	});
 });
 
 $('#buttonConfirm').click(function() {

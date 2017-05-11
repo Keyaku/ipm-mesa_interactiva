@@ -1,12 +1,9 @@
 const MODAL_HTML = `
 					<div id='modal'>
 						<div id='modalContainer'>
-							<p id='varMsg'>Do you really wish to cancel your order?</p>
-							<p id='conMsg'>This action is irreversible.</p>
-							<div id='modalButtonContainer'>
-								<button class='modalButton buttonDanger' id='proceed'>Yes</button>
-								<button class='modalButton buttonNeutral' id='return'>No</button>
-							</div>
+							<h1 id='varMsg'>Title</h1>
+							<p id='conMsg'></p>
+							<div id='modalButtonContainer'></div>
 						</div>
 					</div>
 					`;
@@ -18,9 +15,6 @@ const MODAL_HTML = `
 
 ------------------------------------------------------------------------------*/
 $('main').append(MODAL_HTML);
-var functionCallBack = confirmationOverlayShow;
-var functionCallBackArgs = [];
-
 
 /*------------------------------------------------------------------------------
 
@@ -28,21 +22,23 @@ var functionCallBackArgs = [];
 
 ------------------------------------------------------------------------------*/
 function modalClose() { $('#modal').hide(); }
-function confirmationOverlayShow(textQuestion, callback, args=[]) {
-	$('#varMsg').html(textQuestion);
+function confirmationOverlayShow(text, buttons={'OK':['buttonNeutral']}) {
+	$('#varMsg').html(text);
 	$('#modal').show();
-	functionCallBack = callback;
-	functionCallBackArgs = args;
+
+	// Adding buttons
+	var container = $('#modalButtonContainer');
+	container.empty();
+	for (var label in buttons) {
+		var b_class = buttons[label][0];
+		var b_click = buttons[label].length > 1 ? buttons[label][1] : function(){};
+		container.append($('<button>', {
+			html: label,
+			'class': 'modalButton ' + b_class,
+			'click': b_click
+		}));
+	}
 }
 
-
-/*------------------------------------------------------------------------------
-
-				MENU FLOW
-
-------------------------------------------------------------------------------*/
-$('#proceed').click(function() {
-	modalClose();
-	functionCallBack(functionCallBackArgs);
-});
-$('#return').click(function() { modalClose(); });
+// Setting default behavior for ALL .modalButton
+$('.modalButton').click(modalClose);
