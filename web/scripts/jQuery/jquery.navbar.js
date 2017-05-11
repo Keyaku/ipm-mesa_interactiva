@@ -15,7 +15,7 @@ const HTML_MENUBAR = `
 			<svg class="icon"><use xlink:href="img/icons/navigation.svg#navigation" /></svg>
 			<label class="title">Information</label>
 		</div>
-		<div class="button" hidden onclick="rating()">
+		<div class="button" onclick="rating()">
 			<svg class="icon"><use xlink:href="img/icons/star.svg#star" /></svg>
 			<label class="title">Meal Rating</label>
 		</div>
@@ -30,6 +30,7 @@ const HTML_MENUBAR = `
 		<svg><use xlink:href="img/icons/arrowLeft.svg#arrowLeft" /></svg>
 	</div>
 `;
+/* Add hiddn attribute to rating buton */
 const HTML_NAVBAR = `
 	<ul class="multi-steps">
 		<li><a href="html/menus/menuPizzaList.html">Pizza</a></li>
