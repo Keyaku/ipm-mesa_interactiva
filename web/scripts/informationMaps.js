@@ -1,5 +1,3 @@
-const NUM_USERS = 3;
-
 /*------------------------------------------------------------------------------
 
 			CODE EXECUTION
@@ -31,15 +29,10 @@ var taxiETA = 0;
 $(document).ready(function() {
 	/*** Generating Share menu ***/
 	let container_share = $('#shareButtonContainer');
-	for (var i = NUM_USERS; i > 0; i--) {
-		container_share.prepend($('<button>', {
-			html: 'User ' + i,
-			'class': 'shareButton buttonWhite',
-			'click': function() { mapShareAddUser($(this)); }
-		}));
-	}
-	// Randomly select ONE user to disable
-	var disabled_user = parseInt(Math.random() * (NUM_USERS+1));
+	$('.shareButton').click(function() { mapShareAddUser($(this)); });
+	var num_users = $('.shareButton').length;
+	// Randomly select ONE (or none) user to disable
+	var disabled_user = parseInt(Math.random() * (num_users+1));
 	(container_share.children('.shareButton').eq(disabled_user)).removeClass('buttonWhite').addClass('buttonNeutral').prop('disabled', true);
 });
 
