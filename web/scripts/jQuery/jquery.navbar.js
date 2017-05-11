@@ -70,9 +70,6 @@ function informationButton() { $(location).attr('href', 'html/informationMaps.ht
 			options.toggle(ANIM_SPEED_MENU);
 			$(this).toggleClass('closed');
 		});
-		transport.click(function() {
-			informationButton(); // FIXME: incomplete action
-		});
 
 		/*** Applying arguments ***/
 		if (def.minimized) {
@@ -80,7 +77,7 @@ function informationButton() { $(location).attr('href', 'html/informationMaps.ht
 		}
 
 		/*** Cooperating with sessionStorage ***/
-		if (typeof(sessionStorage.myTransportation) !== "undefined") {
+		if (sessionStorage.myTransportation != "undefined") {
 			var details = JSON.parse(sessionStorage.myTransportation);
 			transport.attr('title', details.type);
 			var taxiETA = details['ETA'];

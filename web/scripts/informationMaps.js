@@ -176,7 +176,7 @@ function taxiCall(args) {
 }
 //Cancels the ordered taxi.
 function taxiCancel() {
-	// FIXME - @keyaku - incomplete.
+	sessionStorage.myTransportation = undefined;
 	$('#menubar').menubar(); //Reloads the menu bar.
 }
 
