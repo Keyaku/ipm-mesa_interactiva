@@ -17,13 +17,21 @@ $(document).ready(function() {
 	let all_timers = JSON.parse(sessionStorage.timer_orders);
 	for (var i = 0; i < sessionStorage.orders; i++) {
 		var timer = 'timer_order' + i;
+		var time_val;
+
 		if (!(timer in all_timers)) {
-			var newTime = randomInt(5*60, 15*60);
-			setTimer($('#' + timer), newTime);
-			all_timers[timer] = newTime;
+			// Create random time if it's non-existing
+			time_val = randomInt(5, 15) * 60;
+			var time_due = new Date(Date.now() + time_val * 1000);
+			all_timers[timer] = time_due;
 		} else {
-			setTimer($('#' + timer), all_timers[timer]);
+			// Do math to calculate the moment it started vs. now
+			var now = new Date();
+			var ending = new Date(all_timers[timer]);
+			time_val = parseInt((ending.getTime() - now.getTime()) / 1000);
 		}
+
+		setTimer($('#' + timer), time_val);
 	}
 	sessionStorage.timer_orders = JSON.stringify(all_timers);
 });
@@ -34,18 +42,6 @@ $(document).ready(function() {
 			AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
-function switchPageTo(url) {
-	let all_timers = JSON.parse(sessionStorage.timer_orders);
-	for (var i = 0; i < sessionStorage.orders; i++) {
-		var timer = 'timer_order' + i;
-		$('#' + timer).countdown360().stop();
-		all_timers[timer] = $('#' + timer).countdown360().getTimeRemaining();
-	}
-
-	sessionStorage.timer_orders = JSON.stringify(all_timers);
-	window.location.href = url;
-}
-
 //Creates the HTML structure for the order.
 function createOrderItem(ind) {
 	$('#orders').append($('<div>', { // Creates order content
@@ -85,13 +81,13 @@ function orderEdit(index) {
 function orderEditPizza(index) {
 	sessionStorage.orderNumber = index; //Sets the number of the current order.
 	sessionStorage.editing = true; //Sets the editing flag to false.
-	switchPageTo('html/menus/menuPizzaList.html');
+	window.location.href = 'html/menus/menuPizzaList.html';
 }
 //When the client clicks the edit drink button.
 function orderEditDrink(index) {
 	sessionStorage.orderNumber = index; //Sets the number of the current order.
 	sessionStorage.editing = true; //Sets the editing flag to false.
-	switchPageTo('html/menus/menuDrinks.html');
+	window.location.href = 'html/menus/menuDrinks.html';
 }
 
 //When the client clicks the increment or decrement pizza buttons.
@@ -200,5 +196,5 @@ $('#buttonCancelAll').click(function() { orderAllCancel(); }); //Cancells the se
 //The click event for the new order buttons enables the client to order again.
 $('#buttonNewOrder').click(function() {
 	sessionStorage.orderNumber = sessionStorage.orders; //Sets the number of the current order.
-	switchPageTo('html/menus/menuPizzaList.html'); //Continues with the ordering process).
+	window.location.href = 'html/menus/menuPizzaList.html'; //Continues with the ordering process).
 });
