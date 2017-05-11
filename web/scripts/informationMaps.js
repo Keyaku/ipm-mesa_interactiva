@@ -172,12 +172,18 @@ function taxiCall(args) {
 	};
 	sessionStorage.myTransportation = JSON.stringify(details);
 	acknowledgementOverlayShow('Your taxi has been called.', null, []); //Feedback for the user.
-	$('#menubar').menubar(); //Reloads the menu bar.
+
+	/*** Cooperating with sessionStorage ***/
+	var transport = $('#menubar').find('#taxiNavBarDiv');
+	transport.attr('title', details.type);
+	transport.find('#MBtaxiETALabel').text('ETA: ' + details['ETA'] + 'MIN');
+	transport.find('#MBtaxiNumberLabel').text(details['number']);
+	transport.show();
 }
 //Cancels the ordered taxi.
 function taxiCancel() {
 	sessionStorage.myTransportation = JSON.stringify({});
-	$('#menubar').menubar(); //Reloads the menu bar.
+	$('#menubar').find('#taxiNavBarDiv').hide();
 }
 
 

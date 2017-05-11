@@ -19,7 +19,7 @@ const HTML_MENUBAR = `
 			<svg class="icon"><use xlink:href="img/icons/star.svg#star" /></svg>
 			<label class="title">Meal Rating</label>
 		</div>
-		<div id="taxiNavBarDiv" class="col-md-12" style='margin-top:50px'>
+		<div id="taxiNavBarDiv" class="col-md-12" style='display: none;'>
 			<div id="taxiNavBarIcon" class="fa fa-taxi"></div>
 			<label id='MBtaxiNumberLabel'>1</label>
 			<label class='taxiETALabel' id='MBtaxiETALabel'>ETA: 14min</label>
@@ -75,20 +75,6 @@ function rating() { $(location).attr('href', 'html/news.html'); }
 		/*** Applying arguments ***/
 		if (def.minimized) {
 			minimizer.click();
-		}
-
-		/*** Cooperating with sessionStorage ***/
-		var details = JSON.parse(sessionStorage.myTransportation);
-		if (Object.keys(details).length > 0) {
-			transport.attr('title', details.type);
-			var taxiETA = details['ETA'];
-			$('#MBtaxiETALabel').text('ETA: ' + taxiETA + 'MIN');
-			var taxiNumber = details['number'];
-			$('#MBtaxiNumberLabel').text(taxiNumber);
-			transport.show();
-		}
-		else {
-			transport.hide();
 		}
     };
 	$.fn.navbar = function(opt) {

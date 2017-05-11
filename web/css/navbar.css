@@ -79,6 +79,10 @@
 	font-size: 24px;
 }
 
+#menubar #taxiNavBarDiv {
+	margin-top:50px;
+}
+
 /********************** Top navigation bar **********************/
 #navbar {
 	background-color: rgba(0, 0, 0, 1);
