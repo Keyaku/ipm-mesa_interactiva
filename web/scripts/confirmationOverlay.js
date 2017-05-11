@@ -31,14 +31,14 @@ function confirmationOverlayShow(text, buttons={'OK':['buttonNeutral']}) {
 	container.empty();
 	for (var label in buttons) {
 		var b_class = buttons[label][0];
-		var b_click = buttons[label].length > 1 ? buttons[label][1] : function(){};
+		var b_click = buttons[label].length > 1 ? buttons[label][1] : modalClose;
 		container.append($('<button>', {
 			html: label,
 			'class': 'modalButton ' + b_class,
 			'click': b_click
 		}));
 	}
-
-	// Setting default behavior for ALL .modalButton
-	$('.modalButton').click(modalClose);
 }
+
+// Setting default behavior for ALL .modalButton
+$('.modalButton').click(modalClose);
