@@ -38,7 +38,7 @@ function confirmationOverlayShow(text, buttons={'OK':['buttonNeutral']}) {
 			'click': b_click
 		}));
 	}
-}
 
-// Setting default behavior for ALL .modalButton
-$('.modalButton').click(modalClose);
+	// Setting default behavior for ALL .modalButton
+	$('.modalButton').click(modalClose);
+}
