@@ -77,8 +77,8 @@ function rating() { $(location).attr('href', 'html/news.html'); }
 		}
 
 		/*** Cooperating with sessionStorage ***/
-		if (sessionStorage.myTransportation != undefined) {
-			var details = JSON.parse(sessionStorage.myTransportation);
+		var details = JSON.parse(sessionStorage.myTransportation);
+		if (Object.keys(details).length > 0) {
 			transport.attr('title', details.type);
 			var taxiETA = details['ETA'];
 			$('#MBtaxiETALabel').text('ETA: ' + taxiETA + 'MIN');

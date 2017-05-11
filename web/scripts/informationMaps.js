@@ -176,7 +176,7 @@ function taxiCall(args) {
 }
 //Cancels the ordered taxi.
 function taxiCancel() {
-	sessionStorage.myTransportation = undefined;
+	sessionStorage.myTransportation = JSON.stringify({});
 	$('#menubar').menubar(); //Reloads the menu bar.
 }
 
