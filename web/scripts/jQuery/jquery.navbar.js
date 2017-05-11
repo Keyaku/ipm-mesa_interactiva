@@ -11,13 +11,13 @@ const HTML_MENUBAR = `
 			<svg class="icon"><use xlink:href="img/icons/music.svg#music" /></svg>
 			<label class="title">Entertainment</label>
 		</div>
-		<div class="button" onclick="newsButton()">
-			<svg class="icon"><use xlink:href="img/icons/world.svg#world" /></svg>
-			<label class="title">News</label>
-		</div>
 		<div class="button" onclick="informationButton()">
 			<svg class="icon"><use xlink:href="img/icons/navigation.svg#navigation" /></svg>
 			<label class="title">Information</label>
+		</div>
+		<div class="button" hidden onclick="rating()">
+			<svg class="icon"><use xlink:href="img/icons/star.svg#star" /></svg>
+			<label class="title">Meal Rating</label>
 		</div>
 		<div id="taxiNavBarDiv" class="col-md-12" style='margin-top:50px'>
 			<div id="taxiNavBarIcon" class="fa fa-taxi"></div>
@@ -47,8 +47,8 @@ function orderButton() {
 	}
 }
 function entertainmentButton() { /*$(location).attr('href', 'html/entertainment.html');*/ }
-function newsButton() { /*$(location).attr('href', 'html/news.html');*/ }
 function informationButton() { $(location).attr('href', 'html/informationMaps.html'); }
+function rating() { $(location).attr('href', 'html/news.html'); }
 
 (function($) {
     $.fn.menubar = function(opt) {
