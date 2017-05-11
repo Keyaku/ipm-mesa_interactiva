@@ -126,7 +126,7 @@ function pizzaNotComplete() {
 
 function setGlobalPizza() {
 	if (pizzaNotComplete()) {
-		acknowledgementOverlayShow('Your pizza is not complete.', null, []);
+		acknowledgementOverlayShow('Your pizza is not complete.');
 		return;
 	}
 	var index = sessionStorage.orderNumber; //Gets the order number (in case the user is editing an order).

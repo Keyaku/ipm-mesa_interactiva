@@ -2,9 +2,7 @@ const MODAL_HTML2 = `
 					<div id='modal2'>
 						<div id='modalContainer'>
 							<p id='varMsg2'>Acknowledge.</p>
-							<div id='modalButtonContainer'>
-								<button class='modalButton buttonNeutral' id='return2'>OK</button>
-							</div>
+							<div id='modalButtonContainer'></div>
 						</div>
 					</div>
 					`;
@@ -16,8 +14,6 @@ const MODAL_HTML2 = `
 
 ------------------------------------------------------------------------------*/
 $('main').append(MODAL_HTML2);
-var functionCallBack2 = null;
-var functionCallBackArgs2 = [];
 
 
 /*------------------------------------------------------------------------------
@@ -26,20 +22,20 @@ var functionCallBackArgs2 = [];
 
 ------------------------------------------------------------------------------*/
 function modalClose2() { $('#modal2').hide(); }
-function acknowledgementOverlayShow(text, callback, args) {
+function acknowledgementOverlayShow(text, buttons={'OK':['buttonNeutral']}) {
 	$('#varMsg2').html(text);
 	$('#modal2').show();
-	functionCallBack2 = callback;
-	functionCallBackArgs2 = args;
+
+	// Adding buttons
+	var container = $('#modal2 #modalButtonContainer');
+	container.empty();
+	for (var label in buttons) {
+		var b_class = buttons[label][0];
+		var b_click = buttons[label].length > 1 ? buttons[label][1] : modalClose2;
+		container.append($('<button>', {
+			html: label,
+			'class': 'modalButton ' + b_class,
+			'click': b_click
+		}));
+	}
 }
-
-
-/*------------------------------------------------------------------------------
-
-				MENU FLOW
-
-------------------------------------------------------------------------------*/
-$('#return2').click(function() {
-	modalClose2();
-	if (functionCallBack2 != undefined) { functionCallBack2(functionCallBackArgs); }
-});

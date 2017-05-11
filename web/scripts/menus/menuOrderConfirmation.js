@@ -103,8 +103,8 @@ function confirmationConfirmCancel() {
 	window.location.href = 'html/table.html';
 }
 //When the client clicks the confirm button.
-function orderConfirm() { acknowledgementOverlayShow('Your order was received.', userConfirmation, []); }
-function userConfirmation(args) {
+function orderConfirm() { acknowledgementOverlayShow('Your order was received.', {'OK': ['buttonNeutral', userConfirmation]}); }
+function userConfirmation() {
 	sessionStorage.orders = Number(sessionStorage.orders) + 1; //Increments the order number.
 	window.location.href = 'html/table.html';
 }

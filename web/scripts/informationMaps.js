@@ -173,7 +173,7 @@ function taxiCall(args) {
 		'destinationETA': 23,
 	};
 	sessionStorage.myTransportation = JSON.stringify(details);
-	acknowledgementOverlayShow('Your taxi has been called.', null, []); //Feedback for the user.
+	acknowledgementOverlayShow('Your taxi has been called.'); //Feedback for the user.
 
 	/*** Cooperating with sessionStorage ***/
 	var transport = $('#menubar').find('#taxiNavBarDiv');
