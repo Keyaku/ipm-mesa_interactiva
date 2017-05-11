@@ -26,13 +26,14 @@
 	font-family: 'Raleway', sans-serif;
 	font-size: 10px;
 	text-align: center;
+	margin: 4% auto;
 }
 
 .starContainer {
 	width: 40%;
 	float: left;
 	display: inline-block;
-	font-size: 20px;
+	font-size: 90px;
 	text-align: center;
 }
 
@@ -89,4 +90,8 @@
 	float: left;
 	width: auto;
 	height: 200px;
+}
+
+.fa.fa-star {
+	margin: 20% 2%;
 }
