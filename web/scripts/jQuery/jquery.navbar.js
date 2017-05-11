@@ -49,7 +49,7 @@ function orderButton() {
 }
 function entertainmentButton() { /*$(location).attr('href', 'html/entertainment.html');*/ }
 function informationButton() { $(location).attr('href', 'html/informationMaps.html'); }
-function rating() { $(location).attr('href', 'html/news.html'); }
+function rating() { $(location).attr('href', 'html/elementRating.html'); }
 
 (function($) {
     $.fn.menubar = function(opt) {
