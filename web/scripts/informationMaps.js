@@ -1,3 +1,5 @@
+const NUM_USERS = 3;
+
 /*------------------------------------------------------------------------------
 
 			CODE EXECUTION
@@ -20,6 +22,26 @@ var googleMapsUnits = '&units=metric';
 
 var preliminarTaxiNumber = 0;
 var taxiETA = 0;
+
+/*------------------------------------------------------------------------------
+
+			CONTENT GENERATION
+
+------------------------------------------------------------------------------*/
+$(document).ready(function() {
+	/*** Generating Share menu ***/
+	let container_share = $('#shareButtonContainer');
+	for (var i = NUM_USERS; i > 0; i--) {
+		container_share.prepend($('<button>', {
+			html: 'User ' + i,
+			'class': 'shareButton buttonWhite',
+			'click': function() { mapShareAddUser($(this)); }
+		}));
+	}
+	// Randomly select ONE user to disable
+	var disabled_user = parseInt(Math.random() * (NUM_USERS+1));
+	(container_share.children('.shareButton').eq(disabled_user)).removeClass('buttonWhite').addClass('buttonNeutral').prop('disabled', true);
+});
 
 
 /*------------------------------------------------------------------------------
@@ -200,7 +222,6 @@ $('#mapsShare').click(function() { shareStart($(this)); });
 $('#mapsInterests').click(function() { interestsStart($(this)); });
 $('#mapsDirections').click(function() { directionsStart($(this)); });
 
-$('.shareButton').click(function() { mapShareAddUser($(this)); });
 $('#shareConfirm').click(function() { mapShare(); });
 $('#mapsCloseShare').click(function() { mapRevertState()});
 
