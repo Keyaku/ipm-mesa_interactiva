@@ -19,6 +19,23 @@
 	height: 45%;
 }
 
+.col {
+	width: 60%;
+	color: #ECF0F1;
+	float: left;
+	font-family: 'Raleway', sans-serif;
+	font-size: 10px;
+	text-align: center;
+}
+
+.starContainer {
+	width: 40%;
+	float: left;
+	display: inline-block;
+	font-size: 20px;
+	text-align: center;
+}
+
 .orderStatusContainer:last-child {
 	border: none;
 }
@@ -32,9 +49,16 @@
 	height: 100%;
 }
 
+.mPITitle {
+	font-size: 40px;
+	font-family: raleway, sans-serif;
+	margin: 0 0 10px 0;
+	text-align: center;
+}
+
 .menuPizzaItem {
+	width: 100%;
 	padding: 4vh 0 0 2vh;
-	width: 650px;
 	height: auto;
 }
 
@@ -42,7 +66,7 @@
 	float: left;
 	margin-left: 20px;
 	text-align: left;
-	width: 400px;
+	width: 50%;
 }
 
 .menuPizzaItemInfo label{
@@ -51,14 +75,6 @@
 
 .menuPizzaItem {
 	border: none;
-}
-
-.mPITitle {
-	display: block;
-	font-size: 40px;
-	font-family: raleway, sans-serif;
-	margin: 0 0 10px 0;
-	text-align: center;
 }
 
 .mPIIIngredient {

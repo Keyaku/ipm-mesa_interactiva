@@ -11,14 +11,7 @@ $(document).ready(function() {
 
 /*******************************************************************************
 
-	MAIN SCRIPTS - RATING
-
-*******************************************************************************/
-
-
-/*******************************************************************************
-
-	MAIN SCRIPTS - ORDERED PIZZA LIST
+	MAIN SCRIPTS - ORDERED PIZZA LIST & RATING
 
 *******************************************************************************/
 
@@ -37,6 +30,10 @@ function createOrderItem(index) {
 		'class': 'orderStatusContainer',
 		'id': 'order' + index,
 		html: [ $('<div>', { 'class': 'col', 'id': 'pizza' + index })	]
+	}));
+	$('#order' + index).append($('<div>', {
+		'class': 'starContainer',
+		'id': 'order' + index + 'rating',
 	}));
 }
 
