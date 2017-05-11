@@ -77,7 +77,7 @@ function rating() { $(location).attr('href', 'html/news.html'); }
 		}
 
 		/*** Cooperating with sessionStorage ***/
-		if (sessionStorage.myTransportation != "undefined") {
+		if (sessionStorage.myTransportation != undefined) {
 			var details = JSON.parse(sessionStorage.myTransportation);
 			transport.attr('title', details.type);
 			var taxiETA = details['ETA'];
