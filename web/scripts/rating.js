@@ -15,6 +15,7 @@ function createRating() {
 $(document).ready(function() {
 	createRating();
 	$('#buttonConfirm').hide();
+	$('#menubar').menubar();
 });
 
 $('#starContainer').on("click", ".fa.fa-star", function() {
