@@ -16,22 +16,16 @@
 <body>
 	<nav id='menubar'></nav><!--Adds the system-global vertical lateral menu bar-->
 	<main>
-<!--
-		<div>
-			<input id='mapsDestinationInput' type='text' placeholder='Enter the destination'>
-			<div id='micIcon'></div>
-		</div>
--->
 		<iframe id='iframeMap'></iframe>
 		<div id='mapsMainButtonContainer'>
-			<div id='buttonLevel1'>
-				<button class='mapsMainButton buttonDanger' id='mapsCloseShare'>Close Share</button>
+			<section>
+				<button class='buttonDanger' id='mapsCloseShare'>Close Share</button>
 				<button class='mapsMainButton buttonWhite' id='mapsShare'>Share</button>
 				<button class='mapsMainButton buttonWhite' id='mapsInterests'>Points of Interest</button>
 				<button class='mapsMainButton buttonWhite' id='mapsDirections'>Get Directions</button>
-			</div>
+			</section>
 
-			<div id='buttonLevel2'>
+			<section>
 				<div id='shareButtonContainer'>
 					<button class='shareButton buttonWhite' id='share1'>User 1</button>
 					<button class='shareButton buttonNeutral' id='share2' disabled>User 2</button>
@@ -71,7 +65,7 @@
 					</div>
 
 				</div>
-			</div>
+			</section>
 		</div>
 	</main>
 <!-- SCRIPTS GO UNDER HERE -->
