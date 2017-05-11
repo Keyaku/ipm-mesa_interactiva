@@ -128,9 +128,9 @@ function go() {
 	var input = $('#mapsDestinationInput');
 	var destination = input.val();
 	if (destination.empty()) { //If the destination input bar is empty.
-		input.effect('shake', {times:4}, 300)
+		input.effect('shake', {times:2}, 350)
 			.css({'background-color':'rgb(0, 0, 0)'})
-			.animate({'background-color':'rgb(255, 255, 255)'}, 500); //Shakes the input bar.
+			.animate({'background-color':'rgb(255, 255, 255)'}, 550); //Shakes the input bar.
 	}
 	else { //If the destination input bar is NOT empty.
 		// FIXME: Too specific and fragile
