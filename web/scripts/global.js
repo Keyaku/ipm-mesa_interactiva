@@ -14,20 +14,23 @@ $(document).ready(function(){
 /****** Stuff *******/
 $(":header").css({cursor: "default"});
 
-function setTimer(div, time, callback=function(){}) {
-	div.countdown360({
-		radius: 65,                           // radius of arc
-		strokeStyle: 'rgb(46, 204, 29)',      // the color of the stroke
-		strokeWidth: 5,                       // border radius
-		fillStyle: 'rgba(46, 204, 29, 0)',    // the fill color
-		fontColor: 'rgb(255, 255, 255)',      // the font color
-		fontWeight: 700,                      // the font weight
-		autostart: true,                      // start the countdown automatically
-		seconds: time,                        // the number of seconds to count down
-		label: ['second', 'minute'],          // the label to use or false if none
-		smooth: true,                         // should the timer be smooth or stepping
-		onComplete: callback
-	});
+function setTimer(div, time=0, callback=function(){}) {
+	if (time != 0) {
+		div.countdown360({
+			radius: 65,                           // radius of arc
+			strokeStyle: 'rgb(46, 204, 29)',      // the color of the stroke
+			strokeWidth: 5,                       // border radius
+			fillStyle: 'rgba(46, 204, 29, 0)',    // the fill color
+			fontColor: 'rgb(255, 255, 255)',      // the font color
+			fontWeight: 700,                      // the font weight
+			autostart: true,                      // start the countdown automatically
+			seconds: time,                        // the number of seconds to count down
+			label: ['second', 'minute'],          // the label to use or false if none
+			smooth: true,                         // should the timer be smooth or stepping
+			onComplete: callback
+		});
+	}
+
 }
 
 function randomInt(min, max) {
