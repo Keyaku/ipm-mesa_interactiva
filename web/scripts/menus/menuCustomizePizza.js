@@ -136,12 +136,12 @@ function setGlobalPizza() {
 	pizzaCustomizeField('image', 'img/menus/pizzaMenu/menuPizza5.png'); //Sets the image of the custom pizza.
 	if (sessionStorage.editing == 'true') { //If the client is editing a previous order.
 		sessionStorage.editing = false; //Sets the editing flag to false.
-		managerEditCustomizedPizza(pizzaMaker); //Adds the pizza to the system.
+		managerAddCustomPizza(pizzaMaker); //Adds the pizza to the system.
 		window.location.href = 'html/table.html';
 		//TODO - @FranciscoKloganB - Show the confirmation popup.
 	}
 	else { //If the client is NOT editing a previous order.
-		managerAddNewCustomizedPizza(pizzaMaker); //Adds the pizza to the system.
+		managerAddCustomPizza(pizzaMaker); //Adds the pizza to the system.
 		window.location.href = 'html/menus/menuDrinks.html'; //Continues with the order.
 	}
 }
