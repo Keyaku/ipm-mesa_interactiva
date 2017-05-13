@@ -119,7 +119,9 @@ function orderConfirm() {
 	});
 }
 function userConfirmation() {
-	sessionStorage.orders = Number(sessionStorage.orders) + 1; //Increments the order number.
+	var i = sessionStorage.orders;
+	console.log("menuOrderConfirmation - orders", i);
+	sessionStorage.orders = Number(i) + 1; //Increments the order number.
 	window.location.href = 'html/table.html';
 }
 

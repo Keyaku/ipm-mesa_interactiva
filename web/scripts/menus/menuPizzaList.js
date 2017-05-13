@@ -30,7 +30,6 @@ function createPizzaPrice(pizzaSize) {
 	.append($('<label>', { html: getPizzaPrice(pizzaSize) }))
 	.append($('<button>', {
 		html: 'Order!',
-		'click': function() { setGlobalPizza(pizzaSize); },
 		'id': 'pizzaOrderButton',
 		'class': 'buttonNeutral'
 	}));
@@ -58,17 +57,16 @@ function createSizeButtons() {
 
 //When the client clicks in the order button.
 function setGlobalPizza(pizzaSize) {
+
+	console.log(sessionStorage.editing, "pizzaList - editing");
+
 	var pizzaName = $('#extensiveInfoBar').children('#infoContents').children('.mPITitle').text(); //Gets the chosen pizza's name.
-	if (sessionStorage.editing == "true") { // If the client is editing a previous order.
-		sessionStorage.editing = false; // Sets the editing flag to false.
-		managerEditPizza(pizzaName, pizzaSize); // Adds the pizza to the system.
+	managerAddPizza(pizzaName, pizzaSize); // Adds the pizza to the system.
+	if (sessionStorage.editing == "true") {
 		window.location.href = 'html/table.html';
-		//TODO - @FranciscoKloganB - Show the confirmation popup.
 	}
-	else { //If the client is NOT editing a previous order.
-		managerAddNewPizza(pizzaName, pizzaSize); //Adds the pizza to the system.
-		window.location.href = 'html/menus/menuDrinks.html'; //Continues with the order.
-	}
+	else { window.location.href = 'html/menus/menuDrinks.html'; }
+	sessionStorage.editing = false; // Sets the editing flag to false.
 }
 
 //When the client clicks the cancel button.
@@ -102,11 +100,11 @@ $('#cancelButton').click(function() { pizzaOrderCancel(); });
 $('#skipButton').click(function() {
 	if (sessionStorage.editing == "true") { //If the client is editing a previous order.
 		sessionStorage.editing = false; //Sets the editing flag to false.
-		managerEditPizza('', 'Small'); //Adds the pizza to the system.
+		managerAddPizza('', 'Small'); //Adds the pizza to the system.
 		window.location.href = 'html/table.html';
 	}
 	else { //If the client is NOT editing a previous order.
-		managerAddNewPizza('', 'Small'); //Adds the pizza to the system.
+		managerAddPizza('', 'Small'); //Adds the pizza to the system.
 		window.location.href = 'html/menus/menuDrinks.html'; //Continues with the order.
 	}
 	window.location.href = 'html/menus/menuDrinks.html';

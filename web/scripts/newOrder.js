@@ -13,6 +13,7 @@ for (var i = 0; i < sessionStorage.orders; i++) {
 	}
 }
 
+/*
 $(document).ready(function() {
 	let all_timers = JSON.parse(sessionStorage.timer_orders);
 	for (var i = 0; i < sessionStorage.orders; i++) {
@@ -35,6 +36,7 @@ $(document).ready(function() {
 	}
 	sessionStorage.timer_orders = JSON.stringify(all_timers);
 });
+*/
 
 
 /*------------------------------------------------------------------------------
@@ -79,8 +81,8 @@ function orderEdit(index) {
 }
 //When the client clicks the edit pizza button.
 function orderEditPizza(index) {
-	sessionStorage.orderNumber = index; //Sets the number of the current order.
 	sessionStorage.editing = true; //Sets the editing flag to false.
+	sessionStorage.orderNumber = index; //Sets the number of the current order.
 	window.location.href = 'html/menus/menuPizzaList.html';
 }
 //When the client clicks the edit drink button.
