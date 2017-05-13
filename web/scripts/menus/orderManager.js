@@ -32,13 +32,7 @@ function managerCheckOrderNotEmpty(orderNumber) {
 	if (values[0] != '' || values[1] != '') { return true; }
 	else { return false; }
 }
-
-//Skips the pizza from the order.
-function managerSkipPizza(drinkStruct) {
-	//TODO - @alpha - incomplete.
-	managerAddToMeta(sessionStorage.orderNumber, ['', '']); //Adds the order to the global data structure.
-}
-
+//Gets the order's drink.
 function managerGetDrink(orderNumber) {
 	var values = managerGetMetaValues(orderNumber);
 	if (values == null) { return ''; }
@@ -46,6 +40,7 @@ function managerGetDrink(orderNumber) {
 	if (drink == null || drink == '') { return ''; }
 	else if (drink && drink != '') { return drink; }
 }
+//Gets the order's pizza.
 function managerGetPizza(orderNumber) {
 	var values = managerGetMetaValues(orderNumber);
 	if (values == null) { return ''; }
@@ -60,10 +55,8 @@ function managerAddPizza(pizzaName, pizzaSize) {
 	var drink = managerGetDrink(sessionStorage.orderNumber);
 	var pizzaNumber = 1;
 	if (oldPizza != '') { pizzaNumber = oldPizza['pizzaNumber']; }
-
 	if (pizzaName == '') {
-		console.log("managerAddPizza - RED FLAG - SHOULDN'T BE HERE");
-		managerSkipPizza(drink);
+		managerAddToMeta(sessionStorage.orderNumber, ['', drink]); //Adds the order to the global data structure.
 	}
 	else {
 		var pizza = getPremadePizza(pizzaName); //Gets the pizza's structure.
