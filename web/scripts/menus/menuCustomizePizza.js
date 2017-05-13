@@ -89,14 +89,14 @@ function pizzaCustomizeField(field, value) {
 
 //Updates the label that shows the client the current customization.
 function pizzaUpdateLabel() {
-	var size = pizzaMaker['size'] != undefined ? ' <b>' + pizzaMaker['size'] + '</b>' : ''; //Updates the size.
+	var size = pizzaMaker['pizzaSize'] != undefined ? ' <b>' + pizzaMaker['pizzaSize'] + '</b>' : ''; //Updates the size.
 	var dough = pizzaMaker['dough'] != undefined ? ' <i>' + pizzaMaker['dough'] + '</i>' : ''; //Updates the dough.
 	var str = 'Your' + size + dough + ' pizza contains:'
 	$('label#customPizza').html(str);
 }
 
 //Sets the customized pizza's size.
-function pizzaSetSize(size) { pizzaCustomizeField('size', size); }
+function pizzaSetSize(size) { pizzaCustomizeField('pizzaSize', size); }
 //Sets the customized pizza's dough.
 function pizzaSetDough(dough) { pizzaCustomizeField('dough', dough); }
 //Checks if the ingredient is selected.
@@ -121,7 +121,7 @@ function pizzaRemoveIngredient(ing) {
 }
 //Checks if the pizza has size, dough and ingredients.
 function pizzaNotComplete() {
-	return pizzaMaker['size'] == undefined || pizzaMaker['dough'] == undefined || pizzaMaker['ingredients'].length == 0
+	return pizzaMaker['pizzaSize'] == undefined || pizzaMaker['dough'] == undefined || pizzaMaker['ingredients'].length == 0
 }
 
 function setGlobalPizza() {

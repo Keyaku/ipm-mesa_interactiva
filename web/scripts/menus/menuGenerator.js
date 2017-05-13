@@ -176,6 +176,8 @@ function createPizzaInfo(pizza) {
 }
 //Creates the div for the pizza's name, ingredient list and size buttons.
 function createPizzaInfoWithSize(pizza) {
+	console.log("menuGenerator", pizza['pizzaSize']);
+	
 	return  $('<div>', {
 		'class': 'menuPizzaItemInfo',
 		html: [createItemName(pizza).append(' (' + pizza['pizzaSize'] + ')'), createPizzaIngredientsList(pizza)],
