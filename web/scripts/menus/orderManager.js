@@ -63,7 +63,6 @@ function managerAddPizza(pizzaName, pizzaSize) {
 
 	if (pizzaName == '') {
 		console.log("managerAddPizza - RED FLAG - SHOULDN'T BE HERE");
-		//managerAddToMeta(sessionStorage.orderNumber, ['', '']); //Adds the order to the global data structure.
 		managerSkipPizza(drink);
 	}
 	else {
@@ -84,8 +83,6 @@ function managerAddCustomPizza(pizzaMaker) {
 	pizzaMaker['pizzaNumber'] = pizzaNumber; //Sets the same number to the edited pizza.
 	managerAddToMeta(sessionStorage.orderNumber, [pizzaMaker, drink]); //Adds the order to the global data structure.
 }
-
-
 
 //Adds a drink to the order.
 function managerAddNewDrink(drinkName) {

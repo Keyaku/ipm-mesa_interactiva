@@ -57,9 +57,6 @@ function createSizeButtons() {
 
 //When the client clicks in the order button.
 function setGlobalPizza(pizzaSize) {
-
-	console.log(sessionStorage.editing, "pizzaList - editing");
-
 	var pizzaName = $('#extensiveInfoBar').children('#infoContents').children('.mPITitle').text(); //Gets the chosen pizza's name.
 	managerAddPizza(pizzaName, pizzaSize); // Adds the pizza to the system.
 	if (sessionStorage.editing == "true") {
