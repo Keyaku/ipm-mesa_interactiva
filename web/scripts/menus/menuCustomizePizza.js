@@ -184,5 +184,14 @@ $('.pizzaIngredient').click(function() {
 //The click event for the confirm button confirms the customized pizza.
 $('#customizeButtons #cancel').click(function() { pizzaOrderCancel(); });
 $('#customizeButtons #back').click(function() { window.location.href = 'html/menus/menuPizzaList.html'; });
-$('#customizeButtons #skip').click(function() { window.location.href = 'html/menus/menuDrinks.html'; });
+$('#customizeButtons #skip').click(function() {
+	managerAddCustomPizza('', 'Small');
+	sessionStorage.editing = false; //Sets the editing flag to false.
+	if (sessionStorage.editing == "true") { //If the client is editing a previous order.
+		window.location.href = 'html/table.html';
+	}
+	else { //If the client is NOT editing a previous order.
+		window.location.href = 'html/menus/menuDrinks.html'; //Continues with the order.
+	}
+});
 $('#customizeButtons #confirm').click(function() { setGlobalPizza(); });
