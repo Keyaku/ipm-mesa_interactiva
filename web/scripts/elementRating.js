@@ -59,24 +59,21 @@ function createRating(index) {
 
 $('.orderStatusContainer').on("click", ".fa.fa-star", function() {
 	var clickedStar = $('.fa').index(this);
-	alert('clickedStar: ' + clickedStar);
 	var orderNumber = Math.floor(clickedStar / 5);
-	alert('orderNumber: '+ orderNumber);
 	var starsToColor = clickedStar % 5;
-	alert('starsToColor:' + starsToColor);
 	var startPoint = 1 + (clickedStar - starsToColor);
-	alert('startPoint: ' + startPoint);
 	var endPoint = clickedStar + (MAX_RATING - starsToColor);
-	alert('endPoint: ' + endPoint);
 	var currentStar;
+	var starIndex = 1
 	$('#buttonConfirm').show();
 	for (var i = startPoint; i <= endPoint; i++) {
-		currentStar = $('#order' + orderNumber + 'ratingStar' + i);
+		currentStar = $('#order' + orderNumber + 'ratingStar' + starIndex);
 		if (i <= clickedStar) {
 			currentStar.css({"color" : "green"});
 		} else {
 			currentStar.css({"color" : "white"});
 		}
+		starIndex++;
 	}
 });
 
