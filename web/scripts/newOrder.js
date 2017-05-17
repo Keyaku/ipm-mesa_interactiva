@@ -42,6 +42,16 @@ $(document).ready(function() {
 	sessionStorage.timer_orders = JSON.stringify(all_timers);
 });
 
+$(document).keypress(function(e){
+	var first_timer = $($('.timer_order')[0])
+	switch(e.which) {
+		case 114: // 'R'
+			var time_left = first_timer.countdown360().getTimeRemaining();
+			first_timer.countdown360().addSeconds(5 - time_left);
+			break;
+	}
+});
+
 
 /*------------------------------------------------------------------------------
 
@@ -64,7 +74,7 @@ function createOrderItem(ind) {
 			$('<button>', { html: 'Drink', 'class': 'buttonEditDrink buttonNeutral', 'id':'editDrink' + ind }),
 			$('<button>', { html: 'Cancel', 'class': 'buttonCancel buttonDanger', 'id':'cancel' }),
 		]
-	})).append($('<div>', { 'id': 'timer_order' + ind }))
+	})).append($('<div>', { 'class': 'timer_order', 'id': 'timer_order' + ind }))
 	);
 }
 //Fills the order item with the chosen pizza and drink.
