@@ -44,8 +44,8 @@ main {
 	box-shadow: none;
 	float: right;
 	margin: 0;
-	padding: 9px 30px;
 }
+#mapsMainButtonContainer > section:nth-child(2) #go { padding: 9px 30px; } /*Needs to be like this*/
 #mapsDestinationInput {
 	border: none;
 	border-radius: 0;
