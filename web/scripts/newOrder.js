@@ -67,7 +67,7 @@ function createOrderItem(ind) {
 function createOrderElements(pizza, drink, index) {
 	var pizzaNumber = Number(pizza['pizzaNumber']);
 	var drinkNumber = Number(drink['drinkNumber']);
-	var incButtons = createIncrementButtons(pizzaNumber, drinkNumber);
+	var incButtons = createIncrementButtons(pizzaNumber, drinkNumber, index);
 	setTimeout(function() {
 		if (pizza != '') { $('#pizza' + index).append(createPizzaItemWithSize(pizza), incButtons[0]); }//Shows the ordered pizza.
 		if (drink != '') { $('#drink' + index).append(createDrinkItem(drink), incButtons[1]); }//Shows the ordered drink.
@@ -93,35 +93,33 @@ function orderEditDrink(index) {
 }
 
 //When the client clicks the increment or decrement pizza buttons.
-function orderIncrementPizza(incValue, button) {
-	var number = Number($('.elNumberPizza').text()) + incValue; //Gets the number of current pizzas in the order.
-	var id = button.parent().parent().attr('id');
-	var orderNumber = id[5];
-	if (number > 0) { //If the number of pizzas would still be more than 0.
-		$('.elNumberPizza').text(number); //Increment or decrements the number of pizzas in the display.
-		managerIncrementPizza(orderNumber, number); //Changes the number in the system.
+function orderIncrementPizza(incValue, button, orderNumber) {
+	var numberLabel = $('#elNumberPizza' + orderNumber);
+	var newNumber = Number(numberLabel.text()) + incValue;
+	if (newNumber > 0) { //If the number of pizzas would still be more than 0.
+		$('#elNumberPizza' + orderNumber).text(newNumber); //Increment or decrements the number of pizzas in the display.
+		managerIncrementPizza(orderNumber, newNumber); //Changes the number in the system.
 	}
 	//If the number of pizzas would be 0.
-	else if (number == 0) { confirmationDeleteElement('Do you really wish to delete this element?', deletePizza, orderNumber); }
+	else if (newNumber == 0) { confirmationDeleteElement('Do you really wish to delete this element?', deletePizza, orderNumber); }
 	//The number won't reach negative values because when it reaches 0, the order is canceled (with the client's permission).
-	else if (number < 0) { /*Security redundancy.*/ }
+	else if (newNumber < 0) { /*Security redundancy.*/ }
 }
 //When the client clicks the increment or decrement drink buttons.
-function orderIncrementDrink(incValue, button){
-	var number = Number($('.elNumberDrink').text()) + incValue; //Gets the number of current drinks in the order.
-	var id = button.parent().parent().attr('id');
-	var orderNumber = id[5];
-	if (number > 0) { //If the number of pizzas would still be more than 0.
-		$('.elNumberDrink').text(number); //Increment or decrements the number of drinks in the display.
-		managerIncrementDrink(orderNumber, number); //Changes the number in the system.
+function orderIncrementDrink(incValue, button, orderNumber){
+	var numberLabel = $('#elNumberDrink' + orderNumber);
+	var newNumber = Number(numberLabel.text()) + incValue;
+	if (newNumber > 0) { //If the number of pizzas would still be more than 0.
+		$('#elNumberDrink' + orderNumber).text(newNumber); //Increment or decrements the number of drinks in the display.
+		managerIncrementDrink(orderNumber, newNumber); //Changes the number in the system.
 	}
 	//If the number of pizzas would be 0.
-	else if (number == 0) { confirmationDeleteElement('Do you really wish to delete this element?', {
+	else if (newNumber == 0) { confirmationDeleteElement('Do you really wish to delete this element?', {
 		'Yes': ['buttonDanger', function() { deleteDrink(orderNumber); }],
 		'No' : ['buttonNeutral']
 	}); }
 	//The number won't reach negative values because when it reaches 0, the order is canceled (with the client's permission).
-	else if (number < 0) { /*Security redundancy.*/ }
+	else if (newNumber < 0) { /*Security redundancy.*/ }
 }
 
 function refreshOrder(orderNumber) {

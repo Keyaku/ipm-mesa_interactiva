@@ -83,34 +83,40 @@ function createRating(obj) {
 	return d;
 }
 
-function createIncrementButtons(pizzaNumber, drinkNumber) {
+function createIncrementButtons(pizzaNumber, drinkNumber, orderNumber = 0) {
 	var incPizza = $('<button>', {
 		'class': 'buttonWhite incrementButton incPizza',
 		html: '+',
-		'click': function() { orderIncrementPizza(1, $(this)); }
+		id: 'incPizza' + orderNumber,
+		'click': function() { orderIncrementPizza(1, $(this), orderNumber); }
 	});
 	var labelPizza = $('<label>', {
 		'class': 'elementNumber elNumberPizza',
-		html: pizzaNumber.toString()
+		html: pizzaNumber.toString(),
+		id: 'elNumberPizza' + orderNumber,
 	});
 	var decPizza = $('<button>', {
 		'class': 'buttonWhite incrementButton decPizza',
 		html: '-',
-		'click': function() { orderIncrementPizza(-1, $(this)); }
+		id: 'decPizza' + orderNumber,
+		'click': function() { orderIncrementPizza(-1, $(this), orderNumber); }
 	});
 	var incDrink = $('<button>', {
 		'class': 'buttonWhite incrementButton incDrink',
 		html: '+',
-		'click': function() { orderIncrementDrink(1, $(this)); }
+		id: 'incDrink' + orderNumber,
+		'click': function() { orderIncrementDrink(1, $(this), orderNumber); }
 	});
 	var labelDrink = $('<label>', {
 		'class': 'elementNumber elNumberDrink',
-		html: drinkNumber.toString()
+		html: drinkNumber.toString(),
+		id: 'elNumberDrink' + orderNumber,
 	});
 	var decDrink = $('<button>', {
 		'class': 'buttonWhite incrementButton decDrink',
 		html: '-',
-		'click': function() { orderIncrementDrink(-1, $(this)); }
+		id: 'decDrink' + orderNumber,
+		'click': function() { orderIncrementDrink(-1, $(this), orderNumber); }
 	});
 	var d1 = $('<div>').addClass('incButtons pizza').append(decPizza, labelPizza, incPizza);
 	var d2 = $('<div>').addClass('incButtons drinks').append(decDrink, labelDrink, incDrink);
