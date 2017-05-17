@@ -195,6 +195,7 @@ $('.buttonEditDrink').click(function() { orderEditDrink(Number(($(this).attr('id
 //The click event for the cancel button cancels the order.
 $('.buttonCancel').click(function() {
 	var num = Number(($(this).parent().parent().attr('id'))[5]);
+	orderCancel(num);
 }); //Cancels the selected order.
 //The click event for the cancel all button cancels the order.
 $('#buttonCancelAll').click(function() { orderAllCancel(); }); //Cancells the selected order.
