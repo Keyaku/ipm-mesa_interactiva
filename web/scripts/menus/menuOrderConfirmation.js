@@ -26,7 +26,6 @@ function refreshOrder() {
 	createOrderElements(values[0], values[1]); //Fills the order item with the chosen pizza and drink.
 }
 
-
 //Creates the HTML structure for the order.
 function createOrderItem() {
 	$('#order').append($('<div>', { // Creates order content
@@ -45,7 +44,7 @@ function createOrderItem() {
 }
 //Fills the order item with the chosen pizza and drink.
 function createOrderElements(pizza, drink) {
-	var incButtons = createIncrementButtons(1, 1);
+	var incButtons = createIncrementButtons(1, 1, sessionStorage.orderNumber);
 	setTimeout(function() {
 		//Shows the ordered pizza.
 		if (pizza != '' ) { $('#pizza').append(createPizzaItemWithSize(pizza), incButtons[0]); }
