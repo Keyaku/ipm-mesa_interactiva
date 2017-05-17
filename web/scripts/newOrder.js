@@ -170,7 +170,7 @@ function orderCancel(index) {
 }
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
 function confirmCancel(index) {
-	$('#orders' + index).remove();
+	$('#order' + index).remove();
 	// let all_timers = JSON.parse(sessionStorage.timer_orders);
 	// all_timers.remove('#timer_order' + index);
 	// sessionStorage.timer_orders = JSON.stringify(all_timers);
