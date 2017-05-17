@@ -260,3 +260,13 @@ $(document).keypress(function(e){
 			break;
 	}
 });
+
+$('#mapsDestinationInput').focusin(function(){
+	for (var i = 0; i < 1000; i++)
+		$('#mic').animate({'background-color':'#2ecc31'}, 55).animate({'background-color':'rgb(255, 255, 255)'}, 55);
+
+});
+$('#mapsDestinationInput').focusout(function() {
+	$('#mic').stop(true, true);
+	$('#mic').animate({'background-color':'rgb(255, 255, 255)'}, 55);
+})
