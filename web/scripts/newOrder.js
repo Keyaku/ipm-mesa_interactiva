@@ -13,7 +13,12 @@ for (var i = 0; i < sessionStorage.orders; i++) {
 	}
 }
 
-/*
+
+var callback = function(i) {
+	console.log(i);
+	$('#edit' + i).hide();
+}
+
 $(document).ready(function() {
 	let all_timers = JSON.parse(sessionStorage.timer_orders);
 	for (var i = 0; i < sessionStorage.orders; i++) {
@@ -22,7 +27,7 @@ $(document).ready(function() {
 
 		if (!(timer in all_timers)) {
 			// Create random time if it's non-existing
-			time_val = randomInt(5, 15) * 60;
+			time_val = randomInt(5, 10) * 60;
 			var time_due = new Date(Date.now() + time_val * 1000);
 			all_timers[timer] = time_due;
 		} else {
@@ -31,12 +36,11 @@ $(document).ready(function() {
 			var ending = new Date(all_timers[timer]);
 			time_val = parseInt((ending.getTime() - now.getTime()) / 1000);
 		}
-
+		setTimeout(callback, 20 * 1000, i);
 		setTimer($('#' + timer), time_val);
 	}
 	sessionStorage.timer_orders = JSON.stringify(all_timers);
 });
-*/
 
 
 /*------------------------------------------------------------------------------
@@ -157,10 +161,10 @@ function orderCancel(index) {
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
 function confirmCancel(args) {
 	var index = args[0];
-	$('#order' + index).remove();
-	let all_timers = JSON.parse(sessionStorage.timer_orders);
-	all_timers.remove('#timer_order' + index);
-	sessionStorage.timer_orders = JSON.stringify(all_timers);
+	$('#orders' + index).remove();
+	// let all_timers = JSON.parse(sessionStorage.timer_orders);
+	// all_timers.remove('#timer_order' + index);
+	// sessionStorage.timer_orders = JSON.stringify(all_timers);
 	managerDeleteOrder(index);
 }
 //When the client clicks the cancel all button.
@@ -173,7 +177,7 @@ function orderAllCancel() {
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
 function confirmCancelAll() {
 	$('#orders').empty();
-	sessionStorage.timer_orders = JSON.stringify({});
+	//sessionStorage.timer_orders = JSON.stringify({});
 	manageDeleteAllOrders();
 }
 
