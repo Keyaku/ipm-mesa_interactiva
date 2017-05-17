@@ -35,10 +35,7 @@ function confirmationOverlayShow(text, buttons={'OK':['buttonNeutral']}) {
 		container.append($('<button>', {
 			html: label,
 			'class': 'modalButton ' + b_class,
-			'click': b_click
+			'click': function() { b_click(); modalClose(); }
 		}));
 	}
 }
-
-// Setting default behavior for ALL .modalButton
-$('.modalButton').click(modalClose);
