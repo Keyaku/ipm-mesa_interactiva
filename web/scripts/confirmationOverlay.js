@@ -29,9 +29,9 @@ function confirmationOverlayShow(text, buttons={'OK':['buttonNeutral']}) {
 	// Adding buttons
 	var container = $('#modalButtonContainer');
 	container.empty();
-	for (var label in buttons) {
-		var b_class = buttons[label][0];
-		var b_click = buttons[label].length > 1 ? buttons[label][1] : modalClose;
+	for (let label in buttons) {
+		let b_class = buttons[label][0];
+		let b_click = buttons[label].length > 1 ? buttons[label][1] : modalClose;
 		container.append($('<button>', {
 			html: label,
 			'class': 'modalButton ' + b_class,
