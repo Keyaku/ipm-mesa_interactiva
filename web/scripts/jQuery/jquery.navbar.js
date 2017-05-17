@@ -13,7 +13,7 @@ const HTML_MENUBAR = `
 		</div>
 		<div class="button" onclick="informationButton()">
 			<svg class="icon"><use xlink:href="img/icons/navigation.svg#navigation" /></svg>
-			<label class="title">Information</label>
+			<label class="title">Maps</label>
 		</div>
 		<div class="button" onclick="rating()">
 			<svg class="icon"><use xlink:href="img/icons/star.svg#star" /></svg>
