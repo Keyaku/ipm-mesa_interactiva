@@ -154,13 +154,12 @@ function deleteDrink(arg) {
 //When the client clicks the cancel button.
 function orderCancel(index) {
 	confirmationOverlayShow('Do you really wish to cancel this order?', {
-		'Yes': ['buttonDanger', function() { confirmCancel(index); } ],
+		'Yes': ['buttonDanger', function() { confirmCancel(index); }],
 		'No' : ['buttonNeutral']
 	});
 }
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
-function confirmCancel(args) {
-	var index = args[0];
+function confirmCancel(index) {
 	$('#orders' + index).remove();
 	// let all_timers = JSON.parse(sessionStorage.timer_orders);
 	// all_timers.remove('#timer_order' + index);
@@ -194,7 +193,10 @@ $('.buttonEditPizza').click(function() { orderEditPizza(Number(($(this).attr('id
 //The click event for the edit drink button edits the drink.
 $('.buttonEditDrink').click(function() { orderEditDrink(Number(($(this).attr('id'))[9])); });
 //The click event for the cancel button cancels the order.
-$('.buttonCancel').click(function() { orderCancel(Number(($(this).attr('id'))[6])); }); //Cancells the selected order.
+$('.buttonCancel').click(function() {
+	var num = Number(($(this).parent().parent().attr('id'))[5]);
+	orderCancel(num);
+}); //Cancels the selected order.
 //The click event for the cancel all button cancels the order.
 $('#buttonCancelAll').click(function() { orderAllCancel(); }); //Cancells the selected order.
 //The click event for the new order buttons enables the client to order again.
