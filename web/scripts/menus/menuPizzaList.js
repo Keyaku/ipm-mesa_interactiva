@@ -59,7 +59,7 @@ function createSizeButtons() {
 function setGlobalPizza(pizzaSize) {
 	var pizzaName = $('#extensiveInfoBar').children('#infoContents').children('.mPITitle').text(); //Gets the chosen pizza's name.
 	managerAddPizza(pizzaName, pizzaSize); // Adds the pizza to the system.
-	if (sessionStorage.editing == "true") {
+	if (sessionStorage.editing == 'true') {
 		window.location.href = 'html/table.html';
 	}
 	else { window.location.href = 'html/menus/menuDrinks.html'; }
@@ -73,7 +73,7 @@ function pizzaOrderCancel(index) {
 		'No' : ['buttonNeutral']
 	});
 }
-//When the client clicks the "Yes" button in the confirmation overlay (callback from confirmationOverlayShow).
+//When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
 function pizzaConfirmCancel() { window.location.href = 'html/table.html'; }
 
 
@@ -88,7 +88,7 @@ function pizzaConfirmCancel() { window.location.href = 'html/table.html'; }
 $('.menuPizzaItem, .menuPizzaSuggestion').click(function(){
 	var pizzaName = $(this).find('.mPITitle').text(); //Gets the chosen pizza's name.
 	showExtensiveInformation(pizzaName, 'Small'); //Shows the lateral pizza information bar.
-	$('#Small').removeClass('buttonWhite').addClass('buttonReward'); //Shows the predefined selected size "Small".
+	$('#Small').removeClass('buttonWhite').addClass('buttonReward'); //Shows the predefined selected size 'Small'.
 });
 //The click event for the Customize Your Own Pizza page changes the page to that.
 $('#customizationShortcut').click(function() { window.location.href = 'html/menus/menuCustomizePizza.html'; });
@@ -97,7 +97,7 @@ $('#cancelButton').click(function() { pizzaOrderCancel(); });
 //The click event for the skip button changes the page to the drinks menu.
 $('#skipButton').click(function() {
 	managerAddPizza('', 'Small');
-	if (sessionStorage.editing == "true") { //If the client is editing a previous order.
+	if (sessionStorage.editing == 'true') { //If the client is editing a previous order.
 		sessionStorage.editing = 'false'; //Sets the editing flag to false.
 		window.location.href = 'html/table.html';
 	}
