@@ -97,8 +97,8 @@ $('#cancelButton').click(function() { pizzaOrderCancel(); });
 //The click event for the skip button changes the page to the drinks menu.
 $('#skipButton').click(function() {
 	managerAddPizza('', 'Small');
-	sessionStorage.editing = false; //Sets the editing flag to false.
 	if (sessionStorage.editing == "true") { //If the client is editing a previous order.
+		sessionStorage.editing = 'false'; //Sets the editing flag to false.
 		window.location.href = 'html/table.html';
 	}
 	else { //If the client is NOT editing a previous order.
