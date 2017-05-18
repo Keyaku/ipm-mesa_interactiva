@@ -25,6 +25,20 @@ function managerGetMetaValues(orderNumber) {
 	return parsed['order' + orderNumber]; //Returns the array of the ordered elements.
 }
 
+
+function managerSetOrderArrived(orderNumber) {
+	var values = managerGetMetaValues(orderNumber); //Gets the order from the system.
+	var pizza = values[0];
+	var drink = values[1];
+	pizza['arrived'] = 'true';
+	managerAddToMeta(orderNumber, [pizza, drink]); //Adds the order to the global data structure.
+}
+function managerCheckOrderArrived(orderNumber) {
+	var values = managerGetMetaValues(orderNumber); //Gets the order from the system.
+	var pizza = values[0];
+	return pizza['arrived'] == 'true';
+}
+
 //Checks if the current order is not empty.
 function managerCheckOrderNotEmpty(orderNumber) {
 	var values = managerGetMetaValues(orderNumber); //Gets the order from the system.
