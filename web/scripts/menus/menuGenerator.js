@@ -33,7 +33,7 @@ function showExtensiveInformation(objName, objSize = 0) {
 		//ingredients = createPizzaIngredientsList(pizza); //Creates the pizza's ingredient list.
 		nutInfo = createNutritonalInfo(pizza); //Creates a div for the nutritional information table.
 		ratingDiv = createRating(pizza); //Creates a div for the rating stars and the rating label.
-		priceOrder = createPizzaPrice(objSize);
+		priceOrder = createSize_Price_Order(objSize);
 		container.append([ratingDiv]);
 	}
 	else { //If objSize is NOT given, it's a drink.
