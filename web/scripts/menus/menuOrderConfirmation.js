@@ -119,8 +119,8 @@ function orderConfirm() {
 }
 function userConfirmation() {
 	var i = sessionStorage.orders;
-	console.log("menuOrderConfirmation - orders", i);
 	sessionStorage.orders = Number(i) + 1; //Increments the order number.
+	managerPizzaRate(i, -1);
 	window.location.href = 'html/table.html';
 }
 
