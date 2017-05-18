@@ -14,9 +14,17 @@ for (var i = 0; i < sessionStorage.orders; i++) {
 }
 
 
-var callback = function(i) {
+var mealReady = function(i) {
 	console.log(i);
 	$('#edit' + i).hide();
+	managerSetOrderArrived(i);
+	reloadMenuBar();
+}
+var reloadMenuBar = function() {
+	if (sessionStorage.rate == 'false') {
+		sessionStorage.rate = 'true';
+		$('#menubar').menubar(); //Adds the menu bar.
+	}
 }
 
 $(document).ready(function() {
@@ -27,7 +35,7 @@ $(document).ready(function() {
 
 		if (!(timer in all_timers)) {
 			// Create random time if it's non-existing
-			time_val = randomInt(5, 10) * 60;
+			time_val = randomInt(10, 40);
 			var time_due = new Date(Date.now() + time_val * 1000);
 			all_timers[timer] = time_due;
 		} else {
@@ -36,7 +44,7 @@ $(document).ready(function() {
 			var ending = new Date(all_timers[timer]);
 			time_val = parseInt((ending.getTime() - now.getTime()) / 1000);
 		}
-		setTimeout(callback, 20 * 1000, i);
+		setTimeout(mealReady, time_val / 2 * 1000, i);
 		setTimer($('#' + timer), time_val);
 	}
 	sessionStorage.timer_orders = JSON.stringify(all_timers);
