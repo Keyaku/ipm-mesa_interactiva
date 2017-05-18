@@ -120,7 +120,7 @@ function orderConfirm() {
 function userConfirmation() {
 	var i = sessionStorage.orders;
 	sessionStorage.orders = Number(i) + 1; //Increments the order number.
-	managerPizzaRate(i, -1);
+	managerPizzaRate(i, 0);
 	window.location.href = 'html/table.html';
 }
 

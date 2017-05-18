@@ -56,26 +56,11 @@ function createOrderElements(pizza, index) {
 
 function createRating(index) {
 	var userRating = managerGetPizzaRating(index);
-	console.log("USER RATING", userRating);
-	var starIndex;
 	var starContainer = $('#order' + index + 'rating');
+	var i = 1;
+	for (i; i <= userRating; i++) { starContainer.append($('<i>').addClass('fa fa-star active').attr('id', 'order' + index + 'ratingStar' + i)); }
+	for (i; i <= MAX_RATING; i++) { starContainer.append($('<i>').addClass('fa fa-star').attr('id', 'order' + index + 'ratingStar' + i)); }
 
-	var i;
-
-	// if (userRating != -1) {
-	// 	for (i = 1; i <= userRating; i++) {
-	// 		starContainer.append($('<i>').addClass('fa fa-star active').attr('id', 'order' + index + 'ratingStar' + i));
-	// 	}
-	// 	for (i = userRating + 1; i <= MAX_RATING; i++) {
-	// 		starContainer.append($('<i>').addClass('fa fa-star').attr('id', 'order' + index + 'ratingStar' + i));
-	// 	}
-	// }
-	//
-	// else {
-		for (i = 1; i <= MAX_RATING; i++) {
-			starContainer.append($('<i>').addClass('fa fa-star').attr('id', 'order' + index + 'ratingStar' + i));
-		}
-	//}
 }
 
 $('.orderStatusContainer').on("click", ".fa.fa-star", function() {
