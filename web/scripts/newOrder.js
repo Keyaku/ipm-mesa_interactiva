@@ -14,7 +14,12 @@ for (var i = 0; i < sessionStorage.orders; i++) {
 }
 
 var removeEdit = function(i) {
+	$('#decPizza' + i).hide();
+	$('#incPizza' + i).hide();
+	$('#decDrink' + i).hide();
+	$('#incDrink' + i).hide();
 	$('#edit' + i).hide();
+	$('#reorder' + i).show();
 }
 var mealReady = function(i) {
 	$('#cancel' + i).hide();
@@ -83,6 +88,7 @@ function createOrderItem(ind) {
 			$('<button>', { html: 'Pizza', 'class': 'buttonEditPizza buttonNeutral', 'id':'editPizza' + ind }),
 			$('<button>', { html: 'Drink', 'class': 'buttonEditDrink buttonNeutral', 'id':'editDrink' + ind }),
 			$('<button>', { html: 'Cancel', 'class': 'buttonCancel buttonDanger', 'id':'cancel' + ind }),
+			$('<button>', { html: 'Reorder', 'class': 'buttonReorder buttonWhite', 'id':'reorder' + ind }),
 		]
 	})).append($('<div>', { 'class': 'timer_order', 'id': 'timer_order' + ind }))
 	);
@@ -114,6 +120,38 @@ function orderEditDrink(index) {
 	sessionStorage.orderNumber = index; //Sets the number of the current order.
 	sessionStorage.editing = true; //Sets the editing flag to false.
 	window.location.href = 'html/menus/menuDrinks.html';
+}
+
+function orderReorder(index) {
+	var newOrderIndex = sessionStorage.orders;
+	managerReorder(index, newOrderIndex);
+	var values = managerGetMetaValues(newOrderIndex); //Gets the ordered pizza and drink.
+	createOrderItem(newOrderIndex); //Creates the HTML structure for the order.
+	createOrderElements(values[0], values[1], newOrderIndex); //Fills the order item with the chosen pizza and drink.
+	sessionStorage.orders = Number(sessionStorage.orders) + 1; //Increments the order number.
+
+	let all_timers = JSON.parse(sessionStorage.timer_orders);
+	for (var i = 0; i < sessionStorage.orders; i++) {
+		var timer = 'timer_order' + i;
+		var time_val;
+
+		if (!(timer in all_timers)) {
+			// Create random time if it's non-existing
+			time_val = randomInt(10, 40);
+			var time_due = new Date(Date.now() + time_val * 1000);
+			all_timers[timer] = time_due;
+		} else {
+			// Do math to calculate the moment it started vs. now
+			var now = new Date();
+			var ending = new Date(all_timers[timer]);
+			time_val = parseInt((ending.getTime() - now.getTime()) / 1000);
+		}
+		setTimeout(mealReady, time_val * 1000, i);
+		setTimeout(removeEdit, time_val / 2 * 1000, i);
+		setTimer($('#' + timer), time_val);
+	}
+	sessionStorage.timer_orders = JSON.stringify(all_timers);
+
 }
 
 //When the client clicks the increment or decrement pizza buttons.
@@ -213,10 +251,9 @@ $('.buttonEditPizza').click(function() { orderEditPizza(Number(($(this).attr('id
 //The click event for the edit drink button edits the drink.
 $('.buttonEditDrink').click(function() { orderEditDrink(Number(($(this).attr('id'))[9])); });
 //The click event for the cancel button cancels the order.
-$('.buttonCancel').click(function() {
-	var num = Number(($(this).parent().parent().attr('id'))[5]);
-	orderCancel(num);
-}); //Cancels the selected order.
+$('.buttonCancel').click(function() { orderCancel(Number(($(this).parent().parent().attr('id'))[5])); });
+//The click event for the reorder orders the same pizza and drink (again).
+$('.buttonReorder').click(function() { orderReorder(Number(($(this).attr('id'))[7])) });
 //The click event for the cancel all button cancels the order.
 $('#buttonCancelAll').click(function() { orderAllCancel(); }); //Cancells the selected order.
 //The click event for the new order buttons enables the client to order again.

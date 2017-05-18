@@ -25,7 +25,6 @@ function managerGetMetaValues(orderNumber) {
 	return parsed['order' + orderNumber]; //Returns the array of the ordered elements.
 }
 
-
 function managerSetOrderArrived(orderNumber) {
 	var values = managerGetMetaValues(orderNumber); //Gets the order from the system.
 	var pizza = values[0];
@@ -61,6 +60,14 @@ function managerGetPizza(orderNumber) {
 	var pizza = values[0];
 	if (pizza == null || pizza == '') { return ''; }
 	else if (pizza && pizza != '') { return pizza; }
+}
+
+//
+function managerReorder(orderNumber, newOrderIndex) {
+	var values = managerGetMetaValues(orderNumber);
+	var pizza = values[0];
+	var drink = values[1];
+	managerAddToMeta(newOrderIndex, [pizza, drink]);
 }
 
 //Adds a premade pizza to the order.
