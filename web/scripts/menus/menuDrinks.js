@@ -1,5 +1,13 @@
 /*------------------------------------------------------------------------------
 
+			VARIABLES
+
+------------------------------------------------------------------------------*/
+var drinkName = '';
+
+
+/*------------------------------------------------------------------------------
+
 			CODE EXECUTION
 
 ------------------------------------------------------------------------------*/
@@ -13,17 +21,25 @@ populateDrinksMenu($('.menuItems')); //Populates the drink's menu dynamically.
 			AUXILIAR FUNCTIONS
 
 ------------------------------------------------------------------------------*/
+function continueOrder() { window.location.href = 'html/menus/menuOrderConfirmation.html'; }
+function continueEdit() {
+	sessionStorage.editing = 'false'; //Sets the editing flag to false.
+	window.location.href = 'html/table.html';
+}
+
 //When the client clicks in the order button.
 function setGlobalDrink() {
-	var drinkName = $('#extensiveInfoBar').children('#infoContents').children('.mPITitle').text(); //Gets the name of the ordered pizza.
-	managerAddNewDrink(drinkName); //Adds the drink to the system.
-	if (sessionStorage.getItem('editing') == 'true') { //If the client is editing a previous order.
-		sessionStorage.setItem('editing', 'false'); //Sets the editing flag to false.
-		window.location.href = 'html/table.html';
-	}
-	else { //If the client is NOT editing a previous order.
-		window.location.href = 'html/menus/menuOrderConfirmation.html'; //Continues with the order.
-	}
+	managerAddDrink(drinkName); //Adds the drink to the system.
+	if (sessionStorage.editing == 'true') { continueEdit(); } //If the client is editing a previous order.
+	else { continueOrder(); } //If the client is NOT editing a previous order.
+}
+
+//When the client clicks the back button.
+function backDrink() { window.location.href = 'html/menus/menuPizzaList.html'; }
+//When the client clicks the skip button.
+function skipDrink() {
+	if (managerCheckOrderNotEmpty(sessionStorage.orderNumber)) { window.location.href = 'html/menus/menuOrderConfirmation.html' } //If the client ordered a pizza.
+	else { continueOrder(); } //If the client also skipped the pizza.
 }
 
 //When the client clicks the cancel button.
@@ -49,20 +65,14 @@ function drinksConfirmCancel() {
 //The click event of #drinkOrderButton is defined in the spawning (in createDrinkOrderButton()).
 //The click event for the drink items opens the extensive information bar.
 $('.menuDrinkItem').click(function() {
+	drinkName = $(this).find('.mPITitle').text(); //Gets the chosen pizza's name.
 	$('.menuDrinkItem').removeClass('active'); //Clears the previously chosen drink.
 	$(this).toggleClass('active');
-	showExtensiveInformation($(this).children('.mPITitle').text()); //Shows the extensive information bar.
+	showExtensiveInformation(drinkName); //Shows the extensive information bar.
 });
 //The click event for the cancel button changes the page to the main page.
 $('#cancelButton').click(function() { drinksOrderCancel(); }); //Changes the page to the main page.
 //The click event for the back button changes the page to the pizza menu.
-$('#backButton').click(function() { window.location.href = 'html/menus/menuPizzaList.html'; });
+$('#backButton').click(function() { backDrink(); });
 //The click event for the skip button changes the page to the confirmation page or the main page.
-$('#skipButton').click(function() {
-	if (managerCheckOrderNotEmpty(sessionStorage.orderNumber)) { //If the client ordered a pizza.
-		window.location.href = 'html/menus/menuOrderConfirmation.html'
-	}
-	else { //If the client also skipped the pizza.
-		window.location.href = 'html/table.html';
-	}
-});
+$('#skipButton').click(function() { skipDrink(); });

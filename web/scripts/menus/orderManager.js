@@ -92,7 +92,7 @@ function managerAddCustomPizza(pizzaMaker) {
 }
 
 //Adds a drink to the order.
-function managerAddNewDrink(drinkName) {
+function managerAddDrink(drinkName) {
 	var pizza = managerGetPizza(sessionStorage.orderNumber); //Gets the ordered pizza.
 	var drink = getPremadeDrink(drinkName); //Gets the drink's structure.
 	drink['drinkNumber'] = 1; //Sets number of drinks of the order to 1.
