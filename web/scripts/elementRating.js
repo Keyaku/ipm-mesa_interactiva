@@ -20,9 +20,11 @@ $(document).ready(function() {
 for (var i = 0; i < sessionStorage.orders; i++) {
 	var values = managerGetMetaValues(i.toString()); // Gets the ordered pizzas
 	if (values != null && values[0] != null && values[1] != null && (values[0] != '' || values[1] != '')) { // If the order wasn't deleted.
-		createOrderItem(i); // Creates the HTML structure for the order.
-		createOrderElements(values[0], values[1], i); // Fills the order item with the chosen pizza and drink.
-		createRating(i);
+		if (managerCheckOrderArrived(i)) {
+			createOrderItem(i); // Creates the HTML structure for the order.
+			createOrderElements(values[0], values[1], i); // Fills the order item with the chosen pizza and drink.
+			createRating(i);
+		}
 	}
 }
 
