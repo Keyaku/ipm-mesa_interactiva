@@ -28,15 +28,15 @@ var pizzaList = {
 		'rating' : '4',
 		'image' : 'img/menus/pizzaMenu/menuPizza3.png',
 	},
-	'Camponesa2' : {
-		'name' : 'Camponesa2',
+	'Mediterranean' : {
+		'name' : 'Mediterranean',
 		'ingredients' : ['Ham', 'Onion', 'Jalapeños'],
 		'nutritions' : {'Calories':'887kcal', 'Protein':'1g', 'Carbohydrates':'12g', 'Fat':'125g'},
 		'rating' : '3',
 		'image' : 'img/menus/pizzaMenu/menuPizza4.png',
 	},
-	'Camponesa3' : {
-		'name' : 'Camponesa3',
+	'Vegan' : {
+		'name' : 'Vegan',
 		'ingredients' : ['Ham', 'Onion', 'Jalapeños'],
 		'nutritions' : {'Calories':'556kcal', 'Protein':'23g', 'Carbohydrates':'44g', 'Fat':'99g'},
 		'rating' : '5',
