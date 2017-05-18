@@ -109,6 +109,12 @@
 	padding: 2.25% 4%;
 	width: 300px;
 }
+.buttonReorder {
+	display: none;
+	font-size: 30px;
+	padding: 4% 6%;
+	width: 300px;
+}
 
 canvas {
 	margin: 8vh 0 0 10vh;
