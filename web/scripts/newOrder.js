@@ -17,6 +17,7 @@ for (var i = 0; i < sessionStorage.orders; i++) {
 var mealReady = function(i) {
 	console.log(i);
 	$('#edit' + i).hide();
+	managerSetOrderArrived(i);
 	reloadMenuBar();
 }
 var reloadMenuBar = function() {
@@ -43,7 +44,7 @@ $(document).ready(function() {
 			var ending = new Date(all_timers[timer]);
 			time_val = parseInt((ending.getTime() - now.getTime()) / 1000);
 		}
-		setTimeout(mealReady, time_val * 1000, i);
+		setTimeout(mealReady, time_val / 2 * 1000, i);
 		setTimer($('#' + timer), time_val);
 	}
 	sessionStorage.timer_orders = JSON.stringify(all_timers);
