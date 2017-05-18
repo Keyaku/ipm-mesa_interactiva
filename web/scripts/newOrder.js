@@ -17,10 +17,13 @@ for (var i = 0; i < sessionStorage.orders; i++) {
 var mealReady = function(i) {
 	console.log(i);
 	$('#edit' + i).hide();
-	sessionStorage.rate = 'true';
+	reloadMenuBar();
 }
 var reloadMenuBar = function() {
-	$('#menubar').menubar(); //Adds the menu bar.
+	if (sessionStorage.rate == 'false') {
+		sessionStorage.rate = 'true';
+		$('#menubar').menubar(); //Adds the menu bar.
+	}
 }
 
 $(document).ready(function() {
@@ -43,7 +46,6 @@ $(document).ready(function() {
 		setTimeout(mealReady, 20 * 1000, i);
 		setTimer($('#' + timer), time_val);
 	}
-	setTimeout(reloadMenuBar, 20 * 1000);
 	sessionStorage.timer_orders = JSON.stringify(all_timers);
 });
 
