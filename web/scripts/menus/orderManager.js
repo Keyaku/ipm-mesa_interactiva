@@ -62,7 +62,7 @@ function managerGetPizza(orderNumber) {
 	else if (pizza && pizza != '') { return pizza; }
 }
 
-//
+//Reorders the same pizza and drink.
 function managerReorder(orderNumber, newOrderIndex) {
 	var values = managerGetMetaValues(orderNumber);
 	var pizza = values[0];
@@ -141,4 +141,17 @@ function managerIncrementDrink(orderNumber, newDrinkNumber) {
 	drink['drinkNumber'] = newDrinkNumber; //Sets the new number of drinks of the order.
 	var valueNew = [pizza, drink]; //Sets the value for the key.
 	managerAddToMeta(orderNumber, valueNew); //Adds the order to the global data structure.
+}
+
+//Saves the client's rating for the given order's pizza.
+function managerPizzaRate(index, rating) {
+	var pizza = managerGetPizza(index);
+	var drink = managerGetDrink(index);
+	pizza['rating'] = rating;
+	managerAddToMeta(index, [pizza, drink]);
+}
+//Gets the client's rating for the given order's pizza.
+function managerGetPizzaRating(index) {
+	var pizza = managerGetPizza(index);
+	return pizza['rating'];
 }

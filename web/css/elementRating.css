@@ -94,4 +94,11 @@
 
 .fa.fa-star {
 	margin: 20% 2%;
+	color: white;
+}
+.fa.fa-star.active {
+	color: green;
+}
+.fa.fa-star.blue {
+	color: blue;
 }
