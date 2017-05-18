@@ -88,6 +88,7 @@ function pizzaConfirmCancel() { window.location.href = 'html/table.html'; }
 $('.menuPizzaItem, .menuPizzaSuggestion').click(function(){
 	var pizzaName = $(this).find('.mPITitle').text(); //Gets the chosen pizza's name.
 	showExtensiveInformation(pizzaName, 'Small'); //Shows the lateral pizza information bar.
+	$('#Small').removeClass('buttonWhite').addClass('buttonReward'); //Shows the predefined selected size "Small".
 });
 //The click event for the Customize Your Own Pizza page changes the page to that.
 $('#customizationShortcut').click(function() { window.location.href = 'html/menus/menuCustomizePizza.html'; });
