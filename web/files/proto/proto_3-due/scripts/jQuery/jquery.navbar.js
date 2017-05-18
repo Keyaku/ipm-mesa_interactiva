@@ -11,7 +11,7 @@ const HTML_MENUBAR = `
 			<svg class="icon"><use xlink:href="img/icons/navigation.svg#navigation" /></svg>
 			<label class="title">Maps</label>
 		</div>
-		<div class="button" onclick="rating()">
+		<div class="button" id="mealRating" onclick="rating()" style='display: none;'>
 			<svg class="icon"><use xlink:href="img/icons/star.svg#star" /></svg>
 			<label class="title">Meal Rating</label>
 		</div>
@@ -71,6 +71,11 @@ function rating() { $(location).attr('href', 'html/elementRating.html'); }
 		/*** Applying arguments ***/
 		if (def.minimized) {
 			minimizer.click();
+		}
+
+		if (sessionStorage.rate == 'true') {
+			console.log("rate == true");
+			$('#mealRating').show();
 		}
     };
 	$.fn.navbar = function(opt) {

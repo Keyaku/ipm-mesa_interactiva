@@ -28,9 +28,9 @@
 	float: left;
 	padding: 5pt;
 	height: 100%;
-
 	overflow-x: hidden;
 	overflow-y: scroll;
+	min-width: 260px;
 }
 #menubar #options::-webkit-scrollbar {
 	display: none;
