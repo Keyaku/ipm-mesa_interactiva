@@ -13,10 +13,11 @@ for (var i = 0; i < sessionStorage.orders; i++) {
 	}
 }
 
-
-var mealReady = function(i) {
-	console.log(i);
+var removeEdit = function(i) {
 	$('#edit' + i).hide();
+}
+var mealReady = function(i) {
+	$('#cancel' + i).hide();
 	managerSetOrderArrived(i);
 	reloadMenuBar();
 }
@@ -44,7 +45,8 @@ $(document).ready(function() {
 			var ending = new Date(all_timers[timer]);
 			time_val = parseInt((ending.getTime() - now.getTime()) / 1000);
 		}
-		setTimeout(mealReady, time_val / 2 * 1000, i);
+		setTimeout(mealReady, time_val * 1000, i);
+		setTimeout(removeEdit, time_val / 2 * 1000, i);
 		setTimer($('#' + timer), time_val);
 	}
 	sessionStorage.timer_orders = JSON.stringify(all_timers);
@@ -80,7 +82,7 @@ function createOrderItem(ind) {
 			$('<button>', { html: 'Edit', 'class': 'buttonEdit buttonNeutral', 'id':'edit' + ind }),
 			$('<button>', { html: 'Pizza', 'class': 'buttonEditPizza buttonNeutral', 'id':'editPizza' + ind }),
 			$('<button>', { html: 'Drink', 'class': 'buttonEditDrink buttonNeutral', 'id':'editDrink' + ind }),
-			$('<button>', { html: 'Cancel', 'class': 'buttonCancel buttonDanger', 'id':'cancel' }),
+			$('<button>', { html: 'Cancel', 'class': 'buttonCancel buttonDanger', 'id':'cancel' + ind }),
 		]
 	})).append($('<div>', { 'class': 'timer_order', 'id': 'timer_order' + ind }))
 	);
