@@ -14,9 +14,13 @@ for (var i = 0; i < sessionStorage.orders; i++) {
 }
 
 
-var callback = function(i) {
+var mealReady = function(i) {
 	console.log(i);
 	$('#edit' + i).hide();
+	sessionStorage.rate = 'true';
+}
+var reloadMenuBar = function() {
+	$('#menubar').menubar(); //Adds the menu bar.
 }
 
 $(document).ready(function() {
@@ -36,9 +40,10 @@ $(document).ready(function() {
 			var ending = new Date(all_timers[timer]);
 			time_val = parseInt((ending.getTime() - now.getTime()) / 1000);
 		}
-		setTimeout(callback, 20 * 1000, i);
+		setTimeout(mealReady, 20 * 1000, i);
 		setTimer($('#' + timer), time_val);
 	}
+	setTimeout(reloadMenuBar, 20 * 1000);
 	sessionStorage.timer_orders = JSON.stringify(all_timers);
 });
 
