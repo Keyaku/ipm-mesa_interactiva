@@ -83,7 +83,7 @@ function execute() {
 			managerPizzaRate(i, preliminarRating[i]);
 		}
 	}
-	//window.location.href = 'html/table.html';
+	window.location.href = 'html/table.html';
 }
 
 
