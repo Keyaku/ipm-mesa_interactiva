@@ -98,4 +98,4 @@ $('#buttonCancel').click(function() {
 		'No' : ['buttonNeutral']
 	});
 });
-$('#buttonConfirm').click(function() { execute([]); });
+$('#buttonConfirm').click(execute);
