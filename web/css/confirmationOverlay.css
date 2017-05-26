@@ -1,4 +1,4 @@
-#modal, #modal2 {
+#modal {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.9);
@@ -31,7 +31,7 @@
 }
 #proceed { background-color: darkred; }
 
-#varMsg, #varMsg2 {
+#varMsg {
 	font-family: bangers, sans-serif;
 	font-size: 100px;
 }
