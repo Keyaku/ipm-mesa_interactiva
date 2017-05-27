@@ -74,7 +74,6 @@ function rating() { $(location).attr('href', 'html/elementRating.html'); }
 		}
 
 		if (sessionStorage.rate == 'true') {
-			console.log("rate == true");
 			$('#mealRating').show();
 		}
     };

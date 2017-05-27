@@ -183,7 +183,7 @@ function taxiShowInformation(destination) {
 }
 //Increments/Decrements the number of taxis to order.
 //Orders the taxi(s)
-function taxiCall(args) {
+function taxiCall() {
 	var details = {
 		'type': $('.directionsButton.active').text(),
 		'number': getTaxiNumber(),

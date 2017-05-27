@@ -28,7 +28,7 @@ var mealReady = function(i) {
 }
 var reloadMenuBar = function() {
 	if (sessionStorage.rate == 'false') {
-		sessionStorage.rate = 'true';
+		sessionStorage.rate = true;
 		$('#menubar').menubar(); //Adds the menu bar.
 	}
 }
@@ -163,7 +163,12 @@ function orderIncrementPizza(incValue, button, orderNumber) {
 		managerIncrementPizza(orderNumber, newNumber); //Changes the number in the system.
 	}
 	//If the number of pizzas would be 0.
-	else if (newNumber == 0) { confirmationDeleteElement('Do you really wish to delete this element?', deletePizza, orderNumber); }
+	else if (newNumber == 0) {
+		confirmationDeleteElement(
+			'Do you really wish to delete this element?',
+			function() { deletePizza(orderNumber); }
+		);
+	}
 	//The number won't reach negative values because when it reaches 0, the order is canceled (with the client's permission).
 	else if (newNumber < 0) { /*Security redundancy.*/ }
 }
@@ -176,10 +181,14 @@ function orderIncrementDrink(incValue, button, orderNumber){
 		managerIncrementDrink(orderNumber, newNumber); //Changes the number in the system.
 	}
 	//If the number of pizzas would be 0.
-	else if (newNumber == 0) { confirmationDeleteElement('Do you really wish to delete this element?', {
-		'Yes': ['buttonDanger', function() { deleteDrink(orderNumber); }],
-		'No' : ['buttonNeutral']
-	}); }
+	else if (newNumber == 0) {
+		confirmationDeleteElement(
+			'Do you really wish to delete this element?', {
+				'Yes': ['buttonDanger', function() { deleteDrink(orderNumber); }],
+				'No' : ['buttonNeutral']
+			}
+		);
+	}
 	//The number won't reach negative values because when it reaches 0, the order is canceled (with the client's permission).
 	else if (newNumber < 0) { /*Security redundancy.*/ }
 }
@@ -194,9 +203,9 @@ function refreshOrder(orderNumber) {
 	createOrderElements(values[0], values[1], orderNumber); //Fills the order item with the chosen pizza and drink.
 }
 
-function confirmationDeleteElement(confirmationQuestion, func, arg) {
+function confirmationDeleteElement(confirmationQuestion, func) {
 	confirmationOverlayShow(confirmationQuestion, {
-		'Yes': ['buttonDanger', function() { func(arg); }],
+		'Yes': ['buttonDanger', func],
 		'No' : ['buttonNeutral']
 	});
 }
@@ -219,9 +228,6 @@ function orderCancel(index) {
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
 function confirmCancel(index) {
 	$('#order' + index).remove();
-	// let all_timers = JSON.parse(sessionStorage.timer_orders);
-	// all_timers.remove('#timer_order' + index);
-	// sessionStorage.timer_orders = JSON.stringify(all_timers);
 	managerDeleteOrder(index);
 }
 //When the client clicks the cancel all button.
@@ -234,7 +240,6 @@ function orderAllCancel() {
 //When the client clicks the 'Yes' button in the confirmation overlay (callback from confirmationOverlayShow).
 function confirmCancelAll() {
 	$('#orders').empty();
-	//sessionStorage.timer_orders = JSON.stringify({});
 	manageDeleteAllOrders();
 }
 
