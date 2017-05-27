@@ -237,8 +237,17 @@ $('.taxiIncrementButton').click(function() {
 		numberLabel.text(val);
 	}
 });
-$('#mic').click(function() {
-	//confirmationOverlayShow('Speak your destination.', );
+$('#mic,#mapsDestinationInput').click(function() {
+	if (sessionStorage.speakFeature == undefined) {
+		sessionStorage.speakFeature = false;
+	}
+	if (sessionStorage.speakFeature == 'false') {
+		confirmationOverlayShow(
+			"The \"Speak\" feature is unavailable, so you'll have to type in manually.<br>\
+			We apologize for the inconvenience."
+		);
+		sessionStorage.speakFeature = true;
+	}
 });
 $('#go').click(function() { go(); });
 $('#mapsDestinationInput').keypress(function(e) {
