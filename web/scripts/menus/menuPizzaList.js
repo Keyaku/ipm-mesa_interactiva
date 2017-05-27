@@ -108,7 +108,9 @@ $('.menuPizzaItem, .menuPizzaSuggestion').click(function(){
 	$('#Small').removeClass('buttonWhite').addClass('buttonReward'); //Shows the predefined selected size 'Small'.
 });
 //The click event for the Customize Your Own Pizza page changes the page to that.
-$('#customizationShortcut').click(function() { window.location.href = 'html/menus/menuCustomizePizza.html'; });
+$('#buttonsPizza #customize').click(function() {
+	window.location.href = 'html/menus/menuCustomizePizza.html';
+});
 //The click event for the cancel button changes the page to the main page.
 $('#cancelButton').click(function() { pizzaOrderCancel(); });
 //The click event for the skip button changes the page to the drinks menu.
