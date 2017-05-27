@@ -76,13 +76,13 @@ $(document).keypress(function(e){
 //Creates the HTML structure for the order.
 function createOrderItem(ind) {
 	$('#orders').append($('<div>', { // Creates order content
-		'class': 'orderStatusContainer',
+		'class': 'orderStatusContainer row',
 		'id': 'order' + ind,
 		html: [
-			$('<div>', { 'class': 'col', 'id': 'pizza' + ind }),
-			$('<div>', { 'class': 'col', 'id': 'drink' + ind })
+			$('<div>', { 'class': 'col-md-3', 'id': 'pizza' + ind }),
+			$('<div>', { 'class': 'col-md-3', 'id': 'drink' + ind })
 		]
-	}).append($('<div>', { 'class': 'col buttons', // Creates buttons
+	}).append($('<div>', { 'class': 'col-md-3 buttons', // Creates buttons
 		html: [
 			$('<button>', { html: 'Edit', 'class': 'buttonEdit buttonNeutral', 'id':'edit' + ind }),
 			$('<button>', { html: 'Pizza', 'class': 'buttonEditPizza buttonNeutral', 'id':'editPizza' + ind }),
@@ -90,7 +90,7 @@ function createOrderItem(ind) {
 			$('<button>', { html: 'Cancel', 'class': 'buttonCancel buttonDanger', 'id':'cancel' + ind }),
 			$('<button>', { html: 'Reorder', 'class': 'buttonReorder buttonWhite', 'id':'reorder' + ind }),
 		]
-	})).append($('<div>', { 'class': 'timer_order', 'id': 'timer_order' + ind }))
+	})).append($('<div>', { 'class': 'col-md-3 timer_order', 'id': 'timer_order' + ind }))
 	);
 }
 //Fills the order item with the chosen pizza and drink.

@@ -4,11 +4,16 @@
 	display: block;
 	margin: 0 auto;
 	width: 100%;
-	height: 40vh;
 }
-
 .orderStatusContainer:last-child {
 	border: none;
+}
+
+.orderStatusContainer > * {
+	color: #ECF0F1;
+	font-family: 'Raleway', sans-serif;
+	font-size: 10px;
+	text-align: center;
 }
 
 #orders {
@@ -29,14 +34,6 @@
 #timer {
 	padding-top: 2%;
 	padding-right: 2%;
-}
-
-.col {
-	color: #ECF0F1;
-	float: left;
-	font-family: 'Raleway', sans-serif;
-	font-size: 10px;
-	text-align: center;
 }
 
 .mPITitle {
