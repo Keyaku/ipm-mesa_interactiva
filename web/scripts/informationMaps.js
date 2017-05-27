@@ -272,7 +272,7 @@ $(document).keypress(function(e){
 
 $('#mapsDestinationInput').focusin(function(){
 	for (var i = 0; i < 1000; i++)
-		$('#mic').animate({'background-color':'#2ecc31'}, 55).animate({'background-color':'rgb(255, 255, 255)'}, 55);
+		$('#mic').animate({'background-color':'#2ecc31'}, 200).animate({'background-color':'rgb(255, 255, 255)'}, 200);
 
 });
 $('#mapsDestinationInput').focusout(function() {
