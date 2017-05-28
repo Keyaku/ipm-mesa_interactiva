@@ -212,7 +212,7 @@ function createPizzaItemWithSize(pizza) {
 function populateDrinksMenu(obj) {
 	for (drink in drinksList) {
 		drink = getPremadeDrink(drink); //Gets the structure of the drink (by name).
-		obj.append(createDrinkItem(drink)); //Adds each drink to the passed object.
+		obj.append(createDrinkItem(drink).addClass('col-md-4')); //Adds each drink to the passed object.
 	}
 }
 
@@ -253,7 +253,7 @@ function createDrinkOrderButton() {
 //Creates a div with the drink's name and image.
 function createDrinkItem(drink) {
 	return $('<div>', {
-		'class': 'col-md-4 menuDrinkItem',
+		'class': 'menuDrinkItem',
 		html: [createItemName(drink), createDrinkImg(drink)]
 	});
 }

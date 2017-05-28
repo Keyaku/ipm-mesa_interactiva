@@ -67,9 +67,7 @@
 }
 
 .menuDrinkItem {
-	padding: 4vh 0 0 0;
-	width: 400px;
-	height: auto;
+	padding: 4vh 0 0;
 }
 .pizzaThumbnail {
 	float: left;
@@ -78,7 +76,7 @@
 }
 .menuDrinkItemImg {
 	display: inline-block;
-	margin: 0 auto o auto;
+	margin: 0 auto 0 auto;
 	width: auto;
 	height: 200px;
 }
@@ -87,7 +85,9 @@
 	border: none;
 }
 
-.incButtons { margin: 65px 0; }
+.incButtons {
+	margin: 65px 0;
+}
 .buttons { padding: 8vh 0 0 4vh; }
 .buttonEdit, .buttonCancel {
 	display: block;
