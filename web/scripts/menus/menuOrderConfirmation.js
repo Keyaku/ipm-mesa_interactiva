@@ -29,15 +29,15 @@ function refreshOrder() {
 //Creates the HTML structure for the order.
 function createOrderItem() {
 	$('#order').append($('<div>', { // Creates order content
-		'class': 'orderStatusContainer',
+		'class': 'orderStatusContainer row',
 		html: [
-			$('<div>', { 'class': 'col', 'id': 'pizza' }),
-			$('<div>', { 'class': 'col', 'id': 'drink' })
+			$('<div>', { 'class': 'col-md-5', 'id': 'pizza' }),
+			$('<div>', { 'class': 'col-md-4', 'id': 'drink' })
 		]
-	}).append($('<div>', { 'class': 'col buttons', // Creates buttons
+	}).append($('<div>', { 'class': 'col-md-3 buttons', // Creates buttons
 		html: [
-			$('<button>', { html: 'Cancel', 'class': 'editcancel buttonCancel buttonDanger', 'id': 'cancel' }),
-			$('<button>', { html: 'Confirm', 'class': 'editcancel buttonConfirm buttonReward', 'id': 'confirm' })
+			$('<button>', { html: 'Cancel', 'class': 'buttonDanger', 'id': 'cancel' }),
+			$('<button>', { html: 'Confirm', 'class': 'buttonReward', 'id': 'confirm' })
 		]
 	}))
 	);
@@ -134,6 +134,6 @@ function userConfirmation() {
 //The click event for the increment drink button increments the number of drinks of the order.
 //The click event for the decrement drink button decrements the number of drink of the order.
 //The click event for the cancel button changes the page to the main page.
-$('.buttonCancel').click(function() { confirmationOrderCancel(); });
+$('button#cancel').click(function() { confirmationOrderCancel(); });
 //The click event for the confirm button changes the page to the main page.
-$('.buttonConfirm').click(function() { orderConfirm(); });
+$('button#confirm').click(function() { orderConfirm(); });

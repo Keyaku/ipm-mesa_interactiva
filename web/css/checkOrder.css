@@ -50,8 +50,8 @@
 }
 .pizzaThumbnail {
 	float: left;
-	width: auto;
-	height: 35%;
+	width: 35%;
+	height: auto;
 }
 
 .menuPizzaItemInfo {
@@ -88,29 +88,30 @@
 .incButtons {
 	margin: 65px 0;
 }
-.buttons { padding: 8vh 0; }
-.buttons > button { width: 100%; }
-button.buttonEdit, button.buttonCancel {
-	display: block;
-	margin: 2% auto;
-	padding: 4% 6%;
+.buttons {
+	padding-top: 8vh;
+	padding-bottom: 8vh;
 }
-button.buttonEditPizza, button.buttonEditDrink {
+.buttons > button:not(.buttonEditPizza, .buttonEditDrink) {
+	display: block;
+	padding: 4% 6%;
+	margin: 2% auto;
+	width: 100%;
+}
+
+.buttonReorder {
+	display: none;
+	font-size: 30px;
+}
+.buttonEditPizza, .buttonEditDrink {
 	display: none;
 	margin: 0% 4%;
 	padding: 2% 5%;
 	width: 42%;
 }
-.buttonContainer { margin-top: 20px; }
+
 #buttonNewOrder, #buttonCancelAll {
 	padding: 2.25% 4%;
-	width: 300px;
-}
-.buttonReorder {
-	display: none;
-	font-size: 30px;
-	padding: 4% 6%;
-	width: 300px;
 }
 
 .timer_order > canvas { margin: 8vh; }
