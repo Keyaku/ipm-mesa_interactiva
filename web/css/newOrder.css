@@ -17,6 +17,7 @@
 }
 
 #orders {
+	overflow-x: hidden;
 	overflow-y: scroll;
 	height: 68vh;
 }
