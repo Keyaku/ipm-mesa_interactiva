@@ -14,15 +14,16 @@ for (var i = 0; i < sessionStorage.orders; i++) {
 }
 
 var removeEdit = function(i) {
-	$('#decPizza' + i).hide();
-	$('#incPizza' + i).hide();
-	$('#decDrink' + i).hide();
-	$('#incDrink' + i).hide();
-	$('#edit' + i).hide();
-	$('#reorder' + i).show();
+	var order = $('#order' + i);
+	order.find('#decPizza').hide();
+	order.find('#incPizza').hide();
+	order.find('#decDrink').hide();
+	order.find('#incDrink').hide();
+	order.find('#edit').hide();
+	order.find('#reorder').show();
 }
 var mealReady = function(i) {
-	$('#cancel' + i).hide();
+	$('#order' + i).find('#cancel').hide();
 	managerSetOrderArrived(i);
 	reloadMenuBar();
 }
@@ -79,35 +80,38 @@ function createOrderItem(ind) {
 		'class': 'orderStatusContainer row',
 		'id': 'order' + ind,
 		html: [
-			$('<div>', { 'class': 'col-md-5', 'id': 'pizza' + ind }),
-			$('<div>', { 'class': 'col-md-3', 'id': 'drink' + ind })
+			$('<div>', { 'class': 'col-md-5', 'id': 'pizza' }),
+			$('<div>', { 'class': 'col-md-3', 'id': 'drink' })
 		]
 	}).append($('<div>', { 'class': 'col-md-2 buttons', // Creates buttons
 		html: [
-			$('<button>', { html: 'Edit', 'class': 'buttonEdit buttonNeutral', 'id':'edit' + ind }),
-			$('<button>', { html: 'Pizza', 'class': 'buttonEditPizza buttonNeutral', 'id':'editPizza' + ind }),
-			$('<button>', { html: 'Drink', 'class': 'buttonEditDrink buttonNeutral', 'id':'editDrink' + ind }),
-			$('<button>', { html: 'Cancel', 'class': 'buttonCancel buttonDanger', 'id':'cancel' + ind }),
-			$('<button>', { html: 'Reorder', 'class': 'buttonReorder buttonWhite', 'id':'reorder' + ind }),
+			$('<button>', { html: 'Edit', 'class': 'buttonNeutral', 'id':'edit' }),
+			$('<button>', { html: 'Pizza', 'class': 'buttonNeutral', 'id':'editPizza' }),
+			$('<button>', { html: 'Drink', 'class': 'buttonNeutral', 'id':'editDrink' }),
+			$('<button>', { html: 'Cancel', 'class': 'buttonDanger', 'id':'cancel' }),
+			$('<button>', { html: 'Reorder', 'class': 'buttonWhite', 'id':'reorder' }),
 		]
 	})).append($('<div>', { 'class': 'col-md-2 timer_order', 'id': 'timer_order' + ind }))
 	);
 }
 //Fills the order item with the chosen pizza and drink.
 function createOrderElements(pizza, drink, index) {
+	var order = $('#order' + index);
+
 	var pizzaNumber = Number(pizza['pizzaNumber']);
 	var drinkNumber = Number(drink['drinkNumber']);
 	var incButtons = createIncrementButtons(pizzaNumber, drinkNumber, index);
 	setTimeout(function() {
-		if (pizza != '') { $('#pizza' + index).append(createPizzaItemWithSize(pizza), incButtons[0]); }//Shows the ordered pizza.
-		if (drink != '') { $('#drink' + index).append(createDrinkItem(drink), incButtons[1]); }//Shows the ordered drink.
+		if (pizza != '') { order.find('#pizza').append(createPizzaItemWithSize(pizza), incButtons[0]); }//Shows the ordered pizza.
+		if (drink != '') { order.find('#drink').append(createDrinkItem(drink), incButtons[1]); }//Shows the ordered drink.
 	}, 100);
 }
 
 //When the client clicks the edit button.
-function orderEdit(index) {
-	$('#editPizza' + index).toggle(); //Shows/hides the edit pizza button.
-	$('#editDrink' + index).toggle(); //Shows/hides the edit drink button.
+function orderEdit(i) {
+	var order = $('#order' + i);
+	order.find('#editPizza').toggle(); //Shows/hides the edit pizza button.
+	order.find('#editDrink').toggle(); //Shows/hides the edit drink button.
 }
 //When the client clicks the edit pizza button.
 function orderEditPizza(index) {
@@ -195,9 +199,8 @@ function orderIncrementDrink(incValue, button, orderNumber){
 
 function refreshOrder(orderNumber) {
 	$('#order').empty();
-	var pizza = '#pizza' + orderNumber.toString();
-	$(pizza).parent('.orderStatusContainer').remove();
-	var values = managerGetMetaValues(Number(orderNumber));
+	$('#pizza' + orderNumber).parent('.orderStatusContainer').remove();
+	var values = managerGetMetaValues(orderNumber);
 	if (values[0] == '' && values[1] == '') { confirmationOrderCancel(); }
 	createOrderItem(orderNumber); //Creates the HTML structure for the order.
 	createOrderElements(values[0], values[1], orderNumber); //Fills the order item with the chosen pizza and drink.
@@ -249,18 +252,22 @@ function confirmCancelAll() {
 			MENU FLOW
 
 ------------------------------------------------------------------------------*/
+function getOrderNumber(element) {
+	var str = element.parents('.orderStatusContainer').attr('id').substring("order".length);
+	return parseInt(str);
+}
 //The click event for the edit button shows the two buttons so the user chooses to edit the pizza or drink.
-$('.buttonEdit').click(function() {	orderEdit(Number(($(this).attr('id'))[4])); });
+$('button#edit').click(function() {	orderEdit(getOrderNumber($(this))); });
 //The click event for the edit pizza button edits the pizza.
-$('.buttonEditPizza').click(function() { orderEditPizza(Number(($(this).attr('id'))[9])); });
+$('button#editPizza').click(function() { orderEditPizza(getOrderNumber($(this))); });
 //The click event for the edit drink button edits the drink.
-$('.buttonEditDrink').click(function() { orderEditDrink(Number(($(this).attr('id'))[9])); });
+$('button#editDrink').click(function() { orderEditDrink(getOrderNumber($(this))); });
 //The click event for the cancel button cancels the order.
-$('.buttonCancel').click(function() { orderCancel(Number(($(this).parent().parent().attr('id'))[5])); });
+$('button#cancel').click(function() { orderCancel(getOrderNumber($(this))); });
 //The click event for the reorder orders the same pizza and drink (again).
-$('.buttonReorder').click(function() { orderReorder(Number(($(this).attr('id'))[7])) });
+$('button#reorder').click(function() { orderReorder(getOrderNumber($(this))); });
 //The click event for the cancel all button cancels the order.
-$('#buttonCancelAll').click(function() { orderAllCancel(); }); //Cancells the selected order.
+$('#buttonCancelAll').click(function() { orderAllCancel(); }); //Cancels the selected order.
 //The click event for the new order buttons enables the client to order again.
 $('#buttonNewOrder').click(function() {
 	sessionStorage.orderNumber = sessionStorage.orders; //Sets the number of the current order.

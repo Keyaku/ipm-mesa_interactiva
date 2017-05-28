@@ -92,18 +92,18 @@
 	padding-top: 8vh;
 	padding-bottom: 8vh;
 }
-.buttons > button:not(.buttonEditPizza, .buttonEditDrink) {
+.buttons > button:not(button#editPizza, button#editDrink) {
 	display: block;
 	padding: 4% 6%;
 	margin: 2% auto;
 	width: 100%;
 }
 
-.buttonReorder {
+button#reorder {
 	display: none;
 	font-size: 30px;
 }
-.buttonEditPizza, .buttonEditDrink {
+button#editPizza, button#editDrink {
 	display: none;
 	margin: 0% 4%;
 	padding: 2% 5%;
