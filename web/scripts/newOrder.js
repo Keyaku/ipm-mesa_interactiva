@@ -79,10 +79,10 @@ function createOrderItem(ind) {
 		'class': 'orderStatusContainer row',
 		'id': 'order' + ind,
 		html: [
-			$('<div>', { 'class': 'col-md-3', 'id': 'pizza' + ind }),
+			$('<div>', { 'class': 'col-md-5', 'id': 'pizza' + ind }),
 			$('<div>', { 'class': 'col-md-3', 'id': 'drink' + ind })
 		]
-	}).append($('<div>', { 'class': 'col-md-3 buttons', // Creates buttons
+	}).append($('<div>', { 'class': 'col-md-2 buttons', // Creates buttons
 		html: [
 			$('<button>', { html: 'Edit', 'class': 'buttonEdit buttonNeutral', 'id':'edit' + ind }),
 			$('<button>', { html: 'Pizza', 'class': 'buttonEditPizza buttonNeutral', 'id':'editPizza' + ind }),
@@ -90,7 +90,7 @@ function createOrderItem(ind) {
 			$('<button>', { html: 'Cancel', 'class': 'buttonCancel buttonDanger', 'id':'cancel' + ind }),
 			$('<button>', { html: 'Reorder', 'class': 'buttonReorder buttonWhite', 'id':'reorder' + ind }),
 		]
-	})).append($('<div>', { 'class': 'col-md-3 timer_order', 'id': 'timer_order' + ind }))
+	})).append($('<div>', { 'class': 'col-md-2 timer_order', 'id': 'timer_order' + ind }))
 	);
 }
 //Fills the order item with the chosen pizza and drink.
