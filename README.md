@@ -21,7 +21,7 @@ directions to them and even call a cab! Or Uber. Or Lyft. Or whatever's hip thes
 ### How to use
 This interactive table runs on virtually any updated browser, but it was mostly tested on the latest Google Chrome and Safari.
 
-You may check it [online](http://web.tecnico.ulisboa.pt/ist177906/ipm/html/table.html)
+You may check it [online](http://web.tecnico.ulisboa.pt/antonio.l.sarmento/ipm/html/table.html)
 
 **OR**
 
