@@ -8,9 +8,7 @@ We hope you have a pleasant experience using our interactive table to have your 
 ##### Pizza Suggestions, or Custom-made
 You can select a great variety of our pizzas, or even make your own!
 
-!['Pizza menu image'](web/files/FinalVersion/screen1.png?raw=true "Optional Title")
-
-![Pizza menu image](https://raw.githubusercontent.com/Keyaku/ipm-mesa_interactiva/master/web/files/FinalVersion/screen1.png)
+!['Pizza menu image'](web\files\FinalVersion\screen1.PNG)
 
 ##### Rate your meal
 At the end of your meal, you may leave a rating to let our other customers know
