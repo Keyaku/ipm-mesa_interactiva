@@ -30,4 +30,5 @@ in case you're running the table locally (and _not_ using Safari), disable the s
 
 To disable the security features in Chrome, run the executable with the `--disable-web-security --allow-file-access-from-files` flags.
 On macOS (or Mac OS X), the executable is inside the .app file, as shown below:
-"Google Chrome.app/Contents/MacOS/Google Chrome"
+
+	"Google Chrome.app/Contents/MacOS/Google Chrome"
