@@ -10,6 +10,8 @@ You can select a great variety of our pizzas, or even make your own!
 
 !['Pizza menu image'](web/files/FinalVersion/screen1.png?raw=true "Optional Title")
 
+![Pizza menu image](https://raw.githubusercontent.com/Keyaku/ipm-mesa_interactiva/master/web/files/FinalVersion/screen1.png)
+
 ##### Rate your meal
 At the end of your meal, you may leave a rating to let our other customers know
 what you think. You can even rate our homemade beverages (they're pretty good,
